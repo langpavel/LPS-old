@@ -16,7 +16,31 @@ namespace LPSClientSklad
 		
 		public void btnTestServer_clicked(object sender, EventArgs args)
 		{
-			MainApp.ShowMessage(this.Window, MessageType.Info, "Spojení se serverem", "TEST");
+			try
+			{
+				using(LPSServer.Server srv = new LPSServer.Server(edtServer.Text))
+					srv.Ping();
+				
+				MainApp.ShowMessage(this.Window, MessageType.Info, "Spojení OK", "Spojení se serverem bylo navázáno");
+			}
+			catch(Exception err)
+			{
+				MainApp.ShowMessage(this.Window, MessageType.Error, "Spojení selhalo", "Spojení selhalo. " + err.ToString());
+			}
+		}
+		
+		public LPSServer.Server TryConnect()
+		{
+			try
+			{
+				LPSServer.Server srv = new LPSServer.Server(edtServer.Text);
+				srv.Ping();
+				return srv;
+			}
+			catch(Exception)
+			{
+				return null;
+			}
 		}
 	}
 }

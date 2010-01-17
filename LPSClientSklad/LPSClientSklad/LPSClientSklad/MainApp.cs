@@ -13,7 +13,21 @@ namespace LPSClientSklad
 		}
 		
 		public string[] Args { get; set; }
+
+		public static LPSServer.Server Connection { get; set; }
+		public static string ServerUrl { get; set; }
+		public static string UserLogin { get; set; }
 		
+		public static MainForm MainForm { get; set; }
+		
+		public static Window MainWindow { get { 
+			if(MainApp.MainForm == null)
+				return null;
+			else 
+				return MainApp.MainForm.Window; } 
+		}
+		
+			
 		public MainApp(string[] args)
 		{
 			Args = args;
@@ -25,14 +39,38 @@ namespace LPSClientSklad
 
 			using(LoginDialog login = FormFactory.Create<LoginDialog>("login"))
 			{
-				ResponseType response = login.Run();
-				if(response == ResponseType.Cancel)
-					return;
-				
+				while(true)
+				{
+					login.edtPassword.Text = "";
+					ResponseType response = login.Run();
+					if(response == ResponseType.Cancel)
+						return;
+					if(Connection == null || Connection.Url != login.edtServer.Text)
+						Connection = login.TryConnect();
+					if(Connection == null)
+					{
+						MainApp.ShowMessage(null, MessageType.Error, "Chyba", "Nezdařilo se připojení k serveru");
+						continue;
+					}
+					try 
+					{
+						if(Connection != null && Connection.Login(login.edtLogin.Text, login.edtPassword.Text))
+						{
+							ServerUrl = login.edtServer.Text;
+							UserLogin = login.edtLogin.Text;
+							break;
+						}
+					}
+					catch(Exception)
+					{
+						MainApp.ShowMessage(null, MessageType.Error, "Chyba", "Neplatné jméno nebo heslo");
+					}
+				}
 			}
 
-			MainApp.MainForm = FormFactory.Create<MainForm>("main");
-			MainApp.MainForm.ShowAll();
+			MainForm frm = FormFactory.Create<MainForm>("main");
+			MainApp.MainForm = frm;
+			frm.ShowAll();
 			
 			Run();
 		}
@@ -42,22 +80,17 @@ namespace LPSClientSklad
 			Application.Run();
 		}
 		
-		public static MainForm MainForm { get; set; }
-		
-		public static Window MainWindow { get { 
-			if(MainApp.MainForm == null)
-				return null;
-			else 
-				return MainApp.MainForm.Window; } 
-		}
-		
 		public static void ShowMessage(Window parent, MessageType msgType, string caption, string text, params object[] args)
 		{
+			string txt = String.Format(text, args);
+			txt = txt.Replace("&","&amp;");
+			txt = txt.Replace("<","&lt;");
+			
 			using(Gtk.MessageDialog d = 
 				new Gtk.MessageDialog(
 					parent, 
 					DialogFlags.DestroyWithParent | DialogFlags.Modal,
-					msgType, ButtonsType.Ok, text, args))
+					msgType, ButtonsType.Ok, txt))
 			{
 				d.Title = caption;
 				d.Run();
