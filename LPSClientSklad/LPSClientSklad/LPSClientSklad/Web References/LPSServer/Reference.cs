@@ -25,6 +25,10 @@ namespace LPSClientSklad.LPSServer {
         
         private System.Threading.SendOrPostCallback LoginOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetLoggedUserOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ChangePasswordOperationCompleted;
+        
         private System.Threading.SendOrPostCallback LogoutOperationCompleted;
         
         private System.Threading.SendOrPostCallback ExecuteNonquerySimpleOperationCompleted;
@@ -48,6 +52,10 @@ namespace LPSClientSklad.LPSServer {
         public event PingCompletedEventHandler PingCompleted;
         
         public event LoginCompletedEventHandler LoginCompleted;
+        
+        public event GetLoggedUserCompletedEventHandler GetLoggedUserCompleted;
+        
+        public event ChangePasswordCompletedEventHandler ChangePasswordCompleted;
         
         public event LogoutCompletedEventHandler LogoutCompleted;
         
@@ -130,6 +138,78 @@ namespace LPSClientSklad.LPSServer {
             if ((this.LoginCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.LoginCompleted(this, new LoginCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/GetLoggedUser", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public string GetLoggedUser() {
+            object[] results = this.Invoke("GetLoggedUser", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginGetLoggedUser(System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetLoggedUser", new object[0], callback, asyncState);
+        }
+        
+        public string EndGetLoggedUser(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((string)(results[0]));
+        }
+        
+        public void GetLoggedUserAsync() {
+            this.GetLoggedUserAsync(null);
+        }
+        
+        public void GetLoggedUserAsync(object userState) {
+            if ((this.GetLoggedUserOperationCompleted == null)) {
+                this.GetLoggedUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLoggedUserCompleted);
+            }
+            this.InvokeAsync("GetLoggedUser", new object[0], this.GetLoggedUserOperationCompleted, userState);
+        }
+        
+        private void OnGetLoggedUserCompleted(object arg) {
+            if ((this.GetLoggedUserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetLoggedUserCompleted(this, new GetLoggedUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/ChangePassword", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public bool ChangePassword(string old_password, string new_password) {
+            object[] results = this.Invoke("ChangePassword", new object[] {
+                        old_password,
+                        new_password});
+            return ((bool)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginChangePassword(string old_password, string new_password, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("ChangePassword", new object[] {
+                        old_password,
+                        new_password}, callback, asyncState);
+        }
+        
+        public bool EndChangePassword(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((bool)(results[0]));
+        }
+        
+        public void ChangePasswordAsync(string old_password, string new_password) {
+            this.ChangePasswordAsync(old_password, new_password, null);
+        }
+        
+        public void ChangePasswordAsync(string old_password, string new_password, object userState) {
+            if ((this.ChangePasswordOperationCompleted == null)) {
+                this.ChangePasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnChangePasswordCompleted);
+            }
+            this.InvokeAsync("ChangePassword", new object[] {
+                        old_password,
+                        new_password}, this.ChangePasswordOperationCompleted, userState);
+        }
+        
+        private void OnChangePasswordCompleted(object arg) {
+            if ((this.ChangePasswordCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ChangePasswordCompleted(this, new ChangePasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -688,6 +768,44 @@ namespace LPSClientSklad.LPSServer {
     }
     
     public delegate void LoginCompletedEventHandler(object sender, LoginCompletedEventArgs args);
+    
+    public partial class GetLoggedUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetLoggedUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void GetLoggedUserCompletedEventHandler(object sender, GetLoggedUserCompletedEventArgs args);
+    
+    public partial class ChangePasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ChangePasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void ChangePasswordCompletedEventHandler(object sender, ChangePasswordCompletedEventArgs args);
     
     public delegate void LogoutCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs args);
     

@@ -45,6 +45,7 @@ namespace LPSClientSklad
 			try
 			{
 				LPSServer.Server srv = new LPSServer.Server(edtServer.Text);
+				srv.CookieContainer = new System.Net.CookieContainer();
 				srv.Ping();
 				return srv;
 			}

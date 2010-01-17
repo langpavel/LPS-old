@@ -28,5 +28,11 @@ namespace LPSClientSklad
 			Application.Quit();
 		}
 		
+		public void PasswordChange(object sender, EventArgs args)
+		{
+			PasswdChDialog dialog = FormFactory.Create<PasswdChDialog>("chpasswd");
+			dialog.Execute();
+			dialog.Destroy();
+		}
 	}
 }

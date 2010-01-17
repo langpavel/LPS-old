@@ -26,13 +26,13 @@ namespace LPSClientSklad
 			else 
 				return MainApp.MainForm.Window; } 
 		}
-		
 			
 		public MainApp(string[] args)
 		{
 			Args = args;
 
 			FormFactory.Register(new FormXmlResourceInfo<LoginDialog>("login", "ui.glade", "dialogLogin"));
+			FormFactory.Register(new FormXmlResourceInfo<PasswdChDialog>("chpasswd", "ui.glade", "dialogPswChange"));
 			FormFactory.Register(new FormXmlResourceInfo<MainForm>("main", "ui.glade", "windowMain"));
 
 			Application.Init ();

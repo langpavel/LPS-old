@@ -39,6 +39,20 @@ namespace LPSServer
 		}
 
 		[WebMethod(EnableSession=true)]
+		public string GetLoggedUser()
+		{
+			ConnectionInfo ci = GetConnectionInfo();
+			return ci.UserName;
+		}
+		
+		[WebMethod(EnableSession=true)]
+		public bool ChangePassword(string old_password, string new_password)
+		{
+			ConnectionInfo ci = GetConnectionInfo();
+			return ci.ChangePassword(old_password, new_password);
+		}
+		
+		[WebMethod(EnableSession=true)]
 		public void Logout()
 		{
 			ConnectionInfo ci = this.Session["CONN"] as ConnectionInfo;

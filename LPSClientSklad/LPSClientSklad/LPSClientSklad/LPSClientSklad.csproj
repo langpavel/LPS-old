@@ -74,6 +74,7 @@
     <Compile Include="Forms\MainForm.cs" />
     <Compile Include="Forms\XmlDialogBase.cs" />
     <Compile Include="Forms\XmlWindowBase.cs" />
+    <Compile Include="Forms\PasswdChDialog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

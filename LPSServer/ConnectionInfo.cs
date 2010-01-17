@@ -57,6 +57,42 @@ namespace LPSServer
 				TestConnection();
 		}
 		
+		public bool Verify(string password)
+		{
+			return
+				(passwdhash == GetSHA1String(password, UserName)) &&
+				TestConnection();
+		}
+		
+		public bool ChangePassword(string old_password, string new_password)
+		{
+			if(!Verify(old_password))
+			{
+				System.Threading.Thread.Sleep(250);
+				return false;
+			}
+			string new_hash = GetSHA1String(new_password, UserName);
+			NpgsqlTransaction tr;
+			int rows = ExecuteNonqueryTr(
+				"update users set passwd=:newpsw where id=:id and username=:username and passwd=:oldpsw", out tr,
+				new NpgsqlParameter("id", Id),
+				new NpgsqlParameter("username", UserName),
+				new NpgsqlParameter("oldpsw", passwdhash),
+				new NpgsqlParameter("newpsw", new_hash));
+			bool result = (rows == 1);
+			if(result)
+			{
+				tr.Commit();
+				passwdhash = new_hash;
+				return true;
+			}
+			else
+			{
+				tr.Rollback();
+				return false;
+			}
+		}
+			
 		public void Dispose()
 		{
 			if(Connection != null)
@@ -91,6 +127,26 @@ namespace LPSServer
 				foreach(NpgsqlParameter param in parameters)
 					cmd.Parameters.Add(param);
 				return cmd.ExecuteNonQuery();
+			}
+		}
+		
+		public int ExecuteNonqueryTr(string sql, out NpgsqlTransaction transaction, params NpgsqlParameter[] parameters)
+		{
+			transaction = this.Connection.BeginTransaction();
+			try
+			{
+				using(NpgsqlCommand cmd = this.Connection.CreateCommand())
+				{
+					cmd.CommandText = sql;
+					foreach(NpgsqlParameter param in parameters)
+						cmd.Parameters.Add(param);
+					return cmd.ExecuteNonQuery();
+				}
+			}
+			catch
+			{
+				transaction.Rollback();
+				throw;
 			}
 		}
 		

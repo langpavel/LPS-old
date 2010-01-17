@@ -27,6 +27,31 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="GetLoggedUser">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="GetLoggedUserResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetLoggedUserResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ChangePassword">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="old_password" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="new_password" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ChangePasswordResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="ChangePasswordResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="Logout">
         <xs:complexType />
       </xs:element>
@@ -208,6 +233,7 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="boolean" type="xs:boolean" />
+      <xs:element name="string" nillable="true" type="xs:string" />
       <xs:element name="int" type="xs:int" />
       <xs:element name="long" type="xs:long" />
     </xs:schema>
@@ -223,6 +249,18 @@
   </message>
   <message name="LoginSoapOut">
     <part name="parameters" element="s0:LoginResponse" />
+  </message>
+  <message name="GetLoggedUserSoapIn">
+    <part name="parameters" element="s0:GetLoggedUser" />
+  </message>
+  <message name="GetLoggedUserSoapOut">
+    <part name="parameters" element="s0:GetLoggedUserResponse" />
+  </message>
+  <message name="ChangePasswordSoapIn">
+    <part name="parameters" element="s0:ChangePassword" />
+  </message>
+  <message name="ChangePasswordSoapOut">
+    <part name="parameters" element="s0:ChangePasswordResponse" />
   </message>
   <message name="LogoutSoapIn">
     <part name="parameters" element="s0:Logout" />
@@ -271,6 +309,17 @@
   <message name="LoginHttpGetOut">
     <part name="Body" element="s0:boolean" />
   </message>
+  <message name="GetLoggedUserHttpGetIn" />
+  <message name="GetLoggedUserHttpGetOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <message name="ChangePasswordHttpGetIn">
+    <part name="old_password" type="s:string" />
+    <part name="new_password" type="s:string" />
+  </message>
+  <message name="ChangePasswordHttpGetOut">
+    <part name="Body" element="s0:boolean" />
+  </message>
   <message name="LogoutHttpGetIn" />
   <message name="LogoutHttpGetOut" />
   <message name="ExecuteNonquerySimpleHttpGetIn">
@@ -302,6 +351,17 @@
   <message name="LoginHttpPostOut">
     <part name="Body" element="s0:boolean" />
   </message>
+  <message name="GetLoggedUserHttpPostIn" />
+  <message name="GetLoggedUserHttpPostOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <message name="ChangePasswordHttpPostIn">
+    <part name="old_password" type="s:string" />
+    <part name="new_password" type="s:string" />
+  </message>
+  <message name="ChangePasswordHttpPostOut">
+    <part name="Body" element="s0:boolean" />
+  </message>
   <message name="LogoutHttpPostIn" />
   <message name="LogoutHttpPostOut" />
   <message name="ExecuteNonquerySimpleHttpPostIn">
@@ -330,6 +390,14 @@
     <operation name="Login">
       <input message="s0:LoginSoapIn" />
       <output message="s0:LoginSoapOut" />
+    </operation>
+    <operation name="GetLoggedUser">
+      <input message="s0:GetLoggedUserSoapIn" />
+      <output message="s0:GetLoggedUserSoapOut" />
+    </operation>
+    <operation name="ChangePassword">
+      <input message="s0:ChangePasswordSoapIn" />
+      <output message="s0:ChangePasswordSoapOut" />
     </operation>
     <operation name="Logout">
       <input message="s0:LogoutSoapIn" />
@@ -365,6 +433,14 @@
       <input message="s0:LoginSoapIn" />
       <output message="s0:LoginSoapOut" />
     </operation>
+    <operation name="GetLoggedUser">
+      <input message="s0:GetLoggedUserSoapIn" />
+      <output message="s0:GetLoggedUserSoapOut" />
+    </operation>
+    <operation name="ChangePassword">
+      <input message="s0:ChangePasswordSoapIn" />
+      <output message="s0:ChangePasswordSoapOut" />
+    </operation>
     <operation name="Logout">
       <input message="s0:LogoutSoapIn" />
       <output message="s0:LogoutSoapOut" />
@@ -399,6 +475,14 @@
       <input message="s0:LoginHttpGetIn" />
       <output message="s0:LoginHttpGetOut" />
     </operation>
+    <operation name="GetLoggedUser">
+      <input message="s0:GetLoggedUserHttpGetIn" />
+      <output message="s0:GetLoggedUserHttpGetOut" />
+    </operation>
+    <operation name="ChangePassword">
+      <input message="s0:ChangePasswordHttpGetIn" />
+      <output message="s0:ChangePasswordHttpGetOut" />
+    </operation>
     <operation name="Logout">
       <input message="s0:LogoutHttpGetIn" />
       <output message="s0:LogoutHttpGetOut" />
@@ -424,6 +508,14 @@
     <operation name="Login">
       <input message="s0:LoginHttpPostIn" />
       <output message="s0:LoginHttpPostOut" />
+    </operation>
+    <operation name="GetLoggedUser">
+      <input message="s0:GetLoggedUserHttpPostIn" />
+      <output message="s0:GetLoggedUserHttpPostOut" />
+    </operation>
+    <operation name="ChangePassword">
+      <input message="s0:ChangePasswordHttpPostIn" />
+      <output message="s0:ChangePasswordHttpPostOut" />
     </operation>
     <operation name="Logout">
       <input message="s0:LogoutHttpPostIn" />
@@ -455,6 +547,24 @@
     </operation>
     <operation name="Login">
       <soap:operation soapAction="http://lpsoft.org/skladserver/Login" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetLoggedUser">
+      <soap:operation soapAction="http://lpsoft.org/skladserver/GetLoggedUser" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ChangePassword">
+      <soap:operation soapAction="http://lpsoft.org/skladserver/ChangePassword" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -537,6 +647,24 @@
         <soap12:body use="literal" />
       </output>
     </operation>
+    <operation name="GetLoggedUser">
+      <soap12:operation soapAction="http://lpsoft.org/skladserver/GetLoggedUser" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ChangePassword">
+      <soap12:operation soapAction="http://lpsoft.org/skladserver/ChangePassword" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
     <operation name="Logout">
       <soap12:operation soapAction="http://lpsoft.org/skladserver/Logout" style="document" />
       <input>
@@ -612,6 +740,24 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
+    <operation name="GetLoggedUser">
+      <http:operation location="/GetLoggedUser" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ChangePassword">
+      <http:operation location="/ChangePassword" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
     <operation name="Logout">
       <http:operation location="/Logout" />
       <input>
@@ -660,6 +806,24 @@
     </operation>
     <operation name="Login">
       <http:operation location="/Login" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetLoggedUser">
+      <http:operation location="/GetLoggedUser" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ChangePassword">
+      <http:operation location="/ChangePassword" />
       <input>
         <mime:content part="" type="application/x-www-form-urlencoded" />
       </input>
