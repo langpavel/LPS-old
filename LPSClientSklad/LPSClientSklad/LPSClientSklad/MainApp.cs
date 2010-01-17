@@ -49,7 +49,9 @@ namespace LPSClientSklad
 						Connection = login.TryConnect();
 					if(Connection == null)
 					{
-						MainApp.ShowMessage(null, MessageType.Error, "Chyba", "Nezdařilo se připojení k serveru");
+						//MainApp.ShowMessage(null, MessageType.Error, "Chyba", "Nezdařilo se připojení k serveru");
+						login.laMessage.Markup = "<span color=\"#ff0000\">Nezdařilo se připojení k serveru</span>";
+						login.laMessage.TooltipText = "";
 						continue;
 					}
 					try 
@@ -61,9 +63,11 @@ namespace LPSClientSklad
 							break;
 						}
 					}
-					catch(Exception)
+					catch(Exception err)
 					{
-						MainApp.ShowMessage(null, MessageType.Error, "Chyba", "Neplatné jméno nebo heslo");
+						login.laMessage.Markup = "<span color=\"#ff0000\">Neplatné jméno nebo heslo</span>";
+						login.laMessage.TooltipText = err.ToString();
+						//MainApp.ShowMessage(null, MessageType.Error, "Chyba", "Neplatné jméno nebo heslo");
 					}
 				}
 			}

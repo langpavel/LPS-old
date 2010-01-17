@@ -9,7 +9,7 @@
     <property name="modal">True</property>
     <property name="window_position">center</property>
     <property name="default_width">350</property>
-    <property name="default_height">160</property>
+    <property name="default_height">190</property>
     <property name="destroy_with_parent">True</property>
     <property name="icon_name">dialog-password</property>
     <property name="type_hint">normal</property>
@@ -25,7 +25,7 @@
         <child>
           <widget class="GtkTable" id="table1">
             <property name="visible">True</property>
-            <property name="n_rows">3</property>
+            <property name="n_rows">4</property>
             <property name="n_columns">3</property>
             <child>
               <widget class="GtkLabel" id="label1">
@@ -118,6 +118,17 @@
                 <property name="right_attach">3</property>
                 <property name="x_options"></property>
                 <property name="y_options">GTK_EXPAND</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="laMessage">
+                <property name="visible">True</property>
+                <property name="use_markup">True</property>
+              </widget>
+              <packing>
+                <property name="right_attach">3</property>
+                <property name="top_attach">3</property>
+                <property name="bottom_attach">4</property>
               </packing>
             </child>
           </widget>
