@@ -1,0 +1,9 @@
+*.dll
+*.exe
+*.mdb
+*~
+*.userprefs
+*.pidb
+generated.cs
+LPServer/bin/*
+LPShared/LPShared/bin/*
