@@ -1,0 +1,720 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://lpsoft.org/skladserver/" name="Server" targetNamespace="http://lpsoft.org/skladserver/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://lpsoft.org/skladserver/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Ping">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="PingResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="PingResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Login">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="login" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="password" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LoginResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="LoginResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Logout">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="LogoutResponse">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="ExecuteNonquerySimple">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteNonquerySimpleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="ExecuteNonquerySimpleResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ArrayOfNpgsqlParameter">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="NpgsqlParameter" nillable="true" type="s0:NpgsqlParameter" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NpgsqlParameter">
+        <xs:complexContent mixed="false">
+          <xs:extension base="s0:MarshalByRefObject">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="1" default="0" name="Precision" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" maxOccurs="1" default="0" name="Scale" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" maxOccurs="1" default="0" name="Size" type="xs:int" />
+              <xs:element minOccurs="0" maxOccurs="1" default="String" name="DbType" type="s0:DbType" />
+              <xs:element minOccurs="0" maxOccurs="1" default="Text" name="NpgsqlDbType" type="s0:NpgsqlDbType" />
+              <xs:element minOccurs="0" maxOccurs="1" default="Input" name="Direction" type="s0:ParameterDirection" />
+              <xs:element minOccurs="1" maxOccurs="1" name="IsNullable" type="xs:boolean" />
+              <xs:element minOccurs="0" maxOccurs="1" default="" name="ParameterName" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="1" default="" name="SourceColumn" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="1" default="Current" name="SourceVersion" type="s0:DataRowVersion" />
+              <xs:element minOccurs="0" maxOccurs="1" name="Value" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:simpleType name="DbType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AnsiString" />
+          <xs:enumeration value="Binary" />
+          <xs:enumeration value="Byte" />
+          <xs:enumeration value="Boolean" />
+          <xs:enumeration value="Currency" />
+          <xs:enumeration value="Date" />
+          <xs:enumeration value="DateTime" />
+          <xs:enumeration value="Decimal" />
+          <xs:enumeration value="Double" />
+          <xs:enumeration value="Guid" />
+          <xs:enumeration value="Int16" />
+          <xs:enumeration value="Int32" />
+          <xs:enumeration value="Int64" />
+          <xs:enumeration value="Object" />
+          <xs:enumeration value="SByte" />
+          <xs:enumeration value="Single" />
+          <xs:enumeration value="String" />
+          <xs:enumeration value="Time" />
+          <xs:enumeration value="UInt16" />
+          <xs:enumeration value="UInt32" />
+          <xs:enumeration value="UInt64" />
+          <xs:enumeration value="VarNumeric" />
+          <xs:enumeration value="AnsiStringFixedLength" />
+          <xs:enumeration value="StringFixedLength" />
+          <xs:enumeration value="Xml" />
+          <xs:enumeration value="DateTime2" />
+          <xs:enumeration value="DateTimeOffset" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="NpgsqlDbType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Bigint" />
+          <xs:enumeration value="Boolean" />
+          <xs:enumeration value="Box" />
+          <xs:enumeration value="Bytea" />
+          <xs:enumeration value="Circle" />
+          <xs:enumeration value="Char" />
+          <xs:enumeration value="Date" />
+          <xs:enumeration value="Double" />
+          <xs:enumeration value="Integer" />
+          <xs:enumeration value="Line" />
+          <xs:enumeration value="LSeg" />
+          <xs:enumeration value="Money" />
+          <xs:enumeration value="Numeric" />
+          <xs:enumeration value="Path" />
+          <xs:enumeration value="Point" />
+          <xs:enumeration value="Polygon" />
+          <xs:enumeration value="Real" />
+          <xs:enumeration value="Smallint" />
+          <xs:enumeration value="Text" />
+          <xs:enumeration value="Time" />
+          <xs:enumeration value="Timestamp" />
+          <xs:enumeration value="Varchar" />
+          <xs:enumeration value="Refcursor" />
+          <xs:enumeration value="Inet" />
+          <xs:enumeration value="Bit" />
+          <xs:enumeration value="TimestampTZ" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ParameterDirection">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Input" />
+          <xs:enumeration value="Output" />
+          <xs:enumeration value="InputOutput" />
+          <xs:enumeration value="ReturnValue" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="DataRowVersion">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Original" />
+          <xs:enumeration value="Current" />
+          <xs:enumeration value="Proposed" />
+          <xs:enumeration value="Default" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="MarshalByRefObject" />
+      <xs:element name="ExecuteNonquery">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfNpgsqlParameter" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteNonqueryResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="ExecuteNonqueryResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteScalarSimple">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteScalarSimpleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="ExecuteScalarSimpleResult" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteScalar">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfNpgsqlParameter" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteScalarResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="ExecuteScalarResult" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NextSeqValue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generator" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NextSeqValueResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="NextSeqValueResult" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="boolean" type="xs:boolean" />
+      <xs:element name="int" type="xs:int" />
+      <xs:element name="long" type="xs:long" />
+    </xs:schema>
+  </types>
+  <message name="PingSoapIn">
+    <part name="parameters" element="s0:Ping" />
+  </message>
+  <message name="PingSoapOut">
+    <part name="parameters" element="s0:PingResponse" />
+  </message>
+  <message name="LoginSoapIn">
+    <part name="parameters" element="s0:Login" />
+  </message>
+  <message name="LoginSoapOut">
+    <part name="parameters" element="s0:LoginResponse" />
+  </message>
+  <message name="LogoutSoapIn">
+    <part name="parameters" element="s0:Logout" />
+  </message>
+  <message name="LogoutSoapOut">
+    <part name="parameters" element="s0:LogoutResponse" />
+  </message>
+  <message name="ExecuteNonquerySimpleSoapIn">
+    <part name="parameters" element="s0:ExecuteNonquerySimple" />
+  </message>
+  <message name="ExecuteNonquerySimpleSoapOut">
+    <part name="parameters" element="s0:ExecuteNonquerySimpleResponse" />
+  </message>
+  <message name="ExecuteNonquerySoapIn">
+    <part name="parameters" element="s0:ExecuteNonquery" />
+  </message>
+  <message name="ExecuteNonquerySoapOut">
+    <part name="parameters" element="s0:ExecuteNonqueryResponse" />
+  </message>
+  <message name="ExecuteScalarSimpleSoapIn">
+    <part name="parameters" element="s0:ExecuteScalarSimple" />
+  </message>
+  <message name="ExecuteScalarSimpleSoapOut">
+    <part name="parameters" element="s0:ExecuteScalarSimpleResponse" />
+  </message>
+  <message name="ExecuteScalarSoapIn">
+    <part name="parameters" element="s0:ExecuteScalar" />
+  </message>
+  <message name="ExecuteScalarSoapOut">
+    <part name="parameters" element="s0:ExecuteScalarResponse" />
+  </message>
+  <message name="NextSeqValueSoapIn">
+    <part name="parameters" element="s0:NextSeqValue" />
+  </message>
+  <message name="NextSeqValueSoapOut">
+    <part name="parameters" element="s0:NextSeqValueResponse" />
+  </message>
+  <message name="PingHttpGetIn" />
+  <message name="PingHttpGetOut">
+    <part name="Body" element="s0:boolean" />
+  </message>
+  <message name="LoginHttpGetIn">
+    <part name="login" type="s:string" />
+    <part name="password" type="s:string" />
+  </message>
+  <message name="LoginHttpGetOut">
+    <part name="Body" element="s0:boolean" />
+  </message>
+  <message name="LogoutHttpGetIn" />
+  <message name="LogoutHttpGetOut" />
+  <message name="ExecuteNonquerySimpleHttpGetIn">
+    <part name="sql" type="s:string" />
+  </message>
+  <message name="ExecuteNonquerySimpleHttpGetOut">
+    <part name="Body" element="s0:int" />
+  </message>
+  <message name="ExecuteScalarSimpleHttpGetIn">
+    <part name="sql" type="s:string" />
+  </message>
+  <message name="ExecuteScalarSimpleHttpGetOut">
+    <part name="Body" element="s0:anyType" />
+  </message>
+  <message name="NextSeqValueHttpGetIn">
+    <part name="generator" type="s:string" />
+  </message>
+  <message name="NextSeqValueHttpGetOut">
+    <part name="Body" element="s0:long" />
+  </message>
+  <message name="PingHttpPostIn" />
+  <message name="PingHttpPostOut">
+    <part name="Body" element="s0:boolean" />
+  </message>
+  <message name="LoginHttpPostIn">
+    <part name="login" type="s:string" />
+    <part name="password" type="s:string" />
+  </message>
+  <message name="LoginHttpPostOut">
+    <part name="Body" element="s0:boolean" />
+  </message>
+  <message name="LogoutHttpPostIn" />
+  <message name="LogoutHttpPostOut" />
+  <message name="ExecuteNonquerySimpleHttpPostIn">
+    <part name="sql" type="s:string" />
+  </message>
+  <message name="ExecuteNonquerySimpleHttpPostOut">
+    <part name="Body" element="s0:int" />
+  </message>
+  <message name="ExecuteScalarSimpleHttpPostIn">
+    <part name="sql" type="s:string" />
+  </message>
+  <message name="ExecuteScalarSimpleHttpPostOut">
+    <part name="Body" element="s0:anyType" />
+  </message>
+  <message name="NextSeqValueHttpPostIn">
+    <part name="generator" type="s:string" />
+  </message>
+  <message name="NextSeqValueHttpPostOut">
+    <part name="Body" element="s0:long" />
+  </message>
+  <portType name="ServerSoap">
+    <operation name="Ping">
+      <input message="s0:PingSoapIn" />
+      <output message="s0:PingSoapOut" />
+    </operation>
+    <operation name="Login">
+      <input message="s0:LoginSoapIn" />
+      <output message="s0:LoginSoapOut" />
+    </operation>
+    <operation name="Logout">
+      <input message="s0:LogoutSoapIn" />
+      <output message="s0:LogoutSoapOut" />
+    </operation>
+    <operation name="ExecuteNonquerySimple">
+      <input message="s0:ExecuteNonquerySimpleSoapIn" />
+      <output message="s0:ExecuteNonquerySimpleSoapOut" />
+    </operation>
+    <operation name="ExecuteNonquery">
+      <input message="s0:ExecuteNonquerySoapIn" />
+      <output message="s0:ExecuteNonquerySoapOut" />
+    </operation>
+    <operation name="ExecuteScalarSimple">
+      <input message="s0:ExecuteScalarSimpleSoapIn" />
+      <output message="s0:ExecuteScalarSimpleSoapOut" />
+    </operation>
+    <operation name="ExecuteScalar">
+      <input message="s0:ExecuteScalarSoapIn" />
+      <output message="s0:ExecuteScalarSoapOut" />
+    </operation>
+    <operation name="NextSeqValue">
+      <input message="s0:NextSeqValueSoapIn" />
+      <output message="s0:NextSeqValueSoapOut" />
+    </operation>
+  </portType>
+  <portType name="ServerSoap12">
+    <operation name="Ping">
+      <input message="s0:PingSoapIn" />
+      <output message="s0:PingSoapOut" />
+    </operation>
+    <operation name="Login">
+      <input message="s0:LoginSoapIn" />
+      <output message="s0:LoginSoapOut" />
+    </operation>
+    <operation name="Logout">
+      <input message="s0:LogoutSoapIn" />
+      <output message="s0:LogoutSoapOut" />
+    </operation>
+    <operation name="ExecuteNonquerySimple">
+      <input message="s0:ExecuteNonquerySimpleSoapIn" />
+      <output message="s0:ExecuteNonquerySimpleSoapOut" />
+    </operation>
+    <operation name="ExecuteNonquery">
+      <input message="s0:ExecuteNonquerySoapIn" />
+      <output message="s0:ExecuteNonquerySoapOut" />
+    </operation>
+    <operation name="ExecuteScalarSimple">
+      <input message="s0:ExecuteScalarSimpleSoapIn" />
+      <output message="s0:ExecuteScalarSimpleSoapOut" />
+    </operation>
+    <operation name="ExecuteScalar">
+      <input message="s0:ExecuteScalarSoapIn" />
+      <output message="s0:ExecuteScalarSoapOut" />
+    </operation>
+    <operation name="NextSeqValue">
+      <input message="s0:NextSeqValueSoapIn" />
+      <output message="s0:NextSeqValueSoapOut" />
+    </operation>
+  </portType>
+  <portType name="ServerHttpGet">
+    <operation name="Ping">
+      <input message="s0:PingHttpGetIn" />
+      <output message="s0:PingHttpGetOut" />
+    </operation>
+    <operation name="Login">
+      <input message="s0:LoginHttpGetIn" />
+      <output message="s0:LoginHttpGetOut" />
+    </operation>
+    <operation name="Logout">
+      <input message="s0:LogoutHttpGetIn" />
+      <output message="s0:LogoutHttpGetOut" />
+    </operation>
+    <operation name="ExecuteNonquerySimple">
+      <input message="s0:ExecuteNonquerySimpleHttpGetIn" />
+      <output message="s0:ExecuteNonquerySimpleHttpGetOut" />
+    </operation>
+    <operation name="ExecuteScalarSimple">
+      <input message="s0:ExecuteScalarSimpleHttpGetIn" />
+      <output message="s0:ExecuteScalarSimpleHttpGetOut" />
+    </operation>
+    <operation name="NextSeqValue">
+      <input message="s0:NextSeqValueHttpGetIn" />
+      <output message="s0:NextSeqValueHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="ServerHttpPost">
+    <operation name="Ping">
+      <input message="s0:PingHttpPostIn" />
+      <output message="s0:PingHttpPostOut" />
+    </operation>
+    <operation name="Login">
+      <input message="s0:LoginHttpPostIn" />
+      <output message="s0:LoginHttpPostOut" />
+    </operation>
+    <operation name="Logout">
+      <input message="s0:LogoutHttpPostIn" />
+      <output message="s0:LogoutHttpPostOut" />
+    </operation>
+    <operation name="ExecuteNonquerySimple">
+      <input message="s0:ExecuteNonquerySimpleHttpPostIn" />
+      <output message="s0:ExecuteNonquerySimpleHttpPostOut" />
+    </operation>
+    <operation name="ExecuteScalarSimple">
+      <input message="s0:ExecuteScalarSimpleHttpPostIn" />
+      <output message="s0:ExecuteScalarSimpleHttpPostOut" />
+    </operation>
+    <operation name="NextSeqValue">
+      <input message="s0:NextSeqValueHttpPostIn" />
+      <output message="s0:NextSeqValueHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="ServerSoap" type="s0:ServerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Ping">
+      <soap:operation soapAction="http://lpsoft.org/skladserver/Ping" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Login">
+      <soap:operation soapAction="http://lpsoft.org/skladserver/Login" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Logout">
+      <soap:operation soapAction="http://lpsoft.org/skladserver/Logout" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteNonquerySimple">
+      <soap:operation soapAction="http://lpsoft.org/skladserver/ExecuteNonquerySimple" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteNonquery">
+      <soap:operation soapAction="http://lpsoft.org/skladserver/ExecuteNonquery" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteScalarSimple">
+      <soap:operation soapAction="http://lpsoft.org/skladserver/ExecuteScalarSimple" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteScalar">
+      <soap:operation soapAction="http://lpsoft.org/skladserver/ExecuteScalar" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="NextSeqValue">
+      <soap:operation soapAction="http://lpsoft.org/skladserver/NextSeqValue" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="ServerSoap12" type="s0:ServerSoap12">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Ping">
+      <soap12:operation soapAction="http://lpsoft.org/skladserver/Ping" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Login">
+      <soap12:operation soapAction="http://lpsoft.org/skladserver/Login" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Logout">
+      <soap12:operation soapAction="http://lpsoft.org/skladserver/Logout" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteNonquerySimple">
+      <soap12:operation soapAction="http://lpsoft.org/skladserver/ExecuteNonquerySimple" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteNonquery">
+      <soap12:operation soapAction="http://lpsoft.org/skladserver/ExecuteNonquery" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteScalarSimple">
+      <soap12:operation soapAction="http://lpsoft.org/skladserver/ExecuteScalarSimple" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteScalar">
+      <soap12:operation soapAction="http://lpsoft.org/skladserver/ExecuteScalar" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="NextSeqValue">
+      <soap12:operation soapAction="http://lpsoft.org/skladserver/NextSeqValue" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="ServerHttpGet" type="s0:ServerHttpGet">
+    <http:binding verb="GET" />
+    <operation name="Ping">
+      <http:operation location="/Ping" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Login">
+      <http:operation location="/Login" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Logout">
+      <http:operation location="/Logout" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output />
+    </operation>
+    <operation name="ExecuteNonquerySimple">
+      <http:operation location="/ExecuteNonquerySimple" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ExecuteScalarSimple">
+      <http:operation location="/ExecuteScalarSimple" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="NextSeqValue">
+      <http:operation location="/NextSeqValue" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="ServerHttpPost" type="s0:ServerHttpPost">
+    <http:binding verb="POST" />
+    <operation name="Ping">
+      <http:operation location="/Ping" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Login">
+      <http:operation location="/Login" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Logout">
+      <http:operation location="/Logout" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output />
+    </operation>
+    <operation name="ExecuteNonquerySimple">
+      <http:operation location="/ExecuteNonquerySimple" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ExecuteScalarSimple">
+      <http:operation location="/ExecuteScalarSimple" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="NextSeqValue">
+      <http:operation location="/NextSeqValue" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Server">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">LPSoft Sklad web service</wsdl:documentation>
+    <port name="ServerSoap" binding="s0:ServerSoap">
+      <soap:address location="http://localhost:8080/Server.asmx" />
+    </port>
+    <port name="ServerSoap12" binding="s0:ServerSoap12">
+      <soap12:address location="http://localhost:8080/Server.asmx" />
+    </port>
+    <port name="ServerHttpGet" binding="s0:ServerHttpGet">
+      <http:address location="http://localhost:8080/Server.asmx" />
+    </port>
+    <port name="ServerHttpPost" binding="s0:ServerHttpPost">
+      <http:address location="http://localhost:8080/Server.asmx" />
+    </port>
+  </service>
+</definitions>

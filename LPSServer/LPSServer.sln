@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSServer", "LPSServer.csproj", "{4F31D29F-031C-4F3A-B735-0566275755F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSShared", "..\LPSShared\LPSShared\LPSShared.csproj", "{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F31D29F-031C-4F3A-B735-0566275755F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F31D29F-031C-4F3A-B735-0566275755F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F31D29F-031C-4F3A-B735-0566275755F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F31D29F-031C-4F3A-B735-0566275755F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = LPSServer.csproj
+	EndGlobalSection
+EndGlobal
