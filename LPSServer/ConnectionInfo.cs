@@ -28,12 +28,8 @@ namespace LPSServer
 		public static ConnectionInfo Create(string login, string password)
 		{
 			NpgsqlConnection connection = new NpgsqlConnection();
-			connection.ConnectionString = String.Format(
-				"Server={0};Port={1};" +
-				"Database={2};Userid={3};Password={4};" +
-				"Protocol=3;Pooling=true;MinPoolSize=1;MaxPoolSize=20;ConnectionLifeTime=15;",
-				"127.0.0.1", "5432",
-				"filmarena_sklad", "filmarena", "filmArena3095");
+			connection.ConnectionString =
+				System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 			connection.Open();
 
 			ConnectionInfo result = new ConnectionInfo();

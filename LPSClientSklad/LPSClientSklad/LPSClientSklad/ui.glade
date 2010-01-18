@@ -76,6 +76,7 @@
               <widget class="GtkEntry" id="edtLogin">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="has_focus">True</property>
                 <property name="invisible_char">&#x25CF;</property>
               </widget>
               <packing>
@@ -91,6 +92,7 @@
                 <property name="can_focus">True</property>
                 <property name="visibility">False</property>
                 <property name="invisible_char">&#x25CF;</property>
+                <property name="activates_default">True</property>
               </widget>
               <packing>
                 <property name="left_attach">1</property>
