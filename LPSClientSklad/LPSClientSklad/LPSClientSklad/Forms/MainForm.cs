@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using Gtk;
 
 namespace LPSClientSklad
@@ -24,7 +25,11 @@ namespace LPSClientSklad
 			
 			this.Window.Title = "LPS Sklad: " + this.UserLogin + " @ " + this.ServerUrl;
 			
-			InitTreeDataSample();
+			this.Window.DeleteEvent += delegate(object o, DeleteEventArgs args) {
+				Application.Quit();
+			};
+			
+			LoadSQL("select * from c_sklad;");
 		}
 
 		public void AppQuit(object sender, EventArgs args)
@@ -39,51 +44,31 @@ namespace LPSClientSklad
 			dialog.Destroy();
 		}
 		
-		
-		private ListStore DataStore { get; set; }
-		public void InitTreeDataSample()
-		{
-			DataStore = new ListStore(typeof(string), typeof(string), typeof(string));
-			for(int i = 1; i < 10000; i++)
-			{
-				DataStore.AppendValues("abc1 " + i.ToString(), "def2", "ghi1");
-				DataStore.AppendValues("abc2 " + i.ToString(), "def3", "ghi2");
-				DataStore.AppendValues("abc3 " + i.ToString(), "def4", "ghi3");
-				DataStore.AppendValues("abc4 " + i.ToString(), "def5", "ghi4");
-			}
-			treeData.Model = DataStore;
-
-			treeData.AppendColumn ("Demo", new CellRendererText (), "text", 0);
-
-			TreeViewColumn col = new TreeViewColumn("Data list", new CellRendererText(), "text", 1);
-			col.Resizable = true;
-			col.FixedWidth = 25;
-			col.Clickable = true;
-			col.Alignment = 1.0f;
-			treeData.AppendColumn(col);
-
-			treeData.AppendColumn ("Data", new CellRendererText (), "text", 1);
-			
-			treeData.HeadersVisible = true;
-			treeData.EnableGridLines = TreeViewGridLines.Both;
-			treeData.EnableSearch = true;
-			treeData.EnableTreeLines = false;
-			treeData.HeadersClickable = true;
-			treeData.HoverSelection = true;
-			treeData.Reorderable = true;
-			treeData.RubberBanding = true;
-			treeData.RulesHint = true;
-			treeData.SearchColumn = 0;
-			treeData.ShowExpanders = false;
-		}
-
 		public void RowActivated(object sender, RowActivatedArgs args)
 		{
-			TreeIter iter;
-			if(DataStore.GetIter(out iter,args.Path))
+			try
 			{
-				Console.WriteLine(DataStore.GetValue(iter, 0));
+				TreeView view = sender as TreeView;
+				TreeModelAdapter adapter = view.Model as TreeModelAdapter;
+				DataTableTreeModel model = adapter.Implementor as DataTableTreeModel;
+				DataRow row = model.GetRow(args.Path);
+				Console.WriteLine("ID: " + row["id"] );
 			}
+			catch(Exception err)
+			{
+				Console.WriteLine(err.ToString());
+			}
+		}
+
+		public void LoadSQL(string sql)
+		{
+			DataSet ds = Connection.GetDataSetSimple(sql);
+			DataTableTreeModel model = new DataTableTreeModel();
+			model.DataTable = ds.Tables[0];
+			treeData.Model = new TreeModelAdapter(model);
+			treeData.AppendColumn ("Id", new CellRendererText (), "text", 0);
+			treeData.AppendColumn ("2", new CellRendererText (), "text", 1);
+			treeData.AppendColumn ("3", new CellRendererText (), "text", 2);
 		}
 		
 	}

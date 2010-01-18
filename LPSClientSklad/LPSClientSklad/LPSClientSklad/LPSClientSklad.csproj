@@ -53,6 +53,11 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="Npgsql" />
+    <Reference Include="Mono.Data" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -75,6 +80,7 @@
     <Compile Include="Forms\XmlDialogBase.cs" />
     <Compile Include="Forms\XmlWindowBase.cs" />
     <Compile Include="Forms\PasswdChDialog.cs" />
+    <Compile Include="DataTableTreeModel\DataTableTreeModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -88,5 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />
+    <Folder Include="DataTableTreeModel\" />
   </ItemGroup>
 </Project>

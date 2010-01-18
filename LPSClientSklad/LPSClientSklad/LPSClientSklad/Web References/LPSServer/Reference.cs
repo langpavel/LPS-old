@@ -41,6 +41,10 @@ namespace LPSClientSklad.LPSServer {
         
         private System.Threading.SendOrPostCallback NextSeqValueOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetDataSetSimpleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetDataSetOperationCompleted;
+        
         public Server() {
             this.Url = "http://localhost:8080/Server.asmx";
         }
@@ -68,6 +72,10 @@ namespace LPSClientSklad.LPSServer {
         public event ExecuteScalarCompletedEventHandler ExecuteScalarCompleted;
         
         public event NextSeqValueCompletedEventHandler NextSeqValueCompleted;
+        
+        public event GetDataSetSimpleCompletedEventHandler GetDataSetSimpleCompleted;
+        
+        public event GetDataSetCompletedEventHandler GetDataSetCompleted;
         
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/Ping", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public bool Ping() {
@@ -427,6 +435,81 @@ namespace LPSClientSklad.LPSServer {
             if ((this.NextSeqValueCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.NextSeqValueCompleted(this, new NextSeqValueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/GetDataSetSimple", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public System.Data.DataSet GetDataSetSimple(string sql) {
+            object[] results = this.Invoke("GetDataSetSimple", new object[] {
+                        sql});
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginGetDataSetSimple(string sql, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetDataSetSimple", new object[] {
+                        sql}, callback, asyncState);
+        }
+        
+        public System.Data.DataSet EndGetDataSetSimple(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        public void GetDataSetSimpleAsync(string sql) {
+            this.GetDataSetSimpleAsync(sql, null);
+        }
+        
+        public void GetDataSetSimpleAsync(string sql, object userState) {
+            if ((this.GetDataSetSimpleOperationCompleted == null)) {
+                this.GetDataSetSimpleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDataSetSimpleCompleted);
+            }
+            this.InvokeAsync("GetDataSetSimple", new object[] {
+                        sql}, this.GetDataSetSimpleOperationCompleted, userState);
+        }
+        
+        private void OnGetDataSetSimpleCompleted(object arg) {
+            if ((this.GetDataSetSimpleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetDataSetSimpleCompleted(this, new GetDataSetSimpleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/GetDataSet", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public System.Data.DataSet GetDataSet(string sql, NpgsqlParameter[] parameters) {
+            object[] results = this.Invoke("GetDataSet", new object[] {
+                        sql,
+                        parameters});
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginGetDataSet(string sql, NpgsqlParameter[] parameters, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetDataSet", new object[] {
+                        sql,
+                        parameters}, callback, asyncState);
+        }
+        
+        public System.Data.DataSet EndGetDataSet(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        public void GetDataSetAsync(string sql, NpgsqlParameter[] parameters) {
+            this.GetDataSetAsync(sql, parameters, null);
+        }
+        
+        public void GetDataSetAsync(string sql, NpgsqlParameter[] parameters, object userState) {
+            if ((this.GetDataSetOperationCompleted == null)) {
+                this.GetDataSetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDataSetCompleted);
+            }
+            this.InvokeAsync("GetDataSet", new object[] {
+                        sql,
+                        parameters}, this.GetDataSetOperationCompleted, userState);
+        }
+        
+        private void OnGetDataSetCompleted(object arg) {
+            if ((this.GetDataSetCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetDataSetCompleted(this, new GetDataSetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
     }
@@ -903,4 +986,42 @@ namespace LPSClientSklad.LPSServer {
     }
     
     public delegate void NextSeqValueCompletedEventHandler(object sender, NextSeqValueCompletedEventArgs args);
+    
+    public partial class GetDataSetSimpleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetDataSetSimpleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void GetDataSetSimpleCompletedEventHandler(object sender, GetDataSetSimpleCompletedEventArgs args);
+    
+    public partial class GetDataSetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetDataSetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void GetDataSetCompletedEventHandler(object sender, GetDataSetCompletedEventArgs args);
 }

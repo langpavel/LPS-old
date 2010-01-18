@@ -232,10 +232,61 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="GetDataSetSimple">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDataSetSimpleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetDataSetSimpleResult">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="xs:schema" />
+                  <xs:any />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDataSet">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfNpgsqlParameter" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDataSetResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetDataSetResult">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="xs:schema" />
+                  <xs:any />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="boolean" type="xs:boolean" />
       <xs:element name="string" nillable="true" type="xs:string" />
       <xs:element name="int" type="xs:int" />
       <xs:element name="long" type="xs:long" />
+      <xs:element name="DataSet" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
     </xs:schema>
   </types>
   <message name="PingSoapIn">
@@ -298,6 +349,18 @@
   <message name="NextSeqValueSoapOut">
     <part name="parameters" element="s0:NextSeqValueResponse" />
   </message>
+  <message name="GetDataSetSimpleSoapIn">
+    <part name="parameters" element="s0:GetDataSetSimple" />
+  </message>
+  <message name="GetDataSetSimpleSoapOut">
+    <part name="parameters" element="s0:GetDataSetSimpleResponse" />
+  </message>
+  <message name="GetDataSetSoapIn">
+    <part name="parameters" element="s0:GetDataSet" />
+  </message>
+  <message name="GetDataSetSoapOut">
+    <part name="parameters" element="s0:GetDataSetResponse" />
+  </message>
   <message name="PingHttpGetIn" />
   <message name="PingHttpGetOut">
     <part name="Body" element="s0:boolean" />
@@ -339,6 +402,12 @@
   </message>
   <message name="NextSeqValueHttpGetOut">
     <part name="Body" element="s0:long" />
+  </message>
+  <message name="GetDataSetSimpleHttpGetIn">
+    <part name="sql" type="s:string" />
+  </message>
+  <message name="GetDataSetSimpleHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
   </message>
   <message name="PingHttpPostIn" />
   <message name="PingHttpPostOut">
@@ -382,6 +451,12 @@
   <message name="NextSeqValueHttpPostOut">
     <part name="Body" element="s0:long" />
   </message>
+  <message name="GetDataSetSimpleHttpPostIn">
+    <part name="sql" type="s:string" />
+  </message>
+  <message name="GetDataSetSimpleHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
   <portType name="ServerSoap">
     <operation name="Ping">
       <input message="s0:PingSoapIn" />
@@ -422,6 +497,14 @@
     <operation name="NextSeqValue">
       <input message="s0:NextSeqValueSoapIn" />
       <output message="s0:NextSeqValueSoapOut" />
+    </operation>
+    <operation name="GetDataSetSimple">
+      <input message="s0:GetDataSetSimpleSoapIn" />
+      <output message="s0:GetDataSetSimpleSoapOut" />
+    </operation>
+    <operation name="GetDataSet">
+      <input message="s0:GetDataSetSoapIn" />
+      <output message="s0:GetDataSetSoapOut" />
     </operation>
   </portType>
   <portType name="ServerSoap12">
@@ -465,6 +548,14 @@
       <input message="s0:NextSeqValueSoapIn" />
       <output message="s0:NextSeqValueSoapOut" />
     </operation>
+    <operation name="GetDataSetSimple">
+      <input message="s0:GetDataSetSimpleSoapIn" />
+      <output message="s0:GetDataSetSimpleSoapOut" />
+    </operation>
+    <operation name="GetDataSet">
+      <input message="s0:GetDataSetSoapIn" />
+      <output message="s0:GetDataSetSoapOut" />
+    </operation>
   </portType>
   <portType name="ServerHttpGet">
     <operation name="Ping">
@@ -499,6 +590,10 @@
       <input message="s0:NextSeqValueHttpGetIn" />
       <output message="s0:NextSeqValueHttpGetOut" />
     </operation>
+    <operation name="GetDataSetSimple">
+      <input message="s0:GetDataSetSimpleHttpGetIn" />
+      <output message="s0:GetDataSetSimpleHttpGetOut" />
+    </operation>
   </portType>
   <portType name="ServerHttpPost">
     <operation name="Ping">
@@ -532,6 +627,10 @@
     <operation name="NextSeqValue">
       <input message="s0:NextSeqValueHttpPostIn" />
       <output message="s0:NextSeqValueHttpPostOut" />
+    </operation>
+    <operation name="GetDataSetSimple">
+      <input message="s0:GetDataSetSimpleHttpPostIn" />
+      <output message="s0:GetDataSetSimpleHttpPostOut" />
     </operation>
   </portType>
   <binding name="ServerSoap" type="s0:ServerSoap">
@@ -619,6 +718,24 @@
     </operation>
     <operation name="NextSeqValue">
       <soap:operation soapAction="http://lpsoft.org/skladserver/NextSeqValue" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetDataSetSimple">
+      <soap:operation soapAction="http://lpsoft.org/skladserver/GetDataSetSimple" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetDataSet">
+      <soap:operation soapAction="http://lpsoft.org/skladserver/GetDataSet" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -719,6 +836,24 @@
         <soap12:body use="literal" />
       </output>
     </operation>
+    <operation name="GetDataSetSimple">
+      <soap12:operation soapAction="http://lpsoft.org/skladserver/GetDataSetSimple" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetDataSet">
+      <soap12:operation soapAction="http://lpsoft.org/skladserver/GetDataSet" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
   </binding>
   <binding name="ServerHttpGet" type="s0:ServerHttpGet">
     <http:binding verb="GET" />
@@ -792,6 +927,15 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
+    <operation name="GetDataSetSimple">
+      <http:operation location="/GetDataSetSimple" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
   </binding>
   <binding name="ServerHttpPost" type="s0:ServerHttpPost">
     <http:binding verb="POST" />
@@ -858,6 +1002,15 @@
     </operation>
     <operation name="NextSeqValue">
       <http:operation location="/NextSeqValue" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetDataSetSimple">
+      <http:operation location="/GetDataSetSimple" />
       <input>
         <mime:content part="" type="application/x-www-form-urlencoded" />
       </input>
