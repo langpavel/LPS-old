@@ -7,13 +7,20 @@ namespace LPSClientSklad
 	{
 		public Glade.XML GladeXML { get; set; }
 		public Window Window { get; set; }
+		//public bool DestroyOnDelete { get; set; }
 		
 		public XmlWindowBase ()
 		{
+			//DestroyOnDelete = true;
 		}
 		
 		public virtual void OnCreate()
 		{
+			// to neni ta udalost! ;-(
+			//this.Window.DeleteEvent += delegate {
+			//	if(DestroyOnDelete)
+			//		Destroy();
+			//};
 		}
 
 		public virtual void Destroy()

@@ -1,6 +1,7 @@
 using System;
 using System.Web;
 using System.Web.Services;
+using System.Data;
 using Npgsql;
 
 namespace LPSServer
@@ -96,5 +97,34 @@ namespace LPSServer
 			return Convert.ToInt64(ci.ExecuteScalar("select nextval(:gener)",
 				new NpgsqlParameter("gener", generator)));
 		}
+		
+		[WebMethod(EnableSession=true)]
+		public DataSet GetDataSetSimple(string sql)
+		{
+			ConnectionInfo ci = GetConnectionInfo();
+			
+			using(NpgsqlCommand cmd = ci.CreateCommand(sql))
+			{
+				NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
+				DataSet ds = new DataSet();
+				da.Fill(ds);
+				return ds;
+			}
+		}
+		
+		[WebMethod(EnableSession=true)]
+		public DataSet GetDataSet(string sql, params NpgsqlParameter[] parameters)
+		{
+			ConnectionInfo ci = GetConnectionInfo();
+			
+			using(NpgsqlCommand cmd = ci.CreateCommand(sql, parameters))
+			{
+				NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
+				DataSet ds = new DataSet();
+				da.Fill(ds);
+				return ds;
+			}
+		}
+
 	}
 }

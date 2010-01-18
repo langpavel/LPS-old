@@ -1,5 +1,6 @@
 using System;
 using Gtk;
+using Microsoft.Win32;
 
 namespace LPSClientSklad
 {
@@ -19,9 +20,14 @@ namespace LPSClientSklad
 		{
 			base.OnCreate ();
 			laMessage.Markup = "";
+			
+			string s;
+			s = Registry.GetValue("HKEY_CURRENT_USER\\Software\\LPSoft", "LastServer", null) as string;
+			if(s != null) edtServer.Text = s;
+			s = Registry.GetValue("HKEY_CURRENT_USER\\Software\\LPSoft", "LastUser", null) as string;
+			if(s != null) edtLogin.Text = s;
 		}
 
-		
 		public void btnTestServer_clicked(object sender, EventArgs args)
 		{
 			try

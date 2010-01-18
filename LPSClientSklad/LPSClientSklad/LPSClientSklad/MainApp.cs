@@ -2,6 +2,7 @@ using System;
 using System.Web;
 using Gtk;
 using LPSServer;
+using Microsoft.Win32;
 
 namespace LPSClientSklad
 {
@@ -60,6 +61,11 @@ namespace LPSClientSklad
 						{
 							ServerUrl = login.edtServer.Text;
 							UserLogin = login.edtLogin.Text;
+							try {
+								Registry.SetValue("HKEY_CURRENT_USER\\Software\\LPSoft", "LastServer", ServerUrl, RegistryValueKind.String);
+								Registry.SetValue("HKEY_CURRENT_USER\\Software\\LPSoft", "LastUser", UserLogin, RegistryValueKind.String);
+							} catch { }
+			
 							break;
 						}
 					}
