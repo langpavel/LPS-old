@@ -7,7 +7,8 @@ namespace LPSClientSklad
 
 	public class MainForm : XmlWindowBase
 	{
-		[Glade.Widget] TreeView treeData;
+		[Glade.Widget] TreeView viewModules;
+		[Glade.Widget] Notebook nbData;
 		
 		public LPSServer.Server Connection { get; set; }
 		public string ServerUrl { get; set; }
@@ -29,7 +30,16 @@ namespace LPSClientSklad
 				Application.Quit();
 			};
 			
-			LoadSQL("select * from c_sklad;");
+			//viewModules.
+			
+			NewTabBySQL("Sklady", "select * from c_sklad;");
+			NewTabBySQL("Sklady 2", "select * from c_sklad;");
+			NewTabBySQL("Sklady", "select * from c_sklad;");
+			NewTabBySQL("Sklady 2", "select * from c_sklad;");
+			NewTabBySQL("Sklady", "select * from c_sklad;");
+			NewTabBySQL("Sklady 2", "select * from c_sklad;");
+			NewTabBySQL("Sklady", "select * from c_sklad;");
+			NewTabBySQL("Sklady 2", "select * from c_sklad;");
 		}
 
 		public void AppQuit(object sender, EventArgs args)
@@ -60,15 +70,38 @@ namespace LPSClientSklad
 			}
 		}
 
-		public void LoadSQL(string sql)
+		public void NewTabBySQL(string label, string sql)
 		{
+			TreeView tw = new TreeView();
+			tw.RowActivated += RowActivated;
+			HBox header = new HBox();
+			header.Add(new Label(label));
+			Image img = new Image("gtk-close", IconSize.Menu);
+			Button btnCloseTab = new Button(img);
+			btnCloseTab.BorderWidth = 0;
+			btnCloseTab.Relief = ReliefStyle.None;
+			btnCloseTab.WidthRequest = 19;
+			btnCloseTab.HeightRequest = 19;
+			header.Add(btnCloseTab);
+			header.ShowAll();
+			
+			ScrolledWindow page = new ScrolledWindow();
+			page.Add(tw);
+				
+			int pgIdx = nbData.AppendPage(page, header);
+			
 			DataSet ds = Connection.GetDataSetSimple(sql);
-			DataTableTreeModel model = new DataTableTreeModel();
-			model.DataTable = ds.Tables[0];
-			treeData.Model = new TreeModelAdapter(model);
-			treeData.AppendColumn ("Id", new CellRendererText (), "text", 0);
-			treeData.AppendColumn ("2", new CellRendererText (), "text", 1);
-			treeData.AppendColumn ("3", new CellRendererText (), "text", 2);
+			DataTableTreeModel.AssignNew(tw, ds.Tables[0]);
+			
+			btnCloseTab.Clicked += delegate {
+				nbData.Remove(header);
+				nbData.Remove(page);
+				tw.Dispose();
+				page.Dispose();
+				header.Dispose();
+				ds.Dispose();
+			};
+			
 		}
 		
 	}

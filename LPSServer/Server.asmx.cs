@@ -1,7 +1,9 @@
 using System;
+using System.IO;
 using System.Web;
 using System.Web.Services;
 using System.Data;
+using System.Reflection;
 using Npgsql;
 
 namespace LPSServer
@@ -126,5 +128,23 @@ namespace LPSServer
 			}
 		}
 
+		[WebMethod(EnableSession=false, BufferResponse=false)]
+		public string GetTextResource(string path)
+		{
+			string resPath = Assembly.GetExecutingAssembly().GetName().FullName;
+			resPath = Path.GetDirectoryName(resPath);
+			resPath = Path.Combine(resPath, "resources");
+			path = Path.Combine(resPath, path);
+			try
+			{				
+				using(StreamReader reader = File.OpenText(path))
+					return reader.ReadToEnd();
+			}
+			catch
+			{
+				return null;
+			}
+		}
+		
 	}
 }

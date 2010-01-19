@@ -44,11 +44,16 @@ namespace LPSClientSklad
 
 		public int NColumns {
 			get { return this.DataTable.Columns.Count; }
-		} 
+		}
 		
 		public GLib.GType GetColumnType (int col)
 		{
 			Type managedType = this.DataTable.Columns[col].DataType;
+			//Console.WriteLine(managedType.ToString());
+			if(managedType == typeof(Int64))
+				return GLib.GType.Int64;
+			if(managedType == typeof(Int32))
+				return GLib.GType.Int;
 			return GLib.GType.FromName(managedType.Name);
 			/*
 			if(managedType == typeof(String))
@@ -161,6 +166,7 @@ namespace LPSClientSklad
 		{
 			child = TreeIter.Zero;
 
+			// root?
 			if (parent.UserData == IntPtr.Zero) 
 			{
 				if (this.DataTable.Rows.Count <= n)
@@ -195,5 +201,20 @@ namespace LPSClientSklad
 			return GetNodeAtPath(path) as DataRow;
 		}
 		
+		public static void AssignNew(TreeView view, DataTable dt)
+		{
+			DataTableTreeModel model = new DataTableTreeModel();
+			model.DataTable = dt;
+			view.Model = new TreeModelAdapter(model);
+			for(int i = 0; i < dt.Columns.Count; i++)
+			{
+				DataColumn dc = dt.Columns[i];
+				string caption = dc.Caption;
+				CellRendererText renderer = new CellRendererText();
+				TreeViewColumn wc = new TreeViewColumn(caption, renderer, "text", i);
+				view.AppendColumn(wc);
+			}
+
+		}
 	}
 }
