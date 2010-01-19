@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<modules>
+	<navigation-tree>
+		<item text="Číselníky">
+			<item ref="c_sklad" />
+		</item>
+	</navigation-tree>
+	<module id="c_sklad" text="Sklady">
+		<list>
+			<sql>select * from c_sklad</sql>
+		</list>
+	</module>
+</modules>
