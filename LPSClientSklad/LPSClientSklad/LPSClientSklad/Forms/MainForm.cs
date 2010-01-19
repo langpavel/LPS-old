@@ -45,7 +45,7 @@ namespace LPSClientSklad
 		private void InitModules()
 		{
 			Type t_str = typeof(string);
-			TreeStore tree = new TreeStore(t_str, typeof(Gdk.Pixbuf), t_str);
+			TreeStore tree = new TreeStore(t_str, typeof(Gdk.Pixbuf), t_str, t_str);
 			viewModules.Model = tree;
 			
 			//Gdk.Pixbuf i_folder = new Gdk.Pixbuf(null, "Images.database.png");
@@ -59,7 +59,7 @@ namespace LPSClientSklad
 			TreeIter uziv = tree.AppendValues("", null, "Adresář");
 			TreeIter sklad = tree.AppendValues("", null, "Skladové hospodářství");
 			TreeIter cisel = tree.AppendValues("", null, "Číselníky");
-			tree.AppendValues(cisel, "c_sklad", null, "Sklady");
+			tree.AppendValues(cisel, "__raw", null, "Sklady", "select * from c_sklad");
 			
 			viewModules.ExpandAll();
 		}
@@ -72,8 +72,8 @@ namespace LPSClientSklad
 			if(store.GetIter(out iter, args.Path))
 			{
 				string id = store.GetValue(iter, 0) as string;
-				if(id == "c_sklad")
-					NewTabBySQL("Sklady", "select * from c_sklad");
+				if(id == "__raw")
+					NewTabBySQL(store.GetValue(iter, 2) as string, store.GetValue(iter, 3) as string);
 			}
 		}
 		
