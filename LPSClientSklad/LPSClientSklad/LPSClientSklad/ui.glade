@@ -432,6 +432,7 @@
                   <widget class="GtkTreeView" id="viewModules">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <signal name="row_activated" handler="ViewModulesRowActivated"/>
                   </widget>
                 </child>
                 <child>

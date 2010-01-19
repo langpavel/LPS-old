@@ -30,7 +30,7 @@ namespace LPSClientSklad
 				Application.Quit();
 			};
 			
-			//viewModules.
+			InitModules();
 			
 			NewTabBySQL("Sklady", "select * from c_sklad;");
 			NewTabBySQL("Sklady 2", "select * from c_sklad;");
@@ -42,6 +42,41 @@ namespace LPSClientSklad
 			NewTabBySQL("Sklady 2", "select * from c_sklad;");
 		}
 
+		private void InitModules()
+		{
+			Type t_str = typeof(string);
+			TreeStore tree = new TreeStore(t_str, typeof(Gdk.Pixbuf), t_str);
+			viewModules.Model = tree;
+			
+			//Gdk.Pixbuf i_folder = new Gdk.Pixbuf(null, "Images.database.png");
+			
+			//CellRendererPixbuf iconRenderer = new CellRendererPixbuf();
+			//viewModules.AppendColumn(new TreeViewColumn("", iconRenderer, "stock", 1));
+			viewModules.AppendColumn(new TreeViewColumn("Modul", new CellRendererText(), "text", 2));
+			viewModules.HeadersVisible = false;
+			//viewModules.RowActivated += ViewModulesRowActivated;
+			
+			TreeIter uziv = tree.AppendValues("", null, "Adresář");
+			TreeIter sklad = tree.AppendValues("", null, "Skladové hospodářství");
+			TreeIter cisel = tree.AppendValues("", null, "Číselníky");
+			tree.AppendValues(cisel, "c_sklad", null, "Sklady");
+			
+			viewModules.ExpandAll();
+		}
+
+		public void ViewModulesRowActivated (object o, RowActivatedArgs args)
+		{
+			TreeView view = o as TreeView;
+			TreeStore store = view.Model as TreeStore;
+			TreeIter iter;
+			if(store.GetIter(out iter, args.Path))
+			{
+				string id = store.GetValue(iter, 0) as string;
+				if(id == "c_sklad")
+					NewTabBySQL("Sklady", "select * from c_sklad");
+			}
+		}
+		
 		public void AppQuit(object sender, EventArgs args)
 		{
 			Application.Quit();
@@ -87,6 +122,7 @@ namespace LPSClientSklad
 			
 			ScrolledWindow page = new ScrolledWindow();
 			page.Add(tw);
+			page.ShowAll();
 				
 			int pgIdx = nbData.AppendPage(page, header);
 			
@@ -101,7 +137,8 @@ namespace LPSClientSklad
 				header.Dispose();
 				ds.Dispose();
 			};
-			
+
+			nbData.Page = pgIdx;
 		}
 		
 	}

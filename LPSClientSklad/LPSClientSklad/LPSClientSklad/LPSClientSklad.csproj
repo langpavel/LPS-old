@@ -66,6 +66,9 @@
     <EmbeddedResource Include="ui.glade">
       <LogicalName>ui.glade</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="Images\application-vnd.oasis.opendocument.database.png">
+      <LogicalName>Images.database.png</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gtk-gui\generated.cs" />
@@ -81,6 +84,7 @@
     <Compile Include="Forms\XmlWindowBase.cs" />
     <Compile Include="Forms\PasswdChDialog.cs" />
     <Compile Include="DataTableTreeModel\DataTableTreeModel.cs" />
+    <Compile Include="DataTableTreeModel\CellRendererText2.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -95,5 +99,6 @@
   <ItemGroup>
     <Folder Include="Forms\" />
     <Folder Include="DataTableTreeModel\" />
+    <Folder Include="Images\" />
   </ItemGroup>
 </Project>

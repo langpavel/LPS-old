@@ -210,8 +210,16 @@ namespace LPSClientSklad
 			{
 				DataColumn dc = dt.Columns[i];
 				string caption = dc.Caption;
-				CellRendererText renderer = new CellRendererText();
+				CellRendererText renderer = new CellRendererText2();
+				//renderer.Height = 16;
 				TreeViewColumn wc = new TreeViewColumn(caption, renderer, "text", i);
+				wc.Reorderable = true;
+				wc.MinWidth = 4;
+				wc.MaxWidth = 1000;
+				wc.Resizable = true;
+				//wc.Sizing = TreeViewColumnSizing.Autosize;
+				//wc.SortIndicator = true;
+				//wc.SortOrder = SortType.Ascending;
 				view.AppendColumn(wc);
 			}
 
