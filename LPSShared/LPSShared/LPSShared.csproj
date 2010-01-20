@@ -34,12 +34,17 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Npgsql" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BadPasswordException.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="LoginRequiredException.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="IServer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LPSClientSklad
+namespace LPSClient
 {
 	public class FormFactory
 	{

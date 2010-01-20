@@ -2,7 +2,7 @@ using System;
 using Gtk;
 using Gdk;
 
-namespace LPSClientSklad
+namespace LPSClient
 {
 	public class CellRendererText2 : CellRendererText
 	{

@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSServer", "LPSServer.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSShared", "..\LPSShared\LPSShared\LPSShared.csproj", "{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSClientShared", "..\LPSClientShared\LPSClientShared.csproj", "{D2317E65-70CE-4367-B1A7-211FD6044720}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2317E65-70CE-4367-B1A7-211FD6044720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2317E65-70CE-4367-B1A7-211FD6044720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2317E65-70CE-4367-B1A7-211FD6044720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2317E65-70CE-4367-B1A7-211FD6044720}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = LPSServer.csproj

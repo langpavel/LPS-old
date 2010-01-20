@@ -1,5 +1,6 @@
 using System;
 using System.Data;
+using System.Collections.Generic;
 using System.Text;
 using System.Security.Cryptography;
 using Npgsql;
@@ -11,11 +12,34 @@ namespace LPSServer
 	{
 		public long Id { get; set; }
 		public string UserName { get; set; }
-		public NpgsqlConnection Connection {get; set; }
+		public NpgsqlConnection Connection { get; set; }
 		private string passwdhash;
+		
+		public Dictionary<int, DataSetStoreItem> StoredDataSets { get; set; }
+		private int ds_counter;
 
 		private ConnectionInfo()
 		{
+			StoredDataSets = new Dictionary<int, DataSetStoreItem>();
+		}
+		
+		public int StoreDataSet(DataSetStoreItem ds)
+		{
+			ds_counter++;
+			StoredDataSets[ds_counter] = ds;
+			return ds_counter;
+		}
+		
+		public DataSetStoreItem RestoreDataSet(int index)
+		{
+			return StoredDataSets[index];
+		}
+		
+		public void DisposeDataSet(int index)
+		{
+			DataSetStoreItem ds = StoredDataSets[index];
+			StoredDataSets.Remove(index);
+			ds.Dispose();
 		}
 
 		public static string GetSHA1String(string data, string salt)

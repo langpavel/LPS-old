@@ -2,7 +2,7 @@ using System;
 using System.Reflection;
 using Gtk;
 
-namespace LPSClientSklad
+namespace LPSClient
 {
 	public abstract class FormInfo
 	{
@@ -76,11 +76,13 @@ namespace LPSClientSklad
 		public FormXmlResourceInfo(string Id, string ResourceName, string RootId)
 			: this(Id, null, ResourceName, RootId, null)
 		{
+			this.ResourceAssembly = Assembly.GetAssembly(typeof(T));
 		}
 		
 		public FormXmlResourceInfo(string Id, string ResourceName)
 			: this(Id, null, ResourceName, null, null)
 		{
+			this.ResourceAssembly = Assembly.GetAssembly(typeof(T));
 		}
 		
 		public override T Create ()

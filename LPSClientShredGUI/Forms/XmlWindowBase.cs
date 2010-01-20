@@ -1,7 +1,7 @@
 using System;
 using Gtk;
 
-namespace LPSClientSklad
+namespace LPSClient
 {
 	public class XmlWindowBase: IXmlFormHandler, IDisposable
 	{
@@ -49,5 +49,23 @@ namespace LPSClientSklad
 			this.Window.ShowAll();
 		}
 		
+		public void ShowMessage(MessageType msgType, string caption, string text, params object[] args)
+		{
+			string txt = String.Format(text, args);
+			txt = txt.Replace("&","&amp;");
+			txt = txt.Replace("<","&lt;");
+			
+			using(Gtk.MessageDialog d = 
+				new Gtk.MessageDialog(
+					this.Window, 
+					DialogFlags.DestroyWithParent | DialogFlags.Modal,
+					msgType, ButtonsType.Ok, txt))
+			{
+				d.Title = caption;
+				d.Run();
+				d.Destroy();
+			}
+		}
+
 	}
 }

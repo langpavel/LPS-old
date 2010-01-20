@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{77812BE6-3292-4211-AF0A-E9E6B9978652}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LPSClientSklad</RootNamespace>
+    <RootNamespace>LPSClient.Sklad</RootNamespace>
     <AssemblyName>LPSClientSklad</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
@@ -46,9 +46,6 @@
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="Mono.Posix" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
@@ -58,47 +55,44 @@
     <Reference Include="System.Data.DataSetExtensions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
       <LogicalName>gui.stetic</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="ui.glade">
-      <LogicalName>ui.glade</LogicalName>
-    </EmbeddedResource>
     <EmbeddedResource Include="Images\application-vnd.oasis.opendocument.database.png">
       <LogicalName>Images.database.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ui-sklad.glade">
+      <LogicalName>ui-sklad.glade</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gtk-gui\generated.cs" />
     <Compile Include="MainApp.cs" />
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Web References\LPSServer\Reference.cs" />
-    <Compile Include="Forms\FormFactory.cs" />
-    <Compile Include="Forms\FormInfo.cs" />
-    <Compile Include="Forms\IXmlFormHandler.cs" />
-    <Compile Include="Forms\LoginDialog.cs" />
     <Compile Include="Forms\MainForm.cs" />
-    <Compile Include="Forms\XmlDialogBase.cs" />
-    <Compile Include="Forms\XmlWindowBase.cs" />
-    <Compile Include="Forms\PasswdChDialog.cs" />
-    <Compile Include="DataTableTreeModel\DataTableTreeModel.cs" />
-    <Compile Include="DataTableTreeModel\CellRendererText2.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <None Include="Web References\LPSServer\Reference.map" />
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\LPSShared\LPSShared\LPSShared.csproj">
       <Project>{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}</Project>
       <Name>LPSShared</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\LPSClientShared\LPSClientShared.csproj">
+      <Project>{D2317E65-70CE-4367-B1A7-211FD6044720}</Project>
+      <Name>LPSClientShared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\LPSClientShredGUI\LPSClientShredGUI.csproj">
+      <Project>{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}</Project>
+      <Name>LPSClientShredGUI</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />
-    <Folder Include="DataTableTreeModel\" />
     <Folder Include="Images\" />
   </ItemGroup>
 </Project>

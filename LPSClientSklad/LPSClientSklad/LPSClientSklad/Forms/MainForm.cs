@@ -1,8 +1,9 @@
 using System;
 using System.Data;
 using Gtk;
+using LPSClient;
 
-namespace LPSClientSklad
+namespace LPSClient.Sklad
 {
 
 	public class MainForm : XmlWindowBase
@@ -10,7 +11,7 @@ namespace LPSClientSklad
 		[Glade.Widget] TreeView viewModules;
 		[Glade.Widget] Notebook nbData;
 		
-		public LPSServer.Server Connection { get; set; }
+		public ServerConnection Connection { get { return ServerConnection.Instance; } }
 		public string ServerUrl { get; set; }
 		public string UserLogin { get; set; }
 
@@ -20,7 +21,6 @@ namespace LPSClientSklad
 		
 		public override void OnCreate()
 		{
-			this.Connection = MainApp.Connection;
 			this.ServerUrl = MainApp.ServerUrl;
 			this.UserLogin = MainApp.UserLogin;
 			
@@ -31,15 +31,6 @@ namespace LPSClientSklad
 			};
 			
 			InitModules();
-			
-			NewTabBySQL("Sklady", "select * from c_sklad;");
-			NewTabBySQL("Sklady 2", "select * from c_sklad;");
-			NewTabBySQL("Sklady", "select * from c_sklad;");
-			NewTabBySQL("Sklady 2", "select * from c_sklad;");
-			NewTabBySQL("Sklady", "select * from c_sklad;");
-			NewTabBySQL("Sklady 2", "select * from c_sklad;");
-			NewTabBySQL("Sklady", "select * from c_sklad;");
-			NewTabBySQL("Sklady 2", "select * from c_sklad;");
 		}
 
 		private void InitModules()
@@ -56,7 +47,9 @@ namespace LPSClientSklad
 			viewModules.HeadersVisible = false;
 			//viewModules.RowActivated += ViewModulesRowActivated;
 			
-			TreeIter uziv = tree.AppendValues("", null, "Adresář");
+			TreeIter adresa = tree.AppendValues("__raw", null, "Adresář", "select * from adresa");
+			tree.AppendValues(adresa, "__raw", null, "Odběratelé", "select * from adresa");
+			tree.AppendValues(adresa, "__raw", null, "Dodavatelé", "select * from adresa");
 			TreeIter sklad = tree.AppendValues("", null, "Skladové hospodářství");
 			TreeIter cisel = tree.AppendValues("", null, "Číselníky");
 			tree.AppendValues(cisel, "__raw", null, "Sklady", "select * from c_sklad");

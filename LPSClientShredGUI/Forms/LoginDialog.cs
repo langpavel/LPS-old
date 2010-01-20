@@ -2,7 +2,7 @@ using System;
 using Gtk;
 using Microsoft.Win32;
 
-namespace LPSClientSklad
+namespace LPSClient
 {
 
 	public class LoginDialog : XmlDialogBase
@@ -32,8 +32,7 @@ namespace LPSClientSklad
 		{
 			try
 			{
-				using(LPSServer.Server srv = new LPSServer.Server(edtServer.Text))
-					srv.Ping();
+				new ServerConnection(edtServer.Text);
 				laMessage.Markup = "<span color=\"#00cc00\">Spojení se serverem bylo navázáno</span>";
 				laMessage.TooltipText = "";
 				//MainApp.ShowMessage(this.Window, MessageType.Info, "Spojení OK", "Spojení se serverem bylo navázáno");
@@ -46,12 +45,11 @@ namespace LPSClientSklad
 			}
 		}
 		
-		public LPSServer.Server TryConnect()
+		public ServerConnection TryConnect()
 		{
 			try
 			{
-				LPSServer.Server srv = new LPSServer.Server(edtServer.Text);
-				srv.CookieContainer = new System.Net.CookieContainer();
+				ServerConnection srv = new ServerConnection(edtServer.Text);
 				srv.Ping();
 				return srv;
 			}

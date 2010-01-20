@@ -6,7 +6,7 @@ using Gtk;
 
 // Ispirated by http://anonsvn.mono-project.com/viewvc/trunk/gtk-sharp/sample/TreeModelDemo.cs?view=co
 
-namespace LPSClientSklad
+namespace LPSClient
 {
 	public class DataTableTreeModel : GLib.Object, TreeModelImplementor
 	{
@@ -48,14 +48,23 @@ namespace LPSClientSklad
 		
 		public GLib.GType GetColumnType (int col)
 		{
+			if(col >= 1000 && col < 2000)
+				return GLib.GType.Boolean;
+			
 			Type managedType = this.DataTable.Columns[col].DataType;
-			//Console.WriteLine(managedType.ToString());
+			if(managedType == typeof(bool))
+				return GLib.GType.Boolean;
+
+			return GLib.GType.String;
+			/*
+			
+			Type managedType = this.DataTable.Columns[col].DataType;
 			if(managedType == typeof(Int64))
 				return GLib.GType.Int64;
 			if(managedType == typeof(Int32))
 				return GLib.GType.Int;
 			return GLib.GType.FromName(managedType.Name);
-			/*
+			/ *
 			if(managedType == typeof(String))
 				return GLib.GType.String;
 			if(managedType == typeof(Int64))
@@ -121,7 +130,37 @@ namespace LPSClientSklad
 			DataRow row = NodeFromIter (iter) as DataRow;
 			if (row == null)
 				return;
-			val = new GLib.Value(row[col]);
+			
+			if(col < 1000)
+			{
+				object o = row[col];
+				DataColumn datacol = this.DataTable.Columns[col];
+				if(datacol.DataType == typeof(bool))
+				{
+					if(o == null || o is DBNull)
+						val = new GLib.Value(false);
+					else
+						val = new GLib.Value((bool)o);
+				}
+				else
+				{
+					if(o == null || o is DBNull)
+						val = new GLib.Value("<span color=\"#7777ff\">(?)</span>");
+					else
+						val = new GLib.Value(o.ToString().Replace("&","&amp;").Replace("<","&lt;"));
+					return;
+				}
+			}
+			else if(col >= 1000 && col < 2000)
+			{
+				col -= 1000;
+				object o = row[col];
+				if(o == null || o is DBNull)
+					val = new GLib.Value(true);
+				else
+					val = new GLib.Value(false);
+				return;
+			}
 		}
 		
 		public bool IterNext (ref TreeIter iter)
@@ -205,14 +244,25 @@ namespace LPSClientSklad
 		{
 			DataTableTreeModel model = new DataTableTreeModel();
 			model.DataTable = dt;
+			view.BorderWidth = 0;
+			view.EnableGridLines = TreeViewGridLines.Vertical;
 			view.Model = new TreeModelAdapter(model);
 			for(int i = 0; i < dt.Columns.Count; i++)
 			{
 				DataColumn dc = dt.Columns[i];
-				string caption = dc.Caption;
-				CellRendererText renderer = new CellRendererText2();
-				//renderer.Height = 16;
-				TreeViewColumn wc = new TreeViewColumn(caption, renderer, "text", i);
+				CellRenderer renderer;
+				TreeViewColumn wc;
+				string caption = dc.Caption.Replace('_',' ');
+				if(dc.DataType == typeof(bool))
+				{
+					renderer = new CellRendererToggle();
+					wc = new TreeViewColumn(caption, renderer, "active", i, "inconsistent", i+1000, "radio",i+1000);
+				}
+				else
+				{
+					renderer = new CellRendererText2();
+					wc = new TreeViewColumn(caption, renderer, "markup", i);
+				}
 				wc.Reorderable = true;
 				wc.MinWidth = 4;
 				wc.MaxWidth = 1000;

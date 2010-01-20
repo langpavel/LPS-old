@@ -4,6 +4,7 @@ using System.Web;
 using System.Web.Services;
 using System.Data;
 using System.Reflection;
+using System.Collections.Generic;
 using Npgsql;
 
 namespace LPSServer
@@ -11,7 +12,7 @@ namespace LPSServer
 	
 	[WebService(Namespace="http://lpsoft.org/skladserver/",
 	            Description="LPSoft Sklad web service")]
-	public class Server : System.Web.Services.WebService
+	public class Server: System.Web.Services.WebService, IServer
 	{
 		[WebMethod(EnableSession=false)]
 		public bool Ping()
@@ -25,6 +26,14 @@ namespace LPSServer
 			if(ci == null)
 				throw new LoginRequiredException();
 			return ci;
+		}
+		
+		private NpgsqlParameter[] GetNpgsqlParameters(object[] p)
+		{
+			List<NpgsqlParameter> result = new List<NpgsqlParameter>(p.Length);
+			for(int i=0; i<p.Length; i+=2)
+				result.Add(new NpgsqlParameter(p[i] as string, p[i+1]));
+			return result.ToArray();			
 		}
 		
 		[WebMethod(EnableSession=true)]
@@ -72,10 +81,10 @@ namespace LPSServer
 		}
 
 		[WebMethod(EnableSession=true)]
-		public int ExecuteNonquery(string sql, params NpgsqlParameter[] parameters)
+		public int ExecuteNonquery(string sql, params object[] parameters)
 		{
 			ConnectionInfo ci = GetConnectionInfo();
-			return ci.ExecuteNonquery(sql, parameters);
+			return ci.ExecuteNonquery(sql, GetNpgsqlParameters(parameters));
 		}
 		
 		[WebMethod(EnableSession=true)]
@@ -86,10 +95,10 @@ namespace LPSServer
 		}
 
 		[WebMethod(EnableSession=true)]
-		public object ExecuteScalar(string sql, params NpgsqlParameter[] parameters)
+		public object ExecuteScalar(string sql, params object[] parameters)
 		{
 			ConnectionInfo ci = GetConnectionInfo();
-			return ci.ExecuteScalar(sql, parameters);
+			return ci.ExecuteScalar(sql, GetNpgsqlParameters(parameters));
 		}
 		
 		[WebMethod(EnableSession=true)]
@@ -98,34 +107,6 @@ namespace LPSServer
 			ConnectionInfo ci = GetConnectionInfo();
 			return Convert.ToInt64(ci.ExecuteScalar("select nextval(:gener)",
 				new NpgsqlParameter("gener", generator)));
-		}
-		
-		[WebMethod(EnableSession=true)]
-		public DataSet GetDataSetSimple(string sql)
-		{
-			ConnectionInfo ci = GetConnectionInfo();
-			
-			using(NpgsqlCommand cmd = ci.CreateCommand(sql))
-			{
-				NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
-				DataSet ds = new DataSet();
-				da.Fill(ds);
-				return ds;
-			}
-		}
-		
-		[WebMethod(EnableSession=true)]
-		public DataSet GetDataSet(string sql, params NpgsqlParameter[] parameters)
-		{
-			ConnectionInfo ci = GetConnectionInfo();
-			
-			using(NpgsqlCommand cmd = ci.CreateCommand(sql, parameters))
-			{
-				NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
-				DataSet ds = new DataSet();
-				da.Fill(ds);
-				return ds;
-			}
 		}
 
 		[WebMethod(EnableSession=false, BufferResponse=false)]
@@ -144,6 +125,89 @@ namespace LPSServer
 			{
 				return null;
 			}
+		}
+		
+		[WebMethod(EnableSession=true)]
+		public DataSet GetDataSetSimple(string sql)
+		{
+			ConnectionInfo ci = GetConnectionInfo();
+			DataSetStoreItem dstore = new DataSetStoreItem();
+			dstore.DataSet = new DataSet();
+			dstore.Command = ci.CreateCommand(sql);
+			dstore.DataAdapter = new NpgsqlDataAdapter(dstore.Command);
+			dstore.DataAdapter.Fill(dstore.DataSet);
+			foreach(DataTable dt in dstore.DataSet.Tables)
+			{
+				dt.PrimaryKey = new DataColumn[] { dt.Columns[0] };
+			}
+			dstore.DisposeWithoutDataSet();
+			return dstore.DataSet;
+		}
+
+		[WebMethod(EnableSession=true)]
+		public DataSet GetDataSet(string sql, bool for_edit, object[] parameters, out int server_id)
+		{
+			server_id = 0;
+			ConnectionInfo ci = GetConnectionInfo();
+			
+			DataSetStoreItem dstore = new DataSetStoreItem();
+			dstore.DataSet = new DataSet();
+			dstore.Command = ci.CreateCommand(sql, GetNpgsqlParameters(parameters));
+			dstore.DataAdapter = new NpgsqlDataAdapter(dstore.Command);
+			if(for_edit)
+			{
+				dstore.CommandBuilder = new NpgsqlCommandBuilder(dstore.DataAdapter);
+				server_id = ci.StoreDataSet(dstore);
+			}
+			dstore.DataAdapter.Fill(dstore.DataSet);
+			foreach(DataTable dt in dstore.DataSet.Tables)
+			{
+				dt.PrimaryKey = new DataColumn[] { dt.Columns[0] };
+			}
+			if(!for_edit)
+				dstore.DisposeWithoutDataSet();
+			return dstore.DataSet;
+		}
+
+		[WebMethod(EnableSession=true)]
+		public int SaveDataSet(DataSet changes, int srv_id)
+		{
+			ConnectionInfo ci = GetConnectionInfo();
+			DataSetStoreItem dstore = ci.RestoreDataSet(srv_id);
+			//return dstore.DataAdapter.Update(changes);
+			int result = 0;
+			foreach(DataTable ch_table in changes.Tables)
+			{
+				/*
+				DataTable dt = dstore.DataSet.Tables[ch_table.TableName, ch_table.Namespace];
+				try
+				{
+					dt.Merge(ch_table, true, MissingSchemaAction.Error);
+				}
+				catch(Exception ex)
+				{
+					throw new Exception("changes:" + ch_table.Rows.Count, ex);
+				}
+				*/
+				try
+				{
+					result += dstore.DataAdapter.Update(ch_table);
+					//dt.AcceptChanges();
+				}
+				catch
+				{
+					//dt.RejectChanges();
+					throw;
+				}
+			}
+			return result;
+		}
+
+		[WebMethod(EnableSession=true)]
+		public void DisposeDataSet(int server_id)
+		{
+			ConnectionInfo ci = GetConnectionInfo();
+			ci.DisposeDataSet(server_id);
 		}
 		
 	}

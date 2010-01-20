@@ -72,113 +72,16 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:complexType name="ArrayOfNpgsqlParameter">
+      <xs:complexType name="ArrayOfAnyType">
         <xs:sequence>
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="NpgsqlParameter" nillable="true" type="s0:NpgsqlParameter" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
         </xs:sequence>
       </xs:complexType>
-      <xs:complexType name="NpgsqlParameter">
-        <xs:complexContent mixed="false">
-          <xs:extension base="s0:MarshalByRefObject">
-            <xs:sequence>
-              <xs:element minOccurs="0" maxOccurs="1" default="0" name="Precision" type="xs:unsignedByte" />
-              <xs:element minOccurs="0" maxOccurs="1" default="0" name="Scale" type="xs:unsignedByte" />
-              <xs:element minOccurs="0" maxOccurs="1" default="0" name="Size" type="xs:int" />
-              <xs:element minOccurs="0" maxOccurs="1" default="String" name="DbType" type="s0:DbType" />
-              <xs:element minOccurs="0" maxOccurs="1" default="Text" name="NpgsqlDbType" type="s0:NpgsqlDbType" />
-              <xs:element minOccurs="0" maxOccurs="1" default="Input" name="Direction" type="s0:ParameterDirection" />
-              <xs:element minOccurs="1" maxOccurs="1" name="IsNullable" type="xs:boolean" />
-              <xs:element minOccurs="0" maxOccurs="1" default="" name="ParameterName" type="xs:string" />
-              <xs:element minOccurs="0" maxOccurs="1" default="" name="SourceColumn" type="xs:string" />
-              <xs:element minOccurs="0" maxOccurs="1" default="Current" name="SourceVersion" type="s0:DataRowVersion" />
-              <xs:element minOccurs="0" maxOccurs="1" name="Value" />
-            </xs:sequence>
-          </xs:extension>
-        </xs:complexContent>
-      </xs:complexType>
-      <xs:simpleType name="DbType">
-        <xs:restriction base="xs:string">
-          <xs:enumeration value="AnsiString" />
-          <xs:enumeration value="Binary" />
-          <xs:enumeration value="Byte" />
-          <xs:enumeration value="Boolean" />
-          <xs:enumeration value="Currency" />
-          <xs:enumeration value="Date" />
-          <xs:enumeration value="DateTime" />
-          <xs:enumeration value="Decimal" />
-          <xs:enumeration value="Double" />
-          <xs:enumeration value="Guid" />
-          <xs:enumeration value="Int16" />
-          <xs:enumeration value="Int32" />
-          <xs:enumeration value="Int64" />
-          <xs:enumeration value="Object" />
-          <xs:enumeration value="SByte" />
-          <xs:enumeration value="Single" />
-          <xs:enumeration value="String" />
-          <xs:enumeration value="Time" />
-          <xs:enumeration value="UInt16" />
-          <xs:enumeration value="UInt32" />
-          <xs:enumeration value="UInt64" />
-          <xs:enumeration value="VarNumeric" />
-          <xs:enumeration value="AnsiStringFixedLength" />
-          <xs:enumeration value="StringFixedLength" />
-          <xs:enumeration value="Xml" />
-          <xs:enumeration value="DateTime2" />
-          <xs:enumeration value="DateTimeOffset" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="NpgsqlDbType">
-        <xs:restriction base="xs:string">
-          <xs:enumeration value="Bigint" />
-          <xs:enumeration value="Boolean" />
-          <xs:enumeration value="Box" />
-          <xs:enumeration value="Bytea" />
-          <xs:enumeration value="Circle" />
-          <xs:enumeration value="Char" />
-          <xs:enumeration value="Date" />
-          <xs:enumeration value="Double" />
-          <xs:enumeration value="Integer" />
-          <xs:enumeration value="Line" />
-          <xs:enumeration value="LSeg" />
-          <xs:enumeration value="Money" />
-          <xs:enumeration value="Numeric" />
-          <xs:enumeration value="Path" />
-          <xs:enumeration value="Point" />
-          <xs:enumeration value="Polygon" />
-          <xs:enumeration value="Real" />
-          <xs:enumeration value="Smallint" />
-          <xs:enumeration value="Text" />
-          <xs:enumeration value="Time" />
-          <xs:enumeration value="Timestamp" />
-          <xs:enumeration value="Varchar" />
-          <xs:enumeration value="Refcursor" />
-          <xs:enumeration value="Inet" />
-          <xs:enumeration value="Bit" />
-          <xs:enumeration value="TimestampTZ" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="ParameterDirection">
-        <xs:restriction base="xs:string">
-          <xs:enumeration value="Input" />
-          <xs:enumeration value="Output" />
-          <xs:enumeration value="InputOutput" />
-          <xs:enumeration value="ReturnValue" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="DataRowVersion">
-        <xs:restriction base="xs:string">
-          <xs:enumeration value="Original" />
-          <xs:enumeration value="Current" />
-          <xs:enumeration value="Proposed" />
-          <xs:enumeration value="Default" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:complexType name="MarshalByRefObject" />
       <xs:element name="ExecuteNonquery">
         <xs:complexType>
           <xs:sequence>
             <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
-            <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfNpgsqlParameter" />
+            <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfAnyType" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -207,7 +110,7 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
-            <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfNpgsqlParameter" />
+            <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfAnyType" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -229,6 +132,20 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element minOccurs="1" maxOccurs="1" name="NextSeqValueResult" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTextResource">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="path" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTextResourceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetTextResourceResult" type="xs:string" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -257,7 +174,8 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
-            <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfNpgsqlParameter" />
+            <xs:element minOccurs="1" maxOccurs="1" name="for_edit" type="xs:boolean" />
+            <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfAnyType" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -272,8 +190,41 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="server_id" type="xs:int" />
           </xs:sequence>
         </xs:complexType>
+      </xs:element>
+      <xs:element name="SaveDataSet">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="changes">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="xs:schema" />
+                  <xs:any />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="srv_id" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SaveDataSetResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="SaveDataSetResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DisposeDataSet">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="server_id" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DisposeDataSetResponse">
+        <xs:complexType />
       </xs:element>
       <xs:element name="boolean" type="xs:boolean" />
       <xs:element name="string" nillable="true" type="xs:string" />
@@ -349,6 +300,12 @@
   <message name="NextSeqValueSoapOut">
     <part name="parameters" element="s0:NextSeqValueResponse" />
   </message>
+  <message name="GetTextResourceSoapIn">
+    <part name="parameters" element="s0:GetTextResource" />
+  </message>
+  <message name="GetTextResourceSoapOut">
+    <part name="parameters" element="s0:GetTextResourceResponse" />
+  </message>
   <message name="GetDataSetSimpleSoapIn">
     <part name="parameters" element="s0:GetDataSetSimple" />
   </message>
@@ -360,6 +317,18 @@
   </message>
   <message name="GetDataSetSoapOut">
     <part name="parameters" element="s0:GetDataSetResponse" />
+  </message>
+  <message name="SaveDataSetSoapIn">
+    <part name="parameters" element="s0:SaveDataSet" />
+  </message>
+  <message name="SaveDataSetSoapOut">
+    <part name="parameters" element="s0:SaveDataSetResponse" />
+  </message>
+  <message name="DisposeDataSetSoapIn">
+    <part name="parameters" element="s0:DisposeDataSet" />
+  </message>
+  <message name="DisposeDataSetSoapOut">
+    <part name="parameters" element="s0:DisposeDataSetResponse" />
   </message>
   <message name="PingHttpGetIn" />
   <message name="PingHttpGetOut">
@@ -403,12 +372,22 @@
   <message name="NextSeqValueHttpGetOut">
     <part name="Body" element="s0:long" />
   </message>
+  <message name="GetTextResourceHttpGetIn">
+    <part name="path" type="s:string" />
+  </message>
+  <message name="GetTextResourceHttpGetOut">
+    <part name="Body" element="s0:string" />
+  </message>
   <message name="GetDataSetSimpleHttpGetIn">
     <part name="sql" type="s:string" />
   </message>
   <message name="GetDataSetSimpleHttpGetOut">
     <part name="Body" element="s0:DataSet" />
   </message>
+  <message name="DisposeDataSetHttpGetIn">
+    <part name="server_id" type="s:int" />
+  </message>
+  <message name="DisposeDataSetHttpGetOut" />
   <message name="PingHttpPostIn" />
   <message name="PingHttpPostOut">
     <part name="Body" element="s0:boolean" />
@@ -451,12 +430,22 @@
   <message name="NextSeqValueHttpPostOut">
     <part name="Body" element="s0:long" />
   </message>
+  <message name="GetTextResourceHttpPostIn">
+    <part name="path" type="s:string" />
+  </message>
+  <message name="GetTextResourceHttpPostOut">
+    <part name="Body" element="s0:string" />
+  </message>
   <message name="GetDataSetSimpleHttpPostIn">
     <part name="sql" type="s:string" />
   </message>
   <message name="GetDataSetSimpleHttpPostOut">
     <part name="Body" element="s0:DataSet" />
   </message>
+  <message name="DisposeDataSetHttpPostIn">
+    <part name="server_id" type="s:int" />
+  </message>
+  <message name="DisposeDataSetHttpPostOut" />
   <portType name="ServerSoap">
     <operation name="Ping">
       <input message="s0:PingSoapIn" />
@@ -498,6 +487,10 @@
       <input message="s0:NextSeqValueSoapIn" />
       <output message="s0:NextSeqValueSoapOut" />
     </operation>
+    <operation name="GetTextResource">
+      <input message="s0:GetTextResourceSoapIn" />
+      <output message="s0:GetTextResourceSoapOut" />
+    </operation>
     <operation name="GetDataSetSimple">
       <input message="s0:GetDataSetSimpleSoapIn" />
       <output message="s0:GetDataSetSimpleSoapOut" />
@@ -505,6 +498,14 @@
     <operation name="GetDataSet">
       <input message="s0:GetDataSetSoapIn" />
       <output message="s0:GetDataSetSoapOut" />
+    </operation>
+    <operation name="SaveDataSet">
+      <input message="s0:SaveDataSetSoapIn" />
+      <output message="s0:SaveDataSetSoapOut" />
+    </operation>
+    <operation name="DisposeDataSet">
+      <input message="s0:DisposeDataSetSoapIn" />
+      <output message="s0:DisposeDataSetSoapOut" />
     </operation>
   </portType>
   <portType name="ServerSoap12">
@@ -548,6 +549,10 @@
       <input message="s0:NextSeqValueSoapIn" />
       <output message="s0:NextSeqValueSoapOut" />
     </operation>
+    <operation name="GetTextResource">
+      <input message="s0:GetTextResourceSoapIn" />
+      <output message="s0:GetTextResourceSoapOut" />
+    </operation>
     <operation name="GetDataSetSimple">
       <input message="s0:GetDataSetSimpleSoapIn" />
       <output message="s0:GetDataSetSimpleSoapOut" />
@@ -555,6 +560,14 @@
     <operation name="GetDataSet">
       <input message="s0:GetDataSetSoapIn" />
       <output message="s0:GetDataSetSoapOut" />
+    </operation>
+    <operation name="SaveDataSet">
+      <input message="s0:SaveDataSetSoapIn" />
+      <output message="s0:SaveDataSetSoapOut" />
+    </operation>
+    <operation name="DisposeDataSet">
+      <input message="s0:DisposeDataSetSoapIn" />
+      <output message="s0:DisposeDataSetSoapOut" />
     </operation>
   </portType>
   <portType name="ServerHttpGet">
@@ -590,9 +603,17 @@
       <input message="s0:NextSeqValueHttpGetIn" />
       <output message="s0:NextSeqValueHttpGetOut" />
     </operation>
+    <operation name="GetTextResource">
+      <input message="s0:GetTextResourceHttpGetIn" />
+      <output message="s0:GetTextResourceHttpGetOut" />
+    </operation>
     <operation name="GetDataSetSimple">
       <input message="s0:GetDataSetSimpleHttpGetIn" />
       <output message="s0:GetDataSetSimpleHttpGetOut" />
+    </operation>
+    <operation name="DisposeDataSet">
+      <input message="s0:DisposeDataSetHttpGetIn" />
+      <output message="s0:DisposeDataSetHttpGetOut" />
     </operation>
   </portType>
   <portType name="ServerHttpPost">
@@ -628,9 +649,17 @@
       <input message="s0:NextSeqValueHttpPostIn" />
       <output message="s0:NextSeqValueHttpPostOut" />
     </operation>
+    <operation name="GetTextResource">
+      <input message="s0:GetTextResourceHttpPostIn" />
+      <output message="s0:GetTextResourceHttpPostOut" />
+    </operation>
     <operation name="GetDataSetSimple">
       <input message="s0:GetDataSetSimpleHttpPostIn" />
       <output message="s0:GetDataSetSimpleHttpPostOut" />
+    </operation>
+    <operation name="DisposeDataSet">
+      <input message="s0:DisposeDataSetHttpPostIn" />
+      <output message="s0:DisposeDataSetHttpPostOut" />
     </operation>
   </portType>
   <binding name="ServerSoap" type="s0:ServerSoap">
@@ -725,6 +754,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="GetTextResource">
+      <soap:operation soapAction="http://lpsoft.org/skladserver/GetTextResource" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="GetDataSetSimple">
       <soap:operation soapAction="http://lpsoft.org/skladserver/GetDataSetSimple" style="document" />
       <input>
@@ -736,6 +774,24 @@
     </operation>
     <operation name="GetDataSet">
       <soap:operation soapAction="http://lpsoft.org/skladserver/GetDataSet" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SaveDataSet">
+      <soap:operation soapAction="http://lpsoft.org/skladserver/SaveDataSet" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DisposeDataSet">
+      <soap:operation soapAction="http://lpsoft.org/skladserver/DisposeDataSet" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -836,6 +892,15 @@
         <soap12:body use="literal" />
       </output>
     </operation>
+    <operation name="GetTextResource">
+      <soap12:operation soapAction="http://lpsoft.org/skladserver/GetTextResource" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
     <operation name="GetDataSetSimple">
       <soap12:operation soapAction="http://lpsoft.org/skladserver/GetDataSetSimple" style="document" />
       <input>
@@ -847,6 +912,24 @@
     </operation>
     <operation name="GetDataSet">
       <soap12:operation soapAction="http://lpsoft.org/skladserver/GetDataSet" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SaveDataSet">
+      <soap12:operation soapAction="http://lpsoft.org/skladserver/SaveDataSet" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DisposeDataSet">
+      <soap12:operation soapAction="http://lpsoft.org/skladserver/DisposeDataSet" style="document" />
       <input>
         <soap12:body use="literal" />
       </input>
@@ -927,6 +1010,15 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
+    <operation name="GetTextResource">
+      <http:operation location="/GetTextResource" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
     <operation name="GetDataSetSimple">
       <http:operation location="/GetDataSetSimple" />
       <input>
@@ -935,6 +1027,13 @@
       <output>
         <mime:mimeXml part="Body" />
       </output>
+    </operation>
+    <operation name="DisposeDataSet">
+      <http:operation location="/DisposeDataSet" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output />
     </operation>
   </binding>
   <binding name="ServerHttpPost" type="s0:ServerHttpPost">
@@ -1009,6 +1108,15 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
+    <operation name="GetTextResource">
+      <http:operation location="/GetTextResource" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
     <operation name="GetDataSetSimple">
       <http:operation location="/GetDataSetSimple" />
       <input>
@@ -1017,6 +1125,13 @@
       <output>
         <mime:mimeXml part="Body" />
       </output>
+    </operation>
+    <operation name="DisposeDataSet">
+      <http:operation location="/DisposeDataSet" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output />
     </operation>
   </binding>
   <service name="Server">

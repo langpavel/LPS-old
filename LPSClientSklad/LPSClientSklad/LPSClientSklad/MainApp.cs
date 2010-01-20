@@ -3,8 +3,9 @@ using System.Web;
 using Gtk;
 using LPSServer;
 using Microsoft.Win32;
+using LPSClient;
 
-namespace LPSClientSklad
+namespace LPSClient.Sklad
 {
 	class MainApp
 	{
@@ -15,7 +16,7 @@ namespace LPSClientSklad
 		
 		public string[] Args { get; set; }
 
-		public static LPSServer.Server Connection { get; set; }
+		public static ServerConnection Connection { get; set; }
 		public static string ServerUrl { get; set; }
 		public static string UserLogin { get; set; }
 		
@@ -32,9 +33,9 @@ namespace LPSClientSklad
 		{
 			Args = args;
 
-			FormFactory.Register(new FormXmlResourceInfo<LoginDialog>("login", "ui.glade", "dialogLogin"));
-			FormFactory.Register(new FormXmlResourceInfo<PasswdChDialog>("chpasswd", "ui.glade", "dialogPswChange"));
-			FormFactory.Register(new FormXmlResourceInfo<MainForm>("main", "ui.glade", "windowMain"));
+			FormFactory.Register(new FormXmlResourceInfo<LoginDialog>("login", "ui-shared.glade", "dialogLogin"));
+			FormFactory.Register(new FormXmlResourceInfo<PasswdChDialog>("chpasswd", "ui-shared.glade", "dialogPswChange"));
+			FormFactory.Register(new FormXmlResourceInfo<MainForm>("main", "ui-sklad.glade", "windowMain"));
 
 			Application.Init ();
 
@@ -46,9 +47,11 @@ namespace LPSClientSklad
 					ResponseType response = login.Run();
 					if(response == ResponseType.Cancel)
 						return;
-					if(Connection == null || Connection.Url != login.edtServer.Text)
-						Connection = login.TryConnect();
-					if(Connection == null)
+					try
+					{
+						new ServerConnection(login.edtServer.Text);
+					}
+					catch
 					{
 						//MainApp.ShowMessage(null, MessageType.Error, "Chyba", "Nezdařilo se připojení k serveru");
 						login.laMessage.Markup = "<span color=\"#ff0000\">Nezdařilo se připojení k serveru</span>";
@@ -57,7 +60,7 @@ namespace LPSClientSklad
 					}
 					try 
 					{
-						if(Connection != null && Connection.Login(login.edtLogin.Text, login.edtPassword.Text))
+						if(ServerConnection.Instance.Login(login.edtLogin.Text, login.edtPassword.Text))
 						{
 							ServerUrl = login.edtServer.Text;
 							UserLogin = login.edtLogin.Text;

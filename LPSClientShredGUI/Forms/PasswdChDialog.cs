@@ -1,7 +1,7 @@
 using System;
 using Gtk;
 
-namespace LPSClientSklad
+namespace LPSClient
 {
 	public class PasswdChDialog : XmlDialogBase
 	{
@@ -42,20 +42,20 @@ namespace LPSClientSklad
 				
 				if(edtNewPsw1.Text != edtNewPsw2.Text)
 				{
-					MainApp.ShowMessage(this.Window, MessageType.Error, "Chyba", 
+					ShowMessage(MessageType.Error, "Chyba", 
 						"Nová hesla se neshodují");
 					continue;
 				}
 				
-				if(MainApp.Connection.ChangePassword(edtOldPsw.Text, edtNewPsw1.Text))
+				if(ServerConnection.Instance.ChangePassword(edtOldPsw.Text, edtNewPsw1.Text))
 				{
-					MainApp.ShowMessage(this.Window, MessageType.Info, "Informace", 
+					ShowMessage(MessageType.Info, "Informace", 
 						"Heslo bylo úspěšně změněno");
 					return;
 				}
 				else
 				{
-					MainApp.ShowMessage(this.Window, MessageType.Error, "Chyba", 
+					ShowMessage(MessageType.Error, "Chyba", 
 						"Nepodařilo se nastavit heslo");
 				}
 			}

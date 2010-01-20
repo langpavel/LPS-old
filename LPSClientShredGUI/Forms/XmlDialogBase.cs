@@ -1,7 +1,7 @@
 using System;
 using Gtk;
 
-namespace LPSClientSklad
+namespace LPSClient
 {
 	public class XmlDialogBase : XmlWindowBase
 	{
