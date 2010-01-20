@@ -8,7 +8,7 @@ using Gtk;
 namespace LPSClient
 {
 
-	public class DataTableListStoreBinding
+	public class DataTableListStoreBinding: IDisposable
 	{
 
 		public DataTableListStoreBinding()
@@ -25,11 +25,18 @@ namespace LPSClient
 		public DataTable DataTable { get; set; }
 		public ListStore ListStore { get; set; }
 		public bool UseMarkup { get; set; }
+
+		public void Dispose()
+		{
+			this.ListStore.Clear();
+			this.ListStore.Dispose();
+		}
 		
 		public void Bind()
 		{
 			CellRendererToggle rendererToggle = new CellRendererToggle();
-			CellRendererText2 rendererText = new CellRendererText2();
+			CellRendererText rendererText = new CellRendererText2();
+			rendererText.FixedHeightFromFont = 1;
 			
 			List<Type> types = new List<Type>();
 			for(int i = 0; i < this.DataTable.Columns.Count; i++)
@@ -54,8 +61,8 @@ namespace LPSClient
 				wc.MinWidth = 4;
 				wc.MaxWidth = 1000;
 				wc.Resizable = true;
-				wc.Sizing = TreeViewColumnSizing.Fixed;
 				wc.FixedWidth = 50;
+				wc.Sizing = TreeViewColumnSizing.Autosize;
 				//wc.SortIndicator = true;
 				//wc.SortOrder = SortType.Ascending;
 				this.TreeView.AppendColumn(wc);

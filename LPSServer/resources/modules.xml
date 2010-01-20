@@ -1,13 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <modules>
 	<navigation-tree>
+		<item name="adresa" text="Adresář">
+			<icon href="book.png" />
+			<list-sql>select * from adresa</list-sql>
+
+			<item name="adresa" text="Odběratelé">
+				<list-sql>select * from adresa where odberatel = true</list-sql>
+			</item>
+			<item name="adresa" text="Dodavatelé">
+				<list-sql>select * from adresa where dodavatel = true</list-sql>
+			</item>
+		</item>
+
+		<item text="Skladové hospodářství">
+			<item text="Skladové Karty">
+			</item>
+			<item text="Skladové pohyby">
+				<item text="Příjmové doklady">
+				</item>
+				<item text="Výdejové doklady">
+				</item>
+			</item>
+			<item text="Inventura">
+			</item>
+		</item>
+
+			TreeIter cisel = tree.AppendValues("", null, "Číselníky");
+			tree.AppendValues(cisel, "__raw", null, "Sklady", "select * from c_sklad");
+		
+
+		
+						<item >
 		<item text="Číselníky">
 			<item ref="c_sklad" />
 		</item>
 	</navigation-tree>
-	<module id="c_sklad" text="Sklady">
-		<list>
-			<sql>select * from c_sklad</sql>
-		</list>
-	</module>
+	
+	
+	<tables>
+		<table name="adresa">
+			<column name=""
+		</table>
+	</tables>
 </modules>

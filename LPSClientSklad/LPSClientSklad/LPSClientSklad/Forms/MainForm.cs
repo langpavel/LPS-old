@@ -51,6 +51,7 @@ namespace LPSClient.Sklad
 			tree.AppendValues(adresa, "__raw", null, "Odběratelé", "select * from adresa");
 			tree.AppendValues(adresa, "__raw", null, "Dodavatelé", "select * from adresa");
 			TreeIter sklad = tree.AppendValues("", null, "Skladové hospodářství");
+			TreeIter produkty = tree.AppendValues(sklad, "__raw", null, "Produkty", "select * from produkty");
 			TreeIter cisel = tree.AppendValues("", null, "Číselníky");
 			tree.AppendValues(cisel, "__raw", null, "Sklady", "select * from c_sklad");
 			
@@ -121,9 +122,15 @@ namespace LPSClient.Sklad
 			
 			DataSet ds = Connection.GetDataSetSimple(sql);
 			
+			//oldest:
 			//DataTableTreeModel.AssignNew(tw, ds.Tables[0], false);
+
+			//newer:
 			DataTableListStoreBinding binding = new DataTableListStoreBinding(tw, ds.Tables[0]);
 			binding.Bind();
+			
+			//newest but bad as oldest ;-[
+			//DataTableStore.AssignNew(tw, ds.Tables[0], false);
 			
 			btnCloseTab.Clicked += delegate {
 				nbData.Remove(header);
@@ -132,6 +139,8 @@ namespace LPSClient.Sklad
 				page.Dispose();
 				header.Dispose();
 				ds.Dispose();
+				//binding.Dispose();
+				//store.Dispose();
 			};
 
 			nbData.Page = pgIdx;
