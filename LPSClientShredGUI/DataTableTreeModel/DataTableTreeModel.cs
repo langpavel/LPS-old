@@ -8,6 +8,11 @@ using Gtk;
 
 namespace LPSClient
 {
+	
+	/// <summary>
+	/// This look's nice but it's terribly slow :-(
+	/// </summary>
+	[Obsolete("This is too slow, use only on small datatables")]
 	public class DataTableTreeModel : GLib.Object, TreeModelImplementor
 	{
 		public DataTableTreeModel ()
@@ -269,7 +274,7 @@ namespace LPSClient
 				if(dc.DataType == typeof(bool))
 				{
 					renderer = new CellRendererToggle();
-					wc = new TreeViewColumn(caption, renderer, "active", i, "inconsistent", i+1000, "radio",i+1000);
+					wc = new TreeViewColumn(caption, renderer, "active", i); //, "inconsistent", i+1000, "radio",i+1000);
 				}
 				else
 				{

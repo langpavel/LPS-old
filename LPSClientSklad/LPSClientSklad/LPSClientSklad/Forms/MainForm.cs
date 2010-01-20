@@ -120,7 +120,10 @@ namespace LPSClient.Sklad
 			int pgIdx = nbData.AppendPage(page, header);
 			
 			DataSet ds = Connection.GetDataSetSimple(sql);
-			DataTableTreeModel.AssignNew(tw, ds.Tables[0], false);
+			
+			//DataTableTreeModel.AssignNew(tw, ds.Tables[0], false);
+			DataTableListStoreBinding binding = new DataTableListStoreBinding(tw, ds.Tables[0]);
+			binding.Bind();
 			
 			btnCloseTab.Clicked += delegate {
 				nbData.Remove(header);
