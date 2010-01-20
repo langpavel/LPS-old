@@ -21,6 +21,8 @@ namespace LPSClient
 			set { _DataTable = value; }
 		}
 		
+		public bool RenderToMarkup { get; set; }
+		
 		/// <summary>
 		/// Returns row on one-level path
 		/// </summary>
@@ -142,12 +144,20 @@ namespace LPSClient
 					else
 						val = new GLib.Value((bool)o);
 				}
-				else
+				else if(RenderToMarkup)
 				{
 					if(o == null || o is DBNull)
 						val = new GLib.Value("<span color=\"#7777ff\">(?)</span>");
 					else
 						val = new GLib.Value(o.ToString().Replace("&","&amp;").Replace("<","&lt;"));
+					return;
+				}
+				else
+				{
+					if(o == null || o is DBNull)
+						val = new GLib.Value("");
+					else
+						val = new GLib.Value(o.ToString());
 					return;
 				}
 			}
@@ -240,13 +250,16 @@ namespace LPSClient
 			return GetNodeAtPath(path) as DataRow;
 		}
 		
-		public static void AssignNew(TreeView view, DataTable dt)
+		public static void AssignNew(TreeView view, DataTable dt, bool markup)
 		{
 			DataTableTreeModel model = new DataTableTreeModel();
 			model.DataTable = dt;
+			model.RenderToMarkup = markup;
 			view.BorderWidth = 0;
 			view.EnableGridLines = TreeViewGridLines.Vertical;
-			view.Model = new TreeModelAdapter(model);
+			view.Reorderable = true;
+			view.FixedHeightMode = true;
+			
 			for(int i = 0; i < dt.Columns.Count; i++)
 			{
 				DataColumn dc = dt.Columns[i];
@@ -260,19 +273,24 @@ namespace LPSClient
 				}
 				else
 				{
-					renderer = new CellRendererText2();
-					wc = new TreeViewColumn(caption, renderer, "markup", i);
+					renderer = new CellRendererText();
+					if(markup)
+						wc = new TreeViewColumn(caption, renderer, "markup", i);
+					else
+						wc = new TreeViewColumn(caption, renderer, "text", i);
 				}
 				wc.Reorderable = true;
 				wc.MinWidth = 4;
 				wc.MaxWidth = 1000;
 				wc.Resizable = true;
-				//wc.Sizing = TreeViewColumnSizing.Autosize;
+				wc.Sizing = TreeViewColumnSizing.Fixed;
+				wc.FixedWidth = 50;
 				//wc.SortIndicator = true;
 				//wc.SortOrder = SortType.Ascending;
 				view.AppendColumn(wc);
 			}
 
+			view.Model = new TreeModelAdapter(model);
 		}
 	}
 }

@@ -212,10 +212,11 @@ namespace ImportHelper
 
 		private void Addr116(string objed, string packed, string[] parts)
 		{
+			Addr68(objed, packed, parts);
 			//WriteStrArray(parts, 4, 6); // keys
-			Dictionary<string, string> data = GetDict(parts);
-			string hash = GetSHA1String(packed, "");
-			DataTable adr = Adresa.Tables[0];
+			//Dictionary<string, string> data = GetDict(parts);
+			//string hash = GetSHA1String(packed, "");
+			//DataTable adr = Adresa.Tables[0];
 		}
 
 	}

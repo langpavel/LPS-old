@@ -120,7 +120,7 @@ namespace LPSClient.Sklad
 			int pgIdx = nbData.AppendPage(page, header);
 			
 			DataSet ds = Connection.GetDataSetSimple(sql);
-			DataTableTreeModel.AssignNew(tw, ds.Tables[0]);
+			DataTableTreeModel.AssignNew(tw, ds.Tables[0], false);
 			
 			btnCloseTab.Clicked += delegate {
 				nbData.Remove(header);
