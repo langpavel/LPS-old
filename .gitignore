@@ -8,3 +8,4 @@ generated.cs
 LPServer/bin/*
 LPShared/LPShared/bin/*
 LPSServer/bin/
+/tmp
