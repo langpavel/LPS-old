@@ -40,25 +40,41 @@ namespace LPSClient
 			this.Entry = entry;
 			this.Column = column;
 			this.Row = row;
+			UptadeEntryValue(row[Column]);
 			Bind();
 		}
 	
-		public override void Bind ()
+		protected void UptadeEntryValue(object value)
 		{
-			this.Entry.Activated += delegate(object sender, EventArgs e) {
-				Console.WriteLine("Activated {0}", ((Entry)sender).Text);
-			};
-			this.Entry.Changed += delegate(object sender, EventArgs e) {
-				Console.WriteLine("Changed done {0}", ((Entry)sender).Text);
-			};
-			this.Entry.Text = Convert.ToString(Row[Column]);
+			string s = Convert.ToString(value);
+			Console.WriteLine("ENTRY <==\t'{0}'", s);
+			this.Entry.Text = s;
 		}
 		
-		public override void Unbind ()
+		public override void Bind ()
 		{
-			
+			this.Entry.Changed += HandleEntryChanged;
+			this.Row.Table.ColumnChanged += HandleRowTableColumnChanged;
 		}
 
+		public override void Unbind ()
+		{
+			this.Entry.Changed -= HandleEntryChanged;
+			this.Row.Table.ColumnChanged -= HandleRowTableColumnChanged;
+		}
 
+		void HandleEntryChanged (object sender, EventArgs e)
+		{
+			object o = Convert.ChangeType(((Entry)sender).Text, Column.DataType);
+			Console.WriteLine("ROW <==\t'{0}'", o);
+			Row[Column] = o;
+		}
+		
+		void HandleRowTableColumnChanged (object sender, DataColumnChangeEventArgs e)
+		{
+			if(e.Column == this.Column && e.Row == this.Row)
+				UptadeEntryValue(e.ProposedValue);
+		}
+		
 	}
 }

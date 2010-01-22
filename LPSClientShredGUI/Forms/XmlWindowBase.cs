@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Gtk;
 
 namespace LPSClient
@@ -8,6 +9,11 @@ namespace LPSClient
 		public Glade.XML GladeXML { get; set; }
 		public Window Window { get; set; }
 		//public bool DestroyOnDelete { get; set; }
+		private List<IDisposable> _OwnedComponents;
+		public List<IDisposable> OwnedComponents
+		{ 
+			get { return _OwnedComponents ?? (_OwnedComponents = new List<IDisposable>()); } 
+		}
 
 		public ServerConnection Connection { get { return ServerConnection.Instance; } }
 		
@@ -27,6 +33,15 @@ namespace LPSClient
 
 		public virtual void Destroy()
 		{
+			if(this._OwnedComponents != null)
+			{
+				_OwnedComponents.Reverse();
+				foreach(IDisposable obj in _OwnedComponents)
+				{
+					obj.Dispose();
+				}
+				_OwnedComponents = null;
+			}
 			if(this.Window != null)
 			{
 				this.Window.Destroy();

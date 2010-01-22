@@ -37,6 +37,7 @@ namespace LPSClient
 					DataColumn col = table.Columns[name];
 				
 					WidgetRowBinding binding = BindWidget(col, w);
+					this.OwnedComponents.Add(binding);
 				}
 				catch(Exception ex)
 				{
