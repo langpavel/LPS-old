@@ -66,12 +66,7 @@ namespace ImportHelper
 			Connection.ConnectionString = "Server=127.0.0.1;Port=5432;Database=filmarena;Userid=filmarena;Password=filmArena3095;Protocol=3;Pooling=true;MinPoolSize=1;MaxPoolSize=20;ConnectionLifeTime=15;";
 			Connection.Open();
 
-			DataTable table = Adresa.Tables[0];
-			DataColumn col = table.Columns[0];
-			Console.WriteLine(col.ColumnMapping);
-			Console.WriteLine(col.ColumnName);
-			
-			//ProcessAddresses();
+			ProcessAddresses();
 			
 			Connection.Close();
 		}

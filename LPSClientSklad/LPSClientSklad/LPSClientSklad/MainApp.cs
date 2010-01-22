@@ -36,17 +36,35 @@ namespace LPSClient.Sklad
 			FormFactory.Register(new FormXmlResourceInfo<LoginDialog>("login", "ui-shared.glade", "dialogLogin"));
 			FormFactory.Register(new FormXmlResourceInfo<PasswdChDialog>("chpasswd", "ui-shared.glade", "dialogPswChange"));
 			FormFactory.Register(new FormXmlResourceInfo<MainForm>("main", "ui-sklad.glade", "windowMain"));
+			FormFactory.Register(new FormXmlResourceInfo<AdresaForm>("adresa", "adresa.glade", "windowAdresa"));
 
 			Application.Init ();
 
+			if(!DoLogin())
+				return;
+
+			MainForm frm = FormFactory.Create<MainForm>("main");
+			MainApp.MainForm = frm;
+			frm.ShowAll();
+			
+			Run();
+		}
+		
+		public void Run()
+		{
+			Application.Run();
+		}
+		
+		public bool DoLogin()
+		{
 			using(LoginDialog login = FormFactory.Create<LoginDialog>("login"))
 			{
 				while(true)
 				{
 					login.edtPassword.Text = "";
 					ResponseType response = login.Run();
-					if(response == ResponseType.Cancel)
-						return;
+					if(response != ResponseType.Ok)
+						return false;
 					try
 					{
 						new ServerConnection(login.edtServer.Text);
@@ -60,7 +78,7 @@ namespace LPSClient.Sklad
 					}
 					try 
 					{
-						if(ServerConnection.Instance.Login(login.edtLogin.Text, login.edtPassword.Text))
+						if(ServerConnection.Instance.Login(login.edtLogin.Text, login.edtPassword.Text) != 0)
 						{
 							ServerUrl = login.edtServer.Text;
 							UserLogin = login.edtLogin.Text;
@@ -69,7 +87,7 @@ namespace LPSClient.Sklad
 								Registry.SetValue("HKEY_CURRENT_USER\\Software\\LPSoft", "LastUser", UserLogin, RegistryValueKind.String);
 							} catch { }
 			
-							break;
+							return true;
 						}
 					}
 					catch(Exception err)
@@ -80,17 +98,6 @@ namespace LPSClient.Sklad
 					}
 				}
 			}
-
-			MainForm frm = FormFactory.Create<MainForm>("main");
-			MainApp.MainForm = frm;
-			frm.ShowAll();
-			
-			Run();
-		}
-		
-		public void Run()
-		{
-			Application.Run();
 		}
 		
 		public static void ShowMessage(Window parent, MessageType msgType, string caption, string text, params object[] args)

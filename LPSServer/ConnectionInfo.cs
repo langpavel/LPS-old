@@ -10,7 +10,7 @@ namespace LPSServer
 	
 	public class ConnectionInfo : IDisposable
 	{
-		public long Id { get; set; }
+		public long UserId { get; set; }
 		public string UserName { get; set; }
 		public NpgsqlConnection Connection { get; set; }
 		private string passwdhash;
@@ -66,7 +66,7 @@ namespace LPSServer
 				new NpgsqlParameter("passwd", result.passwdhash));
 			if(id == null || id is DBNull)
 				throw new BadPasswordException();
-			result.Id = Convert.ToInt64(id);
+			result.UserId = Convert.ToInt64(id);
 			return result;
 		}
 		
@@ -95,7 +95,7 @@ namespace LPSServer
 			NpgsqlTransaction tr;
 			int rows = ExecuteNonqueryTr(
 				"update users set passwd=:newpsw where id=:id and username=:username and passwd=:oldpsw", out tr,
-				new NpgsqlParameter("id", Id),
+				new NpgsqlParameter("id", UserId),
 				new NpgsqlParameter("username", UserName),
 				new NpgsqlParameter("oldpsw", passwdhash),
 				new NpgsqlParameter("newpsw", new_hash));
@@ -206,6 +206,38 @@ namespace LPSServer
 			return cmd;
 		}
 		
+		public void UpdateUserInfo(DataTable table)
+		{
+			DateTime now = DateTime.Now;
+			int id_user_create = table.Columns.IndexOf("id_user_create");
+			int dt_create = table.Columns.IndexOf("dt_create");
+			int id_user_modify = table.Columns.IndexOf("id_user_modify");
+			int dt_modify = table.Columns.IndexOf("dt_modify");
+
+			foreach(DataRow row in table.Rows)
+			{
+				switch(row.RowState)
+				{
+				case DataRowState.Added:
+					if(id_user_create >= 0)
+						row[id_user_create] = this.UserId;
+					if(dt_create >= 0)
+						row[dt_create] = now;
+					if(id_user_create >= 0)
+						row[id_user_modify] = this.UserId;
+					if(dt_create >= 0)
+						row[dt_modify] = now;
+					break;
+				case DataRowState.Modified:
+					if(id_user_create >= 0)
+						row[id_user_modify] = this.UserId;
+					if(dt_create >= 0)
+						row[dt_modify] = now;
+					break;
+				}
+			}
+		}
+
 		#endregion
 	}
 }

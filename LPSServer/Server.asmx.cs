@@ -37,17 +37,17 @@ namespace LPSServer
 		}
 		
 		[WebMethod(EnableSession=true)]
-		public bool Login(string login, string password)
+		public long Login(string login, string password)
 		{
 			ConnectionInfo ci = this.Session["CONN"] as ConnectionInfo;
 			if(ci != null && ci.Verify(login, password))
-				return true;
+				return ci.UserId;
 			if(ci != null)
 				ci.Dispose();
 			this.Session.Clear();
 			ci = ConnectionInfo.Create(login, password);
 			this.Session["CONN"] = ci;
-			return (ci != null);
+			return ci.UserId;
 		}
 
 		[WebMethod(EnableSession=true)]
@@ -170,7 +170,7 @@ namespace LPSServer
 		}
 
 		[WebMethod(EnableSession=true)]
-		public int SaveDataSet(DataSet changes, int srv_id)
+		public int SaveDataSet(DataSet changes, int srv_id, bool updateUserInfo)
 		{
 			ConnectionInfo ci = GetConnectionInfo();
 			DataSetStoreItem dstore = ci.RestoreDataSet(srv_id);
@@ -178,17 +178,8 @@ namespace LPSServer
 			int result = 0;
 			foreach(DataTable ch_table in changes.Tables)
 			{
-				/*
-				DataTable dt = dstore.DataSet.Tables[ch_table.TableName, ch_table.Namespace];
-				try
-				{
-					dt.Merge(ch_table, true, MissingSchemaAction.Error);
-				}
-				catch(Exception ex)
-				{
-					throw new Exception("changes:" + ch_table.Rows.Count, ex);
-				}
-				*/
+				if(updateUserInfo)
+					ci.UpdateUserInfo(ch_table);
 				try
 				{
 					result += dstore.DataAdapter.Update(ch_table);

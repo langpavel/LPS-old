@@ -122,11 +122,11 @@ namespace LPSClientShared.LPSServer {
         }
         
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/Login", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public bool Login(string login, string password) {
+        public long Login(string login, string password) {
             object[] results = this.Invoke("Login", new object[] {
                         login,
                         password});
-            return ((bool)(results[0]));
+            return ((long)(results[0]));
         }
         
         public System.IAsyncResult BeginLogin(string login, string password, System.AsyncCallback callback, object asyncState) {
@@ -135,9 +135,9 @@ namespace LPSClientShared.LPSServer {
                         password}, callback, asyncState);
         }
         
-        public bool EndLogin(System.IAsyncResult asyncResult) {
+        public long EndLogin(System.IAsyncResult asyncResult) {
             object[] results = this.EndInvoke(asyncResult);
-            return ((bool)(results[0]));
+            return ((long)(results[0]));
         }
         
         public void LoginAsync(string login, string password) {
@@ -566,17 +566,19 @@ namespace LPSClientShared.LPSServer {
         }
         
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/SaveDataSet", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public int SaveDataSet(System.Data.DataSet changes, int srv_id) {
+        public int SaveDataSet(System.Data.DataSet changes, int srv_id, bool updateUserInfo) {
             object[] results = this.Invoke("SaveDataSet", new object[] {
                         changes,
-                        srv_id});
+                        srv_id,
+                        updateUserInfo});
             return ((int)(results[0]));
         }
         
-        public System.IAsyncResult BeginSaveDataSet(System.Data.DataSet changes, int srv_id, System.AsyncCallback callback, object asyncState) {
+        public System.IAsyncResult BeginSaveDataSet(System.Data.DataSet changes, int srv_id, bool updateUserInfo, System.AsyncCallback callback, object asyncState) {
             return this.BeginInvoke("SaveDataSet", new object[] {
                         changes,
-                        srv_id}, callback, asyncState);
+                        srv_id,
+                        updateUserInfo}, callback, asyncState);
         }
         
         public int EndSaveDataSet(System.IAsyncResult asyncResult) {
@@ -584,17 +586,18 @@ namespace LPSClientShared.LPSServer {
             return ((int)(results[0]));
         }
         
-        public void SaveDataSetAsync(System.Data.DataSet changes, int srv_id) {
-            this.SaveDataSetAsync(changes, srv_id, null);
+        public void SaveDataSetAsync(System.Data.DataSet changes, int srv_id, bool updateUserInfo) {
+            this.SaveDataSetAsync(changes, srv_id, updateUserInfo, null);
         }
         
-        public void SaveDataSetAsync(System.Data.DataSet changes, int srv_id, object userState) {
+        public void SaveDataSetAsync(System.Data.DataSet changes, int srv_id, bool updateUserInfo, object userState) {
             if ((this.SaveDataSetOperationCompleted == null)) {
                 this.SaveDataSetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveDataSetCompleted);
             }
             this.InvokeAsync("SaveDataSet", new object[] {
                         changes,
-                        srv_id}, this.SaveDataSetOperationCompleted, userState);
+                        srv_id,
+                        updateUserInfo}, this.SaveDataSetOperationCompleted, userState);
         }
         
         private void OnSaveDataSetCompleted(object arg) {
@@ -667,10 +670,10 @@ namespace LPSClientShared.LPSServer {
             this.results = results;
         }
         
-        public bool Result {
+        public long Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
+                return ((long)(this.results[0]));
             }
         }
     }

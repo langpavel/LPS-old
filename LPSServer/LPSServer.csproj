@@ -39,6 +39,7 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Configuration" />
+    <Reference Include="Mono.Security" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Server.asmx" />

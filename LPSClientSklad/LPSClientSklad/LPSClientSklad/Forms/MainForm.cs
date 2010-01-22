@@ -11,7 +11,6 @@ namespace LPSClient.Sklad
 		[Glade.Widget] TreeView viewModules;
 		[Glade.Widget] Notebook nbData;
 		
-		public ServerConnection Connection { get { return ServerConnection.Instance; } }
 		public string ServerUrl { get; set; }
 		public string UserLogin { get; set; }
 
@@ -24,7 +23,7 @@ namespace LPSClient.Sklad
 			this.ServerUrl = MainApp.ServerUrl;
 			this.UserLogin = MainApp.UserLogin;
 			
-			this.Window.Title = "LPS Sklad: " + this.UserLogin + " @ " + this.ServerUrl;
+			this.Window.Title = "LPS Sklad: " + Connection.GetUserName() + " (" + this.UserLogin + ")@" + this.ServerUrl;
 			
 			this.Window.DeleteEvent += delegate(object o, DeleteEventArgs args) {
 				Application.Quit();
@@ -36,24 +35,24 @@ namespace LPSClient.Sklad
 		private void InitModules()
 		{
 			Type t_str = typeof(string);
-			TreeStore tree = new TreeStore(t_str, typeof(Gdk.Pixbuf), t_str, t_str);
+			TreeStore tree = new TreeStore(t_str, t_str, typeof(Gdk.Pixbuf), t_str, t_str);
 			viewModules.Model = tree;
 			
 			//Gdk.Pixbuf i_folder = new Gdk.Pixbuf(null, "Images.database.png");
 			
 			//CellRendererPixbuf iconRenderer = new CellRendererPixbuf();
 			//viewModules.AppendColumn(new TreeViewColumn("", iconRenderer, "stock", 1));
-			viewModules.AppendColumn(new TreeViewColumn("Modul", new CellRendererText(), "text", 2));
+			viewModules.AppendColumn(new TreeViewColumn("Modul", new CellRendererText(), "text", 3));
 			viewModules.HeadersVisible = false;
 			//viewModules.RowActivated += ViewModulesRowActivated;
 			
-			TreeIter adresa = tree.AppendValues("__raw", null, "Adresář", "select * from adresa");
-			tree.AppendValues(adresa, "__raw", null, "Odběratelé", "select * from adresa");
-			tree.AppendValues(adresa, "__raw", null, "Dodavatelé", "select * from adresa");
-			TreeIter sklad = tree.AppendValues("", null, "Skladové hospodářství");
-			TreeIter produkty = tree.AppendValues(sklad, "__raw", null, "Produkty", "select * from produkty");
-			TreeIter cisel = tree.AppendValues("", null, "Číselníky");
-			tree.AppendValues(cisel, "__raw", null, "Sklady", "select * from c_sklad");
+			TreeIter adresa = tree.AppendValues("__raw", "adresa", null, "Adresář", "select * from adresa");
+			tree.AppendValues(adresa, "__raw", "adresa", null, "Odběratelé", "select * from adresa");
+			tree.AppendValues(adresa, "__raw", "adresa", null, "Dodavatelé", "select * from adresa");
+			TreeIter sklad = tree.AppendValues("", "", null, "Skladové hospodářství");
+			TreeIter produkty = tree.AppendValues(sklad, "", "__raw", null, "Produkty", "select * from produkty");
+			TreeIter cisel = tree.AppendValues("", "", null, "Číselníky");
+			tree.AppendValues(cisel, "__raw", "", null, "Sklady", "select * from c_sklad");
 			
 			viewModules.ExpandAll();
 		}
@@ -66,8 +65,9 @@ namespace LPSClient.Sklad
 			if(store.GetIter(out iter, args.Path))
 			{
 				string id = store.GetValue(iter, 0) as string;
+				string form_id = store.GetValue(iter, 1) as string;
 				if(id == "__raw")
-					NewTabBySQL(store.GetValue(iter, 2) as string, store.GetValue(iter, 3) as string);
+					NewTabBySQL(form_id, store.GetValue(iter, 3) as string, store.GetValue(iter, 4) as string);
 			}
 		}
 		
@@ -87,11 +87,15 @@ namespace LPSClient.Sklad
 		{
 			try
 			{
-				TreeView view = sender as TreeView;
-				TreeModelAdapter adapter = view.Model as TreeModelAdapter;
-				DataTableTreeModel model = adapter.Implementor as DataTableTreeModel;
-				DataRow row = model.GetRow(args.Path);
-				Console.WriteLine("ID: " + row["id"] );
+				TreeView view = (TreeView)sender;
+				DataTableListStoreBinding binding = DataTableListStoreBinding.Get(view);
+				DataRow row = binding.GetRow(args.Path);
+				string form_id = (string)view.Data["FORM_ID"];
+				Console.WriteLine("LIST: {0} ROW ID: {1}", form_id, row[0]);
+				FormInfo fi = FormFactory.Instance.GetFormInfo(form_id);
+				AutobindWindow w = fi.CreateObject() as AutobindWindow;
+				w.Load(Convert.ToInt64(row[0]));
+				w.ShowAll();
 			}
 			catch(Exception err)
 			{
@@ -99,7 +103,7 @@ namespace LPSClient.Sklad
 			}
 		}
 
-		public void NewTabBySQL(string label, string sql)
+		public void NewTabBySQL(string form_id, string label, string sql)
 		{
 			TreeView tw = new TreeView();
 			tw.RowActivated += RowActivated;
@@ -121,6 +125,8 @@ namespace LPSClient.Sklad
 			int pgIdx = nbData.AppendPage(page, header);
 			
 			DataSet ds = Connection.GetDataSetSimple(sql);
+			
+			tw.Data["FORM_ID"] = form_id;
 			
 			//oldest:
 			//DataTableTreeModel.AssignNew(tw, ds.Tables[0], false);

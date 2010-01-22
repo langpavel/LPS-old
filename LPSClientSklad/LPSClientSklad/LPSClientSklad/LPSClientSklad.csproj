@@ -58,6 +58,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -69,12 +70,16 @@
     <EmbeddedResource Include="Forms\ui-sklad.glade">
       <LogicalName>ui-sklad.glade</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\adresa.glade">
+      <LogicalName>adresa.glade</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gtk-gui\generated.cs" />
     <Compile Include="MainApp.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Forms\MainForm.cs" />
+    <Compile Include="Forms\AdresaForm.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

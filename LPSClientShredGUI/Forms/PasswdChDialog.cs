@@ -47,7 +47,7 @@ namespace LPSClient
 					continue;
 				}
 				
-				if(ServerConnection.Instance.ChangePassword(edtOldPsw.Text, edtNewPsw1.Text))
+				if(Connection.ChangePassword(edtOldPsw.Text, edtNewPsw1.Text))
 				{
 					ShowMessage(MessageType.Info, "Informace", 
 						"Heslo bylo úspěšně změněno");

@@ -8,6 +8,8 @@ namespace LPSClient
 		public Glade.XML GladeXML { get; set; }
 		public Window Window { get; set; }
 		//public bool DestroyOnDelete { get; set; }
+
+		public ServerConnection Connection { get { return ServerConnection.Instance; } }
 		
 		public XmlWindowBase ()
 		{

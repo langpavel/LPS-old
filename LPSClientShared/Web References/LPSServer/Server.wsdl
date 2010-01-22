@@ -23,7 +23,7 @@
       <xs:element name="LoginResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="1" maxOccurs="1" name="LoginResult" type="xs:boolean" />
+            <xs:element minOccurs="1" maxOccurs="1" name="LoginResult" type="xs:long" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -206,6 +206,7 @@
               </xs:complexType>
             </xs:element>
             <xs:element minOccurs="1" maxOccurs="1" name="srv_id" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="updateUserInfo" type="xs:boolean" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -227,9 +228,9 @@
         <xs:complexType />
       </xs:element>
       <xs:element name="boolean" type="xs:boolean" />
+      <xs:element name="long" type="xs:long" />
       <xs:element name="string" nillable="true" type="xs:string" />
       <xs:element name="int" type="xs:int" />
-      <xs:element name="long" type="xs:long" />
       <xs:element name="DataSet" nillable="true">
         <xs:complexType>
           <xs:sequence>
@@ -339,7 +340,7 @@
     <part name="password" type="s:string" />
   </message>
   <message name="LoginHttpGetOut">
-    <part name="Body" element="s0:boolean" />
+    <part name="Body" element="s0:long" />
   </message>
   <message name="GetLoggedUserHttpGetIn" />
   <message name="GetLoggedUserHttpGetOut">
@@ -397,7 +398,7 @@
     <part name="password" type="s:string" />
   </message>
   <message name="LoginHttpPostOut">
-    <part name="Body" element="s0:boolean" />
+    <part name="Body" element="s0:long" />
   </message>
   <message name="GetLoggedUserHttpPostIn" />
   <message name="GetLoggedUserHttpPostOut">

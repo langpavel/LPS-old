@@ -41,6 +41,9 @@ namespace LPSClient
 			}
 		}
 		
+		public long UserId { get; set; }
+		public DataTable Users { get; set; }
+		
 		private static System.Net.CookieContainer CookieContainer;
 		private LPSClientShared.LPSServer.Server Server;
 		
@@ -56,9 +59,23 @@ namespace LPSClient
 			return Server.Ping();
 		}
 		
-		public bool Login(string login, string password)
+		public long Login(string login, string password)
 		{
-			return Server.Login(login, password);
+			this.UserId = Server.Login(login, password);
+			Users = this.GetDataSetSimple("select id, username, first_name, surname from users").Tables[0];
+			Users.PrimaryKey = new DataColumn[] { Users.Columns[0] };
+			return this.UserId;
+		}
+		
+		public string GetUserName(long id)
+		{
+			DataRow r = Users.Rows.Find(id);
+			return String.Format("{0} {1}", r["surname"], r["first_name"]);
+		}
+
+		public string GetUserName()
+		{
+			return GetUserName(this.UserId);
 		}
 
 		public string GetLoggedUser()
@@ -173,22 +190,27 @@ namespace LPSClient
 			return result;
 		}
 		
-		public int SaveDataSet(DataSet changes_dataset, int server_id)
+		public int SaveDataSet(DataSet changes_dataset, int server_id, bool updateUserInfo)
 		{
-			return Server.SaveDataSet(changes_dataset, server_id);
+			return Server.SaveDataSet(changes_dataset, server_id, updateUserInfo);
 		}
 		
-		public int SaveDataSet(DataSet dataset)
+		public int SaveDataSet(DataSet dataset, bool updateUserInfo)
 		{
 			if(!dataset.HasChanges())
 				return 0;
 			int server_id = (int)dataset.ExtendedProperties["_SERVER_ID_"];
 			using(DataSet changes = dataset.GetChanges())
 			{
-				int result = this.SaveDataSet(changes, server_id);
+				int result = this.SaveDataSet(changes, server_id, updateUserInfo);
 				dataset.AcceptChanges();
 				return result;
 			}
+		}
+		
+		public int SaveDataSet(DataSet dataset)
+		{
+			return SaveDataSet(dataset, true);
 		}
 		
 		public void DisposeDataSet(int server_id)

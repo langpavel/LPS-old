@@ -45,6 +45,7 @@
     <Compile Include="LoginRequiredException.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="IServer.cs" />
+    <Compile Include="DeepEnumerator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
