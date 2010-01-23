@@ -51,12 +51,19 @@ namespace LPSClient
 		{
 			if(w is Entry)
 				return BindEntry(col, (Entry) w);
+			if(w is CheckButton)
+				return BindCheckButton(col, (CheckButton) w);
 			return null;
 		}
 		
 		public WidgetRowBinding BindEntry(DataColumn col, Entry entry)
 		{
 			return new EntryRowBinding(entry, col, Row);
+		}
+		
+		public WidgetRowBinding BindCheckButton(DataColumn col, CheckButton chkbutton)
+		{
+			return new CheckButtonRowBinding(chkbutton, col, Row);
 		}
 
 		protected virtual void Unbind(DataRow row)

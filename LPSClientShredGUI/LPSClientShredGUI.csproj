@@ -53,11 +53,14 @@
     <Compile Include="DataTableTreeModel\CellRendererText2.cs" />
     <Compile Include="DataTableTreeModel\DataTableListStoreBinding.cs" />
     <Compile Include="Forms\AutobindWindow.cs" />
-    <Compile Include="Forms\WidgetRowBinding.cs" />
+    <Compile Include="Forms\WidgetBindigs\WidgetRowBinding.cs" />
+    <Compile Include="Forms\WidgetBindigs\EntryRowBinding.cs" />
+    <Compile Include="Forms\WidgetBindigs\CheckButtonRowBinding.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />
     <Folder Include="DataTableTreeModel\" />
+    <Folder Include="Forms\WidgetBindigs\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPSShared\LPSShared\LPSShared.csproj">
