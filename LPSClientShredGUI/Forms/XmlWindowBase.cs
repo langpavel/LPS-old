@@ -38,7 +38,17 @@ namespace LPSClient
 				_OwnedComponents.Reverse();
 				foreach(IDisposable obj in _OwnedComponents)
 				{
-					obj.Dispose();
+					try
+					{
+						obj.Dispose();
+					}
+					catch(Exception ex)
+					{
+						if(obj == null)
+							Console.WriteLine("Destroy err - null: {0}", ex);
+						else
+							Console.WriteLine("Destroy err: {0} {1}", obj.GetType(), ex);
+					}
 				}
 				_OwnedComponents = null;
 			}

@@ -13,14 +13,16 @@ namespace LPSClientShared.LPSServer {
     
     /// <remarks/>
     /// <remarks>
-///LPSoft Sklad web service
+///LPSoft server
 ///</remarks>
-    [System.Web.Services.WebServiceBinding(Name="ServerSoap", Namespace="http://lpsoft.org/skladserver/")]
+    [System.Web.Services.WebServiceBinding(Name="ServerSoap", Namespace="http://lpsoft.org/server/")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Server : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback PingOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetTextResourceOperationCompleted;
         
         private System.Threading.SendOrPostCallback LoginOperationCompleted;
         
@@ -40,8 +42,6 @@ namespace LPSClientShared.LPSServer {
         
         private System.Threading.SendOrPostCallback NextSeqValueOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetTextResourceOperationCompleted;
-        
         private System.Threading.SendOrPostCallback GetDataSetSimpleOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataSetOperationCompleted;
@@ -59,6 +59,8 @@ namespace LPSClientShared.LPSServer {
         }
         
         public event PingCompletedEventHandler PingCompleted;
+        
+        public event GetTextResourceCompletedEventHandler GetTextResourceCompleted;
         
         public event LoginCompletedEventHandler LoginCompleted;
         
@@ -78,8 +80,6 @@ namespace LPSClientShared.LPSServer {
         
         public event NextSeqValueCompletedEventHandler NextSeqValueCompleted;
         
-        public event GetTextResourceCompletedEventHandler GetTextResourceCompleted;
-        
         public event GetDataSetSimpleCompletedEventHandler GetDataSetSimpleCompleted;
         
         public event GetDataSetCompletedEventHandler GetDataSetCompleted;
@@ -88,30 +88,33 @@ namespace LPSClientShared.LPSServer {
         
         public event DisposeDataSetCompletedEventHandler DisposeDataSetCompleted;
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/Ping", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public bool Ping() {
-            object[] results = this.Invoke("Ping", new object[0]);
-            return ((bool)(results[0]));
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/Ping", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public string Ping(string data) {
+            object[] results = this.Invoke("Ping", new object[] {
+                        data});
+            return ((string)(results[0]));
         }
         
-        public System.IAsyncResult BeginPing(System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("Ping", new object[0], callback, asyncState);
+        public System.IAsyncResult BeginPing(string data, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("Ping", new object[] {
+                        data}, callback, asyncState);
         }
         
-        public bool EndPing(System.IAsyncResult asyncResult) {
+        public string EndPing(System.IAsyncResult asyncResult) {
             object[] results = this.EndInvoke(asyncResult);
-            return ((bool)(results[0]));
+            return ((string)(results[0]));
         }
         
-        public void PingAsync() {
-            this.PingAsync(null);
+        public void PingAsync(string data) {
+            this.PingAsync(data, null);
         }
         
-        public void PingAsync(object userState) {
+        public void PingAsync(string data, object userState) {
             if ((this.PingOperationCompleted == null)) {
                 this.PingOperationCompleted = new System.Threading.SendOrPostCallback(this.OnPingCompleted);
             }
-            this.InvokeAsync("Ping", new object[0], this.PingOperationCompleted, userState);
+            this.InvokeAsync("Ping", new object[] {
+                        data}, this.PingOperationCompleted, userState);
         }
         
         private void OnPingCompleted(object arg) {
@@ -121,7 +124,43 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/Login", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetTextResource", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public string GetTextResource(string path) {
+            object[] results = this.Invoke("GetTextResource", new object[] {
+                        path});
+            return ((string)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginGetTextResource(string path, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetTextResource", new object[] {
+                        path}, callback, asyncState);
+        }
+        
+        public string EndGetTextResource(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((string)(results[0]));
+        }
+        
+        public void GetTextResourceAsync(string path) {
+            this.GetTextResourceAsync(path, null);
+        }
+        
+        public void GetTextResourceAsync(string path, object userState) {
+            if ((this.GetTextResourceOperationCompleted == null)) {
+                this.GetTextResourceOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetTextResourceCompleted);
+            }
+            this.InvokeAsync("GetTextResource", new object[] {
+                        path}, this.GetTextResourceOperationCompleted, userState);
+        }
+        
+        private void OnGetTextResourceCompleted(object arg) {
+            if ((this.GetTextResourceCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetTextResourceCompleted(this, new GetTextResourceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/Login", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public long Login(string login, string password) {
             object[] results = this.Invoke("Login", new object[] {
                         login,
@@ -160,7 +199,7 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/GetLoggedUser", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetLoggedUser", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public string GetLoggedUser() {
             object[] results = this.Invoke("GetLoggedUser", new object[0]);
             return ((string)(results[0]));
@@ -193,7 +232,7 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/ChangePassword", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/ChangePassword", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public bool ChangePassword(string old_password, string new_password) {
             object[] results = this.Invoke("ChangePassword", new object[] {
                         old_password,
@@ -232,7 +271,7 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/Logout", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/Logout", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public void Logout() {
             this.Invoke("Logout", new object[0]);
         }
@@ -263,7 +302,7 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/ExecuteNonquerySimple", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/ExecuteNonquerySimple", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public int ExecuteNonquerySimple(string sql) {
             object[] results = this.Invoke("ExecuteNonquerySimple", new object[] {
                         sql});
@@ -299,7 +338,7 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/ExecuteNonquery", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/ExecuteNonquery", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public int ExecuteNonquery(string sql, object[] parameters) {
             object[] results = this.Invoke("ExecuteNonquery", new object[] {
                         sql,
@@ -338,7 +377,7 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/ExecuteScalarSimple", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/ExecuteScalarSimple", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public object ExecuteScalarSimple(string sql) {
             object[] results = this.Invoke("ExecuteScalarSimple", new object[] {
                         sql});
@@ -374,7 +413,7 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/ExecuteScalar", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/ExecuteScalar", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public object ExecuteScalar(string sql, object[] parameters) {
             object[] results = this.Invoke("ExecuteScalar", new object[] {
                         sql,
@@ -413,7 +452,7 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/NextSeqValue", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/NextSeqValue", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public long NextSeqValue(string generator) {
             object[] results = this.Invoke("NextSeqValue", new object[] {
                         generator});
@@ -449,43 +488,7 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/GetTextResource", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public string GetTextResource(string path) {
-            object[] results = this.Invoke("GetTextResource", new object[] {
-                        path});
-            return ((string)(results[0]));
-        }
-        
-        public System.IAsyncResult BeginGetTextResource(string path, System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("GetTextResource", new object[] {
-                        path}, callback, asyncState);
-        }
-        
-        public string EndGetTextResource(System.IAsyncResult asyncResult) {
-            object[] results = this.EndInvoke(asyncResult);
-            return ((string)(results[0]));
-        }
-        
-        public void GetTextResourceAsync(string path) {
-            this.GetTextResourceAsync(path, null);
-        }
-        
-        public void GetTextResourceAsync(string path, object userState) {
-            if ((this.GetTextResourceOperationCompleted == null)) {
-                this.GetTextResourceOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetTextResourceCompleted);
-            }
-            this.InvokeAsync("GetTextResource", new object[] {
-                        path}, this.GetTextResourceOperationCompleted, userState);
-        }
-        
-        private void OnGetTextResourceCompleted(object arg) {
-            if ((this.GetTextResourceCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetTextResourceCompleted(this, new GetTextResourceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/GetDataSetSimple", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetDataSetSimple", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public System.Data.DataSet GetDataSetSimple(string sql) {
             object[] results = this.Invoke("GetDataSetSimple", new object[] {
                         sql});
@@ -521,40 +524,35 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/GetDataSet", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public System.Data.DataSet GetDataSet(string sql, bool for_edit, object[] parameters, out int server_id) {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetDataSet", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public System.Data.DataSet GetDataSet(string sql, object[] parameters) {
             object[] results = this.Invoke("GetDataSet", new object[] {
                         sql,
-                        for_edit,
                         parameters});
-            server_id = ((int)(results[1]));
             return ((System.Data.DataSet)(results[0]));
         }
         
-        public System.IAsyncResult BeginGetDataSet(string sql, bool for_edit, object[] parameters, System.AsyncCallback callback, object asyncState) {
+        public System.IAsyncResult BeginGetDataSet(string sql, object[] parameters, System.AsyncCallback callback, object asyncState) {
             return this.BeginInvoke("GetDataSet", new object[] {
                         sql,
-                        for_edit,
                         parameters}, callback, asyncState);
         }
         
-        public System.Data.DataSet EndGetDataSet(System.IAsyncResult asyncResult, out int server_id) {
+        public System.Data.DataSet EndGetDataSet(System.IAsyncResult asyncResult) {
             object[] results = this.EndInvoke(asyncResult);
-            server_id = ((int)(results[1]));
             return ((System.Data.DataSet)(results[0]));
         }
         
-        public void GetDataSetAsync(string sql, bool for_edit, object[] parameters) {
-            this.GetDataSetAsync(sql, for_edit, parameters, null);
+        public void GetDataSetAsync(string sql, object[] parameters) {
+            this.GetDataSetAsync(sql, parameters, null);
         }
         
-        public void GetDataSetAsync(string sql, bool for_edit, object[] parameters, object userState) {
+        public void GetDataSetAsync(string sql, object[] parameters, object userState) {
             if ((this.GetDataSetOperationCompleted == null)) {
                 this.GetDataSetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDataSetCompleted);
             }
             this.InvokeAsync("GetDataSet", new object[] {
                         sql,
-                        for_edit,
                         parameters}, this.GetDataSetOperationCompleted, userState);
         }
         
@@ -565,20 +563,22 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/SaveDataSet", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public int SaveDataSet(System.Data.DataSet changes, int srv_id, bool updateUserInfo) {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/SaveDataSet", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public int SaveDataSet(System.Data.DataSet changes, bool updateUserInfo, string selectSql, object[] parameters) {
             object[] results = this.Invoke("SaveDataSet", new object[] {
                         changes,
-                        srv_id,
-                        updateUserInfo});
+                        updateUserInfo,
+                        selectSql,
+                        parameters});
             return ((int)(results[0]));
         }
         
-        public System.IAsyncResult BeginSaveDataSet(System.Data.DataSet changes, int srv_id, bool updateUserInfo, System.AsyncCallback callback, object asyncState) {
+        public System.IAsyncResult BeginSaveDataSet(System.Data.DataSet changes, bool updateUserInfo, string selectSql, object[] parameters, System.AsyncCallback callback, object asyncState) {
             return this.BeginInvoke("SaveDataSet", new object[] {
                         changes,
-                        srv_id,
-                        updateUserInfo}, callback, asyncState);
+                        updateUserInfo,
+                        selectSql,
+                        parameters}, callback, asyncState);
         }
         
         public int EndSaveDataSet(System.IAsyncResult asyncResult) {
@@ -586,18 +586,19 @@ namespace LPSClientShared.LPSServer {
             return ((int)(results[0]));
         }
         
-        public void SaveDataSetAsync(System.Data.DataSet changes, int srv_id, bool updateUserInfo) {
-            this.SaveDataSetAsync(changes, srv_id, updateUserInfo, null);
+        public void SaveDataSetAsync(System.Data.DataSet changes, bool updateUserInfo, string selectSql, object[] parameters) {
+            this.SaveDataSetAsync(changes, updateUserInfo, selectSql, parameters, null);
         }
         
-        public void SaveDataSetAsync(System.Data.DataSet changes, int srv_id, bool updateUserInfo, object userState) {
+        public void SaveDataSetAsync(System.Data.DataSet changes, bool updateUserInfo, string selectSql, object[] parameters, object userState) {
             if ((this.SaveDataSetOperationCompleted == null)) {
                 this.SaveDataSetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveDataSetCompleted);
             }
             this.InvokeAsync("SaveDataSet", new object[] {
                         changes,
-                        srv_id,
-                        updateUserInfo}, this.SaveDataSetOperationCompleted, userState);
+                        updateUserInfo,
+                        selectSql,
+                        parameters}, this.SaveDataSetOperationCompleted, userState);
         }
         
         private void OnSaveDataSetCompleted(object arg) {
@@ -607,7 +608,7 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/skladserver/DisposeDataSet", RequestNamespace="http://lpsoft.org/skladserver/", ResponseNamespace="http://lpsoft.org/skladserver/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/DisposeDataSet", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public void DisposeDataSet(int server_id) {
             this.Invoke("DisposeDataSet", new object[] {
                         server_id});
@@ -651,15 +652,34 @@ namespace LPSClientShared.LPSServer {
             this.results = results;
         }
         
-        public bool Result {
+        public string Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
+                return ((string)(this.results[0]));
             }
         }
     }
     
     public delegate void PingCompletedEventHandler(object sender, PingCompletedEventArgs args);
+    
+    public partial class GetTextResourceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetTextResourceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void GetTextResourceCompletedEventHandler(object sender, GetTextResourceCompletedEventArgs args);
     
     public partial class LoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
@@ -815,25 +835,6 @@ namespace LPSClientShared.LPSServer {
     
     public delegate void NextSeqValueCompletedEventHandler(object sender, NextSeqValueCompletedEventArgs args);
     
-    public partial class GetTextResourceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetTextResourceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    public delegate void GetTextResourceCompletedEventHandler(object sender, GetTextResourceCompletedEventArgs args);
-    
     public partial class GetDataSetSimpleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -866,13 +867,6 @@ namespace LPSClientShared.LPSServer {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-        
-        public int server_id {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
             }
         }
     }

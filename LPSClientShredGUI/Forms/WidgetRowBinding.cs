@@ -59,8 +59,23 @@ namespace LPSClient
 
 		public override void Unbind ()
 		{
-			this.Entry.Changed -= HandleEntryChanged;
-			this.Row.Table.ColumnChanged -= HandleRowTableColumnChanged;
+			try
+			{
+				if(this.Entry != null)
+				{
+					this.Entry.Changed -= HandleEntryChanged;
+					this.Entry = null;
+				}
+				if(this.Row != null && this.Row.Table != null)
+				{
+					this.Row.Table.ColumnChanged -= HandleRowTableColumnChanged;
+					this.Row = null;
+				}
+			}
+			catch(Exception ex)
+			{
+				Console.WriteLine(ex);
+			}
 		}
 
 		void HandleEntryChanged (object sender, EventArgs e)

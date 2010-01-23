@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Security.Cryptography;
 using Npgsql;
+using System.Web.Services.Protocols;
 
 namespace LPSServer
 {
@@ -15,14 +16,18 @@ namespace LPSServer
 		public NpgsqlConnection Connection { get; set; }
 		private string passwdhash;
 		
-		public Dictionary<int, DataSetStoreItem> StoredDataSets { get; set; }
-		private int ds_counter;
+		//private int ds_counter;
 
+		#region Management
 		private ConnectionInfo()
 		{
-			StoredDataSets = new Dictionary<int, DataSetStoreItem>();
+			//StoredDataSets = new Dictionary<int, DataSetStoreItem>();
+			NpgsqlEventLog.Level = LogLevel.None;
+			//NpgsqlEventLog.LogName = "NpgsqlTests.LogFile";
 		}
-		
+
+		/*
+		public Dictionary<int, DataSetStoreItem> StoredDataSets { get; set; }
 		public int StoreDataSet(DataSetStoreItem ds)
 		{
 			ds_counter++;
@@ -34,14 +39,8 @@ namespace LPSServer
 		{
 			return StoredDataSets[index];
 		}
+		*/
 		
-		public void DisposeDataSet(int index)
-		{
-			DataSetStoreItem ds = StoredDataSets[index];
-			StoredDataSets.Remove(index);
-			ds.Dispose();
-		}
-
 		public static string GetSHA1String(string data, string salt)
 		{
 			SHA1 sha1 = new SHA1Managed();
@@ -54,18 +53,21 @@ namespace LPSServer
 			NpgsqlConnection connection = new NpgsqlConnection();
 			connection.ConnectionString =
 				System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-			connection.Open();
 
 			ConnectionInfo result = new ConnectionInfo();
 			result.Connection = connection;
 			result.UserName = login;
 			result.passwdhash = GetSHA1String(password, login);
+			result.Open();
 			object id = result.ExecuteScalar(
 				"select id from users where username=:username and passwd=:passwd",
 				new NpgsqlParameter("username", login),
 				new NpgsqlParameter("passwd", result.passwdhash));
 			if(id == null || id is DBNull)
-				throw new BadPasswordException();
+			{
+				result.Dispose();
+				throw new SoapException("Neplatné jméno nebo heslo", SoapException.ClientFaultCode);
+			}
 			result.UserId = Convert.ToInt64(id);
 			return result;
 		}
@@ -73,15 +75,13 @@ namespace LPSServer
 		public bool Verify(string login, string password)
 		{
 			return (login == UserName) && 
-				(passwdhash == GetSHA1String(password, login)) &&
-				TestConnection();
+				(passwdhash == GetSHA1String(password, login));
 		}
 		
 		public bool Verify(string password)
 		{
 			return
-				(passwdhash == GetSHA1String(password, UserName)) &&
-				TestConnection();
+				(passwdhash == GetSHA1String(password, UserName));
 		}
 		
 		public bool ChangePassword(string old_password, string new_password)
@@ -112,16 +112,36 @@ namespace LPSServer
 				return false;
 			}
 		}
+		
+		public void Open()
+		{
+			if(Connection.State == ConnectionState.Closed)
+			{
+				Connection.Open();
+				using(NpgsqlCommand cmd = this.Connection.CreateCommand())
+				{
+					cmd.CommandText = "SET client_encoding = 'UTF8'";
+					cmd.ExecuteNonQuery();
+				}
+			}
+		}
+		
+		public void Close()
+		{
+			if(Connection != null && Connection.State != ConnectionState.Closed)
+				Connection.Close();
+		}
 			
 		public void Dispose()
 		{
+			Close();
 			if(Connection != null)
 			{
-				Connection.Close();
-				//Connection.Dispose();
+				Connection.Dispose();
 				Connection = null;
 			}
 		}
+		#endregion
 
 		#region SQL helpers
 		
@@ -190,6 +210,12 @@ namespace LPSServer
 			}
 		}
 		
+		public NpgsqlCommand CreateCommand()
+		{
+			NpgsqlCommand cmd = this.Connection.CreateCommand();
+			return cmd;
+		}
+
 		public NpgsqlCommand CreateCommand(string sql)
 		{
 			NpgsqlCommand cmd = this.Connection.CreateCommand();
@@ -237,7 +263,94 @@ namespace LPSServer
 				}
 			}
 		}
+		#endregion
+
+		#region DataSet handling
+		public DataSet GetDataSetSimple(string sql)
+		{
+			DataSet ds = new DataSet();
+			using(NpgsqlTransaction trans = Connection.BeginTransaction())
+			{
+				using(NpgsqlCommand command = CreateCommand(sql))
+				using(NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(command))
+				{
+					adapter.Fill(ds);
+					foreach(DataTable table in ds.Tables)
+					{
+						DataColumn col = table.Columns[0];
+						if(col.ColumnName == "id")
+							table.PrimaryKey = new DataColumn[] { col };
+					}
+				}
+				trans.Commit();
+				return ds;
+			}
+		}
+		
+		public DataSet GetDataSet(string sql, NpgsqlParameter[] parameters)
+		{
+			DataSet ds = new DataSet();
+			using(NpgsqlTransaction trans = Connection.BeginTransaction())
+			{
+				using(NpgsqlCommand command = CreateCommand(sql))
+				using(NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(command))
+				{
+					foreach(NpgsqlParameter parameter in parameters)
+						command.Parameters.Add(parameter);
+					adapter.Fill(ds);
+					foreach(DataTable table in ds.Tables)
+					{
+						DataColumn col = table.Columns[0];
+						if(col.ColumnName == "id")
+							table.PrimaryKey = new DataColumn[] { col };
+					}
+				}
+				trans.Commit();
+				return ds;
+			}
+		}
+		
+		public int SaveDataSet(DataSet changes, bool updateUserInfo, string selectSql, NpgsqlParameter[] parameters)
+		{
+			using(NpgsqlTransaction trans = Connection.BeginTransaction())
+			{
+				try
+				{
+					int result = 0;
+					using(NpgsqlCommand command = CreateCommand(selectSql))
+					using(NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(command))
+					{
+						foreach(NpgsqlParameter param in parameters)
+							command.Parameters.Add(param);
+						
+						using(NpgsqlCommandBuilder cb = new NpgsqlCommandBuilder(adapter))
+						{
+							foreach(DataTable table in changes.Tables)
+							{
+								result += adapter.Update(table);
+							}
+						}
+					}
+					trans.Commit();
+					return result;
+				}
+				catch(Exception ex)
+				{
+					trans.Rollback();
+					throw new SoapException(String.Format("Save error: select SQL:\n{0}\nERR: {1}", selectSql, ex),
+						SoapException.ServerFaultCode);
+				}
+			}
+		}
+		
+		public void DisposeDataSet(int index)
+		{
+			//DataSetStoreItem ds = StoredDataSets[index];
+			//StoredDataSets.Remove(index);
+			//ds.Dispose();
+		}
 
 		#endregion
+	
 	}
 }

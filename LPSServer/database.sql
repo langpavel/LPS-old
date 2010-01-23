@@ -1,3 +1,10 @@
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = off;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET escape_string_warning = off;
+
 CREATE TABLE users (
     id bigserial not null primary key,
     username character varying(40) NOT NULL,
@@ -5,6 +12,7 @@ CREATE TABLE users (
     first_name character varying(40) NOT NULL,
     surname character varying(40) NOT NULL
 );
+INSERT INTO users VALUES (1, 'langpa', '6eVgZj7YKaN/HcJByphPGQliw4s=', 'Pavel', 'Lang'); -- prazdne heslo pro langpa
 
 CREATE TABLE c_druh_adresy (
     id bigserial not null primary key,

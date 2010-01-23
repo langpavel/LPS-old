@@ -50,7 +50,9 @@ namespace LPSClient
 			try
 			{
 				ServerConnection srv = new ServerConnection(edtServer.Text);
-				srv.Ping();
+				string testString = "Test diakritiky ěščřžýáíéĚŠČŘŽÝÁÍÉŮů";
+				if(testString != srv.Ping(testString))
+					Console.WriteLine("Selhal test diakritiky spojení webové služby");
 				return srv;
 			}
 			catch(Exception)

@@ -26,7 +26,6 @@ namespace LPSClient
 			_url = url;
 			this.Server = new LPSClientShared.LPSServer.Server(url);
 			this.Server.CookieContainer = CookieContainer;
-			this.Server.Ping();
 			_instance = this;
 		}
 	
@@ -54,9 +53,9 @@ namespace LPSClient
 		}
 		
 		#region IServer
-		public bool Ping()
+		public string Ping(string data)
 		{
-			return Server.Ping();
+			return Server.Ping(data);
 		}
 		
 		public long Login(string login, string password)
@@ -147,70 +146,45 @@ namespace LPSClient
 		
 		public DataSet GetDataSetSimple(string sql)
 		{
-			return Server.GetDataSetSimple(sql);
-		}
-		
-		public DataSet GetDataSet(string sql, bool for_edit, object[] parameters, out int server_id)
-		{
-			server_id = 0;
-			DataSet ds = Server.GetDataSet(sql, for_edit, parameters, out server_id);
-			ds.ExtendedProperties.Add("_SERVER_ID_", server_id);
-			return ds;
-		}
-		
-		public DataSet GetDataSet(string sql, bool for_edit, params object[] parameters)
-		{
-			int i;
-			return this.GetDataSet(sql, for_edit, parameters, out i);
-		}
-		
-		public DataSet GetDataSet(string sql, bool for_edit)
-		{
-			int i;
-			return this.GetDataSet(sql, for_edit, new object[] { }, out i);
-		}
-		
-		public DataSet GetDataSet(string sql, bool for_edit, Dictionary<string, object> parameters)
-		{
-			ArrayList p = new ArrayList(parameters.Count * 2);
-			foreach(KeyValuePair<string, object> kv in parameters)
-			{
-				p.Add(kv.Key);
-				p.Add(kv.Value);
-			}
-			int server_id;
-			DataSet ds = this.GetDataSet(sql, for_edit, p.ToArray(), out server_id);
-			return ds;
-		}
-
-		public DataSet GetDataSet(string sql, object[] parameters)
-		{
-			int i;
-			DataSet result = Server.GetDataSet(sql, false, parameters, out i);
+			DataSet result = Server.GetDataSetSimple(sql);
+			result.ExtendedProperties["sql"] = sql;
+			result.ExtendedProperties["parameters"] = new object[] { };
 			return result;
 		}
 		
-		public int SaveDataSet(DataSet changes_dataset, int server_id, bool updateUserInfo)
+		public DataSet GetDataSet(string sql, params object[] parameters)
 		{
-			return Server.SaveDataSet(changes_dataset, server_id, updateUserInfo);
+			DataSet result = Server.GetDataSet(sql, parameters);
+			result.ExtendedProperties["sql"] = sql;
+			result.ExtendedProperties["parameters"] = parameters;
+			return result;
+		}
+		
+		public int SaveDataSet(DataSet changes, bool updateUserInfo, string selectSql, object[] parameters)
+		{
+			return Server.SaveDataSet(changes, updateUserInfo, selectSql, parameters);
 		}
 		
 		public int SaveDataSet(DataSet dataset, bool updateUserInfo)
 		{
 			if(!dataset.HasChanges())
 				return 0;
-			int server_id = (int)dataset.ExtendedProperties["_SERVER_ID_"];
-			using(DataSet changes = dataset.GetChanges())
-			{
-				int result = this.SaveDataSet(changes, server_id, updateUserInfo);
-				dataset.AcceptChanges();
-				return result;
-			}
+			string selectSql = (string)dataset.ExtendedProperties["sql"];
+			object[] parameters = (object[])dataset.ExtendedProperties["parameters"];
+			int result = Server.SaveDataSet(dataset.GetChanges(), updateUserInfo, selectSql, parameters);
+			dataset.AcceptChanges();
+			return result;
 		}
 		
 		public int SaveDataSet(DataSet dataset)
 		{
-			return SaveDataSet(dataset, true);
+			if(!dataset.HasChanges())
+				return 0;
+			string selectSql = (string)dataset.ExtendedProperties["sql"];
+			object[] parameters = (object[])dataset.ExtendedProperties["parameters"];
+			int result = Server.SaveDataSet(dataset.GetChanges(), true, selectSql, parameters);
+			dataset.AcceptChanges();
+			return result;
 		}
 		
 		public void DisposeDataSet(int server_id)

@@ -1,41 +1,68 @@
 using System;
 using System.IO;
+using System.Reflection;
+using System.Collections;
+using System.Collections.Generic;
 using System.Web;
 using System.Web.Services;
+using System.Web.Services.Protocols;
 using System.Data;
-using System.Reflection;
-using System.Collections.Generic;
+using System.Xml;
 using Npgsql;
 
 namespace LPSServer
 {
 	
-	[WebService(Namespace="http://lpsoft.org/skladserver/",
-	            Description="LPSoft Sklad web service")]
+	[WebService(Namespace="http://lpsoft.org/server/",
+	            Description="LPSoft server")]
 	public class Server: System.Web.Services.WebService, IServer
 	{
-		[WebMethod(EnableSession=false)]
-		public bool Ping()
-		{
-			return true;
-		}
-		
 		private ConnectionInfo GetConnectionInfo()
 		{
 			ConnectionInfo ci = this.Session["CONN"] as ConnectionInfo;
 			if(ci == null)
-				throw new LoginRequiredException();
+				throw new SoapException("Login is required", SoapException.ClientFaultCode);
 			return ci;
 		}
 		
-		private NpgsqlParameter[] GetNpgsqlParameters(object[] p)
+		public static NpgsqlParameter[] GetNpgsqlParameters(object[] p)
 		{
-			List<NpgsqlParameter> result = new List<NpgsqlParameter>(p.Length);
-			for(int i=0; i<p.Length; i+=2)
+			if(p.Length % 2 != 0)
+				throw new SoapException("Nesprávný počet parametrů", SoapException.ClientFaultCode);
+			
+			List<NpgsqlParameter> result = new List<NpgsqlParameter>(p.Length >> 1);
+			for(int i=0; i < p.Length; i += 2)
 				result.Add(new NpgsqlParameter(p[i] as string, p[i+1]));
-			return result.ToArray();			
+			return result.ToArray();
 		}
 		
+		#region Metody WebService bez session
+		[WebMethod(EnableSession=false)]
+		public string Ping(string data)
+		{
+			return data;
+		}
+
+		[WebMethod(EnableSession=false, BufferResponse=false)]
+		public string GetTextResource(string path)
+		{
+			string resPath = Assembly.GetExecutingAssembly().GetName().FullName;
+			resPath = Path.GetDirectoryName(resPath);
+			resPath = Path.Combine(resPath, "resources");
+			path = Path.Combine(resPath, path);
+			try
+			{				
+				using(StreamReader reader = File.OpenText(path))
+					return reader.ReadToEnd();
+			}
+			catch
+			{
+				return null;
+			}
+		}
+		#endregion
+		
+		#region Metody WebService se session
 		[WebMethod(EnableSession=true)]
 		public long Login(string login, string password)
 		{
@@ -53,8 +80,15 @@ namespace LPSServer
 		[WebMethod(EnableSession=true)]
 		public string GetLoggedUser()
 		{
-			ConnectionInfo ci = GetConnectionInfo();
-			return ci.UserName;
+			try
+			{
+				ConnectionInfo ci = GetConnectionInfo();
+				return ci.UserName;
+			}
+			catch
+			{
+				return null;
+			}
 		}
 		
 		[WebMethod(EnableSession=true)]
@@ -109,97 +143,34 @@ namespace LPSServer
 				new NpgsqlParameter("gener", generator)));
 		}
 
-		[WebMethod(EnableSession=false, BufferResponse=false)]
-		public string GetTextResource(string path)
-		{
-			string resPath = Assembly.GetExecutingAssembly().GetName().FullName;
-			resPath = Path.GetDirectoryName(resPath);
-			resPath = Path.Combine(resPath, "resources");
-			path = Path.Combine(resPath, path);
-			try
-			{				
-				using(StreamReader reader = File.OpenText(path))
-					return reader.ReadToEnd();
-			}
-			catch
-			{
-				return null;
-			}
-		}
-		
 		[WebMethod(EnableSession=true)]
 		public DataSet GetDataSetSimple(string sql)
 		{
 			ConnectionInfo ci = GetConnectionInfo();
-			DataSetStoreItem dstore = new DataSetStoreItem();
-			dstore.DataSet = new DataSet();
-			dstore.Command = ci.CreateCommand(sql);
-			dstore.DataAdapter = new NpgsqlDataAdapter(dstore.Command);
-			dstore.DataAdapter.Fill(dstore.DataSet);
-			foreach(DataTable dt in dstore.DataSet.Tables)
-			{
-				dt.PrimaryKey = new DataColumn[] { dt.Columns[0] };
-			}
-			dstore.DisposeWithoutDataSet();
-			return dstore.DataSet;
+			return ci.GetDataSetSimple(sql);
 		}
 
 		[WebMethod(EnableSession=true)]
-		public DataSet GetDataSet(string sql, bool for_edit, object[] parameters, out int server_id)
+		public DataSet GetDataSet(string sql, object[] parameters)
 		{
-			server_id = 0;
 			ConnectionInfo ci = GetConnectionInfo();
-			
-			DataSetStoreItem dstore = new DataSetStoreItem();
-			dstore.DataSet = new DataSet();
-			dstore.Command = ci.CreateCommand(sql, GetNpgsqlParameters(parameters));
-			dstore.DataAdapter = new NpgsqlDataAdapter(dstore.Command);
-			if(for_edit)
-			{
-				dstore.CommandBuilder = new NpgsqlCommandBuilder(dstore.DataAdapter);
-				server_id = ci.StoreDataSet(dstore);
-			}
-			dstore.DataAdapter.Fill(dstore.DataSet);
-			foreach(DataTable dt in dstore.DataSet.Tables)
-			{
-				dt.PrimaryKey = new DataColumn[] { dt.Columns[0] };
-			}
-			if(!for_edit)
-				dstore.DisposeWithoutDataSet();
-			return dstore.DataSet;
+			return ci.GetDataSet(sql, GetNpgsqlParameters(parameters));
 		}
 
 		[WebMethod(EnableSession=true)]
-		public int SaveDataSet(DataSet changes, int srv_id, bool updateUserInfo)
+		public int SaveDataSet(DataSet changes, bool updateUserInfo, string selectSql, object[] parameters)
 		{
 			ConnectionInfo ci = GetConnectionInfo();
-			DataSetStoreItem dstore = ci.RestoreDataSet(srv_id);
-			//return dstore.DataAdapter.Update(changes);
-			int result = 0;
-			foreach(DataTable ch_table in changes.Tables)
-			{
-				if(updateUserInfo)
-					ci.UpdateUserInfo(ch_table);
-				try
-				{
-					result += dstore.DataAdapter.Update(ch_table);
-					//dt.AcceptChanges();
-				}
-				catch
-				{
-					//dt.RejectChanges();
-					throw;
-				}
-			}
-			return result;
+			return ci.SaveDataSet(changes, updateUserInfo, selectSql, GetNpgsqlParameters(parameters));
 		}
-
+ 		
 		[WebMethod(EnableSession=true)]
 		public void DisposeDataSet(int server_id)
 		{
 			ConnectionInfo ci = GetConnectionInfo();
 			ci.DisposeDataSet(server_id);
 		}
+		#endregion
 		
 	}
 }

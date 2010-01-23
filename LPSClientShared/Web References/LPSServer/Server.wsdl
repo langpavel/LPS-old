@@ -1,14 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://lpsoft.org/skladserver/" name="Server" targetNamespace="http://lpsoft.org/skladserver/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://lpsoft.org/server/" name="Server" targetNamespace="http://lpsoft.org/server/" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
-    <xs:schema elementFormDefault="qualified" targetNamespace="http://lpsoft.org/skladserver/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://lpsoft.org/server/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:element name="Ping">
-        <xs:complexType />
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="data" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
       </xs:element>
       <xs:element name="PingResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="1" maxOccurs="1" name="PingResult" type="xs:boolean" />
+            <xs:element minOccurs="0" maxOccurs="1" name="PingResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTextResource">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="path" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTextResourceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetTextResourceResult" type="xs:string" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -135,20 +153,6 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="GetTextResource">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="path" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetTextResourceResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="GetTextResourceResult" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="GetDataSetSimple">
         <xs:complexType>
           <xs:sequence>
@@ -174,7 +178,6 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
-            <xs:element minOccurs="1" maxOccurs="1" name="for_edit" type="xs:boolean" />
             <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfAnyType" />
           </xs:sequence>
         </xs:complexType>
@@ -190,7 +193,6 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-            <xs:element minOccurs="1" maxOccurs="1" name="server_id" type="xs:int" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -205,8 +207,9 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-            <xs:element minOccurs="1" maxOccurs="1" name="srv_id" type="xs:int" />
             <xs:element minOccurs="1" maxOccurs="1" name="updateUserInfo" type="xs:boolean" />
+            <xs:element minOccurs="0" maxOccurs="1" name="selectSql" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfAnyType" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -227,9 +230,9 @@
       <xs:element name="DisposeDataSetResponse">
         <xs:complexType />
       </xs:element>
-      <xs:element name="boolean" type="xs:boolean" />
-      <xs:element name="long" type="xs:long" />
       <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="long" type="xs:long" />
+      <xs:element name="boolean" type="xs:boolean" />
       <xs:element name="int" type="xs:int" />
       <xs:element name="DataSet" nillable="true">
         <xs:complexType>
@@ -246,6 +249,12 @@
   </message>
   <message name="PingSoapOut">
     <part name="parameters" element="s0:PingResponse" />
+  </message>
+  <message name="GetTextResourceSoapIn">
+    <part name="parameters" element="s0:GetTextResource" />
+  </message>
+  <message name="GetTextResourceSoapOut">
+    <part name="parameters" element="s0:GetTextResourceResponse" />
   </message>
   <message name="LoginSoapIn">
     <part name="parameters" element="s0:Login" />
@@ -301,12 +310,6 @@
   <message name="NextSeqValueSoapOut">
     <part name="parameters" element="s0:NextSeqValueResponse" />
   </message>
-  <message name="GetTextResourceSoapIn">
-    <part name="parameters" element="s0:GetTextResource" />
-  </message>
-  <message name="GetTextResourceSoapOut">
-    <part name="parameters" element="s0:GetTextResourceResponse" />
-  </message>
   <message name="GetDataSetSimpleSoapIn">
     <part name="parameters" element="s0:GetDataSetSimple" />
   </message>
@@ -331,9 +334,17 @@
   <message name="DisposeDataSetSoapOut">
     <part name="parameters" element="s0:DisposeDataSetResponse" />
   </message>
-  <message name="PingHttpGetIn" />
+  <message name="PingHttpGetIn">
+    <part name="data" type="s:string" />
+  </message>
   <message name="PingHttpGetOut">
-    <part name="Body" element="s0:boolean" />
+    <part name="Body" element="s0:string" />
+  </message>
+  <message name="GetTextResourceHttpGetIn">
+    <part name="path" type="s:string" />
+  </message>
+  <message name="GetTextResourceHttpGetOut">
+    <part name="Body" element="s0:string" />
   </message>
   <message name="LoginHttpGetIn">
     <part name="login" type="s:string" />
@@ -373,12 +384,6 @@
   <message name="NextSeqValueHttpGetOut">
     <part name="Body" element="s0:long" />
   </message>
-  <message name="GetTextResourceHttpGetIn">
-    <part name="path" type="s:string" />
-  </message>
-  <message name="GetTextResourceHttpGetOut">
-    <part name="Body" element="s0:string" />
-  </message>
   <message name="GetDataSetSimpleHttpGetIn">
     <part name="sql" type="s:string" />
   </message>
@@ -389,9 +394,17 @@
     <part name="server_id" type="s:int" />
   </message>
   <message name="DisposeDataSetHttpGetOut" />
-  <message name="PingHttpPostIn" />
+  <message name="PingHttpPostIn">
+    <part name="data" type="s:string" />
+  </message>
   <message name="PingHttpPostOut">
-    <part name="Body" element="s0:boolean" />
+    <part name="Body" element="s0:string" />
+  </message>
+  <message name="GetTextResourceHttpPostIn">
+    <part name="path" type="s:string" />
+  </message>
+  <message name="GetTextResourceHttpPostOut">
+    <part name="Body" element="s0:string" />
   </message>
   <message name="LoginHttpPostIn">
     <part name="login" type="s:string" />
@@ -431,12 +444,6 @@
   <message name="NextSeqValueHttpPostOut">
     <part name="Body" element="s0:long" />
   </message>
-  <message name="GetTextResourceHttpPostIn">
-    <part name="path" type="s:string" />
-  </message>
-  <message name="GetTextResourceHttpPostOut">
-    <part name="Body" element="s0:string" />
-  </message>
   <message name="GetDataSetSimpleHttpPostIn">
     <part name="sql" type="s:string" />
   </message>
@@ -451,6 +458,10 @@
     <operation name="Ping">
       <input message="s0:PingSoapIn" />
       <output message="s0:PingSoapOut" />
+    </operation>
+    <operation name="GetTextResource">
+      <input message="s0:GetTextResourceSoapIn" />
+      <output message="s0:GetTextResourceSoapOut" />
     </operation>
     <operation name="Login">
       <input message="s0:LoginSoapIn" />
@@ -487,10 +498,6 @@
     <operation name="NextSeqValue">
       <input message="s0:NextSeqValueSoapIn" />
       <output message="s0:NextSeqValueSoapOut" />
-    </operation>
-    <operation name="GetTextResource">
-      <input message="s0:GetTextResourceSoapIn" />
-      <output message="s0:GetTextResourceSoapOut" />
     </operation>
     <operation name="GetDataSetSimple">
       <input message="s0:GetDataSetSimpleSoapIn" />
@@ -514,6 +521,10 @@
       <input message="s0:PingSoapIn" />
       <output message="s0:PingSoapOut" />
     </operation>
+    <operation name="GetTextResource">
+      <input message="s0:GetTextResourceSoapIn" />
+      <output message="s0:GetTextResourceSoapOut" />
+    </operation>
     <operation name="Login">
       <input message="s0:LoginSoapIn" />
       <output message="s0:LoginSoapOut" />
@@ -550,10 +561,6 @@
       <input message="s0:NextSeqValueSoapIn" />
       <output message="s0:NextSeqValueSoapOut" />
     </operation>
-    <operation name="GetTextResource">
-      <input message="s0:GetTextResourceSoapIn" />
-      <output message="s0:GetTextResourceSoapOut" />
-    </operation>
     <operation name="GetDataSetSimple">
       <input message="s0:GetDataSetSimpleSoapIn" />
       <output message="s0:GetDataSetSimpleSoapOut" />
@@ -575,6 +582,10 @@
     <operation name="Ping">
       <input message="s0:PingHttpGetIn" />
       <output message="s0:PingHttpGetOut" />
+    </operation>
+    <operation name="GetTextResource">
+      <input message="s0:GetTextResourceHttpGetIn" />
+      <output message="s0:GetTextResourceHttpGetOut" />
     </operation>
     <operation name="Login">
       <input message="s0:LoginHttpGetIn" />
@@ -604,10 +615,6 @@
       <input message="s0:NextSeqValueHttpGetIn" />
       <output message="s0:NextSeqValueHttpGetOut" />
     </operation>
-    <operation name="GetTextResource">
-      <input message="s0:GetTextResourceHttpGetIn" />
-      <output message="s0:GetTextResourceHttpGetOut" />
-    </operation>
     <operation name="GetDataSetSimple">
       <input message="s0:GetDataSetSimpleHttpGetIn" />
       <output message="s0:GetDataSetSimpleHttpGetOut" />
@@ -621,6 +628,10 @@
     <operation name="Ping">
       <input message="s0:PingHttpPostIn" />
       <output message="s0:PingHttpPostOut" />
+    </operation>
+    <operation name="GetTextResource">
+      <input message="s0:GetTextResourceHttpPostIn" />
+      <output message="s0:GetTextResourceHttpPostOut" />
     </operation>
     <operation name="Login">
       <input message="s0:LoginHttpPostIn" />
@@ -650,10 +661,6 @@
       <input message="s0:NextSeqValueHttpPostIn" />
       <output message="s0:NextSeqValueHttpPostOut" />
     </operation>
-    <operation name="GetTextResource">
-      <input message="s0:GetTextResourceHttpPostIn" />
-      <output message="s0:GetTextResourceHttpPostOut" />
-    </operation>
     <operation name="GetDataSetSimple">
       <input message="s0:GetDataSetSimpleHttpPostIn" />
       <output message="s0:GetDataSetSimpleHttpPostOut" />
@@ -666,88 +673,7 @@
   <binding name="ServerSoap" type="s0:ServerSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="Ping">
-      <soap:operation soapAction="http://lpsoft.org/skladserver/Ping" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="Login">
-      <soap:operation soapAction="http://lpsoft.org/skladserver/Login" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="GetLoggedUser">
-      <soap:operation soapAction="http://lpsoft.org/skladserver/GetLoggedUser" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ChangePassword">
-      <soap:operation soapAction="http://lpsoft.org/skladserver/ChangePassword" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="Logout">
-      <soap:operation soapAction="http://lpsoft.org/skladserver/Logout" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ExecuteNonquerySimple">
-      <soap:operation soapAction="http://lpsoft.org/skladserver/ExecuteNonquerySimple" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ExecuteNonquery">
-      <soap:operation soapAction="http://lpsoft.org/skladserver/ExecuteNonquery" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ExecuteScalarSimple">
-      <soap:operation soapAction="http://lpsoft.org/skladserver/ExecuteScalarSimple" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ExecuteScalar">
-      <soap:operation soapAction="http://lpsoft.org/skladserver/ExecuteScalar" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="NextSeqValue">
-      <soap:operation soapAction="http://lpsoft.org/skladserver/NextSeqValue" style="document" />
+      <soap:operation soapAction="http://lpsoft.org/server/Ping" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -756,7 +682,88 @@
       </output>
     </operation>
     <operation name="GetTextResource">
-      <soap:operation soapAction="http://lpsoft.org/skladserver/GetTextResource" style="document" />
+      <soap:operation soapAction="http://lpsoft.org/server/GetTextResource" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Login">
+      <soap:operation soapAction="http://lpsoft.org/server/Login" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetLoggedUser">
+      <soap:operation soapAction="http://lpsoft.org/server/GetLoggedUser" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ChangePassword">
+      <soap:operation soapAction="http://lpsoft.org/server/ChangePassword" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Logout">
+      <soap:operation soapAction="http://lpsoft.org/server/Logout" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteNonquerySimple">
+      <soap:operation soapAction="http://lpsoft.org/server/ExecuteNonquerySimple" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteNonquery">
+      <soap:operation soapAction="http://lpsoft.org/server/ExecuteNonquery" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteScalarSimple">
+      <soap:operation soapAction="http://lpsoft.org/server/ExecuteScalarSimple" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteScalar">
+      <soap:operation soapAction="http://lpsoft.org/server/ExecuteScalar" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="NextSeqValue">
+      <soap:operation soapAction="http://lpsoft.org/server/NextSeqValue" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -765,7 +772,7 @@
       </output>
     </operation>
     <operation name="GetDataSetSimple">
-      <soap:operation soapAction="http://lpsoft.org/skladserver/GetDataSetSimple" style="document" />
+      <soap:operation soapAction="http://lpsoft.org/server/GetDataSetSimple" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -774,7 +781,7 @@
       </output>
     </operation>
     <operation name="GetDataSet">
-      <soap:operation soapAction="http://lpsoft.org/skladserver/GetDataSet" style="document" />
+      <soap:operation soapAction="http://lpsoft.org/server/GetDataSet" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -783,7 +790,7 @@
       </output>
     </operation>
     <operation name="SaveDataSet">
-      <soap:operation soapAction="http://lpsoft.org/skladserver/SaveDataSet" style="document" />
+      <soap:operation soapAction="http://lpsoft.org/server/SaveDataSet" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -792,7 +799,7 @@
       </output>
     </operation>
     <operation name="DisposeDataSet">
-      <soap:operation soapAction="http://lpsoft.org/skladserver/DisposeDataSet" style="document" />
+      <soap:operation soapAction="http://lpsoft.org/server/DisposeDataSet" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -804,88 +811,7 @@
   <binding name="ServerSoap12" type="s0:ServerSoap12">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="Ping">
-      <soap12:operation soapAction="http://lpsoft.org/skladserver/Ping" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
-    <operation name="Login">
-      <soap12:operation soapAction="http://lpsoft.org/skladserver/Login" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
-    <operation name="GetLoggedUser">
-      <soap12:operation soapAction="http://lpsoft.org/skladserver/GetLoggedUser" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ChangePassword">
-      <soap12:operation soapAction="http://lpsoft.org/skladserver/ChangePassword" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
-    <operation name="Logout">
-      <soap12:operation soapAction="http://lpsoft.org/skladserver/Logout" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ExecuteNonquerySimple">
-      <soap12:operation soapAction="http://lpsoft.org/skladserver/ExecuteNonquerySimple" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ExecuteNonquery">
-      <soap12:operation soapAction="http://lpsoft.org/skladserver/ExecuteNonquery" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ExecuteScalarSimple">
-      <soap12:operation soapAction="http://lpsoft.org/skladserver/ExecuteScalarSimple" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ExecuteScalar">
-      <soap12:operation soapAction="http://lpsoft.org/skladserver/ExecuteScalar" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
-    <operation name="NextSeqValue">
-      <soap12:operation soapAction="http://lpsoft.org/skladserver/NextSeqValue" style="document" />
+      <soap12:operation soapAction="http://lpsoft.org/server/Ping" style="document" />
       <input>
         <soap12:body use="literal" />
       </input>
@@ -894,7 +820,88 @@
       </output>
     </operation>
     <operation name="GetTextResource">
-      <soap12:operation soapAction="http://lpsoft.org/skladserver/GetTextResource" style="document" />
+      <soap12:operation soapAction="http://lpsoft.org/server/GetTextResource" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Login">
+      <soap12:operation soapAction="http://lpsoft.org/server/Login" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetLoggedUser">
+      <soap12:operation soapAction="http://lpsoft.org/server/GetLoggedUser" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ChangePassword">
+      <soap12:operation soapAction="http://lpsoft.org/server/ChangePassword" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Logout">
+      <soap12:operation soapAction="http://lpsoft.org/server/Logout" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteNonquerySimple">
+      <soap12:operation soapAction="http://lpsoft.org/server/ExecuteNonquerySimple" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteNonquery">
+      <soap12:operation soapAction="http://lpsoft.org/server/ExecuteNonquery" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteScalarSimple">
+      <soap12:operation soapAction="http://lpsoft.org/server/ExecuteScalarSimple" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteScalar">
+      <soap12:operation soapAction="http://lpsoft.org/server/ExecuteScalar" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="NextSeqValue">
+      <soap12:operation soapAction="http://lpsoft.org/server/NextSeqValue" style="document" />
       <input>
         <soap12:body use="literal" />
       </input>
@@ -903,7 +910,7 @@
       </output>
     </operation>
     <operation name="GetDataSetSimple">
-      <soap12:operation soapAction="http://lpsoft.org/skladserver/GetDataSetSimple" style="document" />
+      <soap12:operation soapAction="http://lpsoft.org/server/GetDataSetSimple" style="document" />
       <input>
         <soap12:body use="literal" />
       </input>
@@ -912,7 +919,7 @@
       </output>
     </operation>
     <operation name="GetDataSet">
-      <soap12:operation soapAction="http://lpsoft.org/skladserver/GetDataSet" style="document" />
+      <soap12:operation soapAction="http://lpsoft.org/server/GetDataSet" style="document" />
       <input>
         <soap12:body use="literal" />
       </input>
@@ -921,7 +928,7 @@
       </output>
     </operation>
     <operation name="SaveDataSet">
-      <soap12:operation soapAction="http://lpsoft.org/skladserver/SaveDataSet" style="document" />
+      <soap12:operation soapAction="http://lpsoft.org/server/SaveDataSet" style="document" />
       <input>
         <soap12:body use="literal" />
       </input>
@@ -930,7 +937,7 @@
       </output>
     </operation>
     <operation name="DisposeDataSet">
-      <soap12:operation soapAction="http://lpsoft.org/skladserver/DisposeDataSet" style="document" />
+      <soap12:operation soapAction="http://lpsoft.org/server/DisposeDataSet" style="document" />
       <input>
         <soap12:body use="literal" />
       </input>
@@ -943,6 +950,15 @@
     <http:binding verb="GET" />
     <operation name="Ping">
       <http:operation location="/Ping" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetTextResource">
+      <http:operation location="/GetTextResource" />
       <input>
         <http:urlEncoded />
       </input>
@@ -1004,15 +1020,6 @@
     </operation>
     <operation name="NextSeqValue">
       <http:operation location="/NextSeqValue" />
-      <input>
-        <http:urlEncoded />
-      </input>
-      <output>
-        <mime:mimeXml part="Body" />
-      </output>
-    </operation>
-    <operation name="GetTextResource">
-      <http:operation location="/GetTextResource" />
       <input>
         <http:urlEncoded />
       </input>
@@ -1048,6 +1055,15 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
+    <operation name="GetTextResource">
+      <http:operation location="/GetTextResource" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
     <operation name="Login">
       <http:operation location="/Login" />
       <input>
@@ -1109,15 +1125,6 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
-    <operation name="GetTextResource">
-      <http:operation location="/GetTextResource" />
-      <input>
-        <mime:content part="" type="application/x-www-form-urlencoded" />
-      </input>
-      <output>
-        <mime:mimeXml part="Body" />
-      </output>
-    </operation>
     <operation name="GetDataSetSimple">
       <http:operation location="/GetDataSetSimple" />
       <input>
@@ -1136,7 +1143,7 @@
     </operation>
   </binding>
   <service name="Server">
-    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">LPSoft Sklad web service</wsdl:documentation>
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">LPSoft server</wsdl:documentation>
     <port name="ServerSoap" binding="s0:ServerSoap">
       <soap:address location="http://localhost:8080/Server.asmx" />
     </port>

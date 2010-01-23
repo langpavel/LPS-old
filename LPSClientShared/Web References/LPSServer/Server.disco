@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <discovery xmlns:scl="http://schemas.xmlsoap.org/disco/scl/" xmlns="http://schemas.xmlsoap.org/disco/">
   <scl:contractRef docRef="http://localhost:8080/Server.asmx" ref="http://localhost:8080/Server.asmx?wsdl" />
-  <soap xmlns:q1="http://lpsoft.org/skladserver/" binding="q1:ServerSoap" address="http://localhost:8080/Server.asmx" xmlns="http://schemas/xmlsoap.org/disco/schema/soap/" />
-  <soap xmlns:q2="http://lpsoft.org/skladserver/" binding="q2:ServerSoap12" address="http://localhost:8080/Server.asmx" xmlns="http://schemas/xmlsoap.org/disco/schema/soap/" />
+  <soap xmlns:q1="http://lpsoft.org/server/" binding="q1:ServerSoap" address="http://localhost:8080/Server.asmx" xmlns="http://schemas/xmlsoap.org/disco/schema/soap/" />
+  <soap xmlns:q2="http://lpsoft.org/server/" binding="q2:ServerSoap12" address="http://localhost:8080/Server.asmx" xmlns="http://schemas/xmlsoap.org/disco/schema/soap/" />
 </discovery>

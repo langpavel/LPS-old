@@ -37,7 +37,8 @@ namespace LPSClient
 					DataColumn col = table.Columns[name];
 				
 					WidgetRowBinding binding = BindWidget(col, w);
-					this.OwnedComponents.Add(binding);
+					if(binding != null)
+						this.OwnedComponents.Add(binding);
 				}
 				catch(Exception ex)
 				{
@@ -82,7 +83,7 @@ namespace LPSClient
 		
 		protected virtual void Load(string sql, long id)
 		{
-			Data = Connection.GetDataSet(sql, true, "id", id);
+			Data = Connection.GetDataSet(sql, "id", id);
 			this.Row = Data.Tables[0].Rows[0];
 		}
 		
@@ -100,14 +101,17 @@ namespace LPSClient
 		#region Generic event handlers
 		public virtual void New(object o, EventArgs args)
 		{
+			this.ShowMessage(MessageType.Error, "Chyba", "Není podporováno");
 		}
 
 		public virtual void Save(object o, EventArgs args)
 		{
+			Connection.SaveDataSet(this.Data);
 		}
 
 		public virtual void SaveAs(object o, EventArgs args)
 		{
+			this.ShowMessage(MessageType.Error, "Chyba", "Není podporováno");
 		}
 	
 		public virtual void Close(object o, EventArgs args)

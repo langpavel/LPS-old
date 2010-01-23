@@ -34,8 +34,8 @@ namespace ImportHelper
 					return _LPS;
 				try
 				{
-					_LPS = new LPSClient.ServerConnection("http://localhost:8080/Server.asmx");
-					_LPS.Login("langpa", "michala");
+					_LPS = new LPSClient.ServerConnection("http://localhost/LPS/Server.asmx");
+					_LPS.Login("langpa", "");
 					object o = _LPS.ExecuteScalar("select id from c_druh_adresy where kod=:kod", "kod", "FA");
 					ID_DRUH_ADRESY_FA = Convert.ToInt32(o);
 					return _LPS;
@@ -55,7 +55,7 @@ namespace ImportHelper
 			{
 				if(_Adresa != null)
 					return _Adresa;
-				return _Adresa = LPS.GetDataSet("select * from adresa", true);
+				return _Adresa = LPS.GetDataSet("select * from adresa");
 			}
 		}
 		
