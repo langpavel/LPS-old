@@ -43,6 +43,7 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="IServer.cs" />
     <Compile Include="DeepEnumerator.cs" />
+    <Compile Include="ModulesTreeInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -38,6 +38,8 @@ namespace LPSClient.Sklad
 			FormFactory.Register(new FormXmlResourceInfo<MainForm>("main", "ui-sklad.glade", "windowMain"));
 			FormFactory.Register(new FormXmlResourceInfo<AdresaForm>("adresa", "adresa.glade", "windowAdresa"));
 
+			GLib.ExceptionManager.UnhandledException += HandleUnhandledException;
+				
 			Application.Init ();
 
 			if(!DoLogin())
@@ -48,6 +50,14 @@ namespace LPSClient.Sklad
 			frm.ShowAll();
 			
 			Run();
+		}
+
+		void HandleUnhandledException (GLib.UnhandledExceptionArgs args)
+		{
+			if(args.IsTerminating)
+				return;
+			ShowMessage(MessageType.Error, "Nastala neošetřená vyjímka", "Chyba: {0}", args.ExceptionObject);
+			args.ExitApplication = false;
 		}
 		
 		public void Run()

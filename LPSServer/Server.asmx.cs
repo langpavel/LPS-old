@@ -9,6 +9,7 @@ using System.Web.Services.Protocols;
 using System.Data;
 using System.Xml;
 using Npgsql;
+using System.Configuration;
 
 namespace LPSServer
 {
@@ -41,24 +42,6 @@ namespace LPSServer
 		public string Ping(string data)
 		{
 			return data;
-		}
-
-		[WebMethod(EnableSession=false, BufferResponse=false)]
-		public string GetTextResource(string path)
-		{
-			string resPath = Assembly.GetExecutingAssembly().GetName().FullName;
-			resPath = Path.GetDirectoryName(resPath);
-			resPath = Path.Combine(resPath, "resources");
-			path = Path.Combine(resPath, path);
-			try
-			{				
-				using(StreamReader reader = File.OpenText(path))
-					return reader.ReadToEnd();
-			}
-			catch
-			{
-				return null;
-			}
 		}
 		#endregion
 		
@@ -170,7 +153,26 @@ namespace LPSServer
 			ConnectionInfo ci = GetConnectionInfo();
 			ci.DisposeDataSet(server_id);
 		}
+		
 		#endregion
 		
+		[WebMethod(EnableSession=false, BufferResponse=false)]
+		public string GetTextResource(string path)
+		{
+			System.Configuration.Configuration rootWebConfig1 =
+    			System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(null);
+    		System.Configuration.KeyValueConfigurationElement resourceDirectory = 
+        		rootWebConfig1.AppSettings.Settings["ResourceDirectory"];
+			string resPath = Path.Combine(resourceDirectory.Value, path);
+			try
+			{				
+				using(StreamReader reader = File.OpenText(resPath))
+					return reader.ReadToEnd();
+			}
+			catch
+			{
+				return null;
+			}
+		}
 	}
 }

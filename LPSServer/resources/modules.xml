@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<modules>
-	<navigation-tree>
-		<item name="adresa" text="Adresář">
-			<icon href="book.png" />
+<modules-tree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="root">
+	<item id="adresa" text="Adresář">
+			Adresář - kontakty na zákazníky a dodavatele
+			<detail-name>adresa</detail-name>
 			<list-sql>select * from adresa</list-sql>
 
-			<item name="adresa" text="Odběratelé">
+			<item id="adresa_odb" text="Odběratelé">
+				Kontakty na zákazníky
+				<detail-name>adresa</detail-name>
 				<list-sql>select * from adresa where odberatel = true</list-sql>
 			</item>
-			<item name="adresa" text="Dodavatelé">
+			<item id="adresa_dod" text="Dodavatelé">
+				Kontakty na dodavatele
+				<detail-name>adresa</detail-name>
 				<list-sql>select * from adresa where dodavatel = true</list-sql>
 			</item>
 		</item>
 
-		<item text="Skladové hospodářství">
+		<item id="sklad" text="Skladové hospodářství">
 			<item text="Skladové Karty">
 			</item>
 			<item text="Skladové pohyby">
@@ -25,22 +29,13 @@
 			<item text="Inventura">
 			</item>
 		</item>
-
-			TreeIter cisel = tree.AppendValues("", null, "Číselníky");
-			tree.AppendValues(cisel, "__raw", null, "Sklady", "select * from c_sklad");
 		
-
-		
-						<item >
-		<item text="Číselníky">
-			<item ref="c_sklad" />
+		<item id="ciselniky" text="Číselníky">
+			<item id="c_dph" text="DPH">
+				Hodnoty DPH
+				<detail-name>c_dph</detail-name>
+				<list-sql>select * c_dph</list-sql>
+			</item>
 		</item>
-	</navigation-tree>
-	
-	
-	<tables>
-		<table name="adresa">
-			<column name=""
-		</table>
-	</tables>
-</modules>
+
+</modules-tree>

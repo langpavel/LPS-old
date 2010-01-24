@@ -32,49 +32,66 @@ namespace LPSClient.Sklad
 			InitModules();
 		}
 
+		private void AddModulesNodes(ModulesTreeInfo info, TreeStore store, TreeIter parent)
+		{
+			foreach(ModulesTreeInfo node in info.Items)
+			{
+				string desc = node.Description;
+				desc = (desc == null)? "" : desc.Trim();
+				TreeIter current;
+				if(parent.Equals(TreeIter.Zero))
+					current = store.AppendValues(null, node.Text, desc, node);
+				else
+					current = store.AppendValues(parent, null, node.Text, desc, node);
+				AddModulesNodes(node, store, current);
+			}
+		}
+		
 		private void InitModules()
 		{
-			Type t_str = typeof(string);
-			TreeStore tree = new TreeStore(t_str, t_str, typeof(Gdk.Pixbuf), t_str, t_str);
-			viewModules.Model = tree;
-			
-			//Gdk.Pixbuf i_folder = new Gdk.Pixbuf(null, "Images.database.png");
+			TreeStore store = new TreeStore(typeof(Gdk.Pixbuf), typeof(string), typeof(string), typeof(object));
+			viewModules.Model = store;
+			string data = Connection.GetTextResource("modules.xml");
+			ModulesTreeInfo info = ModulesTreeInfo.LoadFromString(data);
+			AddModulesNodes(info, store, TreeIter.Zero);
 			
 			//CellRendererPixbuf iconRenderer = new CellRendererPixbuf();
 			//viewModules.AppendColumn(new TreeViewColumn("", iconRenderer, "stock", 1));
-			viewModules.AppendColumn(new TreeViewColumn("Modul", new CellRendererText(), "text", 3));
+			viewModules.AppendColumn(new TreeViewColumn("Modul", new CellRendererText(), "text", 1));
 			viewModules.HeadersVisible = false;
 			//viewModules.RowActivated += ViewModulesRowActivated;
-			
-			TreeIter adresa = tree.AppendValues("__raw", "adresa", null, "Adresář", "select * from adresa");
-			tree.AppendValues(adresa, "__raw", "adresa", null, "Odběratelé", "select * from adresa");
-			tree.AppendValues(adresa, "__raw", "adresa", null, "Dodavatelé", "select * from adresa");
-			TreeIter sklad = tree.AppendValues("", "", null, "Skladové hospodářství");
-			TreeIter produkty = tree.AppendValues(sklad, "", "__raw", null, "Produkty", "select * from produkty");
-			TreeIter cisel = tree.AppendValues("", "", null, "Číselníky");
-			tree.AppendValues(cisel, "__raw", "", null, "Sklady", "select * from c_sklad");
-			
+		
 			viewModules.ExpandAll();
 		}
 
 		public void ViewModulesRowActivated (object o, RowActivatedArgs args)
 		{
+			Console.WriteLine("Module clicked");
 			TreeView view = o as TreeView;
 			TreeStore store = view.Model as TreeStore;
 			TreeIter iter;
 			if(store.GetIter(out iter, args.Path))
 			{
-				string id = store.GetValue(iter, 0) as string;
-				string form_id = store.GetValue(iter, 1) as string;
-				if(id == "__raw")
-					NewTabBySQL(form_id, store.GetValue(iter, 3) as string, store.GetValue(iter, 4) as string);
+				ModulesTreeInfo info = store.GetValue(iter, 3) as ModulesTreeInfo;
+				Console.WriteLine(info != null);
+				NewModuleTab(info);
 			}
 		}
 		
+		#region Action handlers
 		public void AppQuit(object sender, EventArgs args)
 		{
 			Application.Quit();
 		}
+		
+		public void OpenItem(object sender, EventArgs args)
+		{
+		}
+
+		public void AddItem(object sender, EventArgs args)
+		{
+		}
+		#endregion
 		
 		public void PasswordChange(object sender, EventArgs args)
 		{
@@ -103,12 +120,12 @@ namespace LPSClient.Sklad
 			}
 		}
 
-		public void NewTabBySQL(string form_id, string label, string sql)
+		public void NewModuleTab(ModulesTreeInfo info)
 		{
 			TreeView tw = new TreeView();
 			tw.RowActivated += RowActivated;
 			HBox header = new HBox();
-			header.Add(new Label(label));
+			header.Add(new Label(info.Text));
 			Image img = new Image("gtk-close", IconSize.Menu);
 			Button btnCloseTab = new Button(img);
 			btnCloseTab.BorderWidth = 0;
@@ -124,9 +141,9 @@ namespace LPSClient.Sklad
 				
 			int pgIdx = nbData.AppendPage(page, header);
 			
-			DataSet ds = Connection.GetDataSetSimple(sql);
+			DataSet ds = Connection.GetDataSetSimple(info.ListSql);
 			
-			tw.Data["FORM_ID"] = form_id;
+			tw.Data["MODULE_INFO"] = info;
 			
 			//oldest:
 			//DataTableTreeModel.AssignNew(tw, ds.Tables[0], false);

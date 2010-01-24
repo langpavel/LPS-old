@@ -74,7 +74,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\modules.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 </Project>

@@ -56,6 +56,7 @@
     <Compile Include="Forms\WidgetBindigs\WidgetRowBinding.cs" />
     <Compile Include="Forms\WidgetBindigs\EntryRowBinding.cs" />
     <Compile Include="Forms\WidgetBindigs\CheckButtonRowBinding.cs" />
+    <Compile Include="Forms\WidgetBindigs\TextRowBinding.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />

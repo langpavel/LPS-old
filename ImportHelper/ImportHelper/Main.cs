@@ -4,7 +4,10 @@ using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using System.Xml;
+using System.Xml.Serialization;
 using Npgsql;
+using LPSShared;
 
 namespace ImportHelper
 {
@@ -12,7 +15,17 @@ namespace ImportHelper
 	{
 		public static void Main (string[] args)
 		{
-			new MainClass(args);
+			MainClass app = new MainClass(args);
+
+			app.MakeTreeTemplate("tree.xml");
+			
+			/*
+			app.Connection.ConnectionString = "Server=127.0.0.1;Port=5432;Database=filmarena;Userid=filmarena;Password=filmArena3095;Protocol=3;Pooling=true;MinPoolSize=1;MaxPoolSize=20;ConnectionLifeTime=15;";
+			app.Connection.Open();
+			app.ProcessAddresses();
+			app.Connection.Close();
+			*/
+
 		}
 
 		public static string GetSHA1String(string data, string salt)
@@ -63,12 +76,6 @@ namespace ImportHelper
 		{
 			Console.WriteLine ("Hello World!");
 			Connection = new NpgsqlConnection();
-			Connection.ConnectionString = "Server=127.0.0.1;Port=5432;Database=filmarena;Userid=filmarena;Password=filmArena3095;Protocol=3;Pooling=true;MinPoolSize=1;MaxPoolSize=20;ConnectionLifeTime=15;";
-			Connection.Open();
-
-			ProcessAddresses();
-			
-			Connection.Close();
 		}
 		
 		public NpgsqlCommand GetCommand(string sql)
@@ -222,5 +229,33 @@ namespace ImportHelper
 			//DataTable adr = Adresa.Tables[0];
 		}
 
+		public void MakeTreeTemplate(string filename)
+		{
+			try
+			{
+				Console.WriteLine("Loading from server...");
+				string data = LPS.GetTextResource("modules.xml");
+				Console.WriteLine(data);
+				ModulesTreeInfo.LoadFromString(data).SaveToFile(filename);
+				
+			}
+			catch(Exception ex)
+			{
+				Console.WriteLine(ex);
+				
+				ModulesTreeInfo root = new ModulesTreeInfo("root", null,null,null,null,null);
+				ModulesTreeInfo adresar = new ModulesTreeInfo("adresar", "Adresář", "adresa", null, "select * from adresa", "Adresář");
+				root.Items.Add(adresar);
+				adresar.Items.Add(new ModulesTreeInfo("adresar_odb", "Odběratelé", "adresa", null, "select * from adresa", "Adresář odběratelů"));
+				adresar.Items.Add(new ModulesTreeInfo("adresar_dod", "Dodavatelé", "adresa", null, "select * from adresa", "Adresář dodavatelů"));
+				
+				ModulesTreeInfo cisel = new ModulesTreeInfo("ciselniky", "Číselníky", null, null, null, null);
+				root.Items.Add(cisel);
+				cisel.Items.Add(new ModulesTreeInfo("c_dph", "DPH", "c_dph", null, "select * c_dph", "Hodnoty DPH"));
+	
+				root.SaveToFile(filename);
+			}
+		}
+		
 	}
 }

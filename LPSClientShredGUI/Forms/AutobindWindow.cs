@@ -12,6 +12,7 @@ namespace LPSClient
 		public override void OnCreate ()
 		{
 			base.OnCreate ();
+			CreateToolbarItems();
 		}
 
 		protected virtual void Autobind(DataRow row)
@@ -105,6 +106,39 @@ namespace LPSClient
 			base.Dispose();
 		}
 		
+		public Widget GetWidgetByName(string name)
+		{
+			DeepEnumerator enumerator = new DeepEnumerator(this.Window.GetEnumerator());
+			while(enumerator.MoveNext())
+			{
+				Widget w = enumerator.Current as Widget;
+				if(w == null)
+					continue;
+				if(w.Name == name)
+					return w;
+			}
+			return null;
+		}
+		
+		protected void CreateToolbarItems()
+		{
+			Toolbar tools = GetWidgetByName("toolbar") as Toolbar;
+			if(tools == null)
+				return;
+
+			ToolButton btn = new ToolButton("gtk-save");
+			btn.Label = "Uložit a zavřít";
+			btn.Clicked += SaveClose;
+			tools.Add(btn);
+			btn.ShowAll();
+
+			btn = new ToolButton("gtk-save");
+			btn.Label = "Uložit";
+			btn.Clicked += Save;
+			tools.Add(btn);
+			btn.ShowAll();
+		}
+		
 		#region Generic event handlers
 		public virtual void New(object o, EventArgs args)
 		{
@@ -114,6 +148,12 @@ namespace LPSClient
 		public virtual void Save(object o, EventArgs args)
 		{
 			Connection.SaveDataSet(this.Data);
+		}
+
+		public virtual void SaveClose(object o, EventArgs args)
+		{
+			Connection.SaveDataSet(this.Data);
+			this.Destroy();
 		}
 
 		public virtual void SaveAs(object o, EventArgs args)
