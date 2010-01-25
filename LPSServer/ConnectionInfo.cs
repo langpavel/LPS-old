@@ -327,6 +327,8 @@ namespace LPSServer
 						{
 							foreach(DataTable table in changes.Tables)
 							{
+								if(updateUserInfo)
+									UpdateUserInfo(table);
 								result += adapter.Update(table);
 							}
 						}

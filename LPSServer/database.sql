@@ -47,10 +47,10 @@ CREATE TABLE c_dph (
     dt_modify timestamp without time zone DEFAULT now()
 );
 INSERT INTO c_dph VALUES (1, 'DPH0', 'Bez DPH', 0.00, null, null, false, null, null, null, null);
-INSERT INTO c_dph VALUES (2, 'DPH9', 'DPH 9%', 0.19, null, '1.1.2010', false, null, null, null, null);
+INSERT INTO c_dph VALUES (2, 'DPH9', 'DPH 9%', 0.09, null, '1.1.2010', false, null, null, null, null);
 INSERT INTO c_dph VALUES (3, 'DPH19', 'DPH 19%', 0.19, null, '1.1.2010', false, null, null, null, null);
-INSERT INTO c_dph VALUES (4, 'DPH10', 'DPH 10%', 0.19, '1.1.2010', null, false, null, null, null, null);
-INSERT INTO c_dph VALUES (5, 'DPH20', 'DPH 20%', 0.19, '1.1.2010', null, true, null, null, null, null);
+INSERT INTO c_dph VALUES (4, 'DPH10', 'DPH 10%', 0.10, '1.1.2010', null, false, null, null, null, null);
+INSERT INTO c_dph VALUES (5, 'DPH20', 'DPH 20%', 0.20, '1.1.2010', null, true, null, null, null, null);
 
 CREATE TABLE c_mj (
     id bigserial not null primary key,

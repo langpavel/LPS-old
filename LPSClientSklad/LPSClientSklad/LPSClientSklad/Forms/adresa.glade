@@ -74,7 +74,6 @@
         <child>
           <widget class="GtkToolbar" id="toolbar">
             <property name="visible">True</property>
-            <property name="toolbar_style">both-horiz</property>
             <property name="icon_size_set">True</property>
           </widget>
           <packing>

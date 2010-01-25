@@ -35,6 +35,7 @@ namespace LPSClient.Sklad
 
 			FormFactory.Register(new FormXmlResourceInfo<LoginDialog>("login", "ui-shared.glade", "dialogLogin"));
 			FormFactory.Register(new FormXmlResourceInfo<PasswdChDialog>("chpasswd", "ui-shared.glade", "dialogPswChange"));
+			FormFactory.Register(new FormXmlResourceInfo<GenericDetailWindow>("generic", "ui-shared.glade", "windowGeneric"));
 			FormFactory.Register(new FormXmlResourceInfo<LongMessageDialog>("long-message", "ui-shared.glade", "dialogLongMessage"));
 			FormFactory.Register(new FormXmlResourceInfo<MainForm>("main", "ui-sklad.glade", "windowMain"));
 			FormFactory.Register(new FormXmlResourceInfo<AdresaForm>("adresa", "adresa.glade", "windowAdresa"));

@@ -8,6 +8,7 @@ namespace LPSClient
 	{
 		public Glade.XML GladeXML { get; set; }
 		public Window Window { get; set; }
+		public virtual ModulesTreeInfo ListInfo { get; set; }
 		//public bool DestroyOnDelete { get; set; }
 		private List<IDisposable> _OwnedComponents;
 		public List<IDisposable> OwnedComponents

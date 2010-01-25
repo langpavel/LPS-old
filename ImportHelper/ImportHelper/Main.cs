@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 using System.Xml;
 using System.Xml.Serialization;
 using Npgsql;
-using LPSShared;
+using LPSClient;
 
 namespace ImportHelper
 {
@@ -229,14 +229,47 @@ namespace ImportHelper
 			//DataTable adr = Adresa.Tables[0];
 		}
 
+		public void UpdateItemsColumns(ModulesTreeInfo items)
+		{
+			foreach(ModulesTreeInfo item in items.Items)
+			{
+				if(!String.IsNullOrEmpty(item.ListSql))
+				{
+					Console.WriteLine(item.ListSql);
+					try 
+					{
+						using(DataSet ds = LPS.GetDataSetSimple(item.ListSql + " where 1=0"))
+						{
+							foreach(DataColumn column in ds.Tables[0].Columns)
+							{
+								if(item.GetColumnInfo(column.ColumnName) != null)
+									continue;
+								ColumnInfo ci = new ColumnInfo();
+								ci.Name = column.ColumnName;
+								ci.Caption = ci.Name;
+								ci.Editable = true;
+								ci.Visible = true;
+								ci.Required = false;
+								item.Columns.Add(ci);
+							}
+						}
+					}
+					catch { }
+				}
+				UpdateItemsColumns(item);
+			}
+		}
+		
 		public void MakeTreeTemplate(string filename)
 		{
 			try
 			{
 				Console.WriteLine("Loading from server...");
 				string data = LPS.GetTextResource("modules.xml");
-				Console.WriteLine(data);
-				ModulesTreeInfo.LoadFromString(data).SaveToFile(filename);
+				//Console.WriteLine(data);
+				ModulesTreeInfo info = ModulesTreeInfo.LoadFromString(data);
+				UpdateItemsColumns(info);
+				info.SaveToFile(filename);
 				
 			}
 			catch(Exception ex)

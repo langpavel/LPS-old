@@ -58,6 +58,7 @@
     <Compile Include="Forms\WidgetBindigs\CheckButtonRowBinding.cs" />
     <Compile Include="Forms\WidgetBindigs\TextRowBinding.cs" />
     <Compile Include="Forms\LongMessageDialog.cs" />
+    <Compile Include="Forms\GenericDetailWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />

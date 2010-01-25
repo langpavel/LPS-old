@@ -153,6 +153,7 @@ namespace LPSClient.Sklad
 			ModulesTreeInfo info = view.Data["INFO"] as ModulesTreeInfo;
 			FormInfo fi = FormFactory.Instance.GetFormInfo(info.DetailName);
 			AutobindWindow w = fi.CreateObject() as AutobindWindow;
+			w.ListInfo = info;
 			w.Load(Convert.ToInt64(row[0]));
 			w.ShowAll();
 		}

@@ -7,6 +7,7 @@ namespace LPSClient
 	{
 		Glade.XML GladeXML { get; set; }
 		Window Window { get; set; }
+		ModulesTreeInfo ListInfo { get; set; }
 		void OnCreate();
 	}
 }

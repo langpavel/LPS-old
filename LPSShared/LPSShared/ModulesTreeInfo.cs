@@ -16,6 +16,7 @@ namespace LPSClient
 		public ModulesTreeInfo ()
 		{
 			Items = new List<ModulesTreeInfo>();
+			Columns = new List<ColumnInfo>();
 			Data = new Hashtable();
 		}
 		
@@ -36,7 +37,7 @@ namespace LPSClient
 		[XmlAttribute("text")]
 		public string Text { get; set; }
 		
-		[XmlText]
+		[XmlElement("desc")]
 		public string Description { get; set; }
 
 		[XmlElement("detail-name")]
@@ -47,6 +48,10 @@ namespace LPSClient
 		
 		[XmlElement("list-sql")]
 		public string ListSql { get; set; }
+		
+		[XmlArray("columns")]
+		[XmlArrayItem("column")]
+		public List<ColumnInfo> Columns { get; set; }
 		
 		[XmlElement("item")]
 		public List<ModulesTreeInfo> Items { get; set; }
@@ -87,6 +92,16 @@ namespace LPSClient
 		public override string ToString ()
 		{
 			return string.Format("[ModulesTreeInfo: Id={0}, Text={1}, Description={2}, DetailName={3}", Id, Text, Description, DetailName);
+		}
+		
+		public ColumnInfo GetColumnInfo(string name)
+		{
+			foreach(ColumnInfo col in this.Columns)
+			{
+				if(col.Name == name)
+					return col;
+			}
+			return null;
 		}
 		
 		[XmlIgnore]
