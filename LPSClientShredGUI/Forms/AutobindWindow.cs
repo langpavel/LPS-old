@@ -9,12 +9,17 @@ namespace LPSClient
 {
 	public abstract class AutobindWindow : XmlWindowBase
 	{
+		private Statusbar statusbar;
+		public Statusbar Statusbar { get { return statusbar; } }
+		
 		public override void OnCreate ()
 		{
 			base.OnCreate ();
 			CreateToolbarItems();
+			this.statusbar = this.GetWidgetByName("statusbar") as Statusbar;
 		}
 
+		private TextRowBinding titlebinding;
 		protected virtual void Autobind(DataRow row)
 		{
 			IEnumerator e = new DeepEnumerator(this.Window.GetEnumerator());
@@ -30,7 +35,7 @@ namespace LPSClient
 					name = name.Substring(3);
 				else
 					continue;
-				Console.WriteLine("Try bind '{0}'", name);
+				//Console.WriteLine("Try bind '{0}'", name);
 				
 				try
 				{
@@ -40,12 +45,24 @@ namespace LPSClient
 					WidgetRowBinding binding = BindWidget(col, w);
 					if(binding != null)
 						this.OwnedComponents.Add(binding);
+					
 				}
 				catch(Exception ex)
 				{
 					Console.WriteLine(ex);
 				}
 			}
+			if(Statusbar != null)
+				BindStatusbar();
+				
+			TextRowBinding titlebinding = new TextRowBinding(row, this.Window.Title);
+			titlebinding.TextUpdating += HandleTitleTextUpdating;
+			titlebinding.UpdateText();
+		}
+
+		void HandleTitleTextUpdating (object sender, TextUpdatingArgs args)
+		{
+			this.Window.Title = args.Text;
 		}
 		
 		public WidgetRowBinding BindWidget(DataColumn col, Widget w)
@@ -69,6 +86,14 @@ namespace LPSClient
 
 		protected virtual void Unbind(DataRow row)
 		{
+			if(Statusbar != null)
+				UnbindStatusbar();
+			if(titlebinding != null)
+			{
+				titlebinding.TextUpdating -= HandleTitleTextUpdating;
+				titlebinding.Dispose();
+				titlebinding = null;
+			}
 		}
 
 		private DataRow _Row;
@@ -99,7 +124,6 @@ namespace LPSClient
 		{
 			if(Data != null)
 			{
-				Connection.DisposeDataSet(Data);
 				Data.Dispose();
 				Data = null;
 			}
@@ -166,5 +190,51 @@ namespace LPSClient
 			this.Destroy();
 		}
 		#endregion	
+
+		protected virtual void BindStatusbar()
+		{
+			Row.Table.RowChanged += UpdateStatusbar;
+			this.Statusbar.Push(1, GetStatusbarText());
+		}
+
+		protected virtual void UnbindStatusbar()
+		{
+			Row.Table.RowChanged -= UpdateStatusbar;
+			this.Statusbar.Pop(1);
+		}
+		
+		private void UpdateStatusbar (object sender, DataRowChangeEventArgs e)
+		{
+			if(e.Row == this.Row)
+			{
+				this.Statusbar.Pop(1);
+				this.Statusbar.Push(1, GetStatusbarText());
+			}
+		}
+		
+		protected virtual string GetStatusbarText()
+		{
+			string stav;
+			switch(Row.RowState)
+			{
+			case DataRowState.Added:
+				stav = "Nový";
+				break;
+			case DataRowState.Deleted:
+				stav = "Smazáno";
+				break;
+			case DataRowState.Modified: 
+				stav = "Změněno";
+				break;
+			case DataRowState.Unchanged:
+				stav = "Nezměněno";
+				break;
+			default:
+				stav = Row.RowState.ToString();
+				break;
+			}
+			return String.Format("Id: {0}; Stav: {1}", Row["id"], stav);
+		}
+
 	}
 }

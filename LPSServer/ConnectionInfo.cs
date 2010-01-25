@@ -343,13 +343,6 @@ namespace LPSServer
 			}
 		}
 		
-		public void DisposeDataSet(int index)
-		{
-			//DataSetStoreItem ds = StoredDataSets[index];
-			//StoredDataSets.Remove(index);
-			//ds.Dispose();
-		}
-
 		#endregion
 	
 	}

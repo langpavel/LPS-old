@@ -16,20 +16,6 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="GetTextResource">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="path" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetTextResourceResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="GetTextResourceResult" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="Login">
         <xs:complexType>
           <xs:sequence>
@@ -220,15 +206,19 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="DisposeDataSet">
+      <xs:element name="GetTextResource">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="1" maxOccurs="1" name="server_id" type="xs:int" />
+            <xs:element minOccurs="0" maxOccurs="1" name="path" type="xs:string" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="DisposeDataSetResponse">
-        <xs:complexType />
+      <xs:element name="GetTextResourceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetTextResourceResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
       </xs:element>
       <xs:element name="string" nillable="true" type="xs:string" />
       <xs:element name="long" type="xs:long" />
@@ -249,12 +239,6 @@
   </message>
   <message name="PingSoapOut">
     <part name="parameters" element="s0:PingResponse" />
-  </message>
-  <message name="GetTextResourceSoapIn">
-    <part name="parameters" element="s0:GetTextResource" />
-  </message>
-  <message name="GetTextResourceSoapOut">
-    <part name="parameters" element="s0:GetTextResourceResponse" />
   </message>
   <message name="LoginSoapIn">
     <part name="parameters" element="s0:Login" />
@@ -328,22 +312,16 @@
   <message name="SaveDataSetSoapOut">
     <part name="parameters" element="s0:SaveDataSetResponse" />
   </message>
-  <message name="DisposeDataSetSoapIn">
-    <part name="parameters" element="s0:DisposeDataSet" />
+  <message name="GetTextResourceSoapIn">
+    <part name="parameters" element="s0:GetTextResource" />
   </message>
-  <message name="DisposeDataSetSoapOut">
-    <part name="parameters" element="s0:DisposeDataSetResponse" />
+  <message name="GetTextResourceSoapOut">
+    <part name="parameters" element="s0:GetTextResourceResponse" />
   </message>
   <message name="PingHttpGetIn">
     <part name="data" type="s:string" />
   </message>
   <message name="PingHttpGetOut">
-    <part name="Body" element="s0:string" />
-  </message>
-  <message name="GetTextResourceHttpGetIn">
-    <part name="path" type="s:string" />
-  </message>
-  <message name="GetTextResourceHttpGetOut">
     <part name="Body" element="s0:string" />
   </message>
   <message name="LoginHttpGetIn">
@@ -390,20 +368,16 @@
   <message name="GetDataSetSimpleHttpGetOut">
     <part name="Body" element="s0:DataSet" />
   </message>
-  <message name="DisposeDataSetHttpGetIn">
-    <part name="server_id" type="s:int" />
+  <message name="GetTextResourceHttpGetIn">
+    <part name="path" type="s:string" />
   </message>
-  <message name="DisposeDataSetHttpGetOut" />
+  <message name="GetTextResourceHttpGetOut">
+    <part name="Body" element="s0:string" />
+  </message>
   <message name="PingHttpPostIn">
     <part name="data" type="s:string" />
   </message>
   <message name="PingHttpPostOut">
-    <part name="Body" element="s0:string" />
-  </message>
-  <message name="GetTextResourceHttpPostIn">
-    <part name="path" type="s:string" />
-  </message>
-  <message name="GetTextResourceHttpPostOut">
     <part name="Body" element="s0:string" />
   </message>
   <message name="LoginHttpPostIn">
@@ -450,18 +424,16 @@
   <message name="GetDataSetSimpleHttpPostOut">
     <part name="Body" element="s0:DataSet" />
   </message>
-  <message name="DisposeDataSetHttpPostIn">
-    <part name="server_id" type="s:int" />
+  <message name="GetTextResourceHttpPostIn">
+    <part name="path" type="s:string" />
   </message>
-  <message name="DisposeDataSetHttpPostOut" />
+  <message name="GetTextResourceHttpPostOut">
+    <part name="Body" element="s0:string" />
+  </message>
   <portType name="ServerSoap">
     <operation name="Ping">
       <input message="s0:PingSoapIn" />
       <output message="s0:PingSoapOut" />
-    </operation>
-    <operation name="GetTextResource">
-      <input message="s0:GetTextResourceSoapIn" />
-      <output message="s0:GetTextResourceSoapOut" />
     </operation>
     <operation name="Login">
       <input message="s0:LoginSoapIn" />
@@ -511,9 +483,9 @@
       <input message="s0:SaveDataSetSoapIn" />
       <output message="s0:SaveDataSetSoapOut" />
     </operation>
-    <operation name="DisposeDataSet">
-      <input message="s0:DisposeDataSetSoapIn" />
-      <output message="s0:DisposeDataSetSoapOut" />
+    <operation name="GetTextResource">
+      <input message="s0:GetTextResourceSoapIn" />
+      <output message="s0:GetTextResourceSoapOut" />
     </operation>
   </portType>
   <portType name="ServerSoap12">
@@ -521,10 +493,6 @@
       <input message="s0:PingSoapIn" />
       <output message="s0:PingSoapOut" />
     </operation>
-    <operation name="GetTextResource">
-      <input message="s0:GetTextResourceSoapIn" />
-      <output message="s0:GetTextResourceSoapOut" />
-    </operation>
     <operation name="Login">
       <input message="s0:LoginSoapIn" />
       <output message="s0:LoginSoapOut" />
@@ -573,19 +541,15 @@
       <input message="s0:SaveDataSetSoapIn" />
       <output message="s0:SaveDataSetSoapOut" />
     </operation>
-    <operation name="DisposeDataSet">
-      <input message="s0:DisposeDataSetSoapIn" />
-      <output message="s0:DisposeDataSetSoapOut" />
+    <operation name="GetTextResource">
+      <input message="s0:GetTextResourceSoapIn" />
+      <output message="s0:GetTextResourceSoapOut" />
     </operation>
   </portType>
   <portType name="ServerHttpGet">
     <operation name="Ping">
       <input message="s0:PingHttpGetIn" />
       <output message="s0:PingHttpGetOut" />
-    </operation>
-    <operation name="GetTextResource">
-      <input message="s0:GetTextResourceHttpGetIn" />
-      <output message="s0:GetTextResourceHttpGetOut" />
     </operation>
     <operation name="Login">
       <input message="s0:LoginHttpGetIn" />
@@ -619,19 +583,15 @@
       <input message="s0:GetDataSetSimpleHttpGetIn" />
       <output message="s0:GetDataSetSimpleHttpGetOut" />
     </operation>
-    <operation name="DisposeDataSet">
-      <input message="s0:DisposeDataSetHttpGetIn" />
-      <output message="s0:DisposeDataSetHttpGetOut" />
+    <operation name="GetTextResource">
+      <input message="s0:GetTextResourceHttpGetIn" />
+      <output message="s0:GetTextResourceHttpGetOut" />
     </operation>
   </portType>
   <portType name="ServerHttpPost">
     <operation name="Ping">
       <input message="s0:PingHttpPostIn" />
       <output message="s0:PingHttpPostOut" />
-    </operation>
-    <operation name="GetTextResource">
-      <input message="s0:GetTextResourceHttpPostIn" />
-      <output message="s0:GetTextResourceHttpPostOut" />
     </operation>
     <operation name="Login">
       <input message="s0:LoginHttpPostIn" />
@@ -665,24 +625,15 @@
       <input message="s0:GetDataSetSimpleHttpPostIn" />
       <output message="s0:GetDataSetSimpleHttpPostOut" />
     </operation>
-    <operation name="DisposeDataSet">
-      <input message="s0:DisposeDataSetHttpPostIn" />
-      <output message="s0:DisposeDataSetHttpPostOut" />
+    <operation name="GetTextResource">
+      <input message="s0:GetTextResourceHttpPostIn" />
+      <output message="s0:GetTextResourceHttpPostOut" />
     </operation>
   </portType>
   <binding name="ServerSoap" type="s0:ServerSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="Ping">
       <soap:operation soapAction="http://lpsoft.org/server/Ping" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="GetTextResource">
-      <soap:operation soapAction="http://lpsoft.org/server/GetTextResource" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -798,8 +749,8 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="DisposeDataSet">
-      <soap:operation soapAction="http://lpsoft.org/server/DisposeDataSet" style="document" />
+    <operation name="GetTextResource">
+      <soap:operation soapAction="http://lpsoft.org/server/GetTextResource" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -812,15 +763,6 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="Ping">
       <soap12:operation soapAction="http://lpsoft.org/server/Ping" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
-    <operation name="GetTextResource">
-      <soap12:operation soapAction="http://lpsoft.org/server/GetTextResource" style="document" />
       <input>
         <soap12:body use="literal" />
       </input>
@@ -936,8 +878,8 @@
         <soap12:body use="literal" />
       </output>
     </operation>
-    <operation name="DisposeDataSet">
-      <soap12:operation soapAction="http://lpsoft.org/server/DisposeDataSet" style="document" />
+    <operation name="GetTextResource">
+      <soap12:operation soapAction="http://lpsoft.org/server/GetTextResource" style="document" />
       <input>
         <soap12:body use="literal" />
       </input>
@@ -957,15 +899,6 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
-    <operation name="GetTextResource">
-      <http:operation location="/GetTextResource" />
-      <input>
-        <http:urlEncoded />
-      </input>
-      <output>
-        <mime:mimeXml part="Body" />
-      </output>
-    </operation>
     <operation name="Login">
       <http:operation location="/Login" />
       <input>
@@ -1036,12 +969,14 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
-    <operation name="DisposeDataSet">
-      <http:operation location="/DisposeDataSet" />
+    <operation name="GetTextResource">
+      <http:operation location="/GetTextResource" />
       <input>
         <http:urlEncoded />
       </input>
-      <output />
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
     </operation>
   </binding>
   <binding name="ServerHttpPost" type="s0:ServerHttpPost">
@@ -1055,15 +990,6 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
-    <operation name="GetTextResource">
-      <http:operation location="/GetTextResource" />
-      <input>
-        <mime:content part="" type="application/x-www-form-urlencoded" />
-      </input>
-      <output>
-        <mime:mimeXml part="Body" />
-      </output>
-    </operation>
     <operation name="Login">
       <http:operation location="/Login" />
       <input>
@@ -1134,12 +1060,14 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
-    <operation name="DisposeDataSet">
-      <http:operation location="/DisposeDataSet" />
+    <operation name="GetTextResource">
+      <http:operation location="/GetTextResource" />
       <input>
         <mime:content part="" type="application/x-www-form-urlencoded" />
       </input>
-      <output />
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
     </operation>
   </binding>
   <service name="Server">

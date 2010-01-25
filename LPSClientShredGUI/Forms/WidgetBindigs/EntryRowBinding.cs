@@ -29,7 +29,7 @@ namespace LPSClient
 		protected void UptadeEntryValue(object value)
 		{
 			string s = Convert.ToString(value);
-			Console.WriteLine("ENTRY <==\t'{0}'", s);
+			//Console.WriteLine("ENTRY <==\t'{0}'", s);
 			this.Entry.Text = s;
 		}
 		
@@ -63,7 +63,7 @@ namespace LPSClient
 		void HandleEntryChanged (object sender, EventArgs e)
 		{
 			object o = Convert.ChangeType(((Entry)sender).Text, Column.DataType);
-			Console.WriteLine("ROW <==\t'{0}'", o);
+			//Console.WriteLine("ROW <==\t'{0}'", o);
 			Row[Column] = o;
 		}
 		

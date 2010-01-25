@@ -35,6 +35,7 @@ namespace LPSClient.Sklad
 
 			FormFactory.Register(new FormXmlResourceInfo<LoginDialog>("login", "ui-shared.glade", "dialogLogin"));
 			FormFactory.Register(new FormXmlResourceInfo<PasswdChDialog>("chpasswd", "ui-shared.glade", "dialogPswChange"));
+			FormFactory.Register(new FormXmlResourceInfo<LongMessageDialog>("long-message", "ui-shared.glade", "dialogLongMessage"));
 			FormFactory.Register(new FormXmlResourceInfo<MainForm>("main", "ui-sklad.glade", "windowMain"));
 			FormFactory.Register(new FormXmlResourceInfo<AdresaForm>("adresa", "adresa.glade", "windowAdresa"));
 
@@ -56,7 +57,7 @@ namespace LPSClient.Sklad
 		{
 			if(args.IsTerminating)
 				return;
-			ShowMessage(MessageType.Error, "Nastala neošetřená vyjímka", "Chyba: {0}", args.ExceptionObject);
+			ShowLongMessage("Chyba", "Nastala neošetřená vyjímka " + args.ExceptionObject.GetType().Name, args.ExceptionObject.ToString());
 			args.ExitApplication = false;
 		}
 		
@@ -127,10 +128,16 @@ namespace LPSClient.Sklad
 				d.Destroy();
 			}
 		}
-
+		
 		public static void ShowMessage(MessageType msgType, string caption, string text, params object[] args)
 		{
 			ShowMessage(MainApp.MainWindow, msgType, caption, text, args);
 		}
+
+		public static void ShowLongMessage(string title, string title2, string text)
+		{
+			LongMessageDialog.Show(title, title2, text);
+		}
+
 	}
 }

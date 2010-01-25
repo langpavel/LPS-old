@@ -22,8 +22,6 @@ namespace LPSClientShared.LPSServer {
         
         private System.Threading.SendOrPostCallback PingOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetTextResourceOperationCompleted;
-        
         private System.Threading.SendOrPostCallback LoginOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetLoggedUserOperationCompleted;
@@ -48,7 +46,7 @@ namespace LPSClientShared.LPSServer {
         
         private System.Threading.SendOrPostCallback SaveDataSetOperationCompleted;
         
-        private System.Threading.SendOrPostCallback DisposeDataSetOperationCompleted;
+        private System.Threading.SendOrPostCallback GetTextResourceOperationCompleted;
         
         public Server() {
             this.Url = "http://localhost:8080/Server.asmx";
@@ -59,8 +57,6 @@ namespace LPSClientShared.LPSServer {
         }
         
         public event PingCompletedEventHandler PingCompleted;
-        
-        public event GetTextResourceCompletedEventHandler GetTextResourceCompleted;
         
         public event LoginCompletedEventHandler LoginCompleted;
         
@@ -86,7 +82,7 @@ namespace LPSClientShared.LPSServer {
         
         public event SaveDataSetCompletedEventHandler SaveDataSetCompleted;
         
-        public event DisposeDataSetCompletedEventHandler DisposeDataSetCompleted;
+        public event GetTextResourceCompletedEventHandler GetTextResourceCompleted;
         
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/Ping", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public string Ping(string data) {
@@ -121,42 +117,6 @@ namespace LPSClientShared.LPSServer {
             if ((this.PingCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.PingCompleted(this, new PingCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetTextResource", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public string GetTextResource(string path) {
-            object[] results = this.Invoke("GetTextResource", new object[] {
-                        path});
-            return ((string)(results[0]));
-        }
-        
-        public System.IAsyncResult BeginGetTextResource(string path, System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("GetTextResource", new object[] {
-                        path}, callback, asyncState);
-        }
-        
-        public string EndGetTextResource(System.IAsyncResult asyncResult) {
-            object[] results = this.EndInvoke(asyncResult);
-            return ((string)(results[0]));
-        }
-        
-        public void GetTextResourceAsync(string path) {
-            this.GetTextResourceAsync(path, null);
-        }
-        
-        public void GetTextResourceAsync(string path, object userState) {
-            if ((this.GetTextResourceOperationCompleted == null)) {
-                this.GetTextResourceOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetTextResourceCompleted);
-            }
-            this.InvokeAsync("GetTextResource", new object[] {
-                        path}, this.GetTextResourceOperationCompleted, userState);
-        }
-        
-        private void OnGetTextResourceCompleted(object arg) {
-            if ((this.GetTextResourceCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetTextResourceCompleted(this, new GetTextResourceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -608,37 +568,39 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/DisposeDataSet", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public void DisposeDataSet(int server_id) {
-            this.Invoke("DisposeDataSet", new object[] {
-                        server_id});
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetTextResource", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public string GetTextResource(string path) {
+            object[] results = this.Invoke("GetTextResource", new object[] {
+                        path});
+            return ((string)(results[0]));
         }
         
-        public System.IAsyncResult BeginDisposeDataSet(int server_id, System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("DisposeDataSet", new object[] {
-                        server_id}, callback, asyncState);
+        public System.IAsyncResult BeginGetTextResource(string path, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetTextResource", new object[] {
+                        path}, callback, asyncState);
         }
         
-        public void EndDisposeDataSet(System.IAsyncResult asyncResult) {
-            this.EndInvoke(asyncResult);
+        public string EndGetTextResource(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((string)(results[0]));
         }
         
-        public void DisposeDataSetAsync(int server_id) {
-            this.DisposeDataSetAsync(server_id, null);
+        public void GetTextResourceAsync(string path) {
+            this.GetTextResourceAsync(path, null);
         }
         
-        public void DisposeDataSetAsync(int server_id, object userState) {
-            if ((this.DisposeDataSetOperationCompleted == null)) {
-                this.DisposeDataSetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDisposeDataSetCompleted);
+        public void GetTextResourceAsync(string path, object userState) {
+            if ((this.GetTextResourceOperationCompleted == null)) {
+                this.GetTextResourceOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetTextResourceCompleted);
             }
-            this.InvokeAsync("DisposeDataSet", new object[] {
-                        server_id}, this.DisposeDataSetOperationCompleted, userState);
+            this.InvokeAsync("GetTextResource", new object[] {
+                        path}, this.GetTextResourceOperationCompleted, userState);
         }
         
-        private void OnDisposeDataSetCompleted(object arg) {
-            if ((this.DisposeDataSetCompleted != null)) {
+        private void OnGetTextResourceCompleted(object arg) {
+            if ((this.GetTextResourceCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.DisposeDataSetCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.GetTextResourceCompleted(this, new GetTextResourceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
     }
@@ -661,25 +623,6 @@ namespace LPSClientShared.LPSServer {
     }
     
     public delegate void PingCompletedEventHandler(object sender, PingCompletedEventArgs args);
-    
-    public partial class GetTextResourceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetTextResourceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    public delegate void GetTextResourceCompletedEventHandler(object sender, GetTextResourceCompletedEventArgs args);
     
     public partial class LoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
@@ -892,5 +835,22 @@ namespace LPSClientShared.LPSServer {
     
     public delegate void SaveDataSetCompletedEventHandler(object sender, SaveDataSetCompletedEventArgs args);
     
-    public delegate void DisposeDataSetCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs args);
+    public partial class GetTextResourceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetTextResourceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void GetTextResourceCompletedEventHandler(object sender, GetTextResourceCompletedEventArgs args);
 }

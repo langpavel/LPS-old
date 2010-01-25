@@ -147,13 +147,6 @@ namespace LPSServer
 			return ci.SaveDataSet(changes, updateUserInfo, selectSql, GetNpgsqlParameters(parameters));
 		}
  		
-		[WebMethod(EnableSession=true)]
-		public void DisposeDataSet(int server_id)
-		{
-			ConnectionInfo ci = GetConnectionInfo();
-			ci.DisposeDataSet(server_id);
-		}
-		
 		#endregion
 		
 		[WebMethod(EnableSession=false, BufferResponse=false)]

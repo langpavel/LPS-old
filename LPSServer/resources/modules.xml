@@ -34,7 +34,7 @@
 			<item id="c_dph" text="DPH">
 				Hodnoty DPH
 				<detail-name>c_dph</detail-name>
-				<list-sql>select * c_dph</list-sql>
+				<list-sql>select * from c_dph</list-sql>
 			</item>
 		</item>
 

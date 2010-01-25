@@ -75,7 +75,7 @@ namespace LPSClient
 		void HandleCheckBoxToggled (object sender, EventArgs e)
 		{
 			object o = Convert.ChangeType(((CheckButton)sender).Active, Column.DataType);
-			Console.WriteLine("ROW <==\t'{0}'", o);
+			//Console.WriteLine("ROW <==\t'{0}'", o);
 			Row[Column] = o;
 		}
 		

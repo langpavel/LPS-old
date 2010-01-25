@@ -186,23 +186,14 @@ namespace LPSClient
 			dataset.AcceptChanges();
 			return result;
 		}
+
+		public DataSet GetSameDataSet(DataSet dataset)
+		{
+			string selectSql = (string)dataset.ExtendedProperties["sql"];
+			object[] parameters = (object[])dataset.ExtendedProperties["parameters"];
+			return this.GetDataSet(selectSql, parameters);
+		}
 		
-		public void DisposeDataSet(int server_id)
-		{
-			Server.DisposeDataSet(server_id);
-		}
-
-		public void DisposeDataSet(DataSet dataset)
-		{
-			try 
-			{
-				int server_id = (int)dataset.ExtendedProperties["_SERVER_ID_"];
-				this.DisposeDataSet(server_id);
-				dataset.Dispose();
-			}
-			catch {	}
-		}
-
 		#endregion
 	}
 }

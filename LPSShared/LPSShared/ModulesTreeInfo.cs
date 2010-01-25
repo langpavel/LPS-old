@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
@@ -15,7 +16,7 @@ namespace LPSClient
 		public ModulesTreeInfo ()
 		{
 			Items = new List<ModulesTreeInfo>();
-			Data = new HashSet<string>();
+			Data = new Hashtable();
 		}
 		
 		public ModulesTreeInfo (string id, string text, string detailName, string iconName, string listSql, string desc)
@@ -89,6 +90,6 @@ namespace LPSClient
 		}
 		
 		[XmlIgnore]
-		public HashSet<string> Data { get; set; }
+		public Hashtable Data { get; set; }
 	}
 }

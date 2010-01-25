@@ -20,6 +20,5 @@ namespace LPSServer
 		DataSet GetDataSet(string sql, object[] parameters);
 		string GetTextResource(string path);
 		int SaveDataSet(DataSet changes, bool updateUserInfo, string selectSql, object[] parameters);
-		void DisposeDataSet(int server_id);
 	}
 }
