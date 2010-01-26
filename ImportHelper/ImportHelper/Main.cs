@@ -235,26 +235,36 @@ namespace ImportHelper
 			{
 				if(!String.IsNullOrEmpty(item.ListSql))
 				{
-					Console.WriteLine(item.ListSql);
+					DataSet ds = null;
 					try 
 					{
-						using(DataSet ds = LPS.GetDataSetSimple(item.ListSql + " where 1=0"))
+						try
 						{
-							foreach(DataColumn column in ds.Tables[0].Columns)
-							{
-								if(item.GetColumnInfo(column.ColumnName) != null)
-									continue;
-								ColumnInfo ci = new ColumnInfo();
-								ci.Name = column.ColumnName;
-								ci.Caption = ci.Name;
-								ci.Editable = true;
-								ci.Visible = true;
-								ci.Required = false;
-								item.Columns.Add(ci);
-							}
+							ds = LPS.GetDataSetSimple(item.ListSql + " where 1=0");
+						}
+						catch
+						{
+							ds = LPS.GetDataSetSimple(item.ListSql + " and 1=0");
+						}
+						Console.WriteLine(item.ListSql);
+						foreach(DataColumn column in ds.Tables[0].Columns)
+						{
+							if(item.GetColumnInfo(column.ColumnName) != null)
+								continue;
+							ColumnInfo ci = new ColumnInfo();
+							ci.Name = column.ColumnName;
+							ci.Caption = ci.Name;
+							ci.Editable = true;
+							ci.Visible = true;
+							ci.Required = false;
+							item.Columns.Add(ci);
 						}
 					}
-					catch { }
+					finally 
+					{ 
+						if(ds != null)
+							ds.Dispose();
+					}
 				}
 				UpdateItemsColumns(item);
 			}

@@ -59,11 +59,13 @@
     <Compile Include="Forms\WidgetBindigs\TextRowBinding.cs" />
     <Compile Include="Forms\LongMessageDialog.cs" />
     <Compile Include="Forms\GenericDetailWindow.cs" />
+    <Compile Include="Gtk\GtkResource.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />
     <Folder Include="DataTableTreeModel\" />
     <Folder Include="Forms\WidgetBindigs\" />
+    <Folder Include="Gtk\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPSShared\LPSShared\LPSShared.csproj">

@@ -32,5 +32,8 @@ namespace LPSClient
 		
 		[XmlAttribute("ref-table")]
 		public string FkReferenceTable { get; set; }
+		
+		[XmlElement("desc")]
+		public string Description { get; set; }
 	}
 }

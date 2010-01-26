@@ -9,6 +9,7 @@ namespace LPSClient.Sklad
 	public class MainForm : XmlWindowBase
 	{
 		[Glade.Widget] TreeView viewModules;
+		[Glade.Widget] TreeView viewColumns;
 		[Glade.Widget] Notebook nbData;
 		[Glade.Widget] ToggleButton chkFiltrovat;
 		[Glade.Widget] Entry edtFilter;
@@ -32,6 +33,8 @@ namespace LPSClient.Sklad
 			};
 			
 			InitModules(false);
+			
+			DataTableListStoreBinding.CreateColumnTreeViewColumns(viewColumns);
 		}
 
 		private void AddModulesNodes(ModulesTreeInfo info, TreeStore store, TreeIter parent)
@@ -83,7 +86,7 @@ namespace LPSClient.Sklad
 			{
 				ModulesTreeInfo info = store.GetValue(iter, 3) as ModulesTreeInfo;
 				if(info != null)
-					NewModuleTab(info);
+					ShowModuleTab(info);
 			}
 		}
 		
@@ -179,7 +182,7 @@ namespace LPSClient.Sklad
 			}
 		}
 
-		public void NewModuleTab(ModulesTreeInfo info)
+		public void ShowModuleTab(ModulesTreeInfo info)
 		{
 			if(String.IsNullOrEmpty(info.ListSql))
 				return;
@@ -214,9 +217,10 @@ namespace LPSClient.Sklad
 				
 				DataSet ds = Connection.GetDataSetSimple(info.ListSql);
 				
-				DataTableListStoreBinding binding = new DataTableListStoreBinding(tw, ds.Tables[0]);
+				DataTableListStoreBinding binding = new DataTableListStoreBinding(tw, ds.Tables[0], info);
 				binding.Bind();
 				binding.Sorting = "id";
+				viewColumns.Model = binding.ColumnList;
 
 				info.Data["VIEW"] = tw;
 				info.Data["DATASET"] = ds;

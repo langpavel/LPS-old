@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using System.Web;
 using Gtk;
 using LPSServer;
@@ -7,13 +8,14 @@ using LPSClient;
 
 namespace LPSClient.Sklad
 {
-	class MainApp
+	internal class MainApp
 	{
 		public static void Main (string[] args)
 		{
 			new MainApp(args);
 		}
 		
+		public string ExeName { get; set; }
 		public string[] Args { get; set; }
 
 		public static ServerConnection Connection { get; set; }
@@ -32,6 +34,11 @@ namespace LPSClient.Sklad
 		public MainApp(string[] args)
 		{
 			Args = args;
+			ExeName = Assembly.GetEntryAssembly().Location;
+			
+			Application.Init(ExeName, ref args);
+			
+			GtkTheme.LoadGtkResourceFile();
 
 			FormFactory.Register(new FormXmlResourceInfo<LoginDialog>("login", "ui-shared.glade", "dialogLogin"));
 			FormFactory.Register(new FormXmlResourceInfo<PasswdChDialog>("chpasswd", "ui-shared.glade", "dialogPswChange"));
@@ -42,7 +49,6 @@ namespace LPSClient.Sklad
 
 			GLib.ExceptionManager.UnhandledException += HandleUnhandledException;
 				
-			Application.Init ();
 
 			if(!DoLogin())
 				return;

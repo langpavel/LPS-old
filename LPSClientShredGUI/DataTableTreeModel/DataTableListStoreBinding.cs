@@ -15,14 +15,15 @@ namespace LPSClient
 	{
 
 		public DataTableListStoreBinding()
-			: this(null, null)
+			: this(null, null, null)
 		{
 		}
 		
-		public DataTableListStoreBinding(TreeView view, DataTable dt)
+		public DataTableListStoreBinding(TreeView view, DataTable dt, ModulesTreeInfo moduleInfo)
 		{
 			this.TreeView = view;
 			this.DataTable = dt;
+			this.ModuleInfo = moduleInfo;
 			this.MappedColumns = new Dictionary<string, GetMappedColumnValue>();
 			MappedColumns["id_user_create"] = new DataTableListStoreBinding.GetMappedColumnValue(GetUserName);
 			MappedColumns["id_user_modify"] = new DataTableListStoreBinding.GetMappedColumnValue(GetUserName);
@@ -32,6 +33,8 @@ namespace LPSClient
 		public DataTable DataTable { get; set; }
 		public ListStore ListStore { get; set; }
 		public TreeModelFilter Filter { get; set; }
+		public ListStore ColumnList { get; set; }
+		public ModulesTreeInfo ModuleInfo { get; set; }
 		//public TreeModelSort Sort { get; set; }
 		public bool UseMarkup { get; set; }
 
@@ -59,9 +62,24 @@ namespace LPSClient
 		private	GetMappedColumnValue[] getValFuncs;
 		private Dictionary<DataRow, TreeIter> row_iters;
 		
+		public ColumnInfo GetColumnInfo(string name)
+		{
+			foreach(ColumnInfo col in ModuleInfo.Columns)
+			{
+				if(col.Name == name)
+					return col;
+			}
+			ColumnInfo result = new ColumnInfo();
+			result.Caption = name.Replace('_',' ');
+			result.Description = "(automaticky vytvořeno)";
+			ModuleInfo.Columns.Add(result);
+			return result;
+		}
+		
 		public void Bind()
 		{
 			getValFuncs = new GetMappedColumnValue[this.DataTable.Columns.Count];
+			this.ColumnList = new ListStore(typeof(object), typeof(string), typeof(string), typeof(string), typeof(bool));
 				
 			CellRendererToggle rendererToggle = new CellRendererToggle();
 			CellRendererText rendererText = new CellRendererText2();
@@ -74,7 +92,7 @@ namespace LPSClient
 			{
 				DataColumn dc = this.DataTable.Columns[i];
 				TreeViewColumn wc;
-				string caption = dc.Caption.Replace('_',' ');
+				ColumnInfo colinfo = GetColumnInfo(dc.ColumnName);
 				GetMappedColumnValue getValFunc = null;
 				getValFuncs[i] = null;
 				if(this.MappedColumns.TryGetValue(dc.ColumnName, out getValFunc))
@@ -82,11 +100,11 @@ namespace LPSClient
 					getValFuncs[i] = getValFunc;
 					types.Add(typeof(string));
 					types.Add(typeof(bool));
-					wc = new TreeViewColumn(caption, rendererText, "markup", (i+1)*2);
+					wc = new TreeViewColumn(colinfo.Caption, rendererText, "markup", (i+1)*2);
 				}
 				else if(dc.DataType == typeof(bool))
 				{
-					wc = new TreeViewColumn(caption, rendererToggle, "active", (i+1)*2, "inconsistent", (i+1)*2+1); 
+					wc = new TreeViewColumn(colinfo.Caption, rendererToggle, "active", (i+1)*2, "inconsistent", (i+1)*2+1); 
 					types.Add(typeof(bool));
 					types.Add(typeof(bool));
 				}
@@ -95,21 +113,33 @@ namespace LPSClient
 					types.Add(typeof(string));
 					types.Add(typeof(bool));
 					if(UseMarkup)
-						wc = new TreeViewColumn(caption, rendererText, "markup", (i+1)*2);
+						wc = new TreeViewColumn(colinfo.Caption, rendererText, "markup", (i+1)*2);
 					else
-						wc = new TreeViewColumn(caption, rendererText, "text", (i+1)*2);
+						wc = new TreeViewColumn(colinfo.Caption, rendererText, "text", (i+1)*2);
 				}
 				wc.Reorderable = true;
 				wc.MinWidth = 4;
 				wc.MaxWidth = 1000;
 				wc.Resizable = true;
-				wc.FixedWidth = 50;
 				wc.Sizing = TreeViewColumnSizing.GrowOnly;
 				wc.Clickable = true;
 				wc.SortIndicator = false;
 				wc.SortOrder = SortType.Ascending;
 				wc.Data["TABLE_COLUMN"] = dc;
 				wc.Clicked += ToggleSort;
+				wc.Visible = colinfo.Visible;
+				if(colinfo.Width >= 0)
+					wc.FixedWidth = colinfo.Width;
+
+				ColumnList.AppendValues(
+					new object[] {colinfo, wc },
+					colinfo.Name,
+					colinfo.Caption ?? "",
+					colinfo.Description ?? "",
+				    colinfo.Visible
+				);
+
+				
 				this.TreeView.AppendColumn(wc);
 
 			}
@@ -172,7 +202,12 @@ namespace LPSClient
 				this.ListStore.Dispose();
 				this.ListStore = null;
 			}
-
+			if(this.ColumnList != null)
+			{
+				this.ColumnList.Clear();
+				this.ColumnList.Dispose();
+				this.ColumnList = null;
+			}
 		}
 		
 		void HandleDataTableRowChanged (object sender, DataRowChangeEventArgs e)
@@ -402,5 +437,46 @@ namespace LPSClient
 				this.ListStore.SetSortColumnId(0, SortType.Ascending);
 			}
 		}
+		
+		public static void CreateColumnTreeViewColumns(TreeView view)
+		{
+			CellRendererText textCellRenderer = new CellRendererText();
+			CellRendererToggle toggleCellRenderer = new CellRendererToggle();
+			toggleCellRenderer.Activatable = true;
+			toggleCellRenderer.Toggled += HandleToggleColumnVisible;
+			toggleCellRenderer.Data["VIEW"] = view;
+			
+			TreeViewColumn col;
+			col = new TreeViewColumn("Zobr.", toggleCellRenderer, "active", 4);
+			view.AppendColumn(col);
+
+			col = new TreeViewColumn("Sloupec", textCellRenderer, "text", 2);
+			col.Resizable = true;
+			view.AppendColumn(col);
+			
+			col = new TreeViewColumn("Id", textCellRenderer, "text", 1);
+			col.Resizable = true;
+			view.AppendColumn(col);
+			
+			col = new TreeViewColumn("Popis", textCellRenderer, "text", 3);
+			col.Resizable = true;
+			view.AppendColumn(col);
+		}
+
+		static void HandleToggleColumnVisible (object o, ToggledArgs args)
+		{
+			CellRendererToggle renderer = o as CellRendererToggle;
+			TreeView view = renderer.Data["VIEW"] as TreeView;
+			ListStore store = view.Model as ListStore;
+			TreeIter iter;
+			if (store.GetIter (out iter, new TreePath(args.Path))) {
+				bool val = !(bool) store.GetValue(iter, 4);
+				store.SetValue(iter,4,val);
+				object[] data = (object[]) store.GetValue(iter, 0);
+				TreeViewColumn col = data[1] as TreeViewColumn;
+				col.Visible = val;
+			}
+		}
+
 	}
 }
