@@ -30,8 +30,14 @@ namespace LPSClient
 		[XmlAttribute("width")]
 		public int Width { get; set; }
 		
-		[XmlAttribute("ref-table")]
+		[XmlElement("ref-table")]
 		public string FkReferenceTable { get; set; }
+		
+		[XmlElement("replace-columns")]
+		public string FkReplaceColumns { get; set; }
+		
+		[XmlAttribute("display")]
+		public string DisplayFormat { get; set; }
 		
 		[XmlElement("desc")]
 		public string Description { get; set; }

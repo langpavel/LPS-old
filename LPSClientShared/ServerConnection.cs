@@ -17,8 +17,10 @@ namespace LPSClient
 			try
 			{
 				if(_instance != null)
+				{
 					_instance.Dispose();
-				_instance = null;
+					_instance = null;
+				}
 			}
 			catch { }
 			if(url == null)
@@ -26,6 +28,7 @@ namespace LPSClient
 			_url = url;
 			this.Server = new LPSClientShared.LPSServer.Server(url);
 			this.Server.CookieContainer = CookieContainer;
+			this.cached_datasets = new Dictionary<string, DataSet>();
 			_instance = this;
 		}
 	
@@ -41,13 +44,20 @@ namespace LPSClient
 		}
 		
 		public long UserId { get; set; }
-		public DataTable Users { get; set; }
+		public DataTable Users 
+		{ 
+			get
+			{
+				return this.GetCachedDataSet("select id, username, first_name, surname from users").Tables[0];
+			}
+		}
 		
 		private static System.Net.CookieContainer CookieContainer;
 		private LPSClientShared.LPSServer.Server Server;
 		
 		public void Dispose()
 		{
+			FlushCache();
 			this.Server.Dispose();
 			this.Server = null;
 		}
@@ -61,8 +71,6 @@ namespace LPSClient
 		public long Login(string login, string password)
 		{
 			this.UserId = Server.Login(login, password);
-			Users = this.GetDataSetSimple("select id, username, first_name, surname from users").Tables[0];
-			Users.PrimaryKey = new DataColumn[] { Users.Columns[0] };
 			return this.UserId;
 		}
 		
@@ -194,6 +202,36 @@ namespace LPSClient
 			return this.GetDataSet(selectSql, parameters);
 		}
 		
+		public void FlushCache()
+		{
+			foreach(DataSet ds in cached_datasets.Values)
+			{
+				ds.Dispose();
+			}
+			cached_datasets.Clear();
+		}
+		
+		private Dictionary<string, DataSet> cached_datasets;
+		public DataSet GetCachedDataSet(string sql)
+		{
+			DataSet result;
+			cached_datasets.TryGetValue(sql, out result);
+			if(result == null)
+			{
+				result = this.GetDataSetSimple(sql);
+				cached_datasets[sql] = result;
+				result.Disposed += delegate(object sender, EventArgs e) {
+					cached_datasets.Remove(sql);
+				};
+			}
+			return result;
+		}
+		
+		public DataSet GetCachedDataSetCopy(string sql)
+		{
+			return GetCachedDataSet(sql).Copy();
+		}
+
 		#endregion
 	}
 }

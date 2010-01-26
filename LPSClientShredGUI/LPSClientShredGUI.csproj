@@ -60,6 +60,7 @@
     <Compile Include="Forms\LongMessageDialog.cs" />
     <Compile Include="Forms\GenericDetailWindow.cs" />
     <Compile Include="Gtk\GtkResource.cs" />
+    <Compile Include="DataTableTreeModel\FKMappedColumnHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />

@@ -17,7 +17,7 @@ namespace ImportHelper
 		{
 			MainClass app = new MainClass(args);
 
-			app.MakeTreeTemplate("tree.xml");
+			app.MakeTreeTemplate("tree.xml", false);
 			
 			/*
 			app.Connection.ConnectionString = "Server=127.0.0.1;Port=5432;Database=filmarena;Userid=filmarena;Password=filmArena3095;Protocol=3;Pooling=true;MinPoolSize=1;MaxPoolSize=20;ConnectionLifeTime=15;";
@@ -229,12 +229,14 @@ namespace ImportHelper
 			//DataTable adr = Adresa.Tables[0];
 		}
 
-		public void UpdateItemsColumns(ModulesTreeInfo items)
+		public void UpdateItemsColumns(ModulesTreeInfo items, bool recreate_cols)
 		{
 			foreach(ModulesTreeInfo item in items.Items)
 			{
 				if(!String.IsNullOrEmpty(item.ListSql))
 				{
+					if(recreate_cols)
+						item.Columns.Clear();
 					DataSet ds = null;
 					try 
 					{
@@ -253,10 +255,71 @@ namespace ImportHelper
 								continue;
 							ColumnInfo ci = new ColumnInfo();
 							ci.Name = column.ColumnName;
-							ci.Caption = ci.Name;
+							if(ci.Name.StartsWith("id_"))
+							   ci.Caption = ci.Name.Substring(3).Replace('_', ' ');
+							else
+								ci.Caption = ci.Name.Replace('_', ' ');
+							ci.Caption = ci.Caption[0].ToString().ToUpper() + ci.Caption.Substring(1);
 							ci.Editable = true;
-							ci.Visible = true;
+							ci.Visible = (ci.Name != "id");
 							ci.Required = false;
+							
+							switch(ci.Name)
+							{
+							case "id_user_create":
+								ci.Caption = "Vytvořil";
+								ci.Editable = false;
+								break;
+							case "dt_create":
+								ci.Caption = "Vytvořeno";
+								ci.Editable = false;
+								break;
+							case "id_user_modify":
+								ci.Caption = "Změnil";
+								ci.Editable = false;
+								break;
+							case "dt_modify":
+								ci.Caption = "Změněno";
+								ci.Editable = false;
+								break;
+							}
+							
+							if(ci.Name == "id_group")
+							{
+								ci.Visible = false;
+							}
+							else if(ci.Name.StartsWith("id_user"))
+							{
+								ci.FkReferenceTable = "users";
+								ci.FkReplaceColumns = "surname, first_name";
+								ci.DisplayFormat = "{1}, {2}";
+							}
+							else if(ci.Name.StartsWith("id_"))
+							{
+								ci.FkReferenceTable = ci.Name.Substring(3);
+								ci.FkReplaceColumns = "kod";
+								try
+								{
+									FKMappedColumnHelper helper = new FKMappedColumnHelper(ci.FkReferenceTable, ci.FkReplaceColumns);
+									ci.DisplayFormat = helper.DisplayFormat;
+								}
+								catch 
+								{
+									try
+									{
+										string t2 = "c_" + ci.FkReferenceTable;
+										FKMappedColumnHelper helper = new FKMappedColumnHelper(t2, ci.FkReplaceColumns);
+										ci.FkReferenceTable = t2;
+										ci.DisplayFormat = helper.DisplayFormat;
+									}
+									catch 
+									{ 
+										ci.FkReferenceTable = null;
+										ci.FkReplaceColumns = null;
+									}
+								}
+							}
+							
 							item.Columns.Add(ci);
 						}
 					}
@@ -266,11 +329,11 @@ namespace ImportHelper
 							ds.Dispose();
 					}
 				}
-				UpdateItemsColumns(item);
+				UpdateItemsColumns(item, recreate_cols);
 			}
 		}
 		
-		public void MakeTreeTemplate(string filename)
+		public void MakeTreeTemplate(string filename, bool recreate_cols)
 		{
 			try
 			{
@@ -278,7 +341,7 @@ namespace ImportHelper
 				string data = LPS.GetTextResource("modules.xml");
 				//Console.WriteLine(data);
 				ModulesTreeInfo info = ModulesTreeInfo.LoadFromString(data);
-				UpdateItemsColumns(info);
+				UpdateItemsColumns(info, recreate_cols);
 				info.SaveToFile(filename);
 				
 			}

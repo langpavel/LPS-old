@@ -32,6 +32,8 @@ namespace LPSClient.Sklad
 				Application.Quit();
 			};
 			
+			nbData.SwitchPage += HandleNbDataSwitchPage;
+			
 			InitModules(false);
 			
 			DataTableListStoreBinding.CreateColumnTreeViewColumns(viewColumns);
@@ -93,6 +95,7 @@ namespace LPSClient.Sklad
 		#region Action handlers
 		public void AppQuit(object sender, EventArgs args)
 		{
+			Connection.Dispose();
 			Application.Quit();
 		}
 
@@ -169,6 +172,18 @@ namespace LPSClient.Sklad
 			w.ShowAll();
 		}
 		
+		public void SetColumnsView(DataTableListStoreBinding binding)
+		{
+			if(binding == null)
+			{
+				this.viewColumns.Model = null;
+			}
+			else
+			{
+				this.viewColumns.Model = binding.ColumnList;
+			}
+		}
+		
 		public void RowActivated(object sender, RowActivatedArgs args)
 		{
 			try
@@ -220,7 +235,7 @@ namespace LPSClient.Sklad
 				DataTableListStoreBinding binding = new DataTableListStoreBinding(tw, ds.Tables[0], info);
 				binding.Bind();
 				binding.Sorting = "id";
-				viewColumns.Model = binding.ColumnList;
+				SetColumnsView(binding);
 
 				info.Data["VIEW"] = tw;
 				info.Data["DATASET"] = ds;
@@ -237,13 +252,15 @@ namespace LPSClient.Sklad
 					page.Dispose();
 					header.Dispose();
 					ds.Dispose();
-					//binding.Dispose();
+					if(binding.ColumnList == viewColumns.Model)
+						SetColumnsView(null);
+					binding.Dispose();
 					//store.Dispose();
 				};
 	
 				nbData.Page = pgIdx;
 			}
-		}			
+		}
 		
 		public void RefreshData(ModulesTreeInfo info)
 		{
@@ -275,6 +292,20 @@ namespace LPSClient.Sklad
 		public void RefreshModules(object o, EventArgs args)
 		{
 			InitModules(true);
+		}
+
+		void HandleNbDataSwitchPage (object o, SwitchPageArgs args)
+		{
+			SetColumnsView(null);
+			ScrolledWindow w = nbData.GetNthPage(nbData.Page) as ScrolledWindow;
+			if(w == null)
+				return;
+			TreeView tw = w.Child as TreeView;
+			if(tw == null || tw.Data == null || tw.Data["INFO"] == null)
+				return;
+			ModulesTreeInfo info = tw.Data["INFO"] as ModulesTreeInfo;
+			DataTableListStoreBinding binding = info.Data["BINDING"] as DataTableListStoreBinding;
+			SetColumnsView(binding);
 		}
 	}
 }

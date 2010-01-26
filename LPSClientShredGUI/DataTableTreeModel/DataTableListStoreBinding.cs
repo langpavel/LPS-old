@@ -25,8 +25,8 @@ namespace LPSClient
 			this.DataTable = dt;
 			this.ModuleInfo = moduleInfo;
 			this.MappedColumns = new Dictionary<string, GetMappedColumnValue>();
-			MappedColumns["id_user_create"] = new DataTableListStoreBinding.GetMappedColumnValue(GetUserName);
-			MappedColumns["id_user_modify"] = new DataTableListStoreBinding.GetMappedColumnValue(GetUserName);
+			//MappedColumns["id_user_create"] = new DataTableListStoreBinding.GetMappedColumnValue(GetUserName);
+			//MappedColumns["id_user_modify"] = new DataTableListStoreBinding.GetMappedColumnValue(GetUserName);
 		}
 
 		public TreeView TreeView { get; set; }
@@ -98,6 +98,16 @@ namespace LPSClient
 				if(this.MappedColumns.TryGetValue(dc.ColumnName, out getValFunc))
 				{
 					getValFuncs[i] = getValFunc;
+					types.Add(typeof(string));
+					types.Add(typeof(bool));
+					wc = new TreeViewColumn(colinfo.Caption, rendererText, "markup", (i+1)*2);
+				}
+				else if(!String.IsNullOrEmpty(colinfo.FkReferenceTable) && !String.IsNullOrEmpty(colinfo.FkReplaceColumns))
+				{
+					FKMappedColumnHelper helper = new FKMappedColumnHelper(colinfo.FkReferenceTable, colinfo.FkReplaceColumns);
+					if(!String.IsNullOrEmpty(colinfo.DisplayFormat))
+						helper.DisplayFormat = colinfo.DisplayFormat;
+					getValFuncs[i] = helper.GetDisplayValue;
 					types.Add(typeof(string));
 					types.Add(typeof(bool));
 					wc = new TreeViewColumn(colinfo.Caption, rendererText, "markup", (i+1)*2);

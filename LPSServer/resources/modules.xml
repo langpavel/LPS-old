@@ -6,70 +6,88 @@
 		<detail-name>adresa</detail-name>
 		<list-sql>select * from adresa</list-sql>
 		<columns>
-			<column name="id" caption="id" visible="false" editable="false" required="true" width="0" />
-			<column name="id_druh_adresy" caption="id_druh_adresy" visible="true" editable="true" required="true" width="0" ref-table="c_druh_adresy" />
-			<column name="id_group" caption="id_group" visible="true" editable="true" required="false" width="0" />
-			<column name="nazev1" caption="nazev1" visible="true" editable="true" required="false" width="0" />
-			<column name="nazev2" caption="nazev2" visible="true" editable="true" required="false" width="0" />
-			<column name="ico" caption="ico" visible="true" editable="true" required="false" width="0" />
-			<column name="dic" caption="dic" visible="true" editable="true" required="false" width="0" />
-			<column name="prijmeni" caption="prijmeni" visible="true" editable="true" required="false" width="0" />
-			<column name="jmeno" caption="jmeno" visible="true" editable="true" required="false" width="0" />
-			<column name="jmeno2" caption="jmeno2" visible="true" editable="true" required="false" width="0" />
-			<column name="ulice" caption="ulice" visible="true" editable="true" required="false" width="0" />
-			<column name="mesto" caption="mesto" visible="true" editable="true" required="false" width="0" />
-			<column name="psc" caption="psc" visible="true" editable="true" required="false" width="0" />
-			<column name="zeme" caption="zeme" visible="true" editable="true" required="false" width="0" />
-			<column name="email" caption="email" visible="true" editable="true" required="false" width="0" />
-			<column name="telefon1" caption="telefon1" visible="true" editable="true" required="false" width="0" />
-			<column name="telefon2" caption="telefon2" visible="true" editable="true" required="false" width="0" />
-			<column name="poznamka" caption="poznamka" visible="true" editable="true" required="false" width="0" />
-			<column name="aktivni" caption="aktivni" visible="true" editable="true" required="false" width="0" />
-			<column name="fakturacni" caption="fakturacni" visible="true" editable="true" required="false" width="0" />
-			<column name="dodaci" caption="dodaci" visible="true" editable="true" required="false" width="0" />
-			<column name="dodavatel" caption="dodavatel" visible="true" editable="true" required="false" width="0" />
-			<column name="odberatel" caption="odberatel" visible="true" editable="true" required="false" width="0" />
-			<column name="import_php_str_hash" caption="import_php_str_hash" visible="true" editable="true" required="false" width="0" />
-			<column name="import_objed_cislo" caption="import_objed_cislo" visible="true" editable="true" required="false" width="0" />
-			<column name="id_user_create" caption="id_user_create" visible="true" editable="true" required="false" width="0" />
-			<column name="dt_create" caption="dt_create" visible="true" editable="true" required="false" width="0" />
-			<column name="id_user_modify" caption="id_user_modify" visible="true" editable="true" required="false" width="0" />
-			<column name="dt_modify" caption="dt_modify" visible="true" editable="true" required="false" width="0" />
+			<column name="id" caption="Id" visible="false" editable="true" required="false" width="0" />
+			<column name="id_druh_adresy" caption="Druh adresy" visible="true" editable="true" required="false" width="0" display="{1}">
+				<ref-table>c_druh_adresy</ref-table>
+				<replace-columns>kod</replace-columns>
+			</column>
+			<column name="id_group" caption="Group" visible="false" editable="true" required="false" width="0" />
+			<column name="nazev1" caption="Nazev1" visible="true" editable="true" required="false" width="0" />
+			<column name="nazev2" caption="Nazev2" visible="true" editable="true" required="false" width="0" />
+			<column name="ico" caption="Ico" visible="true" editable="true" required="false" width="0" />
+			<column name="dic" caption="Dic" visible="true" editable="true" required="false" width="0" />
+			<column name="prijmeni" caption="Prijmeni" visible="true" editable="true" required="false" width="0" />
+			<column name="jmeno" caption="Jmeno" visible="true" editable="true" required="false" width="0" />
+			<column name="jmeno2" caption="Jmeno2" visible="true" editable="true" required="false" width="0" />
+			<column name="ulice" caption="Ulice" visible="true" editable="true" required="false" width="0" />
+			<column name="mesto" caption="Mesto" visible="true" editable="true" required="false" width="0" />
+			<column name="psc" caption="Psc" visible="true" editable="true" required="false" width="0" />
+			<column name="zeme" caption="Zeme" visible="true" editable="true" required="false" width="0" />
+			<column name="email" caption="Email" visible="true" editable="true" required="false" width="0" />
+			<column name="telefon1" caption="Telefon1" visible="true" editable="true" required="false" width="0" />
+			<column name="telefon2" caption="Telefon2" visible="true" editable="true" required="false" width="0" />
+			<column name="poznamka" caption="Poznamka" visible="true" editable="true" required="false" width="0" />
+			<column name="aktivni" caption="Aktivni" visible="true" editable="true" required="false" width="0" />
+			<column name="fakturacni" caption="Fakturacni" visible="true" editable="true" required="false" width="0" />
+			<column name="dodaci" caption="Dodaci" visible="true" editable="true" required="false" width="0" />
+			<column name="dodavatel" caption="Dodavatel" visible="true" editable="true" required="false" width="0" />
+			<column name="odberatel" caption="Odberatel" visible="true" editable="true" required="false" width="0" />
+			<column name="import_php_str_hash" caption="Import php str hash" visible="true" editable="true" required="false" width="0" />
+			<column name="import_objed_cislo" caption="Import objed cislo" visible="true" editable="true" required="false" width="0" />
+			<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+				<ref-table>users</ref-table>
+				<replace-columns>surname, first_name</replace-columns>
+			</column>
+			<column name="dt_create" caption="Vytvořeno" visible="true" editable="false" required="false" width="0" />
+			<column name="id_user_modify" caption="Změnil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+				<ref-table>users</ref-table>
+				<replace-columns>surname, first_name</replace-columns>
+			</column>
+			<column name="dt_modify" caption="Změněno" visible="true" editable="false" required="false" width="0" />
 		</columns>
 		<item id="adresa_odb" text="Odběratelé">
 			<desc>Kontakty na zákazníky</desc>
 			<detail-name>adresa</detail-name>
 			<list-sql>select * from adresa where odberatel = true</list-sql>
 			<columns>
-				<column name="id" caption="id" visible="false" editable="true" required="false" width="0" />
-				<column name="id_druh_adresy" caption="id_druh_adresy" visible="true" editable="true" required="false" width="0" />
-				<column name="id_group" caption="id_group" visible="true" editable="true" required="false" width="0" />
-				<column name="nazev1" caption="nazev1" visible="true" editable="true" required="false" width="0" />
-				<column name="nazev2" caption="nazev2" visible="true" editable="true" required="false" width="0" />
-				<column name="ico" caption="ico" visible="true" editable="true" required="false" width="0" />
-				<column name="dic" caption="dic" visible="true" editable="true" required="false" width="0" />
-				<column name="prijmeni" caption="prijmeni" visible="true" editable="true" required="false" width="0" />
-				<column name="jmeno" caption="jmeno" visible="true" editable="true" required="false" width="0" />
-				<column name="jmeno2" caption="jmeno2" visible="true" editable="true" required="false" width="0" />
-				<column name="ulice" caption="ulice" visible="true" editable="true" required="false" width="0" />
-				<column name="mesto" caption="mesto" visible="true" editable="true" required="false" width="0" />
-				<column name="psc" caption="psc" visible="true" editable="true" required="false" width="0" />
-				<column name="zeme" caption="zeme" visible="true" editable="true" required="false" width="0" />
-				<column name="email" caption="email" visible="true" editable="true" required="false" width="0" />
-				<column name="telefon1" caption="telefon1" visible="true" editable="true" required="false" width="0" />
-				<column name="telefon2" caption="telefon2" visible="true" editable="true" required="false" width="0" />
-				<column name="poznamka" caption="poznamka" visible="true" editable="true" required="false" width="0" />
-				<column name="aktivni" caption="aktivni" visible="true" editable="true" required="false" width="0" />
-				<column name="fakturacni" caption="fakturacni" visible="true" editable="true" required="false" width="0" />
-				<column name="dodaci" caption="dodaci" visible="true" editable="true" required="false" width="0" />
-				<column name="dodavatel" caption="dodavatel" visible="true" editable="true" required="false" width="0" />
-				<column name="odberatel" caption="odberatel" visible="true" editable="true" required="false" width="0" />
-				<column name="import_php_str_hash" caption="import_php_str_hash" visible="true" editable="true" required="false" width="0" />
-				<column name="import_objed_cislo" caption="import_objed_cislo" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_create" caption="id_user_create" visible="true" editable="true" required="false" width="0" />
-				<column name="dt_create" caption="dt_create" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_modify" caption="id_user_modify" visible="true" editable="true" required="false" width="0" />
-				<column name="dt_modify" caption="dt_modify" visible="true" editable="true" required="false" width="0" />
+				<column name="id" caption="Id" visible="false" editable="true" required="false" width="0" />
+				<column name="id_druh_adresy" caption="Druh adresy" visible="true" editable="true" required="false" width="0" display="{1}">
+					<ref-table>c_druh_adresy</ref-table>
+					<replace-columns>kod</replace-columns>
+				</column>
+				<column name="id_group" caption="Group" visible="false" editable="true" required="false" width="0" />
+				<column name="nazev1" caption="Nazev1" visible="true" editable="true" required="false" width="0" />
+				<column name="nazev2" caption="Nazev2" visible="true" editable="true" required="false" width="0" />
+				<column name="ico" caption="Ico" visible="true" editable="true" required="false" width="0" />
+				<column name="dic" caption="Dic" visible="true" editable="true" required="false" width="0" />
+				<column name="prijmeni" caption="Prijmeni" visible="true" editable="true" required="false" width="0" />
+				<column name="jmeno" caption="Jmeno" visible="true" editable="true" required="false" width="0" />
+				<column name="jmeno2" caption="Jmeno2" visible="true" editable="true" required="false" width="0" />
+				<column name="ulice" caption="Ulice" visible="true" editable="true" required="false" width="0" />
+				<column name="mesto" caption="Mesto" visible="true" editable="true" required="false" width="0" />
+				<column name="psc" caption="Psc" visible="true" editable="true" required="false" width="0" />
+				<column name="zeme" caption="Zeme" visible="true" editable="true" required="false" width="0" />
+				<column name="email" caption="Email" visible="true" editable="true" required="false" width="0" />
+				<column name="telefon1" caption="Telefon1" visible="true" editable="true" required="false" width="0" />
+				<column name="telefon2" caption="Telefon2" visible="true" editable="true" required="false" width="0" />
+				<column name="poznamka" caption="Poznamka" visible="true" editable="true" required="false" width="0" />
+				<column name="aktivni" caption="Aktivni" visible="true" editable="true" required="false" width="0" />
+				<column name="fakturacni" caption="Fakturacni" visible="true" editable="true" required="false" width="0" />
+				<column name="dodaci" caption="Dodaci" visible="true" editable="true" required="false" width="0" />
+				<column name="dodavatel" caption="Dodavatel" visible="true" editable="true" required="false" width="0" />
+				<column name="odberatel" caption="Odberatel" visible="true" editable="true" required="false" width="0" />
+				<column name="import_php_str_hash" caption="Import php str hash" visible="true" editable="true" required="false" width="0" />
+				<column name="import_objed_cislo" caption="Import objed cislo" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
+				<column name="dt_create" caption="Vytvořeno" visible="true" editable="false" required="false" width="0" />
+				<column name="id_user_modify" caption="Změnil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
+				<column name="dt_modify" caption="Změněno" visible="true" editable="false" required="false" width="0" />
 			</columns>
 		</item>
 		<item id="adresa_dod" text="Dodavatelé">
@@ -77,35 +95,44 @@
 			<detail-name>adresa</detail-name>
 			<list-sql>select * from adresa where dodavatel = true</list-sql>
 			<columns>
-				<column name="id" caption="id" visible="false" editable="true" required="false" width="0" />
-				<column name="id_druh_adresy" caption="id_druh_adresy" visible="true" editable="true" required="false" width="0" />
-				<column name="id_group" caption="id_group" visible="true" editable="true" required="false" width="0" />
-				<column name="nazev1" caption="nazev1" visible="true" editable="true" required="false" width="0" />
-				<column name="nazev2" caption="nazev2" visible="true" editable="true" required="false" width="0" />
-				<column name="ico" caption="ico" visible="true" editable="true" required="false" width="0" />
-				<column name="dic" caption="dic" visible="true" editable="true" required="false" width="0" />
-				<column name="prijmeni" caption="prijmeni" visible="true" editable="true" required="false" width="0" />
-				<column name="jmeno" caption="jmeno" visible="true" editable="true" required="false" width="0" />
-				<column name="jmeno2" caption="jmeno2" visible="true" editable="true" required="false" width="0" />
-				<column name="ulice" caption="ulice" visible="true" editable="true" required="false" width="0" />
-				<column name="mesto" caption="mesto" visible="true" editable="true" required="false" width="0" />
-				<column name="psc" caption="psc" visible="true" editable="true" required="false" width="0" />
-				<column name="zeme" caption="zeme" visible="true" editable="true" required="false" width="0" />
-				<column name="email" caption="email" visible="true" editable="true" required="false" width="0" />
-				<column name="telefon1" caption="telefon1" visible="true" editable="true" required="false" width="0" />
-				<column name="telefon2" caption="telefon2" visible="true" editable="true" required="false" width="0" />
-				<column name="poznamka" caption="poznamka" visible="true" editable="true" required="false" width="0" />
-				<column name="aktivni" caption="aktivni" visible="true" editable="true" required="false" width="0" />
-				<column name="fakturacni" caption="fakturacni" visible="true" editable="true" required="false" width="0" />
-				<column name="dodaci" caption="dodaci" visible="true" editable="true" required="false" width="0" />
-				<column name="dodavatel" caption="dodavatel" visible="true" editable="true" required="false" width="0" />
-				<column name="odberatel" caption="odberatel" visible="true" editable="true" required="false" width="0" />
-				<column name="import_php_str_hash" caption="import_php_str_hash" visible="true" editable="true" required="false" width="0" />
-				<column name="import_objed_cislo" caption="import_objed_cislo" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_create" caption="id_user_create" visible="true" editable="true" required="false" width="0" />
-				<column name="dt_create" caption="dt_create" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_modify" caption="id_user_modify" visible="true" editable="true" required="false" width="0" />
-				<column name="dt_modify" caption="dt_modify" visible="true" editable="true" required="false" width="0" />
+				<column name="id" caption="Id" visible="false" editable="true" required="false" width="0" />
+				<column name="id_druh_adresy" caption="Druh adresy" visible="true" editable="true" required="false" width="0" display="{1}">
+					<ref-table>c_druh_adresy</ref-table>
+					<replace-columns>kod</replace-columns>
+				</column>
+				<column name="id_group" caption="Group" visible="false" editable="true" required="false" width="0" />
+				<column name="nazev1" caption="Nazev1" visible="true" editable="true" required="false" width="0" />
+				<column name="nazev2" caption="Nazev2" visible="true" editable="true" required="false" width="0" />
+				<column name="ico" caption="Ico" visible="true" editable="true" required="false" width="0" />
+				<column name="dic" caption="Dic" visible="true" editable="true" required="false" width="0" />
+				<column name="prijmeni" caption="Prijmeni" visible="true" editable="true" required="false" width="0" />
+				<column name="jmeno" caption="Jmeno" visible="true" editable="true" required="false" width="0" />
+				<column name="jmeno2" caption="Jmeno2" visible="true" editable="true" required="false" width="0" />
+				<column name="ulice" caption="Ulice" visible="true" editable="true" required="false" width="0" />
+				<column name="mesto" caption="Mesto" visible="true" editable="true" required="false" width="0" />
+				<column name="psc" caption="Psc" visible="true" editable="true" required="false" width="0" />
+				<column name="zeme" caption="Zeme" visible="true" editable="true" required="false" width="0" />
+				<column name="email" caption="Email" visible="true" editable="true" required="false" width="0" />
+				<column name="telefon1" caption="Telefon1" visible="true" editable="true" required="false" width="0" />
+				<column name="telefon2" caption="Telefon2" visible="true" editable="true" required="false" width="0" />
+				<column name="poznamka" caption="Poznamka" visible="true" editable="true" required="false" width="0" />
+				<column name="aktivni" caption="Aktivni" visible="true" editable="true" required="false" width="0" />
+				<column name="fakturacni" caption="Fakturacni" visible="true" editable="true" required="false" width="0" />
+				<column name="dodaci" caption="Dodaci" visible="true" editable="true" required="false" width="0" />
+				<column name="dodavatel" caption="Dodavatel" visible="true" editable="true" required="false" width="0" />
+				<column name="odberatel" caption="Odberatel" visible="true" editable="true" required="false" width="0" />
+				<column name="import_php_str_hash" caption="Import php str hash" visible="true" editable="true" required="false" width="0" />
+				<column name="import_objed_cislo" caption="Import objed cislo" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
+				<column name="dt_create" caption="Vytvořeno" visible="true" editable="false" required="false" width="0" />
+				<column name="id_user_modify" caption="Změnil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
+				<column name="dt_modify" caption="Změněno" visible="true" editable="false" required="false" width="0" />
 			</columns>
 		</item>
 	</item>
@@ -116,26 +143,47 @@
 			<detail-name>generic</detail-name>
 			<list-sql>select * from skl_karta</list-sql>
 			<columns>
-				<column name="id" caption="id" visible="true" editable="true" required="false" width="0" />
-				<column name="cislo" caption="cislo" visible="true" editable="true" required="false" width="0" />
-				<column name="extern_id" caption="extern_id" visible="true" editable="true" required="false" width="0" />
-				<column name="id_sklad" caption="id_sklad" visible="true" editable="true" required="false" width="0" />
-				<column name="id_kategorie" caption="id_kategorie" visible="true" editable="true" required="false" width="0" />
-				<column name="id_dph" caption="id_dph" visible="true" editable="true" required="false" width="0" />
-				<column name="id_mj" caption="id_mj" visible="true" editable="true" required="false" width="0" />
-				<column name="id_zaruka" caption="id_zaruka" visible="true" editable="true" required="false" width="0" />
-				<column name="id_adresa_dodavatel" caption="id_adresa_dodavatel" visible="true" editable="true" required="false" width="0" />
-				<column name="ean" caption="ean" visible="true" editable="true" required="false" width="0" />
-				<column name="nazev1" caption="nazev1" visible="true" editable="true" required="false" width="0" />
-				<column name="nazev2" caption="nazev2" visible="true" editable="true" required="false" width="0" />
-				<column name="popis1" caption="popis1" visible="true" editable="true" required="false" width="0" />
-				<column name="skl_cena" caption="skl_cena" visible="true" editable="true" required="false" width="0" />
-				<column name="skl_hodnota" caption="skl_hodnota" visible="true" editable="true" required="false" width="0" />
-				<column name="skl_mnoz" caption="skl_mnoz" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_create" caption="id_user_create" visible="true" editable="true" required="false" width="0" />
-				<column name="dt_create" caption="dt_create" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_modify" caption="id_user_modify" visible="true" editable="true" required="false" width="0" />
-				<column name="dt_modify" caption="dt_modify" visible="true" editable="true" required="false" width="0" />
+				<column name="id" caption="Id" visible="false" editable="true" required="false" width="0" />
+				<column name="cislo" caption="Cislo" visible="true" editable="true" required="false" width="0" />
+				<column name="extern_id" caption="Extern id" visible="true" editable="true" required="false" width="0" />
+				<column name="id_sklad" caption="Sklad" visible="true" editable="true" required="false" width="0" display="{1}">
+					<ref-table>c_sklad</ref-table>
+					<replace-columns>kod</replace-columns>
+				</column>
+				<column name="id_kategorie" caption="Kategorie" visible="true" editable="true" required="false" width="0" display="{1}">
+					<ref-table>c_kategorie</ref-table>
+					<replace-columns>kod</replace-columns>
+				</column>
+				<column name="id_dph" caption="Dph" visible="true" editable="true" required="false" width="0" display="{1}">
+					<ref-table>c_dph</ref-table>
+					<replace-columns>kod</replace-columns>
+				</column>
+				<column name="id_mj" caption="Mj" visible="true" editable="true" required="false" width="0" display="{1}">
+					<ref-table>c_mj</ref-table>
+					<replace-columns>kod</replace-columns>
+				</column>
+				<column name="id_zaruka" caption="Zaruka" visible="true" editable="true" required="false" width="0" display="{1}">
+					<ref-table>c_zaruka</ref-table>
+					<replace-columns>kod</replace-columns>
+				</column>
+				<column name="id_adresa_dodavatel" caption="Adresa dodavatel" visible="true" editable="true" required="false" width="0" />
+				<column name="ean" caption="Ean" visible="true" editable="true" required="false" width="0" />
+				<column name="nazev1" caption="Nazev1" visible="true" editable="true" required="false" width="0" />
+				<column name="nazev2" caption="Nazev2" visible="true" editable="true" required="false" width="0" />
+				<column name="popis1" caption="Popis1" visible="true" editable="true" required="false" width="0" />
+				<column name="skl_cena" caption="Skl cena" visible="true" editable="true" required="false" width="0" />
+				<column name="skl_hodnota" caption="Skl hodnota" visible="true" editable="true" required="false" width="0" />
+				<column name="skl_mnoz" caption="Skl mnoz" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
+				<column name="dt_create" caption="Vytvořeno" visible="true" editable="false" required="false" width="0" />
+				<column name="id_user_modify" caption="Změnil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
+				<column name="dt_modify" caption="Změněno" visible="true" editable="false" required="false" width="0" />
 			</columns>
 		</item>
 		<item text="Skladové pohyby">
@@ -158,16 +206,22 @@
 			<detail-name>generic</detail-name>
 			<list-sql>select * from c_druh_adresy</list-sql>
 			<columns>
-				<column name="id" caption="id" visible="true" editable="true" required="false" width="0" />
-				<column name="kod" caption="kod" visible="true" editable="true" required="false" width="0" />
-				<column name="popis" caption="popis" visible="true" editable="true" required="false" width="0" />
-				<column name="aktivni" caption="aktivni" visible="true" editable="true" required="false" width="0" />
-				<column name="fakturacni" caption="fakturacni" visible="true" editable="true" required="false" width="0" />
-				<column name="dodaci" caption="dodaci" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_create" caption="id_user_create" visible="true" editable="true" required="false" width="0" />
-				<column name="dt_create" caption="dt_create" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_modify" caption="id_user_modify" visible="true" editable="true" required="false" width="0" />
-				<column name="dt_modify" caption="dt_modify" visible="true" editable="true" required="false" width="0" />
+				<column name="id" caption="Id" visible="false" editable="true" required="false" width="0" />
+				<column name="kod" caption="Kod" visible="true" editable="true" required="false" width="0" />
+				<column name="popis" caption="Popis" visible="true" editable="true" required="false" width="0" />
+				<column name="aktivni" caption="Aktivni" visible="true" editable="true" required="false" width="0" />
+				<column name="fakturacni" caption="Fakturacni" visible="true" editable="true" required="false" width="0" />
+				<column name="dodaci" caption="Dodaci" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
+				<column name="dt_create" caption="Vytvořeno" visible="true" editable="false" required="false" width="0" />
+				<column name="id_user_modify" caption="Změnil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
+				<column name="dt_modify" caption="Změněno" visible="true" editable="false" required="false" width="0" />
 			</columns>
 		</item>
 		<item id="c_dph" text="DPH">
@@ -175,16 +229,22 @@
 			<detail-name>generic</detail-name>
 			<list-sql>select * from c_dph</list-sql>
 			<columns>
-				<column name="id" caption="Id" visible="false" editable="false" required="true" width="0" />
-				<column name="kod" caption="Kód" visible="true" editable="true" required="true" width="0" />
+				<column name="id" caption="Id" visible="false" editable="true" required="false" width="0" />
+				<column name="kod" caption="Kod" visible="true" editable="true" required="false" width="0" />
 				<column name="popis" caption="Popis" visible="true" editable="true" required="false" width="0" />
-				<column name="hodnota" caption="Hodnota" visible="true" editable="true" required="true" width="0" />
-				<column name="plati_od" caption="Platí od" visible="true" editable="true" required="false" width="0" />
-				<column name="plati_do" caption="platí do" visible="true" editable="true" required="false" width="0" />
-				<column name="vychozi" caption="Výchozí" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" width="0" />
+				<column name="hodnota" caption="Hodnota" visible="true" editable="true" required="false" width="0" />
+				<column name="plati_od" caption="Plati od" visible="true" editable="true" required="false" width="0" />
+				<column name="plati_do" caption="Plati do" visible="true" editable="true" required="false" width="0" />
+				<column name="vychozi" caption="Vychozi" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
 				<column name="dt_create" caption="Vytvořeno" visible="true" editable="false" required="false" width="0" />
-				<column name="id_user_modify" caption="Změnil" visible="true" editable="false" required="false" width="0" />
+				<column name="id_user_modify" caption="Změnil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
 				<column name="dt_modify" caption="Změněno" visible="true" editable="false" required="false" width="0" />
 			</columns>
 		</item>
@@ -193,14 +253,20 @@
 			<detail-name>generic</detail-name>
 			<list-sql>select * from c_mj</list-sql>
 			<columns>
-				<column name="id" caption="id" visible="true" editable="true" required="false" width="0" />
-				<column name="kod" caption="kod" visible="true" editable="true" required="false" width="0" />
-				<column name="popis" caption="popis" visible="true" editable="true" required="false" width="0" />
-				<column name="popis2" caption="popis2" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_create" caption="id_user_create" visible="true" editable="true" required="false" width="0" />
-				<column name="dt_create" caption="dt_create" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_modify" caption="id_user_modify" visible="true" editable="true" required="false" width="0" />
-				<column name="dt_modify" caption="dt_modify" visible="true" editable="true" required="false" width="0" />
+				<column name="id" caption="Id" visible="false" editable="true" required="false" width="0" />
+				<column name="kod" caption="Kod" visible="true" editable="true" required="false" width="0" />
+				<column name="popis" caption="Popis" visible="true" editable="true" required="false" width="0" />
+				<column name="popis2" caption="Popis2" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
+				<column name="dt_create" caption="Vytvořeno" visible="true" editable="false" required="false" width="0" />
+				<column name="id_user_modify" caption="Změnil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
+				<column name="dt_modify" caption="Změněno" visible="true" editable="false" required="false" width="0" />
 			</columns>
 		</item>
 		<item id="c_kategorie" text="Kategorie produktů">
@@ -208,14 +274,20 @@
 			<detail-name>generic</detail-name>
 			<list-sql>select * from c_kategorie</list-sql>
 			<columns>
-				<column name="id" caption="id" visible="true" editable="true" required="false" width="0" />
-				<column name="kod" caption="kod" visible="true" editable="true" required="false" width="0" />
-				<column name="popis" caption="popis" visible="true" editable="true" required="false" width="0" />
-				<column name="aktivni" caption="aktivni" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_create" caption="id_user_create" visible="true" editable="true" required="false" width="0" />
-				<column name="dt_create" caption="dt_create" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_modify" caption="id_user_modify" visible="true" editable="true" required="false" width="0" />
-				<column name="dt_modify" caption="dt_modify" visible="true" editable="true" required="false" width="0" />
+				<column name="id" caption="Id" visible="false" editable="true" required="false" width="0" />
+				<column name="kod" caption="Kod" visible="true" editable="true" required="false" width="0" />
+				<column name="popis" caption="Popis" visible="true" editable="true" required="false" width="0" />
+				<column name="aktivni" caption="Aktivni" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
+				<column name="dt_create" caption="Vytvořeno" visible="true" editable="false" required="false" width="0" />
+				<column name="id_user_modify" caption="Změnil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
+				<column name="dt_modify" caption="Změněno" visible="true" editable="false" required="false" width="0" />
 			</columns>
 		</item>
 		<item id="c_sklad" text="Sklady">
@@ -223,14 +295,20 @@
 			<detail-name>generic</detail-name>
 			<list-sql>select * from c_sklad</list-sql>
 			<columns>
-				<column name="id" caption="id" visible="true" editable="true" required="false" width="0" />
-				<column name="kod" caption="kod" visible="true" editable="true" required="false" width="0" />
-				<column name="popis" caption="popis" visible="true" editable="true" required="false" width="0" />
-				<column name="poznamka" caption="poznamka" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_create" caption="id_user_create" visible="true" editable="true" required="false" width="0" />
-				<column name="dt_create" caption="dt_create" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_modify" caption="id_user_modify" visible="true" editable="true" required="false" width="0" />
-				<column name="dt_modify" caption="dt_modify" visible="true" editable="true" required="false" width="0" />
+				<column name="id" caption="Id" visible="false" editable="true" required="false" width="0" />
+				<column name="kod" caption="Kod" visible="true" editable="true" required="false" width="0" />
+				<column name="popis" caption="Popis" visible="true" editable="true" required="false" width="0" />
+				<column name="poznamka" caption="Poznamka" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
+				<column name="dt_create" caption="Vytvořeno" visible="true" editable="false" required="false" width="0" />
+				<column name="id_user_modify" caption="Změnil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
+				<column name="dt_modify" caption="Změněno" visible="true" editable="false" required="false" width="0" />
 			</columns>
 		</item>
 		<item id="c_zaruka" text="Záruční doba">
@@ -238,15 +316,21 @@
 			<detail-name>generic</detail-name>
 			<list-sql>select * from c_zaruka</list-sql>
 			<columns>
-				<column name="id" caption="id" visible="true" editable="true" required="false" width="0" />
-				<column name="kod" caption="kod" visible="true" editable="true" required="false" width="0" />
-				<column name="popis" caption="popis" visible="true" editable="true" required="false" width="0" />
-				<column name="poznamka" caption="poznamka" visible="true" editable="true" required="false" width="0" />
-				<column name="vychozi" caption="vychozi" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_create" caption="id_user_create" visible="true" editable="true" required="false" width="0" />
-				<column name="dt_create" caption="dt_create" visible="true" editable="true" required="false" width="0" />
-				<column name="id_user_modify" caption="id_user_modify" visible="true" editable="true" required="false" width="0" />
-				<column name="dt_modify" caption="dt_modify" visible="true" editable="true" required="false" width="0" />
+				<column name="id" caption="Id" visible="false" editable="true" required="false" width="0" />
+				<column name="kod" caption="Kod" visible="true" editable="true" required="false" width="0" />
+				<column name="popis" caption="Popis" visible="true" editable="true" required="false" width="0" />
+				<column name="poznamka" caption="Poznamka" visible="true" editable="true" required="false" width="0" />
+				<column name="vychozi" caption="Vychozi" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
+				<column name="dt_create" caption="Vytvořeno" visible="true" editable="false" required="false" width="0" />
+				<column name="id_user_modify" caption="Změnil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+					<ref-table>users</ref-table>
+					<replace-columns>surname, first_name</replace-columns>
+				</column>
+				<column name="dt_modify" caption="Změněno" visible="true" editable="false" required="false" width="0" />
 			</columns>
 		</item>
 	</item>
@@ -255,11 +339,11 @@
 		<detail-name />
 		<list-sql>select * from users</list-sql>
 		<columns>
-			<column name="id" caption="Id" visible="false" editable="true" required="true" width="0" />
-			<column name="username" caption="Login" visible="true" editable="false" required="true" width="0" />
-			<column name="passwd" caption="Hash hesla" visible="false" editable="false" required="true" width="0" />
-			<column name="first_name" caption="Jméno" visible="true" editable="true" required="false" width="0" />
-			<column name="surname" caption="Příjmení" visible="true" editable="true" required="false" width="0" />
+			<column name="id" caption="Id" visible="false" editable="true" required="false" width="0" />
+			<column name="username" caption="Username" visible="true" editable="true" required="false" width="0" />
+			<column name="passwd" caption="Passwd" visible="true" editable="true" required="false" width="0" />
+			<column name="first_name" caption="First name" visible="true" editable="true" required="false" width="0" />
+			<column name="surname" caption="Surname" visible="true" editable="true" required="false" width="0" />
 		</columns>
 	</item>
 </modules-tree>

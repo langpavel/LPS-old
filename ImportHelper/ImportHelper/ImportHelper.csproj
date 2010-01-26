@@ -61,5 +61,9 @@
       <Project>{D2317E65-70CE-4367-B1A7-211FD6044720}</Project>
       <Name>LPSClientShared</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\LPSClientShredGUI\LPSClientShredGUI.csproj">
+      <Project>{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}</Project>
+      <Name>LPSClientShredGUI</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

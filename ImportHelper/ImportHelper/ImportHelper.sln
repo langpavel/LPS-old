@@ -7,12 +7,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSShared", "..\..\LPSShare
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSClientShared", "..\..\LPSClientShared\LPSClientShared.csproj", "{D2317E65-70CE-4367-B1A7-211FD6044720}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSClientShredGUI", "..\..\LPSClientShredGUI\LPSClientShredGUI.csproj", "{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}.Debug|x86.Build.0 = Debug|Any CPU
+		{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}.Release|x86.ActiveCfg = Release|Any CPU
+		{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}.Release|x86.Build.0 = Release|Any CPU
 		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Debug|x86.Build.0 = Debug|Any CPU
 		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Release|x86.ActiveCfg = Release|Any CPU
