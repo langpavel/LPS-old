@@ -27,11 +27,11 @@ namespace LPSClient.Sklad
 			
 			this.Window.Title = "LPS Sklad: " + Connection.GetUserName() + " (" + this.UserLogin + ")@" + this.ServerUrl;
 			
-			this.Window.DeleteEvent += delegate(object o, DeleteEventArgs args) {
+			this.Window.DeleteEvent += delegate {
 				Application.Quit();
 			};
 			
-			InitModules();
+			InitModules(false);
 		}
 
 		private void AddModulesNodes(ModulesTreeInfo info, TreeStore store, TreeIter parent)
@@ -49,19 +49,27 @@ namespace LPSClient.Sklad
 			}
 		}
 		
-		private void InitModules()
+		private void InitModules(bool refreshing)
 		{
-			TreeStore store = new TreeStore(typeof(Gdk.Pixbuf), typeof(string), typeof(string), typeof(object));
-			viewModules.Model = store;
+			TreeStore store;
+			if(!refreshing)
+			{
+				store = new TreeStore(typeof(Gdk.Pixbuf), typeof(string), typeof(string), typeof(object));
+				viewModules.Model = store;
+				//CellRendererPixbuf iconRenderer = new CellRendererPixbuf();
+				//viewModules.AppendColumn(new TreeViewColumn("", iconRenderer, "stock", 1));
+				viewModules.AppendColumn(new TreeViewColumn("Modul", new CellRendererText2(), "text", 1));
+				viewModules.HeadersVisible = false;
+				//viewModules.RowActivated += ViewModulesRowActivated;
+			}
+			else
+			{
+				store = viewModules.Model as TreeStore;
+				store.Clear();
+			}
 			string data = Connection.GetTextResource("modules.xml");
 			ModulesTreeInfo info = ModulesTreeInfo.LoadFromString(data);
 			AddModulesNodes(info, store, TreeIter.Zero);
-			
-			//CellRendererPixbuf iconRenderer = new CellRendererPixbuf();
-			//viewModules.AppendColumn(new TreeViewColumn("", iconRenderer, "stock", 1));
-			viewModules.AppendColumn(new TreeViewColumn("Modul", new CellRendererText(), "text", 1));
-			viewModules.HeadersVisible = false;
-			//viewModules.RowActivated += ViewModulesRowActivated;
 		
 			viewModules.ExpandAll();
 		}
@@ -258,6 +266,11 @@ namespace LPSClient.Sklad
 					((tw.Parent as ScrolledWindow).VScrollbar as Scrollbar).Value = vpos;
 				} catch { }
 			}
+		}
+		
+		public void RefreshModules(object o, EventArgs args)
+		{
+			InitModules(true);
 		}
 	}
 }

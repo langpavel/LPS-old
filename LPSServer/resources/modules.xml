@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <modules-tree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="root">
+	<columns />
 	<item id="adresa" text="Adresář">
 		<desc>Adresář - kontakty na zákazníky a dodavatele</desc>
 		<detail-name>adresa</detail-name>
@@ -49,13 +50,41 @@
 		</item>
 	</item>
 	<item id="sklad" text="Skladové hospodářství">
-		<item text="Skladové Karty">
+		<columns />
+		<item id="skl_karta" text="Skladové karty">
+			<desc>Skladové karty - produkty</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from skl_karta</list-sql>
+			<columns>
+				<column name="id" caption="id" visible="true" editable="true" required="false" width="0" />
+				<column name="cislo" caption="cislo" visible="true" editable="true" required="false" width="0" />
+				<column name="extern_id" caption="extern_id" visible="true" editable="true" required="false" width="0" />
+				<column name="id_sklad" caption="id_sklad" visible="true" editable="true" required="false" width="0" />
+				<column name="id_kategorie" caption="id_kategorie" visible="true" editable="true" required="false" width="0" />
+				<column name="id_dph" caption="id_dph" visible="true" editable="true" required="false" width="0" />
+				<column name="id_mj" caption="id_mj" visible="true" editable="true" required="false" width="0" />
+				<column name="id_zaruka" caption="id_zaruka" visible="true" editable="true" required="false" width="0" />
+				<column name="id_adresa_dodavatel" caption="id_adresa_dodavatel" visible="true" editable="true" required="false" width="0" />
+				<column name="ean" caption="ean" visible="true" editable="true" required="false" width="0" />
+				<column name="nazev1" caption="nazev1" visible="true" editable="true" required="false" width="0" />
+				<column name="nazev2" caption="nazev2" visible="true" editable="true" required="false" width="0" />
+				<column name="popis1" caption="popis1" visible="true" editable="true" required="false" width="0" />
+				<column name="skl_cena" caption="skl_cena" visible="true" editable="true" required="false" width="0" />
+				<column name="skl_hodnota" caption="skl_hodnota" visible="true" editable="true" required="false" width="0" />
+				<column name="skl_mnoz" caption="skl_mnoz" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_create" caption="id_user_create" visible="true" editable="true" required="false" width="0" />
+				<column name="dt_create" caption="dt_create" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_modify" caption="id_user_modify" visible="true" editable="true" required="false" width="0" />
+				<column name="dt_modify" caption="dt_modify" visible="true" editable="true" required="false" width="0" />
+			</columns>
 		</item>
 		<item text="Skladové pohyby">
 			<columns />
 			<item text="Příjmové doklady">
+				<columns />
 			</item>
 			<item text="Výdejové doklady">
+				<columns />
 			</item>
 		</item>
 		<item text="Inventura">
@@ -63,10 +92,23 @@
 		</item>
 	</item>
 	<item id="ciselniky" text="Číselníky">
+		<columns />
 		<item id="c_druh_adresy" text="Druh adresy">
 			<desc>Druh adresy</desc>
 			<detail-name>generic</detail-name>
 			<list-sql>select * from c_druh_adresy</list-sql>
+			<columns>
+				<column name="id" caption="id" visible="true" editable="true" required="false" width="0" />
+				<column name="kod" caption="kod" visible="true" editable="true" required="false" width="0" />
+				<column name="popis" caption="popis" visible="true" editable="true" required="false" width="0" />
+				<column name="aktivni" caption="aktivni" visible="true" editable="true" required="false" width="0" />
+				<column name="fakturacni" caption="fakturacni" visible="true" editable="true" required="false" width="0" />
+				<column name="dodaci" caption="dodaci" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_create" caption="id_user_create" visible="true" editable="true" required="false" width="0" />
+				<column name="dt_create" caption="dt_create" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_modify" caption="id_user_modify" visible="true" editable="true" required="false" width="0" />
+				<column name="dt_modify" caption="dt_modify" visible="true" editable="true" required="false" width="0" />
+			</columns>
 		</item>
 		<item id="c_dph" text="DPH">
 			<desc>Hodnoty DPH</desc>
@@ -86,10 +128,71 @@
 				<column name="dt_modify" caption="Změněno" visible="true" editable="false" required="false" width="0" />
 			</columns>
 		</item>
+		<item id="c_mj" text="Měrné jednotky">
+			<desc>Měrné jednotky</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from c_mj</list-sql>
+			<columns>
+				<column name="id" caption="id" visible="true" editable="true" required="false" width="0" />
+				<column name="kod" caption="kod" visible="true" editable="true" required="false" width="0" />
+				<column name="popis" caption="popis" visible="true" editable="true" required="false" width="0" />
+				<column name="popis2" caption="popis2" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_create" caption="id_user_create" visible="true" editable="true" required="false" width="0" />
+				<column name="dt_create" caption="dt_create" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_modify" caption="id_user_modify" visible="true" editable="true" required="false" width="0" />
+				<column name="dt_modify" caption="dt_modify" visible="true" editable="true" required="false" width="0" />
+			</columns>
+		</item>
+		<item id="c_kategorie" text="Kategorie produktů">
+			<desc>Kategorie produktů</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from c_kategorie</list-sql>
+			<columns>
+				<column name="id" caption="id" visible="true" editable="true" required="false" width="0" />
+				<column name="kod" caption="kod" visible="true" editable="true" required="false" width="0" />
+				<column name="popis" caption="popis" visible="true" editable="true" required="false" width="0" />
+				<column name="aktivni" caption="aktivni" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_create" caption="id_user_create" visible="true" editable="true" required="false" width="0" />
+				<column name="dt_create" caption="dt_create" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_modify" caption="id_user_modify" visible="true" editable="true" required="false" width="0" />
+				<column name="dt_modify" caption="dt_modify" visible="true" editable="true" required="false" width="0" />
+			</columns>
+		</item>
+		<item id="c_sklad" text="Sklady">
+			<desc>Sklady</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from c_sklad</list-sql>
+			<columns>
+				<column name="id" caption="id" visible="true" editable="true" required="false" width="0" />
+				<column name="kod" caption="kod" visible="true" editable="true" required="false" width="0" />
+				<column name="popis" caption="popis" visible="true" editable="true" required="false" width="0" />
+				<column name="poznamka" caption="poznamka" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_create" caption="id_user_create" visible="true" editable="true" required="false" width="0" />
+				<column name="dt_create" caption="dt_create" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_modify" caption="id_user_modify" visible="true" editable="true" required="false" width="0" />
+				<column name="dt_modify" caption="dt_modify" visible="true" editable="true" required="false" width="0" />
+			</columns>
+		</item>
+		<item id="c_zaruka" text="Záruční doba">
+			<desc>Záruční doba</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from c_zaruka</list-sql>
+			<columns>
+				<column name="id" caption="id" visible="true" editable="true" required="false" width="0" />
+				<column name="kod" caption="kod" visible="true" editable="true" required="false" width="0" />
+				<column name="popis" caption="popis" visible="true" editable="true" required="false" width="0" />
+				<column name="poznamka" caption="poznamka" visible="true" editable="true" required="false" width="0" />
+				<column name="vychozi" caption="vychozi" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_create" caption="id_user_create" visible="true" editable="true" required="false" width="0" />
+				<column name="dt_create" caption="dt_create" visible="true" editable="true" required="false" width="0" />
+				<column name="id_user_modify" caption="id_user_modify" visible="true" editable="true" required="false" width="0" />
+				<column name="dt_modify" caption="dt_modify" visible="true" editable="true" required="false" width="0" />
+			</columns>
+		</item>
 	</item>
 	<item id="users" text="Uživatelé">
 		<desc>Uživatelé</desc>
-		<detail-name></detail-name>
+		<detail-name />
 		<list-sql>select * from users</list-sql>
 		<columns>
 			<column name="id" caption="Id" visible="false" editable="true" required="true" width="0" />
@@ -99,5 +202,4 @@
 			<column name="surname" caption="Příjmení" visible="true" editable="true" required="false" width="0" />
 		</columns>
 	</item>
-
 </modules-tree>

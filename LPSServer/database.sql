@@ -82,6 +82,8 @@ CREATE TABLE c_zaruka (
     kod character varying(10) not null UNIQUE,
     popis character varying(100) not null default '',
     poznamka text,
+    plati_od date,
+    plati_do date,
     vychozi bool not null default false,
 
     id_user_create integer references users(id),

@@ -46,9 +46,9 @@ namespace LPSClient
 					catch(Exception ex)
 					{
 						if(obj == null)
-							Console.WriteLine("Destroy err - null: {0}", ex);
+							Console.WriteLine("Destroy err - OwnedComponents null: {0}", ex);
 						else
-							Console.WriteLine("Destroy err: {0} {1}", obj.GetType(), ex);
+							Console.WriteLine("Destroy err - _OwnedComponents: {0} {1}", obj.GetType(), ex);
 					}
 				}
 				_OwnedComponents = null;

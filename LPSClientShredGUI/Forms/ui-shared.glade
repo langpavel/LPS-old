@@ -16,8 +16,8 @@
     <property name="urgency_hint">True</property>
     <property name="deletable">False</property>
     <property name="has_separator">False</property>
-    <accelerator key="F4" signal="close" modifiers="GDK_CONTROL_MASK"/>
     <accelerator key="F4" signal="close" modifiers="GDK_MOD1_MASK"/>
+    <accelerator key="F4" signal="close" modifiers="GDK_CONTROL_MASK"/>
     <child internal-child="vbox">
       <widget class="GtkVBox" id="dialog-vbox1">
         <property name="visible">True</property>
@@ -91,7 +91,7 @@
               <widget class="GtkEntry" id="edtPassword">
                 <property name="visible">True</property>
                 <property name="visibility">False</property>
-                <property name="invisible_char">&#x25CF;</property>
+                <property name="invisible_char">x</property>
                 <property name="activates_default">True</property>
               </widget>
               <packing>
@@ -239,8 +239,8 @@
     <property name="type_hint">normal</property>
     <property name="urgency_hint">True</property>
     <property name="has_separator">False</property>
-    <accelerator key="F4" signal="close" modifiers="GDK_CONTROL_MASK"/>
     <accelerator key="F4" signal="close" modifiers="GDK_MOD1_MASK"/>
+    <accelerator key="F4" signal="close" modifiers="GDK_CONTROL_MASK"/>
     <child internal-child="vbox">
       <widget class="GtkVBox" id="dialog-vbox3">
         <property name="visible">True</property>
