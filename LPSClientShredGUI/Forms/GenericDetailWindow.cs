@@ -34,8 +34,8 @@ namespace LPSClient
 				Entry dateEntry = new Entry();
 				dateEntry.ButtonPressEvent += delegate {
 					Console.WriteLine("Blablablablalba");
-					Gtk.Calendar calend = new Calendar();
-					calend.ShowAll();
+//					Gtk.Calendar calend = new Calendar();
+//					calend.ShowAll();
 					
 				};
 				result = dateEntry;
@@ -50,7 +50,7 @@ namespace LPSClient
 				result = new Entry();
 			}
 			content.Attach(result,1,2,top,top+1,AttachOptions.Expand | AttachOptions.Fill, AttachOptions.Expand | AttachOptions.Fill,3,0);
-			WidgetRowBinding b = this.BindWidget(db_col, result);
+			WidgetRowBinding b = this.BindWidget(db_col, result, colinfo);
 			this.OwnedComponents.Add(b);
 			return result;
 		}
@@ -72,6 +72,11 @@ namespace LPSClient
 			}
 			content.NRows = top;
 			content.ShowAll();
+		}
+
+		protected override void OnNewRow (DataRow row)
+		{
+			row["id"] = Connection.NextSeqValue(this.ListInfo.Id + "_id_seq");
 		}
 
 	}

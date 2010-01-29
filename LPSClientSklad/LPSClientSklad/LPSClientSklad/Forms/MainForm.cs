@@ -13,6 +13,7 @@ namespace LPSClient.Sklad
 		[Glade.Widget] Notebook nbData;
 		[Glade.Widget] ToggleButton chkFiltrovat;
 		[Glade.Widget] Entry edtFilter;
+		//[Glade.Widget] Widget tabSloupce;
 		
 		public string ServerUrl { get; set; }
 		public string UserLogin { get; set; }
@@ -125,6 +126,16 @@ namespace LPSClient.Sklad
 
 		public void AddItem(object sender, EventArgs args)
 		{
+			TreeView view = GetCurrentView();
+			if(view == null)
+				return;
+			//DataTableListStoreBinding binding = DataTableListStoreBinding.Get(view);
+			ModulesTreeInfo info = view.Data["INFO"] as ModulesTreeInfo;
+			FormInfo fi = FormFactory.Instance.GetFormInfo(info.DetailName);
+			AutobindWindow w = fi.CreateObject() as AutobindWindow;
+			w.ListInfo = info;
+			w.New();
+			w.ShowAll();
 		}
 		
 		public void OnFilterToggled(object sender, EventArgs args)

@@ -15,5 +15,9 @@ namespace LPSClient.Sklad
 			Load("select * from adresa where id=:id", id);
 		}
 
+		protected override void OnNewRow (DataRow row)
+		{
+			row["id"] = Connection.NextSeqValue("adresa_id_seq");
+		}
 	}
 }

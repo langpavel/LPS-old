@@ -61,6 +61,8 @@
     <Compile Include="Forms\GenericDetailWindow.cs" />
     <Compile Include="Gtk\GtkResource.cs" />
     <Compile Include="DataTableTreeModel\FKMappedColumnHelper.cs" />
+    <Compile Include="Forms\WidgetBindigs\ComboBoxRowBinding.cs" />
+    <Compile Include="Forms\HTMLMessageDialog.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />

@@ -33,6 +33,7 @@ namespace LPSClient
 			try
 			{
 				new ServerConnection(edtServer.Text);
+				ServerConnection.Instance.Ping("test");
 				laMessage.Markup = "<span color=\"#00cc00\">Spojení se serverem bylo navázáno</span>";
 				laMessage.TooltipText = "";
 				//MainApp.ShowMessage(this.Window, MessageType.Info, "Spojení OK", "Spojení se serverem bylo navázáno");

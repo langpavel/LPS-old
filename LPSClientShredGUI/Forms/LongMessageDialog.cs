@@ -18,7 +18,6 @@ namespace LPSClient
 		{
 			base.OnCreate ();
 		}
-
 		
 		public string Title
 		{

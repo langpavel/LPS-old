@@ -34,7 +34,7 @@ using System.Runtime.CompilerServices;
 
 [assembly: AssemblyTitle("Npgsql - .Net Data Provider for PostgreSQL")]
 [assembly: AssemblyDescription(".Net Data Provider for PostgreSQL")]
-[assembly: AssemblyConfiguration("")]
+//[assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("")]
 [assembly: AssemblyCopyright("The Npgsql Development Team")]

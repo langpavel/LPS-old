@@ -22,9 +22,9 @@ CREATE TABLE c_druh_adresy (
     fakturacni bool,
     dodaci bool,
 
-    id_user_create integer references users(id),
+    id_user_create bigint references users(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify integer references users(id),
+    id_user_modify bigint references users(id),
     dt_modify timestamp without time zone DEFAULT now()
 );
 INSERT INTO c_druh_adresy VALUES (1, 'FA', 'Fakturační', true, true, null, null, null, null, null);
@@ -41,9 +41,9 @@ CREATE TABLE c_dph (
     plati_do date,
     vychozi bool not null default false,
 
-    id_user_create integer references users(id),
+    id_user_create bigint references users(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify integer references users(id),
+    id_user_modify bigint references users(id),
     dt_modify timestamp without time zone DEFAULT now()
 );
 INSERT INTO c_dph VALUES (1, 'DPH0', 'Bez DPH', 0.00, null, null, false, null, null, null, null);
@@ -58,9 +58,9 @@ CREATE TABLE c_mj (
     popis character varying(100) not null default '',
     popis2 character varying(100) not null default '',
 
-    id_user_create integer references users(id),
+    id_user_create bigint references users(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify integer references users(id),
+    id_user_modify bigint references users(id),
     dt_modify timestamp without time zone DEFAULT now()
 );
 INSERT INTO c_mj VALUES (1, 'KS', 'Kus', 'Kusy', null, null, null, null);
@@ -71,9 +71,9 @@ CREATE TABLE c_kategorie (
     popis character varying(100) not null default '',
     aktivni bool not null default true,
 
-    id_user_create integer references users(id),
+    id_user_create bigint references users(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify integer references users(id),
+    id_user_modify bigint references users(id),
     dt_modify timestamp without time zone DEFAULT now()
 );
 
@@ -86,9 +86,9 @@ CREATE TABLE c_zaruka (
     plati_do date,
     vychozi bool not null default false,
 
-    id_user_create integer references users(id),
+    id_user_create bigint references users(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify integer references users(id),
+    id_user_modify bigint references users(id),
     dt_modify timestamp without time zone DEFAULT now()
 );
 
@@ -98,16 +98,16 @@ CREATE TABLE c_sklad (
     popis character varying(100) not null default '',
     poznamka text,
 
-    id_user_create integer references users(id),
+    id_user_create bigint references users(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify integer references users(id),
+    id_user_modify bigint references users(id),
     dt_modify timestamp without time zone DEFAULT now()
 );
 
 CREATE TABLE adresa (
     id bigserial NOT NULL primary key,
-    id_druh_adresy integer NOT NULL references c_druh_adresy(id),
-    id_group integer,
+    id_druh_adresy bigint NOT NULL references c_druh_adresy(id),
+    id_group bigint,
 
     nazev1 character varying(100),
     nazev2 character varying(100),
@@ -132,9 +132,9 @@ CREATE TABLE adresa (
     import_php_str_hash character varying(40),
     import_objed_cislo character varying(10),
 
-    id_user_create integer references users(id),
+    id_user_create bigint references users(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify integer references users(id),
+    id_user_modify bigint references users(id),
     dt_modify timestamp without time zone DEFAULT now()
 );
 
@@ -144,13 +144,13 @@ CREATE TABLE skl_karta (
     cislo character varying(10) UNIQUE,
     extern_id character varying(50),
 
-    id_sklad integer NOT NULL references c_sklad(id),
-    id_kategorie integer references c_kategorie(id),
-    id_dph integer NOT NULL references c_dph(id),
-    id_mj integer NOT NULL references c_mj(id),
-    id_zaruka integer references c_zaruka(id),
+    id_sklad bigint NOT NULL references c_sklad(id),
+    id_kategorie bigint references c_kategorie(id),
+    id_dph bigint NOT NULL references c_dph(id),
+    id_mj bigint NOT NULL references c_mj(id),
+    id_zaruka bigint references c_zaruka(id),
 
-    id_adresa_dodavatel integer references adresa(id),
+    id_adresa_dodavatel bigint references adresa(id),
 
     ean character varying(100),
     nazev1 character varying(100),
@@ -161,9 +161,9 @@ CREATE TABLE skl_karta (
     skl_hodnota decimal(15,2),
     skl_mnoz decimal(28,14),
 
-    id_user_create integer references users(id),
+    id_user_create bigint references users(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify integer references users(id),
+    id_user_modify bigint references users(id),
     dt_modify timestamp without time zone DEFAULT now()
 );
 

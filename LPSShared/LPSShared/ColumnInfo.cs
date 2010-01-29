@@ -36,6 +36,9 @@ namespace LPSClient
 		[XmlElement("replace-columns")]
 		public string FkReplaceColumns { get; set; }
 		
+		[XmlElement("combo-replace-columns")]
+		public string FkComboReplaceColumns { get; set; }
+		
 		[XmlAttribute("display")]
 		public string DisplayFormat { get; set; }
 		

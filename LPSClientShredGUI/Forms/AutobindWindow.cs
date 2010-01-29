@@ -20,7 +20,7 @@ namespace LPSClient
 		}
 
 		private TextRowBinding titlebinding;
-		protected virtual void Autobind(DataRow row)
+		protected virtual void Autobind(DataRow row, ModulesTreeInfo info)
 		{
 			IEnumerator e = new DeepEnumerator(this.Window.GetEnumerator());
 			while(e.MoveNext())
@@ -42,7 +42,7 @@ namespace LPSClient
 					DataTable table = Row.Table;
 					DataColumn col = table.Columns[name];
 				
-					WidgetRowBinding binding = BindWidget(col, w);
+					WidgetRowBinding binding = BindWidget(col, w, ListInfo.GetColumnInfo(name));
 					if(binding != null)
 						this.OwnedComponents.Add(binding);
 					
@@ -65,23 +65,30 @@ namespace LPSClient
 			this.Window.Title = args.Text;
 		}
 		
-		public WidgetRowBinding BindWidget(DataColumn col, Widget w)
+		public WidgetRowBinding BindWidget(DataColumn col, Widget w, ColumnInfo colinfo)
 		{
 			if(w is Entry)
-				return BindEntry(col, (Entry) w);
+				return BindEntry(col, (Entry) w, colinfo);
 			if(w is CheckButton)
-				return BindCheckButton(col, (CheckButton) w);
+				return BindCheckButton(col, (CheckButton) w, colinfo);
+			if(w is ComboBox)
+				return BindComboBox(col, (ComboBox) w, colinfo);
 			return null;
 		}
 		
-		public WidgetRowBinding BindEntry(DataColumn col, Entry entry)
+		public WidgetRowBinding BindEntry(DataColumn col, Entry entry, ColumnInfo colinfo)
 		{
 			return new EntryRowBinding(entry, col, Row);
 		}
 		
-		public WidgetRowBinding BindCheckButton(DataColumn col, CheckButton chkbutton)
+		public WidgetRowBinding BindCheckButton(DataColumn col, CheckButton chkbutton, ColumnInfo colinfo)
 		{
 			return new CheckButtonRowBinding(chkbutton, col, Row);
+		}
+		
+		public WidgetRowBinding BindComboBox(DataColumn col, ComboBox combo, ColumnInfo colinfo)
+		{
+			return new ComboBoxRowBinding(combo, col, Row, colinfo);
 		}
 
 		protected virtual void Unbind(DataRow row)
@@ -106,18 +113,35 @@ namespace LPSClient
 					Unbind(_Row);
 				_Row = value;
 				if(_Row != null)
-					Autobind(_Row);
+					Autobind(_Row, this.ListInfo);
 			}
 		}
 		
 		public abstract void Load(long id);
+		public virtual void New()
+		{
+			Load(0);
+		}
 		
 		public DataSet Data { get; protected set; }
 		
 		protected virtual void Load(string sql, long id)
 		{
 			Data = Connection.GetDataSet(sql, "id", id);
-			this.Row = Data.Tables[0].Rows[0];
+			if(id == 0)
+			{
+				this.Row = Data.Tables[0].NewRow();
+				OnNewRow(this.Row);
+				Data.Tables[0].Rows.Add(this.Row);
+			}
+			else
+			{
+				this.Row = Data.Tables[0].Rows[0];
+			}
+		}
+		
+		protected virtual void OnNewRow(DataRow row)
+		{
 		}
 		
 		public override void Dispose ()

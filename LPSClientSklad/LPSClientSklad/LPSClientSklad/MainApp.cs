@@ -44,11 +44,11 @@ namespace LPSClient.Sklad
 			FormFactory.Register(new FormXmlResourceInfo<PasswdChDialog>("chpasswd", "ui-shared.glade", "dialogPswChange"));
 			FormFactory.Register(new FormXmlResourceInfo<GenericDetailWindow>("generic", "ui-shared.glade", "windowGeneric"));
 			FormFactory.Register(new FormXmlResourceInfo<LongMessageDialog>("long-message", "ui-shared.glade", "dialogLongMessage"));
+			//FormFactory.Register(new FormXmlResourceInfo<HTMLMessageDialog>("html-message", "ui-shared.glade", "dialogHTMLMessage"));
 			FormFactory.Register(new FormXmlResourceInfo<MainForm>("main", "ui-sklad.glade", "windowMain"));
 			FormFactory.Register(new FormXmlResourceInfo<AdresaForm>("adresa", "adresa.glade", "windowAdresa"));
 
 			GLib.ExceptionManager.UnhandledException += HandleUnhandledException;
-				
 
 			if(!DoLogin())
 				return;
@@ -64,8 +64,30 @@ namespace LPSClient.Sklad
 		{
 			if(args.IsTerminating)
 				return;
-			ShowLongMessage("Chyba", "Nastala neošetřená vyjímka " + args.ExceptionObject.GetType().Name, args.ExceptionObject.ToString());
-			args.ExitApplication = false;
+			try
+			{
+				/*
+				Exception err = args.ExceptionObject as Exception;
+				int idx=-1;
+				if(err != null)
+					idx = err.Message.IndexOf("<HTML>");
+				if(idx >= 0)
+					ShowHtmlMessage(err.Message.Substring(idx));
+				else if(idx < 0 && err.InnerException != null)
+				{
+					idx = err.InnerException.Message.IndexOf("<HTML>");
+					if(idx >= 0)
+						ShowHtmlMessage(err.InnerException.Message.Substring(idx));			
+				}
+				else
+				*/
+					ShowLongMessage("Chyba", "Nastala neošetřená vyjímka " + args.ExceptionObject.GetType().Name, args.ExceptionObject.ToString());
+				args.ExitApplication = false;
+			}
+			catch(Exception err)
+			{
+				ShowLongMessage("Chyba", err.Message, err.ToString());
+			}
 		}
 		
 		public void Run()
@@ -145,6 +167,11 @@ namespace LPSClient.Sklad
 		{
 			LongMessageDialog.Show(title, title2, text);
 		}
+		
+		//public static void ShowHtmlMessage(string html)
+		//{
+		//	HTMLMessageDialog.Show(html);
+		//}
 
 	}
 }

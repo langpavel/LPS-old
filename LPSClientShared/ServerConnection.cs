@@ -186,13 +186,7 @@ namespace LPSClient
 		
 		public int SaveDataSet(DataSet dataset)
 		{
-			if(!dataset.HasChanges())
-				return 0;
-			string selectSql = (string)dataset.ExtendedProperties["sql"];
-			object[] parameters = (object[])dataset.ExtendedProperties["parameters"];
-			int result = Server.SaveDataSet(dataset.GetChanges(), true, selectSql, parameters);
-			dataset.AcceptChanges();
-			return result;
+			return SaveDataSet(dataset, true);
 		}
 
 		public DataSet GetSameDataSet(DataSet dataset)
@@ -204,7 +198,8 @@ namespace LPSClient
 		
 		public void FlushCache()
 		{
-			foreach(DataSet ds in cached_datasets.Values)
+			List<DataSet> copy = new List<DataSet>(cached_datasets.Values);
+			foreach(DataSet ds in copy)
 			{
 				ds.Dispose();
 			}

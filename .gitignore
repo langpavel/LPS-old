@@ -9,3 +9,5 @@ LPServer/bin/*
 LPShared/LPShared/bin/*
 LPSServer/bin/
 /tmp
+ImportHelper/ImportHelper/bin/
+LPSClientShredGUI/bin/

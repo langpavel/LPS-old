@@ -1,10 +1,12 @@
 using System;
 using System.Data;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Security.Cryptography;
 using Npgsql;
 using System.Web.Services.Protocols;
+using System.Xml;
 
 namespace LPSServer
 {
@@ -310,6 +312,16 @@ namespace LPSServer
 			}
 		}
 		
+		private void WriteValue(StringBuilder sb, object val)
+		{
+			if(val == null || val is DBNull)
+				sb.Append("<FONT COLOR=\"#0000ff\">null</FONT>");
+			else if (val is String)
+				sb.Append("<CODE>'").Append(val).Append("'</CODE>");
+			else
+				sb.Append("<CODE>").Append(val).Append("</CODE>");
+		}
+		
 		public int SaveDataSet(DataSet changes, bool updateUserInfo, string selectSql, NpgsqlParameter[] parameters)
 		{
 			using(NpgsqlTransaction trans = Connection.BeginTransaction())
@@ -329,12 +341,57 @@ namespace LPSServer
 							{
 								if(updateUserInfo)
 									UpdateUserInfo(table);
-								result += adapter.Update(table);
+								try
+								{
+									result += adapter.Update(table);
+								}
+								catch(DBConcurrencyException cerr)
+								{
+									StringBuilder sb = new StringBuilder();
+									sb.AppendLine("<!--HTML--><HTML><HEAD><TITLE>Chyba - řádek byl změněn</TITLE></HEAD><BODY>");
+									sb.AppendLine("<BIG><B>Řádek byl od doby posledního načtení změněn</B></BIG><BR />");
+									sb.Append("<B>Zpráva chyby:</B> " + cerr.Message + "<BR />");
+									sb.Append("<B>Select SQL:</B><BR /><CODE>" + selectSql + "</CODE><BR />");
+									//sb.AppendLine("Select SQL: " + adapter.SelectCommand.CommandText);
+									//sb.AppendLine("Update SQL: " + adapter.UpdateCommand.CommandText);
+									//sb.AppendLine("Insert SQL: " + adapter.InsertCommand.CommandText);
+									//sb.AppendLine("Delete SQL: " + adapter.DeleteCommand.CommandText);
+									sb.AppendLine("<B>Řádek:</B><BR /><TABLE border=\"1\"><TR><TD><B>Sloupec</B></TD><TD><B>Původní hodnota</B></TD><TD><B>Nová hodnota</B></TD><TD><B>Typ</B></TD></TR>");
+									foreach(DataColumn col in table.Columns)
+									{
+										object orig = cerr.Row[col, DataRowVersion.Original];
+										object current = cerr.Row[col, DataRowVersion.Current];
+										bool is_changed = (orig != null) ? (!orig.Equals(current)) : ((current != null) ? (!current.Equals(orig)) : (current != orig));
+										sb.Append("<TR><TD>");
+										if(is_changed) sb.Append("<B>");
+										sb.Append(col.ColumnName);
+										if(is_changed) sb.Append("</B>");
+										sb.Append("</TD><TD>");
+										WriteValue(sb, orig);
+										sb.Append("</TD><TD>");
+										WriteValue(sb, current);
+										sb.Append("</TD><TD>");
+										sb.Append(col.DataType.Name);
+										sb.AppendLine("</TD></TR>");
+									}
+									sb.Append("</TABLE></BODY></HTML>");
+									throw new SoapException(sb.ToString(), SoapException.ServerFaultCode);
+								}
 							}
 						}
 					}
 					trans.Commit();
 					return result;
+				}
+				catch(SoapException)
+				{
+					trans.Rollback();
+					throw;
+				}
+				catch(NpgsqlException err)
+				{
+					trans.Rollback();
+					throw RaiseNpgsqlException(err);
 				}
 				catch(Exception ex)
 				{
@@ -347,5 +404,20 @@ namespace LPSServer
 		
 		#endregion
 	
+		private SoapException RaiseNpgsqlException(NpgsqlException err)
+		{
+			StringBuilder sb = new StringBuilder();
+			sb.Append("SQL chyba ").AppendLine(err.Code);
+			sb.AppendLine("SQL:");
+			sb.AppendLine(err.ErrorSql);
+			sb.AppendLine(err.BaseMessage);
+			sb.AppendLine(err.Detail);
+			sb.AppendLine(err.HelpLink);
+			sb.AppendLine(err.Hint);
+			sb.AppendLine(err.Where);
+			return new SoapException(sb.ToString(),
+				SoapException.ServerFaultCode);
+		}
+		
 	}
 }
