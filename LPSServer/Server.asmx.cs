@@ -39,9 +39,9 @@ namespace LPS.Server
 		
 		#region Metody WebService bez session
 		[WebMethod(EnableSession=false)]
-		public string Ping(string data)
+		public ServerCallResult Ping()
 		{
-			return data;
+			return new ServerCallResult();
 		}
 		#endregion
 		
