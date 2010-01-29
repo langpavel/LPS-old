@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -48,7 +48,7 @@
     <Compile Include="Web References\LPSServer\Reference.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LPSShared\LPSShared\LPSShared.csproj">
+    <ProjectReference Include="..\LPSShared\LPSShared.csproj">
       <Project>{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}</Project>
       <Name>LPSShared</Name>
     </ProjectReference>

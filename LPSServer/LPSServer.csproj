@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -60,13 +60,13 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <ProjectReference Include="..\LPSShared\LPSShared\LPSShared.csproj">
-      <Project>{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}</Project>
-      <Name>LPSShared</Name>
-    </ProjectReference>
     <ProjectReference Include="..\contrib\Npgsql\Npgsql.csproj">
       <Project>{547058A0-1F2E-4E0B-98D4-294B8C0D85A7}</Project>
       <Name>Npgsql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LPSShared\LPSShared.csproj">
+      <Project>{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}</Project>
+      <Name>LPSShared</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

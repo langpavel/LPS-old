@@ -4,10 +4,10 @@
 *~
 *.userprefs
 *.pidb
-generated.cs
-LPServer/bin/*
-LPShared/LPShared/bin/*
-LPSServer/bin/
 /tmp
-ImportHelper/ImportHelper/bin/
-LPSClientShredGUI/bin/
+LPServer/bin/
+LPShared/bin/
+LPSServer/bin/
+ImportHelper/bin/
+LPSClientShared/bin/
+LPSClientSharedGUI/bin/

@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSServer", "LPSServer.csproj", "{4F31D29F-031C-4F3A-B735-0566275755F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSServer", "LPSServer\LPSServer.csproj", "{4F31D29F-031C-4F3A-B735-0566275755F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSShared", "..\LPSShared\LPSShared\LPSShared.csproj", "{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSShared", "LPSShared\LPSShared.csproj", "{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSClientShared", "..\LPSClientShared\LPSClientShared.csproj", "{D2317E65-70CE-4367-B1A7-211FD6044720}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSClientShared", "LPSClientShared\LPSClientShared.csproj", "{D2317E65-70CE-4367-B1A7-211FD6044720}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Npgsql", "..\contrib\Npgsql\Npgsql.csproj", "{547058A0-1F2E-4E0B-98D4-294B8C0D85A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Npgsql", "contrib\Npgsql\Npgsql.csproj", "{547058A0-1F2E-4E0B-98D4-294B8C0D85A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

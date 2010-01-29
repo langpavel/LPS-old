@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -19,7 +19,6 @@
     <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -27,7 +26,6 @@
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -53,17 +51,17 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\..\LPSShared\LPSShared\LPSShared.csproj">
+    <ProjectReference Include="..\LPSShared\LPSShared.csproj">
       <Project>{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}</Project>
       <Name>LPSShared</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\LPSClientShared\LPSClientShared.csproj">
+    <ProjectReference Include="..\LPSClientShared\LPSClientShared.csproj">
       <Project>{D2317E65-70CE-4367-B1A7-211FD6044720}</Project>
       <Name>LPSClientShared</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\LPSClientShredGUI\LPSClientShredGUI.csproj">
+    <ProjectReference Include="..\LPSClientSharedGUI\LPSClientSharedGUI.csproj">
       <Project>{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}</Project>
-      <Name>LPSClientShredGUI</Name>
+      <Name>LPSClientSharedGUI</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

@@ -19,7 +19,6 @@
     <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -27,7 +26,6 @@
     <OutputPath>bin\Release\bin</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -61,9 +59,6 @@
     <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="gtk-gui\gui.stetic">
-      <LogicalName>gui.stetic</LogicalName>
-    </EmbeddedResource>
     <EmbeddedResource Include="Images\application-vnd.oasis.opendocument.database.png">
       <LogicalName>Images.database.png</LogicalName>
     </EmbeddedResource>
@@ -75,7 +70,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="gtk-gui\generated.cs" />
     <Compile Include="MainApp.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Forms\MainForm.cs" />
@@ -83,17 +77,17 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\..\..\LPSShared\LPSShared\LPSShared.csproj">
+    <ProjectReference Include="..\LPSShared\LPSShared.csproj">
       <Project>{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}</Project>
       <Name>LPSShared</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\LPSClientShared\LPSClientShared.csproj">
+    <ProjectReference Include="..\LPSClientShared\LPSClientShared.csproj">
       <Project>{D2317E65-70CE-4367-B1A7-211FD6044720}</Project>
       <Name>LPSClientShared</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\LPSClientShredGUI\LPSClientShredGUI.csproj">
+    <ProjectReference Include="..\LPSClientSharedGUI\LPSClientSharedGUI.csproj">
       <Project>{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}</Project>
-      <Name>LPSClientShredGUI</Name>
+      <Name>LPSClientSharedGUI</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
