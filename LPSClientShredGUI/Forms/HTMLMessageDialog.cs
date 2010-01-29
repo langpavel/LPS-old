@@ -1,7 +1,6 @@
-/*
 using System;
 using Gtk;
-using Gecko;
+using Mono.WebBrowser;
 
 namespace LPSClient
 {
@@ -9,7 +8,7 @@ namespace LPSClient
 	public class HTMLMessageDialog : XmlDialogBase
 	{
 		[Glade.Widget] ScrolledWindow scrolledwindow;
-		Gecko.WebControl browser;
+		IWebBrowser browser;
 		
 		public HTMLMessageDialog ()
 		{
@@ -20,9 +19,13 @@ namespace LPSClient
 			base.OnCreate ();
 			try
 			{
-				browser = new WebControl();
-				scrolledwindow.AddWithViewport(browser);
-				browser.ShowAll();
+				browser = Mono.WebBrowser.Manager.GetNewInstance(Platform.Gtk);
+				if(!browser.Initialized)
+				{
+					throw new ApplicationException("gluezilla needed");
+				}
+				browser.Load(scrolledwindow.Handle, 640,480);
+				scrolledwindow.ShowAll();
 			}
 			catch
 			{		
@@ -37,6 +40,7 @@ namespace LPSClient
 			set { this.Window.Title = value; }
 		}
 		
+		/*
 		private string GetContentOf(string tag, string str)
 		{
 			int start = str.ToLower().IndexOf("<"+tag.ToLower()+">");
@@ -46,13 +50,14 @@ namespace LPSClient
 			else
 				return null;
 		}
+		*/
 		
 		public string Html
 		{
 			set 
 			{
-				this.browser.RenderData(value, "http://localhost/", "text/html");
-				this.Window.Title = this.browser.Title;
+				this.browser.Render(value);
+				this.Window.Title = this.browser.Document.Title;
 			}
 		}
 
@@ -73,4 +78,3 @@ namespace LPSClient
 		
 	}
 }
-*/

@@ -66,7 +66,6 @@ namespace LPSClient.Sklad
 				return;
 			try
 			{
-				/*
 				Exception err = args.ExceptionObject as Exception;
 				int idx=-1;
 				if(err != null)
@@ -80,7 +79,6 @@ namespace LPSClient.Sklad
 						ShowHtmlMessage(err.InnerException.Message.Substring(idx));			
 				}
 				else
-				*/
 					ShowLongMessage("Chyba", "Nastala neošetřená vyjímka " + args.ExceptionObject.GetType().Name, args.ExceptionObject.ToString());
 				args.ExitApplication = false;
 			}
@@ -168,10 +166,10 @@ namespace LPSClient.Sklad
 			LongMessageDialog.Show(title, title2, text);
 		}
 		
-		//public static void ShowHtmlMessage(string html)
-		//{
-		//	HTMLMessageDialog.Show(html);
-		//}
+		public static void ShowHtmlMessage(string html)
+		{
+			HTMLMessageDialog.Show(html);
+		}
 
 	}
 }
