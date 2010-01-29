@@ -14,8 +14,18 @@ namespace LPS
 			Columns = new List<ColumnInfo>();
 		}
 		
+		[XmlAttribute("name")]
 		public string Name { get; set; }
 
+		[XmlElement("desc")]
+		public string Description { get; set; }
+		
+		[XmlElement("list-sql")]
+		public string ListSql { get; set; }
+		
+		[XmlElement("edit-sql")]
+		public string EditSql { get; set; }
+		
 		[XmlArray("columns")]
 		[XmlArrayItem("column")]
 		public List<ColumnInfo> Columns { get; set; }

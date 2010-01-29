@@ -74,7 +74,17 @@
     <Folder Include="resources\tables\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\modulestree.xml" />
-    <None Include="resources\tables\adresa.xml" />
+    <None Include="resources\tree.xml" />
+    <None Include="resources\tables\adresa.xml">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </None>
+    <None Include="resources\tables\skl_karta.xml" />
+    <None Include="resources\tables\c_druh_adresy.xml" />
+    <None Include="resources\tables\c_dph.xml" />
+    <None Include="resources\tables\c_mj.xml" />
+    <None Include="resources\tables\c_kategorie.xml" />
+    <None Include="resources\tables\c_sklad.xml" />
+    <None Include="resources\tables\c_zaruka.xml" />
+    <None Include="resources\tables\users.xml" />
   </ItemGroup>
 </Project>

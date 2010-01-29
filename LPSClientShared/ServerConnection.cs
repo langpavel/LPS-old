@@ -30,8 +30,9 @@ namespace LPS.Client
 			this.Server.CookieContainer = CookieContainer;
 			this.cached_datasets = new Dictionary<string, DataSet>();
 			_instance = this;
+			_resource_manager = new ResourceManager(this);
 		}
-	
+
 		private static string _url;
 		[ThreadStatic]
 		private static ServerConnection _instance;
@@ -49,6 +50,15 @@ namespace LPS.Client
 			get
 			{
 				return this.GetCachedDataSet("select id, username, first_name, surname from users").Tables[0];
+			}
+		}
+
+		private ResourceManager _resource_manager;
+		public ResourceManager Resources
+		{
+			get
+			{
+				return _resource_manager;
 			}
 		}
 		

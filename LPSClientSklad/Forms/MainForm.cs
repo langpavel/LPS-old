@@ -74,9 +74,7 @@ namespace LPS.Client.Sklad
 				store = viewModules.Model as TreeStore;
 				store.Clear();
 			}
-			string data = Connection.GetTextResource("modules.xml");
-			ModulesTreeInfo info = ModulesTreeInfo.LoadFromString(data);
-			AddModulesNodes(info, store, TreeIter.Zero);
+			AddModulesNodes(Connection.Resources.GetModulesInfo("root"), store, TreeIter.Zero);
 		
 			viewModules.ExpandAll();
 		}

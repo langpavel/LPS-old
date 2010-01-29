@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table id="adresa">
-	<
+<table name="adresa">
+	<desc>Adresář - kontakty na zákazníky a dodavatele</desc>
+	<list-sql>select * from adresa</list-sql>
+	<edit-sql>select * from adresa</edit-sql>
+	<detail-name>adresa</detail-name>
 	<columns>
 		<column name="id" caption="Id" visible="false" editable="true" required="false" width="0" />
 		<column name="id_druh_adresy" caption="Druh adresy" visible="true" editable="true" required="false" width="0" display="{1}">
@@ -8,29 +11,29 @@
 			<replace-columns>kod</replace-columns>
 			<combo-replace-columns>kod, popis</combo-replace-columns>
 		</column>
-		<column name="id_group" caption="Group" visible="false" editable="true" required="false" width="0" />
-		<column name="nazev1" caption="Nazev1" visible="true" editable="true" required="false" width="0" />
-		<column name="nazev2" caption="Nazev2" visible="true" editable="true" required="false" width="0" />
-		<column name="ico" caption="Ico" visible="true" editable="true" required="false" width="0" />
-		<column name="dic" caption="Dic" visible="true" editable="true" required="false" width="0" />
-		<column name="prijmeni" caption="Prijmeni" visible="true" editable="true" required="false" width="0" />
-		<column name="jmeno" caption="Jmeno" visible="true" editable="true" required="false" width="0" />
-		<column name="jmeno2" caption="Jmeno2" visible="true" editable="true" required="false" width="0" />
+		<column name="id_group" caption="Seskupení" visible="false" editable="true" required="false" width="0" />
+		<column name="nazev1" caption="Název 1" visible="true" editable="true" required="false" width="0" />
+		<column name="nazev2" caption="Název 2" visible="true" editable="true" required="false" width="0" />
+		<column name="ico" caption="IČO" visible="true" editable="true" required="false" width="0" />
+		<column name="dic" caption="DIČ" visible="true" editable="true" required="false" width="0" />
+		<column name="prijmeni" caption="Příjmení" visible="true" editable="true" required="false" width="0" />
+		<column name="jmeno" caption="Jméno" visible="true" editable="true" required="false" width="0" />
+		<column name="jmeno2" caption="Jméno 2" visible="true" editable="true" required="false" width="0" />
 		<column name="ulice" caption="Ulice" visible="true" editable="true" required="false" width="0" />
-		<column name="mesto" caption="Mesto" visible="true" editable="true" required="false" width="0" />
-		<column name="psc" caption="Psc" visible="true" editable="true" required="false" width="0" />
-		<column name="zeme" caption="Zeme" visible="true" editable="true" required="false" width="0" />
+		<column name="mesto" caption="Město" visible="true" editable="true" required="false" width="0" />
+		<column name="psc" caption="Psč" visible="true" editable="true" required="false" width="0" />
+		<column name="zeme" caption="Země" visible="true" editable="true" required="false" width="0" />
 		<column name="email" caption="Email" visible="true" editable="true" required="false" width="0" />
-		<column name="telefon1" caption="Telefon1" visible="true" editable="true" required="false" width="0" />
-		<column name="telefon2" caption="Telefon2" visible="true" editable="true" required="false" width="0" />
-		<column name="poznamka" caption="Poznamka" visible="true" editable="true" required="false" width="0" />
-		<column name="aktivni" caption="Aktivni" visible="true" editable="true" required="false" width="0" />
-		<column name="fakturacni" caption="Fakturacni" visible="true" editable="true" required="false" width="0" />
-		<column name="dodaci" caption="Dodaci" visible="true" editable="true" required="false" width="0" />
+		<column name="telefon1" caption="Telefon 1" visible="true" editable="true" required="false" width="0" />
+		<column name="telefon2" caption="Telefon 2" visible="true" editable="true" required="false" width="0" />
+		<column name="poznamka" caption="Poznámka" visible="true" editable="true" required="false" width="0" />
+		<column name="aktivni" caption="Aktivní" visible="true" editable="true" required="false" width="0" />
+		<column name="fakturacni" caption="Fakturační" visible="true" editable="true" required="false" width="0" />
+		<column name="dodaci" caption="Dodací" visible="true" editable="true" required="false" width="0" />
 		<column name="dodavatel" caption="Dodavatel" visible="true" editable="true" required="false" width="0" />
-		<column name="odberatel" caption="Odberatel" visible="true" editable="true" required="false" width="0" />
-		<column name="import_php_str_hash" caption="Import php str hash" visible="true" editable="true" required="false" width="0" />
-		<column name="import_objed_cislo" caption="Import objed cislo" visible="true" editable="true" required="false" width="0" />
+		<column name="odberatel" caption="Odběratel" visible="true" editable="true" required="false" width="0" />
+		<column name="import_php_str_hash" caption="Import php str hash" visible="false" editable="false" required="false" width="0" />
+		<column name="import_objed_cislo" caption="Importované číslo objednávky" visible="true" editable="true" required="false" width="0" />
 		<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
 			<ref-table>users</ref-table>
 			<replace-columns>surname, first_name</replace-columns>

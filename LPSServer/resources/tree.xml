@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modules-tree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="root">
+	<columns />
+	<item id="adresa" text="Adresář" table="adresa">
+		<item id="adresa_odb" text="Odběratelé" table="adresa">
+			<desc>Kontakty na zákazníky</desc>
+			<list-sql>select * from adresa where odberatel = true</list-sql>
+		</item>
+		<item id="adresa_dod" text="Dodavatelé" table="adresa">
+			<desc>Kontakty na dodavatele</desc>
+			<list-sql>select * from adresa where dodavatel = true</list-sql>
+		</item>
+	</item>
+	<item id="sklad" text="Skladové hospodářství">
+		<item id="skl_karta" text="Skladové karty" table="skl_karta">
+			<desc>Skladové karty - produkty</desc>
+			<list-sql>select * from skl_karta</list-sql>
+		</item>
+		<item id="skl_pohyb" text="Skladové pohyby">
+			<desc>Skladové pohyby</desc>
+			<item id="skl_pohyb_prijem" text="Příjmové doklady">
+				<desc>Příjmy na sklad</desc>
+			</item>
+			<item id="skl_pohyb_vydej" text="Výdejové doklady">
+				<desc>Výdeje ze skladu</desc>
+			</item>
+		</item>
+		<item id="inventura" text="Inventura">
+			<desc>Inventurní kniha</desc>
+		</item>
+	</item>
+	<item id="ciselniky" text="Číselníky">
+		<columns />
+		<item id="c_druh_adresy" text="Druh adresy" table="c_druh_adresy">
+			<desc>Druh adresy</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from c_druh_adresy</list-sql>
+		</item>
+		<item id="c_dph" text="DPH" table="c_dph">
+			<desc>Hodnoty DPH</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from c_dph</list-sql>
+		</item>
+		<item id="c_mj" text="Měrné jednotky" table="c_mj">
+			<desc>Měrné jednotky</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from c_mj</list-sql>
+		</item>
+		<item id="c_kategorie" text="Kategorie produktů" table="c_kategorie">
+			<desc>Kategorie produktů</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from c_kategorie</list-sql>
+		</item>
+		<item id="c_sklad" text="Sklady" table="c_sklad">
+			<desc>Sklady</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from c_sklad</list-sql>
+		</item>
+		<item id="c_zaruka" text="Záruční doba" table="c_zaruka">
+			<desc>Záruční doba</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from c_zaruka</list-sql>
+		</item>
+	</item>
+	<item id="users" text="Uživatelé" table="c_zaruka">
+		<desc>Uživatelé</desc>
+		<detail-name />
+		<list-sql>select * from users</list-sql>
+	</item>
+</modules-tree>

@@ -119,12 +119,12 @@ namespace ImportHelper
 			}
 		}
 		
-		private void WriteStrArray(string[] parts)
+		protected void WriteStrArray(string[] parts)
 		{
 			WriteStrArray(parts, 0, 1);
 		}
 		
-		private void WriteStrArray(string[] parts, int offset, int step)
+		protected void WriteStrArray(string[] parts, int offset, int step)
 		{
 			for(int i = offset; i < parts.Length; i += step)
 			{
@@ -132,7 +132,7 @@ namespace ImportHelper
 			}
 		}
 		
-		private bool WriteStrArray(string[] parts, int offset, int step, string compare)
+		protected bool WriteStrArray(string[] parts, int offset, int step, string compare)
 		{
 			bool result = true;
 			for(int i = offset; i < parts.Length; i += step)
@@ -339,9 +339,7 @@ namespace ImportHelper
 			try
 			{
 				Console.WriteLine("Loading from server...");
-				string data = LPS.GetTextResource("modules.xml");
-				//Console.WriteLine(data);
-				ModulesTreeInfo info = ModulesTreeInfo.LoadFromString(data);
+				ModulesTreeInfo info = LPS.Resources.GetModulesInfo("root");
 				UpdateItemsColumns(info, recreate_cols);
 				info.SaveToFile(filename);
 				

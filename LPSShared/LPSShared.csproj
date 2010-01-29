@@ -46,6 +46,11 @@
     <Compile Include="ModulesTreeInfo.cs" />
     <Compile Include="ColumnInfo.cs" />
     <Compile Include="TableInfo.cs" />
+    <Compile Include="ResourceManager.cs" />
+    <Compile Include="Exceptions\ResourceNotFoundException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
 </Project>

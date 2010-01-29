@@ -106,5 +106,8 @@ namespace LPS
 		
 		[XmlIgnore]
 		public Hashtable Data { get; set; }
+		
+		[XmlIgnore]
+		public ModulesTreeInfo Parent { get; set; }
 	}
 }
