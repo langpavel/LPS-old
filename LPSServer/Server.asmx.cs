@@ -16,7 +16,7 @@ namespace LPS.Server
 	
 	[WebService(Namespace="http://lpsoft.org/server/",
 	            Description="LPSoft server")]
-	public class Server: System.Web.Services.WebService, LPS.IServer
+	public class Server: System.Web.Services.WebService
 	{
 		private ConnectionInfo GetConnectionInfo()
 		{
@@ -150,12 +150,7 @@ namespace LPS.Server
 		#endregion
 		
 		[WebMethod(EnableSession=false, BufferResponse=false)]
-		public string GetTextResource(string path)
-		{
-			return _GetTextResource(path);
-		}
-		
-		internal static string _GetTextResource(string path)
+		public static string _GetTextResource(string path)
 		{
 			string resPath = "/var/www/LPS/resources";
 			try

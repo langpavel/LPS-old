@@ -16,6 +16,13 @@ namespace LPS.Server
 		}
 		
 		public int SinkIndex { get; set; }
+		public int Security
+		{
+			get
+			{
+				return this.GetHashCode();
+			}
+		}
 		
 		private DataTable CreateTable(string table_name, DataRow row)
 		{

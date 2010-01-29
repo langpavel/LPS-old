@@ -41,16 +41,19 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Extensions.cs" />
-    <Compile Include="IServer.cs" />
     <Compile Include="DeepEnumerator.cs" />
     <Compile Include="ModulesTreeInfo.cs" />
     <Compile Include="ColumnInfo.cs" />
     <Compile Include="TableInfo.cs" />
     <Compile Include="ResourceManager.cs" />
     <Compile Include="Exceptions\ResourceNotFoundException.cs" />
+    <Compile Include="Interfaces\IResourceStore.cs" />
+    <Compile Include="ChangeNotification\ServerCallResult.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Exceptions\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="ChangeNotification\" />
   </ItemGroup>
 </Project>

@@ -1,17 +1,17 @@
 using System;
 using System.Data;
-using System.Collections;
+using System.Collections.Generic;
 using System.Threading.IntelParallel;
 
 namespace LPS.Server
 {
 	public static class ServerChangeSink
 	{
-		private static ArrayList listeners;
+		private static List<ServerChangeListener> listeners;
 		
 		static ServerChangeSink()
 		{
-			listeners = new ArrayList();
+			listeners = new List<ServerChangeListener>();
 		}
 		
 		public static ServerChangeListener RegisterNewListener()
@@ -28,28 +28,34 @@ namespace LPS.Server
 						return result;
 					}
 				}
-				result.SinkIndex = listeners.Add(result);
+				listeners.Add(result);
+				result.SinkIndex = listeners.IndexOf(result);
 				return result;
 			}
 		}
 		
-		public static ServerChangeListener GetListener(int index)
+		public static ServerChangeListener GetListener(int index, int security)
 		{
 			lock(listeners)
 			{
-				return (ServerChangeListener)listeners[index];
+				ServerChangeListener l = listeners[index];
+				if(l == null)
+					throw new ArgumentException("listener byl odstraněn", "index");
+				if(l.Security != security)
+					throw new ArgumentException("security klíč listeneru neplatí", "security");
+				return l;
 			}
 		}
 
 		public static void AddNewData(string table, long id, char type, DataRow row)
 		{
-			ArrayList l2;
+			List<ServerChangeListener> l2;
 			lock(listeners)
 			{
-				l2 = new ArrayList(listeners.Count);
+				l2 = new List<ServerChangeListener>(listeners.Count);
 				for(int i = 0; i < listeners.Count; i++)
 				{
-					object o = listeners[i];
+					ServerChangeListener o = listeners[i];
 					if(o != null)
 						l2.Add(o);
 				}
@@ -58,17 +64,20 @@ namespace LPS.Server
 			ParallelFor f = new ParallelFor(l2.Count);
 			f.Run(delegate(int i)
 			{
-				ServerChangeListener listener = (ServerChangeListener)l2[i];
-					listener.AddNewData(table, id, type, row);
+				l2[i].AddNewData(table, id, type, row);
 			});
 		}
 		
-		public static void RemoveListener(int index)
+		public static void RemoveListener(int index, int security)
 		{
 			ServerChangeListener listener = null;
 			lock(listeners)
 			{
-				listener = (ServerChangeListener)listeners[index];
+				listener = listeners[index];
+				if(listener == null)
+					throw new ArgumentException("listener byl odstraněn", "index");
+				if(listener.Security != security)
+					throw new ArgumentException("security klíč listeneru neplatí", "security");
 				listeners[index] = null;
 			}
 			if(listener != null)

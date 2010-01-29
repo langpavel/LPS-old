@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace LPS.Client
 {
-	public class ServerConnection: LPS.IServer, IDisposable
+	public class ServerConnection: LPS.IResourceStore, IDisposable
 	{
 		static ServerConnection()
 		{
