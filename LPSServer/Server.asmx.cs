@@ -152,6 +152,11 @@ namespace LPS.Server
 		[WebMethod(EnableSession=false, BufferResponse=false)]
 		public string GetTextResource(string path)
 		{
+			return _GetTextResource(path);
+		}
+		
+		internal static string _GetTextResource(string path)
+		{
 			string resPath = "/var/www/LPS/resources";
 			try
 			{

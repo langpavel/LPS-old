@@ -4,7 +4,12 @@ using System.Collections.Generic;
 
 namespace LPS
 {
-	public interface IServer
+	public interface IResourceStore
+	{
+		string GetTextResource(string path);
+	}
+	
+	public interface IServer: IResourceStore
 	{
 		string Ping(string data);
 		long Login(string login, string password);
@@ -18,7 +23,10 @@ namespace LPS
 		Int64 NextSeqValue(string generator);
 		DataSet GetDataSetSimple(string sql);
 		DataSet GetDataSet(string sql, object[] parameters);
-		string GetTextResource(string path);
 		int SaveDataSet(DataSet changes, bool updateUserInfo, string selectSql, object[] parameters);
+		
+		//DataSet GetDataSetByResourceMatchString(string matchstring);
+		//long RegisterChangeSink();
+		//DataSet GetChangesFromSink(long listener_sinks);
 	}
 }

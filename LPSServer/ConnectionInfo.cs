@@ -11,12 +11,13 @@ using System.Xml;
 namespace LPS.Server
 {
 	
-	public class ConnectionInfo : IDisposable
+	public class ConnectionInfo : IDisposable, IResourceStore
 	{
 		public long UserId { get; set; }
 		public string UserName { get; set; }
 		public NpgsqlConnection Connection { get; set; }
 		private string passwdhash;
+		public ResourceManager Resources;
 		
 		//private int ds_counter;
 
@@ -26,6 +27,7 @@ namespace LPS.Server
 			//StoredDataSets = new Dictionary<int, DataSetStoreItem>();
 			NpgsqlEventLog.Level = LogLevel.None;
 			//NpgsqlEventLog.LogName = "NpgsqlTests.LogFile";
+			Resources = new ResourceManager(this);
 		}
 
 		/*
@@ -417,6 +419,11 @@ namespace LPS.Server
 			sb.AppendLine(err.Where);
 			return new SoapException(sb.ToString(),
 				SoapException.ServerFaultCode);
+		}
+		
+		public string GetTextResource(string path)
+		{
+			return Server._GetTextResource(path);
 		}
 		
 	}

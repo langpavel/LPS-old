@@ -45,9 +45,9 @@ namespace LPS
 		
 		private Dictionary<string, TableInfo> TableInfos;
 		private Dictionary<string, ModulesTreeInfo> ModulesInfo;
-		private IServer server;
+		private IResourceStore server;
 		
-		public ResourceManager(IServer server)
+		public ResourceManager(IResourceStore server)
 		{
 			this.server = server;
 			TableInfos = new Dictionary<string, TableInfo>();

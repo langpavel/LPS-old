@@ -49,6 +49,8 @@
       <DependentUpon>Server.asmx</DependentUpon>
     </Compile>
     <Compile Include="ConnectionInfo.cs" />
+    <Compile Include="ChangeSink\ServerChangeSink.cs" />
+    <Compile Include="ChangeSink\ServerChangeListener.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -68,10 +70,15 @@
       <Project>{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}</Project>
       <Name>LPSShared</Name>
     </ProjectReference>
+    <ProjectReference Include="..\contrib\System.Threading.IntelParallel\System.Threading.IntelParallel.csproj">
+      <Project>{F3E70342-B601-41CD-AC7D-DDD4A90216D9}</Project>
+      <Name>System.Threading.IntelParallel</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="resources\" />
     <Folder Include="resources\tables\" />
+    <Folder Include="ChangeSink\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\tree.xml" />
