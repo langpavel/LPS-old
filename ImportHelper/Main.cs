@@ -7,7 +7,8 @@ using System.Security.Cryptography;
 using System.Xml;
 using System.Xml.Serialization;
 using Npgsql;
-using LPSClient;
+using LPS;
+using LPS.Client;
 
 namespace ImportHelper
 {
@@ -38,8 +39,8 @@ namespace ImportHelper
 		public NpgsqlConnection Connection { get; set; }
 		
 		private static int ID_DRUH_ADRESY_FA;
-		private static LPSClient.ServerConnection _LPS;
-		public static LPSClient.ServerConnection LPS
+		private static LPS.Client.ServerConnection _LPS;
+		public static LPS.Client.ServerConnection LPS
 		{ 
 			get
 			{	
@@ -47,7 +48,7 @@ namespace ImportHelper
 					return _LPS;
 				try
 				{
-					_LPS = new LPSClient.ServerConnection("http://localhost/LPS/Server.asmx");
+					_LPS = new LPS.Client.ServerConnection("http://localhost/LPS/Server.asmx");
 					_LPS.Login("langpa", "");
 					object o = _LPS.ExecuteScalar("select id from c_druh_adresy where kod=:kod", "kod", "FA");
 					ID_DRUH_ADRESY_FA = Convert.ToInt32(o);

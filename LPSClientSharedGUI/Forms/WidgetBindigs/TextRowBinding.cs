@@ -2,7 +2,7 @@ using System;
 using System.Data;
 using Gtk;
 
-namespace LPSClient
+namespace LPS.Client
 {
 	public class TextRowBinding : IDisposable
 	{

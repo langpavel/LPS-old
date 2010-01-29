@@ -11,12 +11,12 @@ using System.Xml;
 using Npgsql;
 using System.Configuration;
 
-namespace LPSServer
+namespace LPS.Server
 {
 	
 	[WebService(Namespace="http://lpsoft.org/server/",
 	            Description="LPSoft server")]
-	public class Server: System.Web.Services.WebService, IServer
+	public class Server: System.Web.Services.WebService, LPS.IServer
 	{
 		private ConnectionInfo GetConnectionInfo()
 		{
@@ -152,11 +152,20 @@ namespace LPSServer
 		[WebMethod(EnableSession=false, BufferResponse=false)]
 		public string GetTextResource(string path)
 		{
-			System.Configuration.Configuration rootWebConfig1 =
-    			System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(null);
-    		System.Configuration.KeyValueConfigurationElement resourceDirectory = 
-        		rootWebConfig1.AppSettings.Settings["ResourceDirectory"];
-			string resPath = Path.Combine(resourceDirectory.Value, path);
+			string resPath = "/var/www/LPS/resources";
+			try
+			{
+				System.Configuration.Configuration rootWebConfig1 =
+    				System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(null);
+    			System.Configuration.KeyValueConfigurationElement resourceDirectory = 
+        			rootWebConfig1.AppSettings.Settings["ResourceDirectory"];
+				resPath = resourceDirectory.Value;
+			}
+			catch 
+			{
+			}
+
+			resPath = Path.Combine(resPath, path);
 			try
 			{				
 				using(StreamReader reader = File.OpenText(resPath))

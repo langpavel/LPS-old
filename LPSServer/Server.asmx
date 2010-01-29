@@ -1,1 +1,1 @@
-<%@ WebService Language="C#" Class="LPSServer.Server" %>
+<%@ WebService Language="C#" Class="LPS.Server.Server" %>

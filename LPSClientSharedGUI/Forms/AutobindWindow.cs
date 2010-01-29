@@ -5,7 +5,7 @@ using System.Data;
 using Gtk;
 using LPS;
 
-namespace LPSClient
+namespace LPS.Client
 {
 	public abstract class AutobindWindow : XmlWindowBase
 	{

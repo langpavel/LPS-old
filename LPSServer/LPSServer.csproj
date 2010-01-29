@@ -8,7 +8,7 @@
     <ProjectGuid>{4F31D29F-031C-4F3A-B735-0566275755F7}</ProjectGuid>
     <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>LPSServer</RootNamespace>
+    <RootNamespace>LPS.Server</RootNamespace>
     <AssemblyName>LPSServer</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
@@ -71,9 +71,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="resources\" />
+    <Folder Include="resources\tables\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\modules.xml">
-    </None>
+    <None Include="resources\modulestree.xml" />
+    <None Include="resources\tables\adresa.xml" />
   </ItemGroup>
 </Project>

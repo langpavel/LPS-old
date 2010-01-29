@@ -1,9 +1,10 @@
 using System;
 using System.Data;
 using Gtk;
-using LPSClient;
+using LPS;
+using LPS.Client;
 
-namespace LPSClient.Sklad
+namespace LPS.Client.Sklad
 {
 
 	public class MainForm : XmlWindowBase

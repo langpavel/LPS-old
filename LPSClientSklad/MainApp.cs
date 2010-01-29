@@ -2,11 +2,11 @@ using System;
 using System.Reflection;
 using System.Web;
 using Gtk;
-using LPSServer;
+using LPS;
 using Microsoft.Win32;
-using LPSClient;
+using LPS.Client;
 
-namespace LPSClient.Sklad
+namespace LPS.Client.Sklad
 {
 	internal class MainApp
 	{
@@ -66,6 +66,7 @@ namespace LPSClient.Sklad
 				return;
 			try
 			{
+				/*
 				Exception err = args.ExceptionObject as Exception;
 				int idx=-1;
 				if(err != null)
@@ -79,6 +80,7 @@ namespace LPSClient.Sklad
 						ShowHtmlMessage(err.InnerException.Message.Substring(idx));			
 				}
 				else
+				*/
 					ShowLongMessage("Chyba", "Nastala neošetřená vyjímka " + args.ExceptionObject.GetType().Name, args.ExceptionObject.ToString());
 				args.ExitApplication = false;
 			}
@@ -166,10 +168,10 @@ namespace LPSClient.Sklad
 			LongMessageDialog.Show(title, title2, text);
 		}
 		
-		public static void ShowHtmlMessage(string html)
-		{
-			HTMLMessageDialog.Show(html);
-		}
+		//public static void ShowHtmlMessage(string html)
+		//{
+		//	HTMLMessageDialog.Show(html);
+		//}
 
 	}
 }

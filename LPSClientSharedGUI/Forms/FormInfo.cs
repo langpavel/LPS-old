@@ -2,7 +2,7 @@ using System;
 using System.Reflection;
 using Gtk;
 
-namespace LPSClient
+namespace LPS.Client
 {
 	public abstract class FormInfo
 	{

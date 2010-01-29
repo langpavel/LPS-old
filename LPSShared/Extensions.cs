@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace LPSClient
+namespace LPS
 {
     public static class Extensions
     {

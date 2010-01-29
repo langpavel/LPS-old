@@ -2,7 +2,7 @@ using System;
 using Gtk;
 using Gdk;
 
-namespace LPSClient
+namespace LPS.Client
 {
 	public class CellRendererText2 : CellRendererText
 	{

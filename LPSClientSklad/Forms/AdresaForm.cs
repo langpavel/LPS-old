@@ -2,7 +2,7 @@ using System;
 using System.Data;
 using Gtk;
 
-namespace LPSClient.Sklad
+namespace LPS.Client.Sklad
 {
 	public class AdresaForm : AutobindWindow
 	{

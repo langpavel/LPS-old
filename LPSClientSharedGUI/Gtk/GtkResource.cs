@@ -3,7 +3,7 @@ using System.IO;
 using System.Reflection;
 using Gtk;
 
-namespace LPSClient
+namespace LPS.Client
 {
 	public static class GtkTheme
 	{

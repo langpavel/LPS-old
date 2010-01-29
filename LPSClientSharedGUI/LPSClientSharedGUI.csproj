@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>LPSClient</RootNamespace>
+    <RootNamespace>LPS.Client</RootNamespace>
     <AssemblyName>LPSClientShredGUI</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>

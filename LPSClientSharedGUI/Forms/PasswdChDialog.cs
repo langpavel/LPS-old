@@ -1,7 +1,7 @@
 using System;
 using Gtk;
 
-namespace LPSClient
+namespace LPS.Client
 {
 	public class PasswdChDialog : XmlDialogBase
 	{

@@ -2,7 +2,7 @@ using System;
 using System.Data;
 using System.Collections.Generic;
 
-namespace LPSServer
+namespace LPS
 {
 	public interface IServer
 	{

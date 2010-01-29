@@ -3,9 +3,9 @@ using System.Data;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace LPSClient
+namespace LPS.Client
 {
-	public class ServerConnection: LPSServer.IServer, IDisposable
+	public class ServerConnection: LPS.IServer, IDisposable
 	{
 		static ServerConnection()
 		{

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LPSClient
+namespace LPS.Client
 {
 	public class FormFactory
 	{

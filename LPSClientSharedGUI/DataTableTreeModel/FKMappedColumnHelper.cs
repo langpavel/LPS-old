@@ -1,7 +1,7 @@
 using System;
 using System.Data;
 
-namespace LPSClient
+namespace LPS.Client
 {
 	public class FKMappedColumnHelper
 	{

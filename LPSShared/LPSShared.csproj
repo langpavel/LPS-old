@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>LPSShared</RootNamespace>
+    <RootNamespace>LPS</RootNamespace>
     <AssemblyName>LPSShared</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
@@ -45,6 +45,7 @@
     <Compile Include="DeepEnumerator.cs" />
     <Compile Include="ModulesTreeInfo.cs" />
     <Compile Include="ColumnInfo.cs" />
+    <Compile Include="TableInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

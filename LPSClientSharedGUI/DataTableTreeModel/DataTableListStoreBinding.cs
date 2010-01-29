@@ -5,7 +5,7 @@ using System.Data;
 using System.Runtime.InteropServices;
 using Gtk;
 
-namespace LPSClient
+namespace LPS.Client
 {
 	/// <summary>
 	/// Vytvori ListStore, kde prvni hodnota je row, druha je rezevovana

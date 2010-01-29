@@ -1,8 +1,9 @@
+/*
 using System;
 using Gtk;
 using Mono.WebBrowser;
 
-namespace LPSClient
+namespace LPS.Client
 {
 
 	public class HTMLMessageDialog : XmlDialogBase
@@ -25,6 +26,7 @@ namespace LPSClient
 					throw new ApplicationException("gluezilla needed");
 				}
 				browser.Load(scrolledwindow.Handle, 640,480);
+				browser.
 				scrolledwindow.ShowAll();
 			}
 			catch
@@ -40,7 +42,7 @@ namespace LPSClient
 			set { this.Window.Title = value; }
 		}
 		
-		/*
+		/ *
 		private string GetContentOf(string tag, string str)
 		{
 			int start = str.ToLower().IndexOf("<"+tag.ToLower()+">");
@@ -50,7 +52,7 @@ namespace LPSClient
 			else
 				return null;
 		}
-		*/
+		* /
 		
 		public string Html
 		{
@@ -78,3 +80,4 @@ namespace LPSClient
 		
 	}
 }
+*/

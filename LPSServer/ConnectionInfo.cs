@@ -8,7 +8,7 @@ using Npgsql;
 using System.Web.Services.Protocols;
 using System.Xml;
 
-namespace LPSServer
+namespace LPS.Server
 {
 	
 	public class ConnectionInfo : IDisposable

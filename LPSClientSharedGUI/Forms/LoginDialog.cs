@@ -2,7 +2,7 @@ using System;
 using Gtk;
 using Microsoft.Win32;
 
-namespace LPSClient
+namespace LPS.Client
 {
 
 	public class LoginDialog : XmlDialogBase

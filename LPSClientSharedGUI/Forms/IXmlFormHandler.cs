@@ -1,7 +1,8 @@
 using System;
 using Gtk;
+using LPS;
 
-namespace LPSClient
+namespace LPS.Client
 {
 	public interface IXmlFormHandler
 	{
