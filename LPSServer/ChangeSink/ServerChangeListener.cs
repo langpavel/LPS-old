@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace LPS.Server
 {
-	public class ServerChangeListener
+	public class ServerChangeListener: IDisposable
 	{
 		private DataSet data;
 		private Dictionary<string, DataTable> tables;
@@ -28,6 +28,7 @@ namespace LPS.Server
 			}
 			table.Columns.Add("_S", typeof(char));
 			table.PrimaryKey = new DataColumn[] { table.Columns[0] };
+			return table;
 		}
 		
 		private void AppendRow(DataTable table, long id, char type, DataRow src_row)
@@ -47,7 +48,7 @@ namespace LPS.Server
 			table.Rows.Add(new_row);
 		}
 		
-		private UpdateRow(DataRow new_row, char type, DataRow  src_row)
+		private void UpdateRow(DataTable table, DataRow new_row, char type, DataRow src_row)
 		{
 			int col_count = table.Columns.Count;
 			if(type != 'D')
@@ -62,7 +63,7 @@ namespace LPS.Server
 		{
 			lock(this)
 			{
-				if(tables.ContainsKey(table))
+				if(tables.ContainsKey(table_name))
 				{
 					DataTable table = tables[table_name];
 					if(table == null)
@@ -74,7 +75,7 @@ namespace LPS.Server
 					{
 						DataRow new_row = table.Rows.Find(id);
 						if(new_row != null)
-							UpdateRow(new_row, type, row);
+							UpdateRow(table, new_row, type, row);
 						else
 							AppendRow(table, id, type, row);
 					}
@@ -116,6 +117,17 @@ namespace LPS.Server
 				data = null;
 				tables = new Dictionary<string, DataTable>();
 				return result;
+			}
+		}
+		
+		public void Dispose()
+		{
+			lock(this)
+			{
+				if(data != null)
+					data.Dispose();
+				data = null;
+				tables = new Dictionary<string, DataTable>();
 			}
 		}
 	}
