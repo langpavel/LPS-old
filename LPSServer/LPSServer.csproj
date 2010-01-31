@@ -51,6 +51,7 @@
     <Compile Include="ConnectionInfo.cs" />
     <Compile Include="ChangeSink\ServerChangeSink.cs" />
     <Compile Include="ChangeSink\ServerChangeListener.cs" />
+    <Compile Include="DataTableUpdater.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

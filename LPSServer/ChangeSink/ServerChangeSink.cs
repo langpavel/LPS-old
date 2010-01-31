@@ -83,5 +83,35 @@ namespace LPS.Server
 			if(listener != null)
 				listener.Dispose();
 		}
+		
+		public static int RemoveOldListeners(double minutes)
+		{
+			int result = 0;
+			DateTime max_dt = DateTime.Now.AddMinutes(- minutes);
+			lock(listeners)
+			{
+				for(int i = 0; i < listeners.Count; i++)
+				{
+					ServerChangeListener listener = listeners[i];
+					if(listener != null && listener.last_access < max_dt)
+					{
+						listeners[i] = null;
+						listener.Dispose();
+						result++;
+					}
+				}
+			}
+			return result;
+		}
+		
+		public static ServerCallResult GetResult(int idx, int security)
+		{
+			if(idx < 0)
+				return null;
+			ServerChangeListener l = ServerChangeSink.GetListener(idx, security);
+			ServerCallResult result = new ServerCallResult();
+			result.Changes = l.GetChangesAndClear();
+			return result;
+		}
 	}
 }

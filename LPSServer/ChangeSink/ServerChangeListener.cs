@@ -8,11 +8,13 @@ namespace LPS.Server
 	{
 		private DataSet data;
 		private Dictionary<string, DataTable> tables;
+		internal DateTime last_access;
 		
 		public ServerChangeListener ()
 		{
 			data = null;
 			tables = new Dictionary<string, DataTable>();
+			last_access = DateTime.Now;
 		}
 		
 		public int SinkIndex { get; set; }
@@ -120,6 +122,7 @@ namespace LPS.Server
 		{
 			lock(this)
 			{
+				last_access = DateTime.Now;
 				DataSet result = data;
 				data = null;
 				tables = new Dictionary<string, DataTable>();

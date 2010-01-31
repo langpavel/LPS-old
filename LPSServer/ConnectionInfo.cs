@@ -13,20 +13,18 @@ namespace LPS.Server
 	
 	public class ConnectionInfo : IDisposable, IResourceStore
 	{
+		/// pro overeni hesla pri zmene
+		private string passwdhash;
+		
 		public long UserId { get; set; }
 		public string UserName { get; set; }
-		public NpgsqlConnection Connection { get; set; }
-		private string passwdhash;
-		public ResourceManager Resources;
-		
-		//private int ds_counter;
 
+		public NpgsqlConnection Connection { get; set; }
+		public ResourceManager Resources { get; set; }
+		
 		#region Management
 		private ConnectionInfo()
 		{
-			//StoredDataSets = new Dictionary<int, DataSetStoreItem>();
-			NpgsqlEventLog.Level = LogLevel.None;
-			//NpgsqlEventLog.LogName = "NpgsqlTests.LogFile";
 			Resources = new ResourceManager(this);
 		}
 
@@ -138,6 +136,7 @@ namespace LPS.Server
 			
 		public void Dispose()
 		{
+			this.Resources.Dispose();
 			Close();
 			if(Connection != null)
 			{
@@ -314,6 +313,11 @@ namespace LPS.Server
 			}
 		}
 		
+		public int SaveDataSetAndNotify()
+		{
+			return 0;
+		}
+		
 		private void WriteValue(StringBuilder sb, object val)
 		{
 			if(val == null || val is DBNull)
@@ -385,46 +389,140 @@ namespace LPS.Server
 					trans.Commit();
 					return result;
 				}
-				catch(SoapException)
+				catch
 				{
 					trans.Rollback();
 					throw;
-				}
-				catch(NpgsqlException err)
-				{
-					trans.Rollback();
-					throw RaiseNpgsqlException(err);
-				}
-				catch(Exception ex)
-				{
-					trans.Rollback();
-					throw new SoapException(String.Format("Save error: select SQL:\n{0}\nERR: {1}", selectSql, ex),
-						SoapException.ServerFaultCode);
 				}
 			}
 		}
 		
 		#endregion
 	
-		private SoapException RaiseNpgsqlException(NpgsqlException err)
-		{
-			StringBuilder sb = new StringBuilder();
-			sb.Append("SQL chyba ").AppendLine(err.Code);
-			sb.AppendLine("SQL:");
-			sb.AppendLine(err.ErrorSql);
-			sb.AppendLine(err.BaseMessage);
-			sb.AppendLine(err.Detail);
-			sb.AppendLine(err.HelpLink);
-			sb.AppendLine(err.Hint);
-			sb.AppendLine(err.Where);
-			return new SoapException(sb.ToString(),
-				SoapException.ServerFaultCode);
-		}
-		
 		public string GetTextResource(string path)
 		{
 			return Server._GetTextResource(path);
 		}
 		
+		public NpgsqlCommand CreateCommand(TableInfo table, string addsql)
+		{
+			string sql = table.ListSql ?? table.EditSql;
+			if(addsql == null)
+				addsql = "";
+			string sqllower = sql.ToLower();
+			int idx = sqllower.IndexOf("{where}");
+			bool isadd = String.IsNullOrEmpty(addsql.Trim());
+			string op;
+			if(idx >= 0)
+			{
+				op = isadd ? "" : " WHERE ";
+				return CreateCommand(sql.Substring(0, idx) + op + addsql + sql.Substring(idx + "{where}".Length));
+			}
+			idx = sqllower.IndexOf("{and}");
+			if(idx >= 0)
+			{
+				op = isadd ? "" : " AND ";
+				return CreateCommand(sql.Substring(0, idx) + op + addsql + sql.Substring(idx + "{and}".Length));
+			}
+			op = isadd ? "" : " WHERE ";
+			return CreateCommand(sql + op + addsql);
+		}
+
+		public NpgsqlCommand CreateCommand(TableInfo table, NpgsqlParameter[] parameters)
+		{
+			NpgsqlCommand command = CreateCommand();
+			string sql = table.ListSql ?? table.EditSql;
+			string sqllower = sql.ToLower();
+			StringBuilder paramstr = new StringBuilder();
+			bool first = true;
+			foreach(NpgsqlParameter parameter in parameters)
+			{
+				if(first) first = false; else paramstr.Append(" AND ");
+				object val = parameter.Value;
+				if(val == null || val is DBNull)
+					paramstr.AppendFormat("({0} IS NULL)", parameter.ParameterName);
+				else
+					paramstr.AppendFormat("({0} = :{0})", parameter.ParameterName);
+				command.Parameters.Add(parameter);
+			}
+			int idx = sqllower.IndexOf("{where}");
+			string op;
+			if(idx >= 0)
+			{
+				op = first ? "" : " WHERE ";
+				command.CommandText = sql.Substring(0, idx) + op + paramstr.ToString() + sql.Substring(idx + "{where}".Length);
+				return command;
+			}
+			idx = sqllower.IndexOf("{and}");
+			if(idx >= 0)
+			{
+				op = first ? "" : " AND ";
+				command.CommandText = sql.Substring(0, idx) + op + paramstr.ToString() + sql.Substring(idx + "{and}".Length);
+				return command;
+			}
+			op = first ? "" : " WHERE ";
+			command.CommandText = sql + op + paramstr.ToString();
+			return command;
+		}
+		
+		public DataSet GetDataSetByTableName(string table, NpgsqlParameter[] parameters)
+		{
+			TableInfo tableinfo = this.Resources.GetTableInfo(table);
+			DataSet ds = new DataSet();
+			using(NpgsqlTransaction trans = Connection.BeginTransaction())
+			{
+				using(NpgsqlCommand command = CreateCommand(tableinfo, parameters))
+				using(NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(command))
+				{
+					adapter.Fill(ds);
+					foreach(DataTable dt in ds.Tables)
+					{
+						DataColumn col = dt.Columns[0];
+						if(col.ColumnName == "id")
+						{
+							dt.PrimaryKey = new DataColumn[] { col };
+						}
+					}
+					ds.ExtendedProperties.Add("TABLE", table);
+					ds.ExtendedProperties.Add("SQL", command.CommandText);
+				}
+				trans.Commit();
+				return ds;
+			}
+		}
+		
+		public DataSet GetDataSetByTableName(string table, string addsql)
+		{
+			TableInfo tableinfo = this.Resources.GetTableInfo(table);
+			DataSet ds = new DataSet();
+			using(NpgsqlTransaction trans = Connection.BeginTransaction())
+			{
+				using(NpgsqlCommand command = CreateCommand(tableinfo, addsql))
+				using(NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(command))
+				{
+					adapter.Fill(ds);
+					foreach(DataTable dt in ds.Tables)
+					{
+						DataColumn col = dt.Columns[0];
+						if(col.ColumnName == "id")
+						{
+							dt.PrimaryKey = new DataColumn[] { col };
+						}
+					}
+					ds.ExtendedProperties.Add("TABLE", table);
+					ds.ExtendedProperties.Add("SQL", command.CommandText);
+				}
+				trans.Commit();
+				return ds;
+			}
+		}
+		
+		public int SaveDataSetByTableName(string tablename, DataSet changes)
+		{
+			using(DataTableUpdater updater = new DataTableUpdater(this, changes.Tables[0], tablename))
+			{
+				return updater.Run();
+			}
+		}
 	}
 }

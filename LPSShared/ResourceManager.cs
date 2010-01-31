@@ -6,7 +6,7 @@ using System.IO;
 
 namespace LPS
 {
-	public class ResourceManager
+	public class ResourceManager: IDisposable
 	{
 		#region Serialization helpers
 		public static T DeserializeObject<T>(string data)
@@ -84,6 +84,10 @@ namespace LPS
 			if(ModulesInfo.TryGetValue(name, out result))
 				return result;
 			throw new ResourceNotFoundException(String.Format("Nenalezeno resource tree.xml/{0}", name));
+		}
+		
+		public virtual void Dispose()
+		{
 		}
 	}
 }

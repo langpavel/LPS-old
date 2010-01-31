@@ -18,6 +18,7 @@ namespace LPS.Server
 	            Description="LPSoft server")]
 	public class Server: System.Web.Services.WebService
 	{
+		#region Helper not exported methods
 		private ConnectionInfo GetConnectionInfo()
 		{
 			ConnectionInfo ci = this.Session["CONN"] as ConnectionInfo;
@@ -36,16 +37,17 @@ namespace LPS.Server
 				result.Add(new NpgsqlParameter(p[i] as string, p[i+1]));
 			return result.ToArray();
 		}
+		#endregion
 		
 		#region Metody WebService bez session
 		[WebMethod(EnableSession=false)]
-		public ServerCallResult Ping()
+		public bool Ping()
 		{
-			return new ServerCallResult();
+			return true;
 		}
 		#endregion
 		
-		#region Metody WebService se session
+		#region Obecné metody WebService se session
 		[WebMethod(EnableSession=true)]
 		public long Login(string login, string password)
 		{
@@ -82,42 +84,19 @@ namespace LPS.Server
 		}
 		
 		[WebMethod(EnableSession=true)]
-		public void Logout()
-		{
-			ConnectionInfo ci = this.Session["CONN"] as ConnectionInfo;
-			if(ci != null)
-				ci.Dispose();
-			this.Session.Clear();
-		}
-		
-		[WebMethod(EnableSession=true)]
-		public int ExecuteNonquerySimple(string sql)
+		public int SimpleExecuteNonquery(string sql)
 		{
 			ConnectionInfo ci = GetConnectionInfo();
 			return ci.ExecuteNonquery(sql);
 		}
 
 		[WebMethod(EnableSession=true)]
-		public int ExecuteNonquery(string sql, params object[] parameters)
-		{
-			ConnectionInfo ci = GetConnectionInfo();
-			return ci.ExecuteNonquery(sql, GetNpgsqlParameters(parameters));
-		}
-		
-		[WebMethod(EnableSession=true)]
-		public object ExecuteScalarSimple(string sql)
+		public object SimpleExecuteScalar(string sql)
 		{
 			ConnectionInfo ci = GetConnectionInfo();
 			return ci.ExecuteScalar(sql);
 		}
 
-		[WebMethod(EnableSession=true)]
-		public object ExecuteScalar(string sql, params object[] parameters)
-		{
-			ConnectionInfo ci = GetConnectionInfo();
-			return ci.ExecuteScalar(sql, GetNpgsqlParameters(parameters));
-		}
-		
 		[WebMethod(EnableSession=true)]
 		public Int64 NextSeqValue(string generator)
 		{
@@ -134,22 +113,176 @@ namespace LPS.Server
 		}
 
 		[WebMethod(EnableSession=true)]
-		public DataSet GetDataSet(string sql, object[] parameters)
+		public DataSet GetDataSetByTableNameSimple(string tableName, string addsql)
 		{
 			ConnectionInfo ci = GetConnectionInfo();
-			return ci.GetDataSet(sql, GetNpgsqlParameters(parameters));
+			return ci.GetDataSetByTableName(tableName, addsql);
+		}
+		
+		[WebMethod(EnableSession=false)]
+		public ServerCallResult GetChanges(int sink, int security)
+		{
+			try
+			{
+				return ServerChangeSink.GetResult(sink, security);
+			}
+			catch(Exception err)
+			{
+				return new ServerCallResult(err); 
+			}
+		}
+		
+		[WebMethod(EnableSession=true)]
+		public ServerCallResult ExecuteNonquery(int sink, int security, string sql, object[] parameters, out int affected)
+		{
+			affected = 0;
+			try
+			{
+				ConnectionInfo ci = GetConnectionInfo();
+				affected = ci.ExecuteNonquery(sql, GetNpgsqlParameters(parameters));
+				return ServerChangeSink.GetResult(sink, security);
+			}
+			catch(Exception err)
+			{
+				return new ServerCallResult(err); 
+			}
+		}
+		
+
+		[WebMethod(EnableSession=true)]
+		public ServerCallResult ExecuteScalar(int sink, int security, string sql, object[] parameters, out object result)
+		{
+			result = null;
+			try
+			{
+				ConnectionInfo ci = GetConnectionInfo();
+				result = ci.ExecuteScalar(sql, GetNpgsqlParameters(parameters));
+				return ServerChangeSink.GetResult(sink, security);
+			}
+			catch(Exception err)
+			{
+				return new ServerCallResult(err); 
+			}
+		}
+		
+		[WebMethod(EnableSession=true)]
+		public ServerCallResult GetDataSet(int sink, int security, string sql, object[] parameters, out DataSet data)
+		{
+			data = null;
+			try
+			{
+				ConnectionInfo ci = GetConnectionInfo();
+				data = ci.GetDataSet(sql, GetNpgsqlParameters(parameters));
+				return ServerChangeSink.GetResult(sink, security);
+			}
+			catch(Exception err)
+			{
+				return new ServerCallResult(err); 
+			}
 		}
 
 		[WebMethod(EnableSession=true)]
-		public int SaveDataSet(DataSet changes, bool updateUserInfo, string selectSql, object[] parameters)
+		public ServerCallResult SaveDataSet(int sink, int security, DataSet changes, bool updateUserInfo, string selectSql, object[] parameters, out int affected)
 		{
-			ConnectionInfo ci = GetConnectionInfo();
-			return ci.SaveDataSet(changes, updateUserInfo, selectSql, GetNpgsqlParameters(parameters));
+			affected = 0;
+			try
+			{
+				ConnectionInfo ci = GetConnectionInfo();
+				affected = ci.SaveDataSet(changes, updateUserInfo, selectSql, GetNpgsqlParameters(parameters));
+				return ServerChangeSink.GetResult(sink, security);
+			}
+			catch(Exception err)
+			{
+				return new ServerCallResult(err); 
+			}
 		}
- 		
 		#endregion
+
+		[WebMethod(EnableSession=true)]
+		public ServerCallResult RegisterListener(out int sink, out int security)
+		{
+			sink = -1;
+			security = 0;
+			try
+			{
+				ServerChangeListener listener = ServerChangeSink.RegisterNewListener();
+				sink = listener.SinkIndex;
+				security = listener.Security;
+				return ServerChangeSink.GetResult(sink, security);
+			}
+			catch(Exception err)
+			{
+				return new ServerCallResult(err); 
+			}
+		}
+		
+		[WebMethod(EnableSession=true)]
+		public ServerCallResult RegisterListenerTable(int sink, int security, string table)
+		{
+			try
+			{
+				ServerChangeListener listener = ServerChangeSink.GetListener(sink, security);
+				listener.ListenTo(table);
+				return ServerChangeSink.GetResult(sink, security);
+			}
+			catch(Exception err)
+			{
+				return new ServerCallResult(err); 
+			}
+		}
+		
+		[WebMethod(EnableSession=true)]
+		public ServerCallResult UnregisterListenerTable(int sink, int security, string table)
+		{
+			try
+			{
+				ServerChangeListener listener = ServerChangeSink.GetListener(sink, security);
+				listener.StopListenTo(table);
+				return ServerChangeSink.GetResult(sink, security);
+			}
+			catch(Exception err)
+			{
+				return new ServerCallResult(err); 
+			}
+		}
+		
+		[WebMethod(EnableSession=true)]
+		public ServerCallResult UnregisterListener(int sink, int security)
+		{
+			try
+			{
+				ServerChangeSink.RemoveListener(sink, security);
+				return new ServerCallResult();
+			}
+			catch(Exception err)
+			{
+				return new ServerCallResult(err); 
+			}
+		}
+
+		[WebMethod(EnableSession=true)]
+		public ServerCallResult GetDataSetByTableName(int sink, int security, 
+			string table, object[] parameters, out DataSet result)
+		{
+			result = null;
+			try
+			{
+				ConnectionInfo ci = GetConnectionInfo();
+				result = ci.GetDataSetByTableName(table, GetNpgsqlParameters(parameters));
+				return ServerChangeSink.GetResult(sink, security);
+			}
+			catch(Exception err)
+			{
+				return new ServerCallResult(err); 
+			}
+		}
 		
 		[WebMethod(EnableSession=false, BufferResponse=false)]
+		public string GetTextResource(string path)
+		{
+			return _GetTextResource(path);
+		}
+		
 		public static string _GetTextResource(string path)
 		{
 			string resPath = "/var/www/LPS/resources";
@@ -176,5 +309,15 @@ namespace LPS.Server
 				return null;
 			}
 		}
+
+		[WebMethod(EnableSession=true)]
+		public void Logout()
+		{
+			ConnectionInfo ci = this.Session["CONN"] as ConnectionInfo;
+			if(ci != null)
+				ci.Dispose();
+			this.Session.Clear();
+		}
+		
 	}
 }

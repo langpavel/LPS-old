@@ -7,6 +7,7 @@ using System.Xml.Serialization;
 namespace LPS
 {
 	[Serializable]
+	[XmlRoot("table")]
 	public class TableInfo
 	{
 		public TableInfo ()
