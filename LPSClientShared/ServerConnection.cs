@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace LPS.Client
 {
-	public class ServerConnection: LPS.IResourceStore, IDisposable
+	public class ServerConnection: IResourceStore, IDisposable
 	{
 		static ServerConnection()
 		{
@@ -49,7 +49,7 @@ namespace LPS.Client
 		{ 
 			get
 			{
-				return this.GetCachedDataSet("select id, username, first_name, surname from users").Tables[0];
+				return this.GetCachedDataSet("users").Tables[0];
 			}
 		}
 
@@ -64,6 +64,8 @@ namespace LPS.Client
 		
 		private static System.Net.CookieContainer CookieContainer;
 		private LPSClientShared.LPSServer.Server Server;
+		private int sink = -1;
+		private int security = 0;
 		
 		public void Dispose()
 		{
@@ -71,11 +73,17 @@ namespace LPS.Client
 			this.Server.Dispose();
 			this.Server = null;
 		}
-		
-		#region IServer
-		public string Ping(string data)
+
+		public bool Ping()
 		{
-			return Server.Ping(data);
+			try
+			{
+				return Server.Ping();
+			}
+			catch
+			{
+				return false;
+			}
 		}
 		
 		public long Login(string login, string password)
@@ -112,9 +120,17 @@ namespace LPS.Client
 		
 		public int ExecuteNonquerySimple(string sql)
 		{
-			return Server.ExecuteNonquerySimple(sql);
+			return Server.SimpleExecuteNonquery(sql);
 		}
 
+		private void CheckServerResult(LPSClientShared.LPSServer.ServerCallResult result)
+		{
+			if(result == null)
+				return;
+			if(result.Exception != null)
+				throw ServerException.Create(result.Exception);
+		}
+		
 		public int ExecuteNonquery(string sql, Dictionary<string, object> parameters)
 		{
 			ArrayList p = new ArrayList(parameters.Count * 2);
@@ -123,17 +139,22 @@ namespace LPS.Client
 				p.Add(kv.Key);
 				p.Add(kv.Value);
 			}
-			return Server.ExecuteNonquery(sql, p.ToArray());
+
+			int affected;
+			CheckServerResult(Server.ExecuteNonquery(sink, security, sql, p.ToArray(), out affected));
+			return affected;
 		}
 		
 		public int ExecuteNonquery(string sql, params object[] parameters)
 		{
-			return Server.ExecuteNonquery(sql, parameters);
+			int affected;
+			CheckServerResult(Server.ExecuteNonquery(sink, security, sql, parameters, out affected));
+			return affected;
 		}
 		
 		public object ExecuteScalarSimple(string sql)
 		{
-			return Server.ExecuteScalarSimple(sql);
+			return Server.SimpleExecuteScalar(sql);
 		}
 
 		public object ExecuteScalar(string sql, Dictionary<string, object> parameters)
@@ -144,12 +165,16 @@ namespace LPS.Client
 				p.Add(kv.Key);
 				p.Add(kv.Value);
 			}
-			return Server.ExecuteScalar(sql, p.ToArray());
+			object result;
+			CheckServerResult(Server.ExecuteScalar(sink, security, sql, p.ToArray(), out result));
+			return result;
 		}
 		
 		public object ExecuteScalar(string sql, params object[] parameters)
 		{
-			return Server.ExecuteScalar(sql, parameters);
+			object result;
+			CheckServerResult(Server.ExecuteScalar(sink, security, sql, parameters, out result));
+			return result;
 		}
 		
 		public Int64 NextSeqValue(string generator)
@@ -162,6 +187,7 @@ namespace LPS.Client
 			return Server.GetTextResource(path);
 		}
 		
+		[Obsolete]
 		public DataSet GetDataSetSimple(string sql)
 		{
 			DataSet result = Server.GetDataSetSimple(sql);
@@ -170,28 +196,54 @@ namespace LPS.Client
 			return result;
 		}
 		
+		[Obsolete]
 		public DataSet GetDataSet(string sql, params object[] parameters)
 		{
-			DataSet result = Server.GetDataSet(sql, parameters);
+			DataSet result;
+			CheckServerResult(Server.GetDataSet(sink, security, sql, parameters, out result));
 			result.ExtendedProperties["sql"] = sql;
 			result.ExtendedProperties["parameters"] = parameters;
 			return result;
 		}
-		
+
+		[Obsolete]
 		public int SaveDataSet(DataSet changes, bool updateUserInfo, string selectSql, object[] parameters)
 		{
-			return Server.SaveDataSet(changes, updateUserInfo, selectSql, parameters);
+			int affected;
+			CheckServerResult(Server.SaveDataSet(sink, security, changes, updateUserInfo, selectSql, parameters, out affected));
+			return affected;
+		}
+		
+		public DataSet GetDataSetByTableName(string name, params object[] parameters)
+		{
+			DataSet result;
+			CheckServerResult(Server.GetDataSetByTableName(sink, security, name, parameters, out result));
+			result.ExtendedProperties.Add("TABLE", name);
+			return result;
 		}
 		
 		public int SaveDataSet(DataSet dataset, bool updateUserInfo)
 		{
 			if(!dataset.HasChanges())
 				return 0;
-			string selectSql = (string)dataset.ExtendedProperties["sql"];
-			object[] parameters = (object[])dataset.ExtendedProperties["parameters"];
-			int result = Server.SaveDataSet(dataset.GetChanges(), updateUserInfo, selectSql, parameters);
-			dataset.AcceptChanges();
-			return result;
+			int affected;
+			if(dataset.ExtendedProperties.ContainsKey("TABLE"))
+			{
+				string tablename = (string)dataset.ExtendedProperties["TABLE"];
+				using(DataSet changes = dataset.GetChanges())
+					CheckServerResult(Server.SaveDataSetByTableName(sink, security, tablename, changes, true, true, out affected));
+				return affected;
+			}
+			else
+			{
+				Console.WriteLine("DEPRECATED SAVE!");
+				string selectSql = (string)dataset.ExtendedProperties["sql"];
+				object[] parameters = (object[])dataset.ExtendedProperties["parameters"];
+				using(DataSet changes = dataset.GetChanges())
+					CheckServerResult(Server.SaveDataSet(sink, security, changes, updateUserInfo, selectSql, parameters, out affected));
+				dataset.AcceptChanges();
+				return affected;
+			}
 		}
 		
 		public int SaveDataSet(DataSet dataset)
@@ -199,6 +251,7 @@ namespace LPS.Client
 			return SaveDataSet(dataset, true);
 		}
 
+		[Obsolete]
 		public DataSet GetSameDataSet(DataSet dataset)
 		{
 			string selectSql = (string)dataset.ExtendedProperties["sql"];
@@ -217,26 +270,20 @@ namespace LPS.Client
 		}
 		
 		private Dictionary<string, DataSet> cached_datasets;
-		public DataSet GetCachedDataSet(string sql)
+		public DataSet GetCachedDataSet(string tableName)
 		{
 			DataSet result;
-			cached_datasets.TryGetValue(sql, out result);
+			cached_datasets.TryGetValue(tableName, out result);
 			if(result == null)
 			{
-				result = this.GetDataSetSimple(sql);
-				cached_datasets[sql] = result;
+				result = this.GetDataSetByTableName(tableName);
+				cached_datasets[tableName] = result;
 				result.Disposed += delegate(object sender, EventArgs e) {
-					cached_datasets.Remove(sql);
+					cached_datasets.Remove(tableName);
 				};
 			}
 			return result;
 		}
 		
-		public DataSet GetCachedDataSetCopy(string sql)
-		{
-			return GetCachedDataSet(sql).Copy();
-		}
-
-		#endregion
 	}
 }

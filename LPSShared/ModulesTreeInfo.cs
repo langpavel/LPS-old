@@ -37,6 +37,9 @@ namespace LPS
 		[XmlAttribute("text")]
 		public string Text { get; set; }
 		
+		[XmlAttribute("table")]
+		public string Table { get; set; }
+		
 		[XmlElement("desc")]
 		public string Description { get; set; }
 

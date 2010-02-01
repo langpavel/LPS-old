@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace LPS
 {
-	[XmlRoot("exception")]
+	[XmlRoot("exception", Namespace="http://lpsoft.org/server/")]
 	public class ExceptionInfo
 	{
 		public ExceptionInfo()
@@ -19,10 +19,14 @@ namespace LPS
 				InnerException = new ExceptionInfo(err.InnerException);
 		}
 
-		[XmlAttribute("name")]
 		public String Name { get; set; }
 		public String Message { get; set; }
 		public String StackTrace { get; set; }
+		
+		public int ErrCode { get; set; }
+		public String ErrCodeName { get; set; }
+		
+		public object[] Data { get; set; }
 		
 		public ExceptionInfo InnerException { get; set; }
 	}

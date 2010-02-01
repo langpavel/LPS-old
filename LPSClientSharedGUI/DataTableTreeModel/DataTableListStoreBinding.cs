@@ -19,11 +19,11 @@ namespace LPS.Client
 		{
 		}
 		
-		public DataTableListStoreBinding(TreeView view, DataTable dt, ModulesTreeInfo moduleInfo)
+		public DataTableListStoreBinding(TreeView view, DataTable dt, TableInfo tableinfo)
 		{
 			this.TreeView = view;
 			this.DataTable = dt;
-			this.ModuleInfo = moduleInfo;
+			this.TableInfo = tableinfo;
 			this.MappedColumns = new Dictionary<string, GetMappedColumnValue>();
 			//MappedColumns["id_user_create"] = new DataTableListStoreBinding.GetMappedColumnValue(GetUserName);
 			//MappedColumns["id_user_modify"] = new DataTableListStoreBinding.GetMappedColumnValue(GetUserName);
@@ -34,7 +34,7 @@ namespace LPS.Client
 		public ListStore ListStore { get; set; }
 		public TreeModelFilter Filter { get; set; }
 		public ListStore ColumnList { get; set; }
-		public ModulesTreeInfo ModuleInfo { get; set; }
+		public TableInfo TableInfo { get; set; }
 		//public TreeModelSort Sort { get; set; }
 		public bool UseMarkup { get; set; }
 
@@ -64,7 +64,7 @@ namespace LPS.Client
 		
 		public ColumnInfo GetColumnInfo(string name)
 		{
-			foreach(ColumnInfo col in ModuleInfo.Columns)
+			foreach(ColumnInfo col in this.TableInfo.Columns)
 			{
 				if(col.Name == name)
 					return col;
@@ -72,7 +72,7 @@ namespace LPS.Client
 			ColumnInfo result = new ColumnInfo();
 			result.Caption = name.Replace('_',' ');
 			result.Description = "(automaticky vytvořeno)";
-			ModuleInfo.Columns.Add(result);
+			this.TableInfo.Columns.Add(result);
 			return result;
 		}
 		
@@ -105,8 +105,8 @@ namespace LPS.Client
 				else if(!String.IsNullOrEmpty(colinfo.FkReferenceTable) && !String.IsNullOrEmpty(colinfo.FkReplaceColumns))
 				{
 					FKMappedColumnHelper helper = new FKMappedColumnHelper(colinfo.FkReferenceTable, colinfo.FkReplaceColumns);
-					if(!String.IsNullOrEmpty(colinfo.DisplayFormat))
-						helper.DisplayFormat = colinfo.DisplayFormat;
+					//if(!String.IsNullOrEmpty(colinfo.DisplayFormat))
+					//	helper.DisplayFormat = colinfo.DisplayFormat;
 					getValFuncs[i] = helper.GetDisplayValue;
 					types.Add(typeof(string));
 					types.Add(typeof(bool));

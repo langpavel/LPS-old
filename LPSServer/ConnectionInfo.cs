@@ -517,10 +517,12 @@ namespace LPS.Server
 			}
 		}
 		
-		public int SaveDataSetByTableName(string tablename, DataSet changes)
+		public int SaveDataSetByTableName(string tablename, DataSet changes, bool updateUserInfo, bool changesNotify)
 		{
 			using(DataTableUpdater updater = new DataTableUpdater(this, changes.Tables[0], tablename))
 			{
+				updater.UpdateUserInfo = updateUserInfo;
+				updater.NotifyChangeSink = changesNotify;
 				return updater.Run();
 			}
 		}

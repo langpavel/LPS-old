@@ -52,6 +52,8 @@
     <Compile Include="ChangeSink\ServerChangeSink.cs" />
     <Compile Include="ChangeSink\ServerChangeListener.cs" />
     <Compile Include="DataTableUpdater.cs" />
+    <Compile Include="ServerCallResult.cs" />
+    <Compile Include="ExceptionInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

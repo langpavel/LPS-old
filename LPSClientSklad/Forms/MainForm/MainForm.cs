@@ -194,19 +194,6 @@ namespace LPS.Client.Sklad
 			}
 		}
 		
-		public void RowActivated(object sender, RowActivatedArgs args)
-		{
-			try
-			{
-				TreeView view = (TreeView)sender;
-				OpenDetailForm(view, args.Path);
-			}
-			catch(Exception err)
-			{
-				Console.WriteLine(err.ToString());
-			}
-		}
-
 		public void ShowModuleTab(ModulesTreeInfo info)
 		{
 			if(String.IsNullOrEmpty(info.ListSql))
@@ -220,7 +207,6 @@ namespace LPS.Client.Sklad
 			else
 			{
 				tw = new TreeView();
-				tw.RowActivated += RowActivated;
 				HBox header = new HBox();
 				header.Add(new Label(info.Text));
 				Image img = new Image("gtk-close", IconSize.Menu);
@@ -241,8 +227,9 @@ namespace LPS.Client.Sklad
 				//nbData.SetTabDetachable(page, true);
 				
 				DataSet ds = Connection.GetDataSetSimple(info.ListSql);
-				
-				DataTableListStoreBinding binding = new DataTableListStoreBinding(tw, ds.Tables[0], info);
+
+				TableInfo tableinfo = Connection.Resources.GetTableInfo(info.Table);
+				DataTableListStoreBinding binding = new DataTableListStoreBinding(tw, ds.Tables[0], tableinfo);
 				binding.Bind();
 				binding.Sorting = "id";
 				SetColumnsView(binding);

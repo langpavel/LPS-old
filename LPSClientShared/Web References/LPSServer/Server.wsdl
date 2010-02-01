@@ -3,16 +3,12 @@
   <types>
     <xs:schema elementFormDefault="qualified" targetNamespace="http://lpsoft.org/server/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:element name="Ping">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="data" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
+        <xs:complexType />
       </xs:element>
       <xs:element name="PingResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="PingResult" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="PingResult" type="xs:boolean" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -56,72 +52,60 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="Logout">
-        <xs:complexType />
-      </xs:element>
-      <xs:element name="LogoutResponse">
-        <xs:complexType />
-      </xs:element>
-      <xs:element name="ExecuteNonquerySimple">
+      <xs:element name="SimpleExecuteNonquery">
         <xs:complexType>
           <xs:sequence>
             <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="ExecuteNonquerySimpleResponse">
+      <xs:element name="SimpleExecuteNonqueryResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="1" maxOccurs="1" name="ExecuteNonquerySimpleResult" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="SimpleExecuteNonqueryResult" type="xs:int" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="SimpleExecuteScalar">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ExceptionInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Message" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="StackTrace" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ErrCode" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ErrCodeName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Data" type="s0:ArrayOfAnyType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="InnerException" type="s0:ExceptionInfo" />
+        </xs:sequence>
+      </xs:complexType>
       <xs:complexType name="ArrayOfAnyType">
         <xs:sequence>
           <xs:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
         </xs:sequence>
       </xs:complexType>
-      <xs:element name="ExecuteNonquery">
+      <xs:complexType name="ServerCallResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Changes">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element ref="xs:schema" />
+                <xs:any />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="Exception" type="s0:ExceptionInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SimpleExecuteScalarResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
-            <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfAnyType" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="ExecuteNonqueryResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="1" maxOccurs="1" name="ExecuteNonqueryResult" type="xs:int" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="ExecuteScalarSimple">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="ExecuteScalarSimpleResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="ExecuteScalarSimpleResult" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="ExecuteScalar">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
-            <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfAnyType" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="ExecuteScalarResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="ExecuteScalarResult" />
+            <xs:element minOccurs="0" maxOccurs="1" name="SimpleExecuteScalarResult" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -160,9 +144,84 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="GetDataSetByTableNameSimple">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="tableName" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="addsql" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDataSetByTableNameSimpleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetDataSetByTableNameSimpleResult">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="xs:schema" />
+                  <xs:any />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetChanges">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetChangesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetChangesResult" type="s0:ServerCallResult" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteNonquery">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
+            <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfAnyType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteNonqueryResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="ExecuteNonqueryResult" type="s0:ServerCallResult" />
+            <xs:element minOccurs="1" maxOccurs="1" name="affected" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteScalar">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
+            <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfAnyType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteScalarResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="ExecuteScalarResult" type="s0:ServerCallResult" />
+            <xs:element minOccurs="0" maxOccurs="1" name="result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="GetDataSet">
         <xs:complexType>
           <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
             <xs:element minOccurs="0" maxOccurs="1" name="sql" type="xs:string" />
             <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfAnyType" />
           </xs:sequence>
@@ -171,7 +230,8 @@
       <xs:element name="GetDataSetResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="GetDataSetResult">
+            <xs:element minOccurs="0" maxOccurs="1" name="GetDataSetResult" type="s0:ServerCallResult" />
+            <xs:element minOccurs="0" maxOccurs="1" name="data">
               <xs:complexType>
                 <xs:sequence>
                   <xs:element ref="xs:schema" />
@@ -185,6 +245,8 @@
       <xs:element name="SaveDataSet">
         <xs:complexType>
           <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
             <xs:element minOccurs="0" maxOccurs="1" name="changes">
               <xs:complexType>
                 <xs:sequence>
@@ -202,7 +264,119 @@
       <xs:element name="SaveDataSetResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="1" maxOccurs="1" name="SaveDataSetResult" type="xs:int" />
+            <xs:element minOccurs="0" maxOccurs="1" name="SaveDataSetResult" type="s0:ServerCallResult" />
+            <xs:element minOccurs="1" maxOccurs="1" name="affected" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SaveDataSetByTableName">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
+            <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="changes">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="xs:schema" />
+                  <xs:any />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="updateUserInfo" type="xs:boolean" />
+            <xs:element minOccurs="1" maxOccurs="1" name="changesNotify" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SaveDataSetByTableNameResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="SaveDataSetByTableNameResult" type="s0:ServerCallResult" />
+            <xs:element minOccurs="1" maxOccurs="1" name="affected" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RegisterListener">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="RegisterListenerResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RegisterListenerResult" type="s0:ServerCallResult" />
+            <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RegisterListenerTable">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
+            <xs:element minOccurs="0" maxOccurs="1" name="table" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RegisterListenerTableResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RegisterListenerTableResult" type="s0:ServerCallResult" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UnregisterListenerTable">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
+            <xs:element minOccurs="0" maxOccurs="1" name="table" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UnregisterListenerTableResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="UnregisterListenerTableResult" type="s0:ServerCallResult" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UnregisterListener">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UnregisterListenerResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="UnregisterListenerResult" type="s0:ServerCallResult" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDataSetByTableName">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
+            <xs:element minOccurs="0" maxOccurs="1" name="table" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfAnyType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDataSetByTableNameResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetDataSetByTableNameResult" type="s0:ServerCallResult" />
+            <xs:element minOccurs="0" maxOccurs="1" name="result">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="xs:schema" />
+                  <xs:any />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -220,9 +394,15 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="string" nillable="true" type="xs:string" />
-      <xs:element name="long" type="xs:long" />
+      <xs:element name="Logout">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="LogoutResponse">
+        <xs:complexType />
+      </xs:element>
       <xs:element name="boolean" type="xs:boolean" />
+      <xs:element name="long" type="xs:long" />
+      <xs:element name="string" nillable="true" type="xs:string" />
       <xs:element name="int" type="xs:int" />
       <xs:element name="DataSet" nillable="true">
         <xs:complexType>
@@ -232,6 +412,7 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="result" nillable="true" type="s0:ServerCallResult" />
     </xs:schema>
   </types>
   <message name="PingSoapIn">
@@ -258,35 +439,17 @@
   <message name="ChangePasswordSoapOut">
     <part name="parameters" element="s0:ChangePasswordResponse" />
   </message>
-  <message name="LogoutSoapIn">
-    <part name="parameters" element="s0:Logout" />
+  <message name="SimpleExecuteNonquerySoapIn">
+    <part name="parameters" element="s0:SimpleExecuteNonquery" />
   </message>
-  <message name="LogoutSoapOut">
-    <part name="parameters" element="s0:LogoutResponse" />
+  <message name="SimpleExecuteNonquerySoapOut">
+    <part name="parameters" element="s0:SimpleExecuteNonqueryResponse" />
   </message>
-  <message name="ExecuteNonquerySimpleSoapIn">
-    <part name="parameters" element="s0:ExecuteNonquerySimple" />
+  <message name="SimpleExecuteScalarSoapIn">
+    <part name="parameters" element="s0:SimpleExecuteScalar" />
   </message>
-  <message name="ExecuteNonquerySimpleSoapOut">
-    <part name="parameters" element="s0:ExecuteNonquerySimpleResponse" />
-  </message>
-  <message name="ExecuteNonquerySoapIn">
-    <part name="parameters" element="s0:ExecuteNonquery" />
-  </message>
-  <message name="ExecuteNonquerySoapOut">
-    <part name="parameters" element="s0:ExecuteNonqueryResponse" />
-  </message>
-  <message name="ExecuteScalarSimpleSoapIn">
-    <part name="parameters" element="s0:ExecuteScalarSimple" />
-  </message>
-  <message name="ExecuteScalarSimpleSoapOut">
-    <part name="parameters" element="s0:ExecuteScalarSimpleResponse" />
-  </message>
-  <message name="ExecuteScalarSoapIn">
-    <part name="parameters" element="s0:ExecuteScalar" />
-  </message>
-  <message name="ExecuteScalarSoapOut">
-    <part name="parameters" element="s0:ExecuteScalarResponse" />
+  <message name="SimpleExecuteScalarSoapOut">
+    <part name="parameters" element="s0:SimpleExecuteScalarResponse" />
   </message>
   <message name="NextSeqValueSoapIn">
     <part name="parameters" element="s0:NextSeqValue" />
@@ -300,6 +463,30 @@
   <message name="GetDataSetSimpleSoapOut">
     <part name="parameters" element="s0:GetDataSetSimpleResponse" />
   </message>
+  <message name="GetDataSetByTableNameSimpleSoapIn">
+    <part name="parameters" element="s0:GetDataSetByTableNameSimple" />
+  </message>
+  <message name="GetDataSetByTableNameSimpleSoapOut">
+    <part name="parameters" element="s0:GetDataSetByTableNameSimpleResponse" />
+  </message>
+  <message name="GetChangesSoapIn">
+    <part name="parameters" element="s0:GetChanges" />
+  </message>
+  <message name="GetChangesSoapOut">
+    <part name="parameters" element="s0:GetChangesResponse" />
+  </message>
+  <message name="ExecuteNonquerySoapIn">
+    <part name="parameters" element="s0:ExecuteNonquery" />
+  </message>
+  <message name="ExecuteNonquerySoapOut">
+    <part name="parameters" element="s0:ExecuteNonqueryResponse" />
+  </message>
+  <message name="ExecuteScalarSoapIn">
+    <part name="parameters" element="s0:ExecuteScalar" />
+  </message>
+  <message name="ExecuteScalarSoapOut">
+    <part name="parameters" element="s0:ExecuteScalarResponse" />
+  </message>
   <message name="GetDataSetSoapIn">
     <part name="parameters" element="s0:GetDataSet" />
   </message>
@@ -312,17 +499,57 @@
   <message name="SaveDataSetSoapOut">
     <part name="parameters" element="s0:SaveDataSetResponse" />
   </message>
+  <message name="SaveDataSetByTableNameSoapIn">
+    <part name="parameters" element="s0:SaveDataSetByTableName" />
+  </message>
+  <message name="SaveDataSetByTableNameSoapOut">
+    <part name="parameters" element="s0:SaveDataSetByTableNameResponse" />
+  </message>
+  <message name="RegisterListenerSoapIn">
+    <part name="parameters" element="s0:RegisterListener" />
+  </message>
+  <message name="RegisterListenerSoapOut">
+    <part name="parameters" element="s0:RegisterListenerResponse" />
+  </message>
+  <message name="RegisterListenerTableSoapIn">
+    <part name="parameters" element="s0:RegisterListenerTable" />
+  </message>
+  <message name="RegisterListenerTableSoapOut">
+    <part name="parameters" element="s0:RegisterListenerTableResponse" />
+  </message>
+  <message name="UnregisterListenerTableSoapIn">
+    <part name="parameters" element="s0:UnregisterListenerTable" />
+  </message>
+  <message name="UnregisterListenerTableSoapOut">
+    <part name="parameters" element="s0:UnregisterListenerTableResponse" />
+  </message>
+  <message name="UnregisterListenerSoapIn">
+    <part name="parameters" element="s0:UnregisterListener" />
+  </message>
+  <message name="UnregisterListenerSoapOut">
+    <part name="parameters" element="s0:UnregisterListenerResponse" />
+  </message>
+  <message name="GetDataSetByTableNameSoapIn">
+    <part name="parameters" element="s0:GetDataSetByTableName" />
+  </message>
+  <message name="GetDataSetByTableNameSoapOut">
+    <part name="parameters" element="s0:GetDataSetByTableNameResponse" />
+  </message>
   <message name="GetTextResourceSoapIn">
     <part name="parameters" element="s0:GetTextResource" />
   </message>
   <message name="GetTextResourceSoapOut">
     <part name="parameters" element="s0:GetTextResourceResponse" />
   </message>
-  <message name="PingHttpGetIn">
-    <part name="data" type="s:string" />
+  <message name="LogoutSoapIn">
+    <part name="parameters" element="s0:Logout" />
   </message>
+  <message name="LogoutSoapOut">
+    <part name="parameters" element="s0:LogoutResponse" />
+  </message>
+  <message name="PingHttpGetIn" />
   <message name="PingHttpGetOut">
-    <part name="Body" element="s0:string" />
+    <part name="Body" element="s0:boolean" />
   </message>
   <message name="LoginHttpGetIn">
     <part name="login" type="s:string" />
@@ -342,18 +569,16 @@
   <message name="ChangePasswordHttpGetOut">
     <part name="Body" element="s0:boolean" />
   </message>
-  <message name="LogoutHttpGetIn" />
-  <message name="LogoutHttpGetOut" />
-  <message name="ExecuteNonquerySimpleHttpGetIn">
+  <message name="SimpleExecuteNonqueryHttpGetIn">
     <part name="sql" type="s:string" />
   </message>
-  <message name="ExecuteNonquerySimpleHttpGetOut">
+  <message name="SimpleExecuteNonqueryHttpGetOut">
     <part name="Body" element="s0:int" />
   </message>
-  <message name="ExecuteScalarSimpleHttpGetIn">
+  <message name="SimpleExecuteScalarHttpGetIn">
     <part name="sql" type="s:string" />
   </message>
-  <message name="ExecuteScalarSimpleHttpGetOut">
+  <message name="SimpleExecuteScalarHttpGetOut">
     <part name="Body" element="s0:anyType" />
   </message>
   <message name="NextSeqValueHttpGetIn">
@@ -368,17 +593,54 @@
   <message name="GetDataSetSimpleHttpGetOut">
     <part name="Body" element="s0:DataSet" />
   </message>
+  <message name="GetDataSetByTableNameSimpleHttpGetIn">
+    <part name="tableName" type="s:string" />
+    <part name="addsql" type="s:string" />
+  </message>
+  <message name="GetDataSetByTableNameSimpleHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="GetChangesHttpGetIn">
+    <part name="sink" type="s:int" />
+    <part name="security" type="s:int" />
+  </message>
+  <message name="GetChangesHttpGetOut">
+    <part name="Body" element="s0:result" />
+  </message>
+  <message name="RegisterListenerTableHttpGetIn">
+    <part name="sink" type="s:int" />
+    <part name="security" type="s:int" />
+    <part name="table" type="s:string" />
+  </message>
+  <message name="RegisterListenerTableHttpGetOut">
+    <part name="Body" element="s0:result" />
+  </message>
+  <message name="UnregisterListenerTableHttpGetIn">
+    <part name="sink" type="s:int" />
+    <part name="security" type="s:int" />
+    <part name="table" type="s:string" />
+  </message>
+  <message name="UnregisterListenerTableHttpGetOut">
+    <part name="Body" element="s0:result" />
+  </message>
+  <message name="UnregisterListenerHttpGetIn">
+    <part name="sink" type="s:int" />
+    <part name="security" type="s:int" />
+  </message>
+  <message name="UnregisterListenerHttpGetOut">
+    <part name="Body" element="s0:result" />
+  </message>
   <message name="GetTextResourceHttpGetIn">
     <part name="path" type="s:string" />
   </message>
   <message name="GetTextResourceHttpGetOut">
     <part name="Body" element="s0:string" />
   </message>
-  <message name="PingHttpPostIn">
-    <part name="data" type="s:string" />
-  </message>
+  <message name="LogoutHttpGetIn" />
+  <message name="LogoutHttpGetOut" />
+  <message name="PingHttpPostIn" />
   <message name="PingHttpPostOut">
-    <part name="Body" element="s0:string" />
+    <part name="Body" element="s0:boolean" />
   </message>
   <message name="LoginHttpPostIn">
     <part name="login" type="s:string" />
@@ -398,18 +660,16 @@
   <message name="ChangePasswordHttpPostOut">
     <part name="Body" element="s0:boolean" />
   </message>
-  <message name="LogoutHttpPostIn" />
-  <message name="LogoutHttpPostOut" />
-  <message name="ExecuteNonquerySimpleHttpPostIn">
+  <message name="SimpleExecuteNonqueryHttpPostIn">
     <part name="sql" type="s:string" />
   </message>
-  <message name="ExecuteNonquerySimpleHttpPostOut">
+  <message name="SimpleExecuteNonqueryHttpPostOut">
     <part name="Body" element="s0:int" />
   </message>
-  <message name="ExecuteScalarSimpleHttpPostIn">
+  <message name="SimpleExecuteScalarHttpPostIn">
     <part name="sql" type="s:string" />
   </message>
-  <message name="ExecuteScalarSimpleHttpPostOut">
+  <message name="SimpleExecuteScalarHttpPostOut">
     <part name="Body" element="s0:anyType" />
   </message>
   <message name="NextSeqValueHttpPostIn">
@@ -424,12 +684,51 @@
   <message name="GetDataSetSimpleHttpPostOut">
     <part name="Body" element="s0:DataSet" />
   </message>
+  <message name="GetDataSetByTableNameSimpleHttpPostIn">
+    <part name="tableName" type="s:string" />
+    <part name="addsql" type="s:string" />
+  </message>
+  <message name="GetDataSetByTableNameSimpleHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="GetChangesHttpPostIn">
+    <part name="sink" type="s:int" />
+    <part name="security" type="s:int" />
+  </message>
+  <message name="GetChangesHttpPostOut">
+    <part name="Body" element="s0:result" />
+  </message>
+  <message name="RegisterListenerTableHttpPostIn">
+    <part name="sink" type="s:int" />
+    <part name="security" type="s:int" />
+    <part name="table" type="s:string" />
+  </message>
+  <message name="RegisterListenerTableHttpPostOut">
+    <part name="Body" element="s0:result" />
+  </message>
+  <message name="UnregisterListenerTableHttpPostIn">
+    <part name="sink" type="s:int" />
+    <part name="security" type="s:int" />
+    <part name="table" type="s:string" />
+  </message>
+  <message name="UnregisterListenerTableHttpPostOut">
+    <part name="Body" element="s0:result" />
+  </message>
+  <message name="UnregisterListenerHttpPostIn">
+    <part name="sink" type="s:int" />
+    <part name="security" type="s:int" />
+  </message>
+  <message name="UnregisterListenerHttpPostOut">
+    <part name="Body" element="s0:result" />
+  </message>
   <message name="GetTextResourceHttpPostIn">
     <part name="path" type="s:string" />
   </message>
   <message name="GetTextResourceHttpPostOut">
     <part name="Body" element="s0:string" />
   </message>
+  <message name="LogoutHttpPostIn" />
+  <message name="LogoutHttpPostOut" />
   <portType name="ServerSoap">
     <operation name="Ping">
       <input message="s0:PingSoapIn" />
@@ -447,25 +746,13 @@
       <input message="s0:ChangePasswordSoapIn" />
       <output message="s0:ChangePasswordSoapOut" />
     </operation>
-    <operation name="Logout">
-      <input message="s0:LogoutSoapIn" />
-      <output message="s0:LogoutSoapOut" />
+    <operation name="SimpleExecuteNonquery">
+      <input message="s0:SimpleExecuteNonquerySoapIn" />
+      <output message="s0:SimpleExecuteNonquerySoapOut" />
     </operation>
-    <operation name="ExecuteNonquerySimple">
-      <input message="s0:ExecuteNonquerySimpleSoapIn" />
-      <output message="s0:ExecuteNonquerySimpleSoapOut" />
-    </operation>
-    <operation name="ExecuteNonquery">
-      <input message="s0:ExecuteNonquerySoapIn" />
-      <output message="s0:ExecuteNonquerySoapOut" />
-    </operation>
-    <operation name="ExecuteScalarSimple">
-      <input message="s0:ExecuteScalarSimpleSoapIn" />
-      <output message="s0:ExecuteScalarSimpleSoapOut" />
-    </operation>
-    <operation name="ExecuteScalar">
-      <input message="s0:ExecuteScalarSoapIn" />
-      <output message="s0:ExecuteScalarSoapOut" />
+    <operation name="SimpleExecuteScalar">
+      <input message="s0:SimpleExecuteScalarSoapIn" />
+      <output message="s0:SimpleExecuteScalarSoapOut" />
     </operation>
     <operation name="NextSeqValue">
       <input message="s0:NextSeqValueSoapIn" />
@@ -475,6 +762,22 @@
       <input message="s0:GetDataSetSimpleSoapIn" />
       <output message="s0:GetDataSetSimpleSoapOut" />
     </operation>
+    <operation name="GetDataSetByTableNameSimple">
+      <input message="s0:GetDataSetByTableNameSimpleSoapIn" />
+      <output message="s0:GetDataSetByTableNameSimpleSoapOut" />
+    </operation>
+    <operation name="GetChanges">
+      <input message="s0:GetChangesSoapIn" />
+      <output message="s0:GetChangesSoapOut" />
+    </operation>
+    <operation name="ExecuteNonquery">
+      <input message="s0:ExecuteNonquerySoapIn" />
+      <output message="s0:ExecuteNonquerySoapOut" />
+    </operation>
+    <operation name="ExecuteScalar">
+      <input message="s0:ExecuteScalarSoapIn" />
+      <output message="s0:ExecuteScalarSoapOut" />
+    </operation>
     <operation name="GetDataSet">
       <input message="s0:GetDataSetSoapIn" />
       <output message="s0:GetDataSetSoapOut" />
@@ -483,9 +786,37 @@
       <input message="s0:SaveDataSetSoapIn" />
       <output message="s0:SaveDataSetSoapOut" />
     </operation>
+    <operation name="SaveDataSetByTableName">
+      <input message="s0:SaveDataSetByTableNameSoapIn" />
+      <output message="s0:SaveDataSetByTableNameSoapOut" />
+    </operation>
+    <operation name="RegisterListener">
+      <input message="s0:RegisterListenerSoapIn" />
+      <output message="s0:RegisterListenerSoapOut" />
+    </operation>
+    <operation name="RegisterListenerTable">
+      <input message="s0:RegisterListenerTableSoapIn" />
+      <output message="s0:RegisterListenerTableSoapOut" />
+    </operation>
+    <operation name="UnregisterListenerTable">
+      <input message="s0:UnregisterListenerTableSoapIn" />
+      <output message="s0:UnregisterListenerTableSoapOut" />
+    </operation>
+    <operation name="UnregisterListener">
+      <input message="s0:UnregisterListenerSoapIn" />
+      <output message="s0:UnregisterListenerSoapOut" />
+    </operation>
+    <operation name="GetDataSetByTableName">
+      <input message="s0:GetDataSetByTableNameSoapIn" />
+      <output message="s0:GetDataSetByTableNameSoapOut" />
+    </operation>
     <operation name="GetTextResource">
       <input message="s0:GetTextResourceSoapIn" />
       <output message="s0:GetTextResourceSoapOut" />
+    </operation>
+    <operation name="Logout">
+      <input message="s0:LogoutSoapIn" />
+      <output message="s0:LogoutSoapOut" />
     </operation>
   </portType>
   <portType name="ServerSoap12">
@@ -505,25 +836,13 @@
       <input message="s0:ChangePasswordSoapIn" />
       <output message="s0:ChangePasswordSoapOut" />
     </operation>
-    <operation name="Logout">
-      <input message="s0:LogoutSoapIn" />
-      <output message="s0:LogoutSoapOut" />
+    <operation name="SimpleExecuteNonquery">
+      <input message="s0:SimpleExecuteNonquerySoapIn" />
+      <output message="s0:SimpleExecuteNonquerySoapOut" />
     </operation>
-    <operation name="ExecuteNonquerySimple">
-      <input message="s0:ExecuteNonquerySimpleSoapIn" />
-      <output message="s0:ExecuteNonquerySimpleSoapOut" />
-    </operation>
-    <operation name="ExecuteNonquery">
-      <input message="s0:ExecuteNonquerySoapIn" />
-      <output message="s0:ExecuteNonquerySoapOut" />
-    </operation>
-    <operation name="ExecuteScalarSimple">
-      <input message="s0:ExecuteScalarSimpleSoapIn" />
-      <output message="s0:ExecuteScalarSimpleSoapOut" />
-    </operation>
-    <operation name="ExecuteScalar">
-      <input message="s0:ExecuteScalarSoapIn" />
-      <output message="s0:ExecuteScalarSoapOut" />
+    <operation name="SimpleExecuteScalar">
+      <input message="s0:SimpleExecuteScalarSoapIn" />
+      <output message="s0:SimpleExecuteScalarSoapOut" />
     </operation>
     <operation name="NextSeqValue">
       <input message="s0:NextSeqValueSoapIn" />
@@ -533,6 +852,22 @@
       <input message="s0:GetDataSetSimpleSoapIn" />
       <output message="s0:GetDataSetSimpleSoapOut" />
     </operation>
+    <operation name="GetDataSetByTableNameSimple">
+      <input message="s0:GetDataSetByTableNameSimpleSoapIn" />
+      <output message="s0:GetDataSetByTableNameSimpleSoapOut" />
+    </operation>
+    <operation name="GetChanges">
+      <input message="s0:GetChangesSoapIn" />
+      <output message="s0:GetChangesSoapOut" />
+    </operation>
+    <operation name="ExecuteNonquery">
+      <input message="s0:ExecuteNonquerySoapIn" />
+      <output message="s0:ExecuteNonquerySoapOut" />
+    </operation>
+    <operation name="ExecuteScalar">
+      <input message="s0:ExecuteScalarSoapIn" />
+      <output message="s0:ExecuteScalarSoapOut" />
+    </operation>
     <operation name="GetDataSet">
       <input message="s0:GetDataSetSoapIn" />
       <output message="s0:GetDataSetSoapOut" />
@@ -541,9 +876,37 @@
       <input message="s0:SaveDataSetSoapIn" />
       <output message="s0:SaveDataSetSoapOut" />
     </operation>
+    <operation name="SaveDataSetByTableName">
+      <input message="s0:SaveDataSetByTableNameSoapIn" />
+      <output message="s0:SaveDataSetByTableNameSoapOut" />
+    </operation>
+    <operation name="RegisterListener">
+      <input message="s0:RegisterListenerSoapIn" />
+      <output message="s0:RegisterListenerSoapOut" />
+    </operation>
+    <operation name="RegisterListenerTable">
+      <input message="s0:RegisterListenerTableSoapIn" />
+      <output message="s0:RegisterListenerTableSoapOut" />
+    </operation>
+    <operation name="UnregisterListenerTable">
+      <input message="s0:UnregisterListenerTableSoapIn" />
+      <output message="s0:UnregisterListenerTableSoapOut" />
+    </operation>
+    <operation name="UnregisterListener">
+      <input message="s0:UnregisterListenerSoapIn" />
+      <output message="s0:UnregisterListenerSoapOut" />
+    </operation>
+    <operation name="GetDataSetByTableName">
+      <input message="s0:GetDataSetByTableNameSoapIn" />
+      <output message="s0:GetDataSetByTableNameSoapOut" />
+    </operation>
     <operation name="GetTextResource">
       <input message="s0:GetTextResourceSoapIn" />
       <output message="s0:GetTextResourceSoapOut" />
+    </operation>
+    <operation name="Logout">
+      <input message="s0:LogoutSoapIn" />
+      <output message="s0:LogoutSoapOut" />
     </operation>
   </portType>
   <portType name="ServerHttpGet">
@@ -563,17 +926,13 @@
       <input message="s0:ChangePasswordHttpGetIn" />
       <output message="s0:ChangePasswordHttpGetOut" />
     </operation>
-    <operation name="Logout">
-      <input message="s0:LogoutHttpGetIn" />
-      <output message="s0:LogoutHttpGetOut" />
+    <operation name="SimpleExecuteNonquery">
+      <input message="s0:SimpleExecuteNonqueryHttpGetIn" />
+      <output message="s0:SimpleExecuteNonqueryHttpGetOut" />
     </operation>
-    <operation name="ExecuteNonquerySimple">
-      <input message="s0:ExecuteNonquerySimpleHttpGetIn" />
-      <output message="s0:ExecuteNonquerySimpleHttpGetOut" />
-    </operation>
-    <operation name="ExecuteScalarSimple">
-      <input message="s0:ExecuteScalarSimpleHttpGetIn" />
-      <output message="s0:ExecuteScalarSimpleHttpGetOut" />
+    <operation name="SimpleExecuteScalar">
+      <input message="s0:SimpleExecuteScalarHttpGetIn" />
+      <output message="s0:SimpleExecuteScalarHttpGetOut" />
     </operation>
     <operation name="NextSeqValue">
       <input message="s0:NextSeqValueHttpGetIn" />
@@ -583,9 +942,33 @@
       <input message="s0:GetDataSetSimpleHttpGetIn" />
       <output message="s0:GetDataSetSimpleHttpGetOut" />
     </operation>
+    <operation name="GetDataSetByTableNameSimple">
+      <input message="s0:GetDataSetByTableNameSimpleHttpGetIn" />
+      <output message="s0:GetDataSetByTableNameSimpleHttpGetOut" />
+    </operation>
+    <operation name="GetChanges">
+      <input message="s0:GetChangesHttpGetIn" />
+      <output message="s0:GetChangesHttpGetOut" />
+    </operation>
+    <operation name="RegisterListenerTable">
+      <input message="s0:RegisterListenerTableHttpGetIn" />
+      <output message="s0:RegisterListenerTableHttpGetOut" />
+    </operation>
+    <operation name="UnregisterListenerTable">
+      <input message="s0:UnregisterListenerTableHttpGetIn" />
+      <output message="s0:UnregisterListenerTableHttpGetOut" />
+    </operation>
+    <operation name="UnregisterListener">
+      <input message="s0:UnregisterListenerHttpGetIn" />
+      <output message="s0:UnregisterListenerHttpGetOut" />
+    </operation>
     <operation name="GetTextResource">
       <input message="s0:GetTextResourceHttpGetIn" />
       <output message="s0:GetTextResourceHttpGetOut" />
+    </operation>
+    <operation name="Logout">
+      <input message="s0:LogoutHttpGetIn" />
+      <output message="s0:LogoutHttpGetOut" />
     </operation>
   </portType>
   <portType name="ServerHttpPost">
@@ -605,17 +988,13 @@
       <input message="s0:ChangePasswordHttpPostIn" />
       <output message="s0:ChangePasswordHttpPostOut" />
     </operation>
-    <operation name="Logout">
-      <input message="s0:LogoutHttpPostIn" />
-      <output message="s0:LogoutHttpPostOut" />
+    <operation name="SimpleExecuteNonquery">
+      <input message="s0:SimpleExecuteNonqueryHttpPostIn" />
+      <output message="s0:SimpleExecuteNonqueryHttpPostOut" />
     </operation>
-    <operation name="ExecuteNonquerySimple">
-      <input message="s0:ExecuteNonquerySimpleHttpPostIn" />
-      <output message="s0:ExecuteNonquerySimpleHttpPostOut" />
-    </operation>
-    <operation name="ExecuteScalarSimple">
-      <input message="s0:ExecuteScalarSimpleHttpPostIn" />
-      <output message="s0:ExecuteScalarSimpleHttpPostOut" />
+    <operation name="SimpleExecuteScalar">
+      <input message="s0:SimpleExecuteScalarHttpPostIn" />
+      <output message="s0:SimpleExecuteScalarHttpPostOut" />
     </operation>
     <operation name="NextSeqValue">
       <input message="s0:NextSeqValueHttpPostIn" />
@@ -625,9 +1004,33 @@
       <input message="s0:GetDataSetSimpleHttpPostIn" />
       <output message="s0:GetDataSetSimpleHttpPostOut" />
     </operation>
+    <operation name="GetDataSetByTableNameSimple">
+      <input message="s0:GetDataSetByTableNameSimpleHttpPostIn" />
+      <output message="s0:GetDataSetByTableNameSimpleHttpPostOut" />
+    </operation>
+    <operation name="GetChanges">
+      <input message="s0:GetChangesHttpPostIn" />
+      <output message="s0:GetChangesHttpPostOut" />
+    </operation>
+    <operation name="RegisterListenerTable">
+      <input message="s0:RegisterListenerTableHttpPostIn" />
+      <output message="s0:RegisterListenerTableHttpPostOut" />
+    </operation>
+    <operation name="UnregisterListenerTable">
+      <input message="s0:UnregisterListenerTableHttpPostIn" />
+      <output message="s0:UnregisterListenerTableHttpPostOut" />
+    </operation>
+    <operation name="UnregisterListener">
+      <input message="s0:UnregisterListenerHttpPostIn" />
+      <output message="s0:UnregisterListenerHttpPostOut" />
+    </operation>
     <operation name="GetTextResource">
       <input message="s0:GetTextResourceHttpPostIn" />
       <output message="s0:GetTextResourceHttpPostOut" />
+    </operation>
+    <operation name="Logout">
+      <input message="s0:LogoutHttpPostIn" />
+      <output message="s0:LogoutHttpPostOut" />
     </operation>
   </portType>
   <binding name="ServerSoap" type="s0:ServerSoap">
@@ -668,8 +1071,8 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="Logout">
-      <soap:operation soapAction="http://lpsoft.org/server/Logout" style="document" />
+    <operation name="SimpleExecuteNonquery">
+      <soap:operation soapAction="http://lpsoft.org/server/SimpleExecuteNonquery" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -677,35 +1080,8 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="ExecuteNonquerySimple">
-      <soap:operation soapAction="http://lpsoft.org/server/ExecuteNonquerySimple" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ExecuteNonquery">
-      <soap:operation soapAction="http://lpsoft.org/server/ExecuteNonquery" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ExecuteScalarSimple">
-      <soap:operation soapAction="http://lpsoft.org/server/ExecuteScalarSimple" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ExecuteScalar">
-      <soap:operation soapAction="http://lpsoft.org/server/ExecuteScalar" style="document" />
+    <operation name="SimpleExecuteScalar">
+      <soap:operation soapAction="http://lpsoft.org/server/SimpleExecuteScalar" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -731,6 +1107,42 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="GetDataSetByTableNameSimple">
+      <soap:operation soapAction="http://lpsoft.org/server/GetDataSetByTableNameSimple" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetChanges">
+      <soap:operation soapAction="http://lpsoft.org/server/GetChanges" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteNonquery">
+      <soap:operation soapAction="http://lpsoft.org/server/ExecuteNonquery" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteScalar">
+      <soap:operation soapAction="http://lpsoft.org/server/ExecuteScalar" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="GetDataSet">
       <soap:operation soapAction="http://lpsoft.org/server/GetDataSet" style="document" />
       <input>
@@ -749,8 +1161,71 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="SaveDataSetByTableName">
+      <soap:operation soapAction="http://lpsoft.org/server/SaveDataSetByTableName" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RegisterListener">
+      <soap:operation soapAction="http://lpsoft.org/server/RegisterListener" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RegisterListenerTable">
+      <soap:operation soapAction="http://lpsoft.org/server/RegisterListenerTable" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UnregisterListenerTable">
+      <soap:operation soapAction="http://lpsoft.org/server/UnregisterListenerTable" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UnregisterListener">
+      <soap:operation soapAction="http://lpsoft.org/server/UnregisterListener" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetDataSetByTableName">
+      <soap:operation soapAction="http://lpsoft.org/server/GetDataSetByTableName" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="GetTextResource">
       <soap:operation soapAction="http://lpsoft.org/server/GetTextResource" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Logout">
+      <soap:operation soapAction="http://lpsoft.org/server/Logout" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -797,8 +1272,8 @@
         <soap12:body use="literal" />
       </output>
     </operation>
-    <operation name="Logout">
-      <soap12:operation soapAction="http://lpsoft.org/server/Logout" style="document" />
+    <operation name="SimpleExecuteNonquery">
+      <soap12:operation soapAction="http://lpsoft.org/server/SimpleExecuteNonquery" style="document" />
       <input>
         <soap12:body use="literal" />
       </input>
@@ -806,35 +1281,8 @@
         <soap12:body use="literal" />
       </output>
     </operation>
-    <operation name="ExecuteNonquerySimple">
-      <soap12:operation soapAction="http://lpsoft.org/server/ExecuteNonquerySimple" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ExecuteNonquery">
-      <soap12:operation soapAction="http://lpsoft.org/server/ExecuteNonquery" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ExecuteScalarSimple">
-      <soap12:operation soapAction="http://lpsoft.org/server/ExecuteScalarSimple" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ExecuteScalar">
-      <soap12:operation soapAction="http://lpsoft.org/server/ExecuteScalar" style="document" />
+    <operation name="SimpleExecuteScalar">
+      <soap12:operation soapAction="http://lpsoft.org/server/SimpleExecuteScalar" style="document" />
       <input>
         <soap12:body use="literal" />
       </input>
@@ -860,6 +1308,42 @@
         <soap12:body use="literal" />
       </output>
     </operation>
+    <operation name="GetDataSetByTableNameSimple">
+      <soap12:operation soapAction="http://lpsoft.org/server/GetDataSetByTableNameSimple" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetChanges">
+      <soap12:operation soapAction="http://lpsoft.org/server/GetChanges" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteNonquery">
+      <soap12:operation soapAction="http://lpsoft.org/server/ExecuteNonquery" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExecuteScalar">
+      <soap12:operation soapAction="http://lpsoft.org/server/ExecuteScalar" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
     <operation name="GetDataSet">
       <soap12:operation soapAction="http://lpsoft.org/server/GetDataSet" style="document" />
       <input>
@@ -878,8 +1362,71 @@
         <soap12:body use="literal" />
       </output>
     </operation>
+    <operation name="SaveDataSetByTableName">
+      <soap12:operation soapAction="http://lpsoft.org/server/SaveDataSetByTableName" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RegisterListener">
+      <soap12:operation soapAction="http://lpsoft.org/server/RegisterListener" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RegisterListenerTable">
+      <soap12:operation soapAction="http://lpsoft.org/server/RegisterListenerTable" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UnregisterListenerTable">
+      <soap12:operation soapAction="http://lpsoft.org/server/UnregisterListenerTable" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UnregisterListener">
+      <soap12:operation soapAction="http://lpsoft.org/server/UnregisterListener" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetDataSetByTableName">
+      <soap12:operation soapAction="http://lpsoft.org/server/GetDataSetByTableName" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
     <operation name="GetTextResource">
       <soap12:operation soapAction="http://lpsoft.org/server/GetTextResource" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Logout">
+      <soap12:operation soapAction="http://lpsoft.org/server/Logout" style="document" />
       <input>
         <soap12:body use="literal" />
       </input>
@@ -926,15 +1473,8 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
-    <operation name="Logout">
-      <http:operation location="/Logout" />
-      <input>
-        <http:urlEncoded />
-      </input>
-      <output />
-    </operation>
-    <operation name="ExecuteNonquerySimple">
-      <http:operation location="/ExecuteNonquerySimple" />
+    <operation name="SimpleExecuteNonquery">
+      <http:operation location="/SimpleExecuteNonquery" />
       <input>
         <http:urlEncoded />
       </input>
@@ -942,8 +1482,8 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
-    <operation name="ExecuteScalarSimple">
-      <http:operation location="/ExecuteScalarSimple" />
+    <operation name="SimpleExecuteScalar">
+      <http:operation location="/SimpleExecuteScalar" />
       <input>
         <http:urlEncoded />
       </input>
@@ -969,6 +1509,51 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
+    <operation name="GetDataSetByTableNameSimple">
+      <http:operation location="/GetDataSetByTableNameSimple" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetChanges">
+      <http:operation location="/GetChanges" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RegisterListenerTable">
+      <http:operation location="/RegisterListenerTable" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="UnregisterListenerTable">
+      <http:operation location="/UnregisterListenerTable" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="UnregisterListener">
+      <http:operation location="/UnregisterListener" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
     <operation name="GetTextResource">
       <http:operation location="/GetTextResource" />
       <input>
@@ -977,6 +1562,13 @@
       <output>
         <mime:mimeXml part="Body" />
       </output>
+    </operation>
+    <operation name="Logout">
+      <http:operation location="/Logout" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output />
     </operation>
   </binding>
   <binding name="ServerHttpPost" type="s0:ServerHttpPost">
@@ -1017,15 +1609,8 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
-    <operation name="Logout">
-      <http:operation location="/Logout" />
-      <input>
-        <mime:content part="" type="application/x-www-form-urlencoded" />
-      </input>
-      <output />
-    </operation>
-    <operation name="ExecuteNonquerySimple">
-      <http:operation location="/ExecuteNonquerySimple" />
+    <operation name="SimpleExecuteNonquery">
+      <http:operation location="/SimpleExecuteNonquery" />
       <input>
         <mime:content part="" type="application/x-www-form-urlencoded" />
       </input>
@@ -1033,8 +1618,8 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
-    <operation name="ExecuteScalarSimple">
-      <http:operation location="/ExecuteScalarSimple" />
+    <operation name="SimpleExecuteScalar">
+      <http:operation location="/SimpleExecuteScalar" />
       <input>
         <mime:content part="" type="application/x-www-form-urlencoded" />
       </input>
@@ -1060,6 +1645,51 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
+    <operation name="GetDataSetByTableNameSimple">
+      <http:operation location="/GetDataSetByTableNameSimple" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetChanges">
+      <http:operation location="/GetChanges" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RegisterListenerTable">
+      <http:operation location="/RegisterListenerTable" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="UnregisterListenerTable">
+      <http:operation location="/UnregisterListenerTable" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="UnregisterListener">
+      <http:operation location="/UnregisterListener" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
     <operation name="GetTextResource">
       <http:operation location="/GetTextResource" />
       <input>
@@ -1069,20 +1699,27 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
+    <operation name="Logout">
+      <http:operation location="/Logout" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output />
+    </operation>
   </binding>
   <service name="Server">
     <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">LPSoft server</wsdl:documentation>
     <port name="ServerSoap" binding="s0:ServerSoap">
-      <soap:address location="http://localhost:8080/Server.asmx" />
+      <soap:address location="http://localhost/LPS/Server.asmx" />
     </port>
     <port name="ServerSoap12" binding="s0:ServerSoap12">
-      <soap12:address location="http://localhost:8080/Server.asmx" />
+      <soap12:address location="http://localhost/LPS/Server.asmx" />
     </port>
     <port name="ServerHttpGet" binding="s0:ServerHttpGet">
-      <http:address location="http://localhost:8080/Server.asmx" />
+      <http:address location="http://localhost/LPS/Server.asmx" />
     </port>
     <port name="ServerHttpPost" binding="s0:ServerHttpPost">
-      <http:address location="http://localhost:8080/Server.asmx" />
+      <http:address location="http://localhost/LPS/Server.asmx" />
     </port>
   </service>
 </definitions>

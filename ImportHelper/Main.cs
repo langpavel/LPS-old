@@ -18,14 +18,14 @@ namespace ImportHelper
 		{
 			MainClass app = new MainClass(args);
 
-			app.MakeTreeTemplate("tree.xml", false);
+			//app.MakeTreeTemplate("tree.xml", false);
 			
-			/*
+			
 			app.Connection.ConnectionString = "Server=127.0.0.1;Port=5432;Database=filmarena;Userid=filmarena;Password=filmArena3095;Protocol=3;Pooling=true;MinPoolSize=1;MaxPoolSize=20;ConnectionLifeTime=15;";
 			app.Connection.Open();
 			app.ProcessAddresses();
 			app.Connection.Close();
-			*/
+			
 
 		}
 
@@ -302,7 +302,7 @@ namespace ImportHelper
 								try
 								{
 									FKMappedColumnHelper helper = new FKMappedColumnHelper(ci.FkReferenceTable, ci.FkReplaceColumns);
-									ci.DisplayFormat = helper.DisplayFormat;
+									//ci.DisplayFormat = helper.DisplayFormat;
 								}
 								catch 
 								{
@@ -311,7 +311,7 @@ namespace ImportHelper
 										string t2 = "c_" + ci.FkReferenceTable;
 										FKMappedColumnHelper helper = new FKMappedColumnHelper(t2, ci.FkReplaceColumns);
 										ci.FkReferenceTable = t2;
-										ci.DisplayFormat = helper.DisplayFormat;
+										//ci.DisplayFormat = helper.DisplayFormat;
 									}
 									catch 
 									{ 

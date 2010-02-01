@@ -196,6 +196,22 @@ namespace LPS.Server
 				return new ServerCallResult(err); 
 			}
 		}
+		
+		[WebMethod(EnableSession=true)]
+		public ServerCallResult SaveDataSetByTableName(int sink, int security, string name, DataSet changes, bool updateUserInfo, bool changesNotify, out int affected)
+		{
+			affected = 0;
+			try
+			{
+				ConnectionInfo ci = GetConnectionInfo();
+				affected = ci.SaveDataSetByTableName(name, changes, updateUserInfo, changesNotify);
+				return ServerChangeSink.GetResult(sink, security);
+			}
+			catch(Exception err)
+			{
+				return new ServerCallResult(err); 
+			}
+		}
 		#endregion
 
 		[WebMethod(EnableSession=true)]

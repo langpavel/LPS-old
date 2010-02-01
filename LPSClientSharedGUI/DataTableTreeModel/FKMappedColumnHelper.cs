@@ -6,16 +6,19 @@ namespace LPS.Client
 	public class FKMappedColumnHelper
 	{
 		private DataTable referencedTable;
-		public string DisplayFormat { get; set; }
+		private string DisplayFormat { get; set; }
 		
 		public FKMappedColumnHelper(string table, string refCols)
 		{
-			string sql = String.Format("select id, {1} from {0}", table, refCols);
-			this.referencedTable = ServerConnection.Instance.GetCachedDataSet(sql).Tables[0];
-			this.DisplayFormat = "{1}";
-			for(int i = 2; i < this.referencedTable.Columns.Count; i++)
+			//string sql = String.Format("select id, {1} from {0}", table, refCols);
+			this.referencedTable = ServerConnection.Instance.GetCachedDataSet(table).Tables[0];
+			string[] cols = refCols.Split(new char[] {',',';',' ',':','-','\'','"', '[', ']', '(', ')'}, StringSplitOptions.RemoveEmptyEntries);
+			this.DisplayFormat = refCols;
+			for(int i = 0; i < cols.Length; i++)
 			{
-				this.DisplayFormat += "; {" + i.ToString() + "}";
+				int idx = this.referencedTable.Columns.IndexOf(cols[i]);
+				if(idx >= 0)
+					this.DisplayFormat = this.DisplayFormat.Replace(cols[i], "{" + idx.ToString() + "}");
 		    }
 		}
 		

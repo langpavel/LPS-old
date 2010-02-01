@@ -5,6 +5,7 @@ using System.Xml.Serialization;
 namespace LPS
 {
 	[Serializable]
+	[XmlRoot("result", Namespace="http://lpsoft.org/server/")]
 	public class ServerCallResult
 	{
 		/// <summary>

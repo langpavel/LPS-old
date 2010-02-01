@@ -28,28 +28,44 @@ namespace LPSClientShared.LPSServer {
         
         private System.Threading.SendOrPostCallback ChangePasswordOperationCompleted;
         
-        private System.Threading.SendOrPostCallback LogoutOperationCompleted;
+        private System.Threading.SendOrPostCallback SimpleExecuteNonqueryOperationCompleted;
         
-        private System.Threading.SendOrPostCallback ExecuteNonquerySimpleOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback ExecuteNonqueryOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback ExecuteScalarSimpleOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback ExecuteScalarOperationCompleted;
+        private System.Threading.SendOrPostCallback SimpleExecuteScalarOperationCompleted;
         
         private System.Threading.SendOrPostCallback NextSeqValueOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataSetSimpleOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetDataSetByTableNameSimpleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetChangesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExecuteNonqueryOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExecuteScalarOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataSetOperationCompleted;
         
         private System.Threading.SendOrPostCallback SaveDataSetOperationCompleted;
         
+        private System.Threading.SendOrPostCallback SaveDataSetByTableNameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback RegisterListenerOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback RegisterListenerTableOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UnregisterListenerTableOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UnregisterListenerOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetDataSetByTableNameOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetTextResourceOperationCompleted;
         
+        private System.Threading.SendOrPostCallback LogoutOperationCompleted;
+        
         public Server() {
-            this.Url = "http://localhost:8080/Server.asmx";
+            this.Url = "http://localhost/LPS/Server.asmx";
         }
         
         public Server(string url) {
@@ -64,53 +80,66 @@ namespace LPSClientShared.LPSServer {
         
         public event ChangePasswordCompletedEventHandler ChangePasswordCompleted;
         
-        public event LogoutCompletedEventHandler LogoutCompleted;
+        public event SimpleExecuteNonqueryCompletedEventHandler SimpleExecuteNonqueryCompleted;
         
-        public event ExecuteNonquerySimpleCompletedEventHandler ExecuteNonquerySimpleCompleted;
-        
-        public event ExecuteNonqueryCompletedEventHandler ExecuteNonqueryCompleted;
-        
-        public event ExecuteScalarSimpleCompletedEventHandler ExecuteScalarSimpleCompleted;
-        
-        public event ExecuteScalarCompletedEventHandler ExecuteScalarCompleted;
+        public event SimpleExecuteScalarCompletedEventHandler SimpleExecuteScalarCompleted;
         
         public event NextSeqValueCompletedEventHandler NextSeqValueCompleted;
         
         public event GetDataSetSimpleCompletedEventHandler GetDataSetSimpleCompleted;
         
+        public event GetDataSetByTableNameSimpleCompletedEventHandler GetDataSetByTableNameSimpleCompleted;
+        
+        public event GetChangesCompletedEventHandler GetChangesCompleted;
+        
+        public event ExecuteNonqueryCompletedEventHandler ExecuteNonqueryCompleted;
+        
+        public event ExecuteScalarCompletedEventHandler ExecuteScalarCompleted;
+        
         public event GetDataSetCompletedEventHandler GetDataSetCompleted;
         
         public event SaveDataSetCompletedEventHandler SaveDataSetCompleted;
         
+        public event SaveDataSetByTableNameCompletedEventHandler SaveDataSetByTableNameCompleted;
+        
+        public event RegisterListenerCompletedEventHandler RegisterListenerCompleted;
+        
+        public event RegisterListenerTableCompletedEventHandler RegisterListenerTableCompleted;
+        
+        public event UnregisterListenerTableCompletedEventHandler UnregisterListenerTableCompleted;
+        
+        public event UnregisterListenerCompletedEventHandler UnregisterListenerCompleted;
+        
+        public event GetDataSetByTableNameCompletedEventHandler GetDataSetByTableNameCompleted;
+        
         public event GetTextResourceCompletedEventHandler GetTextResourceCompleted;
         
+        public event LogoutCompletedEventHandler LogoutCompleted;
+        
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/Ping", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public string Ping(string data) {
-            object[] results = this.Invoke("Ping", new object[] {
-                        data});
-            return ((string)(results[0]));
+        public bool Ping() {
+            object[] results = this.Invoke("Ping", new object[0]);
+            return ((bool)(results[0]));
         }
         
-        public System.IAsyncResult BeginPing(string data, System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("Ping", new object[] {
-                        data}, callback, asyncState);
+        public System.IAsyncResult BeginPing(System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("Ping", new object[0], callback, asyncState);
         }
         
-        public string EndPing(System.IAsyncResult asyncResult) {
+        public bool EndPing(System.IAsyncResult asyncResult) {
             object[] results = this.EndInvoke(asyncResult);
-            return ((string)(results[0]));
+            return ((bool)(results[0]));
         }
         
-        public void PingAsync(string data) {
-            this.PingAsync(data, null);
+        public void PingAsync() {
+            this.PingAsync(null);
         }
         
-        public void PingAsync(string data, object userState) {
+        public void PingAsync(object userState) {
             if ((this.PingOperationCompleted == null)) {
                 this.PingOperationCompleted = new System.Threading.SendOrPostCallback(this.OnPingCompleted);
             }
-            this.InvokeAsync("Ping", new object[] {
-                        data}, this.PingOperationCompleted, userState);
+            this.InvokeAsync("Ping", new object[0], this.PingOperationCompleted, userState);
         }
         
         private void OnPingCompleted(object arg) {
@@ -231,184 +260,75 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/Logout", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public void Logout() {
-            this.Invoke("Logout", new object[0]);
-        }
-        
-        public System.IAsyncResult BeginLogout(System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("Logout", new object[0], callback, asyncState);
-        }
-        
-        public void EndLogout(System.IAsyncResult asyncResult) {
-            this.EndInvoke(asyncResult);
-        }
-        
-        public void LogoutAsync() {
-            this.LogoutAsync(null);
-        }
-        
-        public void LogoutAsync(object userState) {
-            if ((this.LogoutOperationCompleted == null)) {
-                this.LogoutOperationCompleted = new System.Threading.SendOrPostCallback(this.OnLogoutCompleted);
-            }
-            this.InvokeAsync("Logout", new object[0], this.LogoutOperationCompleted, userState);
-        }
-        
-        private void OnLogoutCompleted(object arg) {
-            if ((this.LogoutCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.LogoutCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/ExecuteNonquerySimple", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public int ExecuteNonquerySimple(string sql) {
-            object[] results = this.Invoke("ExecuteNonquerySimple", new object[] {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/SimpleExecuteNonquery", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public int SimpleExecuteNonquery(string sql) {
+            object[] results = this.Invoke("SimpleExecuteNonquery", new object[] {
                         sql});
             return ((int)(results[0]));
         }
         
-        public System.IAsyncResult BeginExecuteNonquerySimple(string sql, System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("ExecuteNonquerySimple", new object[] {
+        public System.IAsyncResult BeginSimpleExecuteNonquery(string sql, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("SimpleExecuteNonquery", new object[] {
                         sql}, callback, asyncState);
         }
         
-        public int EndExecuteNonquerySimple(System.IAsyncResult asyncResult) {
+        public int EndSimpleExecuteNonquery(System.IAsyncResult asyncResult) {
             object[] results = this.EndInvoke(asyncResult);
             return ((int)(results[0]));
         }
         
-        public void ExecuteNonquerySimpleAsync(string sql) {
-            this.ExecuteNonquerySimpleAsync(sql, null);
+        public void SimpleExecuteNonqueryAsync(string sql) {
+            this.SimpleExecuteNonqueryAsync(sql, null);
         }
         
-        public void ExecuteNonquerySimpleAsync(string sql, object userState) {
-            if ((this.ExecuteNonquerySimpleOperationCompleted == null)) {
-                this.ExecuteNonquerySimpleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExecuteNonquerySimpleCompleted);
+        public void SimpleExecuteNonqueryAsync(string sql, object userState) {
+            if ((this.SimpleExecuteNonqueryOperationCompleted == null)) {
+                this.SimpleExecuteNonqueryOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSimpleExecuteNonqueryCompleted);
             }
-            this.InvokeAsync("ExecuteNonquerySimple", new object[] {
-                        sql}, this.ExecuteNonquerySimpleOperationCompleted, userState);
+            this.InvokeAsync("SimpleExecuteNonquery", new object[] {
+                        sql}, this.SimpleExecuteNonqueryOperationCompleted, userState);
         }
         
-        private void OnExecuteNonquerySimpleCompleted(object arg) {
-            if ((this.ExecuteNonquerySimpleCompleted != null)) {
+        private void OnSimpleExecuteNonqueryCompleted(object arg) {
+            if ((this.SimpleExecuteNonqueryCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ExecuteNonquerySimpleCompleted(this, new ExecuteNonquerySimpleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.SimpleExecuteNonqueryCompleted(this, new SimpleExecuteNonqueryCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/ExecuteNonquery", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public int ExecuteNonquery(string sql, object[] parameters) {
-            object[] results = this.Invoke("ExecuteNonquery", new object[] {
-                        sql,
-                        parameters});
-            return ((int)(results[0]));
-        }
-        
-        public System.IAsyncResult BeginExecuteNonquery(string sql, object[] parameters, System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("ExecuteNonquery", new object[] {
-                        sql,
-                        parameters}, callback, asyncState);
-        }
-        
-        public int EndExecuteNonquery(System.IAsyncResult asyncResult) {
-            object[] results = this.EndInvoke(asyncResult);
-            return ((int)(results[0]));
-        }
-        
-        public void ExecuteNonqueryAsync(string sql, object[] parameters) {
-            this.ExecuteNonqueryAsync(sql, parameters, null);
-        }
-        
-        public void ExecuteNonqueryAsync(string sql, object[] parameters, object userState) {
-            if ((this.ExecuteNonqueryOperationCompleted == null)) {
-                this.ExecuteNonqueryOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExecuteNonqueryCompleted);
-            }
-            this.InvokeAsync("ExecuteNonquery", new object[] {
-                        sql,
-                        parameters}, this.ExecuteNonqueryOperationCompleted, userState);
-        }
-        
-        private void OnExecuteNonqueryCompleted(object arg) {
-            if ((this.ExecuteNonqueryCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ExecuteNonqueryCompleted(this, new ExecuteNonqueryCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/ExecuteScalarSimple", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public object ExecuteScalarSimple(string sql) {
-            object[] results = this.Invoke("ExecuteScalarSimple", new object[] {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/SimpleExecuteScalar", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public object SimpleExecuteScalar(string sql) {
+            object[] results = this.Invoke("SimpleExecuteScalar", new object[] {
                         sql});
             return ((object)(results[0]));
         }
         
-        public System.IAsyncResult BeginExecuteScalarSimple(string sql, System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("ExecuteScalarSimple", new object[] {
+        public System.IAsyncResult BeginSimpleExecuteScalar(string sql, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("SimpleExecuteScalar", new object[] {
                         sql}, callback, asyncState);
         }
         
-        public object EndExecuteScalarSimple(System.IAsyncResult asyncResult) {
+        public object EndSimpleExecuteScalar(System.IAsyncResult asyncResult) {
             object[] results = this.EndInvoke(asyncResult);
             return ((object)(results[0]));
         }
         
-        public void ExecuteScalarSimpleAsync(string sql) {
-            this.ExecuteScalarSimpleAsync(sql, null);
+        public void SimpleExecuteScalarAsync(string sql) {
+            this.SimpleExecuteScalarAsync(sql, null);
         }
         
-        public void ExecuteScalarSimpleAsync(string sql, object userState) {
-            if ((this.ExecuteScalarSimpleOperationCompleted == null)) {
-                this.ExecuteScalarSimpleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExecuteScalarSimpleCompleted);
+        public void SimpleExecuteScalarAsync(string sql, object userState) {
+            if ((this.SimpleExecuteScalarOperationCompleted == null)) {
+                this.SimpleExecuteScalarOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSimpleExecuteScalarCompleted);
             }
-            this.InvokeAsync("ExecuteScalarSimple", new object[] {
-                        sql}, this.ExecuteScalarSimpleOperationCompleted, userState);
+            this.InvokeAsync("SimpleExecuteScalar", new object[] {
+                        sql}, this.SimpleExecuteScalarOperationCompleted, userState);
         }
         
-        private void OnExecuteScalarSimpleCompleted(object arg) {
-            if ((this.ExecuteScalarSimpleCompleted != null)) {
+        private void OnSimpleExecuteScalarCompleted(object arg) {
+            if ((this.SimpleExecuteScalarCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ExecuteScalarSimpleCompleted(this, new ExecuteScalarSimpleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/ExecuteScalar", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public object ExecuteScalar(string sql, object[] parameters) {
-            object[] results = this.Invoke("ExecuteScalar", new object[] {
-                        sql,
-                        parameters});
-            return ((object)(results[0]));
-        }
-        
-        public System.IAsyncResult BeginExecuteScalar(string sql, object[] parameters, System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("ExecuteScalar", new object[] {
-                        sql,
-                        parameters}, callback, asyncState);
-        }
-        
-        public object EndExecuteScalar(System.IAsyncResult asyncResult) {
-            object[] results = this.EndInvoke(asyncResult);
-            return ((object)(results[0]));
-        }
-        
-        public void ExecuteScalarAsync(string sql, object[] parameters) {
-            this.ExecuteScalarAsync(sql, parameters, null);
-        }
-        
-        public void ExecuteScalarAsync(string sql, object[] parameters, object userState) {
-            if ((this.ExecuteScalarOperationCompleted == null)) {
-                this.ExecuteScalarOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExecuteScalarCompleted);
-            }
-            this.InvokeAsync("ExecuteScalar", new object[] {
-                        sql,
-                        parameters}, this.ExecuteScalarOperationCompleted, userState);
-        }
-        
-        private void OnExecuteScalarCompleted(object arg) {
-            if ((this.ExecuteScalarCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ExecuteScalarCompleted(this, new ExecuteScalarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.SimpleExecuteScalarCompleted(this, new SimpleExecuteScalarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -484,34 +404,214 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetDataSet", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public System.Data.DataSet GetDataSet(string sql, object[] parameters) {
-            object[] results = this.Invoke("GetDataSet", new object[] {
-                        sql,
-                        parameters});
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetDataSetByTableNameSimple", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public System.Data.DataSet GetDataSetByTableNameSimple(string tableName, string addsql) {
+            object[] results = this.Invoke("GetDataSetByTableNameSimple", new object[] {
+                        tableName,
+                        addsql});
             return ((System.Data.DataSet)(results[0]));
         }
         
-        public System.IAsyncResult BeginGetDataSet(string sql, object[] parameters, System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("GetDataSet", new object[] {
-                        sql,
-                        parameters}, callback, asyncState);
+        public System.IAsyncResult BeginGetDataSetByTableNameSimple(string tableName, string addsql, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetDataSetByTableNameSimple", new object[] {
+                        tableName,
+                        addsql}, callback, asyncState);
         }
         
-        public System.Data.DataSet EndGetDataSet(System.IAsyncResult asyncResult) {
+        public System.Data.DataSet EndGetDataSetByTableNameSimple(System.IAsyncResult asyncResult) {
             object[] results = this.EndInvoke(asyncResult);
             return ((System.Data.DataSet)(results[0]));
         }
         
-        public void GetDataSetAsync(string sql, object[] parameters) {
-            this.GetDataSetAsync(sql, parameters, null);
+        public void GetDataSetByTableNameSimpleAsync(string tableName, string addsql) {
+            this.GetDataSetByTableNameSimpleAsync(tableName, addsql, null);
         }
         
-        public void GetDataSetAsync(string sql, object[] parameters, object userState) {
+        public void GetDataSetByTableNameSimpleAsync(string tableName, string addsql, object userState) {
+            if ((this.GetDataSetByTableNameSimpleOperationCompleted == null)) {
+                this.GetDataSetByTableNameSimpleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDataSetByTableNameSimpleCompleted);
+            }
+            this.InvokeAsync("GetDataSetByTableNameSimple", new object[] {
+                        tableName,
+                        addsql}, this.GetDataSetByTableNameSimpleOperationCompleted, userState);
+        }
+        
+        private void OnGetDataSetByTableNameSimpleCompleted(object arg) {
+            if ((this.GetDataSetByTableNameSimpleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetDataSetByTableNameSimpleCompleted(this, new GetDataSetByTableNameSimpleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetChanges", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public ServerCallResult GetChanges(int sink, int security) {
+            object[] results = this.Invoke("GetChanges", new object[] {
+                        sink,
+                        security});
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginGetChanges(int sink, int security, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetChanges", new object[] {
+                        sink,
+                        security}, callback, asyncState);
+        }
+        
+        public ServerCallResult EndGetChanges(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public void GetChangesAsync(int sink, int security) {
+            this.GetChangesAsync(sink, security, null);
+        }
+        
+        public void GetChangesAsync(int sink, int security, object userState) {
+            if ((this.GetChangesOperationCompleted == null)) {
+                this.GetChangesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetChangesCompleted);
+            }
+            this.InvokeAsync("GetChanges", new object[] {
+                        sink,
+                        security}, this.GetChangesOperationCompleted, userState);
+        }
+        
+        private void OnGetChangesCompleted(object arg) {
+            if ((this.GetChangesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetChangesCompleted(this, new GetChangesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/ExecuteNonquery", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public ServerCallResult ExecuteNonquery(int sink, int security, string sql, object[] parameters, out int affected) {
+            object[] results = this.Invoke("ExecuteNonquery", new object[] {
+                        sink,
+                        security,
+                        sql,
+                        parameters});
+            affected = ((int)(results[1]));
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginExecuteNonquery(int sink, int security, string sql, object[] parameters, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("ExecuteNonquery", new object[] {
+                        sink,
+                        security,
+                        sql,
+                        parameters}, callback, asyncState);
+        }
+        
+        public ServerCallResult EndExecuteNonquery(System.IAsyncResult asyncResult, out int affected) {
+            object[] results = this.EndInvoke(asyncResult);
+            affected = ((int)(results[1]));
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public void ExecuteNonqueryAsync(int sink, int security, string sql, object[] parameters) {
+            this.ExecuteNonqueryAsync(sink, security, sql, parameters, null);
+        }
+        
+        public void ExecuteNonqueryAsync(int sink, int security, string sql, object[] parameters, object userState) {
+            if ((this.ExecuteNonqueryOperationCompleted == null)) {
+                this.ExecuteNonqueryOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExecuteNonqueryCompleted);
+            }
+            this.InvokeAsync("ExecuteNonquery", new object[] {
+                        sink,
+                        security,
+                        sql,
+                        parameters}, this.ExecuteNonqueryOperationCompleted, userState);
+        }
+        
+        private void OnExecuteNonqueryCompleted(object arg) {
+            if ((this.ExecuteNonqueryCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExecuteNonqueryCompleted(this, new ExecuteNonqueryCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/ExecuteScalar", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public ServerCallResult ExecuteScalar(int sink, int security, string sql, object[] parameters, out object result) {
+            object[] results = this.Invoke("ExecuteScalar", new object[] {
+                        sink,
+                        security,
+                        sql,
+                        parameters});
+            result = ((object)(results[1]));
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginExecuteScalar(int sink, int security, string sql, object[] parameters, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("ExecuteScalar", new object[] {
+                        sink,
+                        security,
+                        sql,
+                        parameters}, callback, asyncState);
+        }
+        
+        public ServerCallResult EndExecuteScalar(System.IAsyncResult asyncResult, out object result) {
+            object[] results = this.EndInvoke(asyncResult);
+            result = ((object)(results[1]));
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public void ExecuteScalarAsync(int sink, int security, string sql, object[] parameters) {
+            this.ExecuteScalarAsync(sink, security, sql, parameters, null);
+        }
+        
+        public void ExecuteScalarAsync(int sink, int security, string sql, object[] parameters, object userState) {
+            if ((this.ExecuteScalarOperationCompleted == null)) {
+                this.ExecuteScalarOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExecuteScalarCompleted);
+            }
+            this.InvokeAsync("ExecuteScalar", new object[] {
+                        sink,
+                        security,
+                        sql,
+                        parameters}, this.ExecuteScalarOperationCompleted, userState);
+        }
+        
+        private void OnExecuteScalarCompleted(object arg) {
+            if ((this.ExecuteScalarCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExecuteScalarCompleted(this, new ExecuteScalarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetDataSet", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public ServerCallResult GetDataSet(int sink, int security, string sql, object[] parameters, out System.Data.DataSet data) {
+            object[] results = this.Invoke("GetDataSet", new object[] {
+                        sink,
+                        security,
+                        sql,
+                        parameters});
+            data = ((System.Data.DataSet)(results[1]));
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginGetDataSet(int sink, int security, string sql, object[] parameters, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetDataSet", new object[] {
+                        sink,
+                        security,
+                        sql,
+                        parameters}, callback, asyncState);
+        }
+        
+        public ServerCallResult EndGetDataSet(System.IAsyncResult asyncResult, out System.Data.DataSet data) {
+            object[] results = this.EndInvoke(asyncResult);
+            data = ((System.Data.DataSet)(results[1]));
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public void GetDataSetAsync(int sink, int security, string sql, object[] parameters) {
+            this.GetDataSetAsync(sink, security, sql, parameters, null);
+        }
+        
+        public void GetDataSetAsync(int sink, int security, string sql, object[] parameters, object userState) {
             if ((this.GetDataSetOperationCompleted == null)) {
                 this.GetDataSetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDataSetCompleted);
             }
             this.InvokeAsync("GetDataSet", new object[] {
+                        sink,
+                        security,
                         sql,
                         parameters}, this.GetDataSetOperationCompleted, userState);
         }
@@ -524,37 +624,45 @@ namespace LPSClientShared.LPSServer {
         }
         
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/SaveDataSet", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public int SaveDataSet(System.Data.DataSet changes, bool updateUserInfo, string selectSql, object[] parameters) {
+        public ServerCallResult SaveDataSet(int sink, int security, System.Data.DataSet changes, bool updateUserInfo, string selectSql, object[] parameters, out int affected) {
             object[] results = this.Invoke("SaveDataSet", new object[] {
+                        sink,
+                        security,
                         changes,
                         updateUserInfo,
                         selectSql,
                         parameters});
-            return ((int)(results[0]));
+            affected = ((int)(results[1]));
+            return ((ServerCallResult)(results[0]));
         }
         
-        public System.IAsyncResult BeginSaveDataSet(System.Data.DataSet changes, bool updateUserInfo, string selectSql, object[] parameters, System.AsyncCallback callback, object asyncState) {
+        public System.IAsyncResult BeginSaveDataSet(int sink, int security, System.Data.DataSet changes, bool updateUserInfo, string selectSql, object[] parameters, System.AsyncCallback callback, object asyncState) {
             return this.BeginInvoke("SaveDataSet", new object[] {
+                        sink,
+                        security,
                         changes,
                         updateUserInfo,
                         selectSql,
                         parameters}, callback, asyncState);
         }
         
-        public int EndSaveDataSet(System.IAsyncResult asyncResult) {
+        public ServerCallResult EndSaveDataSet(System.IAsyncResult asyncResult, out int affected) {
             object[] results = this.EndInvoke(asyncResult);
-            return ((int)(results[0]));
+            affected = ((int)(results[1]));
+            return ((ServerCallResult)(results[0]));
         }
         
-        public void SaveDataSetAsync(System.Data.DataSet changes, bool updateUserInfo, string selectSql, object[] parameters) {
-            this.SaveDataSetAsync(changes, updateUserInfo, selectSql, parameters, null);
+        public void SaveDataSetAsync(int sink, int security, System.Data.DataSet changes, bool updateUserInfo, string selectSql, object[] parameters) {
+            this.SaveDataSetAsync(sink, security, changes, updateUserInfo, selectSql, parameters, null);
         }
         
-        public void SaveDataSetAsync(System.Data.DataSet changes, bool updateUserInfo, string selectSql, object[] parameters, object userState) {
+        public void SaveDataSetAsync(int sink, int security, System.Data.DataSet changes, bool updateUserInfo, string selectSql, object[] parameters, object userState) {
             if ((this.SaveDataSetOperationCompleted == null)) {
                 this.SaveDataSetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveDataSetCompleted);
             }
             this.InvokeAsync("SaveDataSet", new object[] {
+                        sink,
+                        security,
                         changes,
                         updateUserInfo,
                         selectSql,
@@ -565,6 +673,266 @@ namespace LPSClientShared.LPSServer {
             if ((this.SaveDataSetCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.SaveDataSetCompleted(this, new SaveDataSetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/SaveDataSetByTableName", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public ServerCallResult SaveDataSetByTableName(int sink, int security, string name, System.Data.DataSet changes, bool updateUserInfo, bool changesNotify, out int affected) {
+            object[] results = this.Invoke("SaveDataSetByTableName", new object[] {
+                        sink,
+                        security,
+                        name,
+                        changes,
+                        updateUserInfo,
+                        changesNotify});
+            affected = ((int)(results[1]));
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginSaveDataSetByTableName(int sink, int security, string name, System.Data.DataSet changes, bool updateUserInfo, bool changesNotify, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("SaveDataSetByTableName", new object[] {
+                        sink,
+                        security,
+                        name,
+                        changes,
+                        updateUserInfo,
+                        changesNotify}, callback, asyncState);
+        }
+        
+        public ServerCallResult EndSaveDataSetByTableName(System.IAsyncResult asyncResult, out int affected) {
+            object[] results = this.EndInvoke(asyncResult);
+            affected = ((int)(results[1]));
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public void SaveDataSetByTableNameAsync(int sink, int security, string name, System.Data.DataSet changes, bool updateUserInfo, bool changesNotify) {
+            this.SaveDataSetByTableNameAsync(sink, security, name, changes, updateUserInfo, changesNotify, null);
+        }
+        
+        public void SaveDataSetByTableNameAsync(int sink, int security, string name, System.Data.DataSet changes, bool updateUserInfo, bool changesNotify, object userState) {
+            if ((this.SaveDataSetByTableNameOperationCompleted == null)) {
+                this.SaveDataSetByTableNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveDataSetByTableNameCompleted);
+            }
+            this.InvokeAsync("SaveDataSetByTableName", new object[] {
+                        sink,
+                        security,
+                        name,
+                        changes,
+                        updateUserInfo,
+                        changesNotify}, this.SaveDataSetByTableNameOperationCompleted, userState);
+        }
+        
+        private void OnSaveDataSetByTableNameCompleted(object arg) {
+            if ((this.SaveDataSetByTableNameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SaveDataSetByTableNameCompleted(this, new SaveDataSetByTableNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/RegisterListener", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public ServerCallResult RegisterListener(out int sink, out int security) {
+            object[] results = this.Invoke("RegisterListener", new object[0]);
+            security = ((int)(results[2]));
+            sink = ((int)(results[1]));
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginRegisterListener(System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("RegisterListener", new object[0], callback, asyncState);
+        }
+        
+        public ServerCallResult EndRegisterListener(System.IAsyncResult asyncResult, out int sink, out int security) {
+            object[] results = this.EndInvoke(asyncResult);
+            security = ((int)(results[2]));
+            sink = ((int)(results[1]));
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public void RegisterListenerAsync() {
+            this.RegisterListenerAsync(null);
+        }
+        
+        public void RegisterListenerAsync(object userState) {
+            if ((this.RegisterListenerOperationCompleted == null)) {
+                this.RegisterListenerOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRegisterListenerCompleted);
+            }
+            this.InvokeAsync("RegisterListener", new object[0], this.RegisterListenerOperationCompleted, userState);
+        }
+        
+        private void OnRegisterListenerCompleted(object arg) {
+            if ((this.RegisterListenerCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.RegisterListenerCompleted(this, new RegisterListenerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/RegisterListenerTable", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public ServerCallResult RegisterListenerTable(int sink, int security, string table) {
+            object[] results = this.Invoke("RegisterListenerTable", new object[] {
+                        sink,
+                        security,
+                        table});
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginRegisterListenerTable(int sink, int security, string table, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("RegisterListenerTable", new object[] {
+                        sink,
+                        security,
+                        table}, callback, asyncState);
+        }
+        
+        public ServerCallResult EndRegisterListenerTable(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public void RegisterListenerTableAsync(int sink, int security, string table) {
+            this.RegisterListenerTableAsync(sink, security, table, null);
+        }
+        
+        public void RegisterListenerTableAsync(int sink, int security, string table, object userState) {
+            if ((this.RegisterListenerTableOperationCompleted == null)) {
+                this.RegisterListenerTableOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRegisterListenerTableCompleted);
+            }
+            this.InvokeAsync("RegisterListenerTable", new object[] {
+                        sink,
+                        security,
+                        table}, this.RegisterListenerTableOperationCompleted, userState);
+        }
+        
+        private void OnRegisterListenerTableCompleted(object arg) {
+            if ((this.RegisterListenerTableCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.RegisterListenerTableCompleted(this, new RegisterListenerTableCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/UnregisterListenerTable", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public ServerCallResult UnregisterListenerTable(int sink, int security, string table) {
+            object[] results = this.Invoke("UnregisterListenerTable", new object[] {
+                        sink,
+                        security,
+                        table});
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginUnregisterListenerTable(int sink, int security, string table, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("UnregisterListenerTable", new object[] {
+                        sink,
+                        security,
+                        table}, callback, asyncState);
+        }
+        
+        public ServerCallResult EndUnregisterListenerTable(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public void UnregisterListenerTableAsync(int sink, int security, string table) {
+            this.UnregisterListenerTableAsync(sink, security, table, null);
+        }
+        
+        public void UnregisterListenerTableAsync(int sink, int security, string table, object userState) {
+            if ((this.UnregisterListenerTableOperationCompleted == null)) {
+                this.UnregisterListenerTableOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUnregisterListenerTableCompleted);
+            }
+            this.InvokeAsync("UnregisterListenerTable", new object[] {
+                        sink,
+                        security,
+                        table}, this.UnregisterListenerTableOperationCompleted, userState);
+        }
+        
+        private void OnUnregisterListenerTableCompleted(object arg) {
+            if ((this.UnregisterListenerTableCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UnregisterListenerTableCompleted(this, new UnregisterListenerTableCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/UnregisterListener", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public ServerCallResult UnregisterListener(int sink, int security) {
+            object[] results = this.Invoke("UnregisterListener", new object[] {
+                        sink,
+                        security});
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginUnregisterListener(int sink, int security, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("UnregisterListener", new object[] {
+                        sink,
+                        security}, callback, asyncState);
+        }
+        
+        public ServerCallResult EndUnregisterListener(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public void UnregisterListenerAsync(int sink, int security) {
+            this.UnregisterListenerAsync(sink, security, null);
+        }
+        
+        public void UnregisterListenerAsync(int sink, int security, object userState) {
+            if ((this.UnregisterListenerOperationCompleted == null)) {
+                this.UnregisterListenerOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUnregisterListenerCompleted);
+            }
+            this.InvokeAsync("UnregisterListener", new object[] {
+                        sink,
+                        security}, this.UnregisterListenerOperationCompleted, userState);
+        }
+        
+        private void OnUnregisterListenerCompleted(object arg) {
+            if ((this.UnregisterListenerCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UnregisterListenerCompleted(this, new UnregisterListenerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetDataSetByTableName", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public ServerCallResult GetDataSetByTableName(int sink, int security, string table, object[] parameters, out System.Data.DataSet result) {
+            object[] results = this.Invoke("GetDataSetByTableName", new object[] {
+                        sink,
+                        security,
+                        table,
+                        parameters});
+            result = ((System.Data.DataSet)(results[1]));
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginGetDataSetByTableName(int sink, int security, string table, object[] parameters, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetDataSetByTableName", new object[] {
+                        sink,
+                        security,
+                        table,
+                        parameters}, callback, asyncState);
+        }
+        
+        public ServerCallResult EndGetDataSetByTableName(System.IAsyncResult asyncResult, out System.Data.DataSet result) {
+            object[] results = this.EndInvoke(asyncResult);
+            result = ((System.Data.DataSet)(results[1]));
+            return ((ServerCallResult)(results[0]));
+        }
+        
+        public void GetDataSetByTableNameAsync(int sink, int security, string table, object[] parameters) {
+            this.GetDataSetByTableNameAsync(sink, security, table, parameters, null);
+        }
+        
+        public void GetDataSetByTableNameAsync(int sink, int security, string table, object[] parameters, object userState) {
+            if ((this.GetDataSetByTableNameOperationCompleted == null)) {
+                this.GetDataSetByTableNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDataSetByTableNameCompleted);
+            }
+            this.InvokeAsync("GetDataSetByTableName", new object[] {
+                        sink,
+                        security,
+                        table,
+                        parameters}, this.GetDataSetByTableNameOperationCompleted, userState);
+        }
+        
+        private void OnGetDataSetByTableNameCompleted(object arg) {
+            if ((this.GetDataSetByTableNameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetDataSetByTableNameCompleted(this, new GetDataSetByTableNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -603,6 +971,82 @@ namespace LPSClientShared.LPSServer {
                 this.GetTextResourceCompleted(this, new GetTextResourceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/Logout", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public void Logout() {
+            this.Invoke("Logout", new object[0]);
+        }
+        
+        public System.IAsyncResult BeginLogout(System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("Logout", new object[0], callback, asyncState);
+        }
+        
+        public void EndLogout(System.IAsyncResult asyncResult) {
+            this.EndInvoke(asyncResult);
+        }
+        
+        public void LogoutAsync() {
+            this.LogoutAsync(null);
+        }
+        
+        public void LogoutAsync(object userState) {
+            if ((this.LogoutOperationCompleted == null)) {
+                this.LogoutOperationCompleted = new System.Threading.SendOrPostCallback(this.OnLogoutCompleted);
+            }
+            this.InvokeAsync("Logout", new object[0], this.LogoutOperationCompleted, userState);
+        }
+        
+        private void OnLogoutCompleted(object arg) {
+            if ((this.LogoutCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.LogoutCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.1433")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://lpsoft.org/server/")]
+    public partial class ExceptionInfo {
+        
+        /// <remarks/>
+        public string Name;
+        
+        /// <remarks/>
+        public string Message;
+        
+        /// <remarks/>
+        public string StackTrace;
+        
+        /// <remarks/>
+        public int ErrCode;
+        
+        /// <remarks/>
+        public string ErrCodeName;
+        
+        /// <remarks/>
+        public object[] Data;
+        
+        /// <remarks/>
+        public ExceptionInfo InnerException;
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.1433")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://lpsoft.org/server/")]
+    public partial class ServerCallResult {
+        
+        /// <remarks/>
+        public System.Data.DataSet Changes;
+        
+        /// <remarks/>
+        public ExceptionInfo Exception;
     }
     
     public partial class PingCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -614,10 +1058,10 @@ namespace LPSClientShared.LPSServer {
             this.results = results;
         }
         
-        public string Result {
+        public bool Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
+                return ((bool)(this.results[0]));
             }
         }
     }
@@ -681,13 +1125,11 @@ namespace LPSClientShared.LPSServer {
     
     public delegate void ChangePasswordCompletedEventHandler(object sender, ChangePasswordCompletedEventArgs args);
     
-    public delegate void LogoutCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs args);
-    
-    public partial class ExecuteNonquerySimpleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class SimpleExecuteNonqueryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal ExecuteNonquerySimpleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal SimpleExecuteNonqueryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -700,32 +1142,13 @@ namespace LPSClientShared.LPSServer {
         }
     }
     
-    public delegate void ExecuteNonquerySimpleCompletedEventHandler(object sender, ExecuteNonquerySimpleCompletedEventArgs args);
+    public delegate void SimpleExecuteNonqueryCompletedEventHandler(object sender, SimpleExecuteNonqueryCompletedEventArgs args);
     
-    public partial class ExecuteNonqueryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class SimpleExecuteScalarCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal ExecuteNonqueryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    public delegate void ExecuteNonqueryCompletedEventHandler(object sender, ExecuteNonqueryCompletedEventArgs args);
-    
-    public partial class ExecuteScalarSimpleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ExecuteScalarSimpleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal SimpleExecuteScalarCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -738,26 +1161,7 @@ namespace LPSClientShared.LPSServer {
         }
     }
     
-    public delegate void ExecuteScalarSimpleCompletedEventHandler(object sender, ExecuteScalarSimpleCompletedEventArgs args);
-    
-    public partial class ExecuteScalarCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ExecuteScalarCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public object Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((object)(this.results[0]));
-            }
-        }
-    }
-    
-    public delegate void ExecuteScalarCompletedEventHandler(object sender, ExecuteScalarCompletedEventArgs args);
+    public delegate void SimpleExecuteScalarCompletedEventHandler(object sender, SimpleExecuteScalarCompletedEventArgs args);
     
     public partial class NextSeqValueCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
@@ -797,6 +1201,96 @@ namespace LPSClientShared.LPSServer {
     
     public delegate void GetDataSetSimpleCompletedEventHandler(object sender, GetDataSetSimpleCompletedEventArgs args);
     
+    public partial class GetDataSetByTableNameSimpleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetDataSetByTableNameSimpleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void GetDataSetByTableNameSimpleCompletedEventHandler(object sender, GetDataSetByTableNameSimpleCompletedEventArgs args);
+    
+    public partial class GetChangesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetChangesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ServerCallResult Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ServerCallResult)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void GetChangesCompletedEventHandler(object sender, GetChangesCompletedEventArgs args);
+    
+    public partial class ExecuteNonqueryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExecuteNonqueryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ServerCallResult Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ServerCallResult)(this.results[0]));
+            }
+        }
+        
+        public int affected {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[1]));
+            }
+        }
+    }
+    
+    public delegate void ExecuteNonqueryCompletedEventHandler(object sender, ExecuteNonqueryCompletedEventArgs args);
+    
+    public partial class ExecuteScalarCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExecuteScalarCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ServerCallResult Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ServerCallResult)(this.results[0]));
+            }
+        }
+        
+        public object result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object)(this.results[1]));
+            }
+        }
+    }
+    
+    public delegate void ExecuteScalarCompletedEventHandler(object sender, ExecuteScalarCompletedEventArgs args);
+    
     public partial class GetDataSetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -806,10 +1300,17 @@ namespace LPSClientShared.LPSServer {
             this.results = results;
         }
         
-        public System.Data.DataSet Result {
+        public ServerCallResult Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
+                return ((ServerCallResult)(this.results[0]));
+            }
+        }
+        
+        public System.Data.DataSet data {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[1]));
             }
         }
     }
@@ -825,15 +1326,164 @@ namespace LPSClientShared.LPSServer {
             this.results = results;
         }
         
-        public int Result {
+        public ServerCallResult Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
+                return ((ServerCallResult)(this.results[0]));
+            }
+        }
+        
+        public int affected {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[1]));
             }
         }
     }
     
     public delegate void SaveDataSetCompletedEventHandler(object sender, SaveDataSetCompletedEventArgs args);
+    
+    public partial class SaveDataSetByTableNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SaveDataSetByTableNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ServerCallResult Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ServerCallResult)(this.results[0]));
+            }
+        }
+        
+        public int affected {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[1]));
+            }
+        }
+    }
+    
+    public delegate void SaveDataSetByTableNameCompletedEventHandler(object sender, SaveDataSetByTableNameCompletedEventArgs args);
+    
+    public partial class RegisterListenerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal RegisterListenerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ServerCallResult Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ServerCallResult)(this.results[0]));
+            }
+        }
+        
+        public int sink {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[1]));
+            }
+        }
+        
+        public int security {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[2]));
+            }
+        }
+    }
+    
+    public delegate void RegisterListenerCompletedEventHandler(object sender, RegisterListenerCompletedEventArgs args);
+    
+    public partial class RegisterListenerTableCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal RegisterListenerTableCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ServerCallResult Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ServerCallResult)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void RegisterListenerTableCompletedEventHandler(object sender, RegisterListenerTableCompletedEventArgs args);
+    
+    public partial class UnregisterListenerTableCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal UnregisterListenerTableCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ServerCallResult Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ServerCallResult)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void UnregisterListenerTableCompletedEventHandler(object sender, UnregisterListenerTableCompletedEventArgs args);
+    
+    public partial class UnregisterListenerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal UnregisterListenerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ServerCallResult Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ServerCallResult)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void UnregisterListenerCompletedEventHandler(object sender, UnregisterListenerCompletedEventArgs args);
+    
+    public partial class GetDataSetByTableNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetDataSetByTableNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ServerCallResult Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ServerCallResult)(this.results[0]));
+            }
+        }
+        
+        public System.Data.DataSet result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[1]));
+            }
+        }
+    }
+    
+    public delegate void GetDataSetByTableNameCompletedEventHandler(object sender, GetDataSetByTableNameCompletedEventArgs args);
     
     public partial class GetTextResourceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
@@ -853,4 +1503,6 @@ namespace LPSClientShared.LPSServer {
     }
     
     public delegate void GetTextResourceCompletedEventHandler(object sender, GetTextResourceCompletedEventArgs args);
+    
+    public delegate void LogoutCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs args);
 }

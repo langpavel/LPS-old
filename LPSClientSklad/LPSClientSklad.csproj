@@ -72,8 +72,9 @@
   <ItemGroup>
     <Compile Include="MainApp.cs" />
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Forms\MainForm.cs" />
     <Compile Include="Forms\AdresaForm.cs" />
+    <Compile Include="Forms\MainForm\MainForm.cs" />
+    <Compile Include="Forms\MainForm\ListPage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -93,6 +94,7 @@
   <ItemGroup>
     <Folder Include="Forms\" />
     <Folder Include="Images\" />
+    <Folder Include="Forms\MainForm\" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

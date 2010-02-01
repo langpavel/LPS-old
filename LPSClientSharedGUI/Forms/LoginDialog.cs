@@ -33,10 +33,17 @@ namespace LPS.Client
 			try
 			{
 				new ServerConnection(edtServer.Text);
-				ServerConnection.Instance.Ping("test");
-				laMessage.Markup = "<span color=\"#00cc00\">Spojení se serverem bylo navázáno</span>";
-				laMessage.TooltipText = "";
-				//MainApp.ShowMessage(this.Window, MessageType.Info, "Spojení OK", "Spojení se serverem bylo navázáno");
+				if(ServerConnection.Instance.Ping())
+				{
+					laMessage.Markup = "<span color=\"#00cc00\">Spojení se serverem bylo navázáno</span>";
+					laMessage.TooltipText = "";
+					//MainApp.ShowMessage(this.Window, MessageType.Info, "Spojení OK", "Spojení se serverem bylo navázáno");
+				}
+				else
+				{
+					laMessage.Markup = "<span color=\"#00cc00\">Chyba spojení - ping selhal</span>";
+					laMessage.TooltipText = "";
+				}
 			}
 			catch(Exception err)
 			{
@@ -51,9 +58,8 @@ namespace LPS.Client
 			try
 			{
 				ServerConnection srv = new ServerConnection(edtServer.Text);
-				string testString = "Test diakritiky ěščřžýáíéĚŠČŘŽÝÁÍÉŮů";
-				if(testString != srv.Ping(testString))
-					Console.WriteLine("Selhal test diakritiky spojení webové služby");
+				if(!srv.Ping())
+					return null;
 				return srv;
 			}
 			catch(Exception)

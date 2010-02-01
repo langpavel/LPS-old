@@ -1,4 +1,5 @@
-<item id="users" text="Uživatelé">
+<?xml version="1.0" encoding="utf-8"?>
+<table name="users" text="Uživatelé">
 	<desc>Uživatelé</desc>
 	<detail-name />
 	<list-sql>select * from users</list-sql>
@@ -10,4 +11,4 @@
 		<column name="first_name" caption="First name" visible="true" editable="true" required="false" width="0" />
 		<column name="surname" caption="Surname" visible="true" editable="true" required="false" width="0" />
 	</columns>
-</item>
+</table>

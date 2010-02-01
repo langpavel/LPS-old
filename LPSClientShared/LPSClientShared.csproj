@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D2317E65-70CE-4367-B1A7-211FD6044720}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>LPSClient</RootNamespace>
+    <RootNamespace>LPS.Client</RootNamespace>
     <AssemblyName>LPSClientShared</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
@@ -46,6 +46,7 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="ServerConnection.cs" />
     <Compile Include="Web References\LPSServer\Reference.cs" />
+    <Compile Include="ServerException.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPSShared\LPSShared.csproj">
