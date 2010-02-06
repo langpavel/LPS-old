@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace LPS
 {
-	public class DeepEnumerator: IEnumerator
+	public class DeepEnumerator: IEnumerator, IEnumerable
 	{
 		private IEnumerator root;
 		private Stack<IEnumerator> stack;
@@ -42,6 +42,11 @@ namespace LPS
 			stack.Push(root);
 		}
 
+		public IEnumerator GetEnumerator ()
+		{
+			return this;
+		}
+		
 		public object Current 
 		{ 
 			get { return curr.Current; }

@@ -64,6 +64,8 @@
     <Compile Include="DataTableTreeModel\FKMappedColumnHelper.cs" />
     <Compile Include="Forms\WidgetBindigs\ComboBoxRowBinding.cs" />
     <Compile Include="Forms\HTMLMessageDialog.cs" />
+    <Compile Include="ImageManager.cs" />
+    <Compile Include="DataTableTreeModel\DataTableView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />
@@ -85,6 +87,12 @@
     <EmbeddedResource Include="Forms\ui-shared.glade">
       <LogicalName>ui-shared.glade</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="Images\close-button.png">
+      <LogicalName>Images.close-button.png</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="Images\svg\close-button.svg" />
+  </ItemGroup>
 </Project>

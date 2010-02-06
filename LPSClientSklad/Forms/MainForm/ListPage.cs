@@ -11,7 +11,9 @@ namespace LPS.Client.Sklad
 		private ModulesTreeInfo module;
 		private HBox headerbox;
 		private Label headerlabel;
-		private TreeView treeview;
+		private DataTableView tableview;
+		private Image close_img;
+		private Button btnCloseTab;
 		
 		public ListPage (MainForm mainform, Notebook notebook, ModulesTreeInfo module)
 		{
@@ -22,23 +24,35 @@ namespace LPS.Client.Sklad
 			headerbox = new HBox();
 			headerlabel = new Label(module.Text);
 			headerbox.PackStart(headerlabel);
-			Image img = new Image("gtk-close", IconSize.Menu);
-			Button btnCloseTab = new Button(img);
+			//Image img = new Image("gtk-close", IconSize.Menu);
+			close_img = ImageManager.GetImage("Images.close-button.png");
+			btnCloseTab = new Button(close_img);
 			btnCloseTab.BorderWidth = 0;
 			btnCloseTab.Relief = ReliefStyle.None;
-			btnCloseTab.WidthRequest = 19;
-			btnCloseTab.HeightRequest = 19;
+			//btnCloseTab.WidthRequest = 19;
+			//btnCloseTab.HeightRequest = 19;
 			btnCloseTab.Clicked += delegate { this.Dispose(); };
 			headerbox.PackStart(btnCloseTab);
 			headerbox.ShowAll();
 			
-			treeview = new TreeView();
-			treeview.RowActivated += ListRowActivated;
-			this.Add(treeview);
+			tableview = new DataTableView(module);
+			this.Add(tableview);
 			this.ShowAll();
 			
 			notebook.AppendPage(this, headerbox);
 			notebook.SetTabReorderable(this, true);
+		}
+
+		public override void Dispose ()
+		{
+			notebook.RemovePage(this.PageIndex);
+			close_img.Destroy();
+			btnCloseTab.Destroy();
+			headerlabel.Destroy();
+			headerbox.Destroy();
+			tableview.Destroy();
+			this.Destroy();
+			base.Dispose();
 		}
 
 		public bool IsCurrent
@@ -54,7 +68,7 @@ namespace LPS.Client.Sklad
 		public void SetCurrent()
 		{
 			notebook.CurrentPage = this.PageIndex;
-			//mainform.
+			//TODO: assign column list
 		}
 
 		public void ListRowActivated(object sender, RowActivatedArgs args)
@@ -62,11 +76,5 @@ namespace LPS.Client.Sklad
 			//OpenDetailForm(view, args.Path);
 		}
 
-		public override void Dispose ()
-		{
-			notebook.RemovePage(this.PageIndex);
-			
-			base.Dispose ();
-		}
 	}
 }

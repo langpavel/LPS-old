@@ -196,6 +196,9 @@ namespace LPS.Client.Sklad
 		
 		public void ShowModuleTab(ModulesTreeInfo info)
 		{
+			ListPage page = new ListPage(this, nbData, info);
+			
+			/*
 			if(String.IsNullOrEmpty(info.ListSql))
 				return;
 			TreeView tw = info.Data["VIEW"] as TreeView;
@@ -257,6 +260,7 @@ namespace LPS.Client.Sklad
 	
 				nbData.Page = pgIdx;
 			}
+			*/
 		}
 		
 		public void RefreshData(ModulesTreeInfo info)
