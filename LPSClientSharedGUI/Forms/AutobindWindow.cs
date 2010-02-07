@@ -120,7 +120,22 @@ namespace LPS.Client
 		public abstract void Load(long id);
 		public virtual void New()
 		{
-			Load(0);
+		}
+
+		public virtual bool QueryDelete()
+		{
+			if(this.ShowQueryMessage(MessageType.Question, "Smazat", "Opravdu chcete smazat tento záznam?"))
+			{
+				this.Delete();
+				this.Dispose();
+				return true;
+			}
+			return false;
+		}
+		
+		public virtual void Delete()
+		{
+			throw new NotImplementedException("Tento dialog nepodporuje mazání");
 		}
 		
 		public DataSet Data { get; protected set; }

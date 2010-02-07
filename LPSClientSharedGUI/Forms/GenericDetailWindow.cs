@@ -57,7 +57,7 @@ namespace LPS.Client
 		
 		public override void Load (long id)
 		{
-			this.Window.Title = this.TableInfo.DetailText ?? "{kod} - {popis}";
+			this.Window.Title = this.TableInfo.DetailCaption ?? "{kod} - {popis}";
 			Load(this.TableInfo.Name, id);
 			content.NRows = (uint)this.Data.Tables[0].Columns.Count;
 			uint top = 0;

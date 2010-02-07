@@ -18,8 +18,8 @@ namespace LPS
 		[XmlAttribute("name")]
 		public string Name { get; set; }
 
-		[XmlElement("detail-text")]
-		public string DetailText { get; set; }
+		[XmlElement("detail-caption")]
+		public string DetailCaption { get; set; }
 		
 		[XmlElement("desc")]
 		public string Description { get; set; }

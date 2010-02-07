@@ -67,23 +67,11 @@ namespace LPS.Client.Sklad
 				return;
 			try
 			{
-				/*
-				Exception err = args.ExceptionObject as Exception;
-				int idx=-1;
-				if(err != null)
-					idx = err.Message.IndexOf("<HTML>");
-				if(idx >= 0)
-					ShowHtmlMessage(err.Message.Substring(idx));
-				else if(idx < 0 && err.InnerException != null)
-				{
-					idx = err.InnerException.Message.IndexOf("<HTML>");
-					if(idx >= 0)
-						ShowHtmlMessage(err.InnerException.Message.Substring(idx));			
-				}
-				else
-				*/
+				Exception exception = args.ExceptionObject as Exception;
+				if(exception is TargetInvocationException && exception.InnerException != null)
+					exception = exception.InnerException;
 				StringBuilder sb = new StringBuilder();
-				ServerException sex = args.ExceptionObject as ServerException;
+				ServerException sex = exception as ServerException;
 				if(sex != null)
 				{
 					LPSClientShared.LPSServer.ExceptionInfo exi = sex.ExceptionInfo;
@@ -98,14 +86,14 @@ namespace LPS.Client.Sklad
 				}
 				else
 				{
-					Exception ex = args.ExceptionObject as Exception;
-					while(ex != null)
+					Exception err = exception;
+					while(err != null)
 					{
-						sb.AppendLine(ex.ToString());
-						ex = ex.InnerException;
+						sb.AppendLine(err.ToString());
+						err = err.InnerException;
 					}
 				}
-				ShowLongMessage("Chyba", "Nastala neošetřená vyjímka " + args.ExceptionObject.GetType().Name, sb.ToString());
+				ShowLongMessage("Chyba", "Nastala neošetřená vyjímka " + exception.GetType().Name, sb.ToString());
 				args.ExitApplication = false;
 			}
 			catch(Exception err)

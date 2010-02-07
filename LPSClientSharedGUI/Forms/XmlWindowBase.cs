@@ -80,15 +80,11 @@ namespace LPS.Client
 		
 		public void ShowMessage(MessageType msgType, string caption, string text, params object[] args)
 		{
-			string txt = String.Format(text, args);
-			txt = txt.Replace("&","&amp;");
-			txt = txt.Replace("<","&lt;");
-			
 			using(Gtk.MessageDialog d = 
 				new Gtk.MessageDialog(
 					this.Window, 
 					DialogFlags.DestroyWithParent | DialogFlags.Modal,
-					msgType, ButtonsType.Ok, txt))
+					msgType, ButtonsType.Ok, false, text, args))
 			{
 				d.Title = caption;
 				d.Run();
@@ -96,5 +92,21 @@ namespace LPS.Client
 			}
 		}
 
+		public bool ShowQueryMessage(MessageType msgType, string caption, string text, params object[] args)
+		{
+			int result = (int)ResponseType.None;
+			using(Gtk.MessageDialog d = 
+				new Gtk.MessageDialog(
+					this.Window, 
+					DialogFlags.DestroyWithParent | DialogFlags.Modal,
+					msgType, ButtonsType.YesNo, false, text, args))
+			{
+				d.Title = caption;
+				result = d.Run();
+				d.Destroy();
+			}
+			return (result == (int)ResponseType.Yes);
+		}
+		
 	}
 }

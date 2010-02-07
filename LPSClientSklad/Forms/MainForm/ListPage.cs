@@ -6,18 +6,18 @@ namespace LPS.Client.Sklad
 {
 	public class ListPage : ScrolledWindow
 	{
-		private MainForm mainform;
 		private Notebook notebook;
 		private ModulesTreeInfo module;
+		public ModulesTreeInfo Module { get {return module; } }
 		private HBox headerbox;
 		private Label headerlabel;
 		private DataTableView tableview;
+		public DataTableView TableView { get {return tableview; } }
 		private Image close_img;
 		private Button btnCloseTab;
 		
-		public ListPage (MainForm mainform, Notebook notebook, ModulesTreeInfo module)
+		public ListPage (Notebook notebook, ModulesTreeInfo module)
 		{
-			this.mainform = mainform;
 			this.notebook = notebook;
 			this.module = module;
 

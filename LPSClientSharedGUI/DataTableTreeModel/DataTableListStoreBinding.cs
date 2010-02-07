@@ -489,6 +489,17 @@ namespace LPS.Client
 			}
 		}
 
+		public DataRow GetCurrentRow()
+		{
+			TreeModel model;
+			TreeIter iter;
+			if(this.TreeView.Selection.GetSelected(out model, out iter))
+			{
+				return model.GetValue(iter, 0) as DataRow;
+			}
+			return null;
+		}
+		
 		/*
 		public void UpdateFromActualTable(DataTable table)
 		{

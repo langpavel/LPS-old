@@ -196,6 +196,14 @@
               </packing>
             </child>
             <child>
+              <widget class="GtkSeparatorToolItem" id="separatortoolitem3">
+                <property name="visible">True</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+              </packing>
+            </child>
+            <child>
               <widget class="GtkToolButton" id="toolbutton_open">
                 <property name="visible">True</property>
                 <property name="is_important">True</property>
@@ -203,6 +211,20 @@
                 <property name="use_underline">True</property>
                 <property name="stock_id">gtk-open</property>
                 <signal name="clicked" handler="OpenItem"/>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkToolButton" id="toolbutton_delete">
+                <property name="visible">True</property>
+                <property name="is_important">True</property>
+                <property name="label" translatable="yes">Odstranit</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-delete</property>
+                <signal name="clicked" handler="DeleteItem"/>
               </widget>
               <packing>
                 <property name="expand">False</property>
@@ -224,17 +246,14 @@
                   <widget class="GtkHBox" id="hbox1">
                     <property name="visible">True</property>
                     <child>
-                      <widget class="GtkCheckButton" id="chkFiltrovat">
-                        <property name="label" translatable="yes">Filtorvat</property>
+                      <widget class="GtkLabel" id="label2">
                         <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">False</property>
-                        <property name="draw_indicator">True</property>
-                        <signal name="toggled" handler="OnFilterToggled"/>
+                        <property name="label" translatable="yes">Filtr:</property>
                       </widget>
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">False</property>
+                        <property name="padding">2</property>
                         <property name="position">0</property>
                       </packing>
                     </child>

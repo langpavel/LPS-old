@@ -69,7 +69,7 @@ namespace ImportHelper
 			{
 				if(_Adresa != null)
 					return _Adresa;
-				return _Adresa = LPS.GetDataSet("select * from adresa");
+				return _Adresa = LPS.GetDataSetByTableName("adresa");
 			}
 		}
 		
@@ -301,7 +301,7 @@ namespace ImportHelper
 								ci.FkReplaceColumns = "kod";
 								try
 								{
-									FKMappedColumnHelper helper = new FKMappedColumnHelper(ci.FkReferenceTable, ci.FkReplaceColumns);
+									//FKMappedColumnHelper helper = new FKMappedColumnHelper(ci.FkReferenceTable, ci.FkReplaceColumns);
 									//ci.DisplayFormat = helper.DisplayFormat;
 								}
 								catch 
@@ -309,8 +309,8 @@ namespace ImportHelper
 									try
 									{
 										string t2 = "c_" + ci.FkReferenceTable;
-										FKMappedColumnHelper helper = new FKMappedColumnHelper(t2, ci.FkReplaceColumns);
 										ci.FkReferenceTable = t2;
+										//FKMappedColumnHelper helper = new FKMappedColumnHelper(t2, ci.FkReplaceColumns);
 										//ci.DisplayFormat = helper.DisplayFormat;
 									}
 									catch 

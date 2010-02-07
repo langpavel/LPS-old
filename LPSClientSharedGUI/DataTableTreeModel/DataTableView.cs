@@ -62,6 +62,34 @@ namespace LPS.Client
 			DataRow row = binding.GetRow(path);
 			FormManager.Instance.GetWindow(this.ModuleInfo.DetailName, this.ModuleInfo, Convert.ToInt64(row["id"]));
 		}
+		
+		public AutobindWindow OpenDetail()
+		{
+			DataRow row = binding.GetCurrentRow();
+			if(row == null)
+				return null;
+			return FormManager.Instance.GetWindow(this.ModuleInfo.DetailName, this.ModuleInfo, Convert.ToInt64(row["id"]));
+		}
+		
+		public AutobindWindow OpenNewDetail()
+		{
+			return FormManager.Instance.GetWindow(this.ModuleInfo.DetailName, this.ModuleInfo, 0L);
+		}
+		
+		public AutobindWindow OpenDetailAndDelete()
+		{
+			AutobindWindow wnd = OpenDetail();
+			if(wnd == null)
+				return null;
+			wnd.Delete();
+			return wnd;
+		}
 
+		private string filter;
+		public string Filter
+		{
+			get	{ return filter ?? ""; }
+			set { filter = value; binding.ApplyFilter(filter); }
+		}
 	}
 }

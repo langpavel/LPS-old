@@ -12,7 +12,6 @@ namespace LPS.Client.Sklad
 		[Glade.Widget] TreeView viewModules;
 		[Glade.Widget] TreeView viewColumns;
 		[Glade.Widget] Notebook nbData;
-		[Glade.Widget] ToggleButton chkFiltrovat;
 		[Glade.Widget] Entry edtFilter;
 		//[Glade.Widget] Widget tabSloupce;
 		
@@ -39,6 +38,20 @@ namespace LPS.Client.Sklad
 			InitModules(false);
 			
 			DataTableListStoreBinding.CreateColumnTreeViewColumns(viewColumns);
+		}
+
+		public ListPage GetCurrentPage()
+		{
+			return nbData.GetNthPage(nbData.Page) as ListPage;
+		}
+		
+		private void HandleNbDataSwitchPage (object o, SwitchPageArgs args)
+		{
+			ListPage current = GetCurrentPage();
+			if(current != null)
+				this.edtFilter.Text = current.TableView.Filter;
+			else
+				this.edtFilter.Text = "";
 		}
 
 		private void AddModulesNodes(ModulesTreeInfo info, TreeStore store, TreeIter parent)
@@ -99,62 +112,36 @@ namespace LPS.Client.Sklad
 			Application.Quit();
 		}
 
-		public TreeView GetCurrentView()
-		{
-			try
-			{
-				ScrolledWindow page = nbData.GetNthPage(nbData.Page) as ScrolledWindow;
-				return page.Child as TreeView;
-			}
-			catch
-			{
-				return null;
-			}
-		}
-		
-		public void OpenItem(object sender, EventArgs args)
-		{
-			// TODO: predelat na propojeni se zalozkou
-			/*
-			TreeView tw = GetCurrentView();
-			if(tw == null)
-				return;
-			foreach(TreePath path in tw.Selection.GetSelectedRows())
-			{
-				OpenDetailForm(tw, path);
-			}
-			*/
-		}
-
 		public void AddItem(object sender, EventArgs args)
 		{
-			// TODO: predelat na propojeni se zalozkou
+			ListPage page = GetCurrentPage();
+			if(page == null)
+				return;
+			page.TableView.OpenNewDetail();
 		}
-		
-		public void OnFilterToggled(object sender, EventArgs args)
+
+		public void OpenItem(object sender, EventArgs args)
 		{
-			if(chkFiltrovat.Active)
-				ApplyFilter(edtFilter.Text);
-			else
-				ApplyFilter(null);
+			ListPage page = GetCurrentPage();
+			if(page == null)
+				return;
+			page.TableView.OpenDetail();
 		}
-		
+
+		public void DeleteItem(object sender, EventArgs args)
+		{
+			ListPage page = GetCurrentPage();
+			if(page == null)
+				return;
+			page.TableView.OpenDetailAndDelete();
+		}
+
 		public void OnFilterChanged(object sender, EventArgs args)
 		{
-			if(chkFiltrovat.Active)
-				ApplyFilter(edtFilter.Text);
-		}
-		
-		#endregion
-		
-		public void ApplyFilter(string filter)
-		{
-			TreeView tw = GetCurrentView();
-			if(tw == null)
+			ListPage current = GetCurrentPage();
+			if(current == null)
 				return;
-			ModulesTreeInfo info = tw.Data["INFO"] as ModulesTreeInfo;
-			DataTableListStoreBinding b = info.Data["BINDING"] as DataTableListStoreBinding;
-			b.ApplyFilter(filter);
+			current.TableView.Filter = edtFilter.Text;
 		}
 		
 		public void PasswordChange(object sender, EventArgs args)
@@ -163,6 +150,7 @@ namespace LPS.Client.Sklad
 			dialog.Execute();
 			dialog.Destroy();
 		}
+		#endregion
 		
 		public void SetColumnsView(DataTableListStoreBinding binding)
 		{
@@ -178,117 +166,25 @@ namespace LPS.Client.Sklad
 		
 		public void ShowModuleTab(ModulesTreeInfo info)
 		{
-			ListPage page = new ListPage(this, nbData, info);
+			ListPage page = null;
+			for(int i = 0; i < nbData.NPages; i++)
+			{
+				page = nbData.GetNthPage(i) as ListPage;
+				if(page == null)
+					continue;
+				if(page.Module == info)
+					break;
+				page = null;
+			}
+			if(page == null)
+				page = new ListPage(nbData, info);
 			
-			/*
-			if(String.IsNullOrEmpty(info.ListSql))
-				return;
-			TreeView tw = info.Data["VIEW"] as TreeView;
-			if(tw != null)
-			{
-				nbData.Page = nbData.PageNum(tw.Parent);
-				RefreshData(info);
-			}
-			else
-			{
-				tw = new TreeView();
-				HBox header = new HBox();
-				header.Add(new Label(info.Text));
-				Image img = new Image("gtk-close", IconSize.Menu);
-				Button btnCloseTab = new Button(img);
-				btnCloseTab.BorderWidth = 0;
-				btnCloseTab.Relief = ReliefStyle.None;
-				btnCloseTab.WidthRequest = 19;
-				btnCloseTab.HeightRequest = 19;
-				header.Add(btnCloseTab);
-				header.ShowAll();
-				
-				ScrolledWindow page = new ScrolledWindow();
-				page.Add(tw);
-				page.ShowAll();
-					
-				int pgIdx = nbData.AppendPage(page, header);
-				nbData.SetTabReorderable(page, true);
-				//nbData.SetTabDetachable(page, true);
-				
-				DataSet ds = Connection.GetDataSetSimple(info.ListSql);
-
-				TableInfo tableinfo = Connection.Resources.GetTableInfo(info.Table);
-				DataTableListStoreBinding binding = new DataTableListStoreBinding(tw, ds.Tables[0], tableinfo);
-				binding.Bind();
-				binding.Sorting = "id";
-				SetColumnsView(binding);
-
-				info.Data["VIEW"] = tw;
-				info.Data["DATASET"] = ds;
-				info.Data["BINDING"] = binding;
-				tw.Data["INFO"] = info;
-				
-				btnCloseTab.Clicked += delegate {
-					info.Data.Remove("VIEW");
-					info.Data.Remove("DATASET");
-					info.Data.Remove("BINDING");
-					nbData.Remove(header);
-					nbData.Remove(page);
-					tw.Dispose();
-					page.Dispose();
-					header.Dispose();
-					ds.Dispose();
-					if(binding.ColumnList == viewColumns.Model)
-						SetColumnsView(null);
-					binding.Dispose();
-					//store.Dispose();
-				};
+			page.SetCurrent();
+		}
 	
-				nbData.Page = pgIdx;
-			}
-			*/
-		}
-		
-		public void RefreshData(ModulesTreeInfo info)
-		{
-			TreeView tw = info.Data["VIEW"] as TreeView;
-			//DataTableListStoreBinding binding = info.Data["BINDING"] as DataTableListStoreBinding;
-			DataSet ds = info.Data["DATASET"] as DataSet;
-			DataTableListStoreBinding binding = info.Data["BINDING"] as DataTableListStoreBinding;
-			if(ds == null)
-				return;
-			DataSet newDs = Connection.GetSameDataSet(ds);
-			TreePath[] selectedPaths = tw.Selection.GetSelectedRows();
-			double hpos = ((tw.Parent as ScrolledWindow).HScrollbar as Scrollbar).Value;
-			double vpos = ((tw.Parent as ScrolledWindow).VScrollbar as Scrollbar).Value;
-			binding.Unbind();
-			ds.Dispose();
-			info.Data["DATASET"] = newDs;
-			binding.DataTable = newDs.Tables[0];
-			binding.Bind();
-			if(selectedPaths.Length > 0)
-			{
-				try {
-					tw.Selection.SelectPath(selectedPaths[0]);
-					((tw.Parent as ScrolledWindow).HScrollbar as Scrollbar).Value = hpos;
-					((tw.Parent as ScrolledWindow).VScrollbar as Scrollbar).Value = vpos;
-				} catch { }
-			}
-		}
-		
 		public void RefreshModules(object o, EventArgs args)
 		{
 			InitModules(true);
-		}
-
-		void HandleNbDataSwitchPage (object o, SwitchPageArgs args)
-		{
-			SetColumnsView(null);
-			ScrolledWindow w = nbData.GetNthPage(nbData.Page) as ScrolledWindow;
-			if(w == null)
-				return;
-			TreeView tw = w.Child as TreeView;
-			if(tw == null || tw.Data == null || tw.Data["INFO"] == null)
-				return;
-			ModulesTreeInfo info = tw.Data["INFO"] as ModulesTreeInfo;
-			DataTableListStoreBinding binding = info.Data["BINDING"] as DataTableListStoreBinding;
-			SetColumnsView(binding);
 		}
 	}
 }
