@@ -18,6 +18,9 @@ namespace LPS
 		[XmlAttribute("name")]
 		public string Name { get; set; }
 
+		[XmlElement("detail-text")]
+		public string DetailText { get; set; }
+		
 		[XmlElement("desc")]
 		public string Description { get; set; }
 		
@@ -30,6 +33,16 @@ namespace LPS
 		[XmlArray("columns")]
 		[XmlArrayItem("column")]
 		public List<ColumnInfo> Columns { get; set; }
+		
+		public ColumnInfo GetColumnInfo(string name)
+		{
+			foreach(ColumnInfo col in this.Columns)
+			{
+				if(col.Name == name)
+					return col;
+			}
+			return null;
+		}
 		
 	}
 }

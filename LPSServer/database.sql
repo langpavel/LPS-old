@@ -25,7 +25,8 @@ CREATE TABLE c_druh_adresy (
     id_user_create bigint references users(id),
     dt_create timestamp without time zone DEFAULT now(),
     id_user_modify bigint references users(id),
-    dt_modify timestamp without time zone DEFAULT now()
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
 );
 INSERT INTO c_druh_adresy VALUES (1, 'FA', 'Fakturační', true, true, null, null, null, null, null);
 INSERT INTO c_druh_adresy VALUES (2, 'DODACI', 'Dodací', true, false, true, null, null, null, null);
@@ -44,7 +45,8 @@ CREATE TABLE c_dph (
     id_user_create bigint references users(id),
     dt_create timestamp without time zone DEFAULT now(),
     id_user_modify bigint references users(id),
-    dt_modify timestamp without time zone DEFAULT now()
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
 );
 INSERT INTO c_dph VALUES (1, 'DPH0', 'Bez DPH', 0.00, null, null, false, null, null, null, null);
 INSERT INTO c_dph VALUES (2, 'DPH9', 'DPH 9%', 0.09, null, '1.1.2010', false, null, null, null, null);
@@ -61,7 +63,8 @@ CREATE TABLE c_mj (
     id_user_create bigint references users(id),
     dt_create timestamp without time zone DEFAULT now(),
     id_user_modify bigint references users(id),
-    dt_modify timestamp without time zone DEFAULT now()
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
 );
 INSERT INTO c_mj VALUES (1, 'KS', 'Kus', 'Kusy', null, null, null, null);
 
@@ -74,7 +77,8 @@ CREATE TABLE c_kategorie (
     id_user_create bigint references users(id),
     dt_create timestamp without time zone DEFAULT now(),
     id_user_modify bigint references users(id),
-    dt_modify timestamp without time zone DEFAULT now()
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
 );
 
 CREATE TABLE c_zaruka (
@@ -89,7 +93,8 @@ CREATE TABLE c_zaruka (
     id_user_create bigint references users(id),
     dt_create timestamp without time zone DEFAULT now(),
     id_user_modify bigint references users(id),
-    dt_modify timestamp without time zone DEFAULT now()
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
 );
 
 CREATE TABLE c_sklad (
@@ -101,7 +106,8 @@ CREATE TABLE c_sklad (
     id_user_create bigint references users(id),
     dt_create timestamp without time zone DEFAULT now(),
     id_user_modify bigint references users(id),
-    dt_modify timestamp without time zone DEFAULT now()
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
 );
 
 CREATE TABLE adresa (
@@ -135,7 +141,8 @@ CREATE TABLE adresa (
     id_user_create bigint references users(id),
     dt_create timestamp without time zone DEFAULT now(),
     id_user_modify bigint references users(id),
-    dt_modify timestamp without time zone DEFAULT now()
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
 );
 
 
@@ -164,6 +171,7 @@ CREATE TABLE skl_karta (
     id_user_create bigint references users(id),
     dt_create timestamp without time zone DEFAULT now(),
     id_user_modify bigint references users(id),
-    dt_modify timestamp without time zone DEFAULT now()
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
 );
 

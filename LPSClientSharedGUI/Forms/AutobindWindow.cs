@@ -20,7 +20,7 @@ namespace LPS.Client
 		}
 
 		private TextRowBinding titlebinding;
-		protected virtual void Autobind(DataRow row, ModulesTreeInfo info)
+		protected virtual void Autobind(DataRow row, TableInfo info)
 		{
 			IEnumerator e = new DeepEnumerator(this.Window.GetEnumerator());
 			while(e.MoveNext())
@@ -42,7 +42,7 @@ namespace LPS.Client
 					DataTable table = Row.Table;
 					DataColumn col = table.Columns[name];
 				
-					WidgetRowBinding binding = BindWidget(col, w, ListInfo.GetColumnInfo(name));
+					WidgetRowBinding binding = BindWidget(col, w, this.TableInfo.GetColumnInfo(name));
 					if(binding != null)
 						this.OwnedComponents.Add(binding);
 					
@@ -113,7 +113,7 @@ namespace LPS.Client
 					Unbind(_Row);
 				_Row = value;
 				if(_Row != null)
-					Autobind(_Row, this.ListInfo);
+					Autobind(_Row, this.TableInfo);
 			}
 		}
 		
@@ -125,10 +125,10 @@ namespace LPS.Client
 		
 		public DataSet Data { get; protected set; }
 		
-		protected virtual void Load(string sql, long id)
+		protected virtual void Load(string table_name, long id)
 		{
-			Data = Connection.GetDataSet(sql, "id", id);
-			if(id == 0)
+			Data = Connection.GetDataSetByTableName(table_name, "id", id);
+			if(id <= 0)
 			{
 				this.Row = Data.Tables[0].NewRow();
 				OnNewRow(this.Row);

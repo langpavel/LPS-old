@@ -295,6 +295,7 @@ namespace LPS.Client
 			}
 		}
 		
+		[Obsolete]
 		public static DataTableListStoreBinding Get(TreeView view)
 		{
 			return (view.Model as TreeModelFilter).Data["_BINDING"] as DataTableListStoreBinding;

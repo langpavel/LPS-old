@@ -232,6 +232,8 @@ namespace LPS.Client
 				string tablename = (string)dataset.ExtendedProperties["TABLE"];
 				using(DataSet changes = dataset.GetChanges())
 					CheckServerResult(Server.SaveDataSetByTableName(sink, security, tablename, changes, true, true, out affected));
+				if(affected > 0) 
+					dataset.AcceptChanges();
 				return affected;
 			}
 			else

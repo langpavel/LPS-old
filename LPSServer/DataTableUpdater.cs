@@ -111,8 +111,15 @@ namespace LPS.Server
 			{
 				NpgsqlParameter p = insert_params[i];
 				col_names[i] = p.SourceColumn;
-				param_names[i] = ":" + p.ParameterName;
-				insert_cmd.Parameters.Add(p);
+				if(p.SourceColumn == "ts")
+				{
+					param_names[i] = "now()";
+				}
+				else
+				{
+					param_names[i] = p.ParameterName;
+					insert_cmd.Parameters.Add(p);
+				}
 			}
 			insert_cmd.CommandText = String.Format("insert into {0} ({1}) values ({2})", 
 				table_name, String.Join(", ", col_names), String.Join(", ", param_names));
@@ -132,8 +139,15 @@ namespace LPS.Server
 			for(int i=0; i < new_params.Length; i++)
 			{
 				NpgsqlParameter p = new_params[i];
-				sb.Append(p.SourceColumn).Append(" = :").Append(p.ParameterName);
-				update_cmd.Parameters.Add(p);
+				if(p.SourceColumn == "ts")
+				{
+					sb.Append(p.SourceColumn).Append("=now()");
+				}
+				else
+				{
+					sb.Append(p.SourceColumn).Append("=").Append(p.ParameterName);
+					update_cmd.Parameters.Add(p);
+				}
 				if(i != new_params.Length - 1)
 					sb.Append(", ");
 			}
@@ -141,10 +155,19 @@ namespace LPS.Server
 			for(int i=0; i < orig_params.Length; i++)
 			{
 				NpgsqlParameter p = orig_params[i];
-				sb.Append(p.SourceColumn).Append(" = :").Append(p.ParameterName);
+
+				if(p.SourceColumn == "ts" || 
+				   p.SourceColumn == "id_user_create" || 
+				   p.SourceColumn == "dt_create" || 
+				   p.SourceColumn == "id_user_modify" || 
+				   p.SourceColumn == "dt_modify")
+					continue;
+					
+				if(i != 0)
+					sb.Append(" and ");
+				
+				sb.AppendFormat("({0}={1} or {0} is null)", p.SourceColumn, p.ParameterName);
 				update_cmd.Parameters.Add(p);
-				if(i != orig_params.Length - 1)
-					sb.Append(", ");
 			}
 			
 			update_cmd.CommandText = sb.ToString();
@@ -163,10 +186,17 @@ namespace LPS.Server
 			for(int i=0; i < orig_params.Length; i++)
 			{
 				NpgsqlParameter p = orig_params[i];
-				sb.Append(p.SourceColumn).Append(" = :").Append(p.ParameterName);
-				update_cmd.Parameters.Add(p);
-				if(i != orig_params.Length - 1)
-					sb.Append(", ");
+				if(p.SourceColumn == "ts" || 
+				   p.SourceColumn == "id_user_create" || 
+				   p.SourceColumn == "dt_create" || 
+				   p.SourceColumn == "id_user_modify" || 
+				   p.SourceColumn == "dt_modify")
+					continue;
+					
+				if(i != 0)
+					sb.Append(" and ");
+				sb.AppendFormat("({0}={1} or {0} is null)", p.SourceColumn, p.ParameterName);
+				delete_cmd.Parameters.Add(p);
 			}
 			
 			update_cmd.CommandText = sb.ToString();

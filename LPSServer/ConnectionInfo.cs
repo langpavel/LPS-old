@@ -440,9 +440,9 @@ namespace LPS.Server
 				if(first) first = false; else paramstr.Append(" AND ");
 				object val = parameter.Value;
 				if(val == null || val is DBNull)
-					paramstr.AppendFormat("({0} IS NULL)", parameter.ParameterName);
+					paramstr.AppendFormat("({0} IS NULL)", parameter.SourceColumn);
 				else
-					paramstr.AppendFormat("({0} = :{0})", parameter.ParameterName);
+					paramstr.AppendFormat("({0} = {1})", parameter.SourceColumn, parameter.ParameterName);
 				command.Parameters.Add(parameter);
 			}
 			int idx = sqllower.IndexOf("{where}");
@@ -519,11 +519,19 @@ namespace LPS.Server
 		
 		public int SaveDataSetByTableName(string tablename, DataSet changes, bool updateUserInfo, bool changesNotify)
 		{
-			using(DataTableUpdater updater = new DataTableUpdater(this, changes.Tables[0], tablename))
+			try
 			{
-				updater.UpdateUserInfo = updateUserInfo;
-				updater.NotifyChangeSink = changesNotify;
-				return updater.Run();
+				using(DataTableUpdater updater = new DataTableUpdater(this, changes.Tables[0], tablename))
+				{
+					updater.UpdateUserInfo = updateUserInfo;
+					updater.NotifyChangeSink = changesNotify;
+					return updater.Run();
+				}
+			}
+			catch(Exception ex)
+			{
+				Console.WriteLine(ex.ToString());
+				throw;
 			}
 		}
 	}

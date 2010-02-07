@@ -1,4 +1,5 @@
-<table id="c_mj">
+<?xml version="1.0" encoding="utf-8"?>
+<table name="c_mj">
 	<desc>Měrné jednotky</desc>
 	<detail-name>generic</detail-name>
 	<list-sql>select * from c_mj</list-sql>

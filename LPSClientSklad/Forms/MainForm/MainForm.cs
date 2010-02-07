@@ -114,6 +114,8 @@ namespace LPS.Client.Sklad
 		
 		public void OpenItem(object sender, EventArgs args)
 		{
+			// TODO: predelat na propojeni se zalozkou
+			/*
 			TreeView tw = GetCurrentView();
 			if(tw == null)
 				return;
@@ -121,20 +123,12 @@ namespace LPS.Client.Sklad
 			{
 				OpenDetailForm(tw, path);
 			}
+			*/
 		}
 
 		public void AddItem(object sender, EventArgs args)
 		{
-			TreeView view = GetCurrentView();
-			if(view == null)
-				return;
-			//DataTableListStoreBinding binding = DataTableListStoreBinding.Get(view);
-			ModulesTreeInfo info = view.Data["INFO"] as ModulesTreeInfo;
-			FormInfo fi = FormFactory.Instance.GetFormInfo(info.DetailName);
-			AutobindWindow w = fi.CreateObject() as AutobindWindow;
-			w.ListInfo = info;
-			w.New();
-			w.ShowAll();
+			// TODO: predelat na propojeni se zalozkou
 		}
 		
 		public void OnFilterToggled(object sender, EventArgs args)
@@ -168,18 +162,6 @@ namespace LPS.Client.Sklad
 			PasswdChDialog dialog = FormFactory.Create<PasswdChDialog>("chpasswd");
 			dialog.Execute();
 			dialog.Destroy();
-		}
-		
-		public void OpenDetailForm(TreeView view, TreePath path)
-		{
-			DataTableListStoreBinding binding = DataTableListStoreBinding.Get(view);
-			DataRow row = binding.GetRow(path);
-			ModulesTreeInfo info = view.Data["INFO"] as ModulesTreeInfo;
-			FormInfo fi = FormFactory.Instance.GetFormInfo(info.DetailName);
-			AutobindWindow w = fi.CreateObject() as AutobindWindow;
-			w.ListInfo = info;
-			w.Load(Convert.ToInt64(row[0]));
-			w.ShowAll();
 		}
 		
 		public void SetColumnsView(DataTableListStoreBinding binding)

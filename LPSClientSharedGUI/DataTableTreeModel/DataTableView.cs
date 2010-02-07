@@ -55,6 +55,13 @@ namespace LPS.Client
 			binding = new DataTableListStoreBinding(this, this.table, this.TableInfo);
 			binding.Bind();
 		}
-		
+
+		protected override void OnRowActivated (TreePath path, TreeViewColumn column)
+		{
+			base.OnRowActivated (path, column);
+			DataRow row = binding.GetRow(path);
+			FormManager.Instance.GetWindow(this.ModuleInfo.DetailName, this.ModuleInfo, Convert.ToInt64(row["id"]));
+		}
+
 	}
 }

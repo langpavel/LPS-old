@@ -1,4 +1,5 @@
-<table id="c_dph">
+<?xml version="1.0" encoding="utf-8"?>
+<table name="c_dph">
 	<desc>Hodnoty DPH</desc>
 	<detail-name>generic</detail-name>
 	<list-sql>select * from c_dph</list-sql>

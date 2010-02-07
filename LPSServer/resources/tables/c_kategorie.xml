@@ -1,4 +1,5 @@
-<table id="c_kategorie">
+<?xml version="1.0" encoding="utf-8"?>
+<table name="c_kategorie">
 	<desc>Kategorie produktů</desc>
 	<detail-name>generic</detail-name>
 	<list-sql>select * from c_kategorie</list-sql>

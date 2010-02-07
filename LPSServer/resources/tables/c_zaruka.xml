@@ -1,4 +1,5 @@
-<table id="c_zaruka">
+<?xml version="1.0" encoding="utf-8"?>
+<table name="c_zaruka">
 	<desc>Záruční doba</desc>
 	<detail-name>generic</detail-name>
 	<list-sql>select * from c_zaruka</list-sql>

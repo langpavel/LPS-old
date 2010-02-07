@@ -66,6 +66,7 @@
     <Compile Include="Forms\HTMLMessageDialog.cs" />
     <Compile Include="ImageManager.cs" />
     <Compile Include="DataTableTreeModel\DataTableView.cs" />
+    <Compile Include="FormManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />

@@ -5,6 +5,7 @@ using Gtk;
 using LPS;
 using Microsoft.Win32;
 using LPS.Client;
+using System.Text;
 
 namespace LPS.Client.Sklad
 {
@@ -81,7 +82,30 @@ namespace LPS.Client.Sklad
 				}
 				else
 				*/
-					ShowLongMessage("Chyba", "Nastala neošetřená vyjímka " + args.ExceptionObject.GetType().Name, args.ExceptionObject.ToString());
+				StringBuilder sb = new StringBuilder();
+				ServerException sex = args.ExceptionObject as ServerException;
+				if(sex != null)
+				{
+					LPSClientShared.LPSServer.ExceptionInfo exi = sex.ExceptionInfo;
+					while(exi != null)
+					{
+						sb.AppendLine(exi.Name + " " + exi.ErrCodeName ?? "");
+						sb.AppendLine(exi.Message);
+						sb.AppendLine(exi.StackTrace);
+						sb.AppendLine("-------------------");
+						exi = exi.InnerException;
+					}
+				}
+				else
+				{
+					Exception ex = args.ExceptionObject as Exception;
+					while(ex != null)
+					{
+						sb.AppendLine(ex.ToString());
+						ex = ex.InnerException;
+					}
+				}
+				ShowLongMessage("Chyba", "Nastala neošetřená vyjímka " + args.ExceptionObject.GetType().Name, sb.ToString());
 				args.ExitApplication = false;
 			}
 			catch(Exception err)

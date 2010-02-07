@@ -34,7 +34,11 @@ namespace LPS.Server
 			
 			List<NpgsqlParameter> result = new List<NpgsqlParameter>(p.Length >> 1);
 			for(int i=0; i < p.Length; i += 2)
-				result.Add(new NpgsqlParameter(p[i] as string, p[i+1]));
+			{
+				NpgsqlParameter param = new NpgsqlParameter(p[i] as string, p[i+1]);
+				param.SourceColumn = p[i] as string;
+				result.Add(param);
+			}
 			return result.ToArray();
 		}
 		#endregion

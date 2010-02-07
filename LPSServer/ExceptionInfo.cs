@@ -1,5 +1,6 @@
 using System;
 using System.Xml.Serialization;
+using Npgsql;
 
 namespace LPS
 {
@@ -14,6 +15,11 @@ namespace LPS
 		{
 			Name = err.GetType().FullName;
 			Message = err.Message;
+			NpgsqlException pgerr = err as NpgsqlException;
+			if(pgerr != null)
+			{
+				Message += "\nSQL: " + pgerr.ErrorSql + "\n" + pgerr.Detail;
+			}
 			StackTrace = err.StackTrace;
 			if(err.InnerException != null)
 				InnerException = new ExceptionInfo(err.InnerException);

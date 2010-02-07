@@ -57,13 +57,13 @@ namespace LPS.Client
 		
 		public override void Load (long id)
 		{
-			this.Window.Title = "{kod} - {popis} - " + this.ListInfo.Text ?? "";
-			Load("select * from "+this.ListInfo.Id+" where id=:id", id);
+			this.Window.Title = this.TableInfo.DetailText ?? "{kod} - {popis}";
+			Load(this.TableInfo.Name, id);
 			content.NRows = (uint)this.Data.Tables[0].Columns.Count;
 			uint top = 0;
 			foreach(DataColumn col in this.Data.Tables[0].Columns)
 			{
-				ColumnInfo colinfo = ListInfo.GetColumnInfo(col.ColumnName);
+				ColumnInfo colinfo = this.TableInfo.GetColumnInfo(col.ColumnName);
 				if(colinfo != null && colinfo.Editable)
 				{
 					CreateWidget(col, colinfo, top);
@@ -76,7 +76,7 @@ namespace LPS.Client
 
 		protected override void OnNewRow (DataRow row)
 		{
-			row["id"] = Connection.NextSeqValue(this.ListInfo.Id + "_id_seq");
+			row["id"] = Connection.NextSeqValue(this.TableInfo.Name + "_id_seq");
 		}
 
 	}
