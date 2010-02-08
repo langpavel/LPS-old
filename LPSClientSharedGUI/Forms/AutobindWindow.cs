@@ -122,7 +122,7 @@ namespace LPS.Client
 		{
 		}
 
-		public virtual bool QueryDelete()
+		public virtual bool DeleteQuery()
 		{
 			if(this.ShowQueryMessage(MessageType.Question, "Smazat", "Opravdu chcete smazat tento záznam?"))
 			{
@@ -191,42 +191,83 @@ namespace LPS.Client
 
 			ToolButton btn = new ToolButton("gtk-save");
 			btn.Label = "Uložit a zavřít";
-			btn.Clicked += SaveClose;
+			btn.Clicked += SaveCloseAction;
 			tools.Add(btn);
 			btn.ShowAll();
 
 			btn = new ToolButton("gtk-save");
 			btn.Label = "Uložit";
-			btn.Clicked += Save;
+			btn.Clicked += SaveAction;
+			tools.Add(btn);
+			btn.ShowAll();
+
+			btn = new ToolButton("gtk-delete");
+			btn.Label = "Odstranit";
+			btn.Clicked += DeleteAction;
 			tools.Add(btn);
 			btn.ShowAll();
 		}
+
+		public virtual void DoNew()
+		{
+			this.New();
+		}
+		
+		public virtual void DoSaveClose()
+		{
+			DoSave();
+			DoClose();
+		}
+		
+		public virtual void DoSave()
+		{
+			Connection.SaveDataSet(this.Data);
+		}
+		
+		public virtual void DoSaveAs()
+		{
+			throw new NotImplementedException("Ukládání kopie není podporováno u tohoto formuláře");
+		}
+
+		public virtual void DoClose()
+		{
+			this.Destroy();
+		}
+		
+		public virtual void DoDelete()
+		{
+			this.DeleteQuery();
+		}
 		
 		#region Generic event handlers
-		public virtual void New(object o, EventArgs args)
+		private void NewAction(object o, EventArgs args)
 		{
-			this.ShowMessage(MessageType.Error, "Chyba", "Není podporováno");
+			DoNew();
 		}
 
-		public virtual void Save(object o, EventArgs args)
+		private void SaveAction(object o, EventArgs args)
 		{
-			Connection.SaveDataSet(this.Data);
+			DoSave();
 		}
 
-		public virtual void SaveClose(object o, EventArgs args)
+		private void SaveCloseAction(object o, EventArgs args)
 		{
-			Connection.SaveDataSet(this.Data);
-			this.Destroy();
+			DoSaveClose();
 		}
 
-		public virtual void SaveAs(object o, EventArgs args)
+		private void SaveAsAction(object o, EventArgs args)
 		{
-			this.ShowMessage(MessageType.Error, "Chyba", "Není podporováno");
+			DoSaveAs();
 		}
 	
-		public virtual void Close(object o, EventArgs args)
+		private void CloseAction(object o, EventArgs args)
 		{
-			this.Destroy();
+			DoClose();
+		}
+
+		private void DeleteAction(object o, EventArgs args)
+		{
+			DoDelete();
 		}
 		#endregion	
 

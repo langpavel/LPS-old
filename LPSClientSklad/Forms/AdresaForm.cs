@@ -12,7 +12,7 @@ namespace LPS.Client.Sklad
 		
 		public override void Load (long id)
 		{
-			Load("select * from adresa where id=:id", id);
+			Load("adresa", id);
 		}
 
 		protected override void OnNewRow (DataRow row)

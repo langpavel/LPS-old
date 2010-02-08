@@ -26,7 +26,7 @@
                         <property name="visible">True</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
-                        <signal name="activate" handler="New"/>
+                        <signal name="activate" handler="NewAction"/>
                       </widget>
                     </child>
                     <child>
@@ -35,7 +35,7 @@
                         <property name="visible">True</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
-                        <signal name="activate" handler="Save"/>
+                        <signal name="activate" handler="SaveAction"/>
                       </widget>
                     </child>
                     <child>
@@ -44,7 +44,7 @@
                         <property name="visible">True</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
-                        <signal name="activate" handler="SaveAs"/>
+                        <signal name="activate" handler="SaveAsAction"/>
                       </widget>
                     </child>
                     <child>
@@ -58,7 +58,7 @@
                         <property name="visible">True</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
-                        <signal name="activate" handler="Close"/>
+                        <signal name="activate" handler="CloseAction"/>
                       </widget>
                     </child>
                   </widget>

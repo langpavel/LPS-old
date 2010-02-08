@@ -2,13 +2,17 @@
 <modules-tree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="root">
 	<columns />
 	<item id="adresa" text="Adresář" table="adresa">
+		<desc>Kontakty</desc>
+		<detail-name>adresa</detail-name>
 		<item id="adresa_odb" text="Odběratelé" table="adresa">
 			<desc>Kontakty na zákazníky</desc>
 			<list-sql>select * from adresa where odberatel = true</list-sql>
+			<detail-name>adresa</detail-name>
 		</item>
 		<item id="adresa_dod" text="Dodavatelé" table="adresa">
 			<desc>Kontakty na dodavatele</desc>
 			<list-sql>select * from adresa where dodavatel = true</list-sql>
+			<detail-name>adresa</detail-name>
 		</item>
 	</item>
 	<item id="sklad" text="Skladové hospodářství">

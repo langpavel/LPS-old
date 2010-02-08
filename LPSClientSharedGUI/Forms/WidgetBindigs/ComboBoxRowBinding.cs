@@ -34,9 +34,9 @@ namespace LPS.Client
 		{
 			string table = ColInfo.FkReferenceTable;
 			string refCols = ColInfo.FkComboReplaceColumns ?? ColInfo.FkReplaceColumns;
-			string sql = String.Format("select id, {1} from {0}", table, refCols);
+			//string sql = String.Format("select id, {1} from {0}", table, refCols);
 			this.ComboBox.Clear();
-			this.table = ServerConnection.Instance.GetCachedDataSet(sql).Tables[0];
+			this.table = ServerConnection.Instance.GetCachedDataSet(table).Tables[0];
 			int cnt = this.table.Columns.Count;
 			Type[] col_types = new Type[cnt];
 			for(int i = 0; i<cnt; i++)

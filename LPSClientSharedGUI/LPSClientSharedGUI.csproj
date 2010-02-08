@@ -67,12 +67,20 @@
     <Compile Include="ImageManager.cs" />
     <Compile Include="DataTableTreeModel\DataTableView.cs" />
     <Compile Include="FormManager.cs" />
+    <Compile Include="Forms\Bindings\RowDataSource.cs" />
+    <Compile Include="Forms\Bindings\IBinding.cs" />
+    <Compile Include="Forms\Bindings\BindingGroup.cs" />
+    <Compile Include="Forms\Bindings\BindingValueChangedArgs.cs" />
+    <Compile Include="Forms\Bindings\BindingBase.cs" />
+    <Compile Include="Forms\Bindings\RowColumnBinding.cs" />
+    <Compile Include="Forms\Bindings\EntryBinding.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />
     <Folder Include="DataTableTreeModel\" />
     <Folder Include="Forms\WidgetBindigs\" />
     <Folder Include="Gtk\" />
+    <Folder Include="Forms\Bindings\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPSClientShared\LPSClientShared.csproj">

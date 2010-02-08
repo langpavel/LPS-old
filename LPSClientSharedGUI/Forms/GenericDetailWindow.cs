@@ -79,5 +79,13 @@ namespace LPS.Client
 			row["id"] = Connection.NextSeqValue(this.TableInfo.Name + "_id_seq");
 		}
 
+		public override void Delete ()
+		{
+			DataRow row = this.Row;
+			this.Row = null;
+			row.Delete();
+			DoSaveClose();
+		}
+
 	}
 }

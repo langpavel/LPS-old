@@ -81,7 +81,7 @@ namespace LPS.Client
 			AutobindWindow wnd = OpenDetail();
 			if(wnd == null)
 				return null;
-			wnd.Delete();
+			wnd.DeleteQuery();
 			return wnd;
 		}
 

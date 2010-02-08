@@ -199,9 +199,9 @@ namespace LPS.Server
 				delete_cmd.Parameters.Add(p);
 			}
 			
-			update_cmd.CommandText = sb.ToString();
-			update_cmd.Prepare();
-			return update_cmd;
+			delete_cmd.CommandText = sb.ToString();
+			delete_cmd.Prepare();
+			return delete_cmd;
 		}
 
 		private int CheckAffected(int affected, DataRow row)

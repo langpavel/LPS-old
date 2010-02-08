@@ -60,16 +60,34 @@ namespace LPS.Client
 			}
 		}
 
+		private bool is_updating;
 		void HandleEntryChanged (object sender, EventArgs e)
 		{
-			object o = Convert.ChangeType(((Entry)sender).Text, Column.DataType);
-			Console.WriteLine("{0} <==\t'{1}'", Column.ColumnName, o);
-			Row[Column] = o;
+			Entry entry = (Entry)sender;
+			try
+			{
+				is_updating = true;
+				object o = Convert.ChangeType(entry.Text, Column.DataType);
+				//Console.WriteLine("{0} <==\t'{1}'", Column.ColumnName, o);
+				Row[Column] = o;
+				if(Row.RowState == DataRowState.Added || !o.Equals(Convert.ChangeType(Row[Column, DataRowVersion.Original], Column.DataType)))
+					entry.ModifyBase(StateType.Normal, new Gdk.Color(255,255,196));
+				else
+					entry.ModifyBase(StateType.Normal, new Gdk.Color(255,255,255));
+			}
+			catch
+			{
+				entry.ModifyBase(StateType.Normal, new Gdk.Color(255,196,196));
+			}
+			finally
+			{
+				is_updating = false;
+			}
 		}
 		
 		void HandleRowTableColumnChanged (object sender, DataColumnChangeEventArgs e)
 		{
-			if(e.Column == this.Column && e.Row == this.Row)
+			if(e.Column == this.Column && e.Row == this.Row && !is_updating)
 				UptadeEntryValue(e.ProposedValue);
 		}
 		
