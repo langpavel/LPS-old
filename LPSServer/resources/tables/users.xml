@@ -7,7 +7,7 @@
 	<columns>
 		<column name="id" caption="Id" visible="false" editable="true" required="false" width="0" />
 		<column name="username" caption="Username" visible="true" editable="true" required="false" width="0" />
-		<column name="passwd" caption="Passwd" visible="true" editable="true" required="false" width="0" />
+		<column name="passwd" caption="Passwd" visible="false" editable="false" required="false" width="0" />
 		<column name="first_name" caption="First name" visible="true" editable="true" required="false" width="0" />
 		<column name="surname" caption="Surname" visible="true" editable="true" required="false" width="0" />
 	</columns>

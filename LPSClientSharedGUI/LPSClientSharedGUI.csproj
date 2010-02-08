@@ -74,6 +74,7 @@
     <Compile Include="Forms\Bindings\BindingBase.cs" />
     <Compile Include="Forms\Bindings\RowColumnBinding.cs" />
     <Compile Include="Forms\Bindings\EntryBinding.cs" />
+    <Compile Include="Forms\Bindings\CheckButtonBinding.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />

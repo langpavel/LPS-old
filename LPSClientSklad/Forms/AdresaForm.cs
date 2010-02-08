@@ -1,11 +1,14 @@
 using System;
 using System.Data;
+using System.Collections.Generic;
 using Gtk;
 
 namespace LPS.Client.Sklad
 {
 	public class AdresaForm : AutobindWindow
 	{
+		[Glade.Widget] Table tableDetail;
+		
 		public AdresaForm ()
 		{
 		}
