@@ -4,14 +4,22 @@ using System.Collections.Generic;
 
 namespace LPS.Client
 {
-	public class BindingGroup: IEnumerable<IBinding>
+	public class BindingGroup: IEnumerable<IBinding>, IDisposable
 	{
 		private List<IBinding> bindings;
 		public object OriginalValue { get; set; }
 		public object Value { get; set; }
+		public Type ValType { get; set; }
 		
 		public BindingGroup()
 		{
+			bindings = new List<IBinding>();
+		}
+		
+		public BindingGroup(Type ValType)
+		{
+			bindings = new List<IBinding>();
+			this.ValType = ValType;
 		}
 		
 		public void Add(IBinding b)
@@ -34,11 +42,20 @@ namespace LPS.Client
 			return false;
 		}
 
+		public object ConvertValueType(object val)
+		{
+			if(val == DBNull.Value)
+				return null;
+			if(val == null || ValType == null)
+				return val;
+			return Convert.ChangeType(val, ValType);
+		}
+		
 		private void HandleValueChanged(IBinding sender, BindingValueChangedArgs args)
 		{
-			this.Value = args.NewValue;
+			this.Value = ConvertValueType(args.NewValue);
 			if(args.HasOriginalValue)
-				this.OriginalValue = args.OriginalValue;
+				this.OriginalValue = ConvertValueType(args.OriginalValue);
 			foreach(IBinding b in this)
 			{
 				if(b != sender)
@@ -58,5 +75,18 @@ namespace LPS.Client
 		}
 		#endregion
 		
+		public void Clear()
+		{
+			for(int i = bindings.Count-1; i >= 0; i--)
+			{
+				IBinding b = bindings[i];
+				b.Dispose();
+			}
+		}
+		
+		public virtual void Dispose()
+		{
+			Clear();
+		}
 	}
 }

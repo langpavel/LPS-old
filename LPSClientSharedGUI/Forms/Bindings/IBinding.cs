@@ -2,7 +2,7 @@ using System;
 
 namespace LPS.Client
 {
-	public interface IBinding
+	public interface IBinding : IDisposable
 	{
 		BindingGroup Bindings { get; set; }
 		void OnAdd(BindingGroup bindings);

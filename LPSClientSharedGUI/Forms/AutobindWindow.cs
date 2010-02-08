@@ -240,32 +240,38 @@ namespace LPS.Client
 		}
 		
 		#region Generic event handlers
-		private void NewAction(object o, EventArgs args)
+		/// <summary>Action event handler</summary>
+		public void NewAction(object o, EventArgs args)
 		{
 			DoNew();
 		}
 
-		private void SaveAction(object o, EventArgs args)
+		/// <summary>Action event handler</summary>
+		public void SaveAction(object o, EventArgs args)
 		{
 			DoSave();
 		}
 
-		private void SaveCloseAction(object o, EventArgs args)
+		/// <summary>Action event handler</summary>
+		public void SaveCloseAction(object o, EventArgs args)
 		{
 			DoSaveClose();
 		}
 
-		private void SaveAsAction(object o, EventArgs args)
+		/// <summary>Action event handler</summary>
+		public void SaveAsAction(object o, EventArgs args)
 		{
 			DoSaveAs();
 		}
 	
-		private void CloseAction(object o, EventArgs args)
+		/// <summary>Action event handler</summary>
+		public void CloseAction(object o, EventArgs args)
 		{
 			DoClose();
 		}
 
-		private void DeleteAction(object o, EventArgs args)
+		/// <summary>Action event handler</summary>
+		public void DeleteAction(object o, EventArgs args)
 		{
 			DoDelete();
 		}

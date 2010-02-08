@@ -11,6 +11,11 @@
 			<replace-columns>kod</replace-columns>
 			<combo-replace-columns>kod, popis</combo-replace-columns>
 		</column>
+		<column name="id_stat" caption="Stát" visible="true" editable="true" required="false" width="0">
+			<ref-table>c_stat</ref-table>
+			<replace-columns>kod</replace-columns>
+			<combo-replace-columns>kod, popis</combo-replace-columns>
+		</column>
 		<column name="id_group" caption="Seskupení" visible="false" editable="true" required="false" width="0" />
 		<column name="nazev1" caption="Název 1" visible="true" editable="true" required="false" width="0" />
 		<column name="nazev2" caption="Název 2" visible="true" editable="true" required="false" width="0" />
@@ -22,7 +27,6 @@
 		<column name="ulice" caption="Ulice" visible="true" editable="true" required="false" width="0" />
 		<column name="mesto" caption="Město" visible="true" editable="true" required="false" width="0" />
 		<column name="psc" caption="Psč" visible="true" editable="true" required="false" width="0" />
-		<column name="zeme" caption="Země" visible="true" editable="true" required="false" width="0" />
 		<column name="email" caption="Email" visible="true" editable="true" required="false" width="0" />
 		<column name="telefon1" caption="Telefon 1" visible="true" editable="true" required="false" width="0" />
 		<column name="telefon2" caption="Telefon 2" visible="true" editable="true" required="false" width="0" />

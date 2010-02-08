@@ -3,10 +3,21 @@ using System.Data;
 
 namespace LPS.Client
 {
-	public class RowColumnBinding : BindingBase, IDisposable
+	public class RowColumnBinding : BindingBase
 	{
 		public RowColumnBinding()
 		{
+		}
+
+		public RowColumnBinding(DataColumn col)
+		{
+			Column = col;
+		}
+
+		public RowColumnBinding(DataColumn col, DataRow row)
+		{
+			Column = col;
+			Row = row;
 		}
 
 		private DataRow row;
@@ -61,6 +72,8 @@ namespace LPS.Client
 		{
 			if(row == null)
 				return;
+			if(column != null && column.Table != row.Table)
+				throw new InvalidOperationException("Řádek a sloupec nepatří do jedné tabulky");
 			row.Table.ColumnChanged += HandleColumnChanged;
 		}
 
@@ -71,10 +84,11 @@ namespace LPS.Client
 			row.Table.ColumnChanged -= HandleColumnChanged;
 		}
 		
-		public virtual void Dispose()
+		public override void Dispose()
 		{
 			this.Row = null;
 			this.Column = null;
+			base.Dispose();
 		}
 	}
 }

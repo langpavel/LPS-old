@@ -96,5 +96,6 @@
     <None Include="resources\tables\c_sklad.xml" />
     <None Include="resources\tables\c_zaruka.xml" />
     <None Include="resources\tables\users.xml" />
+    <None Include="resources\tables\c_stat.xml" />
   </ItemGroup>
 </Project>

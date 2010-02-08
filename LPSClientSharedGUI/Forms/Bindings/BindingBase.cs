@@ -47,26 +47,44 @@ namespace LPS.Client
 			}
 		}
 		
+		/// <summary>
+		/// Notify others of value change - to update other values
+		/// </summary>
 		protected void DoValueChanged(object new_value)
 		{
 			if(ValueChanged != null)
 				ValueChanged(this, new BindingValueChangedArgs(new_value));
 		}
 		
+		/// <summary>
+		/// Notify others of value change - to update other values
+		/// </summary>
 		protected void DoValueChanged(object orig_value, object new_value)
 		{
 			if(ValueChanged != null)
 				ValueChanged(this, new BindingValueChangedArgs(orig_value, new_value));
 		}
 		
+		/// <summary>
+		/// Update binded object
+		/// </summary>
 		protected abstract void DoUpdateValue(object orig_value, object new_value);
 		
+		/// <summary>
+		/// Update binded object with value from binding
+		/// </summary>
 		protected void UpdateValueByBindings()
 		{
 			if(Bindings != null)
 				DoUpdateValue(Bindings.OriginalValue, Bindings.Value);
 			else
 				DoUpdateValue(null, null);
+		}
+		
+		public virtual void Dispose()
+		{
+			if(Bindings != null)
+				Bindings.Remove(this);
 		}
 	}
 }

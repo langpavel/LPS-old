@@ -3,7 +3,7 @@ using Gtk;
 
 namespace LPS.Client
 {
-	public class EntryBinding : BindingBase, IDisposable
+	public class EntryBinding : BindingBase
 	{
 		public EntryBinding()
 		{
@@ -40,9 +40,10 @@ namespace LPS.Client
 				entry.Changed -= HandleEntryChanged;
 		}
 		
-		public virtual void Dispose()
+		public override void Dispose()
 		{
 			this.EntryWidget = null;
+			base.Dispose();
 		}
 	}
 }

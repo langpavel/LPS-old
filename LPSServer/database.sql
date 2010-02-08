@@ -110,9 +110,25 @@ CREATE TABLE c_sklad (
     ts timestamp without time zone DEFAULT now()
 );
 
+CREATE TABLE c_stat (
+    id bigserial NOT NULL primary key,
+    kod character varying(10) not null UNIQUE,
+    popis character varying(100) not null default '',
+
+    id_user_create bigint references users(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references users(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+INSERT INTO c_stat VALUES (1, 'CZ', 'Česká republika', null, null, null, null, now());
+INSERT INTO c_stat VALUES (2, 'SK', 'Slovenská republika', null, null, null, null, now());
+
+
 CREATE TABLE adresa (
     id bigserial NOT NULL primary key,
     id_druh_adresy bigint NOT NULL references c_druh_adresy(id),
+    id_stat bigint references c_stat(id),
     id_group bigint,
 
     nazev1 character varying(100),
@@ -125,7 +141,6 @@ CREATE TABLE adresa (
     ulice character varying(100),
     mesto character varying(100),
     psc character varying(20),
-    zeme character varying(100),
     email character varying(100),
     telefon1 character varying(100),
     telefon2 character varying(100),

@@ -33,7 +33,7 @@ namespace LPS.Client
 		public override void Bind ()
 		{
 			string table = ColInfo.FkReferenceTable;
-			string refCols = ColInfo.FkComboReplaceColumns ?? ColInfo.FkReplaceColumns;
+			//string refCols = ColInfo.FkComboReplaceColumns ?? ColInfo.FkReplaceColumns;
 			//string sql = String.Format("select id, {1} from {0}", table, refCols);
 			this.ComboBox.Clear();
 			this.table = ServerConnection.Instance.GetCachedDataSet(table).Tables[0];

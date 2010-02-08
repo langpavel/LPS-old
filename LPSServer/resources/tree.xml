@@ -65,6 +65,11 @@
 			<detail-name>generic</detail-name>
 			<list-sql>select * from c_zaruka</list-sql>
 		</item>
+		<item id="c_stat" text="Státy" table="c_stat">
+			<desc>Státy</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from c_stat</list-sql>
+		</item>
 	</item>
 	<item id="users" text="Uživatelé" table="c_zaruka">
 		<desc>Uživatelé</desc>
