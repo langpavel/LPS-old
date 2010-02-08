@@ -9,6 +9,11 @@ namespace LPS.Client
 		{
 		}
 		
+		public EntryBinding(Entry entry)
+		{
+			EntryWidget = entry;
+		}
+		
 		private Entry entry;
 		public Entry EntryWidget
 		{
@@ -18,7 +23,8 @@ namespace LPS.Client
 		
 		protected override void DoUpdateValue (object orig_value, object new_value)
 		{
-			entry.Text = (new_value ?? "").ToString();
+			if(entry != null)
+				entry.Text = (new_value ?? "").ToString();
 		}
 		
 		private void HandleEntryChanged (object sender, EventArgs e)

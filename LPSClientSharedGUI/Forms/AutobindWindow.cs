@@ -11,23 +11,23 @@ namespace LPS.Client
 	{
 		private Statusbar statusbar;
 		public Statusbar Statusbar { get { return statusbar; } }
+		public RowDataSource DataSource { get; set; }
+		public string WindowTitle { get; set; }
 		
 		public override void OnCreate ()
 		{
 			base.OnCreate ();
 			CreateToolbarItems();
 			this.statusbar = this.GetWidgetByName("statusbar") as Statusbar;
+			DataSource = new RowDataSource();
+			DataSource.RowChanged += HandleRowChanged;
+			this.OwnedComponents.Add(DataSource);
 		}
 
-		private TextRowBinding titlebinding;
 		protected virtual void Autobind(DataRow row, TableInfo info)
 		{
-			IEnumerator e = new DeepEnumerator(this.Window.GetEnumerator());
-			while(e.MoveNext())
+			foreach(Widget w in new DeepEnumerator(this.Window.GetEnumerator()))
 			{
-				Widget w = e.Current as Widget;
-				if(w == null)
-					continue;
 				string name = w.Name;
 				if(name.StartsWith("edt_"))
 					name = name.Substring(4);
@@ -35,17 +35,13 @@ namespace LPS.Client
 					name = name.Substring(3);
 				else
 					continue;
-				//Console.WriteLine("Try bind '{0}'", name);
 				
 				try
 				{
 					DataTable table = Row.Table;
 					DataColumn col = table.Columns[name];
-				
-					WidgetRowBinding binding = BindWidget(col, w, this.TableInfo.GetColumnInfo(name));
-					if(binding != null)
-						this.OwnedComponents.Add(binding);
 					
+					BindWidget(col, w, this.TableInfo.GetColumnInfo(name));
 				}
 				catch(Exception ex)
 				{
@@ -53,67 +49,47 @@ namespace LPS.Client
 				}
 			}
 			if(Statusbar != null)
-				BindStatusbar();
-				
-			TextRowBinding titlebinding = new TextRowBinding(row, this.Window.Title);
-			titlebinding.TextUpdating += HandleTitleTextUpdating;
-			titlebinding.UpdateText();
+				Statusbar.Push(1, "");
+
+			binded = true;
 		}
 
-		void HandleTitleTextUpdating (object sender, TextUpdatingArgs args)
-		{
-			this.Window.Title = args.Text;
-		}
-		
-		public WidgetRowBinding BindWidget(DataColumn col, Widget w, ColumnInfo colinfo)
+		public void BindWidget(DataColumn col, Widget w, ColumnInfo colinfo)
 		{
 			if(w is Entry)
-				return BindEntry(col, (Entry) w, colinfo);
-			if(w is CheckButton)
-				return BindCheckButton(col, (CheckButton) w, colinfo);
-			if(w is ComboBox)
-				return BindComboBox(col, (ComboBox) w, colinfo);
-			return null;
+				BindEntry(col, (Entry) w, colinfo);
+			else if(w is CheckButton)
+				BindCheckButton(col, (CheckButton) w, colinfo);
+			else if(w is ComboBox)
+				BindComboBox(col, (ComboBox) w, colinfo);
 		}
 		
-		public WidgetRowBinding BindEntry(DataColumn col, Entry entry, ColumnInfo colinfo)
+		public void BindEntry(DataColumn col, Entry entry, ColumnInfo colinfo)
 		{
-			return new EntryRowBinding(entry, col, Row);
+			DataSource.GetGroupForColumn(col).Add(new EntryBinding(entry));
 		}
 		
-		public WidgetRowBinding BindCheckButton(DataColumn col, CheckButton chkbutton, ColumnInfo colinfo)
+		public void BindCheckButton(DataColumn col, CheckButton chkbutton, ColumnInfo colinfo)
 		{
-			return new CheckButtonRowBinding(chkbutton, col, Row);
+			DataSource.GetGroupForColumn(col).Add(new CheckButtonBinding(chkbutton));
 		}
 		
-		public WidgetRowBinding BindComboBox(DataColumn col, ComboBox combo, ColumnInfo colinfo)
+		public void BindComboBox(DataColumn col, ComboBox combo, ColumnInfo colinfo)
 		{
-			return new ComboBoxRowBinding(combo, col, Row, colinfo);
+			//DataSource.GetGroupForColumn(col).Add(new CheckButtonBinding(chkbutton));
 		}
 
-		protected virtual void Unbind(DataRow row)
-		{
-			if(Statusbar != null)
-				UnbindStatusbar();
-			if(titlebinding != null)
-			{
-				titlebinding.TextUpdating -= HandleTitleTextUpdating;
-				titlebinding.Dispose();
-				titlebinding = null;
-			}
-		}
-
+		bool binded;
 		private DataRow _Row;
 		public DataRow Row
 		{
 			get { return _Row; }
 			set 
 			{
-				if(_Row != null)
-					Unbind(_Row);
 				_Row = value;
-				if(_Row != null)
+				if(_Row != null && !binded)
 					Autobind(_Row, this.TableInfo);
+				DataSource.Row = _Row;
 			}
 		}
 		
@@ -142,6 +118,7 @@ namespace LPS.Client
 		
 		protected virtual void Load(string table_name, long id)
 		{
+			WindowTitle = TableInfo.DetailCaption ?? "{kod} - {popis}";
 			Data = Connection.GetDataSetByTableName(table_name, "id", id);
 			if(id <= 0)
 			{
@@ -277,24 +254,13 @@ namespace LPS.Client
 		}
 		#endregion	
 
-		protected virtual void BindStatusbar()
-		{
-			Row.Table.RowChanged += UpdateStatusbar;
-			this.Statusbar.Push(1, GetStatusbarText());
-		}
-
-		protected virtual void UnbindStatusbar()
-		{
-			Row.Table.RowChanged -= UpdateStatusbar;
-			this.Statusbar.Pop(1);
-		}
-		
-		private void UpdateStatusbar (object sender, DataRowChangeEventArgs e)
+		private void HandleRowChanged (object sender, DataRowChangeEventArgs e)
 		{
 			if(e.Row == this.Row)
 			{
 				this.Statusbar.Pop(1);
 				this.Statusbar.Push(1, GetStatusbarText());
+				this.Window.Title = DataSource.FormatRowToText(WindowTitle);
 			}
 		}
 		

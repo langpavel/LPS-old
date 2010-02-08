@@ -50,8 +50,7 @@ namespace LPS.Client
 				result = new Entry();
 			}
 			content.Attach(result,1,2,top,top+1,AttachOptions.Expand | AttachOptions.Fill, AttachOptions.Expand | AttachOptions.Fill,3,0);
-			WidgetRowBinding b = this.BindWidget(db_col, result, colinfo);
-			this.OwnedComponents.Add(b);
+			this.BindWidget(db_col, result, colinfo);
 			return result;
 		}
 		
@@ -70,6 +69,7 @@ namespace LPS.Client
 					top++;
 				}
 			}
+			this.DataSource.Row = this.Row;
 			content.NRows = top;
 			content.ShowAll();
 		}

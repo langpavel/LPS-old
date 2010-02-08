@@ -9,6 +9,11 @@ namespace LPS.Client
 		{
 		}
 		
+		public CheckButtonBinding(CheckButton CheckBtn)
+		{
+			this.CheckBtn = CheckBtn;
+		}
+		
 		private CheckButton check;
 		public CheckButton CheckBtn
 		{
@@ -18,6 +23,8 @@ namespace LPS.Client
 		
 		protected override void DoUpdateValue (object orig_value, object new_value)
 		{
+			if(check == null)
+				return;
 			if(new_value == null || new_value is DBNull)
 			{
 				check.Active = false;

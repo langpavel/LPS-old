@@ -54,15 +54,10 @@
     <Compile Include="DataTableTreeModel\CellRendererText2.cs" />
     <Compile Include="DataTableTreeModel\DataTableListStoreBinding.cs" />
     <Compile Include="Forms\AutobindWindow.cs" />
-    <Compile Include="Forms\WidgetBindigs\WidgetRowBinding.cs" />
-    <Compile Include="Forms\WidgetBindigs\EntryRowBinding.cs" />
-    <Compile Include="Forms\WidgetBindigs\CheckButtonRowBinding.cs" />
-    <Compile Include="Forms\WidgetBindigs\TextRowBinding.cs" />
     <Compile Include="Forms\LongMessageDialog.cs" />
     <Compile Include="Forms\GenericDetailWindow.cs" />
     <Compile Include="Gtk\GtkResource.cs" />
     <Compile Include="DataTableTreeModel\FKMappedColumnHelper.cs" />
-    <Compile Include="Forms\WidgetBindigs\ComboBoxRowBinding.cs" />
     <Compile Include="Forms\HTMLMessageDialog.cs" />
     <Compile Include="ImageManager.cs" />
     <Compile Include="DataTableTreeModel\DataTableView.cs" />
@@ -79,7 +74,6 @@
   <ItemGroup>
     <Folder Include="Forms\" />
     <Folder Include="DataTableTreeModel\" />
-    <Folder Include="Forms\WidgetBindigs\" />
     <Folder Include="Gtk\" />
     <Folder Include="Forms\Bindings\" />
   </ItemGroup>

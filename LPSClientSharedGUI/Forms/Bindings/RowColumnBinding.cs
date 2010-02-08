@@ -50,12 +50,20 @@ namespace LPS.Client
 			
 			if(row.HasVersion(DataRowVersion.Default))
 				val = row[column, DataRowVersion.Default];
-			DoUpdateValue(orig, val);
+			DoValueChanged(orig, val);
 		}
 		
 		protected override void DoUpdateValue (object orig_value, object new_value)
 		{
-			row[column] = Convert.ChangeType(new_value, column.DataType);
+			if(row == null || column == null)
+				return;
+			
+			Console.WriteLine(String.Format("{0} <-- {1}", column.ColumnName, new_value));
+			
+			if(new_value == null || new_value == DBNull.Value)
+				row[column] = DBNull.Value;
+			else
+				row[column] = Convert.ChangeType(new_value, column.DataType);
 		}
 
 		private void HandleColumnChanged(object sender, DataColumnChangeEventArgs e)
