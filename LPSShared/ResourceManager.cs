@@ -8,6 +8,9 @@ namespace LPS
 {
 	public class ResourceManager: IDisposable
 	{
+		private static ResourceManager instance;
+		public static ResourceManager Instance { get { return instance; } }
+		
 		#region Serialization helpers
 		public static T DeserializeObject<T>(string data)
 		{
@@ -52,6 +55,7 @@ namespace LPS
 			this.server = server;
 			TableInfos = new Dictionary<string, TableInfo>();
 			ModulesInfo = new Dictionary<string, ModulesTreeInfo>();
+			instance = this;
 		}
 		
 		public TableInfo GetTableInfo(string name)

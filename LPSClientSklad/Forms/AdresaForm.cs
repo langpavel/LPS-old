@@ -7,7 +7,7 @@ namespace LPS.Client.Sklad
 {
 	public class AdresaForm : AutobindWindow
 	{
-		[Glade.Widget] Table tableDetail;
+		[Glade.Widget] protected Table tableDetail;
 		
 		public AdresaForm ()
 		{

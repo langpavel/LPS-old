@@ -97,7 +97,8 @@ namespace LPS.Client
 					str = val.ToString();
 				result = result.Replace("{"+col.ColumnName+"}", str);
 			}
-			return result.Trim();
+			string[] bits = result.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+			return String.Join(" ", bits);
 		}
 		
 		public virtual void Dispose()

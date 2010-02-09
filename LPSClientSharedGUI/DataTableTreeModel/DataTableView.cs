@@ -17,16 +17,14 @@ namespace LPS.Client
 			set { table = value; }
 		}
 		
-		public ModulesTreeInfo ModuleInfo { get; private set; }
-		public TableInfo TableInfo { get; private set; }
+		public IListInfo ListInfo { get; private set; }
 		
 		protected ServerConnection Connection { get { return ServerConnection.Instance; } }
 		protected ResourceManager Resources { get { return this.Connection.Resources; } }
 		
-		public DataTableView(ModulesTreeInfo info, params object[] parameters)
+		public DataTableView(IListInfo info, params object[] parameters)
 		{
-			this.ModuleInfo	= info;
-			this.TableInfo = Resources.GetTableInfo(ModuleInfo.Table);
+			this.ListInfo = info;
 			this.parameters = parameters;
 			
 			this.LoadData();
@@ -49,10 +47,10 @@ namespace LPS.Client
 		
 		protected void LoadData()
 		{
-			this.dataset = Connection.GetDataSetByTableName(ModuleInfo.Table, this.parameters);
+			this.dataset = Connection.GetDataSetByTableName(ListInfo.TableName, this.parameters);
 			this.table = this.dataset.Tables[0];
 			
-			binding = new DataTableListStoreBinding(this, this.table, this.TableInfo);
+			binding = new DataTableListStoreBinding(this, this.table, this.ListInfo);
 			binding.Bind();
 		}
 
@@ -60,7 +58,7 @@ namespace LPS.Client
 		{
 			base.OnRowActivated (path, column);
 			DataRow row = binding.GetRow(path);
-			FormManager.Instance.GetWindow(this.ModuleInfo.DetailName, this.ModuleInfo, Convert.ToInt64(row["id"]));
+			FormManager.Instance.GetWindow(this.ListInfo.DetailName, this.ListInfo, Convert.ToInt64(row["id"]));
 		}
 		
 		public AutobindWindow OpenDetail()
@@ -68,12 +66,12 @@ namespace LPS.Client
 			DataRow row = binding.GetCurrentRow();
 			if(row == null)
 				return null;
-			return FormManager.Instance.GetWindow(this.ModuleInfo.DetailName, this.ModuleInfo, Convert.ToInt64(row["id"]));
+			return FormManager.Instance.GetWindow(this.ListInfo.DetailName, this.ListInfo, Convert.ToInt64(row["id"]));
 		}
 		
 		public AutobindWindow OpenNewDetail()
 		{
-			return FormManager.Instance.GetWindow(this.ModuleInfo.DetailName, this.ModuleInfo, 0L);
+			return FormManager.Instance.GetWindow(this.ListInfo.DetailName, this.ListInfo, 0L);
 		}
 		
 		public AutobindWindow OpenDetailAndDelete()

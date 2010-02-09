@@ -5,14 +5,25 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 SET escape_string_warning = off;
 
-CREATE TABLE users (
+CREATE TABLE sys_user (
     id bigserial not null primary key,
     username character varying(40) NOT NULL,
     passwd character varying(40) NOT NULL,
     first_name character varying(40) NOT NULL,
-    surname character varying(40) NOT NULL
+    surname character varying(40) NOT NULL,
+
+    ts timestamp without time zone DEFAULT now()
 );
-INSERT INTO users VALUES (1, 'langpa', '6eVgZj7YKaN/HcJByphPGQliw4s=', 'Pavel', 'Lang'); -- prazdne heslo pro langpa
+INSERT INTO sys_user VALUES (1, 'langpa', '6eVgZj7YKaN/HcJByphPGQliw4s=', 'Pavel', 'Lang'); -- prazdne heslo pro langpa
+
+CREATE TABLE sys_deleted (
+    id bigserial not null primary key,
+    table_name character varying(40) NOT NULL,
+    row_id bigint NOT NULL,
+    reason text,
+    id_user bigint references sys_user(id),
+    ts timestamp without time zone DEFAULT now()
+);
 
 CREATE TABLE c_druh_adresy (
     id bigserial not null primary key,
@@ -22,9 +33,9 @@ CREATE TABLE c_druh_adresy (
     fakturacni bool,
     dodaci bool,
 
-    id_user_create bigint references users(id),
+    id_user_create bigint references sys_user(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify bigint references users(id),
+    id_user_modify bigint references sys_user(id),
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
@@ -42,9 +53,9 @@ CREATE TABLE c_dph (
     plati_do date,
     vychozi bool not null default false,
 
-    id_user_create bigint references users(id),
+    id_user_create bigint references sys_user(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify bigint references users(id),
+    id_user_modify bigint references sys_user(id),
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
@@ -60,9 +71,9 @@ CREATE TABLE c_mj (
     popis character varying(100) not null default '',
     popis2 character varying(100) not null default '',
 
-    id_user_create bigint references users(id),
+    id_user_create bigint references sys_user(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify bigint references users(id),
+    id_user_modify bigint references sys_user(id),
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
@@ -74,9 +85,9 @@ CREATE TABLE c_kategorie (
     popis character varying(100) not null default '',
     aktivni bool not null default true,
 
-    id_user_create bigint references users(id),
+    id_user_create bigint references sys_user(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify bigint references users(id),
+    id_user_modify bigint references sys_user(id),
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
@@ -90,9 +101,9 @@ CREATE TABLE c_zaruka (
     plati_do date,
     vychozi bool not null default false,
 
-    id_user_create bigint references users(id),
+    id_user_create bigint references sys_user(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify bigint references users(id),
+    id_user_modify bigint references sys_user(id),
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
@@ -103,9 +114,9 @@ CREATE TABLE c_sklad (
     popis character varying(100) not null default '',
     poznamka text,
 
-    id_user_create bigint references users(id),
+    id_user_create bigint references sys_user(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify bigint references users(id),
+    id_user_modify bigint references sys_user(id),
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
@@ -115,9 +126,9 @@ CREATE TABLE c_stat (
     kod character varying(10) not null UNIQUE,
     popis character varying(100) not null default '',
 
-    id_user_create bigint references users(id),
+    id_user_create bigint references sys_user(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify bigint references users(id),
+    id_user_modify bigint references sys_user(id),
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
@@ -153,9 +164,9 @@ CREATE TABLE adresa (
     import_php_str_hash character varying(40),
     import_objed_cislo character varying(10),
 
-    id_user_create bigint references users(id),
+    id_user_create bigint references sys_user(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify bigint references users(id),
+    id_user_modify bigint references sys_user(id),
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
@@ -183,9 +194,9 @@ CREATE TABLE skl_karta (
     skl_hodnota decimal(15,2),
     skl_mnoz decimal(28,14),
 
-    id_user_create bigint references users(id),
+    id_user_create bigint references sys_user(id),
     dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify bigint references users(id),
+    id_user_modify bigint references sys_user(id),
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );

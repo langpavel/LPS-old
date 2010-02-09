@@ -10,7 +10,7 @@ namespace LPS
 {
 	[Serializable]
 	[XmlRoot("column")]
-	public class ColumnInfo
+	public class ColumnInfo : ICloneable
 	{
 		[XmlAttribute("name")]
 		public string Name { get; set; }
@@ -44,5 +44,18 @@ namespace LPS
 		
 		[XmlElement("desc")]
 		public string Description { get; set; }
+		
+		#region ICloneable implementation
+		object ICloneable.Clone()
+		{
+			return this.Clone();
+		}
+		
+		public ColumnInfo Clone()
+		{
+			ColumnInfo clone = (ColumnInfo)this.MemberwiseClone();
+			return clone;
+		}
+		#endregion
 	}
 }

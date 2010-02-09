@@ -10,12 +10,12 @@
 		<column name="popis" caption="Popis" visible="true" editable="true" required="false" width="0" />
 		<column name="poznamka" caption="Poznamka" visible="true" editable="true" required="false" width="0" />
 		<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
-			<ref-table>users</ref-table>
+			<ref-table>sys_user</ref-table>
 			<replace-columns>surname, first_name</replace-columns>
 		</column>
 		<column name="dt_create" caption="Vytvořeno" visible="true" editable="false" required="false" width="0" />
 		<column name="id_user_modify" caption="Změnil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
-			<ref-table>users</ref-table>
+			<ref-table>sys_user</ref-table>
 			<replace-columns>surname, first_name</replace-columns>
 		</column>
 		<column name="dt_modify" caption="Změněno" visible="true" editable="false" required="false" width="0" />

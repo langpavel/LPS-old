@@ -71,9 +71,9 @@
 			<list-sql>select * from c_stat</list-sql>
 		</item>
 	</item>
-	<item id="users" text="Uživatelé" table="users">
+	<item id="sys_user" text="Uživatelé" table="sys_user">
 		<desc>Uživatelé</desc>
 		<detail-name />
-		<list-sql>select * from users</list-sql>
+		<list-sql>select * from sys_user</list-sql>
 	</item>
 </modules-tree>

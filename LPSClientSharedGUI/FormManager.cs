@@ -18,7 +18,7 @@ namespace LPS.Client
 			windows = new Dictionary<string, AutobindWindow>();
 		}
 
-		public AutobindWindow GetWindow(string detail_name, ModulesTreeInfo module, long id)
+		public AutobindWindow GetWindow(string detail_name, IListInfo module, long id)
 		{
 			string win_id = String.Format("{0}[{1}]", detail_name, id);
 			AutobindWindow win;
@@ -31,7 +31,7 @@ namespace LPS.Client
 			{
 				FormInfo fi = FormFactory.Instance.GetFormInfo(detail_name);
 				win = fi.CreateObject() as AutobindWindow;
-				win.TableInfo = ServerConnection.Instance.Resources.GetTableInfo(module.Table);
+				win.TableInfo = ServerConnection.Instance.Resources.GetTableInfo(module.TableName);
 				win.Load(id);
 				windows.Add(win_id, win);
 				win.Window.Destroyed += delegate {

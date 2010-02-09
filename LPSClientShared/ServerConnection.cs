@@ -49,7 +49,7 @@ namespace LPS.Client
 		{ 
 			get
 			{
-				return this.GetCachedDataSet("users").Tables[0];
+				return this.GetCachedDataSet("sys_user").Tables[0];
 			}
 		}
 

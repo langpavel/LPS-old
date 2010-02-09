@@ -11,7 +11,7 @@ namespace LPS
 
 	[Serializable]
 	[XmlRoot("modules-tree")]
-	public class ModulesTreeInfo
+	public class ModulesTreeInfo : IListInfo
 	{
 		public ModulesTreeInfo ()
 		{
@@ -31,6 +31,9 @@ namespace LPS
 			Description = desc;
 		}
 		
+		[XmlIgnore]
+		public ListInfoKind Kind { get { return ListInfoKind.Module; } }
+		
 		[XmlAttribute("id")]
 		public string Id { get; set; }
 		
@@ -38,7 +41,7 @@ namespace LPS
 		public string Text { get; set; }
 		
 		[XmlAttribute("table")]
-		public string Table { get; set; }
+		public string TableName { get; set; }
 		
 		[XmlElement("desc")]
 		public string Description { get; set; }
@@ -104,7 +107,17 @@ namespace LPS
 				if(col.Name == name)
 					return col;
 			}
-			return null;
+			return Table.GetColumnInfo(name);
+		}
+		
+		private TableInfo tableinfo;
+		[XmlIgnore]
+		public TableInfo Table
+		{ 
+			get 
+			{ 
+				return tableinfo ?? (tableinfo = ResourceManager.Instance.GetTableInfo(this.TableName));
+			} 
 		}
 		
 		[XmlIgnore]

@@ -57,7 +57,7 @@ namespace LPS.Client
 		public override void Load (long id)
 		{
 			this.Window.Title = this.TableInfo.DetailCaption ?? "{kod} - {popis}";
-			Load(this.TableInfo.Name, id);
+			Load(this.TableInfo.TableName, id);
 			content.NRows = (uint)this.Data.Tables[0].Columns.Count;
 			uint top = 0;
 			foreach(DataColumn col in this.Data.Tables[0].Columns)
@@ -76,7 +76,7 @@ namespace LPS.Client
 
 		protected override void OnNewRow (DataRow row)
 		{
-			row["id"] = Connection.NextSeqValue(this.TableInfo.Name + "_id_seq");
+			row["id"] = Connection.NextSeqValue(this.TableInfo.TableName + "_id_seq");
 		}
 
 		public override void Delete ()

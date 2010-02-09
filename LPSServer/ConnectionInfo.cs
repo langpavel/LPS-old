@@ -62,7 +62,7 @@ namespace LPS.Server
 			result.passwdhash = GetSHA1String(password, login);
 			result.Open();
 			object id = result.ExecuteScalar(
-				"select id from users where username=:username and passwd=:passwd",
+				"select id from sys_user where username=:username and passwd=:passwd",
 				new NpgsqlParameter("username", login),
 				new NpgsqlParameter("passwd", result.passwdhash));
 			if(id == null || id is DBNull)
@@ -96,7 +96,7 @@ namespace LPS.Server
 			string new_hash = GetSHA1String(new_password, UserName);
 			NpgsqlTransaction tr;
 			int rows = ExecuteNonqueryTr(
-				"update users set passwd=:newpsw where id=:id and username=:username and passwd=:oldpsw", out tr,
+				"update sys_user set passwd=:newpsw where id=:id and username=:username and passwd=:oldpsw", out tr,
 				new NpgsqlParameter("id", UserId),
 				new NpgsqlParameter("username", UserName),
 				new NpgsqlParameter("oldpsw", passwdhash),
@@ -406,7 +406,7 @@ namespace LPS.Server
 		
 		public NpgsqlCommand CreateCommand(TableInfo table, string addsql)
 		{
-			string sql = table.ListSql ?? table.EditSql;
+			string sql = table.ListSql;
 			if(addsql == null)
 				addsql = "";
 			string sqllower = sql.ToLower();
@@ -431,7 +431,7 @@ namespace LPS.Server
 		public NpgsqlCommand CreateCommand(TableInfo table, NpgsqlParameter[] parameters)
 		{
 			NpgsqlCommand command = CreateCommand();
-			string sql = table.ListSql ?? table.EditSql;
+			string sql = table.ListSql;
 			string sqllower = sql.ToLower();
 			StringBuilder paramstr = new StringBuilder();
 			bool first = true;

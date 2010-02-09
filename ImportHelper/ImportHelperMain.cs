@@ -291,7 +291,7 @@ namespace ImportHelper
 							}
 							else if(ci.Name.StartsWith("id_user"))
 							{
-								ci.FkReferenceTable = "users";
+								ci.FkReferenceTable = "sys_user";
 								ci.FkReplaceColumns = "surname, first_name";
 								ci.DisplayFormat = "{1}, {2}";
 							}

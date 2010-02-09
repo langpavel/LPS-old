@@ -48,6 +48,7 @@
     <Compile Include="ResourceManager.cs" />
     <Compile Include="Exceptions\ResourceNotFoundException.cs" />
     <Compile Include="Interfaces\IResourceStore.cs" />
+    <Compile Include="Interfaces\IListInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -8,15 +8,21 @@ namespace LPS
 {
 	[Serializable]
 	[XmlRoot("table")]
-	public class TableInfo
+	public class TableInfo : IListInfo
 	{
 		public TableInfo ()
 		{
 			Columns = new List<ColumnInfo>();
 		}
 		
+		[XmlIgnore]
+		public ListInfoKind Kind { get { return ListInfoKind.Table; } }
+
+		[XmlAttribute("id")]
+		public string Id { get; set; }
+
 		[XmlAttribute("name")]
-		public string Name { get; set; }
+		public string TableName { get; set; }
 
 		[XmlElement("detail-caption")]
 		public string DetailCaption { get; set; }
@@ -27,8 +33,8 @@ namespace LPS
 		[XmlElement("list-sql")]
 		public string ListSql { get; set; }
 		
-		[XmlElement("edit-sql")]
-		public string EditSql { get; set; }
+		[XmlElement("detail-name")]
+		public string DetailName { get; set; }
 		
 		[XmlArray("columns")]
 		[XmlArrayItem("column")]
@@ -43,6 +49,6 @@ namespace LPS
 			}
 			return null;
 		}
-		
+
 	}
 }

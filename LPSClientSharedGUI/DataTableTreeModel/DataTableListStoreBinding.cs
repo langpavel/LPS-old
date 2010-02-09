@@ -19,11 +19,11 @@ namespace LPS.Client
 		{
 		}
 		
-		public DataTableListStoreBinding(TreeView view, DataTable dt, TableInfo tableinfo)
+		public DataTableListStoreBinding(TreeView view, DataTable dt, IListInfo listinfo)
 		{
 			this.TreeView = view;
 			this.DataTable = dt;
-			this.TableInfo = tableinfo;
+			this.ListInfo = listinfo;
 			this.MappedColumns = new Dictionary<string, GetMappedColumnValue>();
 			//MappedColumns["id_user_create"] = new DataTableListStoreBinding.GetMappedColumnValue(GetUserName);
 			//MappedColumns["id_user_modify"] = new DataTableListStoreBinding.GetMappedColumnValue(GetUserName);
@@ -34,7 +34,7 @@ namespace LPS.Client
 		public ListStore ListStore { get; set; }
 		public TreeModelFilter Filter { get; set; }
 		public ListStore ColumnList { get; set; }
-		public TableInfo TableInfo { get; set; }
+		public IListInfo ListInfo { get; set; }
 		//public TreeModelSort Sort { get; set; }
 		public bool UseMarkup { get; set; }
 
@@ -62,17 +62,17 @@ namespace LPS.Client
 		private	GetMappedColumnValue[] getValFuncs;
 		private Dictionary<DataRow, TreeIter> row_iters;
 		
+
 		public ColumnInfo GetColumnInfo(string name)
 		{
-			foreach(ColumnInfo col in this.TableInfo.Columns)
-			{
-				if(col.Name == name)
-					return col;
-			}
-			ColumnInfo result = new ColumnInfo();
+			ColumnInfo result = this.ListInfo.GetColumnInfo(name);
+			if(result != null)
+				return result.Clone();
+			result = new ColumnInfo();
 			result.Caption = name.Replace('_',' ');
 			result.Description = "(automaticky vytvořeno)";
-			this.TableInfo.Columns.Add(result);
+			result.Visible = false;
+			//this.ListInfo.Columns.Add(result);
 			return result;
 		}
 		
@@ -91,8 +91,8 @@ namespace LPS.Client
 			for(int i = 0; i < this.DataTable.Columns.Count; i++)
 			{
 				DataColumn dc = this.DataTable.Columns[i];
-				TreeViewColumn wc;
 				ColumnInfo colinfo = GetColumnInfo(dc.ColumnName);
+				TreeViewColumn wc;
 				GetMappedColumnValue getValFunc = null;
 				getValFuncs[i] = null;
 				if(this.MappedColumns.TryGetValue(dc.ColumnName, out getValFunc))
@@ -148,7 +148,6 @@ namespace LPS.Client
 					colinfo.Description ?? "",
 				    colinfo.Visible
 				);
-
 				
 				this.TreeView.AppendColumn(wc);
 
