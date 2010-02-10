@@ -62,6 +62,8 @@ namespace LPS.Client
 				BindCheckButton(col, (CheckButton) w, colinfo);
 			else if(w is ComboBox)
 				BindComboBox(col, (ComboBox) w, colinfo);
+			else if(w is TextView)
+				BindTextView(col, (TextView) w, colinfo);
 		}
 		
 		public void BindEntry(DataColumn col, Entry entry, ColumnInfo colinfo)
@@ -77,6 +79,11 @@ namespace LPS.Client
 		public void BindComboBox(DataColumn col, ComboBox combo, ColumnInfo colinfo)
 		{
 			DataSource.GetGroupForColumn(col).Add(new ComboBoxBinding(colinfo, combo));
+		}
+
+		public void BindTextView(DataColumn col, TextView textview, ColumnInfo colinfo)
+		{
+			DataSource.GetGroupForColumn(col).Add(new TextViewBinding(textview));
 		}
 
 		bool binded;
