@@ -273,6 +273,8 @@ namespace LPS.Client
 		
 		protected virtual string GetStatusbarText()
 		{
+			if(Row == null)
+				return "Nepřipojeno k řádku";
 			string stav;
 			switch(Row.RowState)
 			{

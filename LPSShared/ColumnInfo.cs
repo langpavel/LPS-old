@@ -51,7 +51,7 @@ namespace LPS
 			return this.Clone();
 		}
 		
-		public ColumnInfo Clone()
+		public virtual ColumnInfo Clone()
 		{
 			ColumnInfo clone = (ColumnInfo)this.MemberwiseClone();
 			return clone;
