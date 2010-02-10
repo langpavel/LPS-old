@@ -117,12 +117,12 @@ namespace LPS.Server
 		}
 
 		[WebMethod(EnableSession=true)]
-		public DataSet GetDataSetByTableNameSimple(string tableName, string addsql)
+		public DataSet GetDataSetByNameSimple(string name, string addsql)
 		{
 			ConnectionInfo ci = GetConnectionInfo();
-			return ci.GetDataSetByTableName(tableName, addsql);
+			return ci.GetDataSetByName(name, addsql);
 		}
-		
+
 		[WebMethod(EnableSession=false)]
 		public ServerCallResult GetChanges(int sink, int security)
 		{
@@ -170,7 +170,7 @@ namespace LPS.Server
 		}
 		
 		[WebMethod(EnableSession=true)]
-		public ServerCallResult GetDataSet(int sink, int security, string sql, object[] parameters, out DataSet data)
+		public ServerCallResult GetDataSetBySql(int sink, int security, string sql, object[] parameters, out DataSet data)
 		{
 			data = null;
 			try
@@ -186,29 +186,13 @@ namespace LPS.Server
 		}
 
 		[WebMethod(EnableSession=true)]
-		public ServerCallResult SaveDataSet(int sink, int security, DataSet changes, bool updateUserInfo, string selectSql, object[] parameters, out int affected)
+		public ServerCallResult SaveDataSet(int sink, int security, string table_name, DataSet changes, bool updateUserInfo, bool changesNotify, out int affected)
 		{
 			affected = 0;
 			try
 			{
 				ConnectionInfo ci = GetConnectionInfo();
-				affected = ci.SaveDataSet(changes, updateUserInfo, selectSql, GetNpgsqlParameters(parameters));
-				return ServerChangeSink.GetResult(sink, security);
-			}
-			catch(Exception err)
-			{
-				return new ServerCallResult(err); 
-			}
-		}
-		
-		[WebMethod(EnableSession=true)]
-		public ServerCallResult SaveDataSetByTableName(int sink, int security, string name, DataSet changes, bool updateUserInfo, bool changesNotify, out int affected)
-		{
-			affected = 0;
-			try
-			{
-				ConnectionInfo ci = GetConnectionInfo();
-				affected = ci.SaveDataSetByTableName(name, changes, updateUserInfo, changesNotify);
+				affected = ci.SaveDataSet(table_name, changes, updateUserInfo, changesNotify);
 				return ServerChangeSink.GetResult(sink, security);
 			}
 			catch(Exception err)
@@ -251,14 +235,14 @@ namespace LPS.Server
 		}
 
 		[WebMethod(EnableSession=true)]
-		public ServerCallResult GetDataSetByTableName(int sink, int security, 
-			string table, object[] parameters, out DataSet result)
+		public ServerCallResult GetDataSetByName(int sink, int security,
+			string table, string addsql, object[] parameters, out DataSet result)
 		{
 			result = null;
 			try
 			{
 				ConnectionInfo ci = GetConnectionInfo();
-				result = ci.GetDataSetByTableName(table, GetNpgsqlParameters(parameters));
+				result = ci.GetDataSetByName(table, addsql, GetNpgsqlParameters(parameters));
 				return ServerChangeSink.GetResult(sink, security);
 			}
 			catch(Exception err)

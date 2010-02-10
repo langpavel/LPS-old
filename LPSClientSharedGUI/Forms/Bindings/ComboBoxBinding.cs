@@ -63,15 +63,17 @@ namespace LPS.Client
 				return;
 			combo.Changed -= HandleComboChanged;
 			combo.Clear();
+			combo.Model = null;
 		}
 
 		protected override void DoUpdateValue (object orig_value, object new_value)
 		{
-			if(combo == null)
+			if(combo == null || combo.Model == null)
 				return;
 			if(new_value == null || new_value == DBNull.Value)
 			{
-				combo.SetActiveIter(TreeIter.Zero);
+				//combo.SetActiveIter(TreeIter.Zero);
+				combo.Active = -1;
 				return;
 			}
 			long id = Convert.ToInt64(new_value);

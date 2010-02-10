@@ -149,28 +149,6 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="GetDataSetByTableNameSimple">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="tableName" type="xs:string" />
-            <xs:element minOccurs="0" maxOccurs="1" name="addsql" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetDataSetByTableNameSimpleResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="GetDataSetByTableNameSimpleResult">
-              <xs:complexType>
-                <xs:sequence>
-                  <xs:element ref="xs:schema" />
-                  <xs:any />
-                </xs:sequence>
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="GetChanges">
         <xs:complexType>
           <xs:sequence>
@@ -222,7 +200,7 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="GetDataSet">
+      <xs:element name="GetDataSetBySql">
         <xs:complexType>
           <xs:sequence>
             <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
@@ -232,10 +210,10 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="GetDataSetResponse">
+      <xs:element name="GetDataSetBySqlResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="GetDataSetResult" type="s0:ServerCallResult" />
+            <xs:element minOccurs="0" maxOccurs="1" name="GetDataSetBySqlResult" type="s0:ServerCallResult" />
             <xs:element minOccurs="0" maxOccurs="1" name="data">
               <xs:complexType>
                 <xs:sequence>
@@ -252,34 +230,7 @@
           <xs:sequence>
             <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
             <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
-            <xs:element minOccurs="0" maxOccurs="1" name="changes">
-              <xs:complexType>
-                <xs:sequence>
-                  <xs:element ref="xs:schema" />
-                  <xs:any />
-                </xs:sequence>
-              </xs:complexType>
-            </xs:element>
-            <xs:element minOccurs="1" maxOccurs="1" name="updateUserInfo" type="xs:boolean" />
-            <xs:element minOccurs="0" maxOccurs="1" name="selectSql" type="xs:string" />
-            <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfAnyType" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="SaveDataSetResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="SaveDataSetResult" type="s0:ServerCallResult" />
-            <xs:element minOccurs="1" maxOccurs="1" name="affected" type="xs:int" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="SaveDataSetByTableName">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
-            <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
-            <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="table_name" type="xs:string" />
             <xs:element minOccurs="0" maxOccurs="1" name="changes">
               <xs:complexType>
                 <xs:sequence>
@@ -293,10 +244,10 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="SaveDataSetByTableNameResponse">
+      <xs:element name="SaveDataSetResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="SaveDataSetByTableNameResult" type="s0:ServerCallResult" />
+            <xs:element minOccurs="0" maxOccurs="1" name="SaveDataSetResult" type="s0:ServerCallResult" />
             <xs:element minOccurs="1" maxOccurs="1" name="affected" type="xs:int" />
           </xs:sequence>
         </xs:complexType>
@@ -328,20 +279,21 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="GetDataSetByTableName">
+      <xs:element name="GetDataSetByName">
         <xs:complexType>
           <xs:sequence>
             <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
             <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
             <xs:element minOccurs="0" maxOccurs="1" name="table" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="addsql" type="xs:string" />
             <xs:element minOccurs="0" maxOccurs="1" name="parameters" type="s0:ArrayOfAnyType" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="GetDataSetByTableNameResponse">
+      <xs:element name="GetDataSetByNameResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="GetDataSetByTableNameResult" type="s0:ServerCallResult" />
+            <xs:element minOccurs="0" maxOccurs="1" name="GetDataSetByNameResult" type="s0:ServerCallResult" />
             <xs:element minOccurs="0" maxOccurs="1" name="result">
               <xs:complexType>
                 <xs:sequence>
@@ -436,12 +388,6 @@
   <message name="GetDataSetSimpleSoapOut">
     <part name="parameters" element="s0:GetDataSetSimpleResponse" />
   </message>
-  <message name="GetDataSetByTableNameSimpleSoapIn">
-    <part name="parameters" element="s0:GetDataSetByTableNameSimple" />
-  </message>
-  <message name="GetDataSetByTableNameSimpleSoapOut">
-    <part name="parameters" element="s0:GetDataSetByTableNameSimpleResponse" />
-  </message>
   <message name="GetChangesSoapIn">
     <part name="parameters" element="s0:GetChanges" />
   </message>
@@ -460,23 +406,17 @@
   <message name="ExecuteScalarSoapOut">
     <part name="parameters" element="s0:ExecuteScalarResponse" />
   </message>
-  <message name="GetDataSetSoapIn">
-    <part name="parameters" element="s0:GetDataSet" />
+  <message name="GetDataSetBySqlSoapIn">
+    <part name="parameters" element="s0:GetDataSetBySql" />
   </message>
-  <message name="GetDataSetSoapOut">
-    <part name="parameters" element="s0:GetDataSetResponse" />
+  <message name="GetDataSetBySqlSoapOut">
+    <part name="parameters" element="s0:GetDataSetBySqlResponse" />
   </message>
   <message name="SaveDataSetSoapIn">
     <part name="parameters" element="s0:SaveDataSet" />
   </message>
   <message name="SaveDataSetSoapOut">
     <part name="parameters" element="s0:SaveDataSetResponse" />
-  </message>
-  <message name="SaveDataSetByTableNameSoapIn">
-    <part name="parameters" element="s0:SaveDataSetByTableName" />
-  </message>
-  <message name="SaveDataSetByTableNameSoapOut">
-    <part name="parameters" element="s0:SaveDataSetByTableNameResponse" />
   </message>
   <message name="RegisterListenerSoapIn">
     <part name="parameters" element="s0:RegisterListener" />
@@ -490,11 +430,11 @@
   <message name="UnregisterListenerSoapOut">
     <part name="parameters" element="s0:UnregisterListenerResponse" />
   </message>
-  <message name="GetDataSetByTableNameSoapIn">
-    <part name="parameters" element="s0:GetDataSetByTableName" />
+  <message name="GetDataSetByNameSoapIn">
+    <part name="parameters" element="s0:GetDataSetByName" />
   </message>
-  <message name="GetDataSetByTableNameSoapOut">
-    <part name="parameters" element="s0:GetDataSetByTableNameResponse" />
+  <message name="GetDataSetByNameSoapOut">
+    <part name="parameters" element="s0:GetDataSetByNameResponse" />
   </message>
   <message name="GetTextResourceSoapIn">
     <part name="parameters" element="s0:GetTextResource" />
@@ -552,13 +492,6 @@
     <part name="sql" type="s:string" />
   </message>
   <message name="GetDataSetSimpleHttpGetOut">
-    <part name="Body" element="s0:DataSet" />
-  </message>
-  <message name="GetDataSetByTableNameSimpleHttpGetIn">
-    <part name="tableName" type="s:string" />
-    <part name="addsql" type="s:string" />
-  </message>
-  <message name="GetDataSetByTableNameSimpleHttpGetOut">
     <part name="Body" element="s0:DataSet" />
   </message>
   <message name="GetChangesHttpGetIn">
@@ -629,13 +562,6 @@
   <message name="GetDataSetSimpleHttpPostOut">
     <part name="Body" element="s0:DataSet" />
   </message>
-  <message name="GetDataSetByTableNameSimpleHttpPostIn">
-    <part name="tableName" type="s:string" />
-    <part name="addsql" type="s:string" />
-  </message>
-  <message name="GetDataSetByTableNameSimpleHttpPostOut">
-    <part name="Body" element="s0:DataSet" />
-  </message>
   <message name="GetChangesHttpPostIn">
     <part name="sink" type="s:int" />
     <part name="security" type="s:int" />
@@ -691,10 +617,6 @@
       <input message="s0:GetDataSetSimpleSoapIn" />
       <output message="s0:GetDataSetSimpleSoapOut" />
     </operation>
-    <operation name="GetDataSetByTableNameSimple">
-      <input message="s0:GetDataSetByTableNameSimpleSoapIn" />
-      <output message="s0:GetDataSetByTableNameSimpleSoapOut" />
-    </operation>
     <operation name="GetChanges">
       <input message="s0:GetChangesSoapIn" />
       <output message="s0:GetChangesSoapOut" />
@@ -707,17 +629,13 @@
       <input message="s0:ExecuteScalarSoapIn" />
       <output message="s0:ExecuteScalarSoapOut" />
     </operation>
-    <operation name="GetDataSet">
-      <input message="s0:GetDataSetSoapIn" />
-      <output message="s0:GetDataSetSoapOut" />
+    <operation name="GetDataSetBySql">
+      <input message="s0:GetDataSetBySqlSoapIn" />
+      <output message="s0:GetDataSetBySqlSoapOut" />
     </operation>
     <operation name="SaveDataSet">
       <input message="s0:SaveDataSetSoapIn" />
       <output message="s0:SaveDataSetSoapOut" />
-    </operation>
-    <operation name="SaveDataSetByTableName">
-      <input message="s0:SaveDataSetByTableNameSoapIn" />
-      <output message="s0:SaveDataSetByTableNameSoapOut" />
     </operation>
     <operation name="RegisterListener">
       <input message="s0:RegisterListenerSoapIn" />
@@ -727,9 +645,9 @@
       <input message="s0:UnregisterListenerSoapIn" />
       <output message="s0:UnregisterListenerSoapOut" />
     </operation>
-    <operation name="GetDataSetByTableName">
-      <input message="s0:GetDataSetByTableNameSoapIn" />
-      <output message="s0:GetDataSetByTableNameSoapOut" />
+    <operation name="GetDataSetByName">
+      <input message="s0:GetDataSetByNameSoapIn" />
+      <output message="s0:GetDataSetByNameSoapOut" />
     </operation>
     <operation name="GetTextResource">
       <input message="s0:GetTextResourceSoapIn" />
@@ -773,10 +691,6 @@
       <input message="s0:GetDataSetSimpleSoapIn" />
       <output message="s0:GetDataSetSimpleSoapOut" />
     </operation>
-    <operation name="GetDataSetByTableNameSimple">
-      <input message="s0:GetDataSetByTableNameSimpleSoapIn" />
-      <output message="s0:GetDataSetByTableNameSimpleSoapOut" />
-    </operation>
     <operation name="GetChanges">
       <input message="s0:GetChangesSoapIn" />
       <output message="s0:GetChangesSoapOut" />
@@ -789,17 +703,13 @@
       <input message="s0:ExecuteScalarSoapIn" />
       <output message="s0:ExecuteScalarSoapOut" />
     </operation>
-    <operation name="GetDataSet">
-      <input message="s0:GetDataSetSoapIn" />
-      <output message="s0:GetDataSetSoapOut" />
+    <operation name="GetDataSetBySql">
+      <input message="s0:GetDataSetBySqlSoapIn" />
+      <output message="s0:GetDataSetBySqlSoapOut" />
     </operation>
     <operation name="SaveDataSet">
       <input message="s0:SaveDataSetSoapIn" />
       <output message="s0:SaveDataSetSoapOut" />
-    </operation>
-    <operation name="SaveDataSetByTableName">
-      <input message="s0:SaveDataSetByTableNameSoapIn" />
-      <output message="s0:SaveDataSetByTableNameSoapOut" />
     </operation>
     <operation name="RegisterListener">
       <input message="s0:RegisterListenerSoapIn" />
@@ -809,9 +719,9 @@
       <input message="s0:UnregisterListenerSoapIn" />
       <output message="s0:UnregisterListenerSoapOut" />
     </operation>
-    <operation name="GetDataSetByTableName">
-      <input message="s0:GetDataSetByTableNameSoapIn" />
-      <output message="s0:GetDataSetByTableNameSoapOut" />
+    <operation name="GetDataSetByName">
+      <input message="s0:GetDataSetByNameSoapIn" />
+      <output message="s0:GetDataSetByNameSoapOut" />
     </operation>
     <operation name="GetTextResource">
       <input message="s0:GetTextResourceSoapIn" />
@@ -854,10 +764,6 @@
     <operation name="GetDataSetSimple">
       <input message="s0:GetDataSetSimpleHttpGetIn" />
       <output message="s0:GetDataSetSimpleHttpGetOut" />
-    </operation>
-    <operation name="GetDataSetByTableNameSimple">
-      <input message="s0:GetDataSetByTableNameSimpleHttpGetIn" />
-      <output message="s0:GetDataSetByTableNameSimpleHttpGetOut" />
     </operation>
     <operation name="GetChanges">
       <input message="s0:GetChangesHttpGetIn" />
@@ -908,10 +814,6 @@
     <operation name="GetDataSetSimple">
       <input message="s0:GetDataSetSimpleHttpPostIn" />
       <output message="s0:GetDataSetSimpleHttpPostOut" />
-    </operation>
-    <operation name="GetDataSetByTableNameSimple">
-      <input message="s0:GetDataSetByTableNameSimpleHttpPostIn" />
-      <output message="s0:GetDataSetByTableNameSimpleHttpPostOut" />
     </operation>
     <operation name="GetChanges">
       <input message="s0:GetChangesHttpPostIn" />
@@ -1004,15 +906,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="GetDataSetByTableNameSimple">
-      <soap:operation soapAction="http://lpsoft.org/server/GetDataSetByTableNameSimple" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="GetChanges">
       <soap:operation soapAction="http://lpsoft.org/server/GetChanges" style="document" />
       <input>
@@ -1040,8 +933,8 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="GetDataSet">
-      <soap:operation soapAction="http://lpsoft.org/server/GetDataSet" style="document" />
+    <operation name="GetDataSetBySql">
+      <soap:operation soapAction="http://lpsoft.org/server/GetDataSetBySql" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -1051,15 +944,6 @@
     </operation>
     <operation name="SaveDataSet">
       <soap:operation soapAction="http://lpsoft.org/server/SaveDataSet" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="SaveDataSetByTableName">
-      <soap:operation soapAction="http://lpsoft.org/server/SaveDataSetByTableName" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -1085,8 +969,8 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="GetDataSetByTableName">
-      <soap:operation soapAction="http://lpsoft.org/server/GetDataSetByTableName" style="document" />
+    <operation name="GetDataSetByName">
+      <soap:operation soapAction="http://lpsoft.org/server/GetDataSetByName" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -1187,15 +1071,6 @@
         <soap12:body use="literal" />
       </output>
     </operation>
-    <operation name="GetDataSetByTableNameSimple">
-      <soap12:operation soapAction="http://lpsoft.org/server/GetDataSetByTableNameSimple" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
     <operation name="GetChanges">
       <soap12:operation soapAction="http://lpsoft.org/server/GetChanges" style="document" />
       <input>
@@ -1223,8 +1098,8 @@
         <soap12:body use="literal" />
       </output>
     </operation>
-    <operation name="GetDataSet">
-      <soap12:operation soapAction="http://lpsoft.org/server/GetDataSet" style="document" />
+    <operation name="GetDataSetBySql">
+      <soap12:operation soapAction="http://lpsoft.org/server/GetDataSetBySql" style="document" />
       <input>
         <soap12:body use="literal" />
       </input>
@@ -1234,15 +1109,6 @@
     </operation>
     <operation name="SaveDataSet">
       <soap12:operation soapAction="http://lpsoft.org/server/SaveDataSet" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
-    <operation name="SaveDataSetByTableName">
-      <soap12:operation soapAction="http://lpsoft.org/server/SaveDataSetByTableName" style="document" />
       <input>
         <soap12:body use="literal" />
       </input>
@@ -1268,8 +1134,8 @@
         <soap12:body use="literal" />
       </output>
     </operation>
-    <operation name="GetDataSetByTableName">
-      <soap12:operation soapAction="http://lpsoft.org/server/GetDataSetByTableName" style="document" />
+    <operation name="GetDataSetByName">
+      <soap12:operation soapAction="http://lpsoft.org/server/GetDataSetByName" style="document" />
       <input>
         <soap12:body use="literal" />
       </input>
@@ -1363,15 +1229,6 @@
     </operation>
     <operation name="GetDataSetSimple">
       <http:operation location="/GetDataSetSimple" />
-      <input>
-        <http:urlEncoded />
-      </input>
-      <output>
-        <mime:mimeXml part="Body" />
-      </output>
-    </operation>
-    <operation name="GetDataSetByTableNameSimple">
-      <http:operation location="/GetDataSetByTableNameSimple" />
       <input>
         <http:urlEncoded />
       </input>
@@ -1481,15 +1338,6 @@
     </operation>
     <operation name="GetDataSetSimple">
       <http:operation location="/GetDataSetSimple" />
-      <input>
-        <mime:content part="" type="application/x-www-form-urlencoded" />
-      </input>
-      <output>
-        <mime:mimeXml part="Body" />
-      </output>
-    </operation>
-    <operation name="GetDataSetByTableNameSimple">
-      <http:operation location="/GetDataSetByTableNameSimple" />
       <input>
         <mime:content part="" type="application/x-www-form-urlencoded" />
       </input>

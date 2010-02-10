@@ -76,7 +76,7 @@ namespace LPS
 			}
 		}
 		
-		public ModulesTreeInfo GetModulesInfo(string name)
+		public ModulesTreeInfo FindModulesInfo(string name)
 		{
 			ModulesTreeInfo result;
 			if(ModulesInfo.Count == 0)
@@ -87,9 +87,22 @@ namespace LPS
 			}
 			if(ModulesInfo.TryGetValue(name, out result))
 				return result;
-			throw new ResourceNotFoundException(String.Format("Nenalezeno resource tree.xml/{0}", name));
+			return null;
 		}
-		
+
+		public ModulesTreeInfo GetModulesInfo(string name)
+		{
+			ModulesTreeInfo result = FindModulesInfo(name);
+			if(result == null)
+				throw new ResourceNotFoundException(String.Format("Nenalezeno resource tree.xml/{0}", name));
+			return result;
+		}
+
+		public IListInfo GetListInfo(string name)
+		{
+			return ((IListInfo)FindModulesInfo(name)) ?? ((IListInfo)GetTableInfo(name));
+		}
+
 		public virtual void Dispose()
 		{
 		}

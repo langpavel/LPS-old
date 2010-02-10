@@ -151,6 +151,7 @@ namespace LPS.Server
 				if(p.SourceColumn == "ts")
 				{
 					sb.Append(p.SourceColumn).Append("=").Append(p_now.ParameterName);
+					add_p_now = true;
 				}
 				else
 				{

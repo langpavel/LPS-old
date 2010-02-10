@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSClientShared", "LPSClien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Npgsql", "contrib\Npgsql\Npgsql.csproj", "{547058A0-1F2E-4E0B-98D4-294B8C0D85A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Threading.IntelParallel", "contrib\System.Threading.IntelParallel\System.Threading.IntelParallel.csproj", "{F3E70342-B601-41CD-AC7D-DDD4A90216D9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,10 +31,6 @@ Global
 		{D2317E65-70CE-4367-B1A7-211FD6044720}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2317E65-70CE-4367-B1A7-211FD6044720}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2317E65-70CE-4367-B1A7-211FD6044720}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F3E70342-B601-41CD-AC7D-DDD4A90216D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3E70342-B601-41CD-AC7D-DDD4A90216D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F3E70342-B601-41CD-AC7D-DDD4A90216D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F3E70342-B601-41CD-AC7D-DDD4A90216D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = LPSServer\LPSServer.csproj

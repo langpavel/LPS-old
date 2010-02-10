@@ -54,6 +54,11 @@ namespace LPS
 		
 		[XmlElement("list-sql")]
 		public string ListSql { get; set; }
+
+		string IListInfo.ListSql
+		{
+			get { return this.ListSql ?? Table.ListSql; }
+		}
 		
 		[XmlArray("columns")]
 		[XmlArrayItem("column")]

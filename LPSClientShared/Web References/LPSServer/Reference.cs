@@ -37,25 +37,21 @@ namespace LPSClientShared.LPSServer {
         
         private System.Threading.SendOrPostCallback GetDataSetSimpleOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetDataSetByTableNameSimpleOperationCompleted;
-        
         private System.Threading.SendOrPostCallback GetChangesOperationCompleted;
         
         private System.Threading.SendOrPostCallback ExecuteNonqueryOperationCompleted;
         
         private System.Threading.SendOrPostCallback ExecuteScalarOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetDataSetOperationCompleted;
+        private System.Threading.SendOrPostCallback GetDataSetBySqlOperationCompleted;
         
         private System.Threading.SendOrPostCallback SaveDataSetOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback SaveDataSetByTableNameOperationCompleted;
         
         private System.Threading.SendOrPostCallback RegisterListenerOperationCompleted;
         
         private System.Threading.SendOrPostCallback UnregisterListenerOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetDataSetByTableNameOperationCompleted;
+        private System.Threading.SendOrPostCallback GetDataSetByNameOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetTextResourceOperationCompleted;
         
@@ -85,25 +81,21 @@ namespace LPSClientShared.LPSServer {
         
         public event GetDataSetSimpleCompletedEventHandler GetDataSetSimpleCompleted;
         
-        public event GetDataSetByTableNameSimpleCompletedEventHandler GetDataSetByTableNameSimpleCompleted;
-        
         public event GetChangesCompletedEventHandler GetChangesCompleted;
         
         public event ExecuteNonqueryCompletedEventHandler ExecuteNonqueryCompleted;
         
         public event ExecuteScalarCompletedEventHandler ExecuteScalarCompleted;
         
-        public event GetDataSetCompletedEventHandler GetDataSetCompleted;
+        public event GetDataSetBySqlCompletedEventHandler GetDataSetBySqlCompleted;
         
         public event SaveDataSetCompletedEventHandler SaveDataSetCompleted;
-        
-        public event SaveDataSetByTableNameCompletedEventHandler SaveDataSetByTableNameCompleted;
         
         public event RegisterListenerCompletedEventHandler RegisterListenerCompleted;
         
         public event UnregisterListenerCompletedEventHandler UnregisterListenerCompleted;
         
-        public event GetDataSetByTableNameCompletedEventHandler GetDataSetByTableNameCompleted;
+        public event GetDataSetByNameCompletedEventHandler GetDataSetByNameCompleted;
         
         public event GetTextResourceCompletedEventHandler GetTextResourceCompleted;
         
@@ -397,45 +389,6 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetDataSetByTableNameSimple", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public System.Data.DataSet GetDataSetByTableNameSimple(string tableName, string addsql) {
-            object[] results = this.Invoke("GetDataSetByTableNameSimple", new object[] {
-                        tableName,
-                        addsql});
-            return ((System.Data.DataSet)(results[0]));
-        }
-        
-        public System.IAsyncResult BeginGetDataSetByTableNameSimple(string tableName, string addsql, System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("GetDataSetByTableNameSimple", new object[] {
-                        tableName,
-                        addsql}, callback, asyncState);
-        }
-        
-        public System.Data.DataSet EndGetDataSetByTableNameSimple(System.IAsyncResult asyncResult) {
-            object[] results = this.EndInvoke(asyncResult);
-            return ((System.Data.DataSet)(results[0]));
-        }
-        
-        public void GetDataSetByTableNameSimpleAsync(string tableName, string addsql) {
-            this.GetDataSetByTableNameSimpleAsync(tableName, addsql, null);
-        }
-        
-        public void GetDataSetByTableNameSimpleAsync(string tableName, string addsql, object userState) {
-            if ((this.GetDataSetByTableNameSimpleOperationCompleted == null)) {
-                this.GetDataSetByTableNameSimpleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDataSetByTableNameSimpleCompleted);
-            }
-            this.InvokeAsync("GetDataSetByTableNameSimple", new object[] {
-                        tableName,
-                        addsql}, this.GetDataSetByTableNameSimpleOperationCompleted, userState);
-        }
-        
-        private void OnGetDataSetByTableNameSimpleCompleted(object arg) {
-            if ((this.GetDataSetByTableNameSimpleCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetDataSetByTableNameSimpleCompleted(this, new GetDataSetByTableNameSimpleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetChanges", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public ServerCallResult GetChanges(int sink, int security) {
             object[] results = this.Invoke("GetChanges", new object[] {
@@ -569,9 +522,9 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetDataSet", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public ServerCallResult GetDataSet(int sink, int security, string sql, object[] parameters, out System.Data.DataSet data) {
-            object[] results = this.Invoke("GetDataSet", new object[] {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetDataSetBySql", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public ServerCallResult GetDataSetBySql(int sink, int security, string sql, object[] parameters, out System.Data.DataSet data) {
+            object[] results = this.Invoke("GetDataSetBySql", new object[] {
                         sink,
                         security,
                         sql,
@@ -580,63 +533,63 @@ namespace LPSClientShared.LPSServer {
             return ((ServerCallResult)(results[0]));
         }
         
-        public System.IAsyncResult BeginGetDataSet(int sink, int security, string sql, object[] parameters, System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("GetDataSet", new object[] {
+        public System.IAsyncResult BeginGetDataSetBySql(int sink, int security, string sql, object[] parameters, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetDataSetBySql", new object[] {
                         sink,
                         security,
                         sql,
                         parameters}, callback, asyncState);
         }
         
-        public ServerCallResult EndGetDataSet(System.IAsyncResult asyncResult, out System.Data.DataSet data) {
+        public ServerCallResult EndGetDataSetBySql(System.IAsyncResult asyncResult, out System.Data.DataSet data) {
             object[] results = this.EndInvoke(asyncResult);
             data = ((System.Data.DataSet)(results[1]));
             return ((ServerCallResult)(results[0]));
         }
         
-        public void GetDataSetAsync(int sink, int security, string sql, object[] parameters) {
-            this.GetDataSetAsync(sink, security, sql, parameters, null);
+        public void GetDataSetBySqlAsync(int sink, int security, string sql, object[] parameters) {
+            this.GetDataSetBySqlAsync(sink, security, sql, parameters, null);
         }
         
-        public void GetDataSetAsync(int sink, int security, string sql, object[] parameters, object userState) {
-            if ((this.GetDataSetOperationCompleted == null)) {
-                this.GetDataSetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDataSetCompleted);
+        public void GetDataSetBySqlAsync(int sink, int security, string sql, object[] parameters, object userState) {
+            if ((this.GetDataSetBySqlOperationCompleted == null)) {
+                this.GetDataSetBySqlOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDataSetBySqlCompleted);
             }
-            this.InvokeAsync("GetDataSet", new object[] {
+            this.InvokeAsync("GetDataSetBySql", new object[] {
                         sink,
                         security,
                         sql,
-                        parameters}, this.GetDataSetOperationCompleted, userState);
+                        parameters}, this.GetDataSetBySqlOperationCompleted, userState);
         }
         
-        private void OnGetDataSetCompleted(object arg) {
-            if ((this.GetDataSetCompleted != null)) {
+        private void OnGetDataSetBySqlCompleted(object arg) {
+            if ((this.GetDataSetBySqlCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetDataSetCompleted(this, new GetDataSetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.GetDataSetBySqlCompleted(this, new GetDataSetBySqlCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/SaveDataSet", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public ServerCallResult SaveDataSet(int sink, int security, System.Data.DataSet changes, bool updateUserInfo, string selectSql, object[] parameters, out int affected) {
+        public ServerCallResult SaveDataSet(int sink, int security, string table_name, System.Data.DataSet changes, bool updateUserInfo, bool changesNotify, out int affected) {
             object[] results = this.Invoke("SaveDataSet", new object[] {
                         sink,
                         security,
+                        table_name,
                         changes,
                         updateUserInfo,
-                        selectSql,
-                        parameters});
+                        changesNotify});
             affected = ((int)(results[1]));
             return ((ServerCallResult)(results[0]));
         }
         
-        public System.IAsyncResult BeginSaveDataSet(int sink, int security, System.Data.DataSet changes, bool updateUserInfo, string selectSql, object[] parameters, System.AsyncCallback callback, object asyncState) {
+        public System.IAsyncResult BeginSaveDataSet(int sink, int security, string table_name, System.Data.DataSet changes, bool updateUserInfo, bool changesNotify, System.AsyncCallback callback, object asyncState) {
             return this.BeginInvoke("SaveDataSet", new object[] {
                         sink,
                         security,
+                        table_name,
                         changes,
                         updateUserInfo,
-                        selectSql,
-                        parameters}, callback, asyncState);
+                        changesNotify}, callback, asyncState);
         }
         
         public ServerCallResult EndSaveDataSet(System.IAsyncResult asyncResult, out int affected) {
@@ -645,80 +598,27 @@ namespace LPSClientShared.LPSServer {
             return ((ServerCallResult)(results[0]));
         }
         
-        public void SaveDataSetAsync(int sink, int security, System.Data.DataSet changes, bool updateUserInfo, string selectSql, object[] parameters) {
-            this.SaveDataSetAsync(sink, security, changes, updateUserInfo, selectSql, parameters, null);
+        public void SaveDataSetAsync(int sink, int security, string table_name, System.Data.DataSet changes, bool updateUserInfo, bool changesNotify) {
+            this.SaveDataSetAsync(sink, security, table_name, changes, updateUserInfo, changesNotify, null);
         }
         
-        public void SaveDataSetAsync(int sink, int security, System.Data.DataSet changes, bool updateUserInfo, string selectSql, object[] parameters, object userState) {
+        public void SaveDataSetAsync(int sink, int security, string table_name, System.Data.DataSet changes, bool updateUserInfo, bool changesNotify, object userState) {
             if ((this.SaveDataSetOperationCompleted == null)) {
                 this.SaveDataSetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveDataSetCompleted);
             }
             this.InvokeAsync("SaveDataSet", new object[] {
                         sink,
                         security,
+                        table_name,
                         changes,
                         updateUserInfo,
-                        selectSql,
-                        parameters}, this.SaveDataSetOperationCompleted, userState);
+                        changesNotify}, this.SaveDataSetOperationCompleted, userState);
         }
         
         private void OnSaveDataSetCompleted(object arg) {
             if ((this.SaveDataSetCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.SaveDataSetCompleted(this, new SaveDataSetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/SaveDataSetByTableName", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public ServerCallResult SaveDataSetByTableName(int sink, int security, string name, System.Data.DataSet changes, bool updateUserInfo, bool changesNotify, out int affected) {
-            object[] results = this.Invoke("SaveDataSetByTableName", new object[] {
-                        sink,
-                        security,
-                        name,
-                        changes,
-                        updateUserInfo,
-                        changesNotify});
-            affected = ((int)(results[1]));
-            return ((ServerCallResult)(results[0]));
-        }
-        
-        public System.IAsyncResult BeginSaveDataSetByTableName(int sink, int security, string name, System.Data.DataSet changes, bool updateUserInfo, bool changesNotify, System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("SaveDataSetByTableName", new object[] {
-                        sink,
-                        security,
-                        name,
-                        changes,
-                        updateUserInfo,
-                        changesNotify}, callback, asyncState);
-        }
-        
-        public ServerCallResult EndSaveDataSetByTableName(System.IAsyncResult asyncResult, out int affected) {
-            object[] results = this.EndInvoke(asyncResult);
-            affected = ((int)(results[1]));
-            return ((ServerCallResult)(results[0]));
-        }
-        
-        public void SaveDataSetByTableNameAsync(int sink, int security, string name, System.Data.DataSet changes, bool updateUserInfo, bool changesNotify) {
-            this.SaveDataSetByTableNameAsync(sink, security, name, changes, updateUserInfo, changesNotify, null);
-        }
-        
-        public void SaveDataSetByTableNameAsync(int sink, int security, string name, System.Data.DataSet changes, bool updateUserInfo, bool changesNotify, object userState) {
-            if ((this.SaveDataSetByTableNameOperationCompleted == null)) {
-                this.SaveDataSetByTableNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveDataSetByTableNameCompleted);
-            }
-            this.InvokeAsync("SaveDataSetByTableName", new object[] {
-                        sink,
-                        security,
-                        name,
-                        changes,
-                        updateUserInfo,
-                        changesNotify}, this.SaveDataSetByTableNameOperationCompleted, userState);
-        }
-        
-        private void OnSaveDataSetByTableNameCompleted(object arg) {
-            if ((this.SaveDataSetByTableNameCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SaveDataSetByTableNameCompleted(this, new SaveDataSetByTableNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -798,50 +698,53 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetDataSetByTableName", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public ServerCallResult GetDataSetByTableName(int sink, int security, string table, object[] parameters, out System.Data.DataSet result) {
-            object[] results = this.Invoke("GetDataSetByTableName", new object[] {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetDataSetByName", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public ServerCallResult GetDataSetByName(int sink, int security, string table, string addsql, object[] parameters, out System.Data.DataSet result) {
+            object[] results = this.Invoke("GetDataSetByName", new object[] {
                         sink,
                         security,
                         table,
+                        addsql,
                         parameters});
             result = ((System.Data.DataSet)(results[1]));
             return ((ServerCallResult)(results[0]));
         }
         
-        public System.IAsyncResult BeginGetDataSetByTableName(int sink, int security, string table, object[] parameters, System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("GetDataSetByTableName", new object[] {
+        public System.IAsyncResult BeginGetDataSetByName(int sink, int security, string table, string addsql, object[] parameters, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetDataSetByName", new object[] {
                         sink,
                         security,
                         table,
+                        addsql,
                         parameters}, callback, asyncState);
         }
         
-        public ServerCallResult EndGetDataSetByTableName(System.IAsyncResult asyncResult, out System.Data.DataSet result) {
+        public ServerCallResult EndGetDataSetByName(System.IAsyncResult asyncResult, out System.Data.DataSet result) {
             object[] results = this.EndInvoke(asyncResult);
             result = ((System.Data.DataSet)(results[1]));
             return ((ServerCallResult)(results[0]));
         }
         
-        public void GetDataSetByTableNameAsync(int sink, int security, string table, object[] parameters) {
-            this.GetDataSetByTableNameAsync(sink, security, table, parameters, null);
+        public void GetDataSetByNameAsync(int sink, int security, string table, string addsql, object[] parameters) {
+            this.GetDataSetByNameAsync(sink, security, table, addsql, parameters, null);
         }
         
-        public void GetDataSetByTableNameAsync(int sink, int security, string table, object[] parameters, object userState) {
-            if ((this.GetDataSetByTableNameOperationCompleted == null)) {
-                this.GetDataSetByTableNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDataSetByTableNameCompleted);
+        public void GetDataSetByNameAsync(int sink, int security, string table, string addsql, object[] parameters, object userState) {
+            if ((this.GetDataSetByNameOperationCompleted == null)) {
+                this.GetDataSetByNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDataSetByNameCompleted);
             }
-            this.InvokeAsync("GetDataSetByTableName", new object[] {
+            this.InvokeAsync("GetDataSetByName", new object[] {
                         sink,
                         security,
                         table,
-                        parameters}, this.GetDataSetByTableNameOperationCompleted, userState);
+                        addsql,
+                        parameters}, this.GetDataSetByNameOperationCompleted, userState);
         }
         
-        private void OnGetDataSetByTableNameCompleted(object arg) {
-            if ((this.GetDataSetByTableNameCompleted != null)) {
+        private void OnGetDataSetByNameCompleted(object arg) {
+            if ((this.GetDataSetByNameCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetDataSetByTableNameCompleted(this, new GetDataSetByTableNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.GetDataSetByNameCompleted(this, new GetDataSetByNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1128,25 +1031,6 @@ namespace LPSClientShared.LPSServer {
     
     public delegate void GetDataSetSimpleCompletedEventHandler(object sender, GetDataSetSimpleCompletedEventArgs args);
     
-    public partial class GetDataSetByTableNameSimpleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetDataSetByTableNameSimpleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public System.Data.DataSet Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-    }
-    
-    public delegate void GetDataSetByTableNameSimpleCompletedEventHandler(object sender, GetDataSetByTableNameSimpleCompletedEventArgs args);
-    
     public partial class GetChangesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -1218,11 +1102,11 @@ namespace LPSClientShared.LPSServer {
     
     public delegate void ExecuteScalarCompletedEventHandler(object sender, ExecuteScalarCompletedEventArgs args);
     
-    public partial class GetDataSetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class GetDataSetBySqlCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal GetDataSetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal GetDataSetBySqlCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -1242,7 +1126,7 @@ namespace LPSClientShared.LPSServer {
         }
     }
     
-    public delegate void GetDataSetCompletedEventHandler(object sender, GetDataSetCompletedEventArgs args);
+    public delegate void GetDataSetBySqlCompletedEventHandler(object sender, GetDataSetBySqlCompletedEventArgs args);
     
     public partial class SaveDataSetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
@@ -1269,32 +1153,6 @@ namespace LPSClientShared.LPSServer {
     }
     
     public delegate void SaveDataSetCompletedEventHandler(object sender, SaveDataSetCompletedEventArgs args);
-    
-    public partial class SaveDataSetByTableNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SaveDataSetByTableNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public ServerCallResult Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ServerCallResult)(this.results[0]));
-            }
-        }
-        
-        public int affected {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-    }
-    
-    public delegate void SaveDataSetByTableNameCompletedEventHandler(object sender, SaveDataSetByTableNameCompletedEventArgs args);
     
     public partial class RegisterListenerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
@@ -1348,11 +1206,11 @@ namespace LPSClientShared.LPSServer {
     
     public delegate void UnregisterListenerCompletedEventHandler(object sender, UnregisterListenerCompletedEventArgs args);
     
-    public partial class GetDataSetByTableNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class GetDataSetByNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal GetDataSetByTableNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal GetDataSetByNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -1372,7 +1230,7 @@ namespace LPSClientShared.LPSServer {
         }
     }
     
-    public delegate void GetDataSetByTableNameCompletedEventHandler(object sender, GetDataSetByTableNameCompletedEventArgs args);
+    public delegate void GetDataSetByNameCompletedEventHandler(object sender, GetDataSetByNameCompletedEventArgs args);
     
     public partial class GetTextResourceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         

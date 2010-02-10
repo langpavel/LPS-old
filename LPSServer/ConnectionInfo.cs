@@ -212,7 +212,8 @@ namespace LPS.Server
 				return cmd.ExecuteScalar();
 			}
 		}
-		
+
+		#region CreateCommand
 		public NpgsqlCommand CreateCommand()
 		{
 			NpgsqlCommand cmd = this.Connection.CreateCommand();
@@ -235,6 +236,78 @@ namespace LPS.Server
 			return cmd;
 		}
 		
+		public NpgsqlCommand CreateCommand(IListInfo table, string addsql)
+		{
+			string sql = table.ListSql;
+			if(addsql == null)
+				addsql = "";
+			string sqllower = sql.ToLower();
+			int idx = sqllower.IndexOf("{where}");
+			bool isadd = String.IsNullOrEmpty(addsql.Trim());
+			string op;
+			if(idx >= 0)
+			{
+				op = isadd ? "" : " WHERE ";
+				return CreateCommand(sql.Substring(0, idx) + op + addsql + sql.Substring(idx + "{where}".Length));
+			}
+			idx = sqllower.IndexOf("{and}");
+			if(idx >= 0)
+			{
+				op = isadd ? "" : " AND ";
+				return CreateCommand(sql.Substring(0, idx) + op + addsql + sql.Substring(idx + "{and}".Length));
+			}
+			op = isadd ? "" : " WHERE ";
+			return CreateCommand(sql + op + addsql);
+		}
+
+		public NpgsqlCommand CreateCommand(IListInfo table, params NpgsqlParameter[] parameters)
+		{
+			NpgsqlCommand command = CreateCommand();
+			string sql = table.ListSql;
+			string sqllower = sql.ToLower();
+			StringBuilder paramstr = new StringBuilder();
+			bool first = true;
+			foreach(NpgsqlParameter parameter in parameters)
+			{
+				if(first) first = false; else paramstr.Append(" AND ");
+				object val = parameter.Value;
+				if(val == null || val is DBNull)
+					paramstr.AppendFormat("({0} IS NULL)", parameter.SourceColumn);
+				else
+					paramstr.AppendFormat("({0} = {1})", parameter.SourceColumn, parameter.ParameterName);
+				command.Parameters.Add(parameter);
+			}
+			int idx = sqllower.IndexOf("{where}");
+			string op;
+			if(idx >= 0)
+			{
+				op = first ? "" : " WHERE ";
+				command.CommandText = sql.Substring(0, idx) + op + paramstr.ToString() + sql.Substring(idx + "{where}".Length);
+				return command;
+			}
+			idx = sqllower.IndexOf("{and}");
+			if(idx >= 0)
+			{
+				op = first ? "" : " AND ";
+				command.CommandText = sql.Substring(0, idx) + op + paramstr.ToString() + sql.Substring(idx + "{and}".Length);
+				return command;
+			}
+			op = first ? "" : " WHERE ";
+			command.CommandText = sql + op + paramstr.ToString();
+			return command;
+		}
+
+		public NpgsqlCommand CreateCommand(IListInfo table, string addsql, params NpgsqlParameter[] parameters)
+		{
+			if(String.IsNullOrEmpty(addsql))
+			   return CreateCommand(table, parameters);
+			NpgsqlCommand result = CreateCommand(table, addsql);
+			foreach(NpgsqlParameter parameter in parameters)
+				result.Parameters.Add(parameter);
+			return result;
+		}
+		#endregion
+
 		public void UpdateUserInfo(DataTable table)
 		{
 			DateTime now = DateTime.Now;
@@ -403,85 +476,45 @@ namespace LPS.Server
 		{
 			return Server._GetTextResource(path);
 		}
-		
-		public NpgsqlCommand CreateCommand(TableInfo table, string addsql)
-		{
-			string sql = table.ListSql;
-			if(addsql == null)
-				addsql = "";
-			string sqllower = sql.ToLower();
-			int idx = sqllower.IndexOf("{where}");
-			bool isadd = String.IsNullOrEmpty(addsql.Trim());
-			string op;
-			if(idx >= 0)
-			{
-				op = isadd ? "" : " WHERE ";
-				return CreateCommand(sql.Substring(0, idx) + op + addsql + sql.Substring(idx + "{where}".Length));
-			}
-			idx = sqllower.IndexOf("{and}");
-			if(idx >= 0)
-			{
-				op = isadd ? "" : " AND ";
-				return CreateCommand(sql.Substring(0, idx) + op + addsql + sql.Substring(idx + "{and}".Length));
-			}
-			op = isadd ? "" : " WHERE ";
-			return CreateCommand(sql + op + addsql);
-		}
 
-		public NpgsqlCommand CreateCommand(TableInfo table, NpgsqlParameter[] parameters)
+		public DataSet GetDataSetByName(string table, string addsql, params NpgsqlParameter[] parameters)
 		{
-			NpgsqlCommand command = CreateCommand();
-			string sql = table.ListSql;
-			string sqllower = sql.ToLower();
-			StringBuilder paramstr = new StringBuilder();
-			bool first = true;
-			foreach(NpgsqlParameter parameter in parameters)
-			{
-				if(first) first = false; else paramstr.Append(" AND ");
-				object val = parameter.Value;
-				if(val == null || val is DBNull)
-					paramstr.AppendFormat("({0} IS NULL)", parameter.SourceColumn);
-				else
-					paramstr.AppendFormat("({0} = {1})", parameter.SourceColumn, parameter.ParameterName);
-				command.Parameters.Add(parameter);
-			}
-			int idx = sqllower.IndexOf("{where}");
-			string op;
-			if(idx >= 0)
-			{
-				op = first ? "" : " WHERE ";
-				command.CommandText = sql.Substring(0, idx) + op + paramstr.ToString() + sql.Substring(idx + "{where}".Length);
-				return command;
-			}
-			idx = sqllower.IndexOf("{and}");
-			if(idx >= 0)
-			{
-				op = first ? "" : " AND ";
-				command.CommandText = sql.Substring(0, idx) + op + paramstr.ToString() + sql.Substring(idx + "{and}".Length);
-				return command;
-			}
-			op = first ? "" : " WHERE ";
-			command.CommandText = sql + op + paramstr.ToString();
-			return command;
-		}
-		
-		public DataSet GetDataSetByTableName(string table, NpgsqlParameter[] parameters)
-		{
-			TableInfo tableinfo = this.Resources.GetTableInfo(table);
+			IListInfo info = this.Resources.GetListInfo(table);
 			DataSet ds = new DataSet();
 			using(NpgsqlTransaction trans = Connection.BeginTransaction())
 			{
-				using(NpgsqlCommand command = CreateCommand(tableinfo, parameters))
+				using(NpgsqlCommand command = CreateCommand(info, addsql, parameters))
 				using(NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(command))
 				{
 					adapter.Fill(ds);
 					foreach(DataTable dt in ds.Tables)
 					{
-						DataColumn col = dt.Columns[0];
-						if(col.ColumnName == "id")
+						DataColumn pkcol = dt.Columns[0];
+						if(pkcol.ColumnName == "id")
 						{
-							dt.PrimaryKey = new DataColumn[] { col };
+							dt.PrimaryKey = new DataColumn[] { pkcol };
 						}
+
+						foreach(DataColumn col in dt.Columns)
+						{
+							ColumnInfo ci = info.GetColumnInfo(col.ColumnName);
+							if(ci == null)
+								continue;
+							col.Caption = ci.Caption;
+							col.AllowDBNull = !ci.Required;
+							if(ci.Default != null)
+							{
+								try
+								{
+									object val = Convert.ChangeType(ci.Default, col.DataType);
+									col.DefaultValue = val;
+								}
+								catch { }
+							}
+							if(ci.Unique)
+								col.Unique = true;
+						}
+
 					}
 					ds.ExtendedProperties.Add("TABLE", table);
 					ds.ExtendedProperties.Add("SQL", command.CommandText);
@@ -490,7 +523,8 @@ namespace LPS.Server
 				return ds;
 			}
 		}
-		
+
+		/*
 		public DataSet GetDataSetByTableName(string table, string addsql)
 		{
 			TableInfo tableinfo = this.Resources.GetTableInfo(table);
@@ -516,8 +550,9 @@ namespace LPS.Server
 				return ds;
 			}
 		}
+		*/
 		
-		public int SaveDataSetByTableName(string tablename, DataSet changes, bool updateUserInfo, bool changesNotify)
+		public int SaveDataSet(string tablename, DataSet changes, bool updateUserInfo, bool changesNotify)
 		{
 			try
 			{

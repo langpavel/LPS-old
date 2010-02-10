@@ -27,9 +27,15 @@ namespace LPS
 		[XmlAttribute("required")]
 		public bool Required { get; set; }
 
+		[XmlAttribute("unique")]
+		public bool Unique { get; set; }
+
 		[XmlAttribute("width")]
 		public int Width { get; set; }
 		
+		[XmlAttribute("default")]
+		public string Default { get; set; }
+
 		[XmlElement("ref-table")]
 		public string FkReferenceTable { get; set; }
 		

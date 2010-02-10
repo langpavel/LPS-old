@@ -103,6 +103,10 @@ namespace LPS.Client
 		public abstract void Load(long id);
 		public virtual void New()
 		{
+			DataRow r = this.Data.Tables[0].NewRow();
+			OnNewRow(r);
+			this.Data.Tables[0].Rows.Add(r);
+			this.Row = r;
 		}
 
 		public virtual bool DeleteQuery()
@@ -110,6 +114,7 @@ namespace LPS.Client
 			if(this.ShowQueryMessage(MessageType.Question, "Smazat", "Opravdu chcete smazat tento záznam?"))
 			{
 				this.Delete();
+				this.DoSaveClose();
 				this.Dispose();
 				return true;
 			}
@@ -118,7 +123,9 @@ namespace LPS.Client
 		
 		public virtual void Delete()
 		{
-			throw new NotImplementedException("Tento dialog nepodporuje mazání");
+			//throw new NotImplementedException("Tento dialog nepodporuje mazání");
+			this.Row.Delete();
+			this.Row = null;
 		}
 		
 		public DataSet Data { get; protected set; }
@@ -126,7 +133,7 @@ namespace LPS.Client
 		protected virtual void Load(string table_name, long id)
 		{
 			WindowTitle = TableInfo.DetailCaption ?? "{kod} - {popis}";
-			Data = Connection.GetDataSetByTableName(table_name, "id", id);
+			Data = Connection.GetDataSetByName(table_name, "id", id);
 			if(id <= 0)
 			{
 				this.Row = Data.Tables[0].NewRow();

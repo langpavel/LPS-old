@@ -196,32 +196,22 @@ namespace LPS.Client
 			return result;
 		}
 		
-		[Obsolete]
-		public DataSet GetDataSet(string sql, params object[] parameters)
+		public DataSet GetDataSetByName(string name, params object[] parameters)
 		{
 			DataSet result;
-			CheckServerResult(Server.GetDataSet(sink, security, sql, parameters, out result));
-			result.ExtendedProperties["sql"] = sql;
-			result.ExtendedProperties["parameters"] = parameters;
-			return result;
-		}
-
-		[Obsolete]
-		public int SaveDataSet(DataSet changes, bool updateUserInfo, string selectSql, object[] parameters)
-		{
-			int affected;
-			CheckServerResult(Server.SaveDataSet(sink, security, changes, updateUserInfo, selectSql, parameters, out affected));
-			return affected;
-		}
-		
-		public DataSet GetDataSetByTableName(string name, params object[] parameters)
-		{
-			DataSet result;
-			CheckServerResult(Server.GetDataSetByTableName(sink, security, name, parameters, out result));
+			if(parameters.Length % 2 == 1)
+			{
+				object[] parms = new object[parameters.Length-1];
+				for(int i=1; i<parameters.Length; i++)
+					parms[i-1] = parameters[i];
+				CheckServerResult(Server.GetDataSetByName(sink, security, name, (string)parameters[0], parms, out result));
+			}
+			else
+				CheckServerResult(Server.GetDataSetByName(sink, security, name, "", parameters, out result));
 			result.ExtendedProperties.Add("TABLE", name);
 			return result;
 		}
-		
+
 		public int SaveDataSet(DataSet dataset, bool updateUserInfo)
 		{
 			if(!dataset.HasChanges())
@@ -231,21 +221,13 @@ namespace LPS.Client
 			{
 				string tablename = (string)dataset.ExtendedProperties["TABLE"];
 				using(DataSet changes = dataset.GetChanges())
-					CheckServerResult(Server.SaveDataSetByTableName(sink, security, tablename, changes, true, true, out affected));
+					CheckServerResult(Server.SaveDataSet(sink, security, tablename, changes, true, true, out affected));
 				if(affected > 0) 
 					dataset.AcceptChanges();
 				return affected;
 			}
 			else
-			{
-				Console.WriteLine("DEPRECATED SAVE!");
-				string selectSql = (string)dataset.ExtendedProperties["sql"];
-				object[] parameters = (object[])dataset.ExtendedProperties["parameters"];
-				using(DataSet changes = dataset.GetChanges())
-					CheckServerResult(Server.SaveDataSet(sink, security, changes, updateUserInfo, selectSql, parameters, out affected));
-				dataset.AcceptChanges();
-				return affected;
-			}
+				throw new ArgumentException("Dataset neobsahuje hodnotu TABLE");
 		}
 		
 		public int SaveDataSet(DataSet dataset)
@@ -253,14 +235,6 @@ namespace LPS.Client
 			return SaveDataSet(dataset, true);
 		}
 
-		[Obsolete]
-		public DataSet GetSameDataSet(DataSet dataset)
-		{
-			string selectSql = (string)dataset.ExtendedProperties["sql"];
-			object[] parameters = (object[])dataset.ExtendedProperties["parameters"];
-			return this.GetDataSet(selectSql, parameters);
-		}
-		
 		public void FlushCache()
 		{
 			List<DataSet> copy = new List<DataSet>(cached_datasets.Values);
@@ -278,7 +252,7 @@ namespace LPS.Client
 			cached_datasets.TryGetValue(tableName, out result);
 			if(result == null)
 			{
-				result = this.GetDataSetByTableName(tableName);
+				result = this.GetDataSetByName(tableName);
 				cached_datasets[tableName] = result;
 				result.Disposed += delegate(object sender, EventArgs e) {
 					cached_datasets.Remove(tableName);

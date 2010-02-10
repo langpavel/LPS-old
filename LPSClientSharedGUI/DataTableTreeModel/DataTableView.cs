@@ -47,7 +47,7 @@ namespace LPS.Client
 		
 		protected void LoadData()
 		{
-			this.dataset = Connection.GetDataSetByTableName(ListInfo.TableName, this.parameters);
+			this.dataset = Connection.GetDataSetByName(ListInfo.Id, this.parameters);
 			this.table = this.dataset.Tables[0];
 			
 			binding = new DataTableListStoreBinding(this, this.table, this.ListInfo);
