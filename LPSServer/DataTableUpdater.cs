@@ -10,6 +10,7 @@ namespace LPS.Server
 	public class DataTableUpdater: IDisposable
 	{
 		private DateTime dt_now;
+		private NpgsqlParameter p_now;
 		private ConnectionInfo connection;
 		private DataTable table;
 		private string table_name;
@@ -28,6 +29,7 @@ namespace LPS.Server
 		public DataTableUpdater(ConnectionInfo Connection, DataTable Table, string table_name)
 		{
 			this.dt_now = DateTime.Now;
+			this.p_now = new NpgsqlParameter("p_now", this.dt_now);
 			this.connection = Connection;
 			this.table = Table;
 			this.table_name = table_name;
@@ -106,6 +108,7 @@ namespace LPS.Server
 			if(insert_cmd != null)
 				return insert_cmd;
 			insert_cmd = connection.CreateCommand();
+			bool add_p_now = false;
 			NpgsqlParameter[] insert_params = CreateParameters(DataRowVersion.Current, row);
 			string[] col_names = new string[insert_params.Length];
 			string[] param_names = new string[insert_params.Length];
@@ -115,7 +118,8 @@ namespace LPS.Server
 				col_names[i] = p.SourceColumn;
 				if(p.SourceColumn == "ts")
 				{
-					param_names[i] = "now()";
+					param_names[i] = p_now.ParameterName;
+					add_p_now = true;
 				}
 				else
 				{
@@ -123,7 +127,9 @@ namespace LPS.Server
 					insert_cmd.Parameters.Add(p);
 				}
 			}
-			insert_cmd.CommandText = String.Format("insert into {0} ({1}) values ({2})", 
+			if(add_p_now)
+				insert_cmd.Parameters.Add(p_now);
+			insert_cmd.CommandText = String.Format("insert into {0} ({1}) values ({2})",
 				table_name, String.Join(", ", col_names), String.Join(", ", param_names));
 			insert_cmd.Prepare();
 			return insert_cmd;
@@ -134,6 +140,7 @@ namespace LPS.Server
 			if(update_cmd != null)
 				return update_cmd;
 			update_cmd = connection.CreateCommand();
+			bool add_p_now = false;
 			NpgsqlParameter[] new_params = CreateParameters(DataRowVersion.Current, row);
 			NpgsqlParameter[] orig_params = CreateParameters(DataRowVersion.Original, row);
 			StringBuilder sb = new StringBuilder();
@@ -143,7 +150,7 @@ namespace LPS.Server
 				NpgsqlParameter p = new_params[i];
 				if(p.SourceColumn == "ts")
 				{
-					sb.Append(p.SourceColumn).Append("=now()");
+					sb.Append(p.SourceColumn).Append("=").Append(p_now.ParameterName);
 				}
 				else
 				{
@@ -171,7 +178,8 @@ namespace LPS.Server
 				sb.AppendFormat("({0}={1} or {0} is null)", p.SourceColumn, p.ParameterName);
 				update_cmd.Parameters.Add(p);
 			}
-			
+			if(add_p_now)
+				update_cmd.Parameters.Add(p_now);
 			update_cmd.CommandText = sb.ToString();
 			update_cmd.Prepare();
 			return update_cmd;
@@ -211,9 +219,10 @@ namespace LPS.Server
 			if(delete2_cmd != null)
 				return delete2_cmd;
 			delete2_cmd = connection.CreateCommand();
-			delete2_cmd.CommandText = String.Format("insert into sys_deleted (table_name,row_id,id_user) values ('{0}',:o__id,{1})",
-				table_name, UserId);
+			delete2_cmd.CommandText = String.Format("insert into sys_deleted (table_name,row_id,id_user,ts) values ('{0}',:o__id,{1},{2})",
+				table_name, UserId, p_now.ParameterName);
 			delete2_cmd.Parameters.Add(delete_cmd.Parameters[":o__id"]);
+			delete2_cmd.Parameters.Add(p_now);
 			delete2_cmd.Prepare();
 			return delete2_cmd;
 		}
@@ -238,6 +247,8 @@ namespace LPS.Server
 			NpgsqlCommand cmd = GetInsertCommand(row);
 			foreach(NpgsqlParameter p in cmd.Parameters)
 			{
+				if(p == p_now)
+					continue;
 				if(this.UpdateUserInfo)
 				{
 					if(p.SourceColumn == "id_user_create" || p.SourceColumn == "id_user_modify")
@@ -261,6 +272,8 @@ namespace LPS.Server
 			NpgsqlCommand cmd = GetUpdateCommand(row);
 			foreach(NpgsqlParameter p in cmd.Parameters)
 			{
+				if(p == p_now)
+					continue;
 				if(this.UpdateUserInfo && p.SourceVersion == DataRowVersion.Current)
 				{
 					if(p.SourceColumn == "id_user_create" || p.SourceColumn == "id_user_modify")
@@ -285,6 +298,8 @@ namespace LPS.Server
 			NpgsqlCommand cmd2 = GetDelete2Command(row);
 			foreach(NpgsqlParameter p in cmd.Parameters)
 			{
+				if(p == p_now)
+					continue;
 				p.Value = row[p.SourceColumn, p.SourceVersion] ?? DBNull.Value;
 			}
 			int result = CheckAffected(cmd.ExecuteNonQuery(), row);
@@ -292,27 +307,21 @@ namespace LPS.Server
 			return result;
 		}
 		
-		public void DoNotifyChange(char stav, DataRow row)
+		public void DoNotifyChange(bool del)
 		{
-			switch(stav)
-			{
-			case 'D':
-				ServerChangeSink.AddNewData(table_name, Convert.ToInt64(row["id", DataRowVersion.Original]), stav, null);
-				return;
-			default:
-				ServerChangeSink.AddNewData(table_name, Convert.ToInt64(row["id"]), stav, row);
-				return;
-			}
+			ServerChangeSink.AddNewData(table_name, dt_now, del);
 		}
 		
 		public int Run()
 		{
 			dt_now = DateTime.Now;
+			p_now.Value = dt_now;
 			int affected = 0;
 			using(NpgsqlTransaction trans = connection.Connection.BeginTransaction())
 			{
 				try
 				{
+					bool has_del = false;
 					foreach(DataRow row in table.Rows)
 					{
 						switch(row.RowState)
@@ -325,29 +334,12 @@ namespace LPS.Server
 							continue;
 						case DataRowState.Deleted:
 							affected += DeleteRow(row);
+							has_del = true;
 							continue;
 						}
 					}
 					trans.Commit();
-					
-					if(this.NotifyChangeSink)
-					{
-						foreach(DataRow row in table.Rows)
-						{
-							switch(row.RowState)
-							{
-							case DataRowState.Added:
-								DoNotifyChange('I', row);
-								continue;
-							case DataRowState.Modified:
-								DoNotifyChange('U', row);
-								continue;
-							case DataRowState.Deleted:
-								DoNotifyChange('D', row);
-								continue;
-							}
-						}
-					}
+					DoNotifyChange(has_del);
 					return affected;
 				}
 				catch

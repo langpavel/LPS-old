@@ -2,7 +2,7 @@ using System;
 using System.Data;
 using System.Xml.Serialization;
 
-namespace LPS
+namespace LPS.Server
 {
 	[Serializable]
 	[XmlRoot("result", Namespace="http://lpsoft.org/server/")]
@@ -34,7 +34,7 @@ namespace LPS
 		/// <summary>
 		/// Changes dataset se vraci null pokud nebyly zmeny na serveru
 		/// </summary>
-		public DataSet Changes { get; set; }
+		public ChangeInfo[] Changes { get; set; }
 
 		/// <summary>
 		/// Readonly - if has changes
@@ -43,7 +43,7 @@ namespace LPS
 		{
 			get
 			{
-				return Changes != null && Changes.Tables.Count > 0;
+				return Changes != null && Changes.Length > 0;
 			}
 		}
 		

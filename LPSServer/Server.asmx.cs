@@ -237,36 +237,6 @@ namespace LPS.Server
 		}
 		
 		[WebMethod(EnableSession=true)]
-		public ServerCallResult RegisterListenerTable(int sink, int security, string table)
-		{
-			try
-			{
-				ServerChangeListener listener = ServerChangeSink.GetListener(sink, security);
-				listener.ListenTo(table);
-				return ServerChangeSink.GetResult(sink, security);
-			}
-			catch(Exception err)
-			{
-				return new ServerCallResult(err); 
-			}
-		}
-		
-		[WebMethod(EnableSession=true)]
-		public ServerCallResult UnregisterListenerTable(int sink, int security, string table)
-		{
-			try
-			{
-				ServerChangeListener listener = ServerChangeSink.GetListener(sink, security);
-				listener.StopListenTo(table);
-				return ServerChangeSink.GetResult(sink, security);
-			}
-			catch(Exception err)
-			{
-				return new ServerCallResult(err); 
-			}
-		}
-		
-		[WebMethod(EnableSession=true)]
 		public ServerCallResult UnregisterListener(int sink, int security)
 		{
 			try

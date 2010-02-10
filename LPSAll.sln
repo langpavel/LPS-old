@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportHelper", "ImportHelpe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSShared", "LPSShared\LPSShared.csproj", "{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Threading.IntelParallel", "contrib\System.Threading.IntelParallel\System.Threading.IntelParallel.csproj", "{F3E70342-B601-41CD-AC7D-DDD4A90216D9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -51,10 +49,6 @@ Global
 		{F31B07F0-C6F6-4190-B12F-8EFD2C9EC5AE}.Debug|x86.Build.0 = Debug|x86
 		{F31B07F0-C6F6-4190-B12F-8EFD2C9EC5AE}.Release|x86.ActiveCfg = Release|x86
 		{F31B07F0-C6F6-4190-B12F-8EFD2C9EC5AE}.Release|x86.Build.0 = Release|x86
-		{F3E70342-B601-41CD-AC7D-DDD4A90216D9}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F3E70342-B601-41CD-AC7D-DDD4A90216D9}.Debug|x86.Build.0 = Debug|Any CPU
-		{F3E70342-B601-41CD-AC7D-DDD4A90216D9}.Release|x86.ActiveCfg = Release|Any CPU
-		{F3E70342-B601-41CD-AC7D-DDD4A90216D9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = LPSClientSklad\LPSClientSklad.csproj

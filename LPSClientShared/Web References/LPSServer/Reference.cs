@@ -18,6 +18,7 @@ namespace LPSClientShared.LPSServer {
     [System.Web.Services.WebServiceBinding(Name="ServerSoap", Namespace="http://lpsoft.org/server/")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ChangeInfo))]
     public partial class Server : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback PingOperationCompleted;
@@ -51,10 +52,6 @@ namespace LPSClientShared.LPSServer {
         private System.Threading.SendOrPostCallback SaveDataSetByTableNameOperationCompleted;
         
         private System.Threading.SendOrPostCallback RegisterListenerOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback RegisterListenerTableOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback UnregisterListenerTableOperationCompleted;
         
         private System.Threading.SendOrPostCallback UnregisterListenerOperationCompleted;
         
@@ -103,10 +100,6 @@ namespace LPSClientShared.LPSServer {
         public event SaveDataSetByTableNameCompletedEventHandler SaveDataSetByTableNameCompleted;
         
         public event RegisterListenerCompletedEventHandler RegisterListenerCompleted;
-        
-        public event RegisterListenerTableCompletedEventHandler RegisterListenerTableCompleted;
-        
-        public event UnregisterListenerTableCompletedEventHandler UnregisterListenerTableCompleted;
         
         public event UnregisterListenerCompletedEventHandler UnregisterListenerCompleted;
         
@@ -766,90 +759,6 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/RegisterListenerTable", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public ServerCallResult RegisterListenerTable(int sink, int security, string table) {
-            object[] results = this.Invoke("RegisterListenerTable", new object[] {
-                        sink,
-                        security,
-                        table});
-            return ((ServerCallResult)(results[0]));
-        }
-        
-        public System.IAsyncResult BeginRegisterListenerTable(int sink, int security, string table, System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("RegisterListenerTable", new object[] {
-                        sink,
-                        security,
-                        table}, callback, asyncState);
-        }
-        
-        public ServerCallResult EndRegisterListenerTable(System.IAsyncResult asyncResult) {
-            object[] results = this.EndInvoke(asyncResult);
-            return ((ServerCallResult)(results[0]));
-        }
-        
-        public void RegisterListenerTableAsync(int sink, int security, string table) {
-            this.RegisterListenerTableAsync(sink, security, table, null);
-        }
-        
-        public void RegisterListenerTableAsync(int sink, int security, string table, object userState) {
-            if ((this.RegisterListenerTableOperationCompleted == null)) {
-                this.RegisterListenerTableOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRegisterListenerTableCompleted);
-            }
-            this.InvokeAsync("RegisterListenerTable", new object[] {
-                        sink,
-                        security,
-                        table}, this.RegisterListenerTableOperationCompleted, userState);
-        }
-        
-        private void OnRegisterListenerTableCompleted(object arg) {
-            if ((this.RegisterListenerTableCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.RegisterListenerTableCompleted(this, new RegisterListenerTableCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/UnregisterListenerTable", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
-        public ServerCallResult UnregisterListenerTable(int sink, int security, string table) {
-            object[] results = this.Invoke("UnregisterListenerTable", new object[] {
-                        sink,
-                        security,
-                        table});
-            return ((ServerCallResult)(results[0]));
-        }
-        
-        public System.IAsyncResult BeginUnregisterListenerTable(int sink, int security, string table, System.AsyncCallback callback, object asyncState) {
-            return this.BeginInvoke("UnregisterListenerTable", new object[] {
-                        sink,
-                        security,
-                        table}, callback, asyncState);
-        }
-        
-        public ServerCallResult EndUnregisterListenerTable(System.IAsyncResult asyncResult) {
-            object[] results = this.EndInvoke(asyncResult);
-            return ((ServerCallResult)(results[0]));
-        }
-        
-        public void UnregisterListenerTableAsync(int sink, int security, string table) {
-            this.UnregisterListenerTableAsync(sink, security, table, null);
-        }
-        
-        public void UnregisterListenerTableAsync(int sink, int security, string table, object userState) {
-            if ((this.UnregisterListenerTableOperationCompleted == null)) {
-                this.UnregisterListenerTableOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUnregisterListenerTableCompleted);
-            }
-            this.InvokeAsync("UnregisterListenerTable", new object[] {
-                        sink,
-                        security,
-                        table}, this.UnregisterListenerTableOperationCompleted, userState);
-        }
-        
-        private void OnUnregisterListenerTableCompleted(object arg) {
-            if ((this.UnregisterListenerTableCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.UnregisterListenerTableCompleted(this, new UnregisterListenerTableCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/UnregisterListener", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public ServerCallResult UnregisterListener(int sink, int security) {
             object[] results = this.Invoke("UnregisterListener", new object[] {
@@ -1010,6 +919,24 @@ namespace LPSClientShared.LPSServer {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://lpsoft.org/server/")]
+    public partial class ChangeInfo {
+        
+        /// <remarks/>
+        public string TableName;
+        
+        /// <remarks/>
+        public System.DateTime ModifyDateTime;
+        
+        /// <remarks/>
+        public bool HasDeletedRows;
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.1433")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://lpsoft.org/server/")]
     public partial class ExceptionInfo {
         
         /// <remarks/>
@@ -1043,7 +970,7 @@ namespace LPSClientShared.LPSServer {
     public partial class ServerCallResult {
         
         /// <remarks/>
-        public System.Data.DataSet Changes;
+        public ChangeInfo[] Changes;
         
         /// <remarks/>
         public ExceptionInfo Exception;
@@ -1401,44 +1328,6 @@ namespace LPSClientShared.LPSServer {
     }
     
     public delegate void RegisterListenerCompletedEventHandler(object sender, RegisterListenerCompletedEventArgs args);
-    
-    public partial class RegisterListenerTableCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal RegisterListenerTableCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public ServerCallResult Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ServerCallResult)(this.results[0]));
-            }
-        }
-    }
-    
-    public delegate void RegisterListenerTableCompletedEventHandler(object sender, RegisterListenerTableCompletedEventArgs args);
-    
-    public partial class UnregisterListenerTableCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal UnregisterListenerTableCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public ServerCallResult Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ServerCallResult)(this.results[0]));
-            }
-        }
-    }
-    
-    public delegate void UnregisterListenerTableCompletedEventHandler(object sender, UnregisterListenerTableCompletedEventArgs args);
     
     public partial class UnregisterListenerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         

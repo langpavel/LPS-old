@@ -73,6 +73,13 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:complexType name="ChangeInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="TableName" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ModifyDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasDeletedRows" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
       <xs:complexType name="ExceptionInfo">
         <xs:sequence>
           <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
@@ -91,15 +98,13 @@
       </xs:complexType>
       <xs:complexType name="ServerCallResult">
         <xs:sequence>
-          <xs:element minOccurs="0" maxOccurs="1" name="Changes">
-            <xs:complexType>
-              <xs:sequence>
-                <xs:element ref="xs:schema" />
-                <xs:any />
-              </xs:sequence>
-            </xs:complexType>
-          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="Changes" type="s0:ArrayOfChangeInfo" />
           <xs:element minOccurs="0" maxOccurs="1" name="Exception" type="s0:ExceptionInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfChangeInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeInfo" nillable="true" type="s0:ChangeInfo" />
         </xs:sequence>
       </xs:complexType>
       <xs:element name="SimpleExecuteScalarResponse">
@@ -308,38 +313,6 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="RegisterListenerTable">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
-            <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
-            <xs:element minOccurs="0" maxOccurs="1" name="table" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="RegisterListenerTableResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="RegisterListenerTableResult" type="s0:ServerCallResult" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="UnregisterListenerTable">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
-            <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
-            <xs:element minOccurs="0" maxOccurs="1" name="table" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="UnregisterListenerTableResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="UnregisterListenerTableResult" type="s0:ServerCallResult" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="UnregisterListener">
         <xs:complexType>
           <xs:sequence>
@@ -511,18 +484,6 @@
   <message name="RegisterListenerSoapOut">
     <part name="parameters" element="s0:RegisterListenerResponse" />
   </message>
-  <message name="RegisterListenerTableSoapIn">
-    <part name="parameters" element="s0:RegisterListenerTable" />
-  </message>
-  <message name="RegisterListenerTableSoapOut">
-    <part name="parameters" element="s0:RegisterListenerTableResponse" />
-  </message>
-  <message name="UnregisterListenerTableSoapIn">
-    <part name="parameters" element="s0:UnregisterListenerTable" />
-  </message>
-  <message name="UnregisterListenerTableSoapOut">
-    <part name="parameters" element="s0:UnregisterListenerTableResponse" />
-  </message>
   <message name="UnregisterListenerSoapIn">
     <part name="parameters" element="s0:UnregisterListener" />
   </message>
@@ -607,22 +568,6 @@
   <message name="GetChangesHttpGetOut">
     <part name="Body" element="s0:result" />
   </message>
-  <message name="RegisterListenerTableHttpGetIn">
-    <part name="sink" type="s:int" />
-    <part name="security" type="s:int" />
-    <part name="table" type="s:string" />
-  </message>
-  <message name="RegisterListenerTableHttpGetOut">
-    <part name="Body" element="s0:result" />
-  </message>
-  <message name="UnregisterListenerTableHttpGetIn">
-    <part name="sink" type="s:int" />
-    <part name="security" type="s:int" />
-    <part name="table" type="s:string" />
-  </message>
-  <message name="UnregisterListenerTableHttpGetOut">
-    <part name="Body" element="s0:result" />
-  </message>
   <message name="UnregisterListenerHttpGetIn">
     <part name="sink" type="s:int" />
     <part name="security" type="s:int" />
@@ -696,22 +641,6 @@
     <part name="security" type="s:int" />
   </message>
   <message name="GetChangesHttpPostOut">
-    <part name="Body" element="s0:result" />
-  </message>
-  <message name="RegisterListenerTableHttpPostIn">
-    <part name="sink" type="s:int" />
-    <part name="security" type="s:int" />
-    <part name="table" type="s:string" />
-  </message>
-  <message name="RegisterListenerTableHttpPostOut">
-    <part name="Body" element="s0:result" />
-  </message>
-  <message name="UnregisterListenerTableHttpPostIn">
-    <part name="sink" type="s:int" />
-    <part name="security" type="s:int" />
-    <part name="table" type="s:string" />
-  </message>
-  <message name="UnregisterListenerTableHttpPostOut">
     <part name="Body" element="s0:result" />
   </message>
   <message name="UnregisterListenerHttpPostIn">
@@ -793,14 +722,6 @@
     <operation name="RegisterListener">
       <input message="s0:RegisterListenerSoapIn" />
       <output message="s0:RegisterListenerSoapOut" />
-    </operation>
-    <operation name="RegisterListenerTable">
-      <input message="s0:RegisterListenerTableSoapIn" />
-      <output message="s0:RegisterListenerTableSoapOut" />
-    </operation>
-    <operation name="UnregisterListenerTable">
-      <input message="s0:UnregisterListenerTableSoapIn" />
-      <output message="s0:UnregisterListenerTableSoapOut" />
     </operation>
     <operation name="UnregisterListener">
       <input message="s0:UnregisterListenerSoapIn" />
@@ -884,14 +805,6 @@
       <input message="s0:RegisterListenerSoapIn" />
       <output message="s0:RegisterListenerSoapOut" />
     </operation>
-    <operation name="RegisterListenerTable">
-      <input message="s0:RegisterListenerTableSoapIn" />
-      <output message="s0:RegisterListenerTableSoapOut" />
-    </operation>
-    <operation name="UnregisterListenerTable">
-      <input message="s0:UnregisterListenerTableSoapIn" />
-      <output message="s0:UnregisterListenerTableSoapOut" />
-    </operation>
     <operation name="UnregisterListener">
       <input message="s0:UnregisterListenerSoapIn" />
       <output message="s0:UnregisterListenerSoapOut" />
@@ -950,14 +863,6 @@
       <input message="s0:GetChangesHttpGetIn" />
       <output message="s0:GetChangesHttpGetOut" />
     </operation>
-    <operation name="RegisterListenerTable">
-      <input message="s0:RegisterListenerTableHttpGetIn" />
-      <output message="s0:RegisterListenerTableHttpGetOut" />
-    </operation>
-    <operation name="UnregisterListenerTable">
-      <input message="s0:UnregisterListenerTableHttpGetIn" />
-      <output message="s0:UnregisterListenerTableHttpGetOut" />
-    </operation>
     <operation name="UnregisterListener">
       <input message="s0:UnregisterListenerHttpGetIn" />
       <output message="s0:UnregisterListenerHttpGetOut" />
@@ -1011,14 +916,6 @@
     <operation name="GetChanges">
       <input message="s0:GetChangesHttpPostIn" />
       <output message="s0:GetChangesHttpPostOut" />
-    </operation>
-    <operation name="RegisterListenerTable">
-      <input message="s0:RegisterListenerTableHttpPostIn" />
-      <output message="s0:RegisterListenerTableHttpPostOut" />
-    </operation>
-    <operation name="UnregisterListenerTable">
-      <input message="s0:UnregisterListenerTableHttpPostIn" />
-      <output message="s0:UnregisterListenerTableHttpPostOut" />
     </operation>
     <operation name="UnregisterListener">
       <input message="s0:UnregisterListenerHttpPostIn" />
@@ -1172,24 +1069,6 @@
     </operation>
     <operation name="RegisterListener">
       <soap:operation soapAction="http://lpsoft.org/server/RegisterListener" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="RegisterListenerTable">
-      <soap:operation soapAction="http://lpsoft.org/server/RegisterListenerTable" style="document" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="UnregisterListenerTable">
-      <soap:operation soapAction="http://lpsoft.org/server/UnregisterListenerTable" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -1380,24 +1259,6 @@
         <soap12:body use="literal" />
       </output>
     </operation>
-    <operation name="RegisterListenerTable">
-      <soap12:operation soapAction="http://lpsoft.org/server/RegisterListenerTable" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
-    <operation name="UnregisterListenerTable">
-      <soap12:operation soapAction="http://lpsoft.org/server/UnregisterListenerTable" style="document" />
-      <input>
-        <soap12:body use="literal" />
-      </input>
-      <output>
-        <soap12:body use="literal" />
-      </output>
-    </operation>
     <operation name="UnregisterListener">
       <soap12:operation soapAction="http://lpsoft.org/server/UnregisterListener" style="document" />
       <input>
@@ -1527,24 +1388,6 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
-    <operation name="RegisterListenerTable">
-      <http:operation location="/RegisterListenerTable" />
-      <input>
-        <http:urlEncoded />
-      </input>
-      <output>
-        <mime:mimeXml part="Body" />
-      </output>
-    </operation>
-    <operation name="UnregisterListenerTable">
-      <http:operation location="/UnregisterListenerTable" />
-      <input>
-        <http:urlEncoded />
-      </input>
-      <output>
-        <mime:mimeXml part="Body" />
-      </output>
-    </operation>
     <operation name="UnregisterListener">
       <http:operation location="/UnregisterListener" />
       <input>
@@ -1656,24 +1499,6 @@
     </operation>
     <operation name="GetChanges">
       <http:operation location="/GetChanges" />
-      <input>
-        <mime:content part="" type="application/x-www-form-urlencoded" />
-      </input>
-      <output>
-        <mime:mimeXml part="Body" />
-      </output>
-    </operation>
-    <operation name="RegisterListenerTable">
-      <http:operation location="/RegisterListenerTable" />
-      <input>
-        <mime:content part="" type="application/x-www-form-urlencoded" />
-      </input>
-      <output>
-        <mime:mimeXml part="Body" />
-      </output>
-    </operation>
-    <operation name="UnregisterListenerTable">
-      <http:operation location="/UnregisterListenerTable" />
       <input>
         <mime:content part="" type="application/x-www-form-urlencoded" />
       </input>

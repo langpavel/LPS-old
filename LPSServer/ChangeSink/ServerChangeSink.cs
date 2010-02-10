@@ -1,7 +1,7 @@
 using System;
 using System.Data;
 using System.Collections.Generic;
-using System.Threading.IntelParallel;
+//using System.Threading.IntelParallel;
 
 namespace LPS.Server
 {
@@ -47,25 +47,16 @@ namespace LPS.Server
 			}
 		}
 
-		public static void AddNewData(string table, long id, char type, DataRow row)
+		public static void AddNewData(string table, DateTime dt, bool del)
 		{
-			List<ServerChangeListener> l2;
 			lock(listeners)
 			{
-				l2 = new List<ServerChangeListener>(listeners.Count);
-				for(int i = 0; i < listeners.Count; i++)
+				foreach(ServerChangeListener listener in listeners)
 				{
-					ServerChangeListener o = listeners[i];
-					if(o != null)
-						l2.Add(o);
+					if(listener != null)
+						listener.AddNewData(table, dt, del);
 				}
 			}
-			
-			ParallelFor f = new ParallelFor(l2.Count);
-			f.Run(delegate(int i)
-			{
-				l2[i].AddNewData(table, id, type, row);
-			});
 		}
 		
 		public static void RemoveListener(int index, int security)
@@ -75,7 +66,7 @@ namespace LPS.Server
 			{
 				listener = listeners[index];
 				if(listener == null)
-					throw new ArgumentException("listener byl odstraněn", "index");
+					throw new ArgumentException("listener již byl odstraněn", "index");
 				if(listener.Security != security)
 					throw new ArgumentException("security klíč listeneru neplatí", "security");
 				listeners[index] = null;
