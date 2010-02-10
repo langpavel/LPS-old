@@ -37,6 +37,8 @@ namespace LPSClientShared.LPSServer {
         
         private System.Threading.SendOrPostCallback GetDataSetSimpleOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetDataSetByNameSimpleOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetChangesOperationCompleted;
         
         private System.Threading.SendOrPostCallback ExecuteNonqueryOperationCompleted;
@@ -80,6 +82,8 @@ namespace LPSClientShared.LPSServer {
         public event NextSeqValueCompletedEventHandler NextSeqValueCompleted;
         
         public event GetDataSetSimpleCompletedEventHandler GetDataSetSimpleCompleted;
+        
+        public event GetDataSetByNameSimpleCompletedEventHandler GetDataSetByNameSimpleCompleted;
         
         public event GetChangesCompletedEventHandler GetChangesCompleted;
         
@@ -386,6 +390,45 @@ namespace LPSClientShared.LPSServer {
             if ((this.GetDataSetSimpleCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.GetDataSetSimpleCompleted(this, new GetDataSetSimpleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetDataSetByNameSimple", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public System.Data.DataSet GetDataSetByNameSimple(string name, string addsql) {
+            object[] results = this.Invoke("GetDataSetByNameSimple", new object[] {
+                        name,
+                        addsql});
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginGetDataSetByNameSimple(string name, string addsql, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetDataSetByNameSimple", new object[] {
+                        name,
+                        addsql}, callback, asyncState);
+        }
+        
+        public System.Data.DataSet EndGetDataSetByNameSimple(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        public void GetDataSetByNameSimpleAsync(string name, string addsql) {
+            this.GetDataSetByNameSimpleAsync(name, addsql, null);
+        }
+        
+        public void GetDataSetByNameSimpleAsync(string name, string addsql, object userState) {
+            if ((this.GetDataSetByNameSimpleOperationCompleted == null)) {
+                this.GetDataSetByNameSimpleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDataSetByNameSimpleCompleted);
+            }
+            this.InvokeAsync("GetDataSetByNameSimple", new object[] {
+                        name,
+                        addsql}, this.GetDataSetByNameSimpleOperationCompleted, userState);
+        }
+        
+        private void OnGetDataSetByNameSimpleCompleted(object arg) {
+            if ((this.GetDataSetByNameSimpleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetDataSetByNameSimpleCompleted(this, new GetDataSetByNameSimpleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -876,6 +919,9 @@ namespace LPSClientShared.LPSServer {
         public ChangeInfo[] Changes;
         
         /// <remarks/>
+        public System.DateTime DateTime;
+        
+        /// <remarks/>
         public ExceptionInfo Exception;
     }
     
@@ -1030,6 +1076,25 @@ namespace LPSClientShared.LPSServer {
     }
     
     public delegate void GetDataSetSimpleCompletedEventHandler(object sender, GetDataSetSimpleCompletedEventArgs args);
+    
+    public partial class GetDataSetByNameSimpleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetDataSetByNameSimpleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void GetDataSetByNameSimpleCompletedEventHandler(object sender, GetDataSetByNameSimpleCompletedEventArgs args);
     
     public partial class GetChangesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         

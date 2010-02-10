@@ -62,23 +62,23 @@
     <Compile Include="ImageManager.cs" />
     <Compile Include="DataTableTreeModel\DataTableView.cs" />
     <Compile Include="FormManager.cs" />
-    <Compile Include="Forms\Bindings\RowDataSource.cs" />
-    <Compile Include="Forms\Bindings\IBinding.cs" />
-    <Compile Include="Forms\Bindings\BindingGroup.cs" />
-    <Compile Include="Forms\Bindings\BindingValueChangedArgs.cs" />
-    <Compile Include="Forms\Bindings\BindingBase.cs" />
-    <Compile Include="Forms\Bindings\RowColumnBinding.cs" />
-    <Compile Include="Forms\Bindings\EntryBinding.cs" />
-    <Compile Include="Forms\Bindings\CheckButtonBinding.cs" />
-    <Compile Include="Forms\Bindings\LookupBindingBase.cs" />
-    <Compile Include="Forms\Bindings\ComboBoxBinding.cs" />
-    <Compile Include="Forms\Bindings\TextViewBinding.cs" />
+    <Compile Include="Bindings\BindingBase.cs" />
+    <Compile Include="Bindings\BindingGroup.cs" />
+    <Compile Include="Bindings\BindingValueChangedArgs.cs" />
+    <Compile Include="Bindings\CheckButtonBinding.cs" />
+    <Compile Include="Bindings\ComboBoxBinding.cs" />
+    <Compile Include="Bindings\EntryBinding.cs" />
+    <Compile Include="Bindings\IBinding.cs" />
+    <Compile Include="Bindings\LookupBindingBase.cs" />
+    <Compile Include="Bindings\RowColumnBinding.cs" />
+    <Compile Include="Bindings\RowDataSource.cs" />
+    <Compile Include="Bindings\TextViewBinding.cs" />
+    <Compile Include="IManagedWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />
     <Folder Include="DataTableTreeModel\" />
     <Folder Include="Gtk\" />
-    <Folder Include="Forms\Bindings\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPSClientShared\LPSClientShared.csproj">

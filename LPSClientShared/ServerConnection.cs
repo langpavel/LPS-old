@@ -69,6 +69,11 @@ namespace LPS.Client
 		
 		public void Dispose()
 		{
+			try
+			{
+				this.Logout();
+			}
+			catch { }
 			FlushCache();
 			this.Server.Dispose();
 			this.Server = null;
@@ -85,10 +90,13 @@ namespace LPS.Client
 				return false;
 			}
 		}
-		
+
+		private ChangesUpdater updater;
 		public long Login(string login, string password)
 		{
 			this.UserId = Server.Login(login, password);
+			Server.RegisterListener(out this.sink, out this.security);
+			updater = new ChangesUpdater(Server.Url, login, password, sink, security);
 			return this.UserId;
 		}
 		
@@ -115,7 +123,17 @@ namespace LPS.Client
 		
 		public void Logout()
 		{
+			if(this.UserId <= 0)
+				return;
+			if(this.sink >= 0)
+			{
+				updater.Dispose();
+				updater = null;
+				Server.UnregisterListener(this.sink, this.security);
+				this.sink = -1;
+			}
 			Server.Logout();
+			this.UserId = 0;
 		}
 		
 		public int ExecuteNonquerySimple(string sql)
@@ -127,6 +145,8 @@ namespace LPS.Client
 		{
 			if(result == null)
 				return;
+			if(result.Changes != null && result.Changes.Length > 0 && updater != null)
+				updater.DoUpdates(result.Changes);
 			if(result.Exception != null)
 				throw ServerException.Create(result.Exception);
 		}
@@ -195,25 +215,35 @@ namespace LPS.Client
 			result.ExtendedProperties["parameters"] = new object[] { };
 			return result;
 		}
-		
-		public DataSet GetDataSetByName(string name, params object[] parameters)
+
+		public DataSet GetDataSetByName(string name)
 		{
-			DataSet result;
+			return GetDataSetByName(name, "");
+		}
+
+		public DataSet GetDataSetByName(string name, string addsql, params object[] parameters)
+		{
 			if(parameters.Length % 2 == 1)
-			{
-				object[] parms = new object[parameters.Length-1];
-				for(int i=1; i<parameters.Length; i++)
-					parms[i-1] = parameters[i];
-				CheckServerResult(Server.GetDataSetByName(sink, security, name, (string)parameters[0], parms, out result));
-			}
-			else
-				CheckServerResult(Server.GetDataSetByName(sink, security, name, "", parameters, out result));
-			result.ExtendedProperties.Add("TABLE", name);
+				throw new ArgumentException("Musí být sudý počet parametrů", "parameters");
+
+			IListInfo info = Resources.GetListInfo(name);
+			DataSet result;
+			LPSClientShared.LPSServer.ServerCallResult callrslt;
+			callrslt = Server.GetDataSetByName(sink, security, name, addsql, parameters, out result);
+			CheckServerResult(callrslt);
+			result.ExtendedProperties.Add("ADDSQL", addsql);
+			result.ExtendedProperties.Add("PARAMS", parameters);
+			result.ExtendedProperties.Add("DATETIME", callrslt.DateTime);
+			result.ExtendedProperties.Add("LIST", name);
+			result.ExtendedProperties.Add("TABLE", info.TableName);
+			this.updater.AddDataSet(info.TableName, result);
 			return result;
 		}
 
 		public int SaveDataSet(DataSet dataset, bool updateUserInfo)
 		{
+			if(dataset == null)
+				throw new ArgumentNullException("dataset");
 			if(!dataset.HasChanges())
 				return 0;
 			int affected;
@@ -232,6 +262,8 @@ namespace LPS.Client
 		
 		public int SaveDataSet(DataSet dataset)
 		{
+			if(dataset == null)
+				throw new ArgumentNullException("dataset");
 			return SaveDataSet(dataset, true);
 		}
 
@@ -254,12 +286,12 @@ namespace LPS.Client
 			{
 				result = this.GetDataSetByName(tableName);
 				cached_datasets[tableName] = result;
-				result.Disposed += delegate(object sender, EventArgs e) {
+				result.Disposed += delegate {
 					cached_datasets.Remove(tableName);
 				};
 			}
 			return result;
 		}
-		
+
 	}
 }

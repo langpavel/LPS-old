@@ -32,11 +32,16 @@ namespace LPS.Client
 		{
 			return forms[id];
 		}
-		
-		public static T Create<T>(string id)
+
+		public static object Create(string id)
 		{
 			FormInfo fi = Instance.GetFormInfo(id);
-			return (T) fi.CreateObject();
+			return fi.CreateObject();
+		}
+
+		public static T Create<T>(string id)
+		{
+			return (T) Create(id);
 		}
 	}
 }

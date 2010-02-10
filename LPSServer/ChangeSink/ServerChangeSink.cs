@@ -94,13 +94,19 @@ namespace LPS.Server
 			}
 			return result;
 		}
-		
+
 		public static ServerCallResult GetResult(int idx, int security)
 		{
-			if(idx < 0)
-				return null;
-			ServerChangeListener l = ServerChangeSink.GetListener(idx, security);
+			return GetResult(idx, security, DateTime.Now);
+		}
+
+		public static ServerCallResult GetResult(int idx, int security, DateTime dt)
+		{
 			ServerCallResult result = new ServerCallResult();
+			result.DateTime = dt;
+			if(idx < 0)
+				return result;
+			ServerChangeListener l = ServerChangeSink.GetListener(idx, security);
 			result.Changes = l.GetChangesAndClear();
 			return result;
 		}

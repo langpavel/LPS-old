@@ -26,12 +26,17 @@ namespace LPS.Client
 			if(entry != null)
 				entry.Text = (new_value ?? "").ToString();
 		}
-		
-		private void HandleEntryChanged (object sender, EventArgs e)
+
+		protected override void DoValueChanged()
 		{
 			if(IsUpdating)
 				return;
 			DoValueChanged(entry.Text);
+		}
+
+		private void HandleEntryChanged (object sender, EventArgs e)
+		{
+			DoValueChanged();
 		}
 		
 		private void Bind()

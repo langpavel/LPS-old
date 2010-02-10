@@ -11,35 +11,38 @@ namespace LPS.Client
 		private static FormManager instance;
 		public static FormManager Instance { get { return instance ?? (instance = new FormManager()); } }
 		
-		private Dictionary<string, AutobindWindow> windows;
+		private List<IManagedWindow> windows;
 
 		private FormManager()
 		{
-			windows = new Dictionary<string, AutobindWindow>();
+			windows = new List<IManagedWindow>();
 		}
 
-		public AutobindWindow GetWindow(string detail_name, IListInfo module, long id)
+		public IManagedWindow GetWindow(string window_name, long id, IListInfo module)
 		{
-			string win_id = String.Format("{0}[{1}]", detail_name, id);
-			AutobindWindow win;
-			if(windows.TryGetValue(win_id, out win))
+			TableInfo tableinfo = null;
+			if(module != null)
+				tableinfo = ServerConnection.Instance.Resources.GetTableInfo(module.TableName);
+			if(id != 0)
 			{
-				win.Window.Present();
-				return win;
+				foreach(IManagedWindow window in windows)
+				{
+					if(window.WindowName == window_name && window.Id == id && window.TableInfo == tableinfo)
+					{
+						window.Present();
+						return window;
+					}
+				}
 			}
-			else
-			{
-				FormInfo fi = FormFactory.Instance.GetFormInfo(detail_name);
-				win = fi.CreateObject() as AutobindWindow;
-				win.TableInfo = ServerConnection.Instance.Resources.GetTableInfo(module.TableName);
-				win.Load(id);
-				windows.Add(win_id, win);
-				win.Window.Destroyed += delegate {
-					windows.Remove(win_id);
-				};
-				win.ShowAll();
-				return win;
-			}
+			IManagedWindow win = (IManagedWindow)FormFactory.Create(window_name);
+			win.TableInfo = tableinfo;
+			win.LoadItem(id);
+			windows.Add(win);
+			win.Destroyed += delegate {
+				windows.Remove(win);
+			};
+			win.Present();
+			return win;
 		}
 	}
 }

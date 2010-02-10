@@ -69,7 +69,7 @@ namespace ImportHelper
 			{
 				if(_Adresa != null)
 					return _Adresa;
-				return _Adresa = LPS.GetDataSetByTableName("adresa");
+				return _Adresa = LPS.GetDataSetByName("adresa", "");
 			}
 		}
 		

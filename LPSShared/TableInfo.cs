@@ -24,6 +24,9 @@ namespace LPS
 		[XmlAttribute("name")]
 		public string TableName { get; set; }
 
+		[XmlAttribute("text")]
+		public string Text { get; set; }
+
 		[XmlElement("detail-caption")]
 		public string DetailCaption { get; set; }
 		

@@ -29,7 +29,7 @@ namespace LPS.Client
 			}
 		}
 
-		void HandleComboChanged (object sender, EventArgs e)
+		protected override void DoValueChanged()
 		{
 			if(IsUpdating)
 				return;
@@ -40,6 +40,11 @@ namespace LPS.Client
 			}
 			else
 				DoValueChanged(null);
+		}
+
+		void HandleComboChanged (object sender, EventArgs e)
+		{
+			DoValueChanged();
 		}
 
 		private void Bind()

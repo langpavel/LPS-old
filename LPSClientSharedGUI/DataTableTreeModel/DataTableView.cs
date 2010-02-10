@@ -47,7 +47,7 @@ namespace LPS.Client
 		
 		protected void LoadData()
 		{
-			this.dataset = Connection.GetDataSetByName(ListInfo.Id, this.parameters);
+			this.dataset = Connection.GetDataSetByName(ListInfo.Id, "", this.parameters);
 			this.table = this.dataset.Tables[0];
 			
 			binding = new DataTableListStoreBinding(this, this.table, this.ListInfo);
@@ -58,29 +58,30 @@ namespace LPS.Client
 		{
 			base.OnRowActivated (path, column);
 			DataRow row = binding.GetRow(path);
-			FormManager.Instance.GetWindow(this.ListInfo.DetailName, this.ListInfo, Convert.ToInt64(row["id"]));
+			FormManager.Instance.GetWindow(this.ListInfo.DetailName, Convert.ToInt64(row["id"]), this.ListInfo);
 		}
 		
-		public AutobindWindow OpenDetail()
+		public IManagedWindow OpenDetail()
 		{
 			DataRow row = binding.GetCurrentRow();
 			if(row == null)
 				return null;
-			return FormManager.Instance.GetWindow(this.ListInfo.DetailName, this.ListInfo, Convert.ToInt64(row["id"]));
+			return FormManager.Instance.GetWindow(this.ListInfo.DetailName, Convert.ToInt64(row["id"]), this.ListInfo);
 		}
 		
-		public AutobindWindow OpenNewDetail()
+		public IManagedWindow OpenNewDetail()
 		{
-			return FormManager.Instance.GetWindow(this.ListInfo.DetailName, this.ListInfo, 0L);
+			IManagedWindow result = FormManager.Instance.GetWindow(this.ListInfo.DetailName, 0L, this.ListInfo);
+			result.NewItem();
+			return result;
 		}
 		
-		public AutobindWindow OpenDetailAndDelete()
+		public bool OpenDetailAndDelete()
 		{
-			AutobindWindow wnd = OpenDetail();
+			IManagedWindow wnd = OpenDetail();
 			if(wnd == null)
-				return null;
-			wnd.DeleteQuery();
-			return wnd;
+				return false;
+			return wnd.DeleteItem();
 		}
 
 		private string filter;

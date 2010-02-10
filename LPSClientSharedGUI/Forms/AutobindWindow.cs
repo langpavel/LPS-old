@@ -7,7 +7,7 @@ using LPS;
 
 namespace LPS.Client
 {
-	public abstract class AutobindWindow : XmlWindowBase
+	public abstract class AutobindWindow : XmlWindowBase, IManagedWindow
 	{
 		private Statusbar statusbar;
 		public Statusbar Statusbar { get { return statusbar; } }
@@ -21,7 +21,6 @@ namespace LPS.Client
 			this.statusbar = this.GetWidgetByName("statusbar") as Statusbar;
 			DataSource = new RowDataSource();
 			DataSource.RowChanged += HandleRowChanged;
-			this.OwnedComponents.Add(DataSource);
 		}
 
 		protected virtual void Autobind(DataRow row, TableInfo info)
@@ -100,9 +99,15 @@ namespace LPS.Client
 			}
 		}
 		
-		public abstract void Load(long id);
+		public virtual void Load(long id)
+		{
+			Load(TableInfo.TableName, id);
+		}
+
 		public virtual void New()
 		{
+			if(this.Data == null)
+				Load(0);
 			DataRow r = this.Data.Tables[0].NewRow();
 			OnNewRow(r);
 			this.Data.Tables[0].Rows.Add(r);
@@ -115,7 +120,6 @@ namespace LPS.Client
 			{
 				this.Delete();
 				this.DoSaveClose();
-				this.Dispose();
 				return true;
 			}
 			return false;
@@ -132,18 +136,15 @@ namespace LPS.Client
 		
 		protected virtual void Load(string table_name, long id)
 		{
-			WindowTitle = TableInfo.DetailCaption ?? "{kod} - {popis}";
-			Data = Connection.GetDataSetByName(table_name, "id", id);
-			if(id <= 0)
-			{
-				this.Row = Data.Tables[0].NewRow();
-				OnNewRow(this.Row);
-				Data.Tables[0].Rows.Add(this.Row);
-			}
-			else
-			{
+			WindowTitle = TableInfo.DetailCaption;
+			if(String.IsNullOrEmpty(WindowTitle))
+				WindowTitle = this.Window.Title;
+			if(String.IsNullOrEmpty(WindowTitle))
+				WindowTitle = "{kod} - {popis}";
+
+			Data = Connection.GetDataSetByName(table_name, "", "id", id);
+			if(Data.Tables[0].Rows.Count > 0)
 				this.Row = Data.Tables[0].Rows[0];
-			}
 		}
 		
 		protected virtual void OnNewRow(DataRow row)
@@ -152,6 +153,14 @@ namespace LPS.Client
 		
 		public override void Dispose ()
 		{
+			if(this.Destroyed != null)
+				this.Destroyed(this, EventArgs.Empty);
+			if(DataSource != null)
+			{
+				DataSource.RowChanged -= HandleRowChanged;
+				DataSource.Dispose();
+				DataSource = null;
+			}
 			if(Data != null)
 			{
 				Data.Dispose();
@@ -304,5 +313,63 @@ namespace LPS.Client
 			return String.Format("Id: {0}; Stav: {1}", Row["id"], stav);
 		}
 
+		#region IManagedWindow implementation
+		public event EventHandler Destroyed;
+
+		public void NewItem ()
+		{
+			DoNew();
+		}
+
+
+		public void LoadItem (long id)
+		{
+			Load(id);
+		}
+
+
+		public bool DeleteItem ()
+		{
+			return DeleteQuery();
+		}
+		
+		
+		public void Present ()
+		{
+			this.Window.Present();
+		}
+		
+		
+		public string WindowName
+		{
+			get { return this.TableInfo.DetailName; }
+		}
+
+
+		public long Id
+		{
+			get
+			{
+				if(this.Row == null)
+					return 0;
+				object val = this.Row[0];
+				if(val == null || val == DBNull.Value)
+					return 0;
+				return Convert.ToInt64(val);
+			}
+		}
+
+		public string Category
+		{
+			get { return this.TableInfo.Text ?? this.TableInfo.TableName; }
+		}
+
+
+		public string Title
+		{
+			get { return this.Window.Title; }
+		}
+		
+		#endregion
 	}
 }

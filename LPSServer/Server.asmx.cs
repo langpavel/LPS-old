@@ -176,8 +176,9 @@ namespace LPS.Server
 			try
 			{
 				ConnectionInfo ci = GetConnectionInfo();
+				DateTime dt_now = DateTime.Now;
 				data = ci.GetDataSet(sql, GetNpgsqlParameters(parameters));
-				return ServerChangeSink.GetResult(sink, security);
+				return ServerChangeSink.GetResult(sink, security, dt_now);
 			}
 			catch(Exception err)
 			{
@@ -242,8 +243,9 @@ namespace LPS.Server
 			try
 			{
 				ConnectionInfo ci = GetConnectionInfo();
+				DateTime dt_now = DateTime.Now;
 				result = ci.GetDataSetByName(table, addsql, GetNpgsqlParameters(parameters));
-				return ServerChangeSink.GetResult(sink, security);
+				return ServerChangeSink.GetResult(sink, security, dt_now);
 			}
 			catch(Exception err)
 			{
@@ -259,6 +261,7 @@ namespace LPS.Server
 		
 		public static string _GetTextResource(string path)
 		{
+			path = path.Replace('\\', Path.DirectorySeparatorChar).Replace('/', Path.DirectorySeparatorChar);
 			string resPath = "/var/www/LPS/resources";
 			try
 			{

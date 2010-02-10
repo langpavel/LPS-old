@@ -29,9 +29,8 @@ namespace LPS.Client
 			{
 				handler.GladeXML = xml;
 				handler.Window = window;
-			}
-			if(handler != null)
 				handler.OnCreate();
+			}
 		}
 
 		public override object CreateObject()
@@ -39,7 +38,7 @@ namespace LPS.Client
 			return this.Create();
 		}
 
-		public virtual T Create ()
+		public virtual T Create()
 		{
 			T result = new T();
 			CallInterfaces(result, null, null);

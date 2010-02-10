@@ -221,10 +221,20 @@ namespace LPS.Client
 		
 		void HandleDataTableRowChanged (object sender, DataRowChangeEventArgs e)
 		{
-			TreeIter iter = row_iters[e.Row];
-			object[] data = new object[(this.DataTable.Columns.Count + 1) * 2];
-			GetColumnValues(e.Row, ref data);
-			this.ListStore.SetValues(iter, data);
+			TreeIter iter;
+			if(row_iters.TryGetValue(e.Row, out iter))
+			{
+				iter = row_iters[e.Row];
+				object[] data = new object[(this.DataTable.Columns.Count + 1) * 2];
+				GetColumnValues(e.Row, ref data);
+				this.ListStore.SetValues(iter, data);
+			}
+			else
+			{
+				object[] data = new object[(this.DataTable.Columns.Count + 1) * 2];
+				GetColumnValues(e.Row, ref data);
+				row_iters[e.Row] = this.ListStore.AppendValues(data);
+			}
 		}
 
 		void HandleDataTableRowDeleted (object sender, DataRowChangeEventArgs e)

@@ -13,6 +13,7 @@ namespace LPS.Server
 		/// </summary>
 		public ServerCallResult()
 		{
+			this.DateTime = DateTime.Now;
 		}
 		
 		/// <summary>
@@ -20,6 +21,7 @@ namespace LPS.Server
 		/// </summary>
 		public ServerCallResult(Exception err)
 		{
+			this.DateTime = DateTime.Now;
 			SetException(err);
 		}
 		
@@ -35,6 +37,8 @@ namespace LPS.Server
 		/// Changes dataset se vraci null pokud nebyly zmeny na serveru
 		/// </summary>
 		public ChangeInfo[] Changes { get; set; }
+
+		public DateTime DateTime { get; set; }
 
 		/// <summary>
 		/// Readonly - if has changes

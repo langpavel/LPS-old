@@ -514,10 +514,7 @@ namespace LPS.Server
 							if(ci.Unique)
 								col.Unique = true;
 						}
-
 					}
-					ds.ExtendedProperties.Add("TABLE", table);
-					ds.ExtendedProperties.Add("SQL", command.CommandText);
 				}
 				trans.Commit();
 				return ds;

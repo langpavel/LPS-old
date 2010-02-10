@@ -7,15 +7,18 @@ namespace LPS.Client
 	{
 		public RowColumnBinding()
 		{
+			this.IsMaster = true;
 		}
 
 		public RowColumnBinding(DataColumn col)
 		{
+			this.IsMaster = true;
 			Column = col;
 		}
 
 		public RowColumnBinding(DataColumn col, DataRow row)
 		{
+			this.IsMaster = true;
 			Column = col;
 			Row = row;
 		}
@@ -24,7 +27,13 @@ namespace LPS.Client
 		public DataRow Row
 		{
 			get { return row; }
-			set { Unbind(); row = value; DoValueChanged(); Bind(); }
+			set
+			{
+				Unbind();
+				row = value;
+				DoValueChanged();
+				Bind();
+			}
 		}
 		
 		private DataColumn column;
@@ -34,14 +43,14 @@ namespace LPS.Client
 			set { column = value; DoValueChanged(); }
 		}
 			
-		protected void DoValueChanged()
+		protected override void DoValueChanged()
 		{
 			if(row == null || column == null)
 			{
 				DoUpdateValue(null, null);
 				return;
 			}
-			
+
 			object orig = null;
 			object val = null;
 
@@ -50,6 +59,9 @@ namespace LPS.Client
 			
 			if(row.HasVersion(DataRowVersion.Default))
 				val = row[column, DataRowVersion.Default];
+
+			Console.WriteLine("row[{0}] --> {1}", column.ColumnName, val);
+
 			DoValueChanged(orig, val);
 		}
 		

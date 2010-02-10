@@ -71,10 +71,5 @@ namespace LPS.Client.Sklad
 			//TODO: assign column list
 		}
 
-		public void ListRowActivated(object sender, RowActivatedArgs args)
-		{
-			//OpenDetailForm(view, args.Path);
-		}
-
 	}
 }

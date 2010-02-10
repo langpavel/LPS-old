@@ -148,7 +148,10 @@ namespace LPS.Server
 			for(int i=0; i < new_params.Length; i++)
 			{
 				NpgsqlParameter p = new_params[i];
-				if(p.SourceColumn == "ts")
+
+				if(p.SourceColumn == "id_user_create" || p.SourceColumn == "dt_create")
+					continue;
+				else if(p.SourceColumn == "ts")
 				{
 					sb.Append(p.SourceColumn).Append("=").Append(p_now.ParameterName);
 					add_p_now = true;

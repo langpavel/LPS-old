@@ -27,12 +27,17 @@ namespace LPS.Client
 				return;
 			textview.Buffer.Text = (new_value ?? "").ToString();
 		}
-		
-		private void HandleTextViewChanged (object sender, EventArgs e)
+
+		protected override void DoValueChanged ()
 		{
 			if(IsUpdating)
 				return;
 			DoValueChanged(textview.Buffer.Text);
+		}
+
+		private void HandleTextViewChanged (object sender, EventArgs e)
+		{
+			DoValueChanged();
 		}
 		
 		private void Bind()

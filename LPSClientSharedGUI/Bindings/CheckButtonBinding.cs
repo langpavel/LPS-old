@@ -12,14 +12,14 @@ namespace LPS.Client
 		
 		public CheckButtonBinding(CheckButton CheckBtn)
 		{
-			this.CheckBtn = CheckBtn;
 			ThreeState = false;
+			this.CheckBtn = CheckBtn;
 		}
 		
 		public CheckButtonBinding(CheckButton CheckBtn, bool AllowNull)
 		{
-			this.CheckBtn = CheckBtn;
 			ThreeState = AllowNull;
+			this.CheckBtn = CheckBtn;
 		}
 		
 		public bool ThreeState { get; set; }
@@ -28,13 +28,20 @@ namespace LPS.Client
 		public CheckButton CheckBtn
 		{
 			get	{ return check;	}
-			set { Unbind(); check = value; UpdateValueByBindings(); Bind(); }
+			set
+			{
+				Unbind();
+				check = value;
+				Bind();
+			}
 		}
 		
 		protected override void DoUpdateValue (object orig_value, object new_value)
 		{
 			if(IsUpdating || check == null)
 				return;
+			Console.WriteLine("CheckBox DoUpdateValue: {0}",
+				(new_value==null || new_value == DBNull.Value)?"NULL":new_value.ToString());
 			if(new_value == null || new_value is DBNull)
 			{
 				check.Active = false;
@@ -51,8 +58,8 @@ namespace LPS.Client
 				check.Active = false;
 			}
 		}
-		
-		private void HandleCheckToggled (object sender, EventArgs e)
+
+		protected override void DoValueChanged ()
 		{
 			if(IsUpdating || check == null)
 				return;
@@ -79,6 +86,11 @@ namespace LPS.Client
 			{
 				IsUpdating = false;
 			}
+		}
+
+		private void HandleCheckToggled (object sender, EventArgs e)
+		{
+			DoValueChanged();
 		}
 		
 		private void Bind()

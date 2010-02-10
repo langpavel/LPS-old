@@ -5,12 +5,12 @@
 		<detail-name>adresa</detail-name>
 		<item id="adresa_odb" text="Odběratelé" table="adresa">
 			<desc>Kontakty na zákazníky</desc>
-			<list-sql>select * from adresa where odberatel = true</list-sql>
+			<list-sql>select * from adresa where odberatel = true {and}</list-sql>
 			<detail-name>adresa</detail-name>
 		</item>
 		<item id="adresa_dod" text="Dodavatelé" table="adresa">
 			<desc>Kontakty na dodavatele</desc>
-			<list-sql>select * from adresa where dodavatel = true</list-sql>
+			<list-sql>select * from adresa where dodavatel = true {and}</list-sql>
 			<detail-name>adresa</detail-name>
 		</item>
 	</item>

@@ -7,6 +7,7 @@ namespace LPS.Client
 {
 	public class XmlWindowBase: IXmlFormHandler, IDisposable
 	{
+		private bool is_disposed;
 		public Glade.XML GladeXML { get; set; }
 		public Window Window { get; set; }
 		public virtual TableInfo TableInfo { get; set; }
@@ -26,15 +27,27 @@ namespace LPS.Client
 		
 		public virtual void OnCreate()
 		{
-			// to neni ta udalost! ;-(
-			//this.Window.DeleteEvent += delegate {
-			//	if(DestroyOnDelete)
-			//		Destroy();
-			//};
+			this.Window.DeleteEvent += delegate {
+				this.Destroy();
+			};
+			this.Window.Destroyed += delegate {
+				this.Window = null;
+				if(!is_disposed)
+					this.Dispose();
+			};
 		}
 
 		public virtual void Destroy()
 		{
+			if(!is_disposed)
+				Dispose();
+		}
+		
+		public virtual void Dispose()
+		{
+			if(is_disposed)
+				throw new ObjectDisposedException("XmlWindowBase");
+			is_disposed = true;
 			if(this._OwnedComponents != null)
 			{
 				_OwnedComponents.Reverse();
@@ -55,17 +68,7 @@ namespace LPS.Client
 				_OwnedComponents = null;
 			}
 			if(this.Window != null)
-			{
 				this.Window.Destroy();
-				this.Window = null;
-				GladeXML.Dispose();
-				GladeXML = null;
-			}
-		}
-		
-		public virtual void Dispose()
-		{
-			Destroy();
 		}
 
 		public virtual void Show()
