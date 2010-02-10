@@ -71,12 +71,12 @@ namespace LPS.Client
 		
 		public void BindCheckButton(DataColumn col, CheckButton chkbutton, ColumnInfo colinfo)
 		{
-			DataSource.GetGroupForColumn(col).Add(new CheckButtonBinding(chkbutton));
+			DataSource.GetGroupForColumn(col).Add(new CheckButtonBinding(chkbutton, !colinfo.Required));
 		}
 		
 		public void BindComboBox(DataColumn col, ComboBox combo, ColumnInfo colinfo)
 		{
-			//DataSource.GetGroupForColumn(col).Add(new CheckButtonBinding(chkbutton));
+			DataSource.GetGroupForColumn(col).Add(new ComboBoxBinding(colinfo, combo));
 		}
 
 		bool binded;

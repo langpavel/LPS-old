@@ -49,6 +49,7 @@
     <Compile Include="Exceptions\ResourceNotFoundException.cs" />
     <Compile Include="Interfaces\IResourceStore.cs" />
     <Compile Include="Interfaces\IListInfo.cs" />
+    <Compile Include="Interfaces\ILookupInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

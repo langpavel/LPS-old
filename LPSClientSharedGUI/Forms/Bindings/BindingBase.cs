@@ -4,8 +4,7 @@ namespace LPS.Client
 {
 	public abstract class BindingBase : IBinding
 	{
-		private bool is_updating;
-		public bool IsUpdating { get { return is_updating; } }
+		public bool IsUpdating { get; protected set; }
 		private bool has_error;
 		public bool HasError { get { return has_error; } }
 		private string error;
@@ -28,7 +27,7 @@ namespace LPS.Client
 		
 		public virtual void UpdateValue(object orig_value, object new_value)
 		{
-			is_updating = true;
+			IsUpdating = true;
 			try
 			{
 				DoUpdateValue(orig_value, new_value);
@@ -43,7 +42,7 @@ namespace LPS.Client
 			}
 			finally
 			{
-				is_updating = false;
+				IsUpdating = false;
 			}
 		}
 		

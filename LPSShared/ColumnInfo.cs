@@ -10,7 +10,7 @@ namespace LPS
 {
 	[Serializable]
 	[XmlRoot("column")]
-	public class ColumnInfo : ICloneable
+	public class ColumnInfo : ICloneable, ILookupInfo
 	{
 		[XmlAttribute("name")]
 		public string Name { get; set; }
@@ -57,5 +57,24 @@ namespace LPS
 			return clone;
 		}
 		#endregion
-	}
+
+		#region ILookupInfo implementation
+		string ILookupInfo.LookupTable
+		{
+			get { return this.FkReferenceTable; }
+		}
+
+		string[] ILookupInfo.LookupColumns
+		{
+			get
+			{
+				string str = this.FkComboReplaceColumns ?? this.FkReplaceColumns ?? (String.IsNullOrEmpty(this.FkReferenceTable)?"":"kod");
+				return str.Split(
+					new char[] {' ',',',';','[',']','{','}','(',')','\'','"','-',':'},
+					StringSplitOptions.RemoveEmptyEntries);
+			}
+		}
+		#endregion
+
+      	}
 }
