@@ -19,7 +19,8 @@ namespace LPS.Server
 		private NpgsqlCommand insert_cmd;
 		private NpgsqlCommand update_cmd;
 		private NpgsqlCommand delete_cmd;
-		
+		private NpgsqlCommand delete2_cmd;
+
 		public bool NotifyChangeSink { get; set; }
 		public bool UpdateUserInfo { get; set; }
 		public long UserId { get; set; }
@@ -41,6 +42,7 @@ namespace LPS.Server
 			if(insert_cmd != null) { insert_cmd.Dispose(); insert_cmd = null; }
 			if(update_cmd != null) { update_cmd.Dispose(); update_cmd = null; }
 			if(delete_cmd != null) { delete_cmd.Dispose(); delete_cmd = null; }
+			if(delete2_cmd != null) { delete2_cmd.Dispose(); delete2_cmd = null; }
 			if(schema_dataset != null) { schema_dataset.Dispose(); schema_dataset = null; }
 		}
 		
@@ -204,6 +206,18 @@ namespace LPS.Server
 			return delete_cmd;
 		}
 
+		private NpgsqlCommand GetDelete2Command(DataRow row)
+		{
+			if(delete2_cmd != null)
+				return delete2_cmd;
+			delete2_cmd = connection.CreateCommand();
+			delete2_cmd.CommandText = String.Format("insert into sys_deleted (table_name,row_id,id_user) values ('{0}',:o__id,{1})",
+				table_name, UserId);
+			delete2_cmd.Parameters.Add(delete_cmd.Parameters[":o__id"]);
+			delete2_cmd.Prepare();
+			return delete2_cmd;
+		}
+
 		private int CheckAffected(int affected, DataRow row)
 		{
 			if(affected == 0)
@@ -268,11 +282,14 @@ namespace LPS.Server
 		private int DeleteRow(DataRow row)
 		{
 			NpgsqlCommand cmd = GetDeleteCommand(row);
+			NpgsqlCommand cmd2 = GetDelete2Command(row);
 			foreach(NpgsqlParameter p in cmd.Parameters)
 			{
 				p.Value = row[p.SourceColumn, p.SourceVersion] ?? DBNull.Value;
 			}
-			return CheckAffected(cmd.ExecuteNonQuery(), row);
+			int result = CheckAffected(cmd.ExecuteNonQuery(), row);
+			cmd2.ExecuteNonQuery();
+			return result;
 		}
 		
 		public void DoNotifyChange(char stav, DataRow row)

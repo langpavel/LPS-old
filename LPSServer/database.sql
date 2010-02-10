@@ -7,12 +7,13 @@ SET escape_string_warning = off;
 
 CREATE TABLE sys_user (
     id bigserial not null primary key,
-    username character varying(40) NOT NULL,
+    username character varying(40) NOT NULL UNIQUE,
     passwd character varying(40) NOT NULL,
     first_name character varying(40) NOT NULL,
     surname character varying(40) NOT NULL,
 
-    ts timestamp without time zone DEFAULT now()
+    ts timestamp without time zone DEFAULT now(),
+    UNIQUE (first_name, surname)
 );
 INSERT INTO sys_user VALUES (1, 'langpa', '6eVgZj7YKaN/HcJByphPGQliw4s=', 'Pavel', 'Lang'); -- prazdne heslo pro langpa
 
@@ -24,6 +25,8 @@ CREATE TABLE sys_deleted (
     id_user bigint references sys_user(id),
     ts timestamp without time zone DEFAULT now()
 );
+CREATE INDEX sys_deleted_ts on sys_deleted (ts);
+CREATE INDEX sys_deleted_ts_tname on sys_deleted (ts, table_name);
 
 CREATE TABLE c_druh_adresy (
     id bigserial not null primary key,
@@ -39,6 +42,7 @@ CREATE TABLE c_druh_adresy (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
+CREATE INDEX c_druh_adresy_ts on c_druh_adresy (ts);
 INSERT INTO c_druh_adresy VALUES (1, 'FA', 'Fakturační', true, true, null, null, null, null, null);
 INSERT INTO c_druh_adresy VALUES (2, 'DODACI', 'Dodací', true, false, true, null, null, null, null);
 INSERT INTO c_druh_adresy VALUES (3, 'JINA', 'Jiná', true, null, null, null, null, null, null);
@@ -59,6 +63,7 @@ CREATE TABLE c_dph (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
+CREATE INDEX c_dph_ts on c_dph (ts);
 INSERT INTO c_dph VALUES (1, 'DPH0', 'Bez DPH', 0.00, null, null, false, null, null, null, null);
 INSERT INTO c_dph VALUES (2, 'DPH9', 'DPH 9%', 0.09, null, '1.1.2010', false, null, null, null, null);
 INSERT INTO c_dph VALUES (3, 'DPH19', 'DPH 19%', 0.19, null, '1.1.2010', false, null, null, null, null);
@@ -77,6 +82,7 @@ CREATE TABLE c_mj (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
+CREATE INDEX c_mj_ts on c_mj (ts);
 INSERT INTO c_mj VALUES (1, 'KS', 'Kus', 'Kusy', null, null, null, null);
 
 CREATE TABLE c_kategorie (
@@ -91,6 +97,7 @@ CREATE TABLE c_kategorie (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
+CREATE INDEX c_kategorie_ts on c_kategorie (ts);
 
 CREATE TABLE c_zaruka (
     id bigserial NOT NULL primary key,
@@ -107,6 +114,7 @@ CREATE TABLE c_zaruka (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
+CREATE INDEX c_zaruka_ts on c_zaruka (ts);
 
 CREATE TABLE c_sklad (
     id bigserial NOT NULL primary key,
@@ -120,6 +128,7 @@ CREATE TABLE c_sklad (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
+CREATE INDEX c_sklad_ts on c_sklad (ts);
 
 CREATE TABLE c_stat (
     id bigserial NOT NULL primary key,
@@ -132,6 +141,7 @@ CREATE TABLE c_stat (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
+CREATE INDEX c_stat_ts on c_stat (ts);
 INSERT INTO c_stat VALUES (1, 'CZ', 'Česká republika', null, null, null, null, now());
 INSERT INTO c_stat VALUES (2, 'SK', 'Slovenská republika', null, null, null, null, now());
 
@@ -170,7 +180,7 @@ CREATE TABLE adresa (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
-
+CREATE INDEX adresa_ts on adresa (ts);
 
 CREATE TABLE skl_karta (
     id bigserial NOT NULL primary key,
@@ -200,4 +210,6 @@ CREATE TABLE skl_karta (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
+CREATE INDEX skl_karta_ts on skl_karta (ts);
+
 

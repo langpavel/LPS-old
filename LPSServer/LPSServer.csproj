@@ -82,6 +82,8 @@
     <Folder Include="resources\" />
     <Folder Include="resources\tables\" />
     <Folder Include="ChangeSink\" />
+    <Folder Include="resources\forms\" />
+    <Folder Include="resources\forms\composits\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\tree.xml" />
@@ -97,5 +99,7 @@
     <None Include="resources\tables\c_zaruka.xml" />
     <None Include="resources\tables\sys_user.xml" />
     <None Include="resources\tables\c_stat.xml" />
+    <None Include="resources\forms\adresa.xml" />
+    <None Include="resources\forms\composits\adresa-mini.xml" />
   </ItemGroup>
 </Project>
