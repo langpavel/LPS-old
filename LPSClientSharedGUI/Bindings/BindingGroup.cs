@@ -44,22 +44,41 @@ namespace LPS.Client
 
 		public object ConvertValueType(object val)
 		{
-			if(val == DBNull.Value)
+			try
+			{
+				if(val == DBNull.Value)
+					return null;
+				if(val == null || ValType == null)
+					return val;
+				return Convert.ChangeType(val, ValType);
+			}
+			catch(FormatException)
+			{
 				return null;
-			if(val == null || ValType == null)
-				return val;
-			return Convert.ChangeType(val, ValType);
+			}
 		}
-		
+
+		bool is_updating;
 		private void HandleValueChanged(IBinding sender, BindingValueChangedArgs args)
 		{
-			this.Value = ConvertValueType(args.NewValue);
-			if(args.HasOriginalValue)
-				this.OriginalValue = ConvertValueType(args.OriginalValue);
-			foreach(IBinding b in this)
+			if(is_updating)
+				return;
+			is_updating = true;
+			try
 			{
-				if(b != sender)
-					b.UpdateValue(this.OriginalValue, this.Value);
+				this.Value = ConvertValueType(args.NewValue);
+				Console.WriteLine("{0} - Changed to {1}", sender, this.Value);
+				if(args.HasOriginalValue)
+					this.OriginalValue = ConvertValueType(args.OriginalValue);
+				foreach(IBinding b in this)
+				{
+					if(b != sender)
+						b.UpdateValue(this.OriginalValue, this.Value);
+				}
+			}
+			finally
+			{
+				is_updating = false;
 			}
 		}
 		

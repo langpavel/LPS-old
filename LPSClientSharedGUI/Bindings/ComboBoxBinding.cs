@@ -24,15 +24,12 @@ namespace LPS.Client
 			{
 				Unbind();
 				combo = value;
-				UpdateValueByBindings();
 				Bind();
 			}
 		}
 
 		protected override void DoValueChanged()
 		{
-			if(IsUpdating)
-				return;
 			TreeIter iter;
 			if(combo.GetActiveIter(out iter))
 			{
@@ -42,33 +39,48 @@ namespace LPS.Client
 				DoValueChanged(null);
 		}
 
+		bool is_updating;
 		void HandleComboChanged (object sender, EventArgs e)
 		{
-			DoValueChanged();
-		}
-
-		private void Bind()
-		{
-			if(combo == null)
+			if(is_updating || IsUpdating)
 				return;
-			combo.Model = this.Store;
-			combo.Clear();
-			for(int i=1; i<Store.NColumns; i++)
+			is_updating = true;
+			try
 			{
-				CellRenderer r = new CellRendererText();
-				combo.PackStart(r, ((i+1)==Store.NColumns));
-				combo.AddAttribute(r, "text", i);
+				DoValueChanged();
 			}
-			combo.Changed += HandleComboChanged;
+			finally
+			{
+				is_updating = false;
+			}
 		}
 
-		private void Unbind()
+		protected override void Bind()
 		{
-			if(combo == null)
-				return;
-			combo.Changed -= HandleComboChanged;
-			combo.Clear();
-			combo.Model = null;
+			if(combo != null)
+			{
+				combo.Model = this.Store;
+				combo.Clear();
+				for(int i=1; i<Store.NColumns; i++)
+				{
+					CellRenderer r = new CellRendererText();
+					combo.PackStart(r, ((i+1)==Store.NColumns));
+					combo.AddAttribute(r, "text", i);
+				}
+				combo.Changed += HandleComboChanged;
+			}
+			base.Bind();
+		}
+
+		protected override void Unbind()
+		{
+			if(combo != null)
+			{
+				combo.Changed -= HandleComboChanged;
+				combo.Clear();
+				combo.Model = null;
+			}
+			base.Unbind();
 		}
 
 		protected override void DoUpdateValue (object orig_value, object new_value)

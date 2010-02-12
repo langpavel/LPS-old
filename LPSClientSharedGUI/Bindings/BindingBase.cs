@@ -4,12 +4,12 @@ namespace LPS.Client
 {
 	public abstract class BindingBase : IBinding
 	{
-		public bool IsUpdating { get; protected set; }
 		private bool has_error;
 		public bool HasError { get { return has_error; } }
 		private string error;
 		public string Error { get { return error; } }
-		protected bool IsMaster { get; set; }
+		public virtual bool IsMaster { get { return false; } }
+		protected bool IsUpdating { get; set; }
 		
 		public event BindingValueChanged ValueChanged;
 		public BindingGroup Bindings { get; set; }
@@ -26,14 +26,35 @@ namespace LPS.Client
 		{
 			if(IsMaster)
 				DoValueChanged(null, null);
+			else
+				UpdateValue(null, null);
+		}
+
+		protected virtual void Bind()
+		{
+			if(IsMaster)
+				DoValueChanged();
+			else
+				UpdateValueByBindings();
+		}
+
+		protected virtual void Unbind()
+		{
+			if(IsMaster)
+				DoValueChanged(null, null);
+			else
+				UpdateValue(null, null);
 		}
 
 		protected virtual void OnUpdateValueError(object orig_value, object new_value, Exception exception)
 		{
 		}
-		
+
+		bool is_updating;
 		public virtual void UpdateValue(object orig_value, object new_value)
 		{
+			if(IsUpdating)
+				return;
 			IsUpdating = true;
 			try
 			{
@@ -87,15 +108,9 @@ namespace LPS.Client
 		protected void UpdateValueByBindings()
 		{
 			if(Bindings != null)
-			{
-				Console.WriteLine("Update value by binding {0}", this.GetType().Name);
-				DoUpdateValue(Bindings.OriginalValue, Bindings.Value);
-			}
+				UpdateValue(Bindings.OriginalValue, Bindings.Value);
 			else
-			{
-				Console.WriteLine("Update value by binding {0} OOH NULL!", this.GetType().Name);
-				DoUpdateValue(null, null);
-			}
+				UpdateValue(null, null);
 		}
 		
 		public virtual void Dispose()

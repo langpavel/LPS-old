@@ -38,10 +38,8 @@ namespace LPS.Client
 		
 		protected override void DoUpdateValue (object orig_value, object new_value)
 		{
-			if(IsUpdating || check == null)
+			if(check == null)
 				return;
-			Console.WriteLine("CheckBox DoUpdateValue: {0}",
-				(new_value==null || new_value == DBNull.Value)?"NULL":new_value.ToString());
 			if(new_value == null || new_value is DBNull)
 			{
 				check.Active = false;
@@ -61,48 +59,53 @@ namespace LPS.Client
 
 		protected override void DoValueChanged ()
 		{
-			if(IsUpdating || check == null)
+			if(check == null)
 				return;
-			IsUpdating = true;
+			if(!check.Inconsistent && check.Active && ThreeState)
+			{
+				check.Inconsistent = true;
+				check.Active = false;
+			}
+			else if(check.Inconsistent)
+			{
+				check.Inconsistent = false;
+				check.Active = true;
+			}
+
+			if(check.Inconsistent)
+				DoValueChanged(null);
+			else
+				DoValueChanged(check.Active);
+		}
+
+		bool is_updating;
+		private void HandleCheckToggled (object sender, EventArgs e)
+		{
+			if(is_updating || IsUpdating)
+				return;
+			is_updating = true;
 			try
 			{
-				if(!check.Inconsistent && check.Active && ThreeState)
-				{
-					check.Inconsistent = true;
-					check.Active = false;
-				}
-				else if(check.Inconsistent)
-				{
-					check.Inconsistent = false;
-					check.Active = true;
-				}
-	
-				if(check.Inconsistent)
-					DoValueChanged(null);
-				else
-					DoValueChanged(check.Active);
+				DoValueChanged();
 			}
 			finally
 			{
-				IsUpdating = false;
+				is_updating = false;
 			}
 		}
-
-		private void HandleCheckToggled (object sender, EventArgs e)
-		{
-			DoValueChanged();
-		}
 		
-		private void Bind()
+		protected override void Bind ()
 		{
 			if(check != null)
 				check.Toggled += HandleCheckToggled;
+			base.Bind();
 		}
 
-		private void Unbind()
+		protected override void Unbind()
 		{
 			if(check != null)
 				check.Toggled -= HandleCheckToggled;
+			base.Unbind();
 		}
 		
 		public override void Dispose()

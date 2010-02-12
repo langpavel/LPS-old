@@ -18,7 +18,12 @@ namespace LPS.Client
 		public Entry EntryWidget
 		{
 			get	{ return entry;	}
-			set { Unbind(); entry = value; UpdateValueByBindings(); Bind(); }
+			set
+			{
+				Unbind();
+				entry = value;
+				Bind();
+			}
 		}
 		
 		protected override void DoUpdateValue (object orig_value, object new_value)
@@ -29,26 +34,37 @@ namespace LPS.Client
 
 		protected override void DoValueChanged()
 		{
-			if(IsUpdating)
-				return;
 			DoValueChanged(entry.Text);
 		}
 
+		bool is_updating;
 		private void HandleEntryChanged (object sender, EventArgs e)
 		{
-			DoValueChanged();
+			if(is_updating || IsUpdating)
+				return;
+			is_updating = true;
+			try
+			{
+				DoValueChanged();
+			}
+			finally
+			{
+				is_updating = false;
+			}
 		}
 		
-		private void Bind()
+		protected override void Bind()
 		{
 			if(entry != null)
 				entry.Changed += HandleEntryChanged;
+			base.Bind();
 		}
 
-		private void Unbind()
+		protected override void Unbind()
 		{
 			if(entry != null)
 				entry.Changed -= HandleEntryChanged;
+			base.Unbind();
 		}
 		
 		public override void Dispose()

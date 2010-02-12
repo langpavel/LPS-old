@@ -7,20 +7,23 @@ namespace LPS.Client
 	{
 		public RowColumnBinding()
 		{
-			this.IsMaster = true;
 		}
 
 		public RowColumnBinding(DataColumn col)
 		{
-			this.IsMaster = true;
-			Column = col;
+			this.column = col;
 		}
 
 		public RowColumnBinding(DataColumn col, DataRow row)
 		{
-			this.IsMaster = true;
-			Column = col;
-			Row = row;
+			this.column = col;
+			this.row = row;
+			Bind();
+		}
+
+		public override bool IsMaster
+		{
+			get { return true; }
 		}
 
 		private DataRow row;
@@ -31,7 +34,6 @@ namespace LPS.Client
 			{
 				Unbind();
 				row = value;
-				DoValueChanged();
 				Bind();
 			}
 		}
@@ -40,14 +42,19 @@ namespace LPS.Client
 		public DataColumn Column
 		{
 			get { return column; }
-			set { column = value; DoValueChanged(); }
+			set
+			{
+				Unbind();
+				column = value;
+				Bind();
+			}
 		}
 			
 		protected override void DoValueChanged()
 		{
 			if(row == null || column == null)
 			{
-				DoUpdateValue(null, null);
+				DoValueChanged(null, null);
 				return;
 			}
 
@@ -59,8 +66,6 @@ namespace LPS.Client
 			
 			if(row.HasVersion(DataRowVersion.Default))
 				val = row[column, DataRowVersion.Default];
-
-			Console.WriteLine("row[{0}] --> {1}", column.ColumnName, val);
 
 			DoValueChanged(orig, val);
 		}
@@ -78,30 +83,41 @@ namespace LPS.Client
 				row[column] = Convert.ChangeType(new_value, column.DataType);
 		}
 
+		bool is_updating;
 		private void HandleColumnChanged(object sender, DataColumnChangeEventArgs e)
 		{
-			if(IsUpdating || e.Row != row)
+			if(is_updating || e.Row != row || IsUpdating)
 				return;
 			if(e.Column == null || e.Column == column)
 			{
-				DoValueChanged();
+				is_updating = true;
+				try
+				{
+					DoValueChanged();
+				}
+				finally
+				{
+					is_updating = false;
+				}
 			}
 		}
 
-		private void Bind()
+		protected override void Bind()
 		{
-			if(row == null)
-				return;
-			if(column != null && column.Table != row.Table)
-				throw new InvalidOperationException("Řádek a sloupec nepatří do jedné tabulky");
-			row.Table.ColumnChanged += HandleColumnChanged;
+			if(row != null)
+			{
+				if(column != null && column.Table != row.Table)
+					throw new InvalidOperationException("Řádek a sloupec nepatří do jedné tabulky");
+				row.Table.ColumnChanged += HandleColumnChanged;
+			}
+			base.Bind();
 		}
 
-		private void Unbind()
+		protected override void Unbind()
 		{
-			if(row == null)
-				return;
-			row.Table.ColumnChanged -= HandleColumnChanged;
+			if(row != null)
+				row.Table.ColumnChanged -= HandleColumnChanged;
+			base.Unbind();
 		}
 		
 		public override void Dispose()

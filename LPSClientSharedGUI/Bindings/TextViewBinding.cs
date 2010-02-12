@@ -18,7 +18,7 @@ namespace LPS.Client
 		public TextView TextViewWidget
 		{
 			get	{ return textview;	}
-			set { Unbind(); textview = value; UpdateValueByBindings(); Bind(); }
+			set { Unbind(); textview = value; Bind(); }
 		}
 		
 		protected override void DoUpdateValue (object orig_value, object new_value)
@@ -30,26 +30,37 @@ namespace LPS.Client
 
 		protected override void DoValueChanged ()
 		{
-			if(IsUpdating)
-				return;
 			DoValueChanged(textview.Buffer.Text);
 		}
 
+		bool is_updating;
 		private void HandleTextViewChanged (object sender, EventArgs e)
 		{
-			DoValueChanged();
+			if(is_updating || IsUpdating)
+				return;
+			is_updating = true;
+			try
+			{
+				DoValueChanged();
+			}
+			finally
+			{
+				is_updating = false;
+			}
 		}
 		
-		private void Bind()
+		protected override void Bind()
 		{
 			if(textview != null)
 				textview.Buffer.Changed += HandleTextViewChanged;
+			base.Bind();
 		}
 
-		private void Unbind()
+		protected override void Unbind()
 		{
 			if(textview != null)
 				textview.Buffer.Changed -= HandleTextViewChanged;
+			base.Unbind();
 		}
 		
 		public override void Dispose()

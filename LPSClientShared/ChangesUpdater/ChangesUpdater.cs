@@ -61,7 +61,7 @@ namespace LPS.Client
 
 		private void CheckUpdatesAsync()
 		{
-			Console.WriteLine("{0} - Thd{1}: CheckUpdatesAsync", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
+			//Console.WriteLine("{0} - Thd{1}: CheckUpdatesAsync", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
 			lock(this)
 			{
 				if(this.terminate)
@@ -83,15 +83,15 @@ namespace LPS.Client
 			}
 			if(result.Changes != null && result.Changes.Length > 0)
 			{
-				Console.WriteLine("{0} - Thd{1}: CheckUpdatesAsyncEnd - changes found!", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
+				//Console.WriteLine("{0} - Thd{1}: CheckUpdatesAsyncEnd - changes found!", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
 				lock(this)
 					l_changes = result.Changes;
 				GLib.Timeout.Add(0, CheckUpdatesSync);
 			}
 			else
 			{
-				Console.WriteLine("{0} - Thd{1}: CheckUpdatesAsyncEnd - changes not found, waiting 1s", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
-				Thread.Sleep(1000);
+				//Console.WriteLine("{0} - Thd{1}: CheckUpdatesAsyncEnd - changes not found, waiting 1s", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
+				Thread.Sleep(3000);
 				lock(this)
 				{
 					if(this.terminate)
