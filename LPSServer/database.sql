@@ -15,6 +15,7 @@ CREATE TABLE sys_user (
     ts timestamp without time zone DEFAULT now(),
     UNIQUE (first_name, surname)
 );
+INSERT INTO sys_user VALUES (0, 'system', '', '', 'system');
 INSERT INTO sys_user VALUES (1, 'langpa', '6eVgZj7YKaN/HcJByphPGQliw4s=', 'Pavel', 'Lang'); -- prazdne heslo pro langpa
 
 CREATE TABLE sys_deleted (
@@ -27,6 +28,92 @@ CREATE TABLE sys_deleted (
 );
 CREATE INDEX sys_deleted_ts on sys_deleted (ts);
 CREATE INDEX sys_deleted_ts_tname on sys_deleted (ts, table_name);
+
+CREATE TABLE sys_check (
+    id bigserial not null primary key,
+    kod character varying(10) not null UNIQUE,
+    popis text,
+    ts timestamp without time zone DEFAULT now()
+);
+
+CREATE TABLE sys_error (
+    id bigserial not null primary key,
+    table_name character varying(40) not null,
+    table_id bigint not null,
+    id_check bigint references sys_check(id),
+    err_code character varying(10) not null,
+    popis text not null,
+    ts timestamp without time zone DEFAULT now()
+);
+CREATE INDEX sys_error_table_id on sys_error (table_name, table_id);
+
+CREATE TABLE sys_gen_cyklus (
+    id bigserial not null primary key,
+    kod character varying(10) not null,
+    name character varying(40) not null,
+    sys_date bool not null,
+    year bool not null,
+    month bool not null,
+    week bool not null,
+    day bool not null
+);
+INSERT INTO sys_gen_cyklus VALUES (1, 'INF',   'Stálý', false, false, false, false, false);
+
+INSERT INTO sys_gen_cyklus VALUES (2, 'YEAR_SYS',  'Rok (systémový)',   true,  true,  false, false, false);
+INSERT INTO sys_gen_cyklus VALUES (3, 'MONTH_SYS', 'Měsíc (systémový)', true,  true,  true,  false, false);
+INSERT INTO sys_gen_cyklus VALUES (4, 'WEEK_SYS',  'Týden (systémový)', true,  true,  false, true,  false);
+INSERT INTO sys_gen_cyklus VALUES (5, 'DAY_SYS',   'Den (systémový)',   true,  true,  true,  false, true );
+
+INSERT INTO sys_gen_cyklus VALUES (6, 'YEAR_REAL',  'Rok (aktuální)',   false, true,  false, false, false);
+INSERT INTO sys_gen_cyklus VALUES (7, 'MONTH_REAL', 'Měsíc (aktuální)', false, true,  true,  false, false);
+INSERT INTO sys_gen_cyklus VALUES (8, 'WEEK_REAL',  'Týden (aktuální)', false, true,  false, true,  false);
+INSERT INTO sys_gen_cyklus VALUES (9, 'DAY_REAL',   'Den (aktuální)',   false, true,  true,  false, true );
+
+CREATE TABLE sys_gen (
+    id bigserial not null primary key,
+    id_cyklus bigint not null references sys_gen_cyklus(id),
+    
+    kod character varying(10) not null UNIQUE,
+    name character varying(40) not null,
+
+    format character varying(100) not null,
+    value_first bigint not null default 1,
+    value_step bigint not null default 1,
+
+    user_lock bool not null default false,
+
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+
+CREATE TABLE sys_gen_value (
+    id bigserial not null primary key,
+    id_gen bigint not null references sys_gen(id),
+    
+    year int not null default 0,
+    month int not null default 0,
+    week int not null default 0,
+    day int not null default 0,
+
+    value bigint not null,
+    user_lock bool not null default false,
+
+    ts timestamp without time zone DEFAULT now(),
+    UNIQUE (id_gen, year, month, week, day)
+);
+
+CREATE TABLE sys_user_preferences (
+    id bigserial not null primary key,
+    id_user bigint not null references sys_user(id),
+    path character varying(100) not null,
+    name character varying(100) not null,
+    type character varying(100) not null,
+    value character varying(100) not null,
+    ts timestamp without time zone DEFAULT now()
+);
+CREATE INDEX sys_user_preferences_path on sys_user_preferences (path);
+CREATE UNIQUE INDEX sys_user_preferences_path_name on sys_user_preferences (path, name);
 
 CREATE TABLE c_druh_adresy (
     id bigserial not null primary key,
@@ -43,10 +130,10 @@ CREATE TABLE c_druh_adresy (
     ts timestamp without time zone DEFAULT now()
 );
 CREATE INDEX c_druh_adresy_ts on c_druh_adresy (ts);
-INSERT INTO c_druh_adresy VALUES (1, 'FA', 'Fakturační', true, true, null, null, null, null, null);
-INSERT INTO c_druh_adresy VALUES (2, 'DODACI', 'Dodací', true, false, true, null, null, null, null);
-INSERT INTO c_druh_adresy VALUES (3, 'JINA', 'Jiná', true, null, null, null, null, null, null);
-INSERT INTO c_druh_adresy VALUES (4, 'NAPLATNA', 'NEPLATNÁ ADRESA', false, null, null, null, null, null, null);
+INSERT INTO c_druh_adresy VALUES (1, 'FA', 'Fakturační', true, true, null, 0, now(), 0, now(), now());
+INSERT INTO c_druh_adresy VALUES (2, 'DODACI', 'Dodací', true, false, true, 0, now(), 0, now(), now());
+INSERT INTO c_druh_adresy VALUES (3, 'JINA', 'Jiná', true, null, null, 0, now(), 0, now(), now());
+INSERT INTO c_druh_adresy VALUES (4, 'NAPLATNA', 'NEPLATNÁ ADRESA', false, null, null, 0, now(), 0, now(), now());
 
 CREATE TABLE c_dph (
     id bigserial NOT NULL primary key,
@@ -181,6 +268,22 @@ CREATE TABLE adresa (
     ts timestamp without time zone DEFAULT now()
 );
 CREATE INDEX adresa_ts on adresa (ts);
+INSERT INTO adresa VALUES (1, 3, 1, null, '24 Promotions s.r.o.');
+
+CREATE TABLE sys_app_config (
+    id bigserial not null primary key,
+    sys_rok integer not null,
+    sys_mesic integer not null,
+    sys_den integer not null,
+    sys_date timestamp not null,
+    firma character varying(100) NOT NULL,
+    id_adresa bigint references adresa(id),
+
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+INSERT INTO sys_app_config VALUES (1, 2010,1,1,'2010-01-01', '24 Promotions s.r.o.', 1, 0, now(), now());
 
 CREATE TABLE skl_karta (
     id bigserial NOT NULL primary key,

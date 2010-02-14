@@ -110,6 +110,13 @@ namespace LPS.Server
 		}
 
 		[WebMethod(EnableSession=true)]
+		public string GetGeneratorValue(string generator, DateTime sys_date)
+		{
+			ConnectionInfo ci = GetConnectionInfo();
+			return ci.GetGeneratorValue(generator, sys_date);
+		}
+
+		[WebMethod(EnableSession=true)]
 		public DataSet GetDataSetSimple(string sql)
 		{
 			ConnectionInfo ci = GetConnectionInfo();

@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using Npgsql;
 using System.Web.Services.Protocols;
 using System.Xml;
+using System.Globalization;
 
 namespace LPS.Server
 {
@@ -564,6 +565,101 @@ namespace LPS.Server
 			{
 				Console.WriteLine(ex.ToString());
 				throw;
+			}
+		}
+
+		public string GetGeneratorValue(string generator, DateTime sys_date)
+		{
+			lock(this.GetType())
+			{
+				NpgsqlTransaction tr = Connection.BeginTransaction();
+				try
+				{
+					DateTime dt_now = DateTime.Now;
+					long gen_id; string gen_format; long gen_val_first; long gen_val_step;
+					DateTime gen_dt; int gen_year, gen_month, gen_week, gen_day;
+					using(NpgsqlCommand gen_cmd = this.CreateCommand(@"
+						select
+							sys_gen.id, sys_gen.format, sys_gen.value_first, sys_gen.value_step, sys_gen.user_lock,
+							sys_gen_cyklus.sys_date, sys_gen_cyklus.year, sys_gen_cyklus.month, sys_gen_cyklus.week, sys_gen_cyklus.day
+						from sys_gen
+						inner join sys_gen_cyklus on (sys_gen.id_cyklus = sys_gen_cyklus.id)
+						where sys_gen.kod=:kod"))
+					{
+						gen_cmd.Parameters.Add(new NpgsqlParameter("kod", generator));
+						using(NpgsqlDataReader r = gen_cmd.ExecuteReader())
+						{
+							if(!r.Read())
+								throw new ArgumentException("Neplatná hodnota 'KOD' generátoru", "generator");
+							if(Convert.ToBoolean(r["user_lock"]))
+								throw new ApplicationException("Generátor je zamčený");
+							gen_id = Convert.ToInt64(r["id"]);
+							gen_format = Convert.ToString(r["format"]);
+							gen_val_first = Convert.ToInt64(r["value_first"]);
+							gen_val_step = Convert.ToInt64(r["value_step"]);
+							gen_dt = (Convert.ToBoolean(r["sys_date"])) ? sys_date : DateTime.Now;
+							gen_year = (Convert.ToBoolean(r["year"])) ? gen_dt.Year : 0;
+							gen_month = (Convert.ToBoolean(r["month"])) ? gen_dt.Month : 0;
+							if(Convert.ToBoolean(r["week"]))
+								gen_week = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(gen_dt, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+							else
+								gen_week = 0;
+							gen_day = (Convert.ToBoolean(r["day"])) ? gen_dt.Year : 0;
+						}
+					}
+
+					string result;
+					using(NpgsqlCommand cmd_select = this.CreateCommand(String.Format("select id, value, user_lock from sys_gen_value where "+
+						"id_gen={0} and year={1} and month={2} and week = {3} and day={4}",
+						gen_id, gen_year, gen_month, gen_week, gen_day)))
+					using(NpgsqlCommand cmd_update = this.CreateCommand())
+					{
+						using(NpgsqlDataReader r = cmd_select.ExecuteReader())
+						{
+							long val;
+							if(r.Read())
+							{
+								if(Convert.ToBoolean(r["user_lock"]))
+									throw new ApplicationException("Hodnota generátoru " + generator + " je uzamčená");
+								long id = Convert.ToInt64(r["id"]);
+								val = Convert.ToInt64(r["value"]);
+								cmd_update.CommandText = String.Format("update sys_gen_value set value={0}, ts='{2:yyyy-MM-dd hh:mm:ss.ffffff}' where id={1}", val + gen_val_step, id, dt_now);
+								if(cmd_update.ExecuteNonQuery() != 1)
+									throw new ApplicationException("Aktualizace hodnoty generátoru "+generator+" se nezdařila");
+							}
+							else
+							{
+								val = gen_val_first;
+								cmd_update.CommandText = String.Format(@"
+									insert into sys_gen_value (id_gen, year, month, week, day, value, user_lock, ts)
+									values ({0}, {1}, {2}, {3}, {4}, {5}, false, '{6:yyyy-MM-dd hh:mm:ss.ffffff}')", gen_id, gen_year, gen_month, gen_week, gen_day, gen_val_first + gen_val_step, dt_now);
+								if(cmd_update.ExecuteNonQuery() != 1)
+									throw new ApplicationException("Aktualizace hodnoty generátoru " + generator + " se nezdařila");
+							}
+							if(String.IsNullOrEmpty(gen_format))
+								gen_format = "{X}";
+							gen_format = gen_format.Replace("{X", "{0");
+							gen_format = gen_format.Replace("{Y", "{1");
+							gen_format = gen_format.Replace("{M", "{2");
+							gen_format = gen_format.Replace("{W", "{3");
+							gen_format = gen_format.Replace("{DT", "{5");
+							gen_format = gen_format.Replace("{D", "{4");
+							result = String.Format(gen_format, val, gen_year, gen_month, gen_week, gen_day, gen_dt);
+						}
+					}
+					tr.Commit();
+					ServerChangeSink.AddNewData("sys_gen_value", dt_now, false);
+					return result;
+				}
+				catch
+				{
+					tr.Rollback();
+					throw;
+				}
+				finally
+				{
+					tr.Dispose();
+				}
 			}
 		}
 	}
