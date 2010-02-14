@@ -40,22 +40,29 @@ namespace LPS.Client
 			lock(this)
 			{
 				List<DataSet> dslist;
-				if(datasets.TryGetValue(tablename, out dslist))
-				{
-					dslist.Add(ds);
-				}
-				else
+				if(!datasets.TryGetValue(tablename, out dslist))
 				{
 					dslist = new List<DataSet>();
 					datasets[tablename] = dslist;
-					dslist.Add(ds);
 				}
-				ds.Disposed += delegate {
-					lock(this)
-					{
-						dslist.Remove(ds);
-					}
-				};
+				dslist.Add(ds);
+				ds.ExtendedProperties["UPDATER_LIST"] = dslist;
+				ds.ExtendedProperties["UPDATER_TABLE"] = tablename;
+				Console.WriteLine("Updater registered {0}", tablename);
+			}
+		}
+
+		public void RemoveDataSet(DataSet ds)
+		{
+			lock(this)
+			{
+				List<DataSet> dslist = ds.ExtendedProperties["UPDATER_LIST"] as List<DataSet>;
+				string tablename = ds.ExtendedProperties["UPDATER_TABLE"] as string;
+				if(dslist != null)
+				{
+					dslist.Remove(ds);
+					Console.WriteLine("Updater unregistered {0}", tablename);
+				}
 			}
 		}
 
@@ -142,13 +149,12 @@ namespace LPS.Client
 					{
 						foreach(DataSet ds in dslist)
 						{
-							DateTime last_dt = change.ModifyDateTime;
+							DateTime last_dt = change.ModifyDateTime; //(DateTime)ds.ExtendedProperties["DATETIME"];
+							string tablename = change.TableName;
+							using(DataSet alllist = GetDataSetAllChangesList(tablename, last_dt, change.HasDeletedRows))
 							using(DataSet updates = GetDataSetUpdates(ds, ref last_dt))
 							{
-								Console.WriteLine("Updating {0} rows in {1}",
-									updates.Tables[0].Rows.Count,
-									change.TableName);
-								UpdateTableRows(ds.Tables[0], updates.Tables[0]);
+								UpdateTableRows(ds.Tables[0], updates.Tables[0], alllist.Tables[0]);
 								ds.ExtendedProperties["DATETIME"] = last_dt;
 							}
 						}
@@ -157,14 +163,25 @@ namespace LPS.Client
 			}
 		}
 
-		private void UpdateTableRows(DataTable dest, DataTable src)
+		private void UpdateTableRows(DataTable dest, DataTable src, DataTable alllist)
 		{
+			List<long> for_removal = new List<long>();
+			foreach(DataRow r in alllist.Rows)
+				for_removal.Add(Convert.ToInt64(r[0]));
 			dest.BeginLoadData();
 			try
 			{
 				foreach(DataRow r in src.Rows)
 				{
+					for_removal.Remove(Convert.ToInt64(r[0]));
 					dest.LoadDataRow(r.ItemArray, LoadOption.PreserveChanges);
+				}
+				foreach(long id in for_removal)
+				{
+					Console.WriteLine("remove id {0}", id);
+					DataRow r = dest.Rows.Find(id);
+					if(r != null)
+						dest.Rows.Remove(r);
 				}
 			}
 			finally
@@ -173,12 +190,31 @@ namespace LPS.Client
 			}
 		}
 
+		private DataSet GetDataSetAllChangesList(string table_name, DateTime dt_last, bool with_deleted)
+		{
+			LPSClientShared.LPSServer.ServerCallResult callrslt;
+			DataSet ds;
+			object[] parameters = new object[] { "ts_last", dt_last };
+			string sql = String.Format("select id as id, false as deleted from {0} where (ts >= :ts_last)", table_name);
+			if(with_deleted)
+				sql += String.Format(" UNION select row_id as id, true as deleted from sys_deleted where table_name='{0}' and (ts >= :ts_last)", table_name);
+			callrslt = server.GetDataSetBySql(-1, 0, sql, parameters, out ds);
+			if(callrslt != null && callrslt.Exception != null)
+				throw ServerException.Create(callrslt.Exception);
+			return ds;
+		}
+
 		private DataSet GetDataSetUpdates(DataSet ds, ref DateTime last_dt)
 		{
 			string list = (string)ds.ExtendedProperties["LIST"];
 			string addsql = (string)ds.ExtendedProperties["ADDSQL"];
 			object[] parameters = (object[])ds.ExtendedProperties["PARAMS"];
-			DateTime dt_last = (DateTime)ds.ExtendedProperties["DATETIME"];
+			// workaround na nove recordy s volanim id=0
+			if(parameters.Length > 1 && parameters[0].Equals("id") && ds.Tables[0].Rows.Count == 1
+				&& ds.Tables[0].Rows[0].RowState != DataRowState.Deleted && ds.Tables[0].Rows[0].RowState != DataRowState.Detached)
+				parameters[1] = ds.Tables[0].Rows[0][0];
+
+			DateTime dt_last = last_dt;
 			if(String.IsNullOrEmpty(addsql))
 			{
 				if(parameters.Length == 0)

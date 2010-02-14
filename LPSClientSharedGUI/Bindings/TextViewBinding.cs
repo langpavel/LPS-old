@@ -21,11 +21,15 @@ namespace LPS.Client
 			set { Unbind(); textview = value; Bind(); }
 		}
 		
-		protected override void DoUpdateValue (object orig_value, object new_value)
+		protected override void DoUpdateValue (BindingInfo info)
 		{
 			if(textview == null)
 				return;
-			textview.Buffer.Text = (new_value ?? "").ToString();
+			textview.Sensitive = info.Enabled && !info.ReadOnly;
+			if(info.ValueIsNull)
+				textview.Buffer.Text = "";
+			else
+				textview.Buffer.Text = info.Value.ToString();
 		}
 
 		protected override void DoValueChanged ()

@@ -36,16 +36,17 @@ namespace LPS.Client
 			}
 		}
 		
-		protected override void DoUpdateValue (object orig_value, object new_value)
+		protected override void DoUpdateValue (BindingInfo info)
 		{
 			if(check == null)
 				return;
-			if(new_value == null || new_value is DBNull)
+			check.Sensitive = info.Enabled && !info.ReadOnly;
+			if(info.Value == null || info.Value is DBNull)
 			{
 				check.Active = false;
 				check.Inconsistent = true;
 			}
-			else if(Convert.ToBoolean(new_value))
+			else if(Convert.ToBoolean(info.Value))
 			{
 				check.Inconsistent = false;
 				check.Active = true;

@@ -224,13 +224,24 @@ namespace LPS.Client
 			TreeIter iter;
 			if(row_iters.TryGetValue(e.Row, out iter))
 			{
-				iter = row_iters[e.Row];
-				object[] data = new object[(this.DataTable.Columns.Count + 1) * 2];
-				GetColumnValues(e.Row, ref data);
-				this.ListStore.SetValues(iter, data);
+				if(e.Row.RowState == DataRowState.Deleted || e.Row.RowState == DataRowState.Detached)
+				{
+					iter = row_iters[e.Row];
+					this.ListStore.Remove(ref iter);
+					row_iters.Remove(e.Row);
+				}
+				else
+				{
+					iter = row_iters[e.Row];
+					object[] data = new object[(this.DataTable.Columns.Count + 1) * 2];
+					GetColumnValues(e.Row, ref data);
+					this.ListStore.SetValues(iter, data);
+				}
 			}
 			else
 			{
+				if(e.Row.RowState == DataRowState.Deleted || e.Row.RowState == DataRowState.Detached)
+					return;
 				object[] data = new object[(this.DataTable.Columns.Count + 1) * 2];
 				GetColumnValues(e.Row, ref data);
 				row_iters[e.Row] = this.ListStore.AppendValues(data);

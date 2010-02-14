@@ -7,19 +7,20 @@ namespace LPS.Client
 	public class BindingGroup: IEnumerable<IBinding>, IDisposable
 	{
 		private List<IBinding> bindings;
-		public object OriginalValue { get; set; }
-		public object Value { get; set; }
+		public BindingInfo Info { get; protected set; }
 		public Type ValType { get; set; }
 		
 		public BindingGroup()
 		{
 			bindings = new List<IBinding>();
+			this.Info = new BindingInfo(null, null, true, false);
 		}
 		
 		public BindingGroup(Type ValType)
 		{
 			bindings = new List<IBinding>();
 			this.ValType = ValType;
+			this.Info = new BindingInfo(null, null, true, false);
 		}
 		
 		public void Add(IBinding b)
@@ -69,14 +70,18 @@ namespace LPS.Client
 			is_updating = true;
 			try
 			{
-				this.Value = ConvertValueType(args.NewValue);
-				Console.WriteLine("{0} - Changed to {1}", sender, this.Value);
-				if(args.HasOriginalValue)
-					this.OriginalValue = ConvertValueType(args.OriginalValue);
+				this.Info.Value = ConvertValueType(args.NewValue);
+				//Console.WriteLine("{0} - Changed to {1}", sender, this.Info.Value);
+				if(args.HasAllValues)
+				{
+					this.Info.OriginalValue = ConvertValueType(args.OriginalValue);
+					this.Info.ReadOnly = args.ReadOnly;
+					this.Info.Enabled = args.Enabled;
+				}
 				foreach(IBinding b in this)
 				{
 					if(b != sender)
-						b.UpdateValue(this.OriginalValue, this.Value);
+						b.UpdateValue(this.Info);
 				}
 			}
 			finally

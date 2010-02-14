@@ -240,6 +240,12 @@ namespace LPS.Client
 			return result;
 		}
 
+		public void DisposeDataSet(DataSet ds)
+		{
+			if(ds != null)
+				this.updater.RemoveDataSet(ds);
+		}
+
 		public int SaveDataSet(DataSet dataset, bool updateUserInfo)
 		{
 			if(dataset == null)

@@ -74,6 +74,7 @@
     <Compile Include="Bindings\RowDataSource.cs" />
     <Compile Include="Bindings\TextViewBinding.cs" />
     <Compile Include="IManagedWindow.cs" />
+    <Compile Include="Bindings\BindingInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />

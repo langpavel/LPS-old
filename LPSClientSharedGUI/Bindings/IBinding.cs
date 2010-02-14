@@ -10,7 +10,7 @@ namespace LPS.Client
 		void OnAdd(BindingGroup bindings);
 		void OnRemove(BindingGroup bindings);
 
-		void UpdateValue(object orig_value, object new_value);
+		void UpdateValue(BindingInfo info);
 		event BindingValueChanged ValueChanged;
 	}
 }

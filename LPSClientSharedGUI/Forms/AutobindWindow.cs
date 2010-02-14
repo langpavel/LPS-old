@@ -163,7 +163,7 @@ namespace LPS.Client
 			}
 			if(Data != null)
 			{
-				Data.Dispose();
+				Connection.DisposeDataSet(Data);
 				Data = null;
 			}
 			base.Dispose();

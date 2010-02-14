@@ -26,10 +26,16 @@ namespace LPS.Client
 			}
 		}
 		
-		protected override void DoUpdateValue (object orig_value, object new_value)
+		protected override void DoUpdateValue (BindingInfo info)
 		{
 			if(entry != null)
-				entry.Text = (new_value ?? "").ToString();
+			{
+				entry.Sensitive = info.Enabled && !info.ReadOnly;
+				if(info.ValueIsNull)
+					entry.Text = "";
+				else
+					entry.Text = info.Value.ToString();
+			}
 		}
 
 		protected override void DoValueChanged()

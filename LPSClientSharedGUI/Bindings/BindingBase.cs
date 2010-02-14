@@ -9,7 +9,7 @@ namespace LPS.Client
 		
 		public event BindingValueChanged ValueChanged;
 		public BindingGroup Bindings { get; set; }
-		
+
 		public virtual void OnAdd(BindingGroup bindings)
 		{
 			if(IsMaster)
@@ -21,9 +21,9 @@ namespace LPS.Client
 		public virtual void OnRemove(BindingGroup bindings)
 		{
 			if(IsMaster)
-				DoValueChanged(null, null);
+				DoValueChanged(null, null, true, false);
 			else
-				UpdateValue(null, null);
+				UpdateValue(new BindingInfo(null, null, true, false));
 		}
 
 		protected virtual void Bind()
@@ -37,19 +37,19 @@ namespace LPS.Client
 		protected virtual void Unbind()
 		{
 			if(IsMaster)
-				DoValueChanged(null, null);
+				DoValueChanged(null, null, true, false);
 			else
-				UpdateValue(null, null);
+				UpdateValue(new BindingInfo(null, null, true, false));
 		}
 
-		public virtual void UpdateValue(object orig_value, object new_value)
+		public virtual void UpdateValue(BindingInfo info)
 		{
 			if(IsUpdating)
 				return;
 			IsUpdating = true;
 			try
 			{
-				DoUpdateValue(orig_value, new_value);
+				DoUpdateValue(info);
 			}
 			finally
 			{
@@ -91,13 +91,13 @@ namespace LPS.Client
 		/// <summary>
 		/// Notify others of value change - to update other values
 		/// </summary>
-		protected void DoValueChanged(object orig_value, object new_value)
+		protected void DoValueChanged(object orig_value, object new_value, bool read_only, bool enabled)
 		{
 			try
 			{
 				if(ValueChanged != null)
 				{
-					ValueChanged(this, new BindingValueChangedArgs(orig_value, new_value));
+					ValueChanged(this, new BindingValueChangedArgs(orig_value, new_value, read_only, enabled));
 					AfterValueChanged(new_value, null);
 				}
 			}
@@ -110,7 +110,7 @@ namespace LPS.Client
 		/// <summary>
 		/// Update binded object
 		/// </summary>
-		protected abstract void DoUpdateValue(object orig_value, object new_value);
+		protected abstract void DoUpdateValue(BindingInfo info);
 		
 		/// <summary>
 		/// Update binded object with value from binding
@@ -118,9 +118,9 @@ namespace LPS.Client
 		protected void UpdateValueByBindings()
 		{
 			if(Bindings != null)
-				UpdateValue(Bindings.OriginalValue, Bindings.Value);
+				UpdateValue(Bindings.Info);
 			else
-				UpdateValue(null, null);
+				UpdateValue(new BindingInfo(null, null, true, false));
 		}
 		
 		public virtual void Dispose()

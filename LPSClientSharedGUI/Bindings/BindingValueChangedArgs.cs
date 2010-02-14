@@ -6,27 +6,26 @@ namespace LPS.Client
 
 	public class BindingValueChangedArgs : EventArgs
 	{
-		private object newValue;
-		public object NewValue { get { return newValue; } }
-		
-		private object originalValue;
-		public object OriginalValue { get { return originalValue; } }
-		
-		private bool hasOriginalValue;
-		public bool HasOriginalValue { get { return hasOriginalValue; } }
-		
+		public object NewValue { get; private set; }
+
+		public bool HasAllValues { get; private set; }
+		public object OriginalValue { get; private set; }
+		public bool ReadOnly { get; private set; }
+		public bool Enabled { get; private set; }
+
 		public BindingValueChangedArgs(object NewValue)
 		{
-			this.newValue = NewValue;
-			this.hasOriginalValue = false;
-			this.originalValue = null;
+			this.NewValue = NewValue;
+			this.HasAllValues = false;
 		}
 
-		public BindingValueChangedArgs(object OriginalValue, object NewValue)
+		public BindingValueChangedArgs(object OriginalValue, object NewValue, bool read_only, bool enabled)
 		{
-			this.newValue = NewValue;
-			this.hasOriginalValue = true;
-			this.originalValue = OriginalValue;
+			this.NewValue = NewValue;
+			this.HasAllValues = true;
+			this.OriginalValue = OriginalValue;
+			this.ReadOnly = read_only;
+			this.Enabled = enabled;
 		}
 	}
 }

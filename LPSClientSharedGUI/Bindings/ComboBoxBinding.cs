@@ -83,17 +83,17 @@ namespace LPS.Client
 			base.Unbind();
 		}
 
-		protected override void DoUpdateValue (object orig_value, object new_value)
+		protected override void DoUpdateValue (BindingInfo info)
 		{
 			if(combo == null || combo.Model == null)
 				return;
-			if(new_value == null || new_value == DBNull.Value)
+			if(info.ValueIsNull)
 			{
-				//combo.SetActiveIter(TreeIter.Zero);
 				combo.Active = -1;
 				return;
 			}
-			long id = Convert.ToInt64(new_value);
+			combo.Sensitive = info.Enabled && !info.ReadOnly;
+			long id = Convert.ToInt64(info.Value);
 			TreeIter iter;
 			if(Store.GetIterFirst(out iter))
 			{

@@ -54,7 +54,7 @@ namespace LPS.Client
 		{
 			if(row == null || column == null)
 			{
-				DoValueChanged(null, null);
+				DoValueChanged(null, null, true, false);
 				return;
 			}
 
@@ -69,20 +69,20 @@ namespace LPS.Client
 			else if(row.HasVersion(DataRowVersion.Proposed))
 				val = row[column, DataRowVersion.Proposed];
 
-			DoValueChanged(orig, val);
+			DoValueChanged(orig, val, column.ReadOnly, true);
 		}
 		
-		protected override void DoUpdateValue (object orig_value, object new_value)
+		protected override void DoUpdateValue (BindingInfo info)
 		{
 			if(row == null || column == null)
 				return;
 			
-			Console.WriteLine(String.Format("{0} <-- {1}", column.ColumnName, new_value));
+			//Console.WriteLine(String.Format("{0} <-- {1}", column.ColumnName, info.Value));
 			
-			if(new_value == null || new_value == DBNull.Value)
+			if(info.ValueIsNull)
 				row[column] = DBNull.Value;
 			else
-				row[column] = Convert.ChangeType(new_value, column.DataType);
+				row[column] = Convert.ChangeType(info.Value, column.DataType);
 		}
 
 		bool is_updating;
