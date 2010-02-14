@@ -33,6 +33,8 @@ CREATE TABLE sys_check (
     id bigserial not null primary key,
     kod character varying(10) not null UNIQUE,
     popis text,
+    sql_cmd text,
+    ts_last_run timestamp,
     ts timestamp without time zone DEFAULT now()
 );
 
@@ -46,6 +48,27 @@ CREATE TABLE sys_error (
     ts timestamp without time zone DEFAULT now()
 );
 CREATE INDEX sys_error_table_id on sys_error (table_name, table_id);
+
+CREATE TABLE sys_attachement (
+    id bigserial not null primary key,
+    table_name character varying(40) not null,
+    table_id bigint not null,
+    id_attachement bigint references sys_attachement(id), -- symlink
+    filename character varying(1024) not null,
+    mimetype character varying(40) not null default '',
+    popis text not null,
+
+    id_user_lock bigint references sys_user(id),
+    dt_lock timestamp,
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+CREATE INDEX sys_attachement_table_id on sys_attachement (table_name, table_id);
+
 
 CREATE TABLE sys_gen_cyklus (
     id bigserial not null primary key,
@@ -109,11 +132,10 @@ CREATE TABLE sys_user_preferences (
     path character varying(100) not null,
     name character varying(100) not null,
     type character varying(100) not null,
-    value character varying(100) not null,
+    value text not null,
     ts timestamp without time zone DEFAULT now()
 );
-CREATE INDEX sys_user_preferences_path on sys_user_preferences (path);
-CREATE UNIQUE INDEX sys_user_preferences_path_name on sys_user_preferences (path, name);
+CREATE UNIQUE INDEX sys_user_preferences_usr_path_name on sys_user_preferences (id_user, path, name);
 
 CREATE TABLE c_druh_adresy (
     id bigserial not null primary key,
@@ -233,6 +255,28 @@ INSERT INTO c_stat VALUES (1, 'CZ', 'Česká republika', null, null, null, null,
 INSERT INTO c_stat VALUES (2, 'SK', 'Slovenská republika', null, null, null, null, now());
 
 
+CREATE TABLE c_mena (
+    id bigserial NOT NULL primary key,
+    kod character varying(10) not null UNIQUE,
+    zkratka character varying(10) not null,
+    popis character varying(100) not null default '',
+    format character varying(100) not null default '#,##0.00',
+
+    plati_od timestamp,
+    plati_do timestamp,
+    vychozi bool not null default false,
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+CREATE INDEX c_mena_ts on c_mena (ts);
+INSERT INTO c_mena VALUES (1, 'CZK', 'Kč', 'Česká koruna', '#,##0.00\' Kč\'', null, null, true, 0, now(), 0, now(), now());
+INSERT INTO c_mena VALUES (2, 'EUR', '€', 'Euro', '\'€\'#,##0.00', null, null, false, 0, now(), 0, now(), now());
+
+
 CREATE TABLE adresa (
     id bigserial NOT NULL primary key,
     id_druh_adresy bigint NOT NULL references c_druh_adresy(id),
@@ -285,6 +329,35 @@ CREATE TABLE sys_app_config (
 );
 INSERT INTO sys_app_config VALUES (1, 2010,1,1,'2010-01-01', '24 Promotions s.r.o.', 1, 0, now(), now());
 
+CREATE TABLE c_pobocka
+(
+    id bigserial NOT NULL primary key,
+    kod character varying(10) not null UNIQUE,
+    popis character varying(100) not null default '',
+    id_adresa bigint not null references adresa(id),
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+
+CREATE TABLE c_pokladna
+(
+    id bigserial NOT NULL primary key,
+    kod character varying(10) not null UNIQUE,
+    popis character varying(100) not null default '',
+    id_pobocka bigint references c_pobocka(id),
+    id_mena bigint references c_mena(id),
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+
 CREATE TABLE skl_karta (
     id bigserial NOT NULL primary key,
     cislo character varying(10) UNIQUE,
@@ -314,5 +387,26 @@ CREATE TABLE skl_karta (
     ts timestamp without time zone DEFAULT now()
 );
 CREATE INDEX skl_karta_ts on skl_karta (ts);
+
+-- kurz: mnozstvi id_mena_cizi == hodnota_mnozstvi id_mena_kurz
+-- kurz: 1 id_mena_cizi == hodnota id_mena_kurz
+CREATE TABLE kurz (
+    id bigserial NOT NULL primary key,
+    id_mena_cizi bigint not null references c_mena(id),
+    id_mena_kurz bigint not null references c_mena(id),
+
+    hodnota_mnozstvi decimal(28,14) not null,
+    mnozstvi int not null,
+    hodnota decimal(28,14) not null CHECK (hodnota = (hodnota_mnozstvi / mnozstvi)),
+    
+    plati_od timestamp,
+    plati_do timestamp,
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
 
 
