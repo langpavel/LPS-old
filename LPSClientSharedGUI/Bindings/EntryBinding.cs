@@ -37,6 +37,16 @@ namespace LPS.Client
 			DoValueChanged(entry.Text);
 		}
 
+		protected override void AfterValueChanged(object new_value, Exception error)
+		{
+			if(entry == null)
+				return;
+			if(error != null)
+				entry.ModifyBase(StateType.Normal, new Gdk.Color(255,128,128));
+			else
+				entry.ModifyBase(StateType.Normal, new Gdk.Color(255,255,255));
+		}
+
 		bool is_updating;
 		private void HandleEntryChanged (object sender, EventArgs e)
 		{

@@ -54,7 +54,10 @@ namespace LPS.Client
 			}
 			catch(FormatException)
 			{
-				return null;
+				if(val is String && ((string)val == ""))
+					return null;
+				else
+					throw;
 			}
 		}
 
