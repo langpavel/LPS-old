@@ -297,7 +297,7 @@ CREATE TABLE adresa (
     telefon1 character varying(100),
     telefon2 character varying(100),
     poznamka text,
-    aktivni bool,
+    aktivni bool not null default true,
     fakturacni bool,
     dodaci bool,
     dodavatel bool,

@@ -64,8 +64,10 @@ namespace LPS.Client
 			if(row.HasVersion(DataRowVersion.Original))
 				orig = row[column, DataRowVersion.Original];
 			
-			if(row.HasVersion(DataRowVersion.Default))
-				val = row[column, DataRowVersion.Default];
+			if(row.HasVersion(DataRowVersion.Current))
+				val = row[column, DataRowVersion.Current];
+			else if(row.HasVersion(DataRowVersion.Proposed))
+				val = row[column, DataRowVersion.Proposed];
 
 			DoValueChanged(orig, val);
 		}
