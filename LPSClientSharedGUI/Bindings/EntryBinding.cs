@@ -43,14 +43,26 @@ namespace LPS.Client
 			DoValueChanged(entry.Text);
 		}
 
+		protected void SetBackground(byte r, byte g, byte b)
+		{
+			if(entry == null)
+				return;
+			entry.ModifyBase(StateType.Normal, new Gdk.Color(r,g,b));
+		}
+
+		protected void SetBackgroundByState(bool error)
+		{
+			if(error)
+				SetBackground(255,128,128);
+			else
+				SetBackground(255,255,255);
+		}
+
 		protected override void AfterValueChanged(object new_value, Exception error)
 		{
 			if(entry == null)
 				return;
-			if(error != null)
-				entry.ModifyBase(StateType.Normal, new Gdk.Color(255,128,128));
-			else
-				entry.ModifyBase(StateType.Normal, new Gdk.Color(255,255,255));
+			SetBackgroundByState(error != null);
 		}
 
 		bool is_updating;
@@ -69,9 +81,10 @@ namespace LPS.Client
 			}
 		}
 
-		private void HandleEditingDone (object sender, EventArgs e)
+		void HandleEntryFocusOutEvent (object o, FocusOutEventArgs args)
 		{
-			Log.Info("HandleEditingDone");
+			UpdateValueByBindings();
+			SetBackgroundByState(false);
 		}
 
 		protected override void Bind()
@@ -79,7 +92,7 @@ namespace LPS.Client
 			if(entry != null)
 			{
 				entry.Changed += HandleEntryChanged;
-				entry.EditingDone -= HandleEditingDone;
+				entry.FocusOutEvent += HandleEntryFocusOutEvent;
 			}
 			base.Bind();
 		}
@@ -89,7 +102,7 @@ namespace LPS.Client
 			if(entry != null)
 			{
 				entry.Changed -= HandleEntryChanged;
-				entry.EditingDone -= HandleEditingDone;
+				entry.FocusOutEvent -= HandleEntryFocusOutEvent;
 			}
 			base.Unbind();
 		}

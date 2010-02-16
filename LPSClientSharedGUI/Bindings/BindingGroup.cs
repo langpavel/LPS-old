@@ -53,12 +53,33 @@ namespace LPS.Client
 					return val;
 				return Convert.ChangeType(val, ValType);
 			}
-			catch(FormatException)
+			catch(FormatException err)
 			{
 				if(val is String && ((string)val == ""))
 					return null;
-				else
-					throw;
+				else if (ValType == typeof(DateTime) && val is String)
+				{
+					switch(((string)val).ToLower())
+					{
+					case "today":
+					case "dnes":
+						return DateTime.Today;
+					case "tomorow":
+					case "zítra":
+					case "zitra":
+						return DateTime.Today.AddDays(1.0);
+					case "yesterday":
+					case "včera":
+					case "vcera":
+						return DateTime.Today.AddDays(-1.0);
+					case "now":
+					case "nyní":
+					case "nyni":
+						return DateTime.Now;
+					}
+				}
+				Log.Error(err);
+				throw err;
 			}
 		}
 
@@ -73,7 +94,7 @@ namespace LPS.Client
 				try
 				{
 					this.Info.Value = ConvertValueType(args.NewValue);
-					Log.Debug("{0} - Changed to {1}", sender, this.Info.Value);
+					//Log.Debug("{0} - Changed to {1}", sender, this.Info.Value);
 					if(args.HasAllValues)
 					{
 						this.Info.OriginalValue = ConvertValueType(args.OriginalValue);
