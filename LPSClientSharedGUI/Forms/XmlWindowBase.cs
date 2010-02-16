@@ -60,9 +60,9 @@ namespace LPS.Client
 					catch(Exception ex)
 					{
 						if(obj == null)
-							Console.WriteLine("Destroy err - OwnedComponents null: {0}", ex);
+							Log.Error("Destroy err - OwnedComponents null: {0}", ex);
 						else
-							Console.WriteLine("Destroy err - _OwnedComponents: {0} {1}", obj.GetType(), ex);
+							Log.Error("Destroy err - _OwnedComponents: {0} {1}", obj.GetType(), ex);
 					}
 				}
 				_OwnedComponents = null;

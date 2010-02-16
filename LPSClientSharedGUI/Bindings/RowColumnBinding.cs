@@ -77,7 +77,7 @@ namespace LPS.Client
 			if(row == null || column == null)
 				return;
 			
-			//Console.WriteLine(String.Format("{0} <-- {1}", column.ColumnName, info.Value));
+			Log.Debug("RowColumnBinding.DoUpdateValue: {0} <-- {1}", column.ColumnName, info.Value);
 			
 			if(info.ValueIsNull)
 				row[column] = DBNull.Value;

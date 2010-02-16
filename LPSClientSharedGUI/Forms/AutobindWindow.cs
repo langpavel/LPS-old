@@ -16,41 +16,47 @@ namespace LPS.Client
 		
 		public override void OnCreate ()
 		{
-			base.OnCreate ();
-			CreateToolbarItems();
-			this.statusbar = this.GetWidgetByName("statusbar") as Statusbar;
-			DataSource = new RowDataSource();
-			DataSource.RowChanged += HandleRowChanged;
+			using(Log.Scope("AutobindWindow.OnCreate"))
+			{
+				base.OnCreate ();
+				CreateToolbarItems();
+				this.statusbar = this.GetWidgetByName("statusbar") as Statusbar;
+				DataSource = new RowDataSource();
+				DataSource.RowChanged += HandleRowChanged;
+			}
 		}
 
 		protected virtual void Autobind(DataRow row, TableInfo info)
 		{
-			foreach(Widget w in new DeepEnumerator(this.Window.GetEnumerator()))
+			using(Log.Scope("AutobindWindow.Autobind"))
 			{
-				string name = w.Name;
-				if(name.StartsWith("edt_"))
-					name = name.Substring(4);
-				else if(name.StartsWith("db_"))
-					name = name.Substring(3);
-				else
-					continue;
-				
-				try
+				foreach(Widget w in new DeepEnumerator(this.Window.GetEnumerator()))
 				{
-					DataTable table = Row.Table;
-					DataColumn col = table.Columns[name];
+					string name = w.Name;
+					if(name.StartsWith("edt_"))
+						name = name.Substring(4);
+					else if(name.StartsWith("db_"))
+						name = name.Substring(3);
+					else
+						continue;
 					
-					BindWidget(col, w, this.TableInfo.GetColumnInfo(name));
+					try
+					{
+						DataTable table = Row.Table;
+						DataColumn col = table.Columns[name];
+						
+						BindWidget(col, w, this.TableInfo.GetColumnInfo(name));
+					}
+					catch(Exception ex)
+					{
+						Log.Error(ex);
+					}
 				}
-				catch(Exception ex)
-				{
-					Console.WriteLine(ex);
-				}
+				if(Statusbar != null)
+					Statusbar.Push(1, "");
+	
+				binded = true;
 			}
-			if(Statusbar != null)
-				Statusbar.Push(1, "");
-
-			binded = true;
 		}
 
 		public void BindWidget(DataColumn col, Widget w, ColumnInfo colinfo)
@@ -92,10 +98,13 @@ namespace LPS.Client
 			get { return _Row; }
 			set 
 			{
-				_Row = value;
-				if(_Row != null && !binded)
-					Autobind(_Row, this.TableInfo);
-				DataSource.Row = _Row;
+				using(Log.Scope("AutobindWindow.DataSource.Row changed"))
+				{
+					_Row = value;
+					if(_Row != null && !binded)
+						Autobind(_Row, this.TableInfo);
+					DataSource.Row = _Row;
+				}
 			}
 		}
 		
@@ -136,15 +145,18 @@ namespace LPS.Client
 		
 		protected virtual void Load(string table_name, long id)
 		{
-			WindowTitle = TableInfo.DetailCaption;
-			if(String.IsNullOrEmpty(WindowTitle))
-				WindowTitle = this.Window.Title;
-			if(String.IsNullOrEmpty(WindowTitle))
-				WindowTitle = "{kod} - {popis}";
-
-			Data = Connection.GetDataSetByName(table_name, "", "id", id);
-			if(Data.Tables[0].Rows.Count > 0)
-				this.Row = Data.Tables[0].Rows[0];
+			using(Log.Scope("AutobindWindow.Load('{0}', {1})", table_name, id))
+			{
+				WindowTitle = TableInfo.DetailCaption;
+				if(String.IsNullOrEmpty(WindowTitle))
+					WindowTitle = this.Window.Title;
+				if(String.IsNullOrEmpty(WindowTitle))
+					WindowTitle = "{kod} - {popis}";
+	
+				Data = Connection.GetDataSetByName(table_name, "", "id", id);
+				if(Data.Tables[0].Rows.Count > 0)
+					this.Row = Data.Tables[0].Rows[0];
+			}
 		}
 		
 		protected virtual void OnNewRow(DataRow row)
@@ -153,20 +165,23 @@ namespace LPS.Client
 		
 		public override void Dispose ()
 		{
-			if(this.Destroyed != null)
-				this.Destroyed(this, EventArgs.Empty);
-			if(DataSource != null)
+			using(Log.Scope("AutobindWindow.Dispose"))
 			{
-				DataSource.RowChanged -= HandleRowChanged;
-				DataSource.Dispose();
-				DataSource = null;
+				if(this.Destroyed != null)
+					this.Destroyed(this, EventArgs.Empty);
+				if(DataSource != null)
+				{
+					DataSource.RowChanged -= HandleRowChanged;
+					DataSource.Dispose();
+					DataSource = null;
+				}
+				if(Data != null)
+				{
+					Connection.DisposeDataSet(Data);
+					Data = null;
+				}
+				base.Dispose();
 			}
-			if(Data != null)
-			{
-				Connection.DisposeDataSet(Data);
-				Data = null;
-			}
-			base.Dispose();
 		}
 		
 		public Widget GetWidgetByName(string name)
@@ -344,7 +359,6 @@ namespace LPS.Client
 		{
 			get { return this.TableInfo.DetailName; }
 		}
-
 
 		public long Id
 		{

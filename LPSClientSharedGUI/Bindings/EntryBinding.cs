@@ -68,18 +68,29 @@ namespace LPS.Client
 				is_updating = false;
 			}
 		}
-		
+
+		private void HandleEditingDone (object sender, EventArgs e)
+		{
+			Log.Info("HandleEditingDone");
+		}
+
 		protected override void Bind()
 		{
 			if(entry != null)
+			{
 				entry.Changed += HandleEntryChanged;
+				entry.EditingDone -= HandleEditingDone;
+			}
 			base.Bind();
 		}
 
 		protected override void Unbind()
 		{
 			if(entry != null)
+			{
 				entry.Changed -= HandleEntryChanged;
+				entry.EditingDone -= HandleEditingDone;
+			}
 			base.Unbind();
 		}
 		

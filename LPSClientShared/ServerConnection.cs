@@ -30,7 +30,8 @@ namespace LPS.Client
 			this.Server.CookieContainer = CookieContainer;
 			this.cached_datasets = new Dictionary<string, DataSet>();
 			_instance = this;
-			_resource_manager = new ResourceManager(this);
+			resource_manager = new ResourceManager(this);
+			configuration_store = new ConfigurationStore(this);
 		}
 
 		private static string _url;
@@ -47,21 +48,21 @@ namespace LPS.Client
 		public long UserId { get; set; }
 		public DataTable Users 
 		{ 
-			get
-			{
-				return this.GetCachedDataSet("sys_user").Tables[0];
-			}
+			get { return this.GetCachedDataSet("sys_user").Tables[0]; }
 		}
 
-		private ResourceManager _resource_manager;
+		private ResourceManager resource_manager;
 		public ResourceManager Resources
 		{
-			get
-			{
-				return _resource_manager;
-			}
+			get	{ return resource_manager; }
 		}
-		
+
+		private ConfigurationStore configuration_store;
+		public ConfigurationStore Configuration
+		{
+			get { return configuration_store; }
+		}
+
 		private static System.Net.CookieContainer CookieContainer;
 		private LPSClientShared.LPSServer.Server Server;
 		private int sink = -1;
@@ -71,10 +72,10 @@ namespace LPS.Client
 		{
 			try
 			{
+				FlushCache();
 				this.Logout();
 			}
 			catch { }
-			FlushCache();
 			this.Server.Dispose();
 			this.Server = null;
 		}
@@ -243,7 +244,10 @@ namespace LPS.Client
 		public void DisposeDataSet(DataSet ds)
 		{
 			if(ds != null)
+			{
 				this.updater.RemoveDataSet(ds);
+				ds.Dispose();
+			}
 		}
 
 		public int SaveDataSet(DataSet dataset, bool updateUserInfo)
@@ -278,7 +282,7 @@ namespace LPS.Client
 			List<DataSet> copy = new List<DataSet>(cached_datasets.Values);
 			foreach(DataSet ds in copy)
 			{
-				ds.Dispose();
+				this.DisposeDataSet(ds);
 			}
 			cached_datasets.Clear();
 		}
@@ -299,5 +303,9 @@ namespace LPS.Client
 			return result;
 		}
 
+		public void CheckChanges()
+		{
+			CheckServerResult(Server.GetChanges(this.sink, this.security));
+		}
 	}
 }

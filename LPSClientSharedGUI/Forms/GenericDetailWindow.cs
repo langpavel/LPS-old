@@ -25,6 +25,7 @@ namespace LPS.Client
 			{
 				result = new CheckButton(caption);
 			}
+/*
 			else if(db_col.DataType == typeof(DateTime))
 			{
 				Label label = new Label(caption);
@@ -33,7 +34,6 @@ namespace LPS.Client
 				
 				Entry dateEntry = new Entry();
 				dateEntry.ButtonPressEvent += delegate {
-					Console.WriteLine("Blablablablalba");
 //					Gtk.Calendar calend = new Calendar();
 //					calend.ShowAll();
 					
@@ -42,6 +42,7 @@ namespace LPS.Client
 				
 			}
 			else
+*/
 			{
 				Label label = new Label(caption);
 				label.UseUnderline = false;

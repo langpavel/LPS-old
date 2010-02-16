@@ -67,26 +67,29 @@ namespace LPS.Client
 		{
 			if(is_updating)
 				return;
-			is_updating = true;
-			try
+			using(Log.Scope("Aktualizace hodnoty BindingGroup"))
 			{
-				this.Info.Value = ConvertValueType(args.NewValue);
-				//Console.WriteLine("{0} - Changed to {1}", sender, this.Info.Value);
-				if(args.HasAllValues)
+				is_updating = true;
+				try
 				{
-					this.Info.OriginalValue = ConvertValueType(args.OriginalValue);
-					this.Info.ReadOnly = args.ReadOnly;
-					this.Info.Enabled = args.Enabled;
+					this.Info.Value = ConvertValueType(args.NewValue);
+					Log.Debug("{0} - Changed to {1}", sender, this.Info.Value);
+					if(args.HasAllValues)
+					{
+						this.Info.OriginalValue = ConvertValueType(args.OriginalValue);
+						this.Info.ReadOnly = args.ReadOnly;
+						this.Info.Enabled = args.Enabled;
+					}
+					foreach(IBinding b in this)
+					{
+						if(b != sender)
+							b.UpdateValue(this.Info);
+					}
 				}
-				foreach(IBinding b in this)
+				finally
 				{
-					if(b != sender)
-						b.UpdateValue(this.Info);
+					is_updating = false;
 				}
-			}
-			finally
-			{
-				is_updating = false;
 			}
 		}
 		

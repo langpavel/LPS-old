@@ -75,7 +75,6 @@ namespace ImportHelper
 		
 		public MainClass(string[] atgs)
 		{
-			Console.WriteLine ("Hello World!");
 			Connection = new NpgsqlConnection();
 		}
 		
@@ -99,7 +98,7 @@ namespace ImportHelper
 				}
 			}
 			int cnt = LPS.SaveDataSet(Adresa);
-			Console.WriteLine("SAVE: {0}", cnt);
+			Log.Debug("SAVE: {0}", cnt);
 		}
 		
 		public void ProcessAddressRow(string objed, string packed)
@@ -114,7 +113,7 @@ namespace ImportHelper
 				Addr116(objed, packed, parts);
 				break;
 			default:
-				Console.WriteLine(parts.Length.ToString() + ": " + packed);
+				Log.Debug(parts.Length.ToString() + ": " + packed);
 				break;
 			}
 		}

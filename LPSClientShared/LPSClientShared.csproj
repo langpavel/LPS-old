@@ -49,6 +49,7 @@
     <Compile Include="Web References\LPSServer\Reference.cs" />
     <Compile Include="ServerException.cs" />
     <Compile Include="ChangesUpdater\ChangesUpdater.cs" />
+    <Compile Include="ConfigurationStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPSShared\LPSShared.csproj">

@@ -31,15 +31,18 @@ namespace LPS.Client.Sklad
 			else 
 				return MainApp.MainForm.Window; } 
 		}
-			
+
 		public MainApp(string[] args)
 		{
+			Log.Add(new TextLogger(Console.Out, Verbosity.Debug));
+
 			Args = args;
 			ExeName = Assembly.GetEntryAssembly().Location;
 			
 			Application.Init(ExeName, ref args);
 			
 			GtkTheme.LoadGtkResourceFile();
+			LogWindow.Instance.ShowAll();
 
 			FormFactory.Register(new FormXmlResourceInfo<LoginDialog>("login", "ui-shared.glade", "dialogLogin"));
 			FormFactory.Register(new FormXmlResourceInfo<PasswdChDialog>("chpasswd", "ui-shared.glade", "dialogPswChange"));
@@ -57,8 +60,10 @@ namespace LPS.Client.Sklad
 			MainForm frm = FormFactory.Create<MainForm>("main");
 			MainApp.MainForm = frm;
 			frm.ShowAll();
-			
+
 			Run();
+
+			Log.DisposeLoggers();
 		}
 
 		void HandleUnhandledException (GLib.UnhandledExceptionArgs args)

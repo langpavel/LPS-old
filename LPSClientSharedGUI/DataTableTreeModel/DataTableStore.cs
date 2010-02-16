@@ -19,8 +19,9 @@
 using System;
 using System.Data;
 using Gtk;
+using LPS;
 
-namespace LPSClient
+namespace LPS.Client
 {
 		[Obsolete("Nejlepsi je paradoxne DataTableListStoreBinding")]
         public class DataTableStore : GLib.Object, Gtk.TreeModelImplementor
@@ -324,7 +325,7 @@ namespace LPSClient
                 private void Row_Changing (System.Object o, System.Data.DataRowChangeEventArgs e) {
                         if ((e.Action & System.Data.DataRowAction.Delete) == System.Data.DataRowAction.Delete)
                                 RowsToBeDeleted.Add (e.Row, PathFromRow (e.Row));
-                        System.Console.WriteLine ("Note: Action {0} is performed in DataTable", e.Action.ToString ());
+                        Log.Debug("Note: Action {0} is performed in DataTable", e.Action.ToString ());
                 }
                
                 private void Row_Changed(System.Object obj, System.Data.DataRowChangeEventArgs e) {
@@ -334,12 +335,12 @@ namespace LPSClient
                                 pAdapter.EmitRowChanged (PathFromRow (e.Row), IterFromRow (e.Row));
                         else if ((e.Action & System.Data.DataRowAction.Delete) == System.Data.DataRowAction.Delete) {
                                 Gtk.TreePath delPath = RowsToBeDeleted [e.Row];
-                                System.Console.WriteLine ("Removed row, path: {0}", delPath.Indices [0]);
+                                Log.Debug("Removed row, path: {0}", delPath.Indices [0]);
                                 RowsToBeDeleted.Remove (e.Row);
                                 pAdapter.EmitRowDeleted (delPath);
                                
                                 foreach (Gtk.TreePath currPath in RowsToBeDeleted.Values) {
-                                        System.Console.WriteLine ("Looking for a TreePath to be changed");
+                                        Log.Debug("Looking for a TreePath to be changed");
                                         if (currPath.Indices [0] > delPath.Indices [0]) {
                                                 if (!currPath.Prev ())
                                                         throw (new System.ApplicationException ("Moving TreePath to previous element failed"));
@@ -348,7 +349,7 @@ namespace LPSClient
                                 }
                                 delPath.Dispose ();
                         } else
-                                System.Console.WriteLine ("Note: Unhandled action {0} performed in DataTable", e.Action.ToString ());
+                                Log.Warning("Note: Unhandled action {0} performed in DataTable", e.Action.ToString ());
                 }
                
                 private void Table_Cleared(System.Object sender, System.Data.DataTableClearEventArgs e) {

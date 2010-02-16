@@ -50,10 +50,16 @@
     <Compile Include="Interfaces\IResourceStore.cs" />
     <Compile Include="Interfaces\IListInfo.cs" />
     <Compile Include="Interfaces\ILookupInfo.cs" />
+    <Compile Include="Interfaces\IConfiguration.cs" />
+    <Compile Include="Logging\Log.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\LogScope.cs" />
+    <Compile Include="Logging\TextLogger.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Exceptions\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Logging\" />
   </ItemGroup>
 </Project>

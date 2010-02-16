@@ -98,5 +98,6 @@
     <None Include="resources\tables\c_stat.xml" />
     <None Include="resources\forms\adresa.xml" />
     <None Include="resources\forms\composits\adresa-mini.xml" />
+    <None Include="resources\tables\sys_user_preferences.xml" />
   </ItemGroup>
 </Project>

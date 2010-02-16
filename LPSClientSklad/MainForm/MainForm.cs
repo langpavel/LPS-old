@@ -3,6 +3,7 @@ using System.Data;
 using Gtk;
 using LPS;
 using LPS.Client;
+using System.Collections.Generic;
 
 namespace LPS.Client.Sklad
 {
@@ -30,6 +31,7 @@ namespace LPS.Client.Sklad
 			this.Window.Title = "LPS Sklad: " + Connection.GetUserName() + " (" + this.UserLogin + ")@" + this.ServerUrl;
 			
 			this.Window.DeleteEvent += delegate {
+				this.OnClose();
 				Application.Quit();
 			};
 			
@@ -38,6 +40,31 @@ namespace LPS.Client.Sklad
 			InitModules(false);
 			
 			DataTableListStoreBinding.CreateColumnTreeViewColumns(viewColumns);
+
+			string[] opened_tabs = Connection.Configuration.GetConfiguration<string[]>("main", "opened_tabs", null);
+			if(opened_tabs != null && opened_tabs.Length != 0)
+			{
+				foreach(string tab_name in opened_tabs)
+				{
+					try
+					{
+						this.ShowModuleTab(Connection.Resources.GetModulesInfo(tab_name));
+					}
+					catch { }
+				}
+			}
+		}
+
+		protected virtual void OnClose()
+		{
+			try
+			{
+				List<string> tabs = new List<string>();
+				for(int i=0; i<nbData.NPages; i++)
+					tabs.Add(((ListPage)nbData.GetNthPage(i)).Module.Id);
+				Connection.Configuration.SaveConfiguration("main", "opened_tabs", tabs.ToArray());
+			}
+			catch { }
 		}
 
 		public ListPage GetCurrentPage()
@@ -108,6 +135,7 @@ namespace LPS.Client.Sklad
 		#region Action handlers
 		public void AppQuit(object sender, EventArgs args)
 		{
+			this.OnClose();
 			Connection.Dispose();
 			Application.Quit();
 		}

@@ -13,17 +13,17 @@ namespace LPS.Client
 			{
 				if(!File.Exists(filename))
 				{
-					Console.WriteLine("Gtk resource {0} not exists", filename);
+					Log.Error("Gtk resource {0} not exists", filename);
 					return false;
 				}
      			Gtk.Rc.AddDefaultFile(filename);
      			Gtk.Rc.Parse(filename);
-				Console.WriteLine("Gtk resource {0} loaded", filename);
+				Log.Info("Gtk resource {0} loaded", filename);
 				return true;
 			}
-			catch
+			catch(Exception ex)
 			{
-				Console.WriteLine("Gtk resource {0} failed to load", filename);
+				Log.Error("Gtk resource {0} failed to load: {1}", filename, ex);
 				return false;
 			}
 		}

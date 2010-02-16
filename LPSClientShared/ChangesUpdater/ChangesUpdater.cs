@@ -48,7 +48,7 @@ namespace LPS.Client
 				dslist.Add(ds);
 				ds.ExtendedProperties["UPDATER_LIST"] = dslist;
 				ds.ExtendedProperties["UPDATER_TABLE"] = tablename;
-				Console.WriteLine("Updater registered {0}", tablename);
+				Log.Debug("Updater registered {0}", tablename);
 			}
 		}
 
@@ -61,14 +61,14 @@ namespace LPS.Client
 				if(dslist != null)
 				{
 					dslist.Remove(ds);
-					Console.WriteLine("Updater unregistered {0}", tablename);
+					Log.Debug("Updater unregistered {0}", tablename);
 				}
 			}
 		}
 
 		private void CheckUpdatesAsync()
 		{
-			//Console.WriteLine("{0} - Thd{1}: CheckUpdatesAsync", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
+			//Log.Debug("{0} - Thd{1}: CheckUpdatesAsync", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
 			lock(this)
 			{
 				if(this.terminate)
@@ -80,7 +80,7 @@ namespace LPS.Client
 		private LPSClientShared.LPSServer.ChangeInfo[] l_changes;
 		private void CheckUpdatesAsyncEnd(IAsyncResult aresult)
 		{
-			//Console.WriteLine("{0} - Thd{1}: CheckUpdatesAsyncEnd", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
+			//Log.Debug("{0} - Thd{1}: CheckUpdatesAsyncEnd", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
 			LPSClientShared.LPSServer.ServerCallResult result;
 			lock(this)
 			{
@@ -90,14 +90,14 @@ namespace LPS.Client
 			}
 			if(result.Changes != null && result.Changes.Length > 0)
 			{
-				//Console.WriteLine("{0} - Thd{1}: CheckUpdatesAsyncEnd - changes found!", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
+				//Log.Debug("{0} - Thd{1}: CheckUpdatesAsyncEnd - changes found!", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
 				lock(this)
 					l_changes = result.Changes;
 				GLib.Timeout.Add(0, CheckUpdatesSync);
 			}
 			else
 			{
-				//Console.WriteLine("{0} - Thd{1}: CheckUpdatesAsyncEnd - changes not found, waiting 1s", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
+				//Log.Debug("{0} - Thd{1}: CheckUpdatesAsyncEnd - changes not found, waiting 1s", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
 				Thread.Sleep(3000);
 				lock(this)
 				{
@@ -110,37 +110,40 @@ namespace LPS.Client
 
 		private bool CheckUpdatesSync()
 		{
-			Console.WriteLine("{0} - Thd{1}: CheckUpdatesAsyncEnd", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
-			LPSClientShared.LPSServer.ChangeInfo[] changes;
-			lock(this)
+			using(Log.Scope("CheckUpdatesSync - synchronní kontrola změn"))
 			{
-				if(this.terminate)
+				Log.Debug("{0} - Thd{1}: CheckUpdatesAsyncEnd", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
+				LPSClientShared.LPSServer.ChangeInfo[] changes;
+				lock(this)
+				{
+					if(this.terminate)
+						return false;
+					changes = l_changes;
+					l_changes = null;
+				}
+				if(changes == null)
+				{
+					Log.Debug("{0} - Thd{1}: CheckUpdatesAsyncEnd changes == null!!!", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
+					CheckUpdatesAsync();
 					return false;
-				changes = l_changes;
-				l_changes = null;
-			}
-			if(changes == null)
-			{
-				Console.WriteLine("{0} - Thd{1}: CheckUpdatesAsyncEnd changes == null!!!", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
-				CheckUpdatesAsync();
-				return false;
-			}
-			else
-			{
-				DoUpdates(changes);
-				CheckUpdatesAsync();
-				return false;
+				}
+				else
+				{
+					DoUpdates(changes);
+					CheckUpdatesAsync();
+					return false;
+				}
 			}
 		}
 
 		public void DoUpdates(LPSClientShared.LPSServer.ChangeInfo[] changes)
 		{
-			Console.WriteLine("{0} - Thd{1}: DoUpdates", DateTime.Now, Thread.CurrentThread.ManagedThreadId);
+			using(Log.Scope("{0} - Thd{1}: DoUpdates", DateTime.Now, Thread.CurrentThread.ManagedThreadId))
 			lock(this)
 			{
 				foreach(LPSClientShared.LPSServer.ChangeInfo change in changes)
 				{
-					Console.WriteLine(" * Modify DT: {0}: table {1} {2}",
+					Log.Debug(" * Modify DT: {0}: table {1} {2}",
 						change.ModifyDateTime,
 						change.TableName,
 						change.HasDeletedRows?"was updated and some rows deleted":"was updated");
@@ -178,7 +181,7 @@ namespace LPS.Client
 				}
 				foreach(long id in for_removal)
 				{
-					Console.WriteLine("remove id {0}", id);
+					Log.Debug("remove id {0}", id);
 					DataRow r = dest.Rows.Find(id);
 					if(r != null)
 						dest.Rows.Remove(r);

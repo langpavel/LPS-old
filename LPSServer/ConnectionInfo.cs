@@ -552,24 +552,28 @@ namespace LPS.Server
 		
 		public int SaveDataSet(string tablename, DataSet changes, bool updateUserInfo, bool changesNotify)
 		{
-			try
+			using(Log.Scope("SaveDataSet: table {0}", tablename))
 			{
-				using(DataTableUpdater updater = new DataTableUpdater(this, changes.Tables[0], tablename))
+				try
 				{
-					updater.UpdateUserInfo = updateUserInfo;
-					updater.NotifyChangeSink = changesNotify;
-					return updater.Run();
+					using(DataTableUpdater updater = new DataTableUpdater(this, changes.Tables[0], tablename))
+					{
+						updater.UpdateUserInfo = updateUserInfo;
+						updater.NotifyChangeSink = changesNotify;
+						return updater.Run();
+					}
 				}
-			}
-			catch(Exception ex)
-			{
-				Console.WriteLine(ex.ToString());
-				throw;
+				catch(Exception ex)
+				{
+					Log.Error(ex);
+					throw;
+				}
 			}
 		}
 
 		public string GetGeneratorValue(string generator, DateTime sys_date)
 		{
+			using(Log.Scope("GetGeneratorValue({0},{1})", generator, sys_date))
 			lock(this.GetType())
 			{
 				NpgsqlTransaction tr = Connection.BeginTransaction();
@@ -649,11 +653,13 @@ namespace LPS.Server
 					}
 					tr.Commit();
 					ServerChangeSink.AddNewData("sys_gen_value", dt_now, false);
+					Log.Debug("Generator value: '{0}'", result);
 					return result;
 				}
-				catch
+				catch(Exception err)
 				{
 					tr.Rollback();
+					Log.Error(err);
 					throw;
 				}
 				finally
