@@ -39,7 +39,7 @@ namespace LPS.Client
 			scope_iters = new Dictionary<LogScope, TreeIter?>();
 
 			store = new TreeStore(
-				typeof(string), typeof(int), typeof(string), typeof(string), typeof(string), typeof(object));
+				typeof(string), typeof(int), typeof(string), typeof(string), typeof(string), typeof(string));
 
 			mainbox = new VBox();
 			this.Add(mainbox);
@@ -49,6 +49,7 @@ namespace LPS.Client
 			view.AppendColumn("Druh", new CellRendererText(), "text", 2);
 			view.AppendColumn("Text", new CellRendererText(), "text", 3);
 			view.AppendColumn("Unístění", new CellRendererText(), "text", 4);
+			view.AppendColumn("Trvání", new CellRendererText(), "text", 5);
 			view.ShowExpanders = true;
 			view.EnableTreeLines = true;
 			view.EnableGridLines = TreeViewGridLines.Vertical;
@@ -97,9 +98,9 @@ namespace LPS.Client
 		private TreeIter AppendValues(TreeIter? parent, DateTime dt, int verbosity, string verbosity_text, string text, string source)
 		{
 			if(parent != null)
-				return store.AppendValues((TreeIter)parent, dt.ToString("hh:mm:ss.ffffff"), verbosity, verbosity_text, text, source);
+				return store.AppendValues((TreeIter)parent, dt.ToString("hh:mm:ss.ffffff"), verbosity, verbosity_text, text, source, "");
 			else
-				return store.AppendValues(dt.ToString("hh:mm:ss.ffffff"), verbosity, verbosity_text, text, source);
+				return store.AppendValues(dt.ToString("hh:mm:ss.ffffff"), verbosity, verbosity_text, text, source, "");
 		}
 
 		TreeIter? FindParentIter(LogScope scope)
@@ -121,10 +122,23 @@ namespace LPS.Client
 			while(s != null && s.ParentScope != scope)
 			{
 				iter = AppendValues(iter, s.CreateDateTime, -1, "", s.Text, s.Source);
+				s.Disposed += ScopeDisposed;
 				scope_iters[s] = iter;
 				s = s.ChildScope;
 			}
 			return iter;
+		}
+
+		void ScopeDisposed(object sender, EventArgs e)
+		{
+			LogScope s = (LogScope)sender;
+			TreeIter? iter;
+			if(scope_iters.TryGetValue(s, out iter))
+			{
+				scope_iters.Remove(s);
+				TimeSpan span = DateTime.Now - s.CreateDateTime;
+				store.SetValue((TreeIter)iter, 5, span.ToString());
+			}
 		}
 
 		public override void Dispose ()
