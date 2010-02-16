@@ -50,6 +50,8 @@
     <Compile Include="ServerException.cs" />
     <Compile Include="ChangesUpdater\ChangesUpdater.cs" />
     <Compile Include="ConfigurationStore.cs" />
+    <Compile Include="BadPasswordException.cs" />
+    <Compile Include="LoginRequiredException.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPSShared\LPSShared.csproj">

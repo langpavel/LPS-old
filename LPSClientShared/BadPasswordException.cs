@@ -1,6 +1,6 @@
 using System;
 
-namespace LPSServer
+namespace LPS
 {
 	[Serializable]
 	public class BadPasswordException : Exception

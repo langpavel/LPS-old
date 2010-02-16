@@ -81,6 +81,7 @@
     <Folder Include="ChangeSink\" />
     <Folder Include="resources\forms\" />
     <Folder Include="resources\forms\composits\" />
+    <Folder Include="sql\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\tree.xml" />
@@ -114,5 +115,7 @@
     <None Include="resources\tables\sys_gen_cyklus.xml" />
     <None Include="resources\tables\sys_gen_value.xml" />
     <None Include="resources\tables\sys_check.xml" />
+    <None Include="sql\database.sql" />
+    <None Include="sql\usefull.sql" />
   </ItemGroup>
 </Project>
