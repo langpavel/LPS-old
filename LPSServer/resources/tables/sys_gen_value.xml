@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="sys_gen_value" name="sys_gen_value" text="Gen value">
+	<detail-caption>Gen value</detail-caption>
+	<desc>Tabulka Gen value</desc>
+	<list-sql>select * from sys_gen_value {where}</list-sql>
+	<detail-name>generic</detail-name>
+	<columns>
+		<column name="id" caption="Id" visible="true" editable="true" required="true" unique="true" width="0">
+			<desc>Id</desc>
+		</column>
+		<column name="id_gen" caption="Gen" visible="true" editable="true" required="true" unique="true" width="0">
+			<desc>Gen</desc>
+		</column>
+		<column name="id_gen" caption="Gen" visible="true" editable="true" required="true" unique="false" width="0">
+			<ref-table>sys_gen</ref-table>
+			<desc>Gen</desc>
+		</column>
+		<column name="year" caption="Year" visible="true" editable="true" required="true" unique="true" width="0">
+			<desc>Year</desc>
+		</column>
+		<column name="month" caption="Month" visible="true" editable="true" required="true" unique="true" width="0">
+			<desc>Month</desc>
+		</column>
+		<column name="week" caption="Week" visible="true" editable="true" required="true" unique="true" width="0">
+			<desc>Week</desc>
+		</column>
+		<column name="day" caption="Day" visible="true" editable="true" required="true" unique="true" width="0">
+			<desc>Day</desc>
+		</column>
+		<column name="value" caption="Value" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Value</desc>
+		</column>
+		<column name="user_lock" caption="User lock" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>User lock</desc>
+		</column>
+		<column name="ts" caption="Ts" visible="true" editable="true" required="false" unique="false" width="0">
+			<desc>Ts</desc>
+		</column>
+	</columns>
+</table>

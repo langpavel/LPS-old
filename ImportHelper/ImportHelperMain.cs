@@ -240,14 +240,7 @@ namespace ImportHelper
 					DataSet ds = null;
 					try 
 					{
-						try
-						{
-							ds = LPS.GetDataSetSimple(item.ListSql + " where 1=0");
-						}
-						catch
-						{
-							ds = LPS.GetDataSetSimple(item.ListSql + " and 1=0");
-						}
+						ds = LPS.GetDataSetByName(item.Id, "where 1=0");
 						Console.WriteLine(item.ListSql);
 						foreach(DataColumn column in ds.Tables[0].Columns)
 						{

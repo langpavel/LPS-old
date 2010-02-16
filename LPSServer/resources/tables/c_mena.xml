@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="c_mena" name="c_mena" text="Mena">
+	<detail-caption>Mena</detail-caption>
+	<desc>Tabulka Mena</desc>
+	<list-sql>select * from c_mena {where}</list-sql>
+	<detail-name>generic</detail-name>
+	<columns>
+		<column name="id" caption="Id" visible="true" editable="true" required="true" unique="true" width="0">
+			<desc>Id</desc>
+		</column>
+		<column name="kod" caption="Kod" visible="true" editable="true" required="true" unique="true" width="0">
+			<desc>Kod</desc>
+		</column>
+		<column name="zkratka" caption="Zkratka" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Zkratka</desc>
+		</column>
+		<column name="popis" caption="Popis" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Popis</desc>
+		</column>
+		<column name="format" caption="Format" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Format</desc>
+		</column>
+		<column name="plati_od" caption="Plati od" visible="true" editable="true" required="false" unique="false" width="0">
+			<desc>Plati od</desc>
+		</column>
+		<column name="plati_do" caption="Plati do" visible="true" editable="true" required="false" unique="false" width="0">
+			<desc>Plati do</desc>
+		</column>
+		<column name="vychozi" caption="Vychozi" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Vychozi</desc>
+		</column>
+		<column name="id_user_create" caption="User create" visible="true" editable="true" required="false" unique="false" width="0">
+			<ref-table>sys_user</ref-table>
+			<desc>User create</desc>
+		</column>
+		<column name="dt_create" caption="Dt create" visible="true" editable="true" required="false" unique="false" width="0">
+			<desc>Dt create</desc>
+		</column>
+		<column name="id_user_modify" caption="User modify" visible="true" editable="true" required="false" unique="false" width="0">
+			<ref-table>sys_user</ref-table>
+			<desc>User modify</desc>
+		</column>
+		<column name="dt_modify" caption="Dt modify" visible="true" editable="true" required="false" unique="false" width="0">
+			<desc>Dt modify</desc>
+		</column>
+		<column name="ts" caption="Ts" visible="true" editable="true" required="false" unique="false" width="0">
+			<desc>Ts</desc>
+		</column>
+	</columns>
+</table>

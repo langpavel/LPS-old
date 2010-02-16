@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="sys_gen_cyklus" name="sys_gen_cyklus" text="Gen cyklus">
+	<detail-caption>Gen cyklus</detail-caption>
+	<desc>Tabulka Gen cyklus</desc>
+	<list-sql>select * from sys_gen_cyklus {where}</list-sql>
+	<detail-name>generic</detail-name>
+	<columns>
+		<column name="id" caption="Id" visible="true" editable="true" required="true" unique="true" width="0">
+			<desc>Id</desc>
+		</column>
+		<column name="kod" caption="Kod" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Kod</desc>
+		</column>
+		<column name="name" caption="Name" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Name</desc>
+		</column>
+		<column name="sys_date" caption="Sys date" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Sys date</desc>
+		</column>
+		<column name="year" caption="Year" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Year</desc>
+		</column>
+		<column name="month" caption="Month" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Month</desc>
+		</column>
+		<column name="week" caption="Week" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Week</desc>
+		</column>
+		<column name="day" caption="Day" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Day</desc>
+		</column>
+	</columns>
+</table>

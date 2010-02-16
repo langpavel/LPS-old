@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="skl_pohyb" name="skl_pohyb" text="Skl pohyb">
+	<detail-caption>Skl pohyb</detail-caption>
+	<desc>Tabulka Skl pohyb</desc>
+	<list-sql>select * from skl_pohyb {where}</list-sql>
+	<detail-name>generic</detail-name>
+	<columns>
+		<column name="id" caption="Id" visible="true" editable="true" required="true" unique="true" width="0">
+			<desc>Id</desc>
+		</column>
+		<column name="id_sklad" caption="Sklad" visible="true" editable="true" required="true" unique="false" width="0">
+			<ref-table>c_sklad</ref-table>
+			<desc>Sklad</desc>
+		</column>
+		<column name="id_skl_karta" caption="Skl karta" visible="true" editable="true" required="true" unique="false" width="0">
+			<ref-table>skl_karta</ref-table>
+			<desc>Skl karta</desc>
+		</column>
+		<column name="id_skl_pohyb_druh" caption="Skl pohyb druh" visible="true" editable="true" required="true" unique="false" width="0">
+			<ref-table>c_skl_pohyb_druh</ref-table>
+			<desc>Skl pohyb druh</desc>
+		</column>
+		<column name="cislo" caption="Cislo" visible="true" editable="true" required="true" unique="true" width="0">
+			<desc>Cislo</desc>
+		</column>
+		<column name="popis" caption="Popis" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Popis</desc>
+		</column>
+		<column name="datum_pohybu" caption="Datum pohybu" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Datum pohybu</desc>
+		</column>
+		<column name="datum_uc" caption="Datum uc" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Datum uc</desc>
+		</column>
+		<column name="strana" caption="Strana" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Strana</desc>
+		</column>
+		<column name="id_user_create" caption="User create" visible="true" editable="true" required="false" unique="false" width="0">
+			<ref-table>sys_user</ref-table>
+			<desc>User create</desc>
+		</column>
+		<column name="dt_create" caption="Dt create" visible="true" editable="true" required="false" unique="false" width="0">
+			<desc>Dt create</desc>
+		</column>
+		<column name="id_user_modify" caption="User modify" visible="true" editable="true" required="false" unique="false" width="0">
+			<ref-table>sys_user</ref-table>
+			<desc>User modify</desc>
+		</column>
+		<column name="dt_modify" caption="Dt modify" visible="true" editable="true" required="false" unique="false" width="0">
+			<desc>Dt modify</desc>
+		</column>
+		<column name="ts" caption="Ts" visible="true" editable="true" required="false" unique="false" width="0">
+			<desc>Ts</desc>
+		</column>
+	</columns>
+</table>

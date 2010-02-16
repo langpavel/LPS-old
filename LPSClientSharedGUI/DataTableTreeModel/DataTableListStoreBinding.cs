@@ -520,45 +520,5 @@ namespace LPS.Client
 			return null;
 		}
 		
-		/*
-		public void UpdateFromActualTable(DataTable table)
-		{
-			using(DataTable changestable = this.DataTable.GetChanges())
-			{
-				if(changestable != null && changestable.Rows.Count != 0)
-					throw new Exception("Only unchanged tables can be updated");
-			}
-			bool updated = false;	
-			foreach(DataRow actual_row in table.Rows)
-			{
-				DataRow old_row = this.DataTable.Rows.Find(actual_row[0]);
-				if(old_row == null)
-				{
-					old_row = this.DataTable.NewRow();
-					for(int i=0; i<table.Columns.Count; i++)
-					{
-						string col_name = table.Columns[i].ColumnName;
-						old_row[col_name] = actual_row[i];
-					}
-					updated = true;
-					this.DataTable.Rows.Add(old_row);
-				}
-				else
-				{
-					for(int i=0; i<table.Columns.Count; i++)
-					{
-						string col_name = table.Columns[i].ColumnName;
-						if(old_row[col_name] != actual_row[i])
-						{
-							old_row[col_name] = actual_row[i];
-							updated = true;
-						}
-					}
-				}
-			}
-			if(updated)
-				this.DataTable.AcceptChanges();
-		}
-		*/
 	}
 }

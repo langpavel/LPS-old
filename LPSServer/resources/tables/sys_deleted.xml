@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="sys_deleted" name="sys_deleted" text="Deleted">
+	<detail-caption>Deleted</detail-caption>
+	<desc>Tabulka Deleted</desc>
+	<list-sql>select * from sys_deleted {where}</list-sql>
+	<detail-name>generic</detail-name>
+	<columns>
+		<column name="id" caption="Id" visible="true" editable="true" required="true" unique="true" width="0">
+			<desc>Id</desc>
+		</column>
+		<column name="table_name" caption="Table name" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Table name</desc>
+		</column>
+		<column name="row_id" caption="Row id" visible="true" editable="true" required="true" unique="false" width="0">
+			<desc>Row id</desc>
+		</column>
+		<column name="reason" caption="Reason" visible="true" editable="true" required="false" unique="false" width="0">
+			<desc>Reason</desc>
+		</column>
+		<column name="id_user" caption="User" visible="true" editable="true" required="false" unique="false" width="0">
+			<ref-table>sys_user</ref-table>
+			<desc>User</desc>
+		</column>
+		<column name="ts" caption="Ts" visible="true" editable="true" required="false" unique="false" width="0">
+			<desc>Ts</desc>
+		</column>
+	</columns>
+</table>

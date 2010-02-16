@@ -32,16 +32,17 @@ namespace LPS.Client
 		
 		public override void Dispose ()
 		{
-			if(this.dataset != null)
-			{
-				this.dataset.Dispose();
-				this.dataset = null;
-			}
 			if(this.binding != null)
 			{
 				this.binding.Dispose();
 				this.binding = null;
 			}
+			if(this.dataset != null)
+			{
+				Connection.DisposeDataSet(this.dataset);
+				this.dataset = null;
+			}
+			Destroy();
 			base.Dispose();
 		}
 		

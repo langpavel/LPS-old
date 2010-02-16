@@ -5,10 +5,10 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F31B07F0-C6F6-4190-B12F-8EFD2C9EC5AE}</ProjectGuid>
+    <ProjectGuid>{794C8AFA-18CF-4E67-9B8D-353BA68BDEC7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ImportHelper</RootNamespace>
-    <AssemblyName>ImportHelper</AssemblyName>
+    <RootNamespace>LPS.Util</RootNamespace>
+    <AssemblyName>LPSUtil</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -19,6 +19,9 @@
     <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <Externalconsole>true</Externalconsole>
+    <Commandlineparameters>login http://localhost/LPS/Server.asmx,langpa,</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -29,27 +32,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="Mono.Data" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="Npgsql" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandConsumer.cs" />
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="ImportHelperMain.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\LoginCommand.cs" />
+    <Compile Include="Commands\EchoCommand.cs" />
+    <Compile Include="Commands\HelpCommand.cs" />
+    <Compile Include="Commands\PingCommand.cs" />
+    <Compile Include="Commands\XtableCommand.cs" />
+    <Compile Include="Commands\SqlTablesCommand.cs" />
+    <Compile Include="Commands\RefreshCommand.cs" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\LPSShared\LPSShared.csproj">
       <Project>{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}</Project>
@@ -59,5 +56,9 @@
       <Project>{D2317E65-70CE-4367-B1A7-211FD6044720}</Project>
       <Name>LPSClientShared</Name>
     </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Commands\" />
   </ItemGroup>
 </Project>

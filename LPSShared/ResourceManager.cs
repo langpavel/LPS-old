@@ -90,6 +90,11 @@ namespace LPS
 			return null;
 		}
 
+		public void FlushModulesInfo()
+		{
+			ModulesInfo.Clear();
+		}
+
 		public ModulesTreeInfo GetModulesInfo(string name)
 		{
 			ModulesTreeInfo result = FindModulesInfo(name);

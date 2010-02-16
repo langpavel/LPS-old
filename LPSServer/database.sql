@@ -262,8 +262,8 @@ CREATE TABLE c_mena (
     popis character varying(100) not null default '',
     format character varying(100) not null default '#,##0.00',
 
-    plati_od timestamp,
-    plati_do timestamp,
+    plati_od date,
+    plati_do date,
     vychozi bool not null default false,
 
     id_user_create bigint references sys_user(id),
@@ -329,6 +329,27 @@ CREATE TABLE sys_app_config (
 );
 INSERT INTO sys_app_config VALUES (1, 2010,1,1,'2010-01-01', '24 Promotions s.r.o.', 1, 0, now(), now());
 
+-- kurz: mnozstvi id_mena_cizi == hodnota_mnozstvi id_mena_kurz
+-- kurz: 1 id_mena_cizi == hodnota id_mena_kurz
+CREATE TABLE kurz (
+    id bigserial NOT NULL primary key,
+    id_mena_cizi bigint not null references c_mena(id),
+    id_mena_kurz bigint not null references c_mena(id),
+
+    hodnota_mnozstvi decimal(28,14) not null,
+    mnozstvi int not null,
+    hodnota decimal(28,14) not null CHECK (hodnota = (hodnota_mnozstvi / mnozstvi)),
+    
+    plati_od timestamp,
+    plati_do timestamp,
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+
 CREATE TABLE c_pobocka
 (
     id bigserial NOT NULL primary key,
@@ -350,6 +371,34 @@ CREATE TABLE c_pokladna
     popis character varying(100) not null default '',
     id_pobocka bigint references c_pobocka(id),
     id_mena bigint references c_mena(id),
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+
+CREATE TABLE c_skl_pohyb_druh (
+    id bigserial NOT NULL primary key,
+    kod character varying(10) not null UNIQUE,
+    popis character varying(100) not null default '',
+    strana integer not null CHECK (strana = 1 or strana = -1),
+    id_sys_gen bigint not null references sys_gen(id),
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+
+CREATE TABLE c_skl_pohyb_pol_druh (
+    id bigserial NOT NULL primary key,
+    kod character varying(10) not null UNIQUE,
+    popis character varying(100) not null default '',
+    strana integer not null CHECK (strana = 1 or strana = -1),
+    id_c_skl_pohyb_druh bigint references c_skl_pohyb_druh(id),
 
     id_user_create bigint references sys_user(id),
     dt_create timestamp without time zone DEFAULT now(),
@@ -388,19 +437,17 @@ CREATE TABLE skl_karta (
 );
 CREATE INDEX skl_karta_ts on skl_karta (ts);
 
--- kurz: mnozstvi id_mena_cizi == hodnota_mnozstvi id_mena_kurz
--- kurz: 1 id_mena_cizi == hodnota id_mena_kurz
-CREATE TABLE kurz (
+CREATE TABLE skl_pohyb (
     id bigserial NOT NULL primary key,
-    id_mena_cizi bigint not null references c_mena(id),
-    id_mena_kurz bigint not null references c_mena(id),
+    id_sklad bigint not null references c_sklad(id),
+    id_skl_pohyb_druh bigint not null references c_skl_pohyb_druh(id),
+    id_mena bigint not null references c_mena(id),
 
-    hodnota_mnozstvi decimal(28,14) not null,
-    mnozstvi int not null,
-    hodnota decimal(28,14) not null CHECK (hodnota = (hodnota_mnozstvi / mnozstvi)),
-    
-    plati_od timestamp,
-    plati_do timestamp,
+    cislo character varying(20) not null unique,
+    popis character varying(100) not null default '',
+    datum_pohybu date not null,
+    datum_uc date not null,
+    strana integer not null CHECK (strana = 1 or strana = -1),
 
     id_user_create bigint references sys_user(id),
     dt_create timestamp without time zone DEFAULT now(),
@@ -408,5 +455,22 @@ CREATE TABLE kurz (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
+
+CREATE TABLE skl_pohyb_pol (
+    id bigserial NOT NULL primary key,
+    id_skl_pohyb bigint not null references skl_pohyb(id),
+    id_skl_karta bigint not null references skl_karta(id),
+    id_skl_pohyb_pol_druh bigint not null references c_skl_pohyb_pol_druh(id),
+    strana integer not null CHECK (strana = 1 or strana = -1),
+
+    
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+
 
 

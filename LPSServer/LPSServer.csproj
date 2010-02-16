@@ -99,5 +99,20 @@
     <None Include="resources\forms\adresa.xml" />
     <None Include="resources\forms\composits\adresa-mini.xml" />
     <None Include="resources\tables\sys_user_preferences.xml" />
+    <None Include="resources\tables\c_mena.xml" />
+    <None Include="resources\tables\c_pobocka.xml" />
+    <None Include="resources\tables\c_pokladna.xml" />
+    <None Include="resources\tables\c_skl_pohyb_druh.xml" />
+    <None Include="resources\tables\kurz.xml" />
+    <None Include="resources\tables\skl_pohyb.xml" />
+    <None Include="resources\tables\skl_pohyb_pol.xml" />
+    <None Include="resources\tables\sys_app_config.xml" />
+    <None Include="resources\tables\sys_attachement.xml" />
+    <None Include="resources\tables\sys_deleted.xml" />
+    <None Include="resources\tables\sys_error.xml" />
+    <None Include="resources\tables\sys_gen.xml" />
+    <None Include="resources\tables\sys_gen_cyklus.xml" />
+    <None Include="resources\tables\sys_gen_value.xml" />
+    <None Include="resources\tables\sys_check.xml" />
   </ItemGroup>
 </Project>

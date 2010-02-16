@@ -21,15 +21,24 @@
 		</item>
 		<item id="skl_pohyb" text="Skladové pohyby">
 			<desc>Skladové pohyby</desc>
-			<item id="skl_pohyb_prijem" text="Příjmové doklady">
+			<item id="skl_pohyb_prijem" text="Příjmové doklady" table="skl_pohyb">
 				<desc>Příjmy na sklad</desc>
+				<list-sql>select * from skl_pohyb where strana = 1</list-sql>
 			</item>
-			<item id="skl_pohyb_vydej" text="Výdejové doklady">
+			<item id="skl_pohyb_vydej" text="Výdejové doklady" table="skl_pohyb">
 				<desc>Výdeje ze skladu</desc>
+				<list-sql>select * from skl_pohyb where strana = -1</list-sql>
 			</item>
 		</item>
 		<item id="inventura" text="Inventura">
 			<desc>Inventurní kniha</desc>
+		</item>
+	</item>
+	<item id="ucet_params" text="Účetní parametry">
+		<item id="kurz" text="Devizové kurzy" table="kurz">
+			<desc>Kurzy devizového trhu</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from c_kurz</list-sql>
 		</item>
 	</item>
 	<item id="ciselniky" text="Číselníky">
@@ -43,6 +52,21 @@
 			<desc>Hodnoty DPH</desc>
 			<detail-name>generic</detail-name>
 			<list-sql>select * from c_dph</list-sql>
+		</item>
+		<item id="c_mena" text="Měna" table="c_mena">
+			<desc>Měny</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from c_mena</list-sql>
+		</item>
+		<item id="c_pobocka" text="Pobočky" table="c_pobocka">
+			<desc>Pobočky</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from c_pobocka</list-sql>
+		</item>
+		<item id="c_pokladna" text="Pokladny" table="c_pokladna">
+			<desc>Pokladny</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from c_pokladna</list-sql>
 		</item>
 		<item id="c_mj" text="Měrné jednotky" table="c_mj">
 			<desc>Měrné jednotky</desc>
@@ -59,6 +83,11 @@
 			<detail-name>generic</detail-name>
 			<list-sql>select * from c_sklad</list-sql>
 		</item>
+		<item id="c_skl_pohyb_druh" text="Druhy skladových pohybů" table="c_skl_pohyb_druh">
+			<desc>Druhy skladových pohybů</desc>
+			<detail-name>generic</detail-name>
+			<list-sql>select * from c_skl_pohyb_druh</list-sql>
+		</item>
 		<item id="c_zaruka" text="Záruční doba" table="c_zaruka">
 			<desc>Záruční doba</desc>
 			<detail-name>generic</detail-name>
@@ -70,9 +99,21 @@
 			<list-sql>select * from c_stat</list-sql>
 		</item>
 	</item>
-	<item id="sys_user" text="Uživatelé" table="sys_user">
-		<desc>Uživatelé</desc>
-		<detail-name />
-		<list-sql>select * from sys_user</list-sql>
+	<item id="sys_params" text="Systémová nastavení">
+		<item id="sys_user" text="Uživatelé" table="sys_user">
+			<desc>Uživatelé</desc>
+			<detail-name />
+			<list-sql>select * from sys_user</list-sql>
+		</item>
+		<item id="sys_gen" text="Generátory hodnot" table="sys_gen">
+			<desc>Generátory hodnot</desc>
+			<detail-name />
+			<list-sql>select * from sys_gen</list-sql>
+		</item>
+		<item id="sys_gen_value" text="Hodnoty generátorů" table="sys_gen_value">
+			<desc>Generátory hodnot</desc>
+			<detail-name />
+			<list-sql>select * from sys_gen_value</list-sql>
+		</item>
 	</item>
 </modules-tree>

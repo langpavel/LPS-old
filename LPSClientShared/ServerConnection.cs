@@ -73,9 +73,16 @@ namespace LPS.Client
 			try
 			{
 				FlushCache();
+				this.Configuration.Dispose();
+				this.configuration_store = null;
+				this.Resources.Dispose();
+				this.resource_manager = null;
 				this.Logout();
 			}
-			catch { }
+			catch(Exception err)
+			{
+				Log.Error(err);
+			}
 			this.Server.Dispose();
 			this.Server = null;
 		}
@@ -208,13 +215,14 @@ namespace LPS.Client
 			return Server.GetTextResource(path);
 		}
 		
-		[Obsolete]
-		public DataSet GetDataSetSimple(string sql)
+		public DataSet GetDataSetBySql(string sql)
 		{
-			DataSet result = Server.GetDataSetSimple(sql);
-			result.ExtendedProperties["sql"] = sql;
-			result.ExtendedProperties["parameters"] = new object[] { };
-			return result;
+			DataSet ds;
+			object[] parameters = new object[] {};
+			CheckServerResult(Server.GetDataSetBySql(this.sink, this.security, sql, parameters, out ds));
+			ds.ExtendedProperties["SQL"] = sql;
+			ds.ExtendedProperties["PARAMS"] = parameters;
+			return ds;
 		}
 
 		public DataSet GetDataSetByName(string name)

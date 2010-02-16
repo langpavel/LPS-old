@@ -50,7 +50,7 @@ namespace LPS.Client.Sklad
 			btnCloseTab.Destroy();
 			headerlabel.Destroy();
 			headerbox.Destroy();
-			tableview.Destroy();
+			tableview.Dispose();
 			this.Destroy();
 			base.Dispose();
 		}

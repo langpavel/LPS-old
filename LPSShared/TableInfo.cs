@@ -8,7 +8,7 @@ namespace LPS
 {
 	[Serializable]
 	[XmlRoot("table")]
-	public class TableInfo : IListInfo
+	public class TableInfo : IListInfo, ICloneable
 	{
 		public TableInfo ()
 		{
@@ -53,5 +53,20 @@ namespace LPS
 			return null;
 		}
 
+		public virtual TableInfo Clone()
+		{
+			TableInfo result = (TableInfo)this.MemberwiseClone();
+			result.Columns = new List<ColumnInfo>();
+			foreach(ColumnInfo column in this.Columns)
+			{
+				result.Columns.Add(column.Clone());
+			}
+			return result;
+		}
+
+		object ICloneable.Clone ()
+		{
+			return this.Clone();
+		}
 	}
 }
