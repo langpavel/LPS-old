@@ -251,8 +251,26 @@ namespace LPS.Client
 
 		public void DisposeDataSet(DataSet ds)
 		{
+			DisposeDataSet(ds, false);
+		}
+
+		public void DisposeDataSet(DataSet ds, bool force)
+		{
 			if(ds != null)
 			{
+				if(ds.ExtendedProperties.ContainsKey("CACHE_CNT"))
+				{
+					int cnt = (int)ds.ExtendedProperties["CACHE_CNT"];
+					cnt = cnt - 1;
+					if(!force && cnt > 0)
+					{
+						ds.ExtendedProperties["CACHE_CNT"] = cnt;
+						return;
+					}
+					else
+						cached_datasets[(string)ds.ExtendedProperties["LIST"]] = null;
+				}
+
 				this.updater.RemoveDataSet(ds);
 				ds.Dispose();
 			}
@@ -299,14 +317,18 @@ namespace LPS.Client
 		public DataSet GetCachedDataSet(string tableName)
 		{
 			DataSet result;
-			cached_datasets.TryGetValue(tableName, out result);
+			if(cached_datasets.TryGetValue(tableName, out result) && result != null)
+			{
+				result.ExtendedProperties["CACHE_CNT"] = ((int)result.ExtendedProperties["CACHE_CNT"])+1;
+				result.ExtendedProperties["CACHE_DT"] = DateTime.Now;
+				return result;
+			}
 			if(result == null)
 			{
 				result = this.GetDataSetByName(tableName);
 				cached_datasets[tableName] = result;
-				result.Disposed += delegate {
-					cached_datasets.Remove(tableName);
-				};
+				result.ExtendedProperties.Add("CACHE_CNT", 1);
+				result.ExtendedProperties.Add("CACHE_DT", DateTime.Now);
 			}
 			return result;
 		}
@@ -315,5 +337,6 @@ namespace LPS.Client
 		{
 			CheckServerResult(Server.GetChanges(this.sink, this.security));
 		}
+
 	}
 }

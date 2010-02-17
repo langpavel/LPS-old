@@ -9,7 +9,7 @@ namespace LPS.Client
 		private DataSet dataset;
 		private DataTable table;
 		private object[] parameters;
-		private DataTableListStoreBinding binding;
+		public DataTableListStoreBinding Binding { get; private set; }
 		
 		public DataTable Table
 		{
@@ -32,10 +32,10 @@ namespace LPS.Client
 		
 		public override void Dispose ()
 		{
-			if(this.binding != null)
+			if(this.Binding != null)
 			{
-				this.binding.Dispose();
-				this.binding = null;
+				this.Binding.Dispose();
+				this.Binding = null;
 			}
 			if(this.dataset != null)
 			{
@@ -45,26 +45,39 @@ namespace LPS.Client
 			Destroy();
 			base.Dispose();
 		}
-		
+
+		protected override void OnColumnsChanged()
+		{
+			// when columns are reodered, added...
+			base.OnColumnsChanged();
+			using(Log.Scope("OnColumnsChanged"))
+			{
+				foreach(TreeViewColumn column in this.Columns)
+				{
+					Log.Info("column: ", column.Title);
+				}
+			}
+		}
+
 		protected void LoadData()
 		{
 			this.dataset = Connection.GetDataSetByName(ListInfo.Id, "", this.parameters);
 			this.table = this.dataset.Tables[0];
 			
-			binding = new DataTableListStoreBinding(this, this.table, this.ListInfo);
-			binding.Bind();
+			Binding = new DataTableListStoreBinding(this, this.table, this.ListInfo);
+			Binding.Bind();
 		}
 
 		protected override void OnRowActivated (TreePath path, TreeViewColumn column)
 		{
 			base.OnRowActivated (path, column);
-			DataRow row = binding.GetRow(path);
+			DataRow row = this.Binding.GetRow(path);
 			FormManager.Instance.GetWindow(this.ListInfo.DetailName, Convert.ToInt64(row["id"]), this.ListInfo);
 		}
 		
 		public IManagedWindow OpenDetail()
 		{
-			DataRow row = binding.GetCurrentRow();
+			DataRow row = this.Binding.GetCurrentRow();
 			if(row == null)
 				return null;
 			return FormManager.Instance.GetWindow(this.ListInfo.DetailName, Convert.ToInt64(row["id"]), this.ListInfo);
@@ -89,7 +102,7 @@ namespace LPS.Client
 		public string Filter
 		{
 			get	{ return filter ?? ""; }
-			set { filter = value; binding.ApplyFilter(filter); }
+			set { filter = value; this.Binding.ApplyFilter(filter); }
 		}
 	}
 }

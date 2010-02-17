@@ -63,7 +63,20 @@ namespace LPS
 		[XmlArray("columns")]
 		[XmlArrayItem("column")]
 		public List<ColumnInfo> Columns { get; set; }
-		
+
+		List<ColumnInfo> IListInfo.Columns
+		{
+			get
+			{
+				List<ColumnInfo> result = new List<ColumnInfo>();
+				foreach(ColumnInfo col in this.Table.Columns)
+				{
+					result.Add(this.GetColumnInfo(col.Name));
+				}
+				return result;
+			}
+		}
+
 		[XmlElement("item")]
 		public List<ModulesTreeInfo> Items { get; set; }
 		
@@ -130,5 +143,6 @@ namespace LPS
 		
 		[XmlIgnore]
 		public ModulesTreeInfo Parent { get; set; }
+
 	}
 }

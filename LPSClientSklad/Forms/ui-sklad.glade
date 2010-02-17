@@ -400,17 +400,13 @@
                       </packing>
                     </child>
                     <child>
-                      <widget class="GtkScrolledWindow" id="scrolledwindow2">
+                      <widget class="GtkScrolledWindow" id="scrollwindowColumns">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="hscrollbar_policy">automatic</property>
                         <property name="vscrollbar_policy">automatic</property>
                         <child>
-                          <widget class="GtkTreeView" id="viewColumns">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="search_column">1</property>
-                          </widget>
+                          <placeholder/>
                         </child>
                       </widget>
                       <packing>

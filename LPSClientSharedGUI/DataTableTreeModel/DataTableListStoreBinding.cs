@@ -8,179 +8,75 @@ using Gtk;
 namespace LPS.Client
 {
 	/// <summary>
-	/// Vytvori ListStore, kde prvni hodnota je row, druha je rezevovana
-	/// a dale to je vzy column, is_null, takze step == 2
+	/// Vytvori ListStore pomoci ListStoreMapping
 	/// </summary>
 	public class DataTableListStoreBinding: IDisposable
 	{
-
-		public DataTableListStoreBinding()
-			: this(null, null, null)
-		{
-		}
-		
 		public DataTableListStoreBinding(TreeView view, DataTable dt, IListInfo listinfo)
 		{
+			this.Mapping = new ListStoreMapping();
 			this.TreeView = view;
 			this.DataTable = dt;
 			this.ListInfo = listinfo;
-			this.MappedColumns = new Dictionary<string, GetMappedColumnValue>();
-			//MappedColumns["id_user_create"] = new DataTableListStoreBinding.GetMappedColumnValue(GetUserName);
-			//MappedColumns["id_user_modify"] = new DataTableListStoreBinding.GetMappedColumnValue(GetUserName);
+			this.Mapping.ColumnClicked += ToggleSort;
 		}
 
+		private Dictionary<DataRow, TreeIter> row_iters;
+		public ListStoreMapping Mapping { get; private set; }
 		public TreeView TreeView { get; set; }
 		public DataTable DataTable { get; set; }
 		public ListStore ListStore { get; set; }
 		public TreeModelFilter Filter { get; set; }
-		public ListStore ColumnList { get; set; }
 		public IListInfo ListInfo { get; set; }
-		//public TreeModelSort Sort { get; set; }
-		public bool UseMarkup { get; set; }
 
-		public delegate string GetMappedColumnValue(object val, DataRow row);
-		public Dictionary<string, GetMappedColumnValue> MappedColumns;
-		
 		public void Dispose()
 		{
 			Unbind();
 		}
-		
-		public string GetUserName(object val, DataRow row)
-		{
-			try
-			{
-				long userid = Convert.ToInt64(val);
-				return ServerConnection.Instance.GetUserName(userid);
-			}
-			catch
-			{
-				return "<span color=\"#ff0000\">(?)</span>";
-			}
-		}
 
-		private	GetMappedColumnValue[] getValFuncs;
-		private Dictionary<DataRow, TreeIter> row_iters;
-		
-
-		public ColumnInfo GetColumnInfo(string name)
-		{
-			ColumnInfo result = this.ListInfo.GetColumnInfo(name);
-			if(result != null)
-				return result.Clone();
-			result = new ColumnInfo();
-			result.Caption = name.Replace('_',' ');
-			result.Description = "(automaticky vytvořeno)";
-			result.Visible = false;
-			//this.ListInfo.Columns.Add(result);
-			return result;
-		}
-		
 		public void Bind()
 		{
-			getValFuncs = new GetMappedColumnValue[this.DataTable.Columns.Count];
-			this.ColumnList = new ListStore(typeof(object), typeof(string), typeof(string), typeof(string), typeof(bool));
-				
-			CellRendererToggle rendererToggle = new CellRendererToggle();
-			CellRendererText rendererText = new CellRendererText2();
-			rendererText.FixedHeightFromFont = 1;
-			
-			List<Type> types = new List<Type>();
-			types.Add(typeof(object));
-			types.Add(typeof(object));
-			for(int i = 0; i < this.DataTable.Columns.Count; i++)
+			List<DataColumn> added = new List<DataColumn>();
+			foreach(ColumnInfo colinfo in ListInfo.Columns)
 			{
-				DataColumn dc = this.DataTable.Columns[i];
-				ColumnInfo colinfo = GetColumnInfo(dc.ColumnName);
-				TreeViewColumn wc;
-				GetMappedColumnValue getValFunc = null;
-				getValFuncs[i] = null;
-				if(this.MappedColumns.TryGetValue(dc.ColumnName, out getValFunc))
+				DataColumn datacol = null;
+				if(DataTable.Columns.Contains(colinfo.Name))
 				{
-					getValFuncs[i] = getValFunc;
-					types.Add(typeof(string));
-					types.Add(typeof(bool));
-					wc = new TreeViewColumn(colinfo.Caption, rendererText, "markup", (i+1)*2);
+					datacol = DataTable.Columns[colinfo.Name];
+					added.Add(datacol);
 				}
-				else if(!String.IsNullOrEmpty(colinfo.FkReferenceTable) && !String.IsNullOrEmpty(colinfo.FkReplaceColumns))
-				{
-					FKMappedColumnHelper helper = new FKMappedColumnHelper(colinfo.FkReferenceTable, colinfo.FkReplaceColumns);
-					//if(!String.IsNullOrEmpty(colinfo.DisplayFormat))
-					//	helper.DisplayFormat = colinfo.DisplayFormat;
-					getValFuncs[i] = helper.GetDisplayValue;
-					types.Add(typeof(string));
-					types.Add(typeof(bool));
-					wc = new TreeViewColumn(colinfo.Caption, rendererText, "markup", (i+1)*2);
-				}
-				else if(dc.DataType == typeof(bool))
-				{
-					wc = new TreeViewColumn(colinfo.Caption, rendererToggle, "active", (i+1)*2, "inconsistent", (i+1)*2+1); 
-					types.Add(typeof(bool));
-					types.Add(typeof(bool));
-				}
-				else
-				{
-					types.Add(typeof(string));
-					types.Add(typeof(bool));
-					if(UseMarkup)
-						wc = new TreeViewColumn(colinfo.Caption, rendererText, "markup", (i+1)*2);
-					else
-						wc = new TreeViewColumn(colinfo.Caption, rendererText, "text", (i+1)*2);
-				}
-				wc.Reorderable = true;
-				wc.MinWidth = 4;
-				wc.MaxWidth = 1000;
-				wc.Resizable = true;
-				wc.Sizing = TreeViewColumnSizing.GrowOnly;
-				wc.Clickable = true;
-				wc.SortIndicator = false;
-				wc.SortOrder = SortType.Ascending;
-				wc.Data["TABLE_COLUMN"] = dc;
-				wc.Clicked += ToggleSort;
-				wc.Visible = colinfo.Visible;
-				if(colinfo.Width > 0)
-					wc.FixedWidth = colinfo.Width;
-
-				ColumnList.AppendValues(
-					new object[] {colinfo, wc },
-					colinfo.Name,
-					colinfo.Caption ?? "",
-					colinfo.Description ?? "",
-				    colinfo.Visible
-				);
-				
-				this.TreeView.AppendColumn(wc);
-
+				this.Mapping.CreateColumn(colinfo, datacol);
 			}
-			this.ListStore = new ListStore(types.ToArray());
-			//this.ListStore.Data["_BINDING"] = this;
-			//this.ListStore.DefaultSortFunc = SortCompareFunc;
+			foreach(DataColumn datacol in this.DataTable.Columns)
+			{
+				if(!added.Contains(datacol))
+				{
+					this.Mapping.CreateColumn(null, datacol);
+				}
+			}
+			foreach(TreeViewColumn col in this.Mapping.GetColumns())
+			{
+				this.TreeView.AppendColumn(col);
+			}
+			this.ListStore = new ListStore(this.Mapping.GetStoreTypes());
 			FillDataList();
-			//this.Sort = new TreeModelSort(this.ListStore);
-			//this.Filter = new TreeModelFilter(this.Sort, null);
 			this.Filter = new TreeModelFilter(this.ListStore, null);
-			this.Filter.Data["_BINDING"] = this;
 			this.Filter.VisibleFunc = FilterFunc;
 			this.TreeView.Model = this.Filter;
-			
-			this.DataTable.RowChanged += HandleDataTableRowChanged;
-			this.DataTable.RowDeleted += HandleDataTableRowDeleted;
-			
-			this.Sorting = this.Sorting;
 		}
 
 		void ToggleSort(object sender, EventArgs e)
 		{
-			TreeViewColumn col = (TreeViewColumn)sender;
-			DataColumn dc = col.Data["TABLE_COLUMN"] as DataColumn;
+			ConfigurableColumn col = (ConfigurableColumn)sender;
 			if(!col.SortIndicator || col.SortOrder == SortType.Descending)
-				Sorting = dc.ColumnName;
+				Sorting = col.DataColumn.ColumnName;
 			else
-				Sorting = dc.ColumnName + " desc";
+				Sorting = col.DataColumn.ColumnName + " desc";
 		}
 
 		public void Unbind()
 		{
+			this.Mapping.Clear();
 			if(this.DataTable != null)
 			{
 				this.DataTable.RowChanged -= HandleDataTableRowChanged;
@@ -200,22 +96,11 @@ namespace LPS.Client
 				this.Filter.Dispose();
 				this.Filter = null;
 			}
-//			if(this.Sort != null)
-//			{
-//				this.Sort.Dispose();
-//				this.Sort = null;
-//			}
 			if(this.ListStore != null)
 			{
 				this.ListStore.Clear();
 				this.ListStore.Dispose();
 				this.ListStore = null;
-			}
-			if(this.ColumnList != null)
-			{
-				this.ColumnList.Clear();
-				this.ColumnList.Dispose();
-				this.ColumnList = null;
 			}
 		}
 		
@@ -233,18 +118,14 @@ namespace LPS.Client
 				else
 				{
 					iter = row_iters[e.Row];
-					object[] data = new object[(this.DataTable.Columns.Count + 1) * 2];
-					GetColumnValues(e.Row, ref data);
-					this.ListStore.SetValues(iter, data);
+					this.ListStore.SetValues(iter, Mapping.GetValuesForStore(e.Row));
 				}
 			}
 			else
 			{
 				if(e.Row.RowState == DataRowState.Deleted || e.Row.RowState == DataRowState.Detached)
 					return;
-				object[] data = new object[(this.DataTable.Columns.Count + 1) * 2];
-				GetColumnValues(e.Row, ref data);
-				row_iters[e.Row] = this.ListStore.AppendValues(data);
+				row_iters[e.Row] = this.ListStore.AppendValues(Mapping.GetValuesForStore(e.Row));
 			}
 		}
 
@@ -259,66 +140,15 @@ namespace LPS.Client
 		{
 			FillDataList(this.DataTable.Rows);
 		}
-		
-		protected void GetColumnValues(DataRow row, ref object[] data)
-		{
-			data[0] = row;
-			for(int i=0; i < this.DataTable.Columns.Count; i++)
-			{
-				DataColumn col = this.DataTable.Columns[i];
-				object val = row[i];
-				GetMappedColumnValue getValFunc = getValFuncs[i];
-				if(getValFunc != null)
-				{
-					data[(i+1)*2] = getValFunc(val, row);
-					data[(i+1)*2+1] = false;
-				}
-				else if(col.DataType == typeof(bool))
-				{
-					if(val == null || val == DBNull.Value)
-					{
-						//data[i+1] = null;
-						data[(i+1)*2] = false;
-						data[(i+1)*2+1] = true; // null
-					}
-					else
-					{
-						data[(i+1)*2] = val;
-						data[(i+1)*2+1] = false;
-					}
-				}
-				else
-				{
-					if(val == null || val == DBNull.Value)
-					{
-						data[(i+1)*2] = "";
-						data[(i+1)*2+1] = true;
-					}
-					else
-					{
-						data[(i+1)*2] = val.ToString();
-						data[(i+1)*2+1] = false;
-					}
-				}
-			}
-		}
-			
+
 		public void FillDataList(DataRowCollection rows)
 		{
 			row_iters = new Dictionary<DataRow, TreeIter>(this.DataTable.Rows.Count);
 			this.ListStore.Clear();
-			object[] data = new object[(this.DataTable.Columns.Count + 1) * 2];
 			foreach(DataRow row in this.DataTable.Rows)
 			{
-				GetColumnValues(row, ref data);
-				row_iters[row] = this.ListStore.AppendValues(data);
+				row_iters[row] = this.ListStore.AppendValues(Mapping.GetValuesForStore(row));
 			}
-		}
-		
-		[Obsolete]
-		public static DataTableListStoreBinding Get(TreeView view)
-		{
-			return (view.Model as TreeModelFilter).Data["_BINDING"] as DataTableListStoreBinding;
 		}
 		
 		public DataRow GetRow(TreePath path)
@@ -469,46 +299,6 @@ namespace LPS.Client
 			}
 		}
 		
-		public static void CreateColumnTreeViewColumns(TreeView view)
-		{
-			CellRendererText textCellRenderer = new CellRendererText();
-			CellRendererToggle toggleCellRenderer = new CellRendererToggle();
-			toggleCellRenderer.Activatable = true;
-			toggleCellRenderer.Toggled += HandleToggleColumnVisible;
-			toggleCellRenderer.Data["VIEW"] = view;
-			
-			TreeViewColumn col;
-			col = new TreeViewColumn("Zobr.", toggleCellRenderer, "active", 4);
-			view.AppendColumn(col);
-
-			col = new TreeViewColumn("Sloupec", textCellRenderer, "text", 2);
-			col.Resizable = true;
-			view.AppendColumn(col);
-			
-			col = new TreeViewColumn("Id", textCellRenderer, "text", 1);
-			col.Resizable = true;
-			view.AppendColumn(col);
-			
-			col = new TreeViewColumn("Popis", textCellRenderer, "text", 3);
-			col.Resizable = true;
-			view.AppendColumn(col);
-		}
-
-		static void HandleToggleColumnVisible (object o, ToggledArgs args)
-		{
-			CellRendererToggle renderer = o as CellRendererToggle;
-			TreeView view = renderer.Data["VIEW"] as TreeView;
-			ListStore store = view.Model as ListStore;
-			TreeIter iter;
-			if (store.GetIter (out iter, new TreePath(args.Path))) {
-				bool val = !(bool) store.GetValue(iter, 4);
-				store.SetValue(iter,4,val);
-				object[] data = (object[]) store.GetValue(iter, 0);
-				TreeViewColumn col = data[1] as TreeViewColumn;
-				col.Visible = val;
-			}
-		}
-
 		public DataRow GetCurrentRow()
 		{
 			TreeModel model;

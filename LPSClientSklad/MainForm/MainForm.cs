@@ -11,10 +11,11 @@ namespace LPS.Client.Sklad
 	public class MainForm : XmlWindowBase
 	{
 		[Glade.Widget] TreeView viewModules;
-		[Glade.Widget] TreeView viewColumns;
+		[Glade.Widget] ScrolledWindow scrollwindowColumns;
 		[Glade.Widget] Notebook nbData;
 		[Glade.Widget] Entry edtFilter;
 		//[Glade.Widget] Widget tabSloupce;
+		private NodeView viewColumns;
 		
 		public string ServerUrl { get; set; }
 		public string UserLogin { get; set; }
@@ -39,8 +40,6 @@ namespace LPS.Client.Sklad
 			
 			InitModules(false);
 			
-			DataTableListStoreBinding.CreateColumnTreeViewColumns(viewColumns);
-
 			string[] opened_tabs = Connection.Configuration.GetConfiguration<string[]>("main", "opened_tabs", null);
 			if(opened_tabs != null && opened_tabs.Length != 0)
 			{
@@ -53,6 +52,10 @@ namespace LPS.Client.Sklad
 					catch { }
 				}
 			}
+			viewColumns = new NodeView();
+			viewColumns.Show();
+			ConfigurableColumn.CreateNodeViewColumns(viewColumns);
+			scrollwindowColumns.Add(viewColumns);
 		}
 
 		protected virtual void OnClose()
@@ -76,9 +79,15 @@ namespace LPS.Client.Sklad
 		{
 			ListPage current = GetCurrentPage();
 			if(current != null)
+			{
 				this.edtFilter.Text = current.TableView.Filter;
+				this.viewColumns.NodeStore = current.TableView.Binding.Mapping.ColumnsStore;
+			}
 			else
+			{
 				this.edtFilter.Text = "";
+				this.viewColumns.NodeStore = null;
+			}
 		}
 
 		private void AddModulesNodes(ModulesTreeInfo info, TreeStore store, TreeIter parent)
@@ -179,18 +188,6 @@ namespace LPS.Client.Sklad
 			dialog.Destroy();
 		}
 		#endregion
-		
-		public void SetColumnsView(DataTableListStoreBinding binding)
-		{
-			if(binding == null)
-			{
-				this.viewColumns.Model = null;
-			}
-			else
-			{
-				this.viewColumns.Model = binding.ColumnList;
-			}
-		}
 		
 		public void ShowModuleTab(ModulesTreeInfo info)
 		{
