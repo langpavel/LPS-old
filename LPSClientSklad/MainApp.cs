@@ -73,6 +73,7 @@ namespace LPS.Client.Sklad
 			try
 			{
 				Exception exception = args.ExceptionObject as Exception;
+				Log.Error(exception);
 				if(exception is TargetInvocationException && exception.InnerException != null)
 					exception = exception.InnerException;
 				StringBuilder sb = new StringBuilder();

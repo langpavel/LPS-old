@@ -99,6 +99,22 @@ namespace LPS.Client
 			store_types.Add((GType)typeof(DataRow));
 		}
 
+		private int CompareConfigurableColumnPosition(ConfigurableColumn x, ConfigurableColumn y)
+		{
+			return x.Conf_Index - y.Conf_Index;
+		}
+
+		public void ReorderColumns()
+		{
+			List<ConfigurableColumn> result = new List<ConfigurableColumn>();
+			foreach(ConfigurableColumn col in ColumnsStore)
+				result.Add(col);
+			result.Sort(CompareConfigurableColumnPosition);
+			ColumnsStore.Clear();
+			foreach(ConfigurableColumn col in result)
+				ColumnsStore.AddNode(col);
+		}
+
 		public void Dispose ()
 		{
 			Clear();

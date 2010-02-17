@@ -11,11 +11,10 @@ namespace LPS.Client
 {
 	public class ConfigurationStore : IDisposable
 	{
-		public ServerConnection Connection { get; set; }
+		public ServerConnection Connection { get { return ServerConnection.Instance; } }
 
-		public ConfigurationStore(ServerConnection Connection)
+		public ConfigurationStore()
 		{
-			this.Connection = Connection;
 		}
 
 		private DataSet config_ds;
@@ -99,8 +98,11 @@ namespace LPS.Client
 			if(r == null)
 			{
 				r = this.ConfigTable.NewRow();
-				this.ConfigTable.Rows.Add(r);
+				r["id"] = this.Connection.NextSeqValue("sys_user_preferences_id_seq");
+				r["path"] = path;
+				r["name"] = name;
 				r["id_user"] = Connection.UserId;
+				this.ConfigTable.Rows.Add(r);
 			}
 			r["type"] = type_name;
 			r["value"] = str_val;
@@ -111,7 +113,7 @@ namespace LPS.Client
 		{
 			foreach(DataRow r in ConfigTable.Rows)
 			{
-				if(path.Equals(r["path"]) && name.Equals(r["name"]) && Connection.UserId.Equals(r["user_id"]))
+				if(path.Equals(r["path"]) && name.Equals(r["name"]) && Connection.UserId.Equals(r["id_user"]))
 					return r;
 			}
 			return null;

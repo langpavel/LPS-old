@@ -111,6 +111,16 @@ namespace LPS.Util
 						colinfo.Required = "NO".Equals(r["is_nullable"]);
 						colinfo.Unique = ("UNIQUE".Equals(r["constraint_type"]) || "PRIMARY KEY".Equals(r["constraint_type"]));
 						colinfo.FkReferenceTable = r["references_table"] as string;
+						switch(colinfo.Name)
+						{
+						case "ts":
+						case "id_user_create":
+						case "dt_create":
+						case "id_user_modify":
+						case "dt_modify":
+							colinfo.Editable = false;
+							break;
+						}
 						cols.Add(colinfo);
 					}
 					info.Columns.Clear();

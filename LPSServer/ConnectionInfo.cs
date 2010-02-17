@@ -502,7 +502,7 @@ namespace LPS.Server
 							if(ci == null)
 								continue;
 							col.Caption = ci.Caption;
-							col.AllowDBNull = !ci.Required;
+							//col.AllowDBNull = !ci.Required; // dela problemy pri vkladani radku do datatable
 							if(ci.Default != null)
 							{
 								try

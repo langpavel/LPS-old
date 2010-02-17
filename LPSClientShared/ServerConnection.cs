@@ -31,7 +31,7 @@ namespace LPS.Client
 			this.cached_datasets = new Dictionary<string, DataSet>();
 			_instance = this;
 			resource_manager = new ResourceManager(this);
-			configuration_store = new ConfigurationStore(this);
+			configuration_store = new ConfigurationStore();
 		}
 
 		private static string _url;
@@ -287,7 +287,9 @@ namespace LPS.Client
 			{
 				string tablename = (string)dataset.ExtendedProperties["TABLE"];
 				using(DataSet changes = dataset.GetChanges())
+				{
 					CheckServerResult(Server.SaveDataSet(sink, security, tablename, changes, true, true, out affected));
+				}
 				if(affected > 0) 
 					dataset.AcceptChanges();
 				return affected;

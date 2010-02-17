@@ -63,6 +63,8 @@ namespace LPS.Client
 			this.Filter = new TreeModelFilter(this.ListStore, null);
 			this.Filter.VisibleFunc = FilterFunc;
 			this.TreeView.Model = this.Filter;
+			this.DataTable.RowChanged += HandleDataTableRowChanged;
+			this.DataTable.RowDeleted += HandleDataTableRowDeleted;
 		}
 
 		void ToggleSort(object sender, EventArgs e)

@@ -41,8 +41,8 @@ namespace LPS.Client
 				result = dateEntry;
 				
 			}
-			else
 */
+			else
 			{
 				Label label = new Label(caption);
 				label.UseUnderline = false;

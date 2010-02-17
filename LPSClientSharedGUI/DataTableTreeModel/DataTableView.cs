@@ -50,13 +50,9 @@ namespace LPS.Client
 		{
 			// when columns are reodered, added...
 			base.OnColumnsChanged();
-			using(Log.Scope("OnColumnsChanged"))
-			{
-				foreach(TreeViewColumn column in this.Columns)
-				{
-					Log.Info("column: ", column.Title);
-				}
-			}
+			if(Binding != null && Binding.Mapping != null)
+				Binding.Mapping.ReorderColumns();
+
 		}
 
 		protected void LoadData()

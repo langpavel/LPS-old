@@ -32,6 +32,11 @@ namespace LPS.Client
 		private LogWindow()
 			:base("LOG")
 		{
+			this.WidthRequest = 780;
+			this.HeightRequest = 350;
+			this.AllowShrink = true;
+			this.WindowPosition = WindowPosition.None;
+
 			this.DeleteEvent += delegate {
 				this.Dispose();
 			};
@@ -57,10 +62,12 @@ namespace LPS.Client
 
 			scrollw = new ScrolledWindow();
 			scrollw.Add(view);
-			scrollw.WidthRequest = 600;
 			mainbox.PackStart(scrollw);
 
 			buttons = new HButtonBox();
+			buttons.Layout = ButtonBoxStyle.Spread;
+			buttons.Spacing = 10;
+			buttons.BorderWidth = 5;
 			mainbox.PackStart(buttons, false, false, 0);
 
 			Button btn_clear = new Button("gtk-clear");
@@ -98,9 +105,9 @@ namespace LPS.Client
 		private TreeIter AppendValues(TreeIter? parent, DateTime dt, int verbosity, string verbosity_text, string text, string source)
 		{
 			if(parent != null)
-				return store.AppendValues((TreeIter)parent, dt.ToString("hh:mm:ss.ffffff"), verbosity, verbosity_text, text, source, "");
+				return store.AppendValues((TreeIter)parent, dt.ToString("hh:mm:ss.ffffff"), verbosity, verbosity_text, text.Trim(), source.Trim(), "");
 			else
-				return store.AppendValues(dt.ToString("hh:mm:ss.ffffff"), verbosity, verbosity_text, text, source, "");
+				return store.AppendValues(dt.ToString("hh:mm:ss.ffffff"), verbosity, verbosity_text, text.Trim(), source.Trim(), "");
 		}
 
 		TreeIter? FindParentIter(LogScope scope)

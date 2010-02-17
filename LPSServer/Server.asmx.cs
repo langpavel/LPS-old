@@ -199,13 +199,15 @@ namespace LPS.Server
 			affected = 0;
 			try
 			{
+				Console.WriteLine(table_name);
 				ConnectionInfo ci = GetConnectionInfo();
 				affected = ci.SaveDataSet(table_name, changes, updateUserInfo, changesNotify);
 				return ServerChangeSink.GetResult(sink, security);
 			}
 			catch(Exception err)
 			{
-				return new ServerCallResult(err); 
+				Console.WriteLine(err);
+				return new ServerCallResult(err);
 			}
 		}
 		#endregion

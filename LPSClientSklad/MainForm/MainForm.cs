@@ -40,7 +40,20 @@ namespace LPS.Client.Sklad
 			
 			InitModules(false);
 			
-			string[] opened_tabs = Connection.Configuration.GetConfiguration<string[]>("main", "opened_tabs", null);
+			viewColumns = new NodeView();
+			viewColumns.Show();
+			viewColumns.SearchColumn = 1;
+			viewColumns.EnableSearch = true;
+			ConfigurableColumn.CreateNodeViewColumns(viewColumns);
+			scrollwindowColumns.Add(viewColumns);
+
+			RestoreTabs();
+		}
+
+		private void RestoreTabs()
+		{
+			string[] opened_tabs = Connection.Configuration.GetConfiguration<string>("main", "opened_tabs", "")
+				.Split(new string[] {"::"}, StringSplitOptions.RemoveEmptyEntries);
 			if(opened_tabs != null && opened_tabs.Length != 0)
 			{
 				foreach(string tab_name in opened_tabs)
@@ -49,25 +62,34 @@ namespace LPS.Client.Sklad
 					{
 						this.ShowModuleTab(Connection.Resources.GetModulesInfo(tab_name));
 					}
-					catch { }
+					catch(Exception err)
+					{
+						Log.Error(err);
+					}
 				}
 			}
-			viewColumns = new NodeView();
-			viewColumns.Show();
-			ConfigurableColumn.CreateNodeViewColumns(viewColumns);
-			scrollwindowColumns.Add(viewColumns);
+
 		}
 
 		protected virtual void OnClose()
 		{
 			try
 			{
-				List<string> tabs = new List<string>();
-				for(int i=0; i<nbData.NPages; i++)
-					tabs.Add(((ListPage)nbData.GetNthPage(i)).Module.Id);
-				Connection.Configuration.SaveConfiguration("main", "opened_tabs", tabs.ToArray());
+				Log.Debug("OnClose");
+				SaveCurrentTabs();
 			}
-			catch { }
+			catch(Exception err)
+			{
+				Log.Error(err);
+			}
+		}
+
+		private void SaveCurrentTabs()
+		{
+			List<string> tabs = new List<string>();
+			for(int i=0; i<nbData.NPages; i++)
+				tabs.Add(((ListPage)nbData.GetNthPage(i)).Module.Id);
+			Connection.Configuration.SaveConfiguration("main", "opened_tabs", String.Join("::", tabs.ToArray()));
 		}
 
 		public ListPage GetCurrentPage()
