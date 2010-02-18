@@ -6,5 +6,6 @@ namespace LPS
     {
         string LookupTable { get; }
         string[] LookupColumns { get; }
+		string FkListReplaceFormat { get; }
     }
 }

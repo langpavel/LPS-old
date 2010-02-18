@@ -35,6 +35,36 @@ namespace LPS
               Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
             return regex.IsMatch(s);
         }
+
+		/// <summary>
+		/// If object is null or DBNull
+		/// </summary>
+		public static bool IsNull(this object o)
+		{
+			return (o == null) || (o.Equals(DBNull.Value));
+		}
+
+		/// <summary>
+		/// If object is not null and not DBNull
+		/// </summary>
+		public static bool IsNotNull(this object o)
+		{
+			return ! o.IsNull();
+		}
+
+		/// <summary>
+		/// If object is not null and not DBNull,
+		/// convert it to val via Convert.ChangeType
+		/// </summary>
+		public static bool IsNotNull<T>(this object o, out T val)
+		{
+			bool result = o.IsNotNull();
+			if(result)
+				val = (T)Convert.ChangeType(o, typeof(T));
+			else
+				val = default(T);
+			return result;
+		}
     }
 }
 

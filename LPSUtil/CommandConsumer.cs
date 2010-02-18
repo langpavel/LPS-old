@@ -14,12 +14,18 @@ namespace LPS.Util
 		{
 			Commands = new Dictionary<string, ICommand>();
 			Commands["help"] = new HelpCommand();
+
+			Commands["foreach"] = new ForeachCommand();
+
 			Commands["echo"] = new EchoCommand();
 			Commands["login"] = new LoginCommand();
 			Commands["ping"] = new PingCommand();
 			Commands["sqltab"] = new SqlTablesCommand();
 			Commands["xtab"] = new XtableCommand();
 			Commands["refresh"] = new RefreshCommand();
+			Commands["cd"] = new ChangeDirCommand();
+			Commands["ls"] = new LsDirCommand();
+			Commands["dir"] = new LsDirCommand();
 		}
 
 		public CommandConsumer()
@@ -67,34 +73,49 @@ namespace LPS.Util
 				TextWriter output = Console.Out;
 				string[] cmd_output = cmdline.Split(new string[] { ">>>" }, StringSplitOptions.None);
 				if(cmd_output.Length > 1)
-					output = new StreamWriter(cmd_output[1], false, Encoding.UTF8);
-
-				string[] line_bits = cmd_output[0].Split(new char[] {' ','(',',',';'}, 2, StringSplitOptions.RemoveEmptyEntries);
-				ICommand cmd;
-				if(Commands.TryGetValue(line_bits[0], out cmd))
 				{
 					try
 					{
-						if(line_bits.Length == 1)
-							cmd.Execute(line_bits[0], "", output);
-						else
-							cmd.Execute(line_bits[0], line_bits[1], output);
+						output = new StreamWriter(cmd_output[1], false, Encoding.UTF8);
 					}
 					catch(Exception err)
 					{
-						Log.Error("Příkaz '{0}' vyvolal vyjímku {1}", line_bits[0], err);
+						Log.Error(err);
+						continue;
 					}
 				}
-				else
-				{
-					Log.Error("Příkaz nenalezen: '{0}'", line_bits[0]);
-				}
+				Execute(cmd_output[0], output);
 				if(output != Console.Out)
 				{
 					output.Close();
 					output.Dispose();
 				}
 			}
+		}
+
+		public void Execute(string cmdline, TextWriter output)
+		{
+			string[] line_bits = cmdline.Split(new char[] {' ','(',',',';'}, 2, StringSplitOptions.RemoveEmptyEntries);
+			ICommand cmd;
+			if(Commands.TryGetValue(line_bits[0], out cmd))
+			{
+				try
+				{
+					if(line_bits.Length == 1)
+						cmd.Execute(this, line_bits[0], "", output);
+					else
+						cmd.Execute(this, line_bits[0], line_bits[1], output);
+				}
+				catch(Exception err)
+				{
+					Log.Error("Příkaz '{0}' vyvolal vyjímku {1}", line_bits[0], err);
+				}
+			}
+			else
+			{
+				Log.Error("Příkaz nenalezen: '{0}'", line_bits[0]);
+			}
+
 		}
 
 		public virtual void Dispose()

@@ -8,7 +8,7 @@ namespace LPS
 {
 	[Serializable]
 	[XmlRoot("table")]
-	public class TableInfo : IListInfo, ICloneable
+	public class TableInfo : IListInfo, ICloneable, ILookupInfo
 	{
 		public TableInfo ()
 		{
@@ -38,7 +38,20 @@ namespace LPS
 		
 		[XmlElement("detail-name")]
 		public string DetailName { get; set; }
-		
+
+		/// <summary>
+		/// sloupce pro zobrazeni v comboboxu
+		/// </summary>
+		[XmlArray("lookup-columns")]
+		[XmlArrayItem("column")]
+		public string[] LookupColumns { get; set; }
+
+		/// <summary>
+		/// Text pro vlozeni
+		/// </summary>
+		[XmlElement("lookup-replace-format")]
+		public string LookupReplaceFormat { get; set; }
+
 		[XmlArray("columns")]
 		[XmlArrayItem("column")]
 		public List<ColumnInfo> Columns { get; set; }
@@ -68,5 +81,22 @@ namespace LPS
 		{
 			return this.Clone();
 		}
+
+		#region ILookupInfo implementation
+		string ILookupInfo.LookupTable
+		{
+			get	{ return this.TableName; }
+		}
+
+		string[] ILookupInfo.LookupColumns
+		{
+			get { return this.LookupColumns; }
+		}
+
+		string ILookupInfo.FkListReplaceFormat
+		{
+			get { return this.LookupReplaceFormat; }
+		}
+		#endregion
 	}
 }

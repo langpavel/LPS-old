@@ -5,13 +5,13 @@
 	<list-sql>select * from sys_gen_cyklus {where}</list-sql>
 	<detail-name>generic</detail-name>
 	<columns>
-		<column name="id" caption="Id" visible="true" editable="true" required="true" unique="true" width="0">
-			<desc>Id</desc>
+		<column name="id" caption="ID" visible="false" editable="false" required="true" unique="true" width="0">
+			<desc>Identifikátor</desc>
 		</column>
-		<column name="kod" caption="Kod" visible="true" editable="true" required="true" unique="false" width="0">
+		<column name="kod" caption="Kod" visible="true" editable="true" required="true" unique="false" width="0" max-length="10">
 			<desc>Kod</desc>
 		</column>
-		<column name="name" caption="Name" visible="true" editable="true" required="true" unique="false" width="0">
+		<column name="name" caption="Name" visible="true" editable="true" required="true" unique="false" width="0" max-length="40">
 			<desc>Name</desc>
 		</column>
 		<column name="sys_date" caption="Sys date" visible="true" editable="true" required="true" unique="false" width="0">

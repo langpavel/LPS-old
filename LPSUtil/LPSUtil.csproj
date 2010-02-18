@@ -21,7 +21,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <Externalconsole>true</Externalconsole>
-    <Commandlineparameters>login http://localhost/LPS/Server.asmx,langpa,</Commandlineparameters>
+    <Commandlineparameters>cd ../../../LPSServer/resources/tables\;\;login http://localhost/LPS/Server.asmx,langpa,</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandConsumer.cs" />
@@ -46,6 +47,9 @@
     <Compile Include="Commands\XtableCommand.cs" />
     <Compile Include="Commands\SqlTablesCommand.cs" />
     <Compile Include="Commands\RefreshCommand.cs" />
+    <Compile Include="Commands\ChangeDirCommand.cs" />
+    <Compile Include="Commands\LsDirCommand.cs" />
+    <Compile Include="Commands\ForeachCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPSShared\LPSShared.csproj">

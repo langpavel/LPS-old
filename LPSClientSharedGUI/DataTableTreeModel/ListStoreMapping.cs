@@ -48,8 +48,7 @@ namespace LPS.Client
 		{
 			if(info != null)
 			{
-				if(!String.IsNullOrEmpty(info.FkReferenceTable)
-					&& !String.IsNullOrEmpty(info.FkReplaceColumns))
+				if(!String.IsNullOrEmpty(info.FkReferenceTable))
 					return new LookupColumn(this, info, column);
 			}
 			if(column != null)

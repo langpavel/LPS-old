@@ -63,7 +63,7 @@ namespace LPS.Util
 			return s[0].ToString().ToUpper() + s.Substring(1);
 		}
 
-		public void Execute (string cmd_name, string argline, TextWriter output)
+		public void Execute (CommandConsumer consumer, string cmd_name, string argline, TextWriter output)
 		{
 			string[] args = argline.Split(new char[] {' ',',',';'}, StringSplitOptions.RemoveEmptyEntries);
 			foreach(string tabname in args)
@@ -78,8 +78,9 @@ namespace LPS.Util
 						info = info.Clone();
 						Log.Info("Updating TableInfo name {0}", tabname);
 					}
-					catch
+					catch(Exception err)
 					{
+						Log.Error(err);
 						info = new TableInfo();
 						Log.Info("Creating new TableInfo name {0}", tabname);
 						info.TableName = tabname;
@@ -99,6 +100,7 @@ namespace LPS.Util
 						{
 							colinfo = new ColumnInfo();
 							colinfo.Name = (string)r["column_name"];
+							Log.Info("Vytvořen sloupec {0}", colinfo.Name);
 							colinfo.Caption = Capitalize((string)r["column_name"], true, "id_");
 							colinfo.Visible = true;
 							colinfo.Description = colinfo.Caption;
@@ -111,14 +113,55 @@ namespace LPS.Util
 						colinfo.Required = "NO".Equals(r["is_nullable"]);
 						colinfo.Unique = ("UNIQUE".Equals(r["constraint_type"]) || "PRIMARY KEY".Equals(r["constraint_type"]));
 						colinfo.FkReferenceTable = r["references_table"] as string;
+						switch(r["udt_name"] as string)
+						{
+						case "date":
+							colinfo.DisplayFormat = "dd.MM.yyyy";
+							break;
+						case "timestamp":
+							colinfo.DisplayFormat = "dd.MM.yyyy hh':'mm':'ss";
+							break;
+						case "varchar":
+							int length;
+							if(r["character_maximum_length"].IsNotNull(out length))
+								colinfo.MaxLength = length;
+							break;
+						}
 						switch(colinfo.Name)
 						{
+						case "id":
+							colinfo.Caption = "ID";
+							colinfo.Description = "Identifikátor";
+							colinfo.Unique = true;
+							colinfo.Visible = false;
+							colinfo.Editable = false;
+							break;
 						case "ts":
+							colinfo.Caption = "Časová značka";
+							colinfo.Description = "Časová značka poslední změny";
+							colinfo.Visible = false;
+							colinfo.Editable = false;
+							colinfo.DisplayFormat = "yyyy-MM-dd hh:mm:ss.ffffff";
+							break;
 						case "id_user_create":
+							colinfo.Editable = false;
+							colinfo.Caption = "Vytvořil";
+							colinfo.Description = "Vytvořil uživatel";
+							break;
 						case "dt_create":
+							colinfo.Editable = false;
+							colinfo.Caption = "Vytvořeno";
+							colinfo.Description = "Vytvořeno dne";
+							break;
 						case "id_user_modify":
+							colinfo.Editable = false;
+							colinfo.Caption = "Změnil";
+							colinfo.Description = "Změněno uživatelem";
+							break;
 						case "dt_modify":
 							colinfo.Editable = false;
+							colinfo.Caption = "Změněno";
+							colinfo.Description = "Změněno dne";
 							break;
 						}
 						cols.Add(colinfo);

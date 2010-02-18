@@ -10,7 +10,7 @@ namespace LPS.Util
 		{
 		}
 
-		public void Execute (string cmd_name, string argline, TextWriter output)
+		public void Execute (CommandConsumer consumer, string cmd_name, string argline, TextWriter output)
 		{
 			foreach(KeyValuePair<string, ICommand> kw in CommandConsumer.Commands)
 			{

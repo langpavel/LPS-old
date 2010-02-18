@@ -18,9 +18,11 @@ namespace LPS.Client
 		public LookupColumn(ListStoreMapping Mapping, ColumnInfo ColumnInfo, DataColumn DataColumn)
 			: base(Mapping, ColumnInfo, DataColumn)
 		{
-			ds = ServerConnection.Instance.GetCachedDataSet(this.ColumnInfo.FkReferenceTable);
-			string[] cols = ColumnInfo.FkReplaceColumns.Split(new char[] {',',';',' ',':','-','\'','"', '[', ']', '(', ')'}, StringSplitOptions.RemoveEmptyEntries);
-			format = ColumnInfo.FkReplaceColumns;
+			ILookupInfo linfo = (ILookupInfo)this.ColumnInfo;
+			ds = ServerConnection.Instance.GetCachedDataSet(linfo.LookupTable);
+			string[] cols = linfo.FkListReplaceFormat.Split(
+				new char[] {',',';',' ',':','-','\'','"', '[', ']', '(', ')', '{', '}', '<', '>'}, StringSplitOptions.RemoveEmptyEntries);
+			format = linfo.FkListReplaceFormat;
 			for(int i = 0; i < cols.Length; i++)
 			{
 				int idx = ds.Tables[0].Columns.IndexOf(cols[i]);

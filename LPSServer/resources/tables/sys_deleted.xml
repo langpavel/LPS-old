@@ -5,10 +5,10 @@
 	<list-sql>select * from sys_deleted {where}</list-sql>
 	<detail-name>generic</detail-name>
 	<columns>
-		<column name="id" caption="Id" visible="true" editable="true" required="true" unique="true" width="0">
-			<desc>Id</desc>
+		<column name="id" caption="ID" visible="false" editable="false" required="true" unique="true" width="0">
+			<desc>Identifikátor</desc>
 		</column>
-		<column name="table_name" caption="Table name" visible="true" editable="true" required="true" unique="false" width="0">
+		<column name="table_name" caption="Table name" visible="true" editable="true" required="true" unique="false" width="0" max-length="40">
 			<desc>Table name</desc>
 		</column>
 		<column name="row_id" caption="Row id" visible="true" editable="true" required="true" unique="false" width="0">
@@ -21,8 +21,8 @@
 			<ref-table>sys_user</ref-table>
 			<desc>User</desc>
 		</column>
-		<column name="ts" caption="Ts" visible="true" editable="true" required="false" unique="false" width="0">
-			<desc>Ts</desc>
+		<column name="ts" caption="Časová značka" visible="false" editable="false" required="false" unique="false" width="0" display="yyyy-MM-dd hh:mm:ss.ffffff">
+			<desc>Časová značka poslední změny</desc>
 		</column>
 	</columns>
 </table>

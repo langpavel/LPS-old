@@ -1,23 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
-<table name="c_kategorie">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="c_kategorie">
 	<desc>Kategorie produktů</desc>
-	<detail-name>generic</detail-name>
 	<list-sql>select * from c_kategorie</list-sql>
-	<edit-sql>select * from c_kategorie</edit-sql>
+	<detail-name>generic</detail-name>
 	<columns>
-		<column name="id" caption="Id" visible="false" editable="true" required="false" width="0" />
-		<column name="kod" caption="Kod" visible="true" editable="true" required="false" width="0" />
-		<column name="popis" caption="Popis" visible="true" editable="true" required="false" width="0" />
-		<column name="aktivni" caption="Aktivni" visible="true" editable="true" required="false" width="0" />
-		<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+		<column name="id" caption="ID" visible="false" editable="false" required="true" unique="true" width="0">
+			<desc>Identifikátor</desc>
+		</column>
+		<column name="kod" caption="Kod" visible="true" editable="true" required="true" unique="true" width="0" max-length="10" />
+		<column name="popis" caption="Popis" visible="true" editable="true" required="true" unique="false" width="0" max-length="100" />
+		<column name="aktivni" caption="Aktivni" visible="true" editable="true" required="true" unique="false" width="0" />
+		<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" unique="false" width="0" display="{1}, {2}">
 			<ref-table>sys_user</ref-table>
 			<replace-columns>surname, first_name</replace-columns>
+			<desc>Vytvořil uživatel</desc>
 		</column>
-		<column name="dt_create" caption="Vytvořeno" visible="true" editable="false" required="false" width="0" />
-		<column name="id_user_modify" caption="Změnil" visible="true" editable="false" required="false" width="0" display="{1}, {2}">
+		<column name="dt_create" caption="Vytvořeno" visible="true" editable="false" required="false" unique="false" width="0" display="dd.MM.yyyy hh':'mm':'ss">
+			<desc>Vytvořeno dne</desc>
+		</column>
+		<column name="id_user_modify" caption="Změnil" visible="true" editable="false" required="false" unique="false" width="0" display="{1}, {2}">
 			<ref-table>sys_user</ref-table>
 			<replace-columns>surname, first_name</replace-columns>
+			<desc>Změněno uživatelem</desc>
 		</column>
-		<column name="dt_modify" caption="Změněno" visible="true" editable="false" required="false" width="0" />
+		<column name="dt_modify" caption="Změněno" visible="true" editable="false" required="false" unique="false" width="0" display="dd.MM.yyyy hh':'mm':'ss">
+			<desc>Změněno dne</desc>
+		</column>
+		<column name="ts" caption="Časová značka" visible="false" editable="false" required="false" unique="false" width="0" display="yyyy-MM-dd hh:mm:ss.ffffff">
+			<desc>Časová značka poslední změny</desc>
+		</column>
 	</columns>
 </table>

@@ -5,10 +5,10 @@
 	<list-sql>select * from sys_attachement {where}</list-sql>
 	<detail-name>generic</detail-name>
 	<columns>
-		<column name="id" caption="Id" visible="true" editable="true" required="true" unique="true" width="0">
-			<desc>Id</desc>
+		<column name="id" caption="ID" visible="false" editable="false" required="true" unique="true" width="0">
+			<desc>Identifikátor</desc>
 		</column>
-		<column name="table_name" caption="Table name" visible="true" editable="true" required="true" unique="false" width="0">
+		<column name="table_name" caption="Table name" visible="true" editable="true" required="true" unique="false" width="0" max-length="40">
 			<desc>Table name</desc>
 		</column>
 		<column name="table_id" caption="Table id" visible="true" editable="true" required="true" unique="false" width="0">
@@ -18,10 +18,10 @@
 			<ref-table>sys_attachement</ref-table>
 			<desc>Attachement</desc>
 		</column>
-		<column name="filename" caption="Filename" visible="true" editable="true" required="true" unique="false" width="0">
+		<column name="filename" caption="Filename" visible="true" editable="true" required="true" unique="false" width="0" max-length="1024">
 			<desc>Filename</desc>
 		</column>
-		<column name="mimetype" caption="Mimetype" visible="true" editable="true" required="true" unique="false" width="0">
+		<column name="mimetype" caption="Mimetype" visible="true" editable="true" required="true" unique="false" width="0" max-length="40">
 			<desc>Mimetype</desc>
 		</column>
 		<column name="popis" caption="Popis" visible="true" editable="true" required="true" unique="false" width="0">
@@ -31,25 +31,25 @@
 			<ref-table>sys_user</ref-table>
 			<desc>User lock</desc>
 		</column>
-		<column name="dt_lock" caption="Dt lock" visible="true" editable="true" required="false" unique="false" width="0">
+		<column name="dt_lock" caption="Dt lock" visible="true" editable="true" required="false" unique="false" width="0" display="dd.MM.yyyy hh':'mm':'ss">
 			<desc>Dt lock</desc>
 		</column>
-		<column name="id_user_create" caption="User create" visible="true" editable="true" required="false" unique="false" width="0">
+		<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" unique="false" width="0">
 			<ref-table>sys_user</ref-table>
-			<desc>User create</desc>
+			<desc>Vytvořil uživatel</desc>
 		</column>
-		<column name="dt_create" caption="Dt create" visible="true" editable="true" required="false" unique="false" width="0">
-			<desc>Dt create</desc>
+		<column name="dt_create" caption="Vytvořeno" visible="true" editable="false" required="false" unique="false" width="0" display="dd.MM.yyyy hh':'mm':'ss">
+			<desc>Vytvořeno dne</desc>
 		</column>
-		<column name="id_user_modify" caption="User modify" visible="true" editable="true" required="false" unique="false" width="0">
+		<column name="id_user_modify" caption="Změnil" visible="true" editable="false" required="false" unique="false" width="0">
 			<ref-table>sys_user</ref-table>
-			<desc>User modify</desc>
+			<desc>Změněno uživatelem</desc>
 		</column>
-		<column name="dt_modify" caption="Dt modify" visible="true" editable="true" required="false" unique="false" width="0">
-			<desc>Dt modify</desc>
+		<column name="dt_modify" caption="Změněno" visible="true" editable="false" required="false" unique="false" width="0" display="dd.MM.yyyy hh':'mm':'ss">
+			<desc>Změněno dne</desc>
 		</column>
-		<column name="ts" caption="Ts" visible="true" editable="true" required="false" unique="false" width="0">
-			<desc>Ts</desc>
+		<column name="ts" caption="Časová značka" visible="false" editable="false" required="false" unique="false" width="0" display="yyyy-MM-dd hh:mm:ss.ffffff">
+			<desc>Časová značka poslední změny</desc>
 		</column>
 	</columns>
 </table>

@@ -10,7 +10,7 @@ namespace LPS.Util
 		{
 		}
 
-		public virtual void Execute(string cmd_name, string argline, TextWriter output)
+		public virtual void Execute(CommandConsumer consumer, string cmd_name, string argline, TextWriter output)
 		{
 			string[] p = argline.Split(new char[] {',',';'});
 			if(p.Length != 3)

@@ -27,7 +27,7 @@ namespace LPS.Util
 			return tables.ToArray();
 		}
 
-		public void Execute (string cmd_name, string argline, TextWriter output)
+		public void Execute (CommandConsumer consumer, string cmd_name, string argline, TextWriter output)
 		{
 			List<string> tablenames = new List<string>(GetSqlTableNames());
 			if(argline == "missing")

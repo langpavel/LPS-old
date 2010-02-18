@@ -32,6 +32,9 @@ namespace LPS
 
 		[XmlAttribute("width")]
 		public int Width { get; set; }
+
+		[XmlAttribute("max-length")]
+		public int? MaxLength { get; set; }
 		
 		[XmlAttribute("default")]
 		public string Default { get; set; }
@@ -40,7 +43,7 @@ namespace LPS
 		public string FkReferenceTable { get; set; }
 		
 		[XmlElement("replace-columns")]
-		public string FkReplaceColumns { get; set; }
+		public string FkListReplaceFormat { get; set; }
 		
 		[XmlElement("combo-replace-columns")]
 		public string FkComboReplaceColumns { get; set; }
@@ -74,10 +77,39 @@ namespace LPS
 		{
 			get
 			{
-				string str = this.FkComboReplaceColumns ?? this.FkReplaceColumns ?? (String.IsNullOrEmpty(this.FkReferenceTable)?"":"kod");
-				return str.Split(
-					new char[] {' ',',',';','[',']','{','}','(',')','\'','"','-',':'},
-					StringSplitOptions.RemoveEmptyEntries);
+				if(!String.IsNullOrEmpty(this.FkComboReplaceColumns))
+				{
+					return this.FkComboReplaceColumns.Split(
+						new char[] {',',';',' ',':','-','\'','"', '[', ']', '(', ')', '{', '}', '<', '>'},
+						StringSplitOptions.RemoveEmptyEntries);
+				}
+				if(!String.IsNullOrEmpty(this.FkReferenceTable))
+				{
+					TableInfo tableInfo = ResourceManager.Instance.GetTableInfo(this.FkReferenceTable);
+					ILookupInfo look = (ILookupInfo)tableInfo;
+					return look.LookupColumns;
+				}
+				Log.Warning("Sloupec {0} ({1} - {2}): Nenalezena hodnota", this.Name, this.Caption, this.Description);
+				return new string[] { };
+			}
+		}
+
+		string ILookupInfo.FkListReplaceFormat
+		{
+			get
+			{
+				if(!String.IsNullOrEmpty(this.FkListReplaceFormat))
+					return this.FkListReplaceFormat;
+				if(!String.IsNullOrEmpty(this.FkReferenceTable))
+				{
+					TableInfo tableInfo = ResourceManager.Instance.GetTableInfo(this.FkReferenceTable);
+					ILookupInfo look = (ILookupInfo)tableInfo;
+					string fmt = look.FkListReplaceFormat;
+					if(!String.IsNullOrEmpty(fmt))
+						return fmt;
+				}
+				Log.Warning("Sloupec {0} ({1} - {2}): Nenalezena hodnota, poziti id", this.Name, this.Caption, this.Description);
+				return "{id}";
 			}
 		}
 		#endregion
