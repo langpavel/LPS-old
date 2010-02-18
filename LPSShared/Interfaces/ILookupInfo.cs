@@ -7,5 +7,9 @@ namespace LPS
         string LookupTable { get; }
         string[] LookupColumns { get; }
 		string FkListReplaceFormat { get; }
+		/// <summary>
+		/// "combo" or "list(cislo)"
+		/// </summary>
+		string LookupMethod { get; }
     }
 }

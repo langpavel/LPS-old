@@ -93,6 +93,7 @@
     <Folder Include="DataTableTreeModel\" />
     <Folder Include="Gtk\" />
     <Folder Include="DataTableTreeModel\Columns\" />
+    <Folder Include="Widgets\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPSClientShared\LPSClientShared.csproj">

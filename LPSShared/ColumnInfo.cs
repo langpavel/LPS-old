@@ -47,7 +47,10 @@ namespace LPS
 		
 		[XmlElement("combo-replace-columns")]
 		public string FkComboReplaceColumns { get; set; }
-		
+
+		[XmlElement("lookup-method")]
+		public string LookupMethod { get; set; }
+
 		[XmlAttribute("display")]
 		public string DisplayFormat { get; set; }
 		
@@ -110,6 +113,21 @@ namespace LPS
 				}
 				Log.Warning("Sloupec {0} ({1} - {2}): Nenalezena hodnota, poziti id", this.Name, this.Caption, this.Description);
 				return "{id}";
+			}
+		}
+
+		string ILookupInfo.LookupMethod
+		{
+			get
+			{
+				if(!String.IsNullOrEmpty(this.LookupMethod))
+					return this.LookupMethod;
+				if(!String.IsNullOrEmpty(this.FkReferenceTable))
+				{
+					TableInfo tableInfo = ResourceManager.Instance.GetTableInfo(this.FkReferenceTable);
+					return tableInfo.LookupMethod;
+				}
+				return null;
 			}
 		}
 		#endregion

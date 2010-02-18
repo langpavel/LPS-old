@@ -52,6 +52,9 @@ namespace LPS
 		[XmlElement("lookup-replace-format")]
 		public string LookupReplaceFormat { get; set; }
 
+		[XmlElement("lookup-method")]
+		public string LookupMethod { get; set; }
+
 		[XmlArray("columns")]
 		[XmlArrayItem("column")]
 		public List<ColumnInfo> Columns { get; set; }
