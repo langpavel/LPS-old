@@ -51,14 +51,14 @@ namespace LPS.Client
 
 			view = new TreeView(store);
 			view.AppendColumn("Čas", new CellRendererText(), "text", 0);
+			view.AppendColumn("Trvání", new CellRendererText(), "text", 5);
 			view.AppendColumn("Druh", new CellRendererText(), "text", 2);
 			view.AppendColumn("Text", new CellRendererText(), "text", 3);
 			view.AppendColumn("Unístění", new CellRendererText(), "text", 4);
-			view.AppendColumn("Trvání", new CellRendererText(), "text", 5);
 			view.ShowExpanders = true;
 			view.EnableTreeLines = true;
 			view.EnableGridLines = TreeViewGridLines.Vertical;
-			view.ExpanderColumn = view.Columns[2];
+			view.ExpanderColumn = view.Columns[1];
 
 			foreach(TreeViewColumn col in view.Columns)
 			{
@@ -102,18 +102,22 @@ namespace LPS.Client
 
 		public void Write (LogScope scope, Verbosity verbosity, string source, string text)
 		{
-			TreeIter iter = AppendValues(FindParentIter(scope), DateTime.Now, (int)verbosity, verbosity.ToString(), text, source);
+			DateTime dt = DateTime.Now;
+			string span = "";
+			if(scope != null)
+				 span = (dt - scope.CreateDateTime).ToString();
+			TreeIter iter = AppendValues(FindParentIter(scope), dt, (int)verbosity, verbosity.ToString(), text, source, span);
 			TreePath path = store.GetPath(iter);
 			view.ExpandToPath(path);
 			view.ScrollToCell(path, view.Columns[1], false, 0.0f, 0.0f);
 		}
 
-		private TreeIter AppendValues(TreeIter? parent, DateTime dt, int verbosity, string verbosity_text, string text, string source)
+		private TreeIter AppendValues(TreeIter? parent, DateTime dt, int verbosity, string verbosity_text, string text, string source, string span)
 		{
 			if(parent != null)
-				return store.AppendValues((TreeIter)parent, dt.ToString("hh:mm:ss.ffffff"), verbosity, verbosity_text, text.Trim(), source.Trim(), "");
+				return store.AppendValues((TreeIter)parent, dt.ToString("hh:mm:ss.ffffff"), verbosity, verbosity_text, text.Trim(), source.Trim(), span);
 			else
-				return store.AppendValues(dt.ToString("hh:mm:ss.ffffff"), verbosity, verbosity_text, text.Trim(), source.Trim(), "");
+				return store.AppendValues(dt.ToString("hh:mm:ss.ffffff"), verbosity, verbosity_text, text.Trim(), source.Trim(), span);
 		}
 
 		TreeIter? FindParentIter(LogScope scope)
@@ -134,7 +138,7 @@ namespace LPS.Client
 				s = s.ChildScope;
 			while(s != null && s.ParentScope != scope)
 			{
-				iter = AppendValues(iter, s.CreateDateTime, -1, "", s.Text, s.Source);
+				iter = AppendValues(iter, s.CreateDateTime, -1, "Skupina", s.Text, s.Source, "");
 				s.Disposed += ScopeDisposed;
 				scope_iters[s] = iter;
 				s = s.ChildScope;
@@ -144,13 +148,19 @@ namespace LPS.Client
 
 		void ScopeDisposed(object sender, EventArgs e)
 		{
-			LogScope s = (LogScope)sender;
+			LogScope scope = (LogScope)sender;
 			TreeIter? iter;
-			if(scope_iters.TryGetValue(s, out iter))
+			TimeSpan span = DateTime.Now - scope.CreateDateTime;
+			if(scope_iters.TryGetValue(scope, out iter))
 			{
-				scope_iters.Remove(s);
-				TimeSpan span = DateTime.Now - s.CreateDateTime;
+				scope_iters.Remove(scope);
 				store.SetValue((TreeIter)iter, 5, span.ToString());
+			}
+			else if(span.TotalSeconds > 0.5)
+			{
+				// only record group row
+				FindParentIter(scope);
+				scope_iters.Remove(scope);
 			}
 		}
 

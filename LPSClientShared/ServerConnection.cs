@@ -14,24 +14,28 @@ namespace LPS.Client
 		
 		public ServerConnection(string url)
 		{
-			try
+			using(Log.Scope("ServerConnection constructor"))
 			{
-				if(_instance != null)
+				Log.Debug("connecting to {0}", url);
+				try
 				{
-					_instance.Dispose();
-					_instance = null;
+					if(_instance != null)
+					{
+						_instance.Dispose();
+						_instance = null;
+					}
 				}
+				catch { }
+				if(url == null)
+					throw new ArgumentNullException("url");
+				_url = url;
+				this.Server = new LPSClientShared.LPSServer.Server(url);
+				this.Server.CookieContainer = CookieContainer;
+				this.cached_datasets = new Dictionary<string, DataSet>();
+				_instance = this;
+				resource_manager = new ResourceManager(this);
+				configuration_store = new ConfigurationStore();
 			}
-			catch { }
-			if(url == null)
-				throw new ArgumentNullException("url");
-			_url = url;
-			this.Server = new LPSClientShared.LPSServer.Server(url);
-			this.Server.CookieContainer = CookieContainer;
-			this.cached_datasets = new Dictionary<string, DataSet>();
-			_instance = this;
-			resource_manager = new ResourceManager(this);
-			configuration_store = new ConfigurationStore();
 		}
 
 		private static string _url;
@@ -70,42 +74,53 @@ namespace LPS.Client
 		
 		public void Dispose()
 		{
-			try
+			using(Log.Scope("ServerConnection.Dispose"))
 			{
-				FlushCache();
-				this.Configuration.Dispose();
-				this.configuration_store = null;
-				this.Resources.Dispose();
-				this.resource_manager = null;
-				this.Logout();
+				try
+				{
+					FlushCache();
+					this.Configuration.Dispose();
+					this.configuration_store = null;
+					this.Resources.Dispose();
+					this.resource_manager = null;
+					this.Logout();
+				}
+				catch(Exception err)
+				{
+					Log.Error(err);
+				}
+				this.Server.Dispose();
+				this.Server = null;
 			}
-			catch(Exception err)
-			{
-				Log.Error(err);
-			}
-			this.Server.Dispose();
-			this.Server = null;
 		}
 
 		public bool Ping()
 		{
-			try
+			using(Log.Scope("Ping"))
 			{
-				return Server.Ping();
-			}
-			catch
-			{
-				return false;
+				try
+				{
+					return Server.Ping();
+				}
+				catch(Exception err)
+				{
+					Log.Error(err);
+					return false;
+				}
 			}
 		}
 
 		private ChangesUpdater updater;
 		public long Login(string login, string password)
 		{
-			this.UserId = Server.Login(login, password);
-			Server.RegisterListener(out this.sink, out this.security);
-			updater = new ChangesUpdater(Server.Url, login, password, sink, security);
-			return this.UserId;
+			using(Log.Scope())
+			{
+				Log.Debug("Login {0}", login);
+				this.UserId = Server.Login(login, password);
+				Server.RegisterListener(out this.sink, out this.security);
+				updater = new ChangesUpdater(Server.Url, login, password, sink, security);
+				return this.UserId;
+			}
 		}
 		
 		public string GetUserName(long id)
@@ -131,98 +146,135 @@ namespace LPS.Client
 		
 		public void Logout()
 		{
-			if(this.UserId <= 0)
-				return;
-			if(this.sink >= 0)
+			using(Log.Scope())
 			{
-				updater.Dispose();
-				updater = null;
-				Server.UnregisterListener(this.sink, this.security);
-				this.sink = -1;
+				Log.Debug("logout");
+				if(this.UserId <= 0)
+					return;
+				if(this.sink >= 0)
+				{
+					updater.Dispose();
+					updater = null;
+					Server.UnregisterListener(this.sink, this.security);
+					this.sink = -1;
+				}
+				Server.Logout();
+				this.UserId = 0;
 			}
-			Server.Logout();
-			this.UserId = 0;
 		}
 		
 		public int ExecuteNonquerySimple(string sql)
 		{
-			return Server.SimpleExecuteNonquery(sql);
+			using(Log.Scope())
+			{
+				return Server.SimpleExecuteNonquery(sql);
+			}
 		}
 
 		private void CheckServerResult(LPSClientShared.LPSServer.ServerCallResult result)
 		{
-			if(result == null)
-				return;
-			if(result.Changes != null && result.Changes.Length > 0 && updater != null)
-				updater.DoUpdates(result.Changes);
-			if(result.Exception != null)
-				throw ServerException.Create(result.Exception);
+			using(Log.Scope())
+			{
+				if(result == null)
+					return;
+				if(result.Changes != null && result.Changes.Length > 0 && updater != null)
+					updater.DoUpdates(result.Changes);
+				if(result.Exception != null)
+					throw ServerException.Create(result.Exception);
+			}
 		}
 		
 		public int ExecuteNonquery(string sql, Dictionary<string, object> parameters)
 		{
-			ArrayList p = new ArrayList(parameters.Count * 2);
-			foreach(KeyValuePair<string, object> kv in parameters)
+			using(Log.Scope())
 			{
-				p.Add(kv.Key);
-				p.Add(kv.Value);
-			}
+				ArrayList p = new ArrayList(parameters.Count * 2);
+				foreach(KeyValuePair<string, object> kv in parameters)
+				{
+					p.Add(kv.Key);
+					p.Add(kv.Value);
+				}
 
-			int affected;
-			CheckServerResult(Server.ExecuteNonquery(sink, security, sql, p.ToArray(), out affected));
-			return affected;
+				int affected;
+				CheckServerResult(Server.ExecuteNonquery(sink, security, sql, p.ToArray(), out affected));
+				return affected;
+			}
 		}
 		
 		public int ExecuteNonquery(string sql, params object[] parameters)
 		{
-			int affected;
-			CheckServerResult(Server.ExecuteNonquery(sink, security, sql, parameters, out affected));
-			return affected;
+			using(Log.Scope())
+			{
+				int affected;
+				CheckServerResult(Server.ExecuteNonquery(sink, security, sql, parameters, out affected));
+				return affected;
+			}
 		}
 		
 		public object ExecuteScalarSimple(string sql)
 		{
-			return Server.SimpleExecuteScalar(sql);
+			using(Log.Scope())
+			{
+				return Server.SimpleExecuteScalar(sql);
+			}
 		}
 
 		public object ExecuteScalar(string sql, Dictionary<string, object> parameters)
 		{
-			ArrayList p = new ArrayList(parameters.Count * 2);
-			foreach(KeyValuePair<string, object> kv in parameters)
+			using(Log.Scope())
 			{
-				p.Add(kv.Key);
-				p.Add(kv.Value);
+				ArrayList p = new ArrayList(parameters.Count * 2);
+				foreach(KeyValuePair<string, object> kv in parameters)
+				{
+					p.Add(kv.Key);
+					p.Add(kv.Value);
+				}
+				object result;
+				CheckServerResult(Server.ExecuteScalar(sink, security, sql, p.ToArray(), out result));
+				return result;
 			}
-			object result;
-			CheckServerResult(Server.ExecuteScalar(sink, security, sql, p.ToArray(), out result));
-			return result;
 		}
 		
 		public object ExecuteScalar(string sql, params object[] parameters)
 		{
-			object result;
-			CheckServerResult(Server.ExecuteScalar(sink, security, sql, parameters, out result));
-			return result;
+			using(Log.Scope())
+			{
+				object result;
+				CheckServerResult(Server.ExecuteScalar(sink, security, sql, parameters, out result));
+				return result;
+			}
 		}
 		
 		public Int64 NextSeqValue(string generator)
 		{
-			return Server.NextSeqValue(generator);
+			using(Log.Scope())
+			{
+				Int64 result = Server.NextSeqValue(generator);
+				Log.Debug("NextSeqVal {0}={1}", generator, result);
+				return result;
+			}
 		}
 
 		public string GetTextResource(string path)
 		{
-			return Server.GetTextResource(path);
+			using(Log.Scope())
+			{
+				return Server.GetTextResource(path);
+			}
 		}
 		
 		public DataSet GetDataSetBySql(string sql)
 		{
-			DataSet ds;
-			object[] parameters = new object[] {};
-			CheckServerResult(Server.GetDataSetBySql(this.sink, this.security, sql, parameters, out ds));
-			ds.ExtendedProperties["SQL"] = sql;
-			ds.ExtendedProperties["PARAMS"] = parameters;
-			return ds;
+			using(Log.Scope())
+			{
+				Log.Debug("sql={0}", sql);
+				DataSet ds;
+				object[] parameters = new object[] {};
+				CheckServerResult(Server.GetDataSetBySql(this.sink, this.security, sql, parameters, out ds));
+				ds.ExtendedProperties["SQL"] = sql;
+				ds.ExtendedProperties["PARAMS"] = parameters;
+				return ds;
+			}
 		}
 
 		public DataSet GetDataSetByName(string name)
@@ -232,21 +284,25 @@ namespace LPS.Client
 
 		public DataSet GetDataSetByName(string name, string addsql, params object[] parameters)
 		{
-			if(parameters.Length % 2 == 1)
-				throw new ArgumentException("Musí být sudý počet parametrů", "parameters");
-
-			IListInfo info = Resources.GetListInfo(name);
-			DataSet result;
-			LPSClientShared.LPSServer.ServerCallResult callrslt;
-			callrslt = Server.GetDataSetByName(sink, security, name, addsql, parameters, out result);
-			CheckServerResult(callrslt);
-			result.ExtendedProperties.Add("ADDSQL", addsql);
-			result.ExtendedProperties.Add("PARAMS", parameters);
-			result.ExtendedProperties.Add("DATETIME", callrslt.DateTime);
-			result.ExtendedProperties.Add("LIST", name);
-			result.ExtendedProperties.Add("TABLE", info.TableName);
-			this.updater.AddDataSet(info.TableName, result);
-			return result;
+			using(Log.Scope())
+			{
+				Log.Debug("name={0}, addsql={1}, parameters={2}", name, addsql, parameters);
+				if(parameters.Length % 2 == 1)
+					throw new ArgumentException("Musí být sudý počet parametrů", "parameters");
+	
+				IListInfo info = Resources.GetListInfo(name);
+				DataSet result;
+				LPSClientShared.LPSServer.ServerCallResult callrslt;
+				callrslt = Server.GetDataSetByName(sink, security, name, addsql, parameters, out result);
+				CheckServerResult(callrslt);
+				result.ExtendedProperties.Add("ADDSQL", addsql);
+				result.ExtendedProperties.Add("PARAMS", parameters);
+				result.ExtendedProperties.Add("DATETIME", callrslt.DateTime);
+				result.ExtendedProperties.Add("LIST", name);
+				result.ExtendedProperties.Add("TABLE", info.TableName);
+				this.updater.AddDataSet(info.TableName, result);
+				return result;
+			}
 		}
 
 		public void DisposeDataSet(DataSet ds)
@@ -258,44 +314,50 @@ namespace LPS.Client
 		{
 			if(ds != null)
 			{
-				if(ds.ExtendedProperties.ContainsKey("CACHE_CNT"))
+				using(Log.Scope())
 				{
-					int cnt = (int)ds.ExtendedProperties["CACHE_CNT"];
-					cnt = cnt - 1;
-					if(!force && cnt > 0)
+					if(ds.ExtendedProperties.ContainsKey("CACHE_CNT"))
 					{
-						ds.ExtendedProperties["CACHE_CNT"] = cnt;
-						return;
+						int cnt = (int)ds.ExtendedProperties["CACHE_CNT"];
+						cnt = cnt - 1;
+						if(!force && cnt > 0)
+						{
+							ds.ExtendedProperties["CACHE_CNT"] = cnt;
+							return;
+						}
+						else
+							cached_datasets[(string)ds.ExtendedProperties["LIST"]] = null;
 					}
-					else
-						cached_datasets[(string)ds.ExtendedProperties["LIST"]] = null;
+	
+					this.updater.RemoveDataSet(ds);
+					ds.Dispose();
 				}
-
-				this.updater.RemoveDataSet(ds);
-				ds.Dispose();
 			}
 		}
 
 		public int SaveDataSet(DataSet dataset, bool updateUserInfo)
 		{
-			if(dataset == null)
-				throw new ArgumentNullException("dataset");
-			if(!dataset.HasChanges())
-				return 0;
-			int affected;
-			if(dataset.ExtendedProperties.ContainsKey("TABLE"))
+			using(Log.Scope())
 			{
-				string tablename = (string)dataset.ExtendedProperties["TABLE"];
-				using(DataSet changes = dataset.GetChanges())
+				if(dataset == null)
+					throw new ArgumentNullException("dataset");
+				if(!dataset.HasChanges())
+					return 0;
+				int affected;
+				if(dataset.ExtendedProperties.ContainsKey("TABLE"))
 				{
-					CheckServerResult(Server.SaveDataSet(sink, security, tablename, changes, true, true, out affected));
+					string tablename = (string)dataset.ExtendedProperties["TABLE"];
+					using(DataSet changes = dataset.GetChanges())
+					{
+						CheckServerResult(Server.SaveDataSet(sink, security, tablename, changes, true, true, out affected));
+					}
+					if(affected > 0) 
+						dataset.AcceptChanges();
+					return affected;
 				}
-				if(affected > 0) 
-					dataset.AcceptChanges();
-				return affected;
+				else
+					throw new ArgumentException("Dataset neobsahuje hodnotu TABLE");
 			}
-			else
-				throw new ArgumentException("Dataset neobsahuje hodnotu TABLE");
 		}
 		
 		public int SaveDataSet(DataSet dataset)
@@ -307,37 +369,44 @@ namespace LPS.Client
 
 		public void FlushCache()
 		{
-			List<DataSet> copy = new List<DataSet>(cached_datasets.Values);
-			foreach(DataSet ds in copy)
+			using(Log.Scope())
 			{
-				this.DisposeDataSet(ds);
+				List<DataSet> copy = new List<DataSet>(cached_datasets.Values);
+				foreach(DataSet ds in copy)
+				{
+					this.DisposeDataSet(ds);
+				}
+				cached_datasets.Clear();
 			}
-			cached_datasets.Clear();
 		}
 		
 		private Dictionary<string, DataSet> cached_datasets;
 		public DataSet GetCachedDataSet(string tableName)
 		{
-			DataSet result;
-			if(cached_datasets.TryGetValue(tableName, out result) && result != null)
+			using(Log.Scope())
 			{
-				result.ExtendedProperties["CACHE_CNT"] = ((int)result.ExtendedProperties["CACHE_CNT"])+1;
-				result.ExtendedProperties["CACHE_DT"] = DateTime.Now;
+				DataSet result;
+				if(cached_datasets.TryGetValue(tableName, out result) && result != null)
+				{
+					result.ExtendedProperties["CACHE_CNT"] = ((int)result.ExtendedProperties["CACHE_CNT"])+1;
+					result.ExtendedProperties["CACHE_DT"] = DateTime.Now;
+					return result;
+				}
+				if(result == null)
+				{
+					result = this.GetDataSetByName(tableName);
+					cached_datasets[tableName] = result;
+					result.ExtendedProperties.Add("CACHE_CNT", 1);
+					result.ExtendedProperties.Add("CACHE_DT", DateTime.Now);
+				}
 				return result;
 			}
-			if(result == null)
-			{
-				result = this.GetDataSetByName(tableName);
-				cached_datasets[tableName] = result;
-				result.ExtendedProperties.Add("CACHE_CNT", 1);
-				result.ExtendedProperties.Add("CACHE_DT", DateTime.Now);
-			}
-			return result;
 		}
 
 		public void CheckChanges()
 		{
-			CheckServerResult(Server.GetChanges(this.sink, this.security));
+			using(Log.Scope())
+				CheckServerResult(Server.GetChanges(this.sink, this.security));
 		}
 
 	}

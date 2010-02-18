@@ -27,10 +27,12 @@ namespace LPS.Client
 		{
 			this.ListInfo = info;
 			this.parameters = parameters;
-			
+			this.FixedHeightMode = true;
+			this.RulesHint = true;
+
 			this.LoadData();
 		}
-		
+
 		public override void Dispose ()
 		{
 			if(this.Binding != null)
@@ -58,7 +60,7 @@ namespace LPS.Client
 
 		protected void LoadData()
 		{
-			using(Log.Scope("Load {0}", this.Name))
+			using(Log.Scope("Load {0}", this.ListInfo.Id))
 			{
 				this.dataset = Connection.GetDataSetByName(ListInfo.Id, "", this.parameters);
 				this.table = this.dataset.Tables[0];
@@ -71,7 +73,7 @@ namespace LPS.Client
 
 		protected override void OnRowActivated (TreePath path, TreeViewColumn column)
 		{
-			using(Log.Scope("Row activated {0}", this.Binding.ListInfo.Id))
+			using(Log.Scope("Row activated {0}", this.ListInfo.Id))
 			{
 				base.OnRowActivated (path, column);
 				DataRow row = this.Binding.GetRow(path);
@@ -81,7 +83,7 @@ namespace LPS.Client
 		
 		public IManagedWindow OpenDetail()
 		{
-			using(Log.Scope("Open {0}", this.Binding.ListInfo.DetailName))
+			using(Log.Scope("Open {0}", this.ListInfo.DetailName))
 			{
 				DataRow row = this.Binding.GetCurrentRow();
 				if(row == null)
@@ -92,7 +94,7 @@ namespace LPS.Client
 		
 		public IManagedWindow OpenNewDetail()
 		{
-			using(Log.Scope("New {0}", this.Binding.ListInfo.DetailName))
+			using(Log.Scope("New {0}", this.ListInfo.DetailName))
 			{
 				IManagedWindow result = FormManager.Instance.GetWindow(this.ListInfo.DetailName, 0L, this.ListInfo);
 				result.NewItem();
