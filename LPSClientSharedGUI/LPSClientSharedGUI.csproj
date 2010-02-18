@@ -85,6 +85,8 @@
     <Compile Include="DataTableTreeModel\Columns\LookupColumn.cs" />
     <Compile Include="DataTableTreeModel\Columns\Int64Column.cs" />
     <Compile Include="DataTableTreeModel\Columns\Int32Column.cs" />
+    <Compile Include="DataTableTreeModel\DataTableViewConfiguration.cs" />
+    <Compile Include="DataTableTreeModel\ColumnConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />

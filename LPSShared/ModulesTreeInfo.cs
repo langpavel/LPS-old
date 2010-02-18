@@ -48,6 +48,10 @@ namespace LPS
 
 		[XmlElement("detail-name")]
 		public string DetailName { get; set; }
+		string IListInfo.DetailName
+		{
+			get { return String.IsNullOrEmpty(this.DetailName) ? Table.DetailName : this.DetailName; }
+		}
 
 		[XmlElement(ElementName="icon")]
 		public string IconName { get; set; }

@@ -2,7 +2,7 @@
 <table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="sys_user" text="Uživatelé">
 	<desc>Uživatelé</desc>
 	<list-sql>select * from sys_user</list-sql>
-	<detail-name />
+	<detail-name>generic</detail-name>
 	<lookup-columns>
 		<column>surname</column>
 		<column>first_name</column>

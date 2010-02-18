@@ -342,39 +342,13 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkVBox" id="tabSloupce">
+                  <widget class="GtkVBox" id="vbox2">
                     <property name="visible">True</property>
                     <property name="orientation">vertical</property>
                     <child>
-                      <widget class="GtkHBox" id="hbox2">
+                      <widget class="GtkTable" id="table1">
                         <property name="visible">True</property>
-                        <child>
-                          <widget class="GtkComboBoxEntry" id="edtColumnConfiguration">
-                            <property name="visible">True</property>
-                            <property name="add_tearoffs">True</property>
-                          </widget>
-                          <packing>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <widget class="GtkButton" id="btnLoadColumns">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="receives_default">True</property>
-                            <child>
-                              <widget class="GtkImage" id="image2">
-                                <property name="visible">True</property>
-                                <property name="stock">gtk-ok</property>
-                              </widget>
-                            </child>
-                          </widget>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">False</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
+                        <property name="n_columns">2</property>
                         <child>
                           <widget class="GtkButton" id="btnSaveColumns">
                             <property name="visible">True</property>
@@ -388,9 +362,20 @@
                             </child>
                           </widget>
                           <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">False</property>
-                            <property name="position">2</property>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="x_options">GTK_SHRINK</property>
+                            <property name="y_options">GTK_SHRINK</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkComboBoxEntry" id="edtColumnConfiguration">
+                            <property name="visible">True</property>
+                            <property name="tearoff_title">Profil nastaven&#xED; sloupc&#x16F;</property>
+                          </widget>
+                          <packing>
+                            <property name="x_options">GTK_EXPAND | GTK_SHRINK | GTK_FILL</property>
+                            <property name="y_options">GTK_EXPAND | GTK_SHRINK</property>
                           </packing>
                         </child>
                       </widget>
@@ -416,6 +401,7 @@
                   </widget>
                   <packing>
                     <property name="position">1</property>
+                    <property name="detachable">True</property>
                   </packing>
                 </child>
                 <child>

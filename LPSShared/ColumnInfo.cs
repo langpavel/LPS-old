@@ -114,5 +114,9 @@ namespace LPS
 		}
 		#endregion
 
-      	}
+		public bool IsForeignKey
+		{
+			get { return !String.IsNullOrEmpty(this.FkReferenceTable); }
+		}
+   	}
 }

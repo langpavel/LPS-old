@@ -4,6 +4,11 @@
 	<desc>Tabulka Produkt varianta</desc>
 	<list-sql>select * from c_produkt_varianta {where}</list-sql>
 	<detail-name>generic</detail-name>
+	<lookup-columns>
+		<column>kod</column>
+		<column>popis</column>
+	</lookup-columns>
+	<lookup-replace-format>kod</lookup-replace-format>
 	<columns>
 		<column name="id" caption="ID" visible="false" editable="false" required="true" unique="true" width="0">
 			<desc>Identifikátor</desc>

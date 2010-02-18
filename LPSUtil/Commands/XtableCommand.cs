@@ -77,6 +77,8 @@ namespace LPS.Util
 						info = CommandConsumer.Connection.Resources.GetTableInfo(tabname);
 						info = info.Clone();
 						Log.Info("Updating TableInfo name {0}", tabname);
+						if(String.IsNullOrEmpty(info.Id))
+							info.Id = tabname;
 					}
 					catch(Exception err)
 					{
@@ -92,16 +94,24 @@ namespace LPS.Util
 						info.Text = UserFriendTitle;
 					}
 
+					bool has_kod = false;
+					bool has_popis = false;
+
 					List<ColumnInfo> cols = new List<ColumnInfo>();
 					foreach(DataRow r in ds.Tables[0].Rows)
 					{
-						ColumnInfo colinfo = info.GetColumnInfo((string)r["column_name"]);
+						string column_name = (string)r["column_name"];
+						if(column_name == "kod")
+							has_kod = true;
+						if(column_name == "popis")
+							has_popis = true;
+						ColumnInfo colinfo = info.GetColumnInfo(column_name);
 						if(colinfo == null)
 						{
 							colinfo = new ColumnInfo();
-							colinfo.Name = (string)r["column_name"];
+							colinfo.Name = column_name;
 							Log.Info("Vytvořen sloupec {0}", colinfo.Name);
-							colinfo.Caption = Capitalize((string)r["column_name"], true, "id_");
+							colinfo.Caption = Capitalize(column_name, true, "id_");
 							colinfo.Visible = true;
 							colinfo.Description = colinfo.Caption;
 							colinfo.Editable = true;
@@ -168,6 +178,19 @@ namespace LPS.Util
 					}
 					info.Columns.Clear();
 					info.Columns.AddRange(cols);
+
+					if(String.IsNullOrEmpty(info.LookupReplaceFormat) && has_kod)
+						info.LookupReplaceFormat = "kod";
+					if((info.LookupColumns == null || info.LookupColumns.Length == 0) && (has_kod || has_popis))
+					{
+						List<string> l = new List<string>();
+						if(has_kod) l.Add("kod");
+						if(has_popis) l.Add("popis");
+						info.LookupColumns = l.ToArray();
+					}
+					if(String.IsNullOrEmpty(info.DetailName))
+						info.DetailName = "generic";
+
 					XmlSerializer xser = new XmlSerializer(typeof(TableInfo));
 					using(XmlTextWriter writer = new XmlTextWriter(output))
 					{

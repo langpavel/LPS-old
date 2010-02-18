@@ -2,6 +2,7 @@
 <table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="sys_user_preferences">
 	<desc>Úložiště uživatelských nastavení</desc>
 	<list-sql>select * from sys_user_preferences</list-sql>
+	<detail-name>generic</detail-name>
 	<columns>
 		<column name="id" caption="ID" visible="false" editable="false" required="true" unique="true" width="0">
 			<desc>Identifikátor</desc>

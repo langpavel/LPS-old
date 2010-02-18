@@ -70,21 +70,32 @@ namespace LPS
 			return sf.ToString();
 		}
 
-		public static LogScope Scope(string source, string text)
+		public static string GetCurrentLocationShort(int skip_frames)
+		{
+			StackFrame sf = new StackFrame(skip_frames + 1, true);
+			return String.Format("{0}", sf.GetMethod().ToString());
+		}
+
+		public static LogScope ScopeSource(string source, string text)
 		{
 			current_scope = new LogScope(current_scope, source, text);
 			current_scope.Disposed += ScopeDisposed;
 			return current_scope;
 		}
 
+		public static LogScope Scope()
+		{
+			return ScopeSource(GetCurrentLocation(1), GetCurrentLocationShort(1));
+		}
+
 		public static LogScope Scope(string text)
 		{
-			return Scope(GetCurrentLocation(1), text);
+			return ScopeSource(GetCurrentLocation(1), text);
 		}
 
 		public static LogScope Scope(string text, params object[] args)
 		{
-			return Scope(GetCurrentLocation(1), String.Format(text, args));
+			return ScopeSource(GetCurrentLocation(1), String.Format(text, args));
 		}
 
 		public static void Write(Verbosity verbosity, string source, string text)

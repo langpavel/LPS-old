@@ -461,7 +461,7 @@ CREATE TABLE produkt_dodavatel (
 CREATE TABLE skl_karta (
     id bigserial NOT NULL primary key,
 
-    cislo character varying(10) UNIQUE,
+    cislo character varying(10) NOT NULL UNIQUE,
 
     id_sklad bigint NOT NULL references c_sklad(id),
     id_kategorie bigint references c_kategorie(id),

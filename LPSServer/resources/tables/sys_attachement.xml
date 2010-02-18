@@ -4,6 +4,9 @@
 	<desc>Tabulka Attachement</desc>
 	<list-sql>select * from sys_attachement {where}</list-sql>
 	<detail-name>generic</detail-name>
+	<lookup-columns>
+		<column>popis</column>
+	</lookup-columns>
 	<columns>
 		<column name="id" caption="ID" visible="false" editable="false" required="true" unique="true" width="0">
 			<desc>Identifikátor</desc>

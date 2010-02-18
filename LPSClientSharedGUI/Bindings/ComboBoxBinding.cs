@@ -33,7 +33,7 @@ namespace LPS.Client
 			TreeIter iter;
 			if(combo.GetActiveIter(out iter))
 			{
-				DoValueChanged(Store.GetValue(iter, 0));
+				DoValueChanged(GetIdFromIter(iter));
 			}
 			else
 				DoValueChanged(null);
@@ -61,10 +61,11 @@ namespace LPS.Client
 			{
 				combo.Model = this.Store;
 				combo.Clear();
-				for(int i=1; i<Store.NColumns; i++)
+				for(int i=2; i<Store.NColumns; i++)
 				{
-					CellRenderer r = new CellRendererText();
-					combo.PackStart(r, ((i+1)==Store.NColumns));
+					CellRendererText r = new CellRendererText();
+					r.Alignment = Pango.Alignment.Left;
+					combo.PackStart(r, ((i+2)==Store.NColumns));
 					combo.AddAttribute(r, "text", i);
 				}
 				combo.Changed += HandleComboChanged;
@@ -108,6 +109,11 @@ namespace LPS.Client
 			}
 			else
 				combo.SetActiveIter(TreeIter.Zero);
+		}
+
+		protected override void UpdateListStoreRow (TreeIter iter, DataRow r)
+		{
+			base.UpdateListStoreRow (iter, r);
 		}
 
 		public override void Dispose ()

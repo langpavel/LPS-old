@@ -90,7 +90,17 @@ namespace LPS
 
 		string[] ILookupInfo.LookupColumns
 		{
-			get { return this.LookupColumns; }
+			get
+			{
+				if(this.LookupColumns != null && this.LookupColumns.Length > 0)
+					return this.LookupColumns;
+				Log.Warning("Tabulka {0} nemá hodnoty pro lookup", this.Id);
+				List<string> l = new List<string>();
+				if(this.GetColumnInfo("kod") != null) l.Add("kod");
+				if(this.GetColumnInfo("popis") != null) l.Add("popis");
+				if(l.Count == 0) l.Add("id");
+				return l.ToArray();
+			}
 		}
 
 		string ILookupInfo.FkListReplaceFormat

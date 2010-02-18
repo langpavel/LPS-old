@@ -45,6 +45,7 @@ namespace LPS.Client.Sklad
 
 		public override void Dispose ()
 		{
+			tableview.SaveConfiguration("__current");
 			notebook.RemovePage(this.PageIndex);
 			close_img.Destroy();
 			btnCloseTab.Destroy();

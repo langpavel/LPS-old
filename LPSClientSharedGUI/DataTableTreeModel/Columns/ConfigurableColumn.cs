@@ -8,6 +8,8 @@ namespace LPS.Client
 	[TreeNode(ListOnly=true)]
 	public abstract class ConfigurableColumn : TreeViewColumn, ITreeNode
 	{
+		private Adjustment WidthAdjustment;
+
 		public ListStoreMapping Mapping { get; private set; }
 		public DataColumn DataColumn { get; private set; }
 		public ColumnInfo ColumnInfo { get; private set; }
@@ -25,7 +27,7 @@ namespace LPS.Client
 
 			this.Reorderable = true;
 			this.Resizable = true;
-			this.MinWidth = 10;
+			this.MinWidth = 20;
 			this.FixedWidth = 80;
 			this.Sizing = TreeViewColumnSizing.Fixed;
 			this.Clickable = true;
@@ -45,6 +47,18 @@ namespace LPS.Client
 			CreateCellRenderers();
 
 			this.Mapping.ColumnsStore.AddNode(this);
+
+			this.AddNotification(NotifyChange);
+			this.WidthAdjustment = new Adjustment(80, 20, 1000, 1, 2, 0);
+			this.WidthAdjustment.Changed += delegate {
+				this.FixedWidth = (int)(this.WidthAdjustment.Value);
+			};
+		}
+
+		private void NotifyChange(object sender, EventArgs args)
+		{
+			this.WidthAdjustment.Value = this.Width;
+			DoChanged();
 		}
 
 		protected abstract void CreateCellRenderers();
@@ -96,10 +110,15 @@ namespace LPS.Client
 		[TreeNodeValue(Column=2)]
 		public bool Conf_Visible { get { return Visible; } set { Visible = value; DoChanged(); } }
 
+		[TreeNodeValue(Column=3)]
+		public Adjustment Conf_WidthAdjustment { get { return WidthAdjustment; } }
+
+		[TreeNodeValue(Column=4)]
+		public int Conf_Width { get { return this.Width; } }
+
 		public static void CreateNodeViewColumns(NodeView view)
 		{
 			view.AppendColumn("Poz.", new CellRendererText(), "text", 0);
-			view.AppendColumn("Nadpis", new CellRendererText(), "text", 1);
 			CellRendererToggle toggle_visible = new CellRendererToggle();
 			toggle_visible.Activatable = true;
 			toggle_visible.Toggled += delegate(object o, ToggledArgs args) {
@@ -107,8 +126,19 @@ namespace LPS.Client
 				ConfigurableColumn cc = ((ConfigurableColumn)view.NodeStore.GetNode(path));
 				cc.Conf_Visible = !cc.Conf_Visible;
 			};
-			TreeViewColumn col = new TreeViewColumn("Viditelný", toggle_visible, "active", 2);
-			view.AppendColumn(col);
+			view.AppendColumn("Viditelný", toggle_visible, "active", 2);
+			view.AppendColumn("Nadpis", new CellRendererText(), "text", 1);
+			CellRendererSpin col_width = new CellRendererSpin();
+			col_width.Editable = false;
+			col_width.Digits = 0;
+			col_width.ClimbRate = 2;
+			col_width.Edited += HandleCol_widthEdited;
+			view.AppendColumn("Šířka", col_width, "adjustment", 3, "text", 4);
+		}
+
+		static void HandleCol_widthEdited (object o, EditedArgs args)
+		{
+			Log.Info("Edited: {0}", o);
 		}
 
 		#region ITreeNode implementation

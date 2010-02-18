@@ -52,23 +52,25 @@ namespace LPS.Client.Sklad
 
 		private void RestoreTabs()
 		{
-			string[] opened_tabs = Connection.Configuration.GetConfiguration<string>("main", "opened_tabs", "")
-				.Split(new string[] {"::"}, StringSplitOptions.RemoveEmptyEntries);
-			if(opened_tabs != null && opened_tabs.Length != 0)
+			using(Log.Scope())
 			{
-				foreach(string tab_name in opened_tabs)
+				string[] opened_tabs = Connection.Configuration.GetConfiguration<string>("main", "opened_tabs", "")
+					.Split(new string[] {"::"}, StringSplitOptions.RemoveEmptyEntries);
+				if(opened_tabs != null && opened_tabs.Length != 0)
 				{
-					try
+					foreach(string tab_name in opened_tabs)
 					{
-						this.ShowModuleTab(Connection.Resources.GetModulesInfo(tab_name));
-					}
-					catch(Exception err)
-					{
-						Log.Error(err);
+						try
+						{
+							this.ShowModuleTab(Connection.Resources.GetModulesInfo(tab_name));
+						}
+						catch(Exception err)
+						{
+							Log.Error(err);
+						}
 					}
 				}
 			}
-
 		}
 
 		protected virtual void OnClose()

@@ -62,6 +62,7 @@ namespace LPS.Client
 			{
 				r.Delete();
 				Connection.SaveDataSet(this.ConfigDs);
+				Log.Debug("Configuration {0} '{1}' deleted", path, name);
 			}
 		}
 
@@ -89,6 +90,12 @@ namespace LPS.Client
 				using(StringWriter tw = new StringWriter(sb))
 				using(XmlTextWriter writer = new XmlTextWriter(tw))
 				{
+					writer.Formatting = Formatting.Indented;
+					writer.Indentation = 1;
+					writer.IndentChar = '\t';
+					writer.Settings.OmitXmlDeclaration = true;
+					writer.WriteStartDocument();
+					sb.Remove(0, sb.Length);
 					XmlSerializer xser = new XmlSerializer(type);
 					xser.Serialize(writer, val);
 				}
@@ -107,6 +114,7 @@ namespace LPS.Client
 			r["type"] = type_name;
 			r["value"] = str_val;
 			Connection.SaveDataSet(this.ConfigDs);
+			Log.Debug("Configuration {0} '{1}' saved", path, name);
 		}
 
 		private DataRow FindConfigurationRow(string path, string name)
@@ -126,41 +134,46 @@ namespace LPS.Client
 
 		public object GetConfiguration(string path, string name, Type type, object default_val)
 		{
-			try
+			using(Log.Scope())
 			{
-				Connection.CheckChanges();
-				string g_val = null;
-				string g_type = null;
-				string usr_val = null;
-				string usr_type = null;
-				foreach(DataRow r in ConfigTable.Rows)
+				Log.Debug("Načítání {0}, '{1}'", path, name);
+				try
 				{
-					if(path.Equals(r["path"]) && name.Equals(r["name"]))
+					Connection.CheckChanges();
+					string g_val = null;
+					string g_type = null;
+					string usr_val = null;
+					string usr_type = null;
+					foreach(DataRow r in ConfigTable.Rows)
 					{
-						long idusr = Convert.ToInt64(r["id_user"]);
-						if(idusr == 0)
+						if(path.Equals(r["path"]) && name.Equals(r["name"]))
 						{
-							g_val = r["value"] as string;
-							g_type = r["type"] as string;
-						}
-						else
-						{
-							usr_val = r["value"] as string;
-							usr_type = r["type"] as string;
+							long idusr = Convert.ToInt64(r["id_user"]);
+							if(idusr == 0)
+							{
+								g_val = r["value"] as string;
+								g_type = r["type"] as string;
+							}
+							else
+							{
+								usr_val = r["value"] as string;
+								usr_type = r["type"] as string;
+							}
 						}
 					}
+					if(usr_val != null)
+						return RestoreObject(type, usr_type, usr_val);
+					else if(g_val != null)
+						return RestoreObject(type, g_type, g_val);
+					else return default_val;
 				}
-				if(usr_val != null)
-					return RestoreObject(type, usr_type, usr_val);
-				else if(g_val != null)
-					return RestoreObject(type, g_type, g_val);
-				else return default_val;
-			}
-			catch(Exception ex)
-			{
-				throw new ApplicationException(
-					String.Format("Nelzdařilo se načíst konfiguraci '{0}', hodnotu {1}", path, name),
-					ex);
+				catch(Exception ex)
+				{
+					Log.Error(ex);
+					throw new ApplicationException(
+						String.Format("Nelzdařilo se načíst konfiguraci '{0}', hodnotu {1}", path, name),
+						ex);
+				}
 			}
 		}
 
@@ -185,6 +198,7 @@ namespace LPS.Client
 			{
 				return Convert.ChangeType(val, type, CultureInfo.InvariantCulture);
 			}
+			Log.Error("Nelze obnovit {0} -> {1} z hodnoty '{2}'", stored_type, type.FullName, val);
 			throw new ApplicationException(String.Format("Nelze obnovit hodnotu typu {0} z uložené hodnoty typu {1}",
 				type.Name, stored_type));
 		}

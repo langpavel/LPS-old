@@ -31,22 +31,25 @@ namespace LPS.Client
 			}
 		}
 
-		protected DataTable LookupTable { get; set; }
+		protected DataSet LookupData { get; set; }
+		protected DataTable LookupTable { get { return LookupData.Tables[0]; } }
 		protected TableInfo LookupTableInfo { get; set; }
 		protected ListStore Store { get; set; }
 
 		protected virtual void InitLookupData()
 		{
-			LookupTable = ServerConnection.Instance.GetCachedDataSet(LookupInfo.LookupTable).Tables[0];
+			LookupData = ServerConnection.Instance.GetCachedDataSet(LookupInfo.LookupTable);
 			LookupTableInfo = ResourceManager.Instance.GetTableInfo(LookupInfo.LookupTable);
 			CreateListStore();
 			FillListStore();
+			LookupTable.RowChanged += LookupTableRowChanged;
 		}
 
 		protected virtual void CreateListStore()
 		{
 			List<Type> types = new List<Type>(LookupInfo.LookupColumns.Length + 1);
 			types.Add(typeof(long));
+			types.Add(typeof(DataRow));
 			foreach(string col_name in LookupInfo.LookupColumns)
 				types.Add(LookupTable.Columns[col_name].DataType);
 			Store = new ListStore(types.ToArray());
@@ -69,18 +72,94 @@ namespace LPS.Client
 			//	Store.Reorder(new int[] {1});
 		}
 
-		protected virtual void AddListStoreRow(System.Data.DataRow r)
+		protected object[] GetValuesForStore(DataRow r)
 		{
 			ArrayList data = new ArrayList(LookupInfo.LookupColumns.Length + 1);
 			data.Add(r[0]);
+			data.Add(r);
 			foreach(string col_name in LookupInfo.LookupColumns)
 				data.Add(r[col_name]);
-			Store.AppendValues(data.ToArray());
+			return data.ToArray();
+		}
+
+		protected long GetIdFromIter(TreeIter iter)
+		{
+			return (long)Store.GetValue(iter, 0);
+		}
+
+		protected DataRow GetRowFromIter(TreeIter iter)
+		{
+			return (DataRow)Store.GetValue(iter, 1);
+		}
+
+		protected virtual void AddListStoreRow(DataRow r)
+		{
+			//Log.Debug("Lookup {0} add id {1}", LookupInfo.LookupTable, r[0]);
+			Store.AppendValues(GetValuesForStore(r));
+		}
+
+		protected virtual void UpdateListStoreRow(TreeIter iter, DataRow r)
+		{
+			//Log.Debug("Lookup {0} update id {1}", LookupInfo.LookupTable, r[0]);
+			Store.SetValues(iter, GetValuesForStore(r));
+		}
+
+		protected virtual void DeleteListStoreRow(DataRow r)
+		{
+			//Log.Debug("Lookup {0} delete id {1}", LookupInfo.LookupTable, r[0, DataRowVersion.Original]);
+			TreeIter? iter = FindRow(r);
+			if(iter != null)
+			{
+				TreeIter i2 = (TreeIter) iter;
+				Store.Remove(ref i2);
+			}
+		}
+
+		protected TreeIter? FindRow(DataRow row)
+		{
+			if(Store == null)
+				throw new InvalidOperationException("Store is not assigned");
+			TreeIter iter;
+			if(!Store.GetIterFirst(out iter))
+				return null;
+			do
+			{
+				if(GetRowFromIter(iter) == row)
+					return iter;
+			}
+			while(Store.IterNext(ref iter));
+			return null;
+		}
+
+		protected virtual void LookupTableRowChanged (object sender, DataRowChangeEventArgs e)
+		{
+			if(Store == null)
+				return;
+			if(e.Action == DataRowAction.Add)
+			{
+				AddListStoreRow(e.Row);
+			}
+			else if(e.Action == DataRowAction.Delete
+				|| e.Row.RowState == DataRowState.Deleted
+				|| e.Row.RowState == DataRowState.Detached)
+			{
+				DeleteListStoreRow(e.Row);
+			}
+			else
+			{
+				TreeIter? iter = FindRow(e.Row);
+				if(iter != null)
+					UpdateListStoreRow((TreeIter)iter, e.Row);
+				else
+					AddListStoreRow(e.Row);
+			}
 		}
 
 		protected virtual void DisposeLookupData()
 		{
-			LookupTable = null;
+			LookupTable.RowChanged -= LookupTableRowChanged;
+			ServerConnection.Instance.DisposeDataSet(LookupData);
+			LookupData = null;
 			LookupTableInfo = null;
 			Store.Clear();
 			Store.Dispose();

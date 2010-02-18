@@ -4,6 +4,10 @@
 	<desc>Tabulka Gen cyklus</desc>
 	<list-sql>select * from sys_gen_cyklus {where}</list-sql>
 	<detail-name>generic</detail-name>
+	<lookup-columns>
+		<column>kod</column>
+	</lookup-columns>
+	<lookup-replace-format>kod</lookup-replace-format>
 	<columns>
 		<column name="id" caption="ID" visible="false" editable="false" required="true" unique="true" width="0">
 			<desc>Identifikátor</desc>

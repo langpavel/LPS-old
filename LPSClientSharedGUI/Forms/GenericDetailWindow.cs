@@ -21,7 +21,15 @@ namespace LPS.Client
 		{
 			string caption = colinfo.Caption;
 			Widget result;
-			if(db_col.DataType == typeof(bool))
+			if(colinfo.IsForeignKey)
+			{
+				Label label = new Label(caption);
+				label.UseUnderline = false;
+				content.Attach(label,0,1,top,top+1,AttachOptions.Shrink, AttachOptions.Shrink,3,0);
+
+				result = new ComboBox();
+			}
+			else if(db_col.DataType == typeof(bool))
 			{
 				result = new CheckButton(caption);
 			}
@@ -57,22 +65,25 @@ namespace LPS.Client
 		
 		public override void Load (long id)
 		{
-			this.Window.Title = this.TableInfo.DetailCaption ?? "{kod} - {popis}";
-			Load(this.TableInfo.TableName, id);
-			content.NRows = (uint)this.Data.Tables[0].Columns.Count;
-			uint top = 0;
-			foreach(DataColumn col in this.Data.Tables[0].Columns)
+			using(Log.Scope("Generic {0} load({1})", this.TableInfo.TableName, id))
 			{
-				ColumnInfo colinfo = this.TableInfo.GetColumnInfo(col.ColumnName);
-				if(colinfo != null && colinfo.Editable)
+				this.Window.Title = this.TableInfo.DetailCaption ?? "{kod} - {popis}";
+				Load(this.TableInfo.TableName, id);
+				content.NRows = (uint)this.Data.Tables[0].Columns.Count;
+				uint top = 0;
+				foreach(DataColumn col in this.Data.Tables[0].Columns)
 				{
-					CreateWidget(col, colinfo, top);
-					top++;
+					ColumnInfo colinfo = this.TableInfo.GetColumnInfo(col.ColumnName);
+					if(colinfo != null && colinfo.Editable)
+					{
+						CreateWidget(col, colinfo, top);
+						top++;
+					}
 				}
+				this.DataSource.Row = this.Row;
+				content.NRows = top;
+				content.ShowAll();
 			}
-			this.DataSource.Row = this.Row;
-			content.NRows = top;
-			content.ShowAll();
 		}
 
 		protected override void OnNewRow (DataRow row)

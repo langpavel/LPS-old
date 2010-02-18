@@ -12,10 +12,10 @@ namespace LPS.Client
 	/// </summary>
 	public class DataTableListStoreBinding: IDisposable
 	{
-		public DataTableListStoreBinding(TreeView view, DataTable dt, IListInfo listinfo)
+		public DataTableListStoreBinding(DataTableView view, DataTable dt, IListInfo listinfo)
 		{
 			this.Mapping = new ListStoreMapping();
-			this.TreeView = view;
+			this.DataTableView = view;
 			this.DataTable = dt;
 			this.ListInfo = listinfo;
 			this.Mapping.ColumnClicked += ToggleSort;
@@ -23,7 +23,7 @@ namespace LPS.Client
 
 		private Dictionary<DataRow, TreeIter> row_iters;
 		public ListStoreMapping Mapping { get; private set; }
-		public TreeView TreeView { get; set; }
+		public DataTableView DataTableView { get; set; }
 		public DataTable DataTable { get; set; }
 		public ListStore ListStore { get; set; }
 		public TreeModelFilter Filter { get; set; }
@@ -56,13 +56,13 @@ namespace LPS.Client
 			}
 			foreach(TreeViewColumn col in this.Mapping.GetColumns())
 			{
-				this.TreeView.AppendColumn(col);
+				this.DataTableView.AppendColumn(col);
 			}
 			this.ListStore = new ListStore(this.Mapping.GetStoreTypes());
 			FillDataList();
 			this.Filter = new TreeModelFilter(this.ListStore, null);
 			this.Filter.VisibleFunc = FilterFunc;
-			this.TreeView.Model = this.Filter;
+			this.DataTableView.Model = this.Filter;
 			this.DataTable.RowChanged += HandleDataTableRowChanged;
 			this.DataTable.RowDeleted += HandleDataTableRowDeleted;
 		}
@@ -85,12 +85,12 @@ namespace LPS.Client
 				this.DataTable.RowDeleted -= HandleDataTableRowDeleted;
 				this.DataTable = null;
 			}
-			if(this.TreeView != null)
+			if(this.DataTableView != null)
 			{
-				this.TreeView.Model = null;
-				while(this.TreeView.Columns.Length != 0)
+				this.DataTableView.Model = null;
+				while(this.DataTableView.Columns.Length != 0)
 				{
-					this.TreeView.RemoveColumn(this.TreeView.Columns[this.TreeView.Columns.Length-1]);
+					this.DataTableView.RemoveColumn(this.DataTableView.Columns[this.DataTableView.Columns.Length-1]);
 				}
 			}
 			if(this.Filter != null)
@@ -164,11 +164,14 @@ namespace LPS.Client
 		private string filter_str;
 		public void ApplyFilter(string filter)
 		{
-			if(!String.IsNullOrEmpty(filter))
-				filter_str = filter.ToLower();
-			else
-				filter_str = filter;
-			this.Filter.Refilter();
+			using(Log.Scope("filter: {0}", (filter == null)?"disable":"'"+filter+"'"))
+			{
+				if(!String.IsNullOrEmpty(filter))
+					filter_str = filter.ToLower();
+				else
+					filter_str = filter;
+				this.Filter.Refilter();
+			}
 		}
 		
 		private bool FilterFunc(TreeModel model, TreeIter iter)
@@ -258,11 +261,9 @@ namespace LPS.Client
 			get { return sorting ?? ""; }
 			set 
 			{
-				foreach(TreeViewColumn tw_col in this.TreeView.Columns)
-				{
+				foreach(TreeViewColumn tw_col in this.DataTableView.Columns)
 					tw_col.SortIndicator = false;
-				}
-					
+
 				if(String.IsNullOrEmpty(value))
 				{
 					comparison_cols = new int[] { };
@@ -287,7 +288,7 @@ namespace LPS.Client
 					result.Add(index);
 					result.Add(order);
 	
-					TreeViewColumn tw_col = this.TreeView.Columns[index];
+					TreeViewColumn tw_col = this.DataTableView.GetColumn(col);
 					tw_col.SortIndicator = true;
 					if(order == -1)
 						tw_col.SortOrder = SortType.Descending;
@@ -305,12 +306,11 @@ namespace LPS.Client
 		{
 			TreeModel model;
 			TreeIter iter;
-			if(this.TreeView.Selection.GetSelected(out model, out iter))
+			if(this.DataTableView.Selection.GetSelected(out model, out iter))
 			{
 				return model.GetValue(iter, 0) as DataRow;
 			}
 			return null;
 		}
-		
 	}
 }

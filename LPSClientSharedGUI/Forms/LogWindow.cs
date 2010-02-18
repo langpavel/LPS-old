@@ -60,6 +60,12 @@ namespace LPS.Client
 			view.EnableGridLines = TreeViewGridLines.Vertical;
 			view.ExpanderColumn = view.Columns[2];
 
+			foreach(TreeViewColumn col in view.Columns)
+			{
+				col.Reorderable = true;
+				col.Resizable = true;
+			}
+
 			scrollw = new ScrolledWindow();
 			scrollw.Add(view);
 			mainbox.PackStart(scrollw);

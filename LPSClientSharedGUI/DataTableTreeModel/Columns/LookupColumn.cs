@@ -56,7 +56,6 @@ namespace LPS.Client
 			}
 		}
 
-
 		public override void Dispose ()
 		{
 			if(this.ds != null)
