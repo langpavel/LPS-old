@@ -26,7 +26,6 @@ CREATE TABLE sys_deleted (
     id_user bigint references sys_user(id),
     ts timestamp without time zone DEFAULT now()
 );
-CREATE INDEX sys_deleted_ts on sys_deleted (ts);
 CREATE INDEX sys_deleted_ts_tname on sys_deleted (ts, table_name);
 
 CREATE TABLE sys_check (
@@ -151,7 +150,6 @@ CREATE TABLE c_druh_adresy (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
-CREATE INDEX c_druh_adresy_ts on c_druh_adresy (ts);
 INSERT INTO c_druh_adresy VALUES (1, 'FA', 'Fakturační', true, true, null, 0, now(), 0, now(), now());
 INSERT INTO c_druh_adresy VALUES (2, 'DODACI', 'Dodací', true, false, true, 0, now(), 0, now(), now());
 INSERT INTO c_druh_adresy VALUES (3, 'JINA', 'Jiná', true, null, null, 0, now(), 0, now(), now());
@@ -172,7 +170,6 @@ CREATE TABLE c_dph (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
-CREATE INDEX c_dph_ts on c_dph (ts);
 INSERT INTO c_dph VALUES (1, 'DPH0', 'Bez DPH', 0.00, null, null, false, null, null, null, null);
 INSERT INTO c_dph VALUES (2, 'DPH9', 'DPH 9%', 0.09, null, '1.1.2010', false, null, null, null, null);
 INSERT INTO c_dph VALUES (3, 'DPH19', 'DPH 19%', 0.19, null, '1.1.2010', false, null, null, null, null);
@@ -191,7 +188,6 @@ CREATE TABLE c_mj (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
-CREATE INDEX c_mj_ts on c_mj (ts);
 INSERT INTO c_mj VALUES (1, 'KS', 'Kus', 'Kusy', null, null, null, null);
 
 CREATE TABLE c_kategorie (
@@ -223,7 +219,6 @@ CREATE TABLE c_zaruka (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
-CREATE INDEX c_zaruka_ts on c_zaruka (ts);
 
 CREATE TABLE c_sklad (
     id bigserial NOT NULL primary key,
@@ -237,7 +232,6 @@ CREATE TABLE c_sklad (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
-CREATE INDEX c_sklad_ts on c_sklad (ts);
 
 CREATE TABLE c_stat (
     id bigserial NOT NULL primary key,
@@ -250,7 +244,6 @@ CREATE TABLE c_stat (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
-CREATE INDEX c_stat_ts on c_stat (ts);
 INSERT INTO c_stat VALUES (1, 'CZ', 'Česká republika', null, null, null, null, now());
 INSERT INTO c_stat VALUES (2, 'SK', 'Slovenská republika', null, null, null, null, now());
 
@@ -272,7 +265,6 @@ CREATE TABLE c_mena (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
-CREATE INDEX c_mena_ts on c_mena (ts);
 INSERT INTO c_mena VALUES (1, 'CZK', 'Kč', 'Česká koruna', '#,##0.00\' Kč\'', null, null, true, 0, now(), 0, now(), now());
 INSERT INTO c_mena VALUES (2, 'EUR', '€', 'Euro', '\'€\'#,##0.00', null, null, false, 0, now(), 0, now(), now());
 
@@ -311,7 +303,6 @@ CREATE TABLE adresa (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
-CREATE INDEX adresa_ts on adresa (ts);
 INSERT INTO adresa VALUES (1, 3, 1, null, '24 Promotions s.r.o.');
 
 CREATE TABLE sys_app_config (
@@ -407,10 +398,70 @@ CREATE TABLE c_skl_pohyb_pol_druh (
     ts timestamp without time zone DEFAULT now()
 );
 
+/* film, plakat, tricko */
+CREATE TABLE c_druh_produktu (
+    id bigserial NOT NULL primary key,
+    kod character varying(10) not null UNIQUE,
+    popis character varying(100) not null default '',
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+
+CREATE TABLE c_produkt_varianta (
+    id bigserial NOT NULL primary key,
+    id_druh_produktu bigint not null references c_druh_produktu(id),
+    kod character varying(10) not null UNIQUE,
+    popis character varying(100) not null default '',
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+
+CREATE TABLE produkt (
+    id bigserial NOT NULL primary key,
+    id_druh_produktu bigint not null references c_druh_produktu(id),
+    id_zaruka bigint references c_zaruka(id),
+    extern_id character varying(50),
+    id_dph bigint references c_dph(id),
+
+    cislo character varying(10) not null,
+
+    nazev character varying(100),
+    nazev2 character varying(100),
+    popis text,
+    keywords text,
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+
+CREATE TABLE produkt_dodavatel (
+    id bigserial NOT NULL primary key,
+    id_produkt bigint not null references produkt(id),
+    id_produkt_varianta bigint not null references c_produkt_varianta(id),
+    id_adresa bigint not null references adresa(id),
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+
 CREATE TABLE skl_karta (
     id bigserial NOT NULL primary key,
+
     cislo character varying(10) UNIQUE,
-    extern_id character varying(50),
 
     id_sklad bigint NOT NULL references c_sklad(id),
     id_kategorie bigint references c_kategorie(id),
@@ -419,11 +470,13 @@ CREATE TABLE skl_karta (
     id_zaruka bigint references c_zaruka(id),
 
     id_adresa_dodavatel bigint references adresa(id),
+    id_produkt bigint references produkt(id),
+    id_produkt_varianta bigint references c_produkt_varianta(id),
 
     ean character varying(100),
     nazev1 character varying(100),
     nazev2 character varying(100),
-    popis1 text,
+    popis text,
     
     skl_cena decimal(28,14),
     skl_hodnota decimal(15,2),
@@ -435,7 +488,6 @@ CREATE TABLE skl_karta (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
-CREATE INDEX skl_karta_ts on skl_karta (ts);
 
 CREATE TABLE skl_pohyb (
     id bigserial NOT NULL primary key,

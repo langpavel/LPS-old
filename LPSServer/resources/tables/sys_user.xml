@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="sys_user" text="Uživatelé">
 	<desc>Uživatelé</desc>
 	<list-sql>select * from sys_user</list-sql>
-	<looku-columns>
-		<!--<column>username</column>-->
+	<detail-name />
+	<lookup-columns>
 		<column>surname</column>
 		<column>first_name</column>
-	</looku-columns>
+	</lookup-columns>
 	<lookup-replace-format>surname first_name</lookup-replace-format>
-	<detail-name />
 	<columns>
 		<column name="id" caption="ID" visible="false" editable="false" required="true" unique="true" width="0">
 			<desc>Identifikátor</desc>

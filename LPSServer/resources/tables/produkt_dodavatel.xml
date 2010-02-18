@@ -1,27 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="skl_pohyb_pol" name="skl_pohyb_pol" text="Skl pohyb pol">
-	<detail-caption>Skl pohyb pol</detail-caption>
-	<desc>Tabulka Skl pohyb pol</desc>
-	<list-sql>select * from skl_pohyb_pol {where}</list-sql>
+<table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="produkt_dodavatel" name="produkt_dodavatel" text="Produkt dodavatel">
+	<detail-caption>Produkt dodavatel</detail-caption>
+	<desc>Tabulka Produkt dodavatel</desc>
+	<list-sql>select * from produkt_dodavatel {where}</list-sql>
 	<detail-name>generic</detail-name>
 	<columns>
 		<column name="id" caption="ID" visible="false" editable="false" required="true" unique="true" width="0">
 			<desc>Identifikátor</desc>
 		</column>
-		<column name="id_skl_pohyb" caption="Skl pohyb" visible="true" editable="true" required="true" unique="false" width="0">
-			<ref-table>skl_pohyb</ref-table>
-			<desc>Skl pohyb</desc>
+		<column name="id_produkt" caption="Produkt" visible="true" editable="true" required="true" unique="false" width="0">
+			<ref-table>produkt</ref-table>
+			<desc>Produkt</desc>
 		</column>
-		<column name="id_skl_karta" caption="Skl karta" visible="true" editable="true" required="true" unique="false" width="0">
-			<ref-table>skl_karta</ref-table>
-			<desc>Skl karta</desc>
+		<column name="id_produkt_varianta" caption="Produkt varianta" visible="true" editable="true" required="true" unique="false" width="0">
+			<ref-table>c_produkt_varianta</ref-table>
+			<desc>Produkt varianta</desc>
 		</column>
-		<column name="id_skl_pohyb_pol_druh" caption="Skl pohyb pol druh" visible="true" editable="true" required="true" unique="false" width="0">
-			<ref-table>c_skl_pohyb_pol_druh</ref-table>
-			<desc>Skl pohyb pol druh</desc>
-		</column>
-		<column name="strana" caption="Strana" visible="true" editable="true" required="true" unique="false" width="0">
-			<desc>Strana</desc>
+		<column name="id_adresa" caption="Adresa" visible="true" editable="true" required="true" unique="false" width="0">
+			<ref-table>adresa</ref-table>
+			<desc>Adresa</desc>
 		</column>
 		<column name="id_user_create" caption="Vytvořil" visible="true" editable="false" required="false" unique="false" width="0">
 			<ref-table>sys_user</ref-table>

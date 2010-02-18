@@ -12,13 +12,13 @@
 			<ref-table>c_sklad</ref-table>
 			<desc>Sklad</desc>
 		</column>
-		<column name="id_skl_karta" caption="Skl karta" visible="true" editable="true" required="true" unique="false" width="0">
-			<ref-table>skl_karta</ref-table>
-			<desc>Skl karta</desc>
-		</column>
 		<column name="id_skl_pohyb_druh" caption="Skl pohyb druh" visible="true" editable="true" required="true" unique="false" width="0">
 			<ref-table>c_skl_pohyb_druh</ref-table>
 			<desc>Skl pohyb druh</desc>
+		</column>
+		<column name="id_mena" caption="Mena" visible="true" editable="true" required="true" unique="false" width="0">
+			<ref-table>c_mena</ref-table>
+			<desc>Mena</desc>
 		</column>
 		<column name="cislo" caption="Cislo" visible="true" editable="true" required="true" unique="true" width="0" max-length="20">
 			<desc>Cislo</desc>
