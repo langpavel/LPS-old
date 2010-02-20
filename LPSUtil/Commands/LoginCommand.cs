@@ -4,35 +4,36 @@ using System.IO;
 
 namespace LPS.Util
 {
-	public class LoginCommand : ICommand
+	public class LoginCommand : CommandBase
 	{
-		public LoginCommand()
+		public LoginCommand(CommandCollection Commands, string Name)
+			: base(Commands, Name)
 		{
 		}
 
-		public virtual void Execute(CommandConsumer consumer, string cmd_name, string argline, TextWriter output)
+		public override Type[] ParamTypes
 		{
-			string[] p = argline.Split(new char[] {',',';'});
-			if(p.Length != 3)
-				throw new Exception("Neplatný počet parametrů");
-
-			ServerConnection c = new LPS.Client.ServerConnection(p[0]);
-			long user_id = c.Login(p[1], p[2]);
-			Log.Write(Verbosity.Info, "", "User ID: {0}", user_id);
-			if(user_id != 0L)
+			get
 			{
-				CommandConsumer.Connection = c;
-			}
-			else
-			{
-				Log.Error("User not logged in!");
-				c.Dispose();
+				return new Type[] {
+					typeof(string), typeof(string), typeof(string) };
 			}
 		}
 
-		public virtual string GetHelp()
+		public override string Help
 		{
-			return "Přihlášení na server";
+			get { return "Přihlášení na server"; }
+		}
+
+		public override object Execute (TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		{
+			string url = Get<string>(0);
+			ServerConnection conn = new ServerConnection(url);
+			Info.WriteLine("Připojeno k {0}", url);
+			conn.Login(Get<string>(1), Get<string>(2));
+			Info.WriteLine("Uživatel {0} přihlášen", Get<string>(1));
+			this.Commands.Variables["ServerConnection"] = conn;
+			return conn;
 		}
 	}
 }

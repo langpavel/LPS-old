@@ -1,0 +1,50 @@
+Ur         : 0
+Urob       : 0
+Nazur      : Magistrát hlavního města
+Nazevur    : Magistrát hlavního města
+
+Ur         : 1
+Urob       : 1
+Nazur      : Magistrát města
+Nazevur    : Magistrát města
+
+Ur         : 2
+Urob       : 2
+Nazur      : Úřad města
+Nazevur    : Úřad města
+
+Ur         : 3
+Urob       : 3
+Nazur      : Městský úřad
+Nazevur    : Městský úřad
+
+Ur         : 4
+Urob       : 4
+Nazur      : Obecní úřad
+Nazevur    : Obecní úřad
+
+Ur         : 5
+Urob       : 5
+Nazur      : Městský úřad (obnovený)
+Nazevur    : Městský úřad
+
+Ur         : 6
+Urob       : 6
+Nazur      : Úřad městyse (obnovený)
+Nazevur    : Úřad městyse
+
+Ur         : 7
+Urob       : 7
+Nazur      : Úřad městyse (nový)
+Nazevur    : Úřad městyse
+
+Ur         : 8
+Urob       : 8
+Nazur      : 
+Nazevur    : 
+
+Ur         : 9
+Urob       : 9
+Nazur      : Újezdní úřad vojenského újezdu
+Nazevur    : Újezdní úřad vojenského újezdu
+

@@ -1,22 +1,30 @@
 using System;
+using LPS.Client;
+using System.IO;
 
 namespace LPS.Util
 {
-	public class RefreshCommand : ICommand
+	public class RefreshCommand : CommandBase
 	{
-		public RefreshCommand()
+		public RefreshCommand(CommandCollection Commands, string Name)
+			: base(Commands, Name)
 		{
 		}
 
-		public void Execute (CommandConsumer consumer, string cmd_name, string argline, System.IO.TextWriter output)
+		public override Type[] ParamTypes
 		{
-			CommandConsumer.Connection.Resources.FlushModulesInfo();
+			get { return new Type[] { typeof(string) }; }
 		}
 
-		public string GetHelp ()
+		public override string Help
 		{
-			return "Obnoví Connection";
+			get { return "FlushModulesInfo v connection"; }
 		}
 
+		public override object Execute(TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		{
+			Commands.GetVar<ServerConnection>("ServerConnection").Resources.FlushModulesInfo();
+			Info.WriteLine("FlushModulesInfo: OK");
+		}
 	}
 }

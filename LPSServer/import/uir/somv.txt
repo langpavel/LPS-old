@@ -1,0 +1,9800 @@
+Kn         : 01
+Knok       : 0101
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Knuts      : 1100
+Kodok      : 3100
+Kodsomv    : 3100101
+Nazsomv    : Praha
+Nazcs      : RTAIA
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodsomv    : 3201101
+Nazsomv    : Benešov
+Nazcs      : BFPFWQZ
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodsomv    : 3201201
+Nazsomv    : Bystřice
+Nazcs      : BcVXUKCF
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodsomv    : 3201203
+Nazsomv    : Čerčany
+Nazcs      : DFTDAPc
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodsomv    : 3201206
+Nazsomv    : Chocerady
+Nazcs      : JQCFTAEc
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodsomv    : 3201210
+Nazsomv    : Neveklov
+Nazcs      : PFZFMNQZ
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodsomv    : 3201214
+Nazsomv    : Týnec nad Sázavou
+Nazcs      : XcPFC PAE VAdAZQY
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodsomv    : 3201102
+Nazsomv    : Vlašim
+Nazcs      : ZNAWKO
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodsomv    : 3201202
+Nazsomv    : Čechtice
+Nazcs      : DFJXKCF
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodsomv    : 3201204
+Nazsomv    : Divišov
+Nazcs      : EKZKWQZ
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodsomv    : 3201205
+Nazsomv    : Dolní Kralovice
+Nazcs      : EQNPK MTANQZKCF
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodsomv    : 3201209
+Nazsomv    : Načeradec
+Nazcs      : PADFTAEFC
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodsomv    : 3201213
+Nazsomv    : Trhový Štěpánov
+Nazcs      : XTIQZc WXFRAPQZ
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodsomv    : 3201103
+Nazsomv    : Votice
+Nazcs      : ZQXKCF
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodsomv    : 3201208
+Nazsomv    : Miličín
+Nazcs      : OKNKDKP
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodsomv    : 3201212
+Nazsomv    : Sedlec-Prčice
+Nazcs      : VFENFC-RTDKCF
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodsomv    : 3205205
+Nazsomv    : Sázava
+Nazcs      : VAdAZA
+
+Kn         : 02
+Knok       : 0202
+Kodnuts    : CZ0202
+Lau1       : CZ0202
+Knuts      : 2102
+Kodok      : 3202
+Kodsomv    : 3202101
+Nazsomv    : Beroun - Králův Dvůr
+Nazcs      : BFTQYP - MTANYZ EZYT
+
+Kn         : 02
+Knok       : 0202
+Kodnuts    : CZ0202
+Lau1       : CZ0202
+Knuts      : 2102
+Kodok      : 3202
+Kodsomv    : 3202202
+Nazsomv    : Hudlice
+Nazcs      : IYENKCF
+
+Kn         : 02
+Knok       : 0202
+Kodnuts    : CZ0202
+Lau1       : CZ0202
+Knuts      : 2102
+Kodok      : 3202
+Kodsomv    : 3202203
+Nazsomv    : Karlštejn
+Nazcs      : MATNWXFLP
+
+Kn         : 02
+Knok       : 0202
+Kodnuts    : CZ0202
+Lau1       : CZ0202
+Knuts      : 2102
+Kodok      : 3202
+Kodsomv    : 3202205
+Nazsomv    : Liteň
+Nazcs      : NKXFP
+
+Kn         : 02
+Knok       : 0202
+Kodnuts    : CZ0202
+Lau1       : CZ0202
+Knuts      : 2102
+Kodok      : 3202
+Kodsomv    : 3202206
+Nazsomv    : Loděnice
+Nazcs      : NQEFPKCF
+
+Kn         : 02
+Knok       : 0202
+Kodnuts    : CZ0202
+Lau1       : CZ0202
+Knuts      : 2102
+Kodok      : 3202
+Kodsomv    : 3202102
+Nazsomv    : Hořovice
+Nazcs      : IQUQZKCF
+
+Kn         : 02
+Knok       : 0202
+Kodnuts    : CZ0202
+Lau1       : CZ0202
+Knuts      : 2102
+Kodok      : 3202
+Kodsomv    : 3202201
+Nazsomv    : Hostomice
+Nazcs      : IQVXQOKCF
+
+Kn         : 02
+Knok       : 0202
+Kodnuts    : CZ0202
+Lau1       : CZ0202
+Knuts      : 2102
+Kodok      : 3202
+Kodsomv    : 3202204
+Nazsomv    : Komárov
+Nazcs      : MQOATQZ
+
+Kn         : 02
+Knok       : 0202
+Kodnuts    : CZ0202
+Lau1       : CZ0202
+Knuts      : 2102
+Kodok      : 3202
+Kodsomv    : 3202207
+Nazsomv    : Lochovice
+Nazcs      : NQJQZKCF
+
+Kn         : 02
+Knok       : 0202
+Kodnuts    : CZ0202
+Lau1       : CZ0202
+Knuts      : 2102
+Kodok      : 3202
+Kodsomv    : 3202208
+Nazsomv    : Zdice
+Nazcs      : dEKCF
+
+Kn         : 02
+Knok       : 0202
+Kodnuts    : CZ0202
+Lau1       : CZ0202
+Knuts      : 2102
+Kodok      : 3202
+Kodsomv    : 3202209
+Nazsomv    : Žebrák
+Nazcs      : eFBTAM
+
+Kn         : 02
+Knok       : 0203
+Kodnuts    : CZ0203
+Lau1       : CZ0203
+Knuts      : 2103
+Kodok      : 3203
+Kodsomv    : 3203101
+Nazsomv    : Kladno
+Nazcs      : MNAEPQ
+
+Kn         : 02
+Knok       : 0203
+Kodnuts    : CZ0203
+Lau1       : CZ0203
+Knuts      : 2103
+Kodok      : 3203
+Kodsomv    : 3203201
+Nazsomv    : Brandýsek
+Nazcs      : BTAPEcVFM
+
+Kn         : 02
+Knok       : 0203
+Kodnuts    : CZ0203
+Lau1       : CZ0203
+Knuts      : 2103
+Kodok      : 3203
+Kodsomv    : 3203202
+Nazsomv    : Kamenné Žehrovice
+Nazcs      : MAOFPPF eFITQZKCF
+
+Kn         : 02
+Knok       : 0203
+Kodnuts    : CZ0203
+Lau1       : CZ0203
+Knuts      : 2103
+Kodok      : 3203
+Kodsomv    : 3203206
+Nazsomv    : Stochov
+Nazcs      : VXQJQZ
+
+Kn         : 02
+Knok       : 0203
+Kodnuts    : CZ0203
+Lau1       : CZ0203
+Knuts      : 2103
+Kodok      : 3203
+Kodsomv    : 3203207
+Nazsomv    : Unhošť
+Nazcs      : YPIQWX
+
+Kn         : 02
+Knok       : 0203
+Kodnuts    : CZ0203
+Lau1       : CZ0203
+Knuts      : 2103
+Kodok      : 3203
+Kodsomv    : 3203102
+Nazsomv    : Slaný
+Nazcs      : VNAPc
+
+Kn         : 02
+Knok       : 0203
+Kodnuts    : CZ0203
+Lau1       : CZ0203
+Knuts      : 2103
+Kodok      : 3203
+Kodsomv    : 3203203
+Nazsomv    : Klobuky
+Nazcs      : MNQBYMc
+
+Kn         : 02
+Knok       : 0203
+Kodnuts    : CZ0203
+Lau1       : CZ0203
+Knuts      : 2103
+Kodok      : 3203
+Kodsomv    : 3203205
+Nazsomv    : Smečno
+Nazcs      : VOFDPQ
+
+Kn         : 02
+Knok       : 0203
+Kodnuts    : CZ0203
+Lau1       : CZ0203
+Knuts      : 2103
+Kodok      : 3203
+Kodsomv    : 3203208
+Nazsomv    : Velvary
+Nazcs      : ZFNZATc
+
+Kn         : 02
+Knok       : 0203
+Kodnuts    : CZ0203
+Lau1       : CZ0203
+Knuts      : 2103
+Kodok      : 3203
+Kodsomv    : 3203210
+Nazsomv    : Zlonice
+Nazcs      : dNQPKCF
+
+Kn         : 02
+Knok       : 0204
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Kodsomv    : 3204101
+Nazsomv    : Kolín
+Nazcs      : MQNKP
+
+Kn         : 02
+Knok       : 0204
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Kodsomv    : 3204204
+Nazsomv    : Kouřim
+Nazcs      : MQYUKO
+
+Kn         : 02
+Knok       : 0204
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Kodsomv    : 3204205
+Nazsomv    : Plaňany
+Nazcs      : RNAPAPc
+
+Kn         : 02
+Knok       : 0204
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Kodsomv    : 3204207
+Nazsomv    : Týnec nad Labem
+Nazcs      : XcPFC PAE NABFO
+
+Kn         : 02
+Knok       : 0204
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Kodsomv    : 3204208
+Nazsomv    : Velim
+Nazcs      : ZFNKO
+
+Kn         : 02
+Knok       : 0204
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Kodsomv    : 3204209
+Nazsomv    : Velký Osek
+Nazcs      : ZFNMc QVFM
+
+Kn         : 02
+Knok       : 0204
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Kodsomv    : 3204210
+Nazsomv    : Zásmuky
+Nazcs      : dAVOYMc
+
+Kn         : 02
+Knok       : 0204
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Kodsomv    : 3204211
+Nazsomv    : Žiželice
+Nazcs      : eKeFNKCF
+
+Kn         : 02
+Knok       : 0204
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Kodsomv    : 3204102
+Nazsomv    : Český Brod
+Nazcs      : DFVMc BTQE
+
+Kn         : 02
+Knok       : 0204
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Kodsomv    : 3204203
+Nazsomv    : Kostelec nad Černými Lesy
+Nazcs      : MQVXFNFC PAE DFTPcOK NFVc
+
+Kn         : 02
+Knok       : 0204
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Kodsomv    : 3204206
+Nazsomv    : Stříbrná Skalice
+Nazcs      : VXUKBTPA VMANKCF
+
+Kn         : 02
+Knok       : 0204
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Kodsomv    : 3204212
+Nazsomv    : Pečky
+Nazcs      : RFDMc
+
+Kn         : 02
+Knok       : 0205
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Kodsomv    : 3205101
+Nazsomv    : Kutná Hora
+Nazcs      : MYXPA IQTA
+
+Kn         : 02
+Knok       : 0205
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Kodsomv    : 3205201
+Nazsomv    : Kácov
+Nazcs      : MACQZ
+
+Kn         : 02
+Knok       : 0205
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Kodsomv    : 3205204
+Nazsomv    : Rataje nad Sázavou
+Nazcs      : TAXALF PAE VAdAZQY
+
+Kn         : 02
+Knok       : 0205
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Kodsomv    : 3205206
+Nazsomv    : Uhlířské Janovice
+Nazcs      : YINKUVMF LAPQZKCF
+
+Kn         : 02
+Knok       : 0205
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Kodsomv    : 3205208
+Nazsomv    : Zbraslavice
+Nazcs      : dBTAVNAZKCF
+
+Kn         : 02
+Knok       : 0205
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Kodsomv    : 3205210
+Nazsomv    : Zruč nad Sázavou
+Nazcs      : dTYD PAE VAdAZQY
+
+Kn         : 02
+Knok       : 0205
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Kodsomv    : 3205213
+Nazsomv    : Červené Janovice
+Nazcs      : DFTZFPF LAPQZKCF
+
+Kn         : 02
+Knok       : 0205
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Kodsomv    : 3205102
+Nazsomv    : Čáslav
+Nazcs      : DAVNAZ
+
+Kn         : 02
+Knok       : 0205
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Kodsomv    : 3205203
+Nazsomv    : Potěhy
+Nazcs      : RQXFIc
+
+Kn         : 02
+Knok       : 0205
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Kodsomv    : 3205207
+Nazsomv    : Vrdy
+Nazcs      : ZTEc
+
+Kn         : 02
+Knok       : 0205
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Kodsomv    : 3205209
+Nazsomv    : Zbýšov
+Nazcs      : dBcWQZ
+
+Kn         : 02
+Knok       : 0205
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Kodsomv    : 3205211
+Nazsomv    : Žehušice
+Nazcs      : eFIYWKCF
+
+Kn         : 02
+Knok       : 0205
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Kodsomv    : 3205212
+Nazsomv    : Žleby
+Nazcs      : eNFBc
+
+Kn         : 02
+Knok       : 0206
+Kodnuts    : CZ0206
+Lau1       : CZ0206
+Knuts      : 2106
+Kodok      : 3206
+Kodsomv    : 3206101
+Nazsomv    : Mělník
+Nazcs      : OFNPKM
+
+Kn         : 02
+Knok       : 0206
+Kodnuts    : CZ0206
+Lau1       : CZ0206
+Knuts      : 2106
+Kodok      : 3206
+Kodsomv    : 3206201
+Nazsomv    : Byšice - Liblice
+Nazcs      : BcWKCF - NKBNKCF
+
+Kn         : 02
+Knok       : 0206
+Kodnuts    : CZ0206
+Lau1       : CZ0206
+Knuts      : 2106
+Kodok      : 3206
+Kodsomv    : 3206202
+Nazsomv    : Dolní Beřkovice
+Nazcs      : EQNPK BFUMQZKCF
+
+Kn         : 02
+Knok       : 0206
+Kodnuts    : CZ0206
+Lau1       : CZ0206
+Knuts      : 2106
+Kodok      : 3206
+Kodsomv    : 3206203
+Nazsomv    : Kostelec nad Labem
+Nazcs      : MQVXFNFC PAE NABFO
+
+Kn         : 02
+Knok       : 0206
+Kodnuts    : CZ0206
+Lau1       : CZ0206
+Knuts      : 2106
+Kodok      : 3206
+Kodsomv    : 3206204
+Nazsomv    : Liběchov
+Nazcs      : NKBFJQZ
+
+Kn         : 02
+Knok       : 0206
+Kodnuts    : CZ0206
+Lau1       : CZ0206
+Knuts      : 2106
+Kodok      : 3206
+Kodsomv    : 3206205
+Nazsomv    : Lužec nad Vltavou
+Nazcs      : NYeFC PAE ZNXAZQY
+
+Kn         : 02
+Knok       : 0206
+Kodnuts    : CZ0206
+Lau1       : CZ0206
+Knuts      : 2106
+Kodok      : 3206
+Kodsomv    : 3206206
+Nazsomv    : Mšeno
+Nazcs      : OWFPQ
+
+Kn         : 02
+Knok       : 0206
+Kodnuts    : CZ0206
+Lau1       : CZ0206
+Knuts      : 2106
+Kodok      : 3206
+Kodsomv    : 3206207
+Nazsomv    : Neratovice
+Nazcs      : PFTAXQZKCF
+
+Kn         : 02
+Knok       : 0206
+Kodnuts    : CZ0206
+Lau1       : CZ0206
+Knuts      : 2106
+Kodok      : 3206
+Kodsomv    : 3206208
+Nazsomv    : Všetaty
+Nazcs      : ZWFXAXc
+
+Kn         : 02
+Knok       : 0206
+Kodnuts    : CZ0206
+Lau1       : CZ0206
+Knuts      : 2106
+Kodok      : 3206
+Kodsomv    : 3206209
+Nazsomv    : Vysoká
+Nazcs      : ZcVQMA
+
+Kn         : 02
+Knok       : 0206
+Kodnuts    : CZ0206
+Lau1       : CZ0206
+Knuts      : 2106
+Kodok      : 3206
+Kodsomv    : 3206102
+Nazsomv    : Kralupy nad Vltavou
+Nazcs      : MTANYRc PAE ZNXAZQY
+
+Kn         : 02
+Knok       : 0207
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Kodsomv    : 3207101
+Nazsomv    : Mladá Boleslav
+Nazcs      : ONAEA BQNFVNAZ
+
+Kn         : 02
+Knok       : 0207
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Kodsomv    : 3207201
+Nazsomv    : Bakov nad Jizerou
+Nazcs      : BAMQZ PAE LKdFTQY
+
+Kn         : 02
+Knok       : 0207
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Kodsomv    : 3207202
+Nazsomv    : Bělá pod Bezdězem
+Nazcs      : BFNA RQE BFdEFdFO
+
+Kn         : 02
+Knok       : 0207
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Kodsomv    : 3207203
+Nazsomv    : Benátky nad Jizerou
+Nazcs      : BFPAXMc PAE LKdFTQY
+
+Kn         : 02
+Knok       : 0207
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Kodsomv    : 3207204
+Nazsomv    : Bezno
+Nazcs      : BFdPQ
+
+Kn         : 02
+Knok       : 0207
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Kodsomv    : 3207205
+Nazsomv    : Březno
+Nazcs      : BUFdPQ
+
+Kn         : 02
+Knok       : 0207
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Kodsomv    : 3207206
+Nazsomv    : Čachovice
+Nazcs      : DAJQZKCF
+
+Kn         : 02
+Knok       : 0207
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Kodsomv    : 3207207
+Nazsomv    : Dobrovice
+Nazcs      : EQBTQZKCF
+
+Kn         : 02
+Knok       : 0207
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Kodsomv    : 3207208
+Nazsomv    : Dolní Bousov
+Nazcs      : EQNPK BQYVQZ
+
+Kn         : 02
+Knok       : 0207
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Kodsomv    : 3207209
+Nazsomv    : Dolní Slivno
+Nazcs      : EQNPK VNKZPQ
+
+Kn         : 02
+Knok       : 0207
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Kodsomv    : 3207210
+Nazsomv    : Katusice
+Nazcs      : MAXYVKCF
+
+Kn         : 02
+Knok       : 0207
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Kodsomv    : 3207211
+Nazsomv    : Kněžmost
+Nazcs      : MPFeOQVX
+
+Kn         : 02
+Knok       : 0207
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Kodsomv    : 3207212
+Nazsomv    : Luštěnice
+Nazcs      : NYWXFPKCF
+
+Kn         : 02
+Knok       : 0207
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Kodsomv    : 3207213
+Nazsomv    : Mnichovo Hradiště
+Nazcs      : OPKJQZQ ITAEKWXF
+
+Kn         : 02
+Knok       : 0208
+Kodnuts    : CZ0208
+Lau1       : CZ0208
+Knuts      : 2108
+Kodok      : 3208
+Kodsomv    : 3208101
+Nazsomv    : Nymburk
+Nazcs      : PcOBYTM
+
+Kn         : 02
+Knok       : 0208
+Kodnuts    : CZ0208
+Lau1       : CZ0208
+Knuts      : 2108
+Kodok      : 3208
+Kodsomv    : 3208201
+Nazsomv    : Křinec
+Nazcs      : MUKPFC
+
+Kn         : 02
+Knok       : 0208
+Kodnuts    : CZ0208
+Lau1       : CZ0208
+Knuts      : 2108
+Kodok      : 3208
+Kodsomv    : 3208203
+Nazsomv    : Loučeň
+Nazcs      : NQYDFP
+
+Kn         : 02
+Knok       : 0208
+Kodnuts    : CZ0208
+Lau1       : CZ0208
+Knuts      : 2108
+Kodok      : 3208
+Kodsomv    : 3208204
+Nazsomv    : Lysá nad Labem
+Nazcs      : NcVA PAE NABFO
+
+Kn         : 02
+Knok       : 0208
+Kodnuts    : CZ0208
+Lau1       : CZ0208
+Knuts      : 2108
+Kodok      : 3208
+Kodsomv    : 3208208
+Nazsomv    : Rožďalovice
+Nazcs      : TQeEANQZKCF
+
+Kn         : 02
+Knok       : 0208
+Kodnuts    : CZ0208
+Lau1       : CZ0208
+Knuts      : 2108
+Kodok      : 3208
+Kodsomv    : 3208209
+Nazsomv    : Sadská
+Nazcs      : VAEVMA
+
+Kn         : 02
+Knok       : 0208
+Kodnuts    : CZ0208
+Lau1       : CZ0208
+Knuts      : 2108
+Kodok      : 3208
+Kodsomv    : 3208102
+Nazsomv    : Poděbrady
+Nazcs      : RQEFBTAEc
+
+Kn         : 02
+Knok       : 0208
+Kodnuts    : CZ0208
+Lau1       : CZ0208
+Knuts      : 2108
+Kodok      : 3208
+Kodsomv    : 3208202
+Nazsomv    : Libice nad Cidlinou
+Nazcs      : NKBKCF PAE CKENKPQY
+
+Kn         : 02
+Knok       : 0208
+Kodnuts    : CZ0208
+Lau1       : CZ0208
+Knuts      : 2108
+Kodok      : 3208
+Kodsomv    : 3208205
+Nazsomv    : Městec Králové
+Nazcs      : OFVXFC MTANQZF
+
+Kn         : 02
+Knok       : 0209
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Kodsomv    : 3209101
+Nazsomv    : Brandýs nad Labem-Stará Boleslav
+Nazcs      : BTAPEcV PAE NABFO-VXATA BQNFVNAZ
+
+Kn         : 02
+Knok       : 0209
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Kodsomv    : 3209201
+Nazsomv    : Čelákovice
+Nazcs      : DFNAMQZKCF
+
+Kn         : 02
+Knok       : 0209
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Kodsomv    : 3209202
+Nazsomv    : Klecany
+Nazcs      : MNFCAPc
+
+Kn         : 02
+Knok       : 0209
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Kodsomv    : 3209203
+Nazsomv    : Líbeznice
+Nazcs      : NKBFdPKCF
+
+Kn         : 02
+Knok       : 0209
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Kodsomv    : 3209205
+Nazsomv    : Odolena Voda
+Nazcs      : QEQNFPA ZQEA
+
+Kn         : 02
+Knok       : 0209
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Kodsomv    : 3209206
+Nazsomv    : Úvaly
+Nazcs      : YZANc
+
+Kn         : 02
+Knok       : 0209
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Kodsomv    : 3209102
+Nazsomv    : Říčany
+Nazcs      : UKDAPc
+
+Kn         : 02
+Knok       : 0209
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Kodsomv    : 3209204
+Nazsomv    : Mnichovice
+Nazcs      : OPKJQZKCF
+
+Kn         : 02
+Knok       : 0209
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Kodsomv    : 3209207
+Nazsomv    : Velké Popovice
+Nazcs      : ZFNMF RQRQZKCF
+
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Kodsomv    : 3210201
+Nazsomv    : Černošice
+Nazcs      : DFTPQWKCF
+
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Kodsomv    : 3210202
+Nazsomv    : Davle
+Nazcs      : EAZNF
+
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Kodsomv    : 3210203
+Nazsomv    : Dobřichovice
+Nazcs      : EQBUKJQZKCF
+
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Kodsomv    : 3210204
+Nazsomv    : Dolní Břežany
+Nazcs      : EQNPK BUFeAPc
+
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Kodsomv    : 3210205
+Nazsomv    : Hostivice
+Nazcs      : IQVXKZKCF
+
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Kodsomv    : 3210206
+Nazsomv    : Jílové u Prahy
+Nazcs      : LKNQZF Y RTAIc
+
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Kodsomv    : 3210207
+Nazsomv    : Libčice nad Vltavou
+Nazcs      : NKBDKCF PAE ZNXAZQY
+
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Kodsomv    : 3210208
+Nazsomv    : Mníšek pod Brdy
+Nazcs      : OPKWFM RQE BTEc
+
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Kodsomv    : 3210209
+Nazsomv    : Průhonice
+Nazcs      : RTYIQPKCF
+
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Kodsomv    : 3210210
+Nazsomv    : Roztoky
+Nazcs      : TQdXQMc
+
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Kodsomv    : 3210211
+Nazsomv    : Rudná
+Nazcs      : TYEPA
+
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Kodsomv    : 3210212
+Nazsomv    : Řevnice
+Nazcs      : UFZPKCF
+
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Kodsomv    : 3210213
+Nazsomv    : Středokluky
+Nazcs      : VXUFEQMNYMc
+
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Kodsomv    : 3210214
+Nazsomv    : Štěchovice
+Nazcs      : WXFJQZKCF
+
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Kodsomv    : 3210215
+Nazsomv    : Velké Přílepy
+Nazcs      : ZFNMF RUKNFRc
+
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Kodsomv    : 3210216
+Nazsomv    : Vrané nad Vltavou
+Nazcs      : ZTAPF PAE ZNXAZQY
+
+Kn         : 02
+Knok       : 0211
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Kodsomv    : 3211101
+Nazsomv    : Příbram
+Nazcs      : RUKBTAO
+
+Kn         : 02
+Knok       : 0211
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Kodsomv    : 3211202
+Nazsomv    : Jince
+Nazcs      : LKPCF
+
+Kn         : 02
+Knok       : 0211
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Kodsomv    : 3211203
+Nazsomv    : Kamýk nad Vltavou
+Nazcs      : MAOcM PAE ZNXAZQY
+
+Kn         : 02
+Knok       : 0211
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Kodsomv    : 3211205
+Nazsomv    : Milín
+Nazcs      : OKNKP
+
+Kn         : 02
+Knok       : 0211
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Kodsomv    : 3211102
+Nazsomv    : Březnice
+Nazcs      : BUFdPKCF
+
+Kn         : 02
+Knok       : 0211
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Kodsomv    : 3211201
+Nazsomv    : Hvožďany
+Nazcs      : IZQeEAPc
+
+Kn         : 02
+Knok       : 0211
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Kodsomv    : 3211209
+Nazsomv    : Rožmitál pod Třemšínem
+Nazcs      : TQeOKXAN RQE XUFOWKPFO
+
+Kn         : 02
+Knok       : 0211
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Kodsomv    : 3211103
+Nazsomv    : Dobříš
+Nazcs      : EQBUKW
+
+Kn         : 02
+Knok       : 0211
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Kodsomv    : 3211206
+Nazsomv    : Nečín
+Nazcs      : PFDKP
+
+Kn         : 02
+Knok       : 0211
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Kodsomv    : 3211207
+Nazsomv    : Nový Knín
+Nazcs      : PQZc MPKP
+
+Kn         : 02
+Knok       : 0211
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Kodsomv    : 3211104
+Nazsomv    : Sedlčany
+Nazcs      : VFENDAPc
+
+Kn         : 02
+Knok       : 0211
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Kodsomv    : 3211204
+Nazsomv    : Krásná Hora nad Vltavou
+Nazcs      : MTAVPA IQTA PAE ZNXAZQY
+
+Kn         : 02
+Knok       : 0211
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Kodsomv    : 3211208
+Nazsomv    : Petrovice
+Nazcs      : RFXTQZKCF
+
+Kn         : 02
+Knok       : 0212
+Kodnuts    : CZ020C
+Lau1       : CZ020C
+Knuts      : 2112
+Kodok      : 3212
+Kodsomv    : 3212101
+Nazsomv    : Rakovník
+Nazcs      : TAMQZPKM
+
+Kn         : 02
+Knok       : 0212
+Kodnuts    : CZ020C
+Lau1       : CZ020C
+Knuts      : 2112
+Kodok      : 3212
+Kodsomv    : 3212201
+Nazsomv    : Čistá
+Nazcs      : DKVXA
+
+Kn         : 02
+Knok       : 0212
+Kodnuts    : CZ020C
+Lau1       : CZ020C
+Knuts      : 2112
+Kodok      : 3212
+Kodsomv    : 3212202
+Nazsomv    : Jesenice
+Nazcs      : LFVFPKCF
+
+Kn         : 02
+Knok       : 0212
+Kodnuts    : CZ020C
+Lau1       : CZ020C
+Knuts      : 2112
+Kodok      : 3212
+Kodsomv    : 3212203
+Nazsomv    : Kněževes
+Nazcs      : MPFeFZFV
+
+Kn         : 02
+Knok       : 0212
+Kodnuts    : CZ020C
+Lau1       : CZ020C
+Knuts      : 2112
+Kodok      : 3212
+Kodsomv    : 3212204
+Nazsomv    : Křivoklát
+Nazcs      : MUKZQMNAX
+
+Kn         : 02
+Knok       : 0212
+Kodnuts    : CZ020C
+Lau1       : CZ020C
+Knuts      : 2112
+Kodok      : 3212
+Kodsomv    : 3212206
+Nazsomv    : Mšec
+Nazcs      : OWFC
+
+Kn         : 02
+Knok       : 0212
+Kodnuts    : CZ020C
+Lau1       : CZ020C
+Knuts      : 2112
+Kodok      : 3212
+Kodsomv    : 3212207
+Nazsomv    : Mutějovice
+Nazcs      : OYXFLQZKCF
+
+Kn         : 02
+Knok       : 0212
+Kodnuts    : CZ020C
+Lau1       : CZ020C
+Knuts      : 2112
+Kodok      : 3212
+Kodsomv    : 3212208
+Nazsomv    : Nové Strašecí
+Nazcs      : PQZF VXTAWFCK
+
+Kn         : 02
+Knok       : 0212
+Kodnuts    : CZ020C
+Lau1       : CZ020C
+Knuts      : 2112
+Kodok      : 3212
+Kodsomv    : 3212209
+Nazsomv    : Řevničov
+Nazcs      : UFZPKDQZ
+
+Kn         : 02
+Knok       : 0212
+Kodnuts    : CZ020C
+Lau1       : CZ020C
+Knuts      : 2112
+Kodok      : 3212
+Kodsomv    : 3212210
+Nazsomv    : Slabce
+Nazcs      : VNABCF
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodsomv    : 3301101
+Nazsomv    : České Budějovice
+Nazcs      : DFVMF BYEFLQZKCF
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodsomv    : 3301204
+Nazsomv    : Dubné
+Nazcs      : EYBPF
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodsomv    : 3301205
+Nazsomv    : Hluboká nad Vltavou
+Nazcs      : INYBQMA PAE ZNXAZQY
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodsomv    : 3301208
+Nazsomv    : Kamenný Újezd
+Nazcs      : MAOFPPc YLFdE
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodsomv    : 3301209
+Nazsomv    : Ledenice
+Nazcs      : NFEFPKCF
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodsomv    : 3301210
+Nazsomv    : Lišov
+Nazcs      : NKWQZ
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodsomv    : 3301212
+Nazsomv    : Ševětín
+Nazcs      : WFZFXKP
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodsomv    : 3301213
+Nazsomv    : Zliv
+Nazcs      : dNKZ
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodsomv    : 3301102
+Nazsomv    : Trhové Sviny
+Nazcs      : XTIQZF VZKPc
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodsomv    : 3301201
+Nazsomv    : Borovany
+Nazcs      : BQTQZAPc
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodsomv    : 3301206
+Nazsomv    : Horní Stropnice
+Nazcs      : IQTPK VXTQRPKCF
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodsomv    : 3301211
+Nazsomv    : Nové Hrady
+Nazcs      : PQZF ITAEc
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodsomv    : 3301103
+Nazsomv    : Týn nad Vltavou
+Nazcs      : XcP PAE ZNXAZQY
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodsomv    : 3301202
+Nazsomv    : Dolní Bukovsko
+Nazcs      : EQNPK BYMQZVMQ
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodsomv    : 3301203
+Nazsomv    : Dříteň
+Nazcs      : EUKXFP
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodsomv    : 3301207
+Nazsomv    : Chrášťany
+Nazcs      : JTAWXAPc
+
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodsomv    : 3302101
+Nazsomv    : Český Krumlov
+Nazcs      : DFVMc MTYONQZ
+
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodsomv    : 3302202
+Nazsomv    : Brloh
+Nazcs      : BTNQI
+
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodsomv    : 3302204
+Nazsomv    : Frymburk
+Nazcs      : GTcOBYTM
+
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodsomv    : 3302205
+Nazsomv    : Horní Planá
+Nazcs      : IQTPK RNAPA
+
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodsomv    : 3302206
+Nazsomv    : Hořice na Šumavě
+Nazcs      : IQUKCF PA WYOAZF
+
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodsomv    : 3302207
+Nazsomv    : Chvalšiny
+Nazcs      : JZANWKPc
+
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodsomv    : 3302208
+Nazsomv    : Křemže
+Nazcs      : MUFOeF
+
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodsomv    : 3302212
+Nazsomv    : Větřní
+Nazcs      : ZFXUPK
+
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodsomv    : 3302102
+Nazsomv    : Kaplice
+Nazcs      : MARNKCF
+
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodsomv    : 3302201
+Nazsomv    : Benešov nad Černou
+Nazcs      : BFPFWQZ PAE DFTPQY
+
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodsomv    : 3302203
+Nazsomv    : Dolní Dvořiště
+Nazcs      : EQNPK EZQUKWXF
+
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodsomv    : 3302209
+Nazsomv    : Loučovice
+Nazcs      : NQYDQZKCF
+
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodsomv    : 3302210
+Nazsomv    : Malonty
+Nazcs      : OANQPXc
+
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodsomv    : 3302211
+Nazsomv    : Velešín
+Nazcs      : ZFNFWKP
+
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodsomv    : 3302213
+Nazsomv    : Vyšší Brod
+Nazcs      : ZcWWK BTQE
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303101
+Nazsomv    : Jindřichův Hradec
+Nazcs      : LKPEUKJYZ ITAEFC
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303204
+Nazsomv    : Deštná
+Nazcs      : EFWXPA
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303206
+Nazsomv    : Kardašova Řečice
+Nazcs      : MATEAWQZA UFDKCF
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303207
+Nazsomv    : Kunžak
+Nazcs      : MYPeAM
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303209
+Nazsomv    : Nová Bystřice
+Nazcs      : PQZA BcVXUKCF
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303210
+Nazsomv    : Nová Včelnice
+Nazcs      : PQZA ZDFNPKCF
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303213
+Nazsomv    : Stráž nad Nežárkou
+Nazcs      : VXTAe PAE PFeATMQY
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303214
+Nazsomv    : Strmilov
+Nazcs      : VXTOKNQZ
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303215
+Nazsomv    : Studená
+Nazcs      : VXYEFPA
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303102
+Nazsomv    : Dačice
+Nazcs      : EADKCF
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303202
+Nazsomv    : Český Rudolec
+Nazcs      : DFVMc TYEQNFC
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303203
+Nazsomv    : Dešná
+Nazcs      : EFWPA
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303211
+Nazsomv    : Slavonice
+Nazcs      : VNAZQPKCF
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303212
+Nazsomv    : Staré Město pod Landštejnem
+Nazcs      : VXATF OFVXQ RQE NAPEWXFLPFO
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303103
+Nazsomv    : Třeboň
+Nazcs      : XUFBQP
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303201
+Nazsomv    : České Velenice
+Nazcs      : DFVMF ZFNFPKCF
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303205
+Nazsomv    : Chlum u Třeboně
+Nazcs      : JNYO Y XUFBQPF
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303208
+Nazsomv    : Lomnice nad Lužnicí
+Nazcs      : NQOPKCF PAE NYePKCK
+
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Kodsomv    : 3303216
+Nazsomv    : Suchdol nad Lužnicí
+Nazcs      : VYJEQN PAE NYePKCK
+
+Kn         : 03
+Knok       : 0304
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Kodsomv    : 3305101
+Nazsomv    : Písek
+Nazcs      : RKVFM
+
+Kn         : 03
+Knok       : 0304
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Kodsomv    : 3305202
+Nazsomv    : Čimelice
+Nazcs      : DKOFNKCF
+
+Kn         : 03
+Knok       : 0304
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Kodsomv    : 3305205
+Nazsomv    : Mirotice
+Nazcs      : OKTQXKCF
+
+Kn         : 03
+Knok       : 0304
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Kodsomv    : 3305206
+Nazsomv    : Mirovice
+Nazcs      : OKTQZKCF
+
+Kn         : 03
+Knok       : 0304
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Kodsomv    : 3305207
+Nazsomv    : Orlík nad Vltavou
+Nazcs      : QTNKM PAE ZNXAZQY
+
+Kn         : 03
+Knok       : 0304
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Kodsomv    : 3305208
+Nazsomv    : Protivín
+Nazcs      : RTQXKZKP
+
+Kn         : 03
+Knok       : 0304
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Kodsomv    : 3305209
+Nazsomv    : Záhoří
+Nazcs      : dAIQUK
+
+Kn         : 03
+Knok       : 0304
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Kodsomv    : 3305102
+Nazsomv    : Milevsko
+Nazcs      : OKNFZVMQ
+
+Kn         : 03
+Knok       : 0304
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Kodsomv    : 3305201
+Nazsomv    : Bernartice
+Nazcs      : BFTPATXKCF
+
+Kn         : 03
+Knok       : 0304
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Kodsomv    : 3305203
+Nazsomv    : Chyšky
+Nazcs      : JcWMc
+
+Kn         : 03
+Knok       : 0304
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Kodsomv    : 3305204
+Nazsomv    : Kovářov
+Nazcs      : MQZAUQZ
+
+Kn         : 03
+Knok       : 0305
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Kodsomv    : 3306101
+Nazsomv    : Prachatice
+Nazcs      : RTAJAXKCF
+
+Kn         : 03
+Knok       : 0305
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Kodsomv    : 3306202
+Nazsomv    : Husinec
+Nazcs      : IYVKPFC
+
+Kn         : 03
+Knok       : 0305
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Kodsomv    : 3306204
+Nazsomv    : Lhenice
+Nazcs      : NIFPKCF
+
+Kn         : 03
+Knok       : 0305
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Kodsomv    : 3306205
+Nazsomv    : Netolice
+Nazcs      : PFXQNKCF
+
+Kn         : 03
+Knok       : 0305
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Kodsomv    : 3306208
+Nazsomv    : Vlachovo Březí
+Nazcs      : ZNAJQZQ BUFdK
+
+Kn         : 03
+Knok       : 0305
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Kodsomv    : 3306209
+Nazsomv    : Volary
+Nazcs      : ZQNATc
+
+Kn         : 03
+Knok       : 0305
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Kodsomv    : 3306102
+Nazsomv    : Vimperk
+Nazcs      : ZKORFTM
+
+Kn         : 03
+Knok       : 0305
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Kodsomv    : 3306201
+Nazsomv    : Čkyně
+Nazcs      : DMcPF
+
+Kn         : 03
+Knok       : 0305
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Kodsomv    : 3306203
+Nazsomv    : Lenora
+Nazcs      : NFPQTA
+
+Kn         : 03
+Knok       : 0305
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Kodsomv    : 3306206
+Nazsomv    : Stachy
+Nazcs      : VXAJc
+
+Kn         : 03
+Knok       : 0305
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Kodsomv    : 3306207
+Nazsomv    : Vacov
+Nazcs      : ZACQZ
+
+Kn         : 03
+Knok       : 0305
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Kodsomv    : 3306210
+Nazsomv    : Zdíkov
+Nazcs      : dEKMQZ
+
+Kn         : 03
+Knok       : 0306
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Kodsomv    : 3307101
+Nazsomv    : Strakonice
+Nazcs      : VXTAMQPKCF
+
+Kn         : 03
+Knok       : 0306
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Kodsomv    : 3307203
+Nazsomv    : Cehnice
+Nazcs      : CFIPKCF
+
+Kn         : 03
+Knok       : 0306
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Kodsomv    : 3307204
+Nazsomv    : Čestice
+Nazcs      : DFVXKCF
+
+Kn         : 03
+Knok       : 0306
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Kodsomv    : 3307205
+Nazsomv    : Katovice
+Nazcs      : MAXQZKCF
+
+Kn         : 03
+Knok       : 0306
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Kodsomv    : 3307206
+Nazsomv    : Radomyšl
+Nazcs      : TAEQOcWN
+
+Kn         : 03
+Knok       : 0306
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Kodsomv    : 3307208
+Nazsomv    : Štěkeň
+Nazcs      : WXFMFP
+
+Kn         : 03
+Knok       : 0306
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Kodsomv    : 3307209
+Nazsomv    : Volenice
+Nazcs      : ZQNFPKCF
+
+Kn         : 03
+Knok       : 0306
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Kodsomv    : 3307210
+Nazsomv    : Volyně
+Nazcs      : ZQNcPF
+
+Kn         : 03
+Knok       : 0306
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Kodsomv    : 3307102
+Nazsomv    : Blatná
+Nazcs      : BNAXPA
+
+Kn         : 03
+Knok       : 0306
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Kodsomv    : 3307202
+Nazsomv    : Bělčice
+Nazcs      : BFNDKCF
+
+Kn         : 03
+Knok       : 0306
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Kodsomv    : 3307207
+Nazsomv    : Sedlice
+Nazcs      : VFENKCF
+
+Kn         : 03
+Knok       : 0306
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Kodsomv    : 3307211
+Nazsomv    : Záboří
+Nazcs      : dABQUK
+
+Kn         : 03
+Knok       : 0306
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Kodsomv    : 3307103
+Nazsomv    : Vodňany
+Nazcs      : ZQEPAPc
+
+Kn         : 03
+Knok       : 0306
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Kodsomv    : 3307201
+Nazsomv    : Bavorov
+Nazcs      : BAZQTQZ
+
+Kn         : 03
+Knok       : 0307
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Kodsomv    : 3308101
+Nazsomv    : Tábor
+Nazcs      : XABQT
+
+Kn         : 03
+Knok       : 0307
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Kodsomv    : 3308201
+Nazsomv    : Bechyně
+Nazcs      : BFJcPF
+
+Kn         : 03
+Knok       : 0307
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Kodsomv    : 3308202
+Nazsomv    : Chotoviny
+Nazcs      : JQXQZKPc
+
+Kn         : 03
+Knok       : 0307
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Kodsomv    : 3308203
+Nazsomv    : Chýnov
+Nazcs      : JcPQZ
+
+Kn         : 03
+Knok       : 0307
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Kodsomv    : 3308204
+Nazsomv    : Jistebnice
+Nazcs      : LKVXFBPKCF
+
+Kn         : 03
+Knok       : 0307
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Kodsomv    : 3308205
+Nazsomv    : Malšice
+Nazcs      : OANWKCF
+
+Kn         : 03
+Knok       : 0307
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Kodsomv    : 3308206
+Nazsomv    : Mladá Vožice
+Nazcs      : ONAEA ZQeKCF
+
+Kn         : 03
+Knok       : 0307
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Kodsomv    : 3308207
+Nazsomv    : Opařany
+Nazcs      : QRAUAPc
+
+Kn         : 03
+Knok       : 0307
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Kodsomv    : 3308208
+Nazsomv    : Planá nad Lužnicí
+Nazcs      : RNAPA PAE NYePKCK
+
+Kn         : 03
+Knok       : 0307
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Kodsomv    : 3308209
+Nazsomv    : Sezimovo Ústí
+Nazcs      : VFdKOQZQ YVXK
+
+Kn         : 03
+Knok       : 0307
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Kodsomv    : 3308102
+Nazsomv    : Soběslav
+Nazcs      : VQBFVNAZ
+
+Kn         : 03
+Knok       : 0307
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Kodsomv    : 3308210
+Nazsomv    : Tučapy
+Nazcs      : XYDARc
+
+Kn         : 03
+Knok       : 0307
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Kodsomv    : 3308211
+Nazsomv    : Veselí nad Lužnicí
+Nazcs      : ZFVFNK PAE NYePKCK
+
+Kn         : 03
+Knok       : 0307
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Kodsomv    : 3308212
+Nazsomv    : Želeč
+Nazcs      : eFNFD
+
+Kn         : 04
+Knok       : 0401
+Kodnuts    : CZ0321
+Lau1       : CZ0321
+Knuts      : 3201
+Kodok      : 3401
+Kodsomv    : 3401101
+Nazsomv    : Domažlice
+Nazcs      : EQOAeNKCF
+
+Kn         : 04
+Knok       : 0401
+Kodnuts    : CZ0321
+Lau1       : CZ0321
+Knuts      : 3201
+Kodok      : 3401
+Kodsomv    : 3401203
+Nazsomv    : Kdyně
+Nazcs      : MEcPF
+
+Kn         : 04
+Knok       : 0401
+Kodnuts    : CZ0321
+Lau1       : CZ0321
+Knuts      : 3201
+Kodok      : 3401
+Kodsomv    : 3401204
+Nazsomv    : Klenčí pod Čerchovem
+Nazcs      : MNFPDK RQE DFTJQZFO
+
+Kn         : 04
+Knok       : 0401
+Kodnuts    : CZ0321
+Lau1       : CZ0321
+Knuts      : 3201
+Kodok      : 3401
+Kodsomv    : 3401205
+Nazsomv    : Koloveč
+Nazcs      : MQNQZFD
+
+Kn         : 04
+Knok       : 0401
+Kodnuts    : CZ0321
+Lau1       : CZ0321
+Knuts      : 3201
+Kodok      : 3401
+Kodsomv    : 3401102
+Nazsomv    : Horšovský Týn
+Nazcs      : IQTWQZVMc XcP
+
+Kn         : 04
+Knok       : 0401
+Kodnuts    : CZ0321
+Lau1       : CZ0321
+Knuts      : 3201
+Kodok      : 3401
+Kodsomv    : 3401201
+Nazsomv    : Bělá nad Radbuzou
+Nazcs      : BFNA PAE TAEBYdQY
+
+Kn         : 04
+Knok       : 0401
+Kodnuts    : CZ0321
+Lau1       : CZ0321
+Knuts      : 3201
+Kodok      : 3401
+Kodsomv    : 3401202
+Nazsomv    : Holýšov
+Nazcs      : IQNcWQZ
+
+Kn         : 04
+Knok       : 0401
+Kodnuts    : CZ0321
+Lau1       : CZ0321
+Knuts      : 3201
+Kodok      : 3401
+Kodsomv    : 3401206
+Nazsomv    : Poběžovice
+Nazcs      : RQBFeQZKCF
+
+Kn         : 04
+Knok       : 0401
+Kodnuts    : CZ0321
+Lau1       : CZ0321
+Knuts      : 3201
+Kodok      : 3401
+Kodsomv    : 3401207
+Nazsomv    : Staňkov
+Nazcs      : VXAPMQZ
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404101
+Nazsomv    : Klatovy
+Nazcs      : MNAXQZc
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404202
+Nazsomv    : Chudenice
+Nazcs      : JYEFPKCF
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404203
+Nazsomv    : Janovice nad Úhlavou
+Nazcs      : LAPQZKCF PAE YINAZQY
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404206
+Nazsomv    : Měčín
+Nazcs      : OFDKP
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404208
+Nazsomv    : Nýrsko
+Nazcs      : PcTVMQ
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404210
+Nazsomv    : Plánice
+Nazcs      : RNAPKCF
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404211
+Nazsomv    : Strážov
+Nazcs      : VXTAeQZ
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404212
+Nazsomv    : Švihov
+Nazcs      : WZKIQZ
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404214
+Nazsomv    : Železná Ruda
+Nazcs      : eFNFdPA TYEA
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404102
+Nazsomv    : Horažďovice
+Nazcs      : IQTAeEQZKCF
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404207
+Nazsomv    : Nalžovské Hory
+Nazcs      : PANeQZVMF IQTc
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404209
+Nazsomv    : Pačejov
+Nazcs      : RADFLQZ
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404103
+Nazsomv    : Sušice
+Nazcs      : VYWKCF
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404201
+Nazsomv    : Hartmanice
+Nazcs      : IATXOAPKCF
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404204
+Nazsomv    : Kašperské Hory
+Nazcs      : MAWRFTVMF IQTc
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404205
+Nazsomv    : Kolinec
+Nazcs      : MQNKPFC
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404213
+Nazsomv    : Velhartice
+Nazcs      : ZFNIATXKCF
+
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Kodsomv    : 3404215
+Nazsomv    : Žichovice
+Nazcs      : eKJQZKCF
+
+Kn         : 04
+Knok       : 0404
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Knuts      : 3203
+Kodok      : 3405
+Kodsomv    : 3405101
+Nazsomv    : Plzeň
+Nazcs      : RNdFP
+
+Kn         : 04
+Knok       : 0403
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Kodsomv    : 3406201
+Nazsomv    : Blovice
+Nazcs      : BNQZKCF
+
+Kn         : 04
+Knok       : 0403
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Kodsomv    : 3406202
+Nazsomv    : Dobřany
+Nazcs      : EQBUAPc
+
+Kn         : 04
+Knok       : 0403
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Kodsomv    : 3406203
+Nazsomv    : Kasejovice
+Nazcs      : MAVFLQZKCF
+
+Kn         : 04
+Knok       : 0403
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Kodsomv    : 3406204
+Nazsomv    : Merklín
+Nazcs      : OFTMNKP
+
+Kn         : 04
+Knok       : 0403
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Kodsomv    : 3406205
+Nazsomv    : Nepomuk
+Nazcs      : PFRQOYM
+
+Kn         : 04
+Knok       : 0403
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Kodsomv    : 3406206
+Nazsomv    : Nezvěstice
+Nazcs      : PFdZFVXKCF
+
+Kn         : 04
+Knok       : 0403
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Kodsomv    : 3406207
+Nazsomv    : Přeštice
+Nazcs      : RUFWXKCF
+
+Kn         : 04
+Knok       : 0403
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Kodsomv    : 3406208
+Nazsomv    : Spálené Poříčí
+Nazcs      : VRANFPF RQUKDK
+
+Kn         : 04
+Knok       : 0403
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Kodsomv    : 3406209
+Nazsomv    : Starý Plzenec
+Nazcs      : VXATc RNdFPFC
+
+Kn         : 04
+Knok       : 0403
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Kodsomv    : 3406210
+Nazsomv    : Stod
+Nazcs      : VXQE
+
+Kn         : 04
+Knok       : 0403
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Kodsomv    : 3406211
+Nazsomv    : Štěnovice
+Nazcs      : WXFPQZKCF
+
+Kn         : 04
+Knok       : 0405
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Kodsomv    : 3407202
+Nazsomv    : Heřmanova Huť
+Nazcs      : IFUOAPQZA IYX
+
+Kn         : 04
+Knok       : 0405
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Kodsomv    : 3407203
+Nazsomv    : Horní Bříza
+Nazcs      : IQTPK BUKdA
+
+Kn         : 04
+Knok       : 0405
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Kodsomv    : 3407204
+Nazsomv    : Chrást
+Nazcs      : JTAVX
+
+Kn         : 04
+Knok       : 0405
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Kodsomv    : 3407205
+Nazsomv    : Kaznějov
+Nazcs      : MAdPFLQZ
+
+Kn         : 04
+Knok       : 0405
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Kodsomv    : 3407206
+Nazsomv    : Manětín
+Nazcs      : OAPFXKP
+
+Kn         : 04
+Knok       : 0405
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Kodsomv    : 3407207
+Nazsomv    : Město Touškov
+Nazcs      : OFVXQ XQYWMQZ
+
+Kn         : 04
+Knok       : 0405
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Kodsomv    : 3407208
+Nazsomv    : Nýřany
+Nazcs      : PcUAPc
+
+Kn         : 04
+Knok       : 0405
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Kodsomv    : 3407209
+Nazsomv    : Pernarec
+Nazcs      : RFTPATFC
+
+Kn         : 04
+Knok       : 0405
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Kodsomv    : 3407210
+Nazsomv    : Plasy
+Nazcs      : RNAVc
+
+Kn         : 04
+Knok       : 0405
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Kodsomv    : 3407211
+Nazsomv    : Třemošná
+Nazcs      : XUFOQWPA
+
+Kn         : 04
+Knok       : 0405
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Kodsomv    : 3407212
+Nazsomv    : Všeruby
+Nazcs      : ZWFTYBc
+
+Kn         : 04
+Knok       : 0405
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Kodsomv    : 3407101
+Nazsomv    : Kralovice
+Nazcs      : MTANQZKCF
+
+Kn         : 04
+Knok       : 0405
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Kodsomv    : 3407213
+Nazsomv    : Žihle
+Nazcs      : eKINF
+
+Kn         : 04
+Knok       : 0406
+Kodnuts    : CZ0326
+Lau1       : CZ0326
+Knuts      : 3206
+Kodok      : 3408
+Kodsomv    : 3408101
+Nazsomv    : Rokycany
+Nazcs      : TQMcCAPc
+
+Kn         : 04
+Knok       : 0406
+Kodnuts    : CZ0326
+Lau1       : CZ0326
+Knuts      : 3206
+Kodok      : 3408
+Kodsomv    : 3408201
+Nazsomv    : Mirošov
+Nazcs      : OKTQWQZ
+
+Kn         : 04
+Knok       : 0406
+Kodnuts    : CZ0326
+Lau1       : CZ0326
+Knuts      : 3206
+Kodok      : 3408
+Kodsomv    : 3408202
+Nazsomv    : Mlečice
+Nazcs      : ONFDKCF
+
+Kn         : 04
+Knok       : 0406
+Kodnuts    : CZ0326
+Lau1       : CZ0326
+Knuts      : 3206
+Kodok      : 3408
+Kodsomv    : 3408204
+Nazsomv    : Radnice
+Nazcs      : TAEPKCF
+
+Kn         : 04
+Knok       : 0406
+Kodnuts    : CZ0326
+Lau1       : CZ0326
+Knuts      : 3206
+Kodok      : 3408
+Kodsomv    : 3408205
+Nazsomv    : Zbiroh
+Nazcs      : dBKTQI
+
+Kn         : 04
+Knok       : 0406
+Kodnuts    : CZ0326
+Lau1       : CZ0326
+Knuts      : 3206
+Kodok      : 3408
+Kodsomv    : 3408206
+Nazsomv    : Holoubkov
+Nazcs      : IQNQYBMQZ
+
+Kn         : 04
+Knok       : 0406
+Kodnuts    : CZ0326
+Lau1       : CZ0326
+Knuts      : 3206
+Kodok      : 3408
+Kodsomv    : 3408207
+Nazsomv    : Strašice
+Nazcs      : VXTAWKCF
+
+Kn         : 04
+Knok       : 0407
+Kodnuts    : CZ0327
+Lau1       : CZ0327
+Knuts      : 3207
+Kodok      : 3410
+Kodsomv    : 3410101
+Nazsomv    : Tachov
+Nazcs      : XAJQZ
+
+Kn         : 04
+Knok       : 0407
+Kodnuts    : CZ0327
+Lau1       : CZ0327
+Knuts      : 3207
+Kodok      : 3410
+Kodsomv    : 3410202
+Nazsomv    : Bor
+Nazcs      : BQT
+
+Kn         : 04
+Knok       : 0407
+Kodnuts    : CZ0327
+Lau1       : CZ0327
+Knuts      : 3207
+Kodok      : 3410
+Kodsomv    : 3410205
+Nazsomv    : Planá
+Nazcs      : RNAPA
+
+Kn         : 04
+Knok       : 0407
+Kodnuts    : CZ0327
+Lau1       : CZ0327
+Knuts      : 3207
+Kodok      : 3410
+Kodsomv    : 3410206
+Nazsomv    : Přimda
+Nazcs      : RUKOEA
+
+Kn         : 04
+Knok       : 0407
+Kodnuts    : CZ0327
+Lau1       : CZ0327
+Knuts      : 3207
+Kodok      : 3410
+Kodsomv    : 3410102
+Nazsomv    : Stříbro
+Nazcs      : VXUKBTQ
+
+Kn         : 04
+Knok       : 0407
+Kodnuts    : CZ0327
+Lau1       : CZ0327
+Knuts      : 3207
+Kodok      : 3410
+Kodsomv    : 3410201
+Nazsomv    : Bezdružice
+Nazcs      : BFdETYeKCF
+
+Kn         : 04
+Knok       : 0407
+Kodnuts    : CZ0327
+Lau1       : CZ0327
+Knuts      : 3207
+Kodok      : 3410
+Kodsomv    : 3410203
+Nazsomv    : Černošín
+Nazcs      : DFTPQWKP
+
+Kn         : 04
+Knok       : 0407
+Kodnuts    : CZ0327
+Lau1       : CZ0327
+Knuts      : 3207
+Kodok      : 3410
+Kodsomv    : 3410204
+Nazsomv    : Kladruby
+Nazcs      : MNAETYBc
+
+Kn         : 05
+Knok       : 0501
+Kodnuts    : CZ0411
+Lau1       : CZ0411
+Knuts      : 4101
+Kodok      : 3402
+Kodsomv    : 3402101
+Nazsomv    : Cheb
+Nazcs      : JFB
+
+Kn         : 05
+Knok       : 0501
+Kodnuts    : CZ0411
+Lau1       : CZ0411
+Knuts      : 4101
+Kodok      : 3402
+Kodsomv    : 3402202
+Nazsomv    : Františkovy Lázně
+Nazcs      : GTAPXKWMQZc NAdPF
+
+Kn         : 05
+Knok       : 0501
+Kodnuts    : CZ0411
+Lau1       : CZ0411
+Knuts      : 4101
+Kodok      : 3402
+Kodsomv    : 3402203
+Nazsomv    : Hazlov
+Nazcs      : IAdNQZ
+
+Kn         : 05
+Knok       : 0501
+Kodnuts    : CZ0411
+Lau1       : CZ0411
+Knuts      : 4101
+Kodok      : 3402
+Kodsomv    : 3402205
+Nazsomv    : Luby
+Nazcs      : NYBc
+
+Kn         : 05
+Knok       : 0501
+Kodnuts    : CZ0411
+Lau1       : CZ0411
+Knuts      : 4101
+Kodok      : 3402
+Kodsomv    : 3402206
+Nazsomv    : Plesná
+Nazcs      : RNFVPA
+
+Kn         : 05
+Knok       : 0501
+Kodnuts    : CZ0411
+Lau1       : CZ0411
+Knuts      : 4101
+Kodok      : 3402
+Kodsomv    : 3402207
+Nazsomv    : Skalná
+Nazcs      : VMANPA
+
+Kn         : 05
+Knok       : 0501
+Kodnuts    : CZ0411
+Lau1       : CZ0411
+Knuts      : 4101
+Kodok      : 3402
+Kodsomv    : 3402102
+Nazsomv    : Aš
+Nazcs      : AW
+
+Kn         : 05
+Knok       : 0501
+Kodnuts    : CZ0411
+Lau1       : CZ0411
+Knuts      : 4101
+Kodok      : 3402
+Kodsomv    : 3402204
+Nazsomv    : Hranice
+Nazcs      : ITAPKCF
+
+Kn         : 05
+Knok       : 0501
+Kodnuts    : CZ0411
+Lau1       : CZ0411
+Knuts      : 4101
+Kodok      : 3402
+Kodsomv    : 3402103
+Nazsomv    : Mariánské Lázně
+Nazcs      : OATKAPVMF NAdPF
+
+Kn         : 05
+Knok       : 0501
+Kodnuts    : CZ0411
+Lau1       : CZ0411
+Knuts      : 4101
+Kodok      : 3402
+Kodsomv    : 3402208
+Nazsomv    : Lázně Kynžvart
+Nazcs      : NAdPF McPeZATX
+
+Kn         : 05
+Knok       : 0502
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Kodsomv    : 3403101
+Nazsomv    : Karlovy Vary
+Nazcs      : MATNQZc ZATc
+
+Kn         : 05
+Knok       : 0502
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Kodsomv    : 3403201
+Nazsomv    : Bečov nad Teplou
+Nazcs      : BFDQZ PAE XFRNQY
+
+Kn         : 05
+Knok       : 0502
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Kodsomv    : 3403204
+Nazsomv    : Nejdek
+Nazcs      : PFLEFM
+
+Kn         : 05
+Knok       : 0502
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Kodsomv    : 3403205
+Nazsomv    : Nová Role
+Nazcs      : PQZA TQNF
+
+Kn         : 05
+Knok       : 0502
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Kodsomv    : 3403102
+Nazsomv    : Ostrov
+Nazcs      : QVXTQZ
+
+Kn         : 05
+Knok       : 0502
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Kodsomv    : 3403203
+Nazsomv    : Jáchymov
+Nazcs      : LAJcOQZ
+
+Kn         : 05
+Knok       : 0502
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Kodsomv    : 3403206
+Nazsomv    : Pernink
+Nazcs      : RFTPKPM
+
+Kn         : 05
+Knok       : 0502
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Kodsomv    : 3403209
+Nazsomv    : Hroznětín
+Nazcs      : ITQdPFXKP
+
+Kn         : 05
+Knok       : 0502
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Kodsomv    : 3403103
+Nazsomv    : Toužim
+Nazcs      : XQYeKO
+
+Kn         : 05
+Knok       : 0502
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Kodsomv    : 3403202
+Nazsomv    : Bochov
+Nazcs      : BQJQZ
+
+Kn         : 05
+Knok       : 0502
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Kodsomv    : 3403207
+Nazsomv    : Teplá
+Nazcs      : XFRNA
+
+Kn         : 05
+Knok       : 0502
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Kodsomv    : 3403208
+Nazsomv    : Žlutice
+Nazcs      : eNYXKCF
+
+Kn         : 05
+Knok       : 0503
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Kodsomv    : 3409101
+Nazsomv    : Sokolov
+Nazcs      : VQMQNQZ
+
+Kn         : 05
+Knok       : 0503
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Kodsomv    : 3409201
+Nazsomv    : Březová
+Nazcs      : BUFdQZA
+
+Kn         : 05
+Knok       : 0503
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Kodsomv    : 3409202
+Nazsomv    : Habartov
+Nazcs      : IABATXQZ
+
+Kn         : 05
+Knok       : 0503
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Kodsomv    : 3409203
+Nazsomv    : Horní Slavkov
+Nazcs      : IQTPK VNAZMQZ
+
+Kn         : 05
+Knok       : 0503
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Kodsomv    : 3409204
+Nazsomv    : Chodov
+Nazcs      : JQEQZ
+
+Kn         : 05
+Knok       : 0503
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Kodsomv    : 3409205
+Nazsomv    : Kynšperk nad Ohří
+Nazcs      : McPWRFTM PAE QIUK
+
+Kn         : 05
+Knok       : 0503
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Kodsomv    : 3409206
+Nazsomv    : Loket
+Nazcs      : NQMFX
+
+Kn         : 05
+Knok       : 0503
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Kodsomv    : 3409207
+Nazsomv    : Oloví
+Nazcs      : QNQZK
+
+Kn         : 05
+Knok       : 0503
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Kodsomv    : 3409102
+Nazsomv    : Kraslice
+Nazcs      : MTAVNKCF
+
+Kn         : 05
+Knok       : 0503
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Kodsomv    : 3409208
+Nazsomv    : Rotava
+Nazcs      : TQXAZA
+
+Kn         : 06
+Knok       : 0601
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Kodsomv    : 3502101
+Nazsomv    : Děčín
+Nazcs      : EFDKP
+
+Kn         : 06
+Knok       : 0601
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Kodsomv    : 3502201
+Nazsomv    : Benešov nad Ploučnicí
+Nazcs      : BFPFWQZ PAE RNQYDPKCK
+
+Kn         : 06
+Knok       : 0601
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Kodsomv    : 3502202
+Nazsomv    : Česká Kamenice
+Nazcs      : DFVMA MAOFPKCF
+
+Kn         : 06
+Knok       : 0601
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Kodsomv    : 3502210
+Nazsomv    : Verneřice
+Nazcs      : ZFTPFUKCF
+
+Kn         : 06
+Knok       : 0601
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Kodsomv    : 3502102
+Nazsomv    : Rumburk
+Nazcs      : TYOBYTM
+
+Kn         : 06
+Knok       : 0601
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Kodsomv    : 3502203
+Nazsomv    : Dolní Poustevna
+Nazcs      : EQNPK RQYVXFZPA
+
+Kn         : 06
+Knok       : 0601
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Kodsomv    : 3502206
+Nazsomv    : Jiříkov
+Nazcs      : LKUKMQZ
+
+Kn         : 06
+Knok       : 0601
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Kodsomv    : 3502207
+Nazsomv    : Krásná Lípa
+Nazcs      : MTAVPA NKRA
+
+Kn         : 06
+Knok       : 0601
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Kodsomv    : 3502208
+Nazsomv    : Mikulášovice - Vilémov - Velký Šenov
+Nazcs      : OKMYNAWQZKCF - ZKNFOQZ - ZFNMc WFPQZ
+
+Kn         : 06
+Knok       : 0601
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Kodsomv    : 3502209
+Nazsomv    : Šluknov
+Nazcs      : WNYMPQZ
+
+Kn         : 06
+Knok       : 0601
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Kodsomv    : 3502103
+Nazsomv    : Varnsdorf
+Nazcs      : ZATPVEQTG
+
+Kn         : 06
+Knok       : 0601
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Kodsomv    : 3502204
+Nazsomv    : Chřibská
+Nazcs      : JUKBVMA
+
+Kn         : 06
+Knok       : 0602
+Kodnuts    : CZ0422
+Lau1       : CZ0422
+Knuts      : 4202
+Kodok      : 3503
+Kodsomv    : 3503101
+Nazsomv    : Chomutov - Jirkov
+Nazcs      : JQOYXQZ - LKTMQZ
+
+Kn         : 06
+Knok       : 0602
+Kodnuts    : CZ0422
+Lau1       : CZ0422
+Knuts      : 4202
+Kodok      : 3503
+Kodsomv    : 3503203
+Nazsomv    : Kovářská
+Nazcs      : MQZAUVMA
+
+Kn         : 06
+Knok       : 0602
+Kodnuts    : CZ0422
+Lau1       : CZ0422
+Knuts      : 4202
+Kodok      : 3503
+Kodsomv    : 3503205
+Nazsomv    : Vejprty
+Nazcs      : ZFLRTXc
+
+Kn         : 06
+Knok       : 0602
+Kodnuts    : CZ0422
+Lau1       : CZ0422
+Knuts      : 4202
+Kodok      : 3503
+Kodsomv    : 3503102
+Nazsomv    : Kadaň
+Nazcs      : MAEAP
+
+Kn         : 06
+Knok       : 0602
+Kodnuts    : CZ0422
+Lau1       : CZ0422
+Knuts      : 4202
+Kodok      : 3503
+Kodsomv    : 3503202
+Nazsomv    : Klášterec nad Ohří
+Nazcs      : MNAWXFTFC PAE QIUK
+
+Kn         : 06
+Knok       : 0602
+Kodnuts    : CZ0422
+Lau1       : CZ0422
+Knuts      : 4202
+Kodok      : 3503
+Kodsomv    : 3503204
+Nazsomv    : Radonice - Vilémov
+Nazcs      : TAEQPKCF - ZKNFOQZ
+
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Kodsomv    : 3506101
+Nazsomv    : Litoměřice - Lovosice
+Nazcs      : NKXQOFUKCF - NQZQVKCF
+
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Kodsomv    : 3506081
+Nazsomv    : Litoměřice
+Nazcs      : NKXQOFUKCF
+
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Kodsomv    : 3506091
+Nazsomv    : Lovosice
+Nazcs      : NQZQVKCF
+
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Kodsomv    : 3506206
+Nazsomv    : Libochovice
+Nazcs      : NKBQJQZKCF
+
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Kodsomv    : 3506208
+Nazsomv    : Polepy
+Nazcs      : RQNFRc
+
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Kodsomv    : 3506211
+Nazsomv    : Terezín - Bohušovice nad Ohří
+Nazcs      : XFTFdKP - BQIYWQZKCF PAE QIUK
+
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Kodsomv    : 3506212
+Nazsomv    : Třebenice
+Nazcs      : XUFBFPKCF
+
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Kodsomv    : 3506215
+Nazsomv    : Úštěk
+Nazcs      : YWXFM
+
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Kodsomv    : 3506216
+Nazsomv    : Velemín
+Nazcs      : ZFNFOKP
+
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Kodsomv    : 3506102
+Nazsomv    : Roudnice nad Labem
+Nazcs      : TQYEPKCF PAE NABFO
+
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Kodsomv    : 3506201
+Nazsomv    : Brozany nad Ohří
+Nazcs      : BTQdAPc PAE QIUK
+
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Kodsomv    : 3506202
+Nazsomv    : Budyně nad Ohří
+Nazcs      : BYEcPF PAE QIUK
+
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Kodsomv    : 3506203
+Nazsomv    : Horní Beřkovice
+Nazcs      : IQTPK BFUMQZKCF
+
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Kodsomv    : 3506207
+Nazsomv    : Mšené-lázně
+Nazcs      : OWFPF-NAdPF
+
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Kodsomv    : 3506209
+Nazsomv    : Straškov-Vodochody
+Nazcs      : VXTAWMQZ-ZQEQJQEc
+
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Kodsomv    : 3506210
+Nazsomv    : Štětí
+Nazcs      : WXFXK
+
+Kn         : 06
+Knok       : 0604
+Kodnuts    : CZ0424
+Lau1       : CZ0424
+Knuts      : 4204
+Kodok      : 3507
+Kodsomv    : 3507101
+Nazsomv    : Louny
+Nazcs      : NQYPc
+
+Kn         : 06
+Knok       : 0604
+Kodnuts    : CZ0424
+Lau1       : CZ0424
+Knuts      : 4204
+Kodok      : 3507
+Kodsomv    : 3507208
+Nazsomv    : Peruc
+Nazcs      : RFTYC
+
+Kn         : 06
+Knok       : 0604
+Kodnuts    : CZ0424
+Lau1       : CZ0424
+Knuts      : 4204
+Kodok      : 3507
+Kodsomv    : 3507209
+Nazsomv    : Postoloprty
+Nazcs      : RQVXQNQRTXc
+
+Kn         : 06
+Knok       : 0604
+Kodnuts    : CZ0424
+Lau1       : CZ0424
+Knuts      : 4204
+Kodok      : 3507
+Kodsomv    : 3507210
+Nazsomv    : Ročov
+Nazcs      : TQDQZ
+
+Kn         : 06
+Knok       : 0604
+Kodnuts    : CZ0424
+Lau1       : CZ0424
+Knuts      : 4204
+Kodok      : 3507
+Kodsomv    : 3507102
+Nazsomv    : Podbořany
+Nazcs      : RQEBQUAPc
+
+Kn         : 06
+Knok       : 0604
+Kodnuts    : CZ0424
+Lau1       : CZ0424
+Knuts      : 4204
+Kodok      : 3507
+Kodsomv    : 3507203
+Nazsomv    : Kryry - Vroutek
+Nazcs      : MTcTc - ZTQYXFM
+
+Kn         : 06
+Knok       : 0604
+Kodnuts    : CZ0424
+Lau1       : CZ0424
+Knuts      : 4204
+Kodok      : 3507
+Kodsomv    : 3507205
+Nazsomv    : Lubenec
+Nazcs      : NYBFPFC
+
+Kn         : 06
+Knok       : 0604
+Kodnuts    : CZ0424
+Lau1       : CZ0424
+Knuts      : 4204
+Kodok      : 3507
+Kodsomv    : 3507103
+Nazsomv    : Žatec
+Nazcs      : eAXFC
+
+Kn         : 06
+Knok       : 0605
+Kodnuts    : CZ0425
+Lau1       : CZ0425
+Knuts      : 4205
+Kodok      : 3508
+Kodsomv    : 3508101
+Nazsomv    : Most
+Nazcs      : OQVX
+
+Kn         : 06
+Knok       : 0605
+Kodnuts    : CZ0425
+Lau1       : CZ0425
+Knuts      : 4205
+Kodok      : 3508
+Kodsomv    : 3508201
+Nazsomv    : Bečov
+Nazcs      : BFDQZ
+
+Kn         : 06
+Knok       : 0605
+Kodnuts    : CZ0425
+Lau1       : CZ0425
+Knuts      : 4205
+Kodok      : 3508
+Kodsomv    : 3508102
+Nazsomv    : Litvínov
+Nazcs      : NKXZKPQZ
+
+Kn         : 06
+Knok       : 0606
+Kodnuts    : CZ0426
+Lau1       : CZ0426
+Knuts      : 4206
+Kodok      : 3509
+Kodsomv    : 3509101
+Nazsomv    : Teplice
+Nazcs      : XFRNKCF
+
+Kn         : 06
+Knok       : 0606
+Kodnuts    : CZ0426
+Lau1       : CZ0426
+Knuts      : 4206
+Kodok      : 3509
+Kodsomv    : 3509201
+Nazsomv    : Duchcov
+Nazcs      : EYJCQZ
+
+Kn         : 06
+Knok       : 0606
+Kodnuts    : CZ0426
+Lau1       : CZ0426
+Knuts      : 4206
+Kodok      : 3509
+Kodsomv    : 3509202
+Nazsomv    : Hrob
+Nazcs      : ITQB
+
+Kn         : 06
+Knok       : 0606
+Kodnuts    : CZ0426
+Lau1       : CZ0426
+Knuts      : 4206
+Kodok      : 3509
+Kodsomv    : 3509203
+Nazsomv    : Krupka
+Nazcs      : MTYRMA
+
+Kn         : 06
+Knok       : 0606
+Kodnuts    : CZ0426
+Lau1       : CZ0426
+Knuts      : 4206
+Kodok      : 3509
+Kodsomv    : 3509204
+Nazsomv    : Osek
+Nazcs      : QVFM
+
+Kn         : 06
+Knok       : 0606
+Kodnuts    : CZ0426
+Lau1       : CZ0426
+Knuts      : 4206
+Kodok      : 3509
+Kodsomv    : 3509102
+Nazsomv    : Bílina
+Nazcs      : BKNKPA
+
+Kn         : 06
+Knok       : 0607
+Kodnuts    : CZ0427
+Lau1       : CZ0427
+Knuts      : 4207
+Kodok      : 3510
+Kodsomv    : 3510101
+Nazsomv    : Ústí nad Labem
+Nazcs      : YVXK PAE NABFO
+
+Kn         : 06
+Knok       : 0607
+Kodnuts    : CZ0427
+Lau1       : CZ0427
+Knuts      : 4207
+Kodok      : 3510
+Kodsomv    : 3510201
+Nazsomv    : Libouchec
+Nazcs      : NKBQYJFC
+
+Kn         : 06
+Knok       : 0607
+Kodnuts    : CZ0427
+Lau1       : CZ0427
+Knuts      : 4207
+Kodok      : 3510
+Kodsomv    : 3510202
+Nazsomv    : Povrly
+Nazcs      : RQZTNc
+
+Kn         : 06
+Knok       : 0607
+Kodnuts    : CZ0427
+Lau1       : CZ0427
+Knuts      : 4207
+Kodok      : 3510
+Kodsomv    : 3510203
+Nazsomv    : Velké Březno
+Nazcs      : ZFNMF BUFdPQ
+
+Kn         : 07
+Knok       : 0701
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Kodsomv    : 3501101
+Nazsomv    : Česká Lípa
+Nazcs      : DFVMA NKRA
+
+Kn         : 07
+Knok       : 0701
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Kodsomv    : 3501201
+Nazsomv    : Cvikov
+Nazcs      : CZKMQZ
+
+Kn         : 07
+Knok       : 0701
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Kodsomv    : 3501202
+Nazsomv    : Doksy
+Nazcs      : EQMVc
+
+Kn         : 07
+Knok       : 0701
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Kodsomv    : 3501203
+Nazsomv    : Dubá
+Nazcs      : EYBA
+
+Kn         : 07
+Knok       : 0701
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Kodsomv    : 3501204
+Nazsomv    : Jablonné v Podještědí
+Nazcs      : LABNQPPF Z RQELFWXFEK
+
+Kn         : 07
+Knok       : 0701
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Kodsomv    : 3501205
+Nazsomv    : Kamenický Šenov
+Nazcs      : MAOFPKCMc WFPQZ
+
+Kn         : 07
+Knok       : 0701
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Kodsomv    : 3501206
+Nazsomv    : Kravaře
+Nazcs      : MTAZAUF
+
+Kn         : 07
+Knok       : 0701
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Kodsomv    : 3501207
+Nazsomv    : Mimoň
+Nazcs      : OKOQP
+
+Kn         : 07
+Knok       : 0701
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Kodsomv    : 3501208
+Nazsomv    : Nový Bor
+Nazcs      : PQZc BQT
+
+Kn         : 07
+Knok       : 0701
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Kodsomv    : 3501209
+Nazsomv    : Stráž pod Ralskem
+Nazcs      : VXTAe RQE TANVMFO
+
+Kn         : 07
+Knok       : 0701
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Kodsomv    : 3501211
+Nazsomv    : Zákupy
+Nazcs      : dAMYRc
+
+Kn         : 07
+Knok       : 0701
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Kodsomv    : 3501212
+Nazsomv    : Žandov
+Nazcs      : eAPEQZ
+
+Kn         : 07
+Knok       : 0702
+Kodnuts    : CZ0512
+Lau1       : CZ0512
+Knuts      : 5102
+Kodok      : 3504
+Kodsomv    : 3504101
+Nazsomv    : Jablonec nad Nisou
+Nazcs      : LABNQPFC PAE PKVQY
+
+Kn         : 07
+Knok       : 0702
+Kodnuts    : CZ0512
+Lau1       : CZ0512
+Knuts      : 5102
+Kodok      : 3504
+Kodsomv    : 3504203
+Nazsomv    : Rychnov u Jablonce nad Nisou
+Nazcs      : TcJPQZ Y LABNQPCF PAE PKVQY
+
+Kn         : 07
+Knok       : 0702
+Kodnuts    : CZ0512
+Lau1       : CZ0512
+Knuts      : 5102
+Kodok      : 3504
+Kodsomv    : 3504206
+Nazsomv    : Železný Brod
+Nazcs      : eFNFdPc BTQE
+
+Kn         : 07
+Knok       : 0702
+Kodnuts    : CZ0512
+Lau1       : CZ0512
+Knuts      : 5102
+Kodok      : 3504
+Kodsomv    : 3504102
+Nazsomv    : Tanvald - Smržovka
+Nazcs      : XAPZANE - VOTeQZMA
+
+Kn         : 07
+Knok       : 0702
+Kodnuts    : CZ0512
+Lau1       : CZ0512
+Knuts      : 5102
+Kodok      : 3504
+Kodsomv    : 3504202
+Nazsomv    : Josefův Důl
+Nazcs      : LQVFGYZ EYN
+
+Kn         : 07
+Knok       : 0702
+Kodnuts    : CZ0512
+Lau1       : CZ0512
+Knuts      : 5102
+Kodok      : 3504
+Kodsomv    : 3504204
+Nazsomv    : Velké Hamry - Plavy
+Nazcs      : ZFNMF IAOTc - RNAZc
+
+Kn         : 07
+Knok       : 0702
+Kodnuts    : CZ0512
+Lau1       : CZ0512
+Knuts      : 5102
+Kodok      : 3504
+Kodsomv    : 3504205
+Nazsomv    : Zásada - Držkov
+Nazcs      : dAVAEA - ETeMQZ
+
+Kn         : 07
+Knok       : 0703
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Kodsomv    : 3505101
+Nazsomv    : Liberec
+Nazcs      : NKBFTFC
+
+Kn         : 07
+Knok       : 0703
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Kodsomv    : 3505201
+Nazsomv    : Český Dub
+Nazcs      : DFVMc EYB
+
+Kn         : 07
+Knok       : 0703
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Kodsomv    : 3505203
+Nazsomv    : Hodkovice nad Mohelkou
+Nazcs      : IQEMQZKCF PAE OQIFNMQY
+
+Kn         : 07
+Knok       : 0703
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Kodsomv    : 3505204
+Nazsomv    : Hrádek nad Nisou
+Nazcs      : ITAEFM PAE PKVQY
+
+Kn         : 07
+Knok       : 0703
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Kodsomv    : 3505205
+Nazsomv    : Chrastava
+Nazcs      : JTAVXAZA
+
+Kn         : 07
+Knok       : 0703
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Kodsomv    : 3505102
+Nazsomv    : Frýdlant
+Nazcs      : GTcENAPX
+
+Kn         : 07
+Knok       : 0703
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Kodsomv    : 3505202
+Nazsomv    : Hejnice - Raspenava
+Nazcs      : IFLPKCF - TAVRFPAZA
+
+Kn         : 07
+Knok       : 0703
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Kodsomv    : 3505206
+Nazsomv    : Nové Město pod Smrkem
+Nazcs      : PQZF OFVXQ RQE VOTMFO
+
+Kn         : 07
+Knok       : 0704
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Kodsomv    : 3608101
+Nazsomv    : Semily
+Nazcs      : VFOKNc
+
+Kn         : 07
+Knok       : 0704
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Kodsomv    : 3608201
+Nazsomv    : Harrachov
+Nazcs      : IATTAJQZ
+
+Kn         : 07
+Knok       : 0704
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Kodsomv    : 3608202
+Nazsomv    : Jablonec nad Jizerou
+Nazcs      : LABNQPFC PAE LKdFTQY
+
+Kn         : 07
+Knok       : 0704
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Kodsomv    : 3608203
+Nazsomv    : Jilemnice
+Nazcs      : LKNFOPKCF
+
+Kn         : 07
+Knok       : 0704
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Kodsomv    : 3608204
+Nazsomv    : Košťálov
+Nazcs      : MQWXANQZ
+
+Kn         : 07
+Knok       : 0704
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Kodsomv    : 3608205
+Nazsomv    : Lomnice nad Popelkou
+Nazcs      : NQOPKCF PAE RQRFNMQY
+
+Kn         : 07
+Knok       : 0704
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Kodsomv    : 3608206
+Nazsomv    : Rokytnice nad Jizerou
+Nazcs      : TQMcXPKCF PAE LKdFTQY
+
+Kn         : 07
+Knok       : 0704
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Kodsomv    : 3608209
+Nazsomv    : Studenec
+Nazcs      : VXYEFPFC
+
+Kn         : 07
+Knok       : 0704
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Kodsomv    : 3608210
+Nazsomv    : Vysoké nad Jizerou
+Nazcs      : ZcVQMF PAE LKdFTQY
+
+Kn         : 07
+Knok       : 0704
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Kodsomv    : 3608102
+Nazsomv    : Turnov
+Nazcs      : XYTPQZ
+
+Kn         : 07
+Knok       : 0704
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Kodsomv    : 3608207
+Nazsomv    : Rovensko pod Troskami
+Nazcs      : TQZFPVMQ RQE XTQVMAOK
+
+Kn         : 08
+Knok       : 0801
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Kodsomv    : 3602101
+Nazsomv    : Hradec Králové
+Nazcs      : ITAEFC MTANQZF
+
+Kn         : 08
+Knok       : 0801
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Kodsomv    : 3602201
+Nazsomv    : Černilov
+Nazcs      : DFTPKNQZ
+
+Kn         : 08
+Knok       : 0801
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Kodsomv    : 3602203
+Nazsomv    : Lhota pod Libčany
+Nazcs      : NIQXA RQE NKBDAPc
+
+Kn         : 08
+Knok       : 0801
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Kodsomv    : 3602204
+Nazsomv    : Nechanice
+Nazcs      : PFJAPKCF
+
+Kn         : 08
+Knok       : 0801
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Kodsomv    : 3602206
+Nazsomv    : Smiřice
+Nazcs      : VOKUKCF
+
+Kn         : 08
+Knok       : 0801
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Kodsomv    : 3602207
+Nazsomv    : Třebechovice pod Orebem
+Nazcs      : XUFBFJQZKCF RQE QTFBFO
+
+Kn         : 08
+Knok       : 0801
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Kodsomv    : 3602102
+Nazsomv    : Nový Bydžov
+Nazcs      : PQZc BcEeQZ
+
+Kn         : 08
+Knok       : 0801
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Kodsomv    : 3602202
+Nazsomv    : Chlumec nad Cidlinou
+Nazcs      : JNYOFC PAE CKENKPQY
+
+Kn         : 08
+Knok       : 0801
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Kodsomv    : 3602205
+Nazsomv    : Smidary
+Nazcs      : VOKEATc
+
+Kn         : 08
+Knok       : 0802
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Kodsomv    : 3604101
+Nazsomv    : Jičín
+Nazcs      : LKDKP
+
+Kn         : 08
+Knok       : 0802
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Kodsomv    : 3604202
+Nazsomv    : Kopidlno
+Nazcs      : MQRKENPQ
+
+Kn         : 08
+Knok       : 0802
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Kodsomv    : 3604204
+Nazsomv    : Libáň
+Nazcs      : NKBAP
+
+Kn         : 08
+Knok       : 0802
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Kodsomv    : 3604208
+Nazsomv    : Sobotka
+Nazcs      : VQBQXMA
+
+Kn         : 08
+Knok       : 0802
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Kodsomv    : 3604209
+Nazsomv    : Vysoké Veselí
+Nazcs      : ZcVQMF ZFVFNK
+
+Kn         : 08
+Knok       : 0802
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Kodsomv    : 3604210
+Nazsomv    : Železnice
+Nazcs      : eFNFdPKCF
+
+Kn         : 08
+Knok       : 0802
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Kodsomv    : 3604102
+Nazsomv    : Hořice
+Nazcs      : IQUKCF
+
+Kn         : 08
+Knok       : 0802
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Kodsomv    : 3604201
+Nazsomv    : Cerekvice nad Bystřicí
+Nazcs      : CFTFMZKCF PAE BcVXUKCK
+
+Kn         : 08
+Knok       : 0802
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Kodsomv    : 3604205
+Nazsomv    : Miletín
+Nazcs      : OKNFXKP
+
+Kn         : 08
+Knok       : 0802
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Kodsomv    : 3604206
+Nazsomv    : Ostroměř
+Nazcs      : QVXTQOFU
+
+Kn         : 08
+Knok       : 0802
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Kodsomv    : 3604103
+Nazsomv    : Nová Paka
+Nazcs      : PQZA RAMA
+
+Kn         : 08
+Knok       : 0802
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Kodsomv    : 3604203
+Nazsomv    : Lázně Bělohrad
+Nazcs      : NAdPF BFNQITAE
+
+Kn         : 08
+Knok       : 0802
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Kodsomv    : 3604207
+Nazsomv    : Pecka
+Nazcs      : RFCMA
+
+Kn         : 08
+Knok       : 0803
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Kodsomv    : 3605101
+Nazsomv    : Náchod
+Nazcs      : PAJQE
+
+Kn         : 08
+Knok       : 0803
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Kodsomv    : 3605201
+Nazsomv    : Červený Kostelec
+Nazcs      : DFTZFPc MQVXFNFC
+
+Kn         : 08
+Knok       : 0803
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Kodsomv    : 3605202
+Nazsomv    : Česká Skalice
+Nazcs      : DFVMA VMANKCF
+
+Kn         : 08
+Knok       : 0803
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Kodsomv    : 3605203
+Nazsomv    : Hronov
+Nazcs      : ITQPQZ
+
+Kn         : 08
+Knok       : 0803
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Kodsomv    : 3605205
+Nazsomv    : Nové Město nad Metují
+Nazcs      : PQZF OFVXQ PAE OFXYLK
+
+Kn         : 08
+Knok       : 0803
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Kodsomv    : 3605102
+Nazsomv    : Broumov
+Nazcs      : BTQYOQZ
+
+Kn         : 08
+Knok       : 0803
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Kodsomv    : 3605204
+Nazsomv    : Meziměstí
+Nazcs      : OFdKOFVXK
+
+Kn         : 08
+Knok       : 0803
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Kodsomv    : 3605206
+Nazsomv    : Police nad Metují
+Nazcs      : RQNKCF PAE OFXYLK
+
+Kn         : 08
+Knok       : 0803
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Kodsomv    : 3605207
+Nazsomv    : Teplice nad Metují
+Nazcs      : XFRNKCF PAE OFXYLK
+
+Kn         : 08
+Knok       : 0803
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Kodsomv    : 3605103
+Nazsomv    : Jaroměř
+Nazcs      : LATQOFU
+
+Kn         : 08
+Knok       : 0804
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Kodsomv    : 3607101
+Nazsomv    : Rychnov nad Kněžnou
+Nazcs      : TcJPQZ PAE MPFePQY
+
+Kn         : 08
+Knok       : 0804
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Kodsomv    : 3607201
+Nazsomv    : Borohrádek
+Nazcs      : BQTQITAEFM
+
+Kn         : 08
+Knok       : 0804
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Kodsomv    : 3607205
+Nazsomv    : Kostelec nad Orlicí
+Nazcs      : MQVXFNFC PAE QTNKCK
+
+Kn         : 08
+Knok       : 0804
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Kodsomv    : 3607208
+Nazsomv    : Rokytnice v Orlických horách
+Nazcs      : TQMcXPKCF Z QTNKCMcJ IQTAJ
+
+Kn         : 08
+Knok       : 0804
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Kodsomv    : 3607209
+Nazsomv    : Solnice
+Nazcs      : VQNPKCF
+
+Kn         : 08
+Knok       : 0804
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Kodsomv    : 3607210
+Nazsomv    : Týniště nad Orlicí
+Nazcs      : XcPKWXF PAE QTNKCK
+
+Kn         : 08
+Knok       : 0804
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Kodsomv    : 3607211
+Nazsomv    : Vamberk
+Nazcs      : ZAOBFTM
+
+Kn         : 08
+Knok       : 0804
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Kodsomv    : 3607102
+Nazsomv    : Dobruška
+Nazcs      : EQBTYWMA
+
+Kn         : 08
+Knok       : 0804
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Kodsomv    : 3607202
+Nazsomv    : České Meziříčí
+Nazcs      : DFVMF OFdKUKDK
+
+Kn         : 08
+Knok       : 0804
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Kodsomv    : 3607203
+Nazsomv    : Deštné v Orlických horách
+Nazcs      : EFWXPF Z QTNKCMcJ IQTAJ
+
+Kn         : 08
+Knok       : 0804
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Kodsomv    : 3607206
+Nazsomv    : Opočno
+Nazcs      : QRQDPQ
+
+Kn         : 08
+Knok       : 0805
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Kodsomv    : 3610101
+Nazsomv    : Trutnov
+Nazcs      : XTYXPQZ
+
+Kn         : 08
+Knok       : 0805
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Kodsomv    : 3610204
+Nazsomv    : Pec pod Sněžkou
+Nazcs      : RFC RQE VPFeMQY
+
+Kn         : 08
+Knok       : 0805
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Kodsomv    : 3610205
+Nazsomv    : Radvanice
+Nazcs      : TAEZAPKCF
+
+Kn         : 08
+Knok       : 0805
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Kodsomv    : 3610206
+Nazsomv    : Rtyně v Podkrkonoší
+Nazcs      : TXcPF Z RQEMTMQPQWK
+
+Kn         : 08
+Knok       : 0805
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Kodsomv    : 3610208
+Nazsomv    : Svoboda nad Úpou
+Nazcs      : VZQBQEA PAE YRQY
+
+Kn         : 08
+Knok       : 0805
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Kodsomv    : 3610210
+Nazsomv    : Úpice
+Nazcs      : YRKCF
+
+Kn         : 08
+Knok       : 0805
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Kodsomv    : 3610211
+Nazsomv    : Žacléř
+Nazcs      : eACNFU
+
+Kn         : 08
+Knok       : 0805
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Kodsomv    : 3610102
+Nazsomv    : Dvůr Králové nad Labem
+Nazcs      : EZYT MTANQZF PAE NABFO
+
+Kn         : 08
+Knok       : 0805
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Kodsomv    : 3610201
+Nazsomv    : Dubenec
+Nazcs      : EYBFPFC
+
+Kn         : 08
+Knok       : 0805
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Kodsomv    : 3610203
+Nazsomv    : Mostek
+Nazcs      : OQVXFM
+
+Kn         : 08
+Knok       : 0805
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Kodsomv    : 3610103
+Nazsomv    : Vrchlabí
+Nazcs      : ZTJNABK
+
+Kn         : 08
+Knok       : 0805
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Kodsomv    : 3610202
+Nazsomv    : Hostinné
+Nazcs      : IQVXKPPF
+
+Kn         : 08
+Knok       : 0805
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Kodsomv    : 3610207
+Nazsomv    : Rudník
+Nazcs      : TYEPKM
+
+Kn         : 08
+Knok       : 0805
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Kodsomv    : 3610209
+Nazsomv    : Špindlerův Mlýn
+Nazcs      : WRKPENFTYZ ONcP
+
+Kn         : 09
+Knok       : 0901
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Kodsomv    : 3603101
+Nazsomv    : Chrudim
+Nazcs      : JTYEKO
+
+Kn         : 09
+Knok       : 0901
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Kodsomv    : 3603201
+Nazsomv    : Heřmanův Městec
+Nazcs      : IFUOAPYZ OFVXFC
+
+Kn         : 09
+Knok       : 0901
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Kodsomv    : 3603202
+Nazsomv    : Hrochův Týnec
+Nazcs      : ITQJYZ XcPFC
+
+Kn         : 09
+Knok       : 0901
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Kodsomv    : 3603203
+Nazsomv    : Chrast
+Nazcs      : JTAVX
+
+Kn         : 09
+Knok       : 0901
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Kodsomv    : 3603204
+Nazsomv    : Luže
+Nazcs      : NYeF
+
+Kn         : 09
+Knok       : 0901
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Kodsomv    : 3603205
+Nazsomv    : Nasavrky
+Nazcs      : PAVAZTMc
+
+Kn         : 09
+Knok       : 0901
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Kodsomv    : 3603207
+Nazsomv    : Ronov nad Doubravou
+Nazcs      : TQPQZ PAE EQYBTAZQY
+
+Kn         : 09
+Knok       : 0901
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Kodsomv    : 3603208
+Nazsomv    : Seč
+Nazcs      : VFD
+
+Kn         : 09
+Knok       : 0901
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Kodsomv    : 3603210
+Nazsomv    : Slatiňany
+Nazcs      : VNAXKPAPc
+
+Kn         : 09
+Knok       : 0901
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Kodsomv    : 3603212
+Nazsomv    : Třemošnice
+Nazcs      : XUFOQWPKCF
+
+Kn         : 09
+Knok       : 0901
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Kodsomv    : 3603102
+Nazsomv    : Hlinsko
+Nazcs      : INKPVMQ
+
+Kn         : 09
+Knok       : 0901
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Kodsomv    : 3603206
+Nazsomv    : Proseč
+Nazcs      : RTQVFD
+
+Kn         : 09
+Knok       : 0901
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Kodsomv    : 3603209
+Nazsomv    : Skuteč
+Nazcs      : VMYXFD
+
+Kn         : 09
+Knok       : 0901
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Kodsomv    : 3603211
+Nazsomv    : Trhová Kamenice
+Nazcs      : XTIQZA MAOFPKCF
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Kodsomv    : 3606101
+Nazsomv    : Pardubice
+Nazcs      : RATEYBKCF
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Kodsomv    : 3606201
+Nazsomv    : Lázně Bohdaneč
+Nazcs      : NAdPF BQIEAPFD
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Kodsomv    : 3606203
+Nazsomv    : Dašice
+Nazcs      : EAWKCF
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Kodsomv    : 3606208
+Nazsomv    : Opatovice nad Labem
+Nazcs      : QRAXQZKCF PAE NABFO
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Kodsomv    : 3606209
+Nazsomv    : Rohovládova Bělá
+Nazcs      : TQIQZNAEQZA BFNA
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Kodsomv    : 3606211
+Nazsomv    : Sezemice
+Nazcs      : VFdFOKCF
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Kodsomv    : 3606102
+Nazsomv    : Holice
+Nazcs      : IQNKCF
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Kodsomv    : 3606202
+Nazsomv    : Býšť
+Nazcs      : BcWX
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Kodsomv    : 3606204
+Nazsomv    : Horní Jelení
+Nazcs      : IQTPK LFNFPK
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Kodsomv    : 3606207
+Nazsomv    : Moravany
+Nazcs      : OQTAZAPc
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Kodsomv    : 3606103
+Nazsomv    : Přelouč
+Nazcs      : RUFNQYD
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Kodsomv    : 3606205
+Nazsomv    : Choltice
+Nazcs      : JQNXKCF
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Kodsomv    : 3606206
+Nazsomv    : Chvaletice
+Nazcs      : JZANFXKCF
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Kodsomv    : 3606210
+Nazsomv    : Řečany nad Labem
+Nazcs      : UFDAPc PAE NABFO
+
+Kn         : 09
+Knok       : 0903
+Kodnuts    : CZ0533
+Lau1       : CZ0533
+Knuts      : 5303
+Kodok      : 3609
+Kodsomv    : 3609101
+Nazsomv    : Svitavy
+Nazcs      : VZKXAZc
+
+Kn         : 09
+Knok       : 0903
+Kodnuts    : CZ0533
+Lau1       : CZ0533
+Knuts      : 5303
+Kodok      : 3609
+Kodsomv    : 3609202
+Nazsomv    : Brněnec
+Nazcs      : BTPFPFC
+
+Kn         : 09
+Knok       : 0903
+Kodnuts    : CZ0533
+Lau1       : CZ0533
+Knuts      : 5303
+Kodok      : 3609
+Kodsomv    : 3609102
+Nazsomv    : Moravská Třebová
+Nazcs      : OQTAZVMA XUFBQZA
+
+Kn         : 09
+Knok       : 0903
+Kodnuts    : CZ0533
+Lau1       : CZ0533
+Knuts      : 5303
+Kodok      : 3609
+Kodsomv    : 3609205
+Nazsomv    : Jevíčko
+Nazcs      : LFZKDMQ
+
+Kn         : 09
+Knok       : 0903
+Kodnuts    : CZ0533
+Lau1       : CZ0533
+Knuts      : 5303
+Kodok      : 3609
+Kodsomv    : 3609206
+Nazsomv    : Městečko Trnávka
+Nazcs      : OFVXFDMQ XTPAZMA
+
+Kn         : 09
+Knok       : 0903
+Kodnuts    : CZ0533
+Lau1       : CZ0533
+Knuts      : 5303
+Kodok      : 3609
+Kodsomv    : 3609103
+Nazsomv    : Litomyšl
+Nazcs      : NKXQOcWN
+
+Kn         : 09
+Knok       : 0903
+Kodnuts    : CZ0533
+Lau1       : CZ0533
+Knuts      : 5303
+Kodok      : 3609
+Kodsomv    : 3609204
+Nazsomv    : Dolní Újezd
+Nazcs      : EQNPK YLFdE
+
+Kn         : 09
+Knok       : 0903
+Kodnuts    : CZ0533
+Lau1       : CZ0533
+Knuts      : 5303
+Kodok      : 3609
+Kodsomv    : 3609104
+Nazsomv    : Polička
+Nazcs      : RQNKDMA
+
+Kn         : 09
+Knok       : 0903
+Kodnuts    : CZ0533
+Lau1       : CZ0533
+Knuts      : 5303
+Kodok      : 3609
+Kodsomv    : 3609203
+Nazsomv    : Bystré
+Nazcs      : BcVXTF
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611101
+Nazsomv    : Ústí nad Orlicí
+Nazcs      : YVXK PAE QTNKCK
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611201
+Nazsomv    : Brandýs nad Orlicí
+Nazcs      : BTAPEcV PAE QTNKCK
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611203
+Nazsomv    : Česká Třebová
+Nazcs      : DFVMA XUFBQZA
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611211
+Nazsomv    : Dolní Dobrouč
+Nazcs      : EQNPK EQBTQYD
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611212
+Nazsomv    : Sloupnice
+Nazcs      : VNQYRPKCF
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611102
+Nazsomv    : Lanškroun
+Nazcs      : NAPWMTQYP
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611204
+Nazsomv    : Dolní Čermná
+Nazcs      : EQNPK DFTOPA
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611209
+Nazsomv    : Tatenice
+Nazcs      : XAXFPKCF
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611210
+Nazsomv    : Výprachtice
+Nazcs      : ZcRTAJXKCF
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611103
+Nazsomv    : Vysoké Mýto
+Nazcs      : ZcVQMF OcXQ
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611205
+Nazsomv    : Choceň
+Nazcs      : JQCFP
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611104
+Nazsomv    : Žamberk
+Nazcs      : eAOBFTM
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611202
+Nazsomv    : Červená Voda
+Nazcs      : DFTZFPA ZQEA
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611206
+Nazsomv    : Jablonné nad Orlicí
+Nazcs      : LABNQPPF PAE QTNKCK
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611207
+Nazsomv    : Králíky
+Nazcs      : MTANKMc
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611208
+Nazsomv    : Letohrad
+Nazcs      : NFXQITAE
+
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Kodsomv    : 3611213
+Nazsomv    : Klášterec nad Orlicí
+Nazcs      : MNAWXFTFC PAE QTNKCK
+
+Kn         : 10
+Knok       : 1001
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Kodsomv    : 3601101
+Nazsomv    : Havlíčkův Brod
+Nazcs      : IAZNKDMYZ BTQE
+
+Kn         : 10
+Knok       : 1001
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Kodsomv    : 3601203
+Nazsomv    : Herálec
+Nazcs      : IFTANFC
+
+Kn         : 10
+Knok       : 1001
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Kodsomv    : 3601205
+Nazsomv    : Přibyslav
+Nazcs      : RUKBcVNAZ
+
+Kn         : 10
+Knok       : 1001
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Kodsomv    : 3601207
+Nazsomv    : Štoky
+Nazcs      : WXQMc
+
+Kn         : 10
+Knok       : 1001
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Kodsomv    : 3601102
+Nazsomv    : Chotěboř
+Nazcs      : JQXFBQU
+
+Kn         : 10
+Knok       : 1001
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Kodsomv    : 3601201
+Nazsomv    : Golčův Jeníkov
+Nazcs      : HQNDYZ LFPKMQZ
+
+Kn         : 10
+Knok       : 1001
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Kodsomv    : 3601202
+Nazsomv    : Habry
+Nazcs      : IABTc
+
+Kn         : 10
+Knok       : 1001
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Kodsomv    : 3601204
+Nazsomv    : Maleč
+Nazcs      : OANFD
+
+Kn         : 10
+Knok       : 1001
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Kodsomv    : 3601208
+Nazsomv    : Vilémov
+Nazcs      : ZKNFOQZ
+
+Kn         : 10
+Knok       : 1001
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Kodsomv    : 3601209
+Nazsomv    : Ždírec nad Doubravou
+Nazcs      : eEKTFC PAE EQYBTAZQY
+
+Kn         : 10
+Knok       : 1001
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Kodsomv    : 3601103
+Nazsomv    : Ledeč nad Sázavou
+Nazcs      : NFEFD PAE VAdAZQY
+
+Kn         : 10
+Knok       : 1001
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Kodsomv    : 3601206
+Nazsomv    : Světlá nad Sázavou
+Nazcs      : VZFXNA PAE VAdAZQY
+
+Kn         : 10
+Knok       : 1002
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Kodsomv    : 3707101
+Nazsomv    : Jihlava
+Nazcs      : LKINAZA
+
+Kn         : 10
+Knok       : 1002
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Kodsomv    : 3707201
+Nazsomv    : Batelov
+Nazcs      : BAXFNQZ
+
+Kn         : 10
+Knok       : 1002
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Kodsomv    : 3707202
+Nazsomv    : Brtnice
+Nazcs      : BTXPKCF
+
+Kn         : 10
+Knok       : 1002
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Kodsomv    : 3707203
+Nazsomv    : Dušejov
+Nazcs      : EYWFLQZ
+
+Kn         : 10
+Knok       : 1002
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Kodsomv    : 3707204
+Nazsomv    : Kamenice
+Nazcs      : MAOFPKCF
+
+Kn         : 10
+Knok       : 1002
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Kodsomv    : 3707205
+Nazsomv    : Luka nad Jihlavou
+Nazcs      : NYMA PAE LKINAZQY
+
+Kn         : 10
+Knok       : 1002
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Kodsomv    : 3707206
+Nazsomv    : Nová Říše
+Nazcs      : PQZA UKWF
+
+Kn         : 10
+Knok       : 1002
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Kodsomv    : 3707207
+Nazsomv    : Polná
+Nazcs      : RQNPA
+
+Kn         : 10
+Knok       : 1002
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Kodsomv    : 3707208
+Nazsomv    : Stonařov
+Nazcs      : VXQPAUQZ
+
+Kn         : 10
+Knok       : 1002
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Kodsomv    : 3707209
+Nazsomv    : Telč
+Nazcs      : XFND
+
+Kn         : 10
+Knok       : 1002
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Kodsomv    : 3707210
+Nazsomv    : Třešť
+Nazcs      : XUFWX
+
+Kn         : 10
+Knok       : 1002
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Kodsomv    : 3707211
+Nazsomv    : Větrný Jeníkov
+Nazcs      : ZFXTPc LFPKMQZ
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304101
+Nazsomv    : Pelhřimov
+Nazcs      : RFNIUKOQZ
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304201
+Nazsomv    : Božejov
+Nazcs      : BQeFLQZ
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304203
+Nazsomv    : Červená Řečice
+Nazcs      : DFTZFPA UFDKCF
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304204
+Nazsomv    : Horní Cerekev
+Nazcs      : IQTPK CFTFMFZ
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304208
+Nazsomv    : Nová Cerekev
+Nazcs      : PQZA CFTFMFZ
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304209
+Nazsomv    : Nový Rychnov
+Nazcs      : PQZc TcJPQZ
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304102
+Nazsomv    : Humpolec
+Nazcs      : IYORQNFC
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304212
+Nazsomv    : Senožaty
+Nazcs      : VFPQeAXc
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304213
+Nazsomv    : Želiv
+Nazcs      : eFNKZ
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304103
+Nazsomv    : Kamenice nad Lipou
+Nazcs      : MAOFPKCF PAE NKRQY
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304202
+Nazsomv    : Černovice
+Nazcs      : DFTPQZKCF
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304211
+Nazsomv    : Počátky
+Nazcs      : RQDAXMc
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304214
+Nazsomv    : Žirovnice
+Nazcs      : eKTQZPKCF
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304104
+Nazsomv    : Pacov
+Nazcs      : RACQZ
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304205
+Nazsomv    : Hořepník
+Nazcs      : IQUFRPKM
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304206
+Nazsomv    : Košetice
+Nazcs      : MQWFXKCF
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304207
+Nazsomv    : Lukavec
+Nazcs      : NYMAZFC
+
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Kodsomv    : 3304210
+Nazsomv    : Obrataň
+Nazcs      : QBTAXAP
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710101
+Nazsomv    : Třebíč
+Nazcs      : XUFBKD
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710201
+Nazsomv    : Budišov
+Nazcs      : BYEKWQZ
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710202
+Nazsomv    : Čechtín
+Nazcs      : DFJXKP
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710203
+Nazsomv    : Hrotovice
+Nazcs      : ITQXQZKCF
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710207
+Nazsomv    : Mohelno
+Nazcs      : OQIFNPQ
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710208
+Nazsomv    : Náměšť nad Oslavou
+Nazcs      : PAOFWX PAE QVNAZQY
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710209
+Nazsomv    : Okříšky
+Nazcs      : QMUKWMc
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710211
+Nazsomv    : Předín
+Nazcs      : RUFEKP
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710213
+Nazsomv    : Rokytnice nad Rokytnou
+Nazcs      : TQMcXPKCF PAE TQMcXPQY
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710214
+Nazsomv    : Rouchovany
+Nazcs      : TQYJQZAPc
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710215
+Nazsomv    : Rudíkov
+Nazcs      : TYEKMQZ
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710217
+Nazsomv    : Vladislav
+Nazcs      : ZNAEKVNAZ
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710102
+Nazsomv    : Moravské Budějovice
+Nazcs      : OQTAZVMF BYEFLQZKCF
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710204
+Nazsomv    : Jakubov u Moravských Budějovic
+Nazcs      : LAMYBQZ Y OQTAZVMcJ BYEFLQZKC
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710205
+Nazsomv    : Jaroměřice nad Rokytnou
+Nazcs      : LATQOFUKCF PAE TQMcXPQY
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710206
+Nazsomv    : Jemnice
+Nazcs      : LFOPKCF
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710210
+Nazsomv    : Police
+Nazcs      : RQNKCF
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710216
+Nazsomv    : Třebelovice
+Nazcs      : XUFBFNQZKCF
+
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Kodsomv    : 3710218
+Nazsomv    : Želetava
+Nazcs      : eFNFXAZA
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714101
+Nazsomv    : Žďár nad Sázavou - Nové Město na Moravě
+Nazcs      : eEAT PAE VAdAZQY - PQZF OFVXQ PA OQTAZF
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714081
+Nazsomv    : Nové Město na Moravě
+Nazcs      : PQZF OFVXQ PA OQTAZF
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714091
+Nazsomv    : Žďár nad Sázavou
+Nazcs      : eEAT PAE VAdAZQY
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714201
+Nazsomv    : Bobrová
+Nazcs      : BQBTQZA
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714208
+Nazsomv    : Nové Veselí
+Nazcs      : PQZF ZFVFNK
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714210
+Nazsomv    : Radostín nad Oslavou
+Nazcs      : TAEQVXKP PAE QVNAZQY
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714212
+Nazsomv    : Sněžné
+Nazcs      : VPFePF
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714213
+Nazsomv    : Svratka
+Nazcs      : VZTAXMA
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714215
+Nazsomv    : Velká Losenice
+Nazcs      : ZFNMA NQVFPKCF
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714102
+Nazsomv    : Bystřice nad Pernštejnem
+Nazcs      : BcVXUKCF PAE RFTPWXFLPFO
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714203
+Nazsomv    : Dolní Rožínka
+Nazcs      : EQNPK TQeKPMA
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714204
+Nazsomv    : Jimramov
+Nazcs      : LKOTAOQZ
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714211
+Nazsomv    : Rovečné
+Nazcs      : TQZFDPF
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714103
+Nazsomv    : Velké Meziříčí
+Nazcs      : ZFNMF OFdKUKDK
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714205
+Nazsomv    : Křižanov
+Nazcs      : MUKeAPQZ
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714206
+Nazsomv    : Měřín
+Nazcs      : OFUKP
+
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Kodsomv    : 3714214
+Nazsomv    : Velká Bíteš
+Nazcs      : ZFNMA BKXFW
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701101
+Nazsomv    : Blansko
+Nazcs      : BNAPVMQ
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701201
+Nazsomv    : Adamov
+Nazcs      : AEAOQZ
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701203
+Nazsomv    : Černá Hora
+Nazcs      : DFTPA IQTA
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701204
+Nazsomv    : Jedovnice
+Nazcs      : LFEQZPKCF
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701205
+Nazsomv    : Křtiny
+Nazcs      : MUXKPc
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701208
+Nazsomv    : Lipůvka
+Nazcs      : NKRYZMA
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701209
+Nazsomv    : Lomnice
+Nazcs      : NQOPKCF
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701212
+Nazsomv    : Ostrov u Macochy
+Nazcs      : QVXTQZ Y OACQJc
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701213
+Nazsomv    : Rájec-Jestřebí
+Nazcs      : TALFC-LFVXUFBK
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701214
+Nazsomv    : Sloup
+Nazcs      : VNQYR
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701217
+Nazsomv    : Lipovec
+Nazcs      : NKRQZFC
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701102
+Nazsomv    : Boskovice
+Nazcs      : BQVMQZKCF
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701202
+Nazsomv    : Benešov
+Nazcs      : BFPFWQZ
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701206
+Nazsomv    : Kunštát
+Nazcs      : MYPWXAX
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701207
+Nazsomv    : Letovice
+Nazcs      : NFXQZKCF
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701210
+Nazsomv    : Lysice
+Nazcs      : NcVKCF
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701211
+Nazsomv    : Olešnice
+Nazcs      : QNFWPKCF
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701215
+Nazsomv    : Svitávka
+Nazcs      : VZKXAZMA
+
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Kodsomv    : 3701216
+Nazsomv    : Velké Opatovice
+Nazcs      : ZFNMF QRAXQZKCF
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Knuts      : 6202
+Kodok      : 3702
+Kodsomv    : 3702101
+Nazsomv    : Brno
+Nazcs      : BTPQ
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703201
+Nazsomv    : Bílovice nad Svitavou
+Nazcs      : BKNQZKCF PAE VZKXAZQY
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703204
+Nazsomv    : Kuřim
+Nazcs      : MYUKO
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703205
+Nazsomv    : Ořechov
+Nazcs      : QUFJQZ
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703207
+Nazsomv    : Pozořice
+Nazcs      : RQdQUKCF
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703210
+Nazsomv    : Střelice
+Nazcs      : VXUFNKCF
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703211
+Nazsomv    : Šlapanice
+Nazcs      : WNARAPKCF
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703212
+Nazsomv    : Těšany
+Nazcs      : XFWAPc
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703213
+Nazsomv    : Újezd u Brna - Sokolnice
+Nazcs      : YLFdE Y BTPA - VQMQNPKCF
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703101
+Nazsomv    : Ivančice
+Nazcs      : KZAPDKCF
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703203
+Nazsomv    : Dolní Kounice
+Nazcs      : EQNPK MQYPKCF
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703206
+Nazsomv    : Oslavany
+Nazcs      : QVNAZAPc
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703102
+Nazsomv    : Rosice
+Nazcs      : TQVKCF
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703209
+Nazsomv    : Říčany
+Nazcs      : UKDAPc
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703215
+Nazsomv    : Zbraslav
+Nazcs      : dBTAVNAZ
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703216
+Nazsomv    : Zbýšov
+Nazcs      : dBcWQZ
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703103
+Nazsomv    : Tišnov
+Nazcs      : XKWPQZ
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703202
+Nazsomv    : Deblín
+Nazcs      : EFBNKP
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703214
+Nazsomv    : Veverská Bítýška
+Nazcs      : ZFZFTVMA BKXcWMA
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703104
+Nazsomv    : Židlochovice
+Nazcs      : eKENQJQZKCF
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3703208
+Nazsomv    : Rajhrad
+Nazcs      : TALITAE
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3714202
+Nazsomv    : Dolní Loučky
+Nazcs      : EQNPK NQYDMc
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodsomv    : 3714207
+Nazsomv    : Nedvědice
+Nazcs      : PFEZFEKCF
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704101
+Nazsomv    : Břeclav
+Nazcs      : BUFCNAZ
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704205
+Nazsomv    : Kostice - Tvrdonice
+Nazcs      : MQVXKCF - XZTEQPKCF
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704206
+Nazsomv    : Lanžhot
+Nazcs      : NAPeIQX
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704207
+Nazsomv    : Lednice
+Nazcs      : NFEPKCF
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704208
+Nazsomv    : Moravská Nová Ves
+Nazcs      : OQTAZVMA PQZA ZFV
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704209
+Nazsomv    : Podivín
+Nazcs      : RQEKZKP
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704211
+Nazsomv    : Rakvice
+Nazcs      : TAMZKCF
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704213
+Nazsomv    : Valtice
+Nazcs      : ZANXKCF
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704214
+Nazsomv    : Velké Bílovice
+Nazcs      : ZFNMF BKNQZKCF
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704102
+Nazsomv    : Hustopeče
+Nazcs      : IYVXQRFDF
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704203
+Nazsomv    : Klobouky u Brna
+Nazcs      : MNQBQYMc Y BTPA
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704204
+Nazsomv    : Kobylí
+Nazcs      : MQBcNK
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704210
+Nazsomv    : Pohořelice
+Nazcs      : RQIQUFNKCF
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704212
+Nazsomv    : Šitbořice
+Nazcs      : WKXBQUKCF
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704215
+Nazsomv    : Velké Němčice
+Nazcs      : ZFNMF PFODKCF
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704216
+Nazsomv    : Velké Pavlovice
+Nazcs      : ZFNMF RAZNQZKCF
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704217
+Nazsomv    : Vranovice
+Nazcs      : ZTAPQZKCF
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704103
+Nazsomv    : Mikulov
+Nazcs      : OKMYNQZ
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704201
+Nazsomv    : Dolní Dunajovice
+Nazcs      : EQNPK EYPALQZKCF
+
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Kodsomv    : 3704202
+Nazsomv    : Drnholec
+Nazcs      : ETPIQNFC
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706101
+Nazsomv    : Hodonín
+Nazcs      : IQEQPKP
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706203
+Nazsomv    : Čejč
+Nazcs      : DFLD
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706204
+Nazsomv    : Čejkovice
+Nazcs      : DFLMQZKCF
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706205
+Nazsomv    : Dolní Bojanovice
+Nazcs      : EQNPK BQLAPQZKCF
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706206
+Nazsomv    : Dubňany
+Nazcs      : EYBPAPc
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706212
+Nazsomv    : Mutěnice
+Nazcs      : OYXFPKCF
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706213
+Nazsomv    : Prušánky
+Nazcs      : RTYWAPMc
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706214
+Nazsomv    : Ratíškovice
+Nazcs      : TAXKWMQZKCF
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706102
+Nazsomv    : Kyjov
+Nazcs      : McLQZ
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706209
+Nazsomv    : Ježov
+Nazcs      : LFeQZ
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706216
+Nazsomv    : Svatobořice-Mistřín
+Nazcs      : VZAXQBQUKCF-OKVXUKP
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706217
+Nazsomv    : Šardice
+Nazcs      : WATEKCF
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706219
+Nazsomv    : Vracov
+Nazcs      : ZTACQZ
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706220
+Nazsomv    : Žarošice
+Nazcs      : eATQWKCF
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706221
+Nazsomv    : Ždánice
+Nazcs      : eEAPKCF
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706103
+Nazsomv    : Veselí nad Moravou
+Nazcs      : ZFVFNK PAE OQTAZQY
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706201
+Nazsomv    : Blatnice pod Svatým Antonínkem
+Nazcs      : BNAXPKCF RQE VZAXcO APXQPKPMFO
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706202
+Nazsomv    : Bzenec
+Nazcs      : BdFPFC
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706208
+Nazsomv    : Hroznová Lhota
+Nazcs      : ITQdPQZA NIQXA
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706210
+Nazsomv    : Lipov
+Nazcs      : NKRQZ
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706215
+Nazsomv    : Strážnice
+Nazcs      : VXTAePKCF
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706218
+Nazsomv    : Velká nad Veličkou
+Nazcs      : ZFNMA PAE ZFNKDMQY
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706222
+Nazsomv    : Moravský Písek
+Nazcs      : OQTAZVMc RKVFM
+
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Kodsomv    : 3706223
+Nazsomv    : Vnorovy
+Nazcs      : ZPQTQZc
+
+Kn         : 11
+Knok       : 1106
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Kodsomv    : 3712101
+Nazsomv    : Vyškov
+Nazcs      : ZcWMQZ
+
+Kn         : 11
+Knok       : 1106
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Kodsomv    : 3712201
+Nazsomv    : Bohdalice-Pavlovice
+Nazcs      : BQIEANKCF-RAZNQZKCF
+
+Kn         : 11
+Knok       : 1106
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Kodsomv    : 3712202
+Nazsomv    : Brankovice
+Nazcs      : BTAPMQZKCF
+
+Kn         : 11
+Knok       : 1106
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Kodsomv    : 3712203
+Nazsomv    : Bučovice
+Nazcs      : BYDQZKCF
+
+Kn         : 11
+Knok       : 1106
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Kodsomv    : 3712204
+Nazsomv    : Ivanovice na Hané
+Nazcs      : KZAPQZKCF PA IAPF
+
+Kn         : 11
+Knok       : 1106
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Kodsomv    : 3712205
+Nazsomv    : Krásensko
+Nazcs      : MTAVFPVMQ
+
+Kn         : 11
+Knok       : 1106
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Kodsomv    : 3712207
+Nazsomv    : Nesovice
+Nazcs      : PFVQZKCF
+
+Kn         : 11
+Knok       : 1106
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Kodsomv    : 3712209
+Nazsomv    : Pustiměř
+Nazcs      : RYVXKOFU
+
+Kn         : 11
+Knok       : 1106
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Kodsomv    : 3712210
+Nazsomv    : Rousínov
+Nazcs      : TQYVKPQZ
+
+Kn         : 11
+Knok       : 1106
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Kodsomv    : 3712102
+Nazsomv    : Slavkov u Brna
+Nazcs      : VNAZMQZ Y BTPA
+
+Kn         : 11
+Knok       : 1106
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Kodsomv    : 3712206
+Nazsomv    : Křenovice
+Nazcs      : MUFPQZKCF
+
+Kn         : 11
+Knok       : 1106
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Kodsomv    : 3712208
+Nazsomv    : Otnice
+Nazcs      : QXPKCF
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713101
+Nazsomv    : Znojmo
+Nazcs      : dPQLOQ
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713201
+Nazsomv    : Blížkovice
+Nazcs      : BNKeMQZKCF
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713202
+Nazsomv    : Božice
+Nazcs      : BQeKCF
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713204
+Nazsomv    : Hrušovany nad Jevišovkou
+Nazcs      : ITYWQZAPc PAE LFZKWQZMQY
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713205
+Nazsomv    : Jaroslavice
+Nazcs      : LATQVNAZKCF
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713206
+Nazsomv    : Jevišovice
+Nazcs      : LFZKWQZKCF
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713207
+Nazsomv    : Kravsko
+Nazcs      : MTAZVMQ
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713208
+Nazsomv    : Mikulovice
+Nazcs      : OKMYNQZKCF
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713211
+Nazsomv    : Prosiměřice
+Nazcs      : RTQVKOFUKCF
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713212
+Nazsomv    : Šatov
+Nazcs      : WAXQZ
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713213
+Nazsomv    : Šumná
+Nazcs      : WYOPA
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713214
+Nazsomv    : Hodonice - Tasovice
+Nazcs      : IQEQPKCF - XAVQZKCF
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713215
+Nazsomv    : Uherčice
+Nazcs      : YIFTDKCF
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713218
+Nazsomv    : Vranov nad Dyjí
+Nazcs      : ZTAPQZ PAE EcLK
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713219
+Nazsomv    : Vrbovec
+Nazcs      : ZTBQZFC
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713102
+Nazsomv    : Moravský Krumlov
+Nazcs      : OQTAZVMc MTYONQZ
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713209
+Nazsomv    : Miroslav
+Nazcs      : OKTQVNAZ
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713210
+Nazsomv    : Olbramovice
+Nazcs      : QNBTAOQZKCF
+
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Kodsomv    : 3713217
+Nazsomv    : Višňové
+Nazcs      : ZKWPQZF
+
+Kn         : 12
+Knok       : 1201
+Kodnuts    : CZ0711
+Lau1       : CZ0711
+Knuts      : 7101
+Kodok      : 3811
+Kodsomv    : 3811204
+Nazsomv    : Zlaté Hory
+Nazcs      : dNAXF IQTc
+
+Kn         : 12
+Knok       : 1201
+Kodnuts    : CZ0711
+Lau1       : CZ0711
+Knuts      : 7101
+Kodok      : 3811
+Kodsomv    : 3811101
+Nazsomv    : Jeseník
+Nazcs      : LFVFPKM
+
+Kn         : 12
+Knok       : 1201
+Kodnuts    : CZ0711
+Lau1       : CZ0711
+Knuts      : 7101
+Kodok      : 3811
+Kodsomv    : 3811201
+Nazsomv    : Javorník
+Nazcs      : LAZQTPKM
+
+Kn         : 12
+Knok       : 1201
+Kodnuts    : CZ0711
+Lau1       : CZ0711
+Knuts      : 7101
+Kodok      : 3811
+Kodsomv    : 3811202
+Nazsomv    : Mikulovice
+Nazcs      : OKMYNQZKCF
+
+Kn         : 12
+Knok       : 1201
+Kodnuts    : CZ0711
+Lau1       : CZ0711
+Knuts      : 7101
+Kodok      : 3811
+Kodsomv    : 3811203
+Nazsomv    : Vidnava
+Nazcs      : ZKEPAZA
+
+Kn         : 12
+Knok       : 1201
+Kodnuts    : CZ0711
+Lau1       : CZ0711
+Knuts      : 7101
+Kodok      : 3811
+Kodsomv    : 3811205
+Nazsomv    : Žulová
+Nazcs      : eYNQZA
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805103
+Nazsomv    : Uničov - Litovel
+Nazcs      : YPKDQZ - NKXQZFN
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3801207
+Nazsomv    : Moravský Beroun
+Nazcs      : OQTAZVMc BFTQYP
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805101
+Nazsomv    : Olomouc
+Nazcs      : QNQOQYC
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805204
+Nazsomv    : Dolany
+Nazcs      : EQNAPc
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805205
+Nazsomv    : Dub nad Moravou
+Nazcs      : EYB PAE OQTAZQY
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805206
+Nazsomv    : Hlubočky
+Nazcs      : INYBQDMc
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805207
+Nazsomv    : Horka nad Moravou
+Nazcs      : IQTMA PAE OQTAZQY
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805208
+Nazsomv    : Lutín
+Nazcs      : NYXKP
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805211
+Nazsomv    : Náměšť na Hané
+Nazcs      : PAOFWX PA IAPF
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805213
+Nazsomv    : Štěpánov
+Nazcs      : WXFRAPQZ
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805215
+Nazsomv    : Tršice
+Nazcs      : XTWKCF
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805216
+Nazsomv    : Velká Bystřice
+Nazcs      : ZFNMA BcVXUKCF
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805217
+Nazsomv    : Velký Týnec
+Nazcs      : ZFNMc XcPFC
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805218
+Nazsomv    : Velký Újezd
+Nazcs      : ZFNMc YLFdE
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805102
+Nazsomv    : Šternberk
+Nazcs      : WXFTPBFTM
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805201
+Nazsomv    : Bohuňovice
+Nazcs      : BQIYPQZKCF
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805209
+Nazsomv    : Libavá
+Nazcs      : NKBAZA
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805083
+Nazsomv    : Uničov
+Nazcs      : YPKDQZ
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805093
+Nazsomv    : Litovel
+Nazcs      : NKXQZFN
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805202
+Nazsomv    : Bouzov
+Nazcs      : BQYdQZ
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805203
+Nazsomv    : Dlouhá Loučka
+Nazcs      : ENQYIA NQYDMA
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805210
+Nazsomv    : Náklo
+Nazcs      : PAMNQ
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805212
+Nazsomv    : Senice na Hané
+Nazcs      : VFPKCF PA IAPF
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodsomv    : 3805214
+Nazsomv    : Troubelice
+Nazcs      : XTQYBFNKCF
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709101
+Nazsomv    : Prostějov
+Nazcs      : RTQVXFLQZ
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709201
+Nazsomv    : Bedihošť
+Nazcs      : BFEKIQWX
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709202
+Nazsomv    : Brodek u Konice
+Nazcs      : BTQEFM Y MQPKCF
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709203
+Nazsomv    : Brodek u Prostějova
+Nazcs      : BTQEFM Y RTQVXFLQZA
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709204
+Nazsomv    : Smržice
+Nazcs      : VOTeKCF
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709205
+Nazsomv    : Drahany
+Nazcs      : ETAIAPc
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709206
+Nazsomv    : Bohuslavice
+Nazcs      : BQIYVNAZKCF
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709207
+Nazsomv    : Klenovice na Hané
+Nazcs      : MNFPQZKCF PA IAPF
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709208
+Nazsomv    : Konice
+Nazcs      : MQPKCF
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709209
+Nazsomv    : Kostelec na Hané
+Nazcs      : MQVXFNFC PA IAPF
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709210
+Nazsomv    : Němčice nad Hanou
+Nazcs      : PFODKCF PAE IAPQY
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709211
+Nazsomv    : Nezamyslice
+Nazcs      : PFdAOcVNKCF
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709212
+Nazsomv    : Olšany u Prostějova
+Nazcs      : QNWAPc Y RTQVXFLQZA
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709213
+Nazsomv    : Plumlov
+Nazcs      : RNYONQZ
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709214
+Nazsomv    : Protivanov
+Nazcs      : RTQXKZAPQZ
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709215
+Nazsomv    : Přemyslovice
+Nazcs      : RUFOcVNQZKCF
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709216
+Nazsomv    : Ptení
+Nazcs      : RXFPK
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709218
+Nazsomv    : Určice
+Nazcs      : YTDKCF
+
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Kodsomv    : 3709219
+Nazsomv    : Vrbátky
+Nazcs      : ZTBAXMc
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808101
+Nazsomv    : Přerov
+Nazcs      : RUFTQZ
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808202
+Nazsomv    : Brodek u Přerova
+Nazcs      : BTQEFM Y RUFTQZA
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808203
+Nazsomv    : Dřevohostice
+Nazcs      : EUFZQIQVXKCF
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808204
+Nazsomv    : Horní Moštěnice
+Nazcs      : IQTPK OQWXFPKCF
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808206
+Nazsomv    : Kojetín
+Nazcs      : MQLFXKP
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808210
+Nazsomv    : Tovačov
+Nazcs      : XQZADQZ
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808212
+Nazsomv    : Bochoř
+Nazcs      : BQJQU
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808214
+Nazsomv    : Prosenice
+Nazcs      : RTQVFPKCF
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808215
+Nazsomv    : Radslavice
+Nazcs      : TAEVNAZKCF
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808102
+Nazsomv    : Hranice
+Nazcs      : ITAPKCF
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808201
+Nazsomv    : Bělotín
+Nazcs      : BFNQXKP
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808205
+Nazsomv    : Hustopeče nad Bečvou
+Nazcs      : IYVXQRFDF PAE BFDZQY
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808207
+Nazsomv    : Lipník nad Bečvou
+Nazcs      : NKRPKM PAE BFDZQY
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808208
+Nazsomv    : Potštát
+Nazcs      : RQXWXAX
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808209
+Nazsomv    : Soběchleby
+Nazcs      : VQBFJNFBc
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808211
+Nazsomv    : Všechovice
+Nazcs      : ZWFJQZKCF
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808213
+Nazsomv    : Opatovice
+Nazcs      : QRAXQZKCF
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808216
+Nazsomv    : Skalička
+Nazcs      : VMANKDMA
+
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodsomv    : 3808217
+Nazsomv    : Střítež nad Ludinou
+Nazcs      : VXUKXFe PAE NYEKPQY
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809101
+Nazsomv    : Šumperk
+Nazcs      : WYORFTM
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809201
+Nazsomv    : Bludov
+Nazcs      : BNYEQZ
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809204
+Nazsomv    : Hanušovice
+Nazcs      : IAPYWQZKCF
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809206
+Nazsomv    : Libina
+Nazcs      : NKBKPA
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809209
+Nazsomv    : Loučná nad Desnou
+Nazcs      : NQYDPA PAE EFVPQY
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809215
+Nazsomv    : Ruda nad Moravou
+Nazcs      : TYEA PAE OQTAZQY
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809216
+Nazsomv    : Sobotín
+Nazcs      : VQBQXKP
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809217
+Nazsomv    : Staré Město
+Nazcs      : VXATF OFVXQ
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809220
+Nazsomv    : Velké Losiny
+Nazcs      : ZFNMF NQVKPc
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809103
+Nazsomv    : Zábřeh
+Nazcs      : dABUFI
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809203
+Nazsomv    : Dubicko
+Nazcs      : EYBKCMQ
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809208
+Nazsomv    : Loštice
+Nazcs      : NQWXKCF
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809211
+Nazsomv    : Mohelnice
+Nazcs      : OQIFNPKCF
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809213
+Nazsomv    : Postřelmov
+Nazcs      : RQVXUFNOQZ
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809214
+Nazsomv    : Rohle
+Nazcs      : TQINF
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809218
+Nazsomv    : Štíty
+Nazcs      : WXKXc
+
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Kodsomv    : 3809219
+Nazsomv    : Úsov
+Nazcs      : YVQZ
+
+Kn         : 14
+Knok       : 1401
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Kodsomv    : 3708101
+Nazsomv    : Kroměříž
+Nazcs      : MTQOFUKe
+
+Kn         : 14
+Knok       : 1401
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Kodsomv    : 3708202
+Nazsomv    : Hulín
+Nazcs      : IYNKP
+
+Kn         : 14
+Knok       : 1401
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Kodsomv    : 3708203
+Nazsomv    : Chropyně
+Nazcs      : JTQRcPF
+
+Kn         : 14
+Knok       : 1401
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Kodsomv    : 3708204
+Nazsomv    : Koryčany
+Nazcs      : MQTcDAPc
+
+Kn         : 14
+Knok       : 1401
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Kodsomv    : 3708206
+Nazsomv    : Kvasice
+Nazcs      : MZAVKCF
+
+Kn         : 14
+Knok       : 1401
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Kodsomv    : 3708207
+Nazsomv    : Litenčice
+Nazcs      : NKXFPDKCF
+
+Kn         : 14
+Knok       : 1401
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Kodsomv    : 3708208
+Nazsomv    : Morkovice-Slížany
+Nazcs      : OQTMQZKCF-VNKeAPc
+
+Kn         : 14
+Knok       : 1401
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Kodsomv    : 3708210
+Nazsomv    : Zdounky
+Nazcs      : dEQYPMc
+
+Kn         : 14
+Knok       : 1401
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Kodsomv    : 3708102
+Nazsomv    : Holešov
+Nazcs      : IQNFWQZ
+
+Kn         : 14
+Knok       : 1401
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Kodsomv    : 3708201
+Nazsomv    : Bystřice pod Hostýnem
+Nazcs      : BcVXUKCF RQE IQVXcPFO
+
+Kn         : 14
+Knok       : 1401
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Kodsomv    : 3708205
+Nazsomv    : Kostelec u Holešova
+Nazcs      : MQVXFNFC Y IQNFWQZA
+
+Kn         : 14
+Knok       : 1401
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Kodsomv    : 3708211
+Nazsomv    : Rajnochovice
+Nazcs      : TALPQJQZKCF
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711101
+Nazsomv    : Uherské Hradiště
+Nazcs      : YIFTVMF ITAEKWXF
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711201
+Nazsomv    : Babice
+Nazcs      : BABKCF
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711203
+Nazsomv    : Bílovice
+Nazcs      : BKNQZKCF
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711205
+Nazsomv    : Boršice
+Nazcs      : BQTWKCF
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711206
+Nazsomv    : Březolupy
+Nazcs      : BUFdQNYRc
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711207
+Nazsomv    : Buchlovice
+Nazcs      : BYJNQZKCF
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711209
+Nazsomv    : Hluk
+Nazcs      : INYM
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711211
+Nazsomv    : Ostrožská Nová Ves
+Nazcs      : QVXTQeVMA PQZA ZFV
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711212
+Nazsomv    : Osvětimany
+Nazcs      : QVZFXKOAPc
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711213
+Nazsomv    : Polešovice
+Nazcs      : RQNFWQZKCF
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711217
+Nazsomv    : Traplice
+Nazcs      : XTARNKCF
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711218
+Nazsomv    : Uherský Ostroh
+Nazcs      : YIFTVMc QVXTQI
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711219
+Nazsomv    : Velehrad
+Nazcs      : ZFNFITAE
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711102
+Nazsomv    : Uherský Brod
+Nazcs      : YIFTVMc BTQE
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711202
+Nazsomv    : Bánov
+Nazcs      : BAPQZ
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711204
+Nazsomv    : Bojkovice
+Nazcs      : BQLMQZKCF
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711208
+Nazsomv    : Dolní Němčí
+Nazcs      : EQNPK PFODK
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711210
+Nazsomv    : Nivnice
+Nazcs      : PKZPKCF
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711214
+Nazsomv    : Starý Hrozenkov
+Nazcs      : VXATc ITQdFPMQZ
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711215
+Nazsomv    : Strání
+Nazcs      : VXTAPK
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711216
+Nazsomv    : Šumice
+Nazcs      : WYOKCF
+
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Kodsomv    : 3711220
+Nazsomv    : Vlčnov
+Nazcs      : ZNDPQZ
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810101
+Nazsomv    : Vsetín
+Nazcs      : ZVFXKP
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810201
+Nazsomv    : Halenkov
+Nazcs      : IANFPMQZ
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810203
+Nazsomv    : Horní Lideč
+Nazcs      : IQTPK NKEFD
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810204
+Nazsomv    : Hošťálková
+Nazcs      : IQWXANMQZA
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810205
+Nazsomv    : Hovězí
+Nazcs      : IQZFdK
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810207
+Nazsomv    : Jablůnka
+Nazcs      : LABNYPMA
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810208
+Nazsomv    : Karolinka
+Nazcs      : MATQNKPMA
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810210
+Nazsomv    : Nový Hrozenkov
+Nazcs      : PQZc ITQdFPMQZ
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810212
+Nazsomv    : Valašská Polanka
+Nazcs      : ZANAWVMA RQNAPMA
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810213
+Nazsomv    : Velké Karlovice
+Nazcs      : ZFNMF MATNQZKCF
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810102
+Nazsomv    : Rožnov pod Radhoštěm
+Nazcs      : TQePQZ RQE TAEIQWXFO
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810202
+Nazsomv    : Horní Bečva
+Nazcs      : IQTPK BFDZA
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810206
+Nazsomv    : Hutisko-Solanec
+Nazcs      : IYXKVMQ-VQNAPFC
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810211
+Nazsomv    : Valašská Bystřice
+Nazcs      : ZANAWVMA BcVXUKCF
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810215
+Nazsomv    : Zubří
+Nazcs      : dYBUK
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810103
+Nazsomv    : Valašské Meziříčí
+Nazcs      : ZANAWVMF OFdKUKDK
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810209
+Nazsomv    : Kelč
+Nazcs      : MFND
+
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Kodsomv    : 3810214
+Nazsomv    : Zašová
+Nazcs      : dAWQZA
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705101
+Nazsomv    : Zlín
+Nazcs      : dNKP
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705201
+Nazsomv    : Bohuslavice u Zlína
+Nazcs      : BQIYVNAZKCF Y dNKPA
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705203
+Nazsomv    : Fryšták
+Nazcs      : GTcWXAM
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705205
+Nazsomv    : Kašava
+Nazcs      : MAWAZA
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705206
+Nazsomv    : Luhačovice
+Nazcs      : NYIADQZKCF
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705207
+Nazsomv    : Mysločovice
+Nazcs      : OcVNQDQZKCF
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705208
+Nazsomv    : Napajedla
+Nazcs      : PARALFENA
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705209
+Nazsomv    : Otrokovice
+Nazcs      : QXTQMQZKCF
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705211
+Nazsomv    : Slušovice
+Nazcs      : VNYWQZKCF
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705213
+Nazsomv    : Tlumačov
+Nazcs      : XNYOADQZ
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705215
+Nazsomv    : Vizovice
+Nazcs      : ZKdQZKCF
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705102
+Nazsomv    : Valašské Klobouky
+Nazcs      : ZANAWVMF MNQBQYMc
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705202
+Nazsomv    : Brumov-Bylnice
+Nazcs      : BTYOQZ-BcNPKCF
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705210
+Nazsomv    : Slavičín
+Nazcs      : VNAZKDKP
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705212
+Nazsomv    : Štítná nad Vláří-Popov
+Nazcs      : WXKXPA PAE ZNAUK-RQRQZ
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705214
+Nazsomv    : Újezd
+Nazcs      : YLFdE
+
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodsomv    : 3705216
+Nazsomv    : Vlachovice
+Nazcs      : ZNAJQZKCF
+
+Kn         : 13
+Knok       : 1301
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Kodsomv    : 3801101
+Nazsomv    : Bruntál
+Nazcs      : BTYPXAN
+
+Kn         : 13
+Knok       : 1301
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Kodsomv    : 3801202
+Nazsomv    : Dvorce
+Nazcs      : EZQTCF
+
+Kn         : 13
+Knok       : 1301
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Kodsomv    : 3801203
+Nazsomv    : Horní Benešov
+Nazcs      : IQTPK BFPFWQZ
+
+Kn         : 13
+Knok       : 1301
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Kodsomv    : 3801209
+Nazsomv    : Světlá Hora
+Nazcs      : VZFXNA IQTA
+
+Kn         : 13
+Knok       : 1301
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Kodsomv    : 3801210
+Nazsomv    : Vrbno pod Pradědem
+Nazcs      : ZTBPQ RQE RTAEFEFO
+
+Kn         : 13
+Knok       : 1301
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Kodsomv    : 3801102
+Nazsomv    : Krnov
+Nazcs      : MTPQZ
+
+Kn         : 13
+Knok       : 1301
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Kodsomv    : 3801205
+Nazsomv    : Jindřichov
+Nazcs      : LKPEUKJQZ
+
+Kn         : 13
+Knok       : 1301
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Kodsomv    : 3801206
+Nazsomv    : Město Albrechtice
+Nazcs      : OFVXQ ANBTFJXKCF
+
+Kn         : 13
+Knok       : 1301
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Kodsomv    : 3801208
+Nazsomv    : Osoblaha
+Nazcs      : QVQBNAIA
+
+Kn         : 13
+Knok       : 1301
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Kodsomv    : 3801103
+Nazsomv    : Rýmařov
+Nazcs      : TcOAUQZ
+
+Kn         : 13
+Knok       : 1301
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Kodsomv    : 3801201
+Nazsomv    : Břidličná
+Nazcs      : BUKENKDPA
+
+Kn         : 13
+Knok       : 1301
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Kodsomv    : 3801204
+Nazsomv    : Horní Město
+Nazcs      : IQTPK OFVXQ
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802101
+Nazsomv    : Frýdek-Místek
+Nazcs      : GTcEFM-OKVXFM
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802201
+Nazsomv    : Baška
+Nazcs      : BAWMA
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802202
+Nazsomv    : Brušperk
+Nazcs      : BTYWRFTM
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802204
+Nazsomv    : Dobrá - Nošovice
+Nazcs      : EQBTA - PQWQZKCF
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802205
+Nazsomv    : Frýdlant nad Ostravicí
+Nazcs      : GTcENAPX PAE QVXTAZKCK
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802208
+Nazsomv    : Kozlovice
+Nazcs      : MQdNQZKCF
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802209
+Nazsomv    : Čeladná
+Nazcs      : DFNAEPA
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802210
+Nazsomv    : Lučina
+Nazcs      : NYDKPA
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802212
+Nazsomv    : Ostravice
+Nazcs      : QVXTAZKCF
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802213
+Nazsomv    : Palkovice
+Nazcs      : RANMQZKCF
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802214
+Nazsomv    : Paskov
+Nazcs      : RAVMQZ
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802215
+Nazsomv    : Pražmo - Raškovice
+Nazcs      : RTAeOQ - TAWMQZKCF
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802219
+Nazsomv    : Kunčice pod Ondřejníkem
+Nazcs      : MYPDKCF RQE QPEUFLPKMFO
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802220
+Nazsomv    : Fryčovice
+Nazcs      : GTcDQZKCF
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802221
+Nazsomv    : Hukvaldy
+Nazcs      : IYMZANEc
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802222
+Nazsomv    : Stará Ves nad Ondřejnicí
+Nazcs      : VXATA ZFV PAE QPEUFLPKCK
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802102
+Nazsomv    : Třinec
+Nazcs      : XUKPFC
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802203
+Nazsomv    : Bystřice
+Nazcs      : BcVXUKCF
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802206
+Nazsomv    : Hnojník
+Nazcs      : IPQLPKM
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802207
+Nazsomv    : Jablunkov
+Nazcs      : LABNYPMQZ
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802211
+Nazsomv    : Mosty u Jablunkova
+Nazcs      : OQVXc Y LABNYPMQZA
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802216
+Nazsomv    : Šenov
+Nazcs      : WFPQZ
+
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodsomv    : 3802218
+Nazsomv    : Vratimov
+Nazcs      : ZTAXKOQZ
+
+Kn         : 13
+Knok       : 1303
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Kodsomv    : 3803101
+Nazsomv    : Karviná
+Nazcs      : MATZKPA
+
+Kn         : 13
+Knok       : 1303
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Kodsomv    : 3803203
+Nazsomv    : Dětmarovice
+Nazcs      : EFXOATQZKCF
+
+Kn         : 13
+Knok       : 1303
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Kodsomv    : 3803204
+Nazsomv    : Dolní Lutyně
+Nazcs      : EQNPK NYXcPF
+
+Kn         : 13
+Knok       : 1303
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Kodsomv    : 3803206
+Nazsomv    : Orlová
+Nazcs      : QTNQZA
+
+Kn         : 13
+Knok       : 1303
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Kodsomv    : 3803102
+Nazsomv    : Český Těšín
+Nazcs      : DFVMc XFWKP
+
+Kn         : 13
+Knok       : 1303
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Kodsomv    : 3803210
+Nazsomv    : Těrlicko
+Nazcs      : XFTNKCMQ
+
+Kn         : 13
+Knok       : 1303
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Kodsomv    : 3803103
+Nazsomv    : Havířov
+Nazcs      : IAZKUQZ
+
+Kn         : 13
+Knok       : 1303
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Kodsomv    : 3803202
+Nazsomv    : Bohumín
+Nazcs      : BQIYOKP
+
+Kn         : 13
+Knok       : 1303
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Kodsomv    : 3803208
+Nazsomv    : Petřvald
+Nazcs      : RFXUZANE
+
+Kn         : 13
+Knok       : 1303
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Kodsomv    : 3803209
+Nazsomv    : Rychvald
+Nazcs      : TcJZANE
+
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Kodsomv    : 3804102
+Nazsomv    : Bílovec - Studénka
+Nazcs      : BKNQZFC - VXYEFPMA
+
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Kodsomv    : 3804101
+Nazsomv    : Nový Jičín
+Nazcs      : PQZc LKDKP
+
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Kodsomv    : 3804202
+Nazsomv    : Hodslavice
+Nazcs      : IQEVNAZKCF
+
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Kodsomv    : 3804207
+Nazsomv    : Mořkov
+Nazcs      : OQUMQZ
+
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Kodsomv    : 3804211
+Nazsomv    : Starý Jičín
+Nazcs      : VXATc LKDKP
+
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Kodsomv    : 3804082
+Nazsomv    : Bílovec
+Nazcs      : BKNQZFC
+
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Kodsomv    : 3804092
+Nazsomv    : Studénka
+Nazcs      : VXYEFPMA
+
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Kodsomv    : 3804103
+Nazsomv    : Frenštát pod Radhoštěm
+Nazcs      : GTFPWXAX RQE TAEIQWXFO
+
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Kodsomv    : 3804104
+Nazsomv    : Odry
+Nazcs      : QETc
+
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Kodsomv    : 3804201
+Nazsomv    : Fulnek
+Nazcs      : GYNPFM
+
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Kodsomv    : 3804204
+Nazsomv    : Jeseník nad Odrou
+Nazcs      : LFVFPKM PAE QETQY
+
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Kodsomv    : 3804212
+Nazsomv    : Suchdol nad Odrou
+Nazcs      : VYJEQN PAE QETQY
+
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Kodsomv    : 3804105
+Nazsomv    : Kopřivnice
+Nazcs      : MQRUKZPKCF
+
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Kodsomv    : 3804209
+Nazsomv    : Příbor
+Nazcs      : RUKBQT
+
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Kodsomv    : 3804214
+Nazsomv    : Štramberk
+Nazcs      : WXTAOBFTM
+
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Kodsomv    : 3804205
+Nazsomv    : Klimkovice
+Nazcs      : MNKOMQZKCF
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806101
+Nazsomv    : Opava
+Nazcs      : QRAZA
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806208
+Nazsomv    : Holasovice
+Nazcs      : IQNAVQZKCF
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806209
+Nazsomv    : Hradec nad Moravicí
+Nazcs      : ITAEFC PAE OQTAZKCK
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806210
+Nazsomv    : Kobeřice
+Nazcs      : MQBFUKCF
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806211
+Nazsomv    : Kravaře
+Nazcs      : MTAZAUF
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806212
+Nazsomv    : Litultovice
+Nazcs      : NKXYNXQZKCF
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806217
+Nazsomv    : Pustá Polom
+Nazcs      : RYVXA RQNQO
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806218
+Nazsomv    : Stěbořice
+Nazcs      : VXFBQUKCF
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806220
+Nazsomv    : Velké Heraltice
+Nazcs      : ZFNMF IFTANXKCF
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806102
+Nazsomv    : Vítkov
+Nazcs      : ZKXMQZ
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806202
+Nazsomv    : Březová
+Nazcs      : BUFdQZA
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806203
+Nazsomv    : Budišov nad Budišovkou
+Nazcs      : BYEKWQZ PAE BYEKWQZMQY
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806214
+Nazsomv    : Melč
+Nazcs      : OFND
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806201
+Nazsomv    : Bolatice
+Nazcs      : BQNAXKCF
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806204
+Nazsomv    : Dolní Benešov
+Nazcs      : EQNPK BFPFWQZ
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806205
+Nazsomv    : Háj ve Slezsku
+Nazcs      : IAL ZF VNFdVMY
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806207
+Nazsomv    : Hlučín
+Nazcs      : INYDKP
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806213
+Nazsomv    : Ludgeřovice
+Nazcs      : NYEHFUQZKCF
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806219
+Nazsomv    : Velká Polom
+Nazcs      : ZFNMA RQNQO
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodsomv    : 3806221
+Nazsomv    : Chuchelná
+Nazcs      : JYJFNPA
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Knuts      : 8106
+Kodok      : 3807
+Kodsomv    : 3807101
+Nazsomv    : Ostrava
+Nazcs      : QVXTAZA
+

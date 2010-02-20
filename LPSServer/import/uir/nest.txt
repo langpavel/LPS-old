@@ -1,0 +1,300 @@
+Kn         : 01
+Knok       : 0101
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Knuts      : 1100
+Kodok      : 3100
+Kodnest    : 89897
+Naznest    : viz jednotlivé městské části
+Nazcs      : ZKd LFEPQXNKZF OFVXVMF DAVXK
+
+Kn         : 01
+Knok       : 0101
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Knuts      : 1100
+Kodok      : 3100
+Kodnest    : 89809
+Naznest    : Praha-Jižní Město
+Nazcs      : RTAIA-LKePK OFVXQ
+
+Kn         : 01
+Knok       : 0101
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Knuts      : 1100
+Kodok      : 3100
+Kodnest    : 89810
+Naznest    : Praha-Modřany
+Nazcs      : RTAIA-OQEUAPc
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodnest    : 89811
+Naznest    : Okres Praha-západ
+Nazcs      : QMTFV RTAIA-dARAE
+
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Kodnest    : 89812
+Naznest    : Říčany (okres Praha-východ)
+Nazcs      : UKDAPc (QMTFV RTAIA-ZcJQE)
+
+Kn         : 02
+Knok       : 0204
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Kodnest    : 89813
+Naznest    : Pečky (okres Kolín)
+Nazcs      : RFDMc (QMTFV MQNKP)
+
+Kn         : 02
+Knok       : 0211
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Kodnest    : 89902
+Naznest    : Vojenský újezd Brdy
+Nazcs      : ZQLFPVMc YLFdE BTEc
+
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodnest    : 89903
+Naznest    : Vojenský újezd Boletice
+Nazcs      : ZQLFPVMc YLFdE BQNFXKCF
+
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Kodnest    : 89817
+Naznest    : Vojenský stavební úřad MO Č. Budějovice
+Nazcs      : BQNFXKCF
+
+Kn         : 04
+Knok       : 0404
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Knuts      : 3203
+Kodok      : 3405
+Kodnest    : 89898
+Naznest    : viz jednotlivé městské obvody
+Nazcs      : ZKd LFEPQXNKZF OFVXVMF QBZQEc
+
+Kn         : 04
+Knok       : 0403
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Knuts      : 3203
+Kodok      : 3405
+Kodnest    : 89818
+Naznest    : Vojenský stavební úřad MO Plzeň
+Nazcs      : ITAEKWXF
+
+Kn         : 05
+Knok       : 0502
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Kodnest    : 89904
+Naznest    : Vojenský újezd Hradiště
+Nazcs      : ZQLFPVMc YLFdE ITAEKWXF
+
+Kn         : 06
+Knok       : 0607
+Kodnuts    : CZ0427
+Lau1       : CZ0427
+Knuts      : 4207
+Kodok      : 3510
+Kodnest    : 89898
+Naznest    : viz jednotlivé městské obvody
+Nazcs      : ZKd LFEPQXNKZF OFVXVMF QBZQEc
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Knuts      : 6202
+Kodok      : 3702
+Kodnest    : 89801
+Naznest    : Brno I
+Nazcs      : BTPQ K
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Knuts      : 6202
+Kodok      : 3702
+Kodnest    : 89802
+Naznest    : Brno II
+Nazcs      : BTPQ KK
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Knuts      : 6202
+Kodok      : 3702
+Kodnest    : 89803
+Naznest    : Brno III
+Nazcs      : BTPQ KKK
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Knuts      : 6202
+Kodok      : 3702
+Kodnest    : 89804
+Naznest    : Brno IV
+Nazcs      : BTPQ KZ
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Knuts      : 6202
+Kodok      : 3702
+Kodnest    : 89897
+Naznest    : viz jednotlivé městské části
+Nazcs      : ZKd LFEPQXNKZF OFVXVMF DAVXK
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Knuts      : 6202
+Kodok      : 3702
+Kodnest    : 89820
+Naznest    : Vojenský stavební úřad MO Brno
+Nazcs      : BUFdKPA
+
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Kodnest    : 89814
+Naznest    : Hustopeče (okres Břeclav)
+Nazcs      : IYVXQRFDF (QMTFV BUFCNAZ)
+
+Kn         : 11
+Knok       : 1106
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Kodnest    : 89907
+Naznest    : Vojenský újezd Březina
+Nazcs      : ZQLFPVMc YLFdE BUFdKPA
+
+Kn         : 12
+Knok       : 1201
+Kodnuts    : CZ0711
+Lau1       : CZ0711
+Knuts      : 7101
+Kodok      : 3811
+Kodnest    : 89815
+Naznest    : Šumperk (okres Šumperk)
+Nazcs      : WYORFTM (QMTFV WYORFTM)
+
+Kn         : 12
+Knok       : 1201
+Kodnuts    : CZ0711
+Lau1       : CZ0711
+Knuts      : 7101
+Kodok      : 3811
+Kodnest    : 89816
+Naznest    : Krnov (okres Bruntál)
+Nazcs      : MTPQZ (QMTFV BTYPXAN)
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodnest    : 89908
+Naznest    : Vojenský újezd Libavá
+Nazcs      : ZQLFPVMc YLFdE OFVXQ NKBAZA
+
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodnest    : 89821
+Naznest    : Vojenský stavební úřad MO Olomouc
+Nazcs      : NKBAZA
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Knuts      : 8106
+Kodok      : 3807
+Kodnest    : 89898
+Naznest    : viz jednotlivé městské obvody
+Nazcs      : ZKd LFEPQXNKZF OFVXVMF QBZQEc
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Knuts      : 8106
+Kodok      : 3807
+Kodnest    : 89805
+Naznest    : Ostrava I
+Nazcs      : QVXTAZA K
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Knuts      : 8106
+Kodok      : 3807
+Kodnest    : 89806
+Naznest    : Ostrava II
+Nazcs      : QVXTAZA KK
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Knuts      : 8106
+Kodok      : 3807
+Kodnest    : 89807
+Naznest    : Ostrava III
+Nazcs      : QVXTAZA KKK
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Knuts      : 8106
+Kodok      : 3807
+Kodnest    : 89808
+Naznest    : Ostrava IV
+Nazcs      : QVXTAZA KZ
+

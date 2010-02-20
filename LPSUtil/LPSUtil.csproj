@@ -6,7 +6,7 @@
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{794C8AFA-18CF-4E67-9B8D-353BA68BDEC7}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>LPS.Util</RootNamespace>
     <AssemblyName>LPSUtil</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
@@ -20,8 +20,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <Externalconsole>true</Externalconsole>
-    <Commandlineparameters>cd ../../../LPSServer/resources/tables\;\;login http://localhost/LPS/Server.asmx,langpa,</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -35,9 +33,13 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="Mono.Posix" />
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandConsumer.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
@@ -49,7 +51,13 @@
     <Compile Include="Commands\RefreshCommand.cs" />
     <Compile Include="Commands\ChangeDirCommand.cs" />
     <Compile Include="Commands\LsDirCommand.cs" />
-    <Compile Include="Commands\ForeachCommand.cs" />
+    <Compile Include="CommandCollection.cs" />
+    <Compile Include="Commands\LoadTxtTableCommand.cs" />
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="UtilMainWindow.cs" />
+    <Compile Include="gtk-gui\LPS.Util.UtilMainWindow.cs" />
+    <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="Commands\EvalCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPSShared\LPSShared.csproj">
@@ -60,9 +68,18 @@
       <Project>{D2317E65-70CE-4367-B1A7-211FD6044720}</Project>
       <Name>LPSClientShared</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LPSClientSharedGUI\LPSClientSharedGUI.csproj">
+      <Project>{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}</Project>
+      <Name>LPSClientSharedGUI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Commands\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

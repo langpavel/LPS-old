@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldParserEngine", "GoldParserEngine\GoldParserEngine.csproj", "{837DC4CB-4BEA-4171-8366-A1AA6207F576}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalithaLibrary", "CalithaLib\CalithaLibrary.csproj", "{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSParser", "..\..\LPSParser\LPSParser.csproj", "{EA93C136-1964-4122-B619-0EBB3462938F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSShared", "..\..\LPSShared\LPSShared.csproj", "{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSParserTest", "..\..\LPSParserTest\LPSParserTest.csproj", "{8E3F1A47-D005-4D9A-B810-0C6B8508C54D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		StronglyNamedAssembly|Any CPU = StronglyNamedAssembly|Any CPU
+		Documentation|Any CPU = Documentation|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Documentation|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Documentation|Any CPU.Build.0 = Debug|Any CPU
+		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.StronglyNamedAssembly|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.StronglyNamedAssembly|Any CPU.Build.0 = Debug|Any CPU
+		{837DC4CB-4BEA-4171-8366-A1AA6207F576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{837DC4CB-4BEA-4171-8366-A1AA6207F576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{837DC4CB-4BEA-4171-8366-A1AA6207F576}.Documentation|Any CPU.ActiveCfg = Documentation|Any CPU
+		{837DC4CB-4BEA-4171-8366-A1AA6207F576}.Documentation|Any CPU.Build.0 = Documentation|Any CPU
+		{837DC4CB-4BEA-4171-8366-A1AA6207F576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{837DC4CB-4BEA-4171-8366-A1AA6207F576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{837DC4CB-4BEA-4171-8366-A1AA6207F576}.StronglyNamedAssembly|Any CPU.ActiveCfg = StronglyNamedAssembly|Any CPU
+		{837DC4CB-4BEA-4171-8366-A1AA6207F576}.StronglyNamedAssembly|Any CPU.Build.0 = StronglyNamedAssembly|Any CPU
+		{8E3F1A47-D005-4D9A-B810-0C6B8508C54D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E3F1A47-D005-4D9A-B810-0C6B8508C54D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E3F1A47-D005-4D9A-B810-0C6B8508C54D}.Documentation|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E3F1A47-D005-4D9A-B810-0C6B8508C54D}.Documentation|Any CPU.Build.0 = Debug|Any CPU
+		{8E3F1A47-D005-4D9A-B810-0C6B8508C54D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E3F1A47-D005-4D9A-B810-0C6B8508C54D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E3F1A47-D005-4D9A-B810-0C6B8508C54D}.StronglyNamedAssembly|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E3F1A47-D005-4D9A-B810-0C6B8508C54D}.StronglyNamedAssembly|Any CPU.Build.0 = Debug|Any CPU
+		{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}.Documentation|Any CPU.ActiveCfg = Documentation|Any CPU
+		{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}.Documentation|Any CPU.Build.0 = Documentation|Any CPU
+		{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}.StronglyNamedAssembly|Any CPU.ActiveCfg = StronglyNamedAssembly|Any CPU
+		{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}.StronglyNamedAssembly|Any CPU.Build.0 = StronglyNamedAssembly|Any CPU
+		{EA93C136-1964-4122-B619-0EBB3462938F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA93C136-1964-4122-B619-0EBB3462938F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA93C136-1964-4122-B619-0EBB3462938F}.Documentation|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA93C136-1964-4122-B619-0EBB3462938F}.Documentation|Any CPU.Build.0 = Debug|Any CPU
+		{EA93C136-1964-4122-B619-0EBB3462938F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA93C136-1964-4122-B619-0EBB3462938F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA93C136-1964-4122-B619-0EBB3462938F}.StronglyNamedAssembly|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA93C136-1964-4122-B619-0EBB3462938F}.StronglyNamedAssembly|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = ..\..\LPSParserTest\LPSParserTest.csproj
+	EndGlobalSection
+EndGlobal

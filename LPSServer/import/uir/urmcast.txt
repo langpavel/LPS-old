@@ -1,0 +1,50 @@
+Ur         : 0
+Urmc       : 0
+Nazur      : 
+Nazevur    : 
+
+Ur         : 1
+Urmc       : 1
+Nazur      : Magistrát města
+Nazevur    : Magistrát města
+
+Ur         : 2
+Urmc       : 2
+Nazur      : 
+Nazevur    : 
+
+Ur         : 3
+Urmc       : 3
+Nazur      : 
+Nazevur    : 
+
+Ur         : 4
+Urmc       : 4
+Nazur      : 
+Nazevur    : 
+
+Ur         : 5
+Urmc       : 5
+Nazur      : Obvodní úřad
+Nazevur    : Obvodní úřad
+
+Ur         : 6
+Urmc       : 6
+Nazur      : Úřad městského obvodu
+Nazevur    : Úřad městského obvodu
+
+Ur         : 7
+Urmc       : 7
+Nazur      : Úřad městské části
+Nazevur    : Úřad městské části
+
+Ur         : 8
+Urmc       : 8
+Nazur      : Místní úřad
+Nazevur    : Místní úřad
+
+Ur         : 9
+Urmc       : 9
+Nazur      : 
+Nazevur    : 
+

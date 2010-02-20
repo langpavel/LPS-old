@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{837DC4CB-4BEA-4171-8366-A1AA6207F576}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>GoldParserEngine</AssemblyName>
+    <AssemblyOriginatorKeyFile>gold_key.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GoldParserEngine</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'StronglyNamedAssembly|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE StronglyNamed</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Documentation|AnyCPU' ">
+    <OutputPath>bin\Documentation\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DocumentationFile>GoldParserEngine.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\ActionSubRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\CGTContent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\CGTContentException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\CharacterSetRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\CharacterSetTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\DFAStateRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\DFAStateTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\EdgeSubRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\InitialStatesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\LALRStateRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\LALRStateTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\Parameters.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\RuleRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\RuleTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\SymbolRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\SymbolTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="content\TableCounts.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dfa\DFA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dfa\State.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dfa\Transition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LALRParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lalr\AcceptAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lalr\Action.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lalr\ActionFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lalr\GotoAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lalr\ReduceAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lalr\ShiftAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lalr\State.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Location.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParserEvents.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParserException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Reader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StateStack.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StringTokenizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="structure\CGTStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="structure\CGTStructureException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="structure\Entry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="structure\EntryFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="structure\Record.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Symbol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SymbolFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Token.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TokenStack.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="gold_key.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CalithaLib\CalithaLibrary.csproj">
+      <Project>{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}</Project>
+      <Name>CalithaLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

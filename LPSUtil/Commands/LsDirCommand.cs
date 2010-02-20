@@ -3,33 +3,39 @@ using System.IO;
 
 namespace LPS.Util
 {
-	public class LsDirCommand : ICommand
+	public class LsDirCommand : CommandBase
 	{
-		public LsDirCommand()
+		public LsDirCommand(CommandCollection Commands, string Name)
+			: base(Commands, Name)
 		{
 		}
 
-		public void Execute(CommandConsumer consumer, string cmd_name, string argline, TextWriter output)
+		public override Type[] ParamTypes
 		{
-			string p = argline.Trim();
+			get { return new Type[] { typeof(string) }; }
+		}
+
+		public override string Help
+		{
+			get { return "vypíše obsah adresáře"; }
+		}
+
+		public override object Execute(TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		{
+			string p = Get<string>(0);
 			if(p == "")
 				p = "*";
 			string dirname = Directory.GetCurrentDirectory();
-			Console.WriteLine("Výpis adresáře {0}", dirname);
+			Info.WriteLine("Výpis adresáře {0}", dirname);
 			DirectoryInfo info = new DirectoryInfo(dirname);
 			foreach(DirectoryInfo dir in info.GetDirectories(p))
 			{
-				output.WriteLine("{0}/", dir.Name);
+				Out.WriteLine("{0}/", dir.Name);
 			}
 			foreach(FileInfo file in info.GetFiles(p))
 			{
-				output.WriteLine("{0}", file.Name);
+				Out.WriteLine("{0}", file.Name);
 			}
-		}
-
-		public string GetHelp()
-		{
-			return "vypíše adresář";
 		}
 	}
 }

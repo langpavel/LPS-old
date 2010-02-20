@@ -1,0 +1,1260 @@
+Nazev      : KODZSJ
+Delka      : 5
+Delmax     : 6
+Popis      : Kód ZSJ
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : KODZSJ
+
+Nazev      : KODZSJ,KZ
+Delka      : 7
+Delmax     : 9
+Popis      : Kód ZSJ a kontrolní znak
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : KODZSJ,KZ
+
+Nazev      : DIL
+Delka      : 1
+Delmax     : 3
+Popis      : Díl ZSJ
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : DIL
+
+Nazev      : TYPD
+Delka      : 1
+Delmax     : 4
+Popis      : Typ dílu ZSJ
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : TYPD
+
+Nazev      : DILY
+Delka      : 3
+Delmax     : 4
+Popis      : Typy dílů v ZSJ
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : DILY
+
+Nazev      : CUO
+Delka      : 3
+Delmax     : 3
+Popis      : Číslo urbanistického obvodu
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : CUO
+
+Nazev      : DUO
+Delka      : 1
+Delmax     : 3
+Popis      : Díl urbanistického obvodu
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : DUO
+
+Nazev      : CHARUO
+Delka      : 1
+Delmax     : 6
+Popis      : Charakteristika UO
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : CHARUO
+
+Nazev      : CHARUO(CHARUO)
+Delka      : 35
+Delmax     : 35
+Popis      : Charakteristika UO slovně
+Nazev2     : CHARUO
+Por        : 0
+Co         : 1
+Nazev3     : SCHARUO
+
+Nazev      : NAZZSJ
+Delka      : 40
+Delmax     : 40
+Popis      : Název ZSJ
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : NAZZSJ
+
+Nazev      : KODKU
+Delka      : 5
+Delmax     : 5
+Popis      : Kód katastrálního území
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : KODKU
+
+Nazev      : KODKU,KK
+Delka      : 7
+Delmax     : 8
+Popis      : Kód KÚ a kontrolní znak
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : KODKU,KK
+
+Nazev      : KODKU(KODKU)
+Delka      : 40
+Delmax     : 40
+Popis      : Název KÚ
+Nazev2     : KODKU
+Por        : 0
+Co         : 1
+Nazev3     : NAZKU
+
+Nazev      : KODOB
+Delka      : 5
+Delmax     : 5
+Popis      : Kód obce
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : KODOB
+
+Nazev      : KODOB,KO
+Delka      : 7
+Delmax     : 8
+Popis      : Kód obce a kontrolní znak
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : KODOB,KO
+
+Nazev      : KODOB(KODOB)
+Delka      : 40
+Delmax     : 40
+Popis      : Název obce
+Nazev2     : KODOB
+Por        : 0
+Co         : 1
+Nazev3     : NAZOB
+
+Nazev      : OM
+Delka      : 1
+Delmax     : 2
+Popis      : Příznak okresního města
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : OM
+
+Nazev      : KODCOB
+Delka      : 5
+Delmax     : 5
+Popis      : Kód části obce
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : KODCOB
+
+Nazev      : KODCOB,KC
+Delka      : 7
+Delmax     : 8
+Popis      : Kód části obce a kontr.znak
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : KODCOB,KC
+
+Nazev      : KODCOB(KODCOB)
+Delka      : 40
+Delmax     : 40
+Popis      : Název části obce statist.
+Nazev2     : KODCOB
+Por        : 0
+Co         : 1
+Nazev3     : NAZCOB
+
+Nazev      : KODCOBE
+Delka      : 5
+Delmax     : 5
+Popis      : Kód části obce evidenční
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : KODCOBE
+
+Nazev      : KODCOBE,KCE
+Delka      : 7
+Delmax     : 8
+Popis      : Kód části obce evid. a k.z.
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : KODCOBE,KCE
+
+Nazev      : KODCOBE(KODCOBE)
+Delka      : 40
+Delmax     : 40
+Popis      : Název části obce evidenční
+Nazev2     : KODCOBE
+Por        : 0
+Co         : 1
+Nazev3     : NAZCOBE
+
+Nazev      : '8'+SM+MC
+Delka      : 5
+Delmax     : 9
+Popis      : Kód městské části
+Nazev2     : SM,MC
+Por        : 0
+Co         : 1
+Nazev3     : KODMC
+
+Nazev      : KODMC('8'+SM+MC)
+Delka      : 40
+Delmax     : 40
+Popis      : Název městské části
+Nazev2     : SM,MC
+Por        : 0
+Co         : 1
+Nazev3     : NAZMC
+
+Nazev      : '8'+SM+MO
+Delka      : 5
+Delmax     : 9
+Popis      : Kód městského obvodu
+Nazev2     : SM,MO
+Por        : 0
+Co         : 1
+Nazev3     : KODMO
+
+Nazev      : KODMC('8'+SM+MO)
+Delka      : 40
+Delmax     : 40
+Popis      : Název městského obvodu
+Nazev2     : SM,MO
+Por        : 0
+Co         : 1
+Nazev3     : NAZMO
+
+Nazev      : KODOK
+Delka      : 4
+Delmax     : 5
+Popis      : Kód okresu
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : KODOK
+
+Nazev      : KODOK(KODOK)
+Delka      : 20
+Delmax     : 20
+Popis      : Název okresu
+Nazev2     : KODOK
+Por        : 0
+Co         : 1
+Nazev3     : NAZOK
+
+Nazev      : MAPA
+Delka      : 8
+Delmax     : 8
+Popis      : Číslo mapového listu
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : MAPA
+
+Nazev      : SSTR(SY,SX)
+Delka      : 10
+Delmax     : 10
+Popis      : Souřadnice Y,X
+Nazev2     : SY,SX
+Por        : 0
+Co         : 1
+Nazev3     : SY,SX
+
+Nazev      : SKIP
+Delka      : 
+Delmax     : 
+Popis      : ───────────────────────────
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : SKIP
+
+Nazev      : STYP
+Delka      : 1
+Delmax     : 4
+Popis      : Sídelní typ
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : STYP
+
+Nazev      : STYP(STYP)
+Delka      : 13
+Delmax     : 13
+Popis      : Sídelní typ slovně
+Nazev2     : STYP
+Por        : 0
+Co         : 1
+Nazev3     : SSTYP
+
+Nazev      : CISTR
+Delka      : 3
+Delmax     : 5
+Popis      : Císlo střediska
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : CISTR
+
+Nazev      : KODSOOV
+Delka      : 7
+Delmax     : 7
+Popis      : Kód SOOV
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : KODSOOV
+
+Nazev      : KODSOOV(KODSOOV)
+Delka      : 40
+Delmax     : 40
+Popis      : Název SOOV
+Nazev2     : KODSOOV
+Por        : 0
+Co         : 1
+Nazev3     : NAZSOOV
+
+Nazev      : KODSOMV
+Delka      : 7
+Delmax     : 7
+Popis      : Kód SOMV
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : KODSOMV
+
+Nazev      : KODSOMV(KODSOMV)
+Delka      : 40
+Delmax     : 40
+Popis      : Název SOMV
+Nazev2     : KODSOMV
+Por        : 0
+Co         : 1
+Nazev3     : NAZSOMV
+
+Nazev      : KODSRA
+Delka      : 5
+Delmax     : 6
+Popis      : Kód SRA nebo MR
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : KODSRA
+
+Nazev      : KODSRA(KODSRA)
+Delka      : 30
+Delmax     : 30
+Popis      : Název SRA nebo MR
+Nazev2     : KODSRA
+Por        : 0
+Co         : 1
+Nazev3     : NAZSRA
+
+Nazev      : KODZSL
+Delka      : 5
+Delmax     : 6
+Popis      : Kód ZSJ při sčítání
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : KODZSL
+
+Nazev      : DILSL
+Delka      : 1
+Delmax     : 5
+Popis      : Díl ZSJ při sčítání
+Nazev2     : 
+Por        : 0
+Co         : 1
+Nazev3     : DILSL
+
+Nazev      : KODKU
+Delka      : 5
+Delmax     : 5
+Popis      : Kód KÚ
+Nazev2     : 
+Por        : 0
+Co         : 2
+Nazev3     : KODKU
+
+Nazev      : KODKU,KK
+Delka      : 7
+Delmax     : 8
+Popis      : Kód KÚ a kontrolní znak
+Nazev2     : 
+Por        : 0
+Co         : 2
+Nazev3     : KODKU,KK
+
+Nazev      : NAZKU
+Delka      : 40
+Delmax     : 40
+Popis      : Název KÚ
+Nazev2     : 
+Por        : 0
+Co         : 2
+Nazev3     : NAZKU
+
+Nazev      : KODOB
+Delka      : 5
+Delmax     : 5
+Popis      : Kód obce
+Nazev2     : 
+Por        : 0
+Co         : 2
+Nazev3     : KODOB
+
+Nazev      : KODOB,KO
+Delka      : 7
+Delmax     : 8
+Popis      : Kód obce a kontrolní znak
+Nazev2     : 
+Por        : 0
+Co         : 2
+Nazev3     : KODOB,KO
+
+Nazev      : KODOB(KODOB)
+Delka      : 40
+Delmax     : 40
+Popis      : Název obce
+Nazev2     : KODOB
+Por        : 0
+Co         : 2
+Nazev3     : NAZOB
+
+Nazev      : KODOK
+Delka      : 4
+Delmax     : 5
+Popis      : Kód okresu
+Nazev2     : 
+Por        : 0
+Co         : 2
+Nazev3     : KODOK
+
+Nazev      : KODOK(KODOK)
+Delka      : 20
+Delmax     : 20
+Popis      : Název okresu
+Nazev2     : KODOK
+Por        : 0
+Co         : 2
+Nazev3     : NAZOK
+
+Nazev      : KODOCR
+Delka      : 2
+Delmax     : 6
+Popis      : Kód oblasti cest. ruchu
+Nazev2     : 
+Por        : 0
+Co         : 2
+Nazev3     : KODOCR
+
+Nazev      : KODOCR(KODOCR)
+Delka      : 25
+Delmax     : 25
+Popis      : Název oblasti cest. ruchu
+Nazev2     : KODOCR
+Por        : 0
+Co         : 2
+Nazev3     : NAZOCR
+
+Nazev      : STR(VYMERA,8,2)
+Delka      : 8
+Delmax     : 8
+Popis      : Výměra KÚ
+Nazev2     : VYMERA
+Por        : 0
+Co         : 2
+Nazev3     : VYMERA
+
+Nazev      : SSTR(SYKU,SXKU)
+Delka      : 10
+Delmax     : 10
+Popis      : Souřadnice Y,X
+Nazev2     : SYKU,SXKU
+Por        : 0
+Co         : 2
+Nazev3     : SYKU,SXKU
+
+Nazev      : KODSRA
+Delka      : 5
+Delmax     : 6
+Popis      : Kód SRA nebo MR
+Nazev2     : 
+Por        : 0
+Co         : 2
+Nazev3     : KODSRA
+
+Nazev      : KODSRA(KODSRA)
+Delka      : 30
+Delmax     : 30
+Popis      : Název SRA nebo MR
+Nazev2     : KODSRA
+Por        : 0
+Co         : 2
+Nazev3     : NAZSRA
+
+Nazev      : KODOB
+Delka      : 5
+Delmax     : 5
+Popis      : Kód obce
+Nazev2     : 
+Por        : 0
+Co         : 3
+Nazev3     : KODOB
+
+Nazev      : KODOB,KO
+Delka      : 7
+Delmax     : 8
+Popis      : Kód obce a kontrolní znak
+Nazev2     : 
+Por        : 0
+Co         : 3
+Nazev3     : KODOB,KO
+
+Nazev      : NAZOB
+Delka      : 40
+Delmax     : 40
+Popis      : Název obce
+Nazev2     : 
+Por        : 0
+Co         : 3
+Nazev3     : NAZOB
+
+Nazev      : ICZUJ
+Delka      : 6
+Delmax     : 6
+Popis      : Identifikační číslo ZÚJ
+Nazev2     : 
+Por        : 0
+Co         : 3
+Nazev3     : ICZUJ
+
+Nazev      : KODOK
+Delka      : 4
+Delmax     : 5
+Popis      : Kód okresu
+Nazev2     : 
+Por        : 0
+Co         : 3
+Nazev3     : KODOK
+
+Nazev      : KODOK(KODOK)
+Delka      : 20
+Delmax     : 20
+Popis      : Název okresu
+Nazev2     : KODOK
+Por        : 0
+Co         : 3
+Nazev3     : NAZOK
+
+Nazev      : UR(UR)
+Delka      : 22
+Delmax     : 22
+Popis      : Typ úřadu slovně
+Nazev2     : UR
+Por        : 0
+Co         : 3
+Nazev3     : NAZUR
+
+Nazev      : OM
+Delka      : 1
+Delmax     : 2
+Popis      : Příznak okresního města
+Nazev2     : 
+Por        : 0
+Co         : 3
+Nazev3     : OM
+
+Nazev      : KODPO
+Delka      : 5
+Delmax     : 5
+Popis      : Kód sídla pověřeného úřadu
+Nazev2     : 
+Por        : 0
+Co         : 3
+Nazev3     : KODPO
+
+Nazev      : KODPO(KODPO)
+Delka      : 40
+Delmax     : 40
+Popis      : Název sídla pověř. úřadu
+Nazev2     : KODPO
+Por        : 0
+Co         : 3
+Nazev3     : NAZPO
+
+Nazev      : KODST
+Delka      : 5
+Delmax     : 5
+Popis      : Kód sídla stavebního úřadu
+Nazev2     : 
+Por        : 0
+Co         : 3
+Nazev3     : KODST
+
+Nazev      : KODST(KODST)
+Delka      : 40
+Delmax     : 40
+Popis      : Název sídla staveb. úřadu
+Nazev2     : KODST
+Por        : 0
+Co         : 3
+Nazev3     : NAZST
+
+Nazev      : KODFI
+Delka      : 5
+Delmax     : 5
+Popis      : Kód sídla finančního úřadu
+Nazev2     : 
+Por        : 0
+Co         : 3
+Nazev3     : KODFI
+
+Nazev      : KODFI(KODFI)
+Delka      : 40
+Delmax     : 40
+Popis      : Název sídla finanč. úřadu
+Nazev2     : KODFI
+Por        : 0
+Co         : 3
+Nazev3     : NAZFI
+
+Nazev      : KODMA
+Delka      : 5
+Delmax     : 5
+Popis      : Kód sídla matričního úřadu
+Nazev2     : 
+Por        : 0
+Co         : 3
+Nazev3     : KODMA
+
+Nazev      : KODMA(KODMA)
+Delka      : 40
+Delmax     : 40
+Popis      : Název sídla matrič. úřadu
+Nazev2     : KODMA
+Por        : 0
+Co         : 3
+Nazev3     : NAZMA
+
+Nazev      : SSTR(SYOB,SXOB)
+Delka      : 10
+Delmax     : 10
+Popis      : Souřadnice Y,X
+Nazev2     : SYOB,SXOB
+Por        : 0
+Co         : 3
+Nazev3     : SYOB,SXOB
+
+Nazev      : PROBL
+Delka      : 1
+Delmax     : 7
+Popis      : Problémové oblasti
+Nazev2     : 
+Por        : 0
+Co         : 3
+Nazev3     : PROBL
+
+Nazev      : KODCOB
+Delka      : 5
+Delmax     : 6
+Popis      : Kód části obce
+Nazev2     : 
+Por        : 0
+Co         : 4
+Nazev3     : KODCOB
+
+Nazev      : KODCOB,KC
+Delka      : 7
+Delmax     : 8
+Popis      : Kód části obce a kontr.znak
+Nazev2     : 
+Por        : 0
+Co         : 4
+Nazev3     : KODCOB,KC
+
+Nazev      : PORCOB
+Delka      : 2
+Delmax     : 6
+Popis      : Pořadové číslo v rámci obce
+Nazev2     : 
+Por        : 0
+Co         : 4
+Nazev3     : PORCOB
+
+Nazev      : NAZCOB
+Delka      : 40
+Delmax     : 40
+Popis      : Název části obce
+Nazev2     : 
+Por        : 0
+Co         : 4
+Nazev3     : NAZCOB
+
+Nazev      : KODOB
+Delka      : 5
+Delmax     : 5
+Popis      : Kód obce
+Nazev2     : 
+Por        : 0
+Co         : 4
+Nazev3     : KODOB
+
+Nazev      : KODOB,KO
+Delka      : 7
+Delmax     : 8
+Popis      : Kód obce a kontrolní znak
+Nazev2     : 
+Por        : 0
+Co         : 4
+Nazev3     : KODOB,KO
+
+Nazev      : KODOB(KODOB)
+Delka      : 40
+Delmax     : 40
+Popis      : Název obce
+Nazev2     : KODOB
+Por        : 0
+Co         : 4
+Nazev3     : NAZOB
+
+Nazev      : KODOK
+Delka      : 4
+Delmax     : 4
+Popis      : Kód okresu
+Nazev2     : 
+Por        : 0
+Co         : 4
+Nazev3     : KODOK
+
+Nazev      : KODOK(KODOK)
+Delka      : 20
+Delmax     : 20
+Popis      : Název okresu
+Nazev2     : KODOK
+Por        : 0
+Co         : 4
+Nazev3     : NAZOK
+
+Nazev      : '8'+SM(KODOB)+MC
+Delka      : 5
+Delmax     : 5
+Popis      : Kód městské části
+Nazev2     : MC,KODOB
+Por        : 0
+Co         : 4
+Nazev3     : KODMC
+
+Nazev      : '8'+SM(KODOB)+MO
+Delka      : 5
+Delmax     : 5
+Popis      : Kód městského obvodu
+Nazev2     : MO,KODOB
+Por        : 0
+Co         : 4
+Nazev3     : KODMO
+
+Nazev      : KODMC
+Delka      : 5
+Delmax     : 5
+Popis      : Kód městské části
+Nazev2     : 
+Por        : 0
+Co         : 5
+Nazev3     : KODMC
+
+Nazev      : NAZMC
+Delka      : 40
+Delmax     : 40
+Popis      : Název měst. části (obvodu)
+Nazev2     : 
+Por        : 0
+Co         : 5
+Nazev3     : NAZMC
+
+Nazev      : KODOB
+Delka      : 5
+Delmax     : 5
+Popis      : Kód obce
+Nazev2     : 
+Por        : 0
+Co         : 5
+Nazev3     : KODOB
+
+Nazev      : KODOB,KO
+Delka      : 7
+Delmax     : 8
+Popis      : Kód obce a kontrolní znak
+Nazev2     : 
+Por        : 0
+Co         : 5
+Nazev3     : KODOB,KO
+
+Nazev      : KODOB(KODOB)
+Delka      : 40
+Delmax     : 40
+Popis      : Název obce
+Nazev2     : KODOB
+Por        : 0
+Co         : 5
+Nazev3     : NAZOB
+
+Nazev      : ICZUJ
+Delka      : 6
+Delmax     : 6
+Popis      : Identifikační číslo ZÚJ
+Nazev2     : 
+Por        : 0
+Co         : 5
+Nazev3     : ICZUJ
+
+Nazev      : KODOK
+Delka      : 4
+Delmax     : 5
+Popis      : Kód okresu
+Nazev2     : 
+Por        : 0
+Co         : 5
+Nazev3     : KODOK
+
+Nazev      : KODOK(KODOK)
+Delka      : 20
+Delmax     : 20
+Popis      : Název okresu
+Nazev2     : KODOK
+Por        : 0
+Co         : 5
+Nazev3     : NAZOK
+
+Nazev      : UR(UR)
+Delka      : 22
+Delmax     : 22
+Popis      : Typ úřadu slovně
+Nazev2     : UR
+Por        : 0
+Co         : 5
+Nazev3     : NAZUR
+
+Nazev      : SM
+Delka      : 2
+Delmax     : 2
+Popis      : Kód statutárního města
+Nazev2     : 
+Por        : 0
+Co         : 5
+Nazev3     : SM
+
+Nazev      : KODPO
+Delka      : 5
+Delmax     : 5
+Popis      : Kód sídla pověřeného úřadu
+Nazev2     : 
+Por        : 0
+Co         : 5
+Nazev3     : KODPO
+
+Nazev      : KODPO(KODPO)
+Delka      : 40
+Delmax     : 40
+Popis      : Název sídla pověř. úřadu
+Nazev2     : KODPO
+Por        : 0
+Co         : 5
+Nazev3     : NAZPO
+
+Nazev      : KODST
+Delka      : 5
+Delmax     : 5
+Popis      : Kód sídla stavebního úřadu
+Nazev2     : 
+Por        : 0
+Co         : 5
+Nazev3     : KODST
+
+Nazev      : KODST(KODST)
+Delka      : 40
+Delmax     : 40
+Popis      : Název sídla staveb. úřadu
+Nazev2     : KODST
+Por        : 0
+Co         : 5
+Nazev3     : NAZST
+
+Nazev      : KODFI
+Delka      : 5
+Delmax     : 5
+Popis      : Kód sídla finančního úřadu
+Nazev2     : 
+Por        : 0
+Co         : 5
+Nazev3     : KODFI
+
+Nazev      : KODFI(KODFI)
+Delka      : 40
+Delmax     : 40
+Popis      : Název sídla finanč. úřadu
+Nazev2     : KODFI
+Por        : 0
+Co         : 5
+Nazev3     : NAZFI
+
+Nazev      : KODMA
+Delka      : 5
+Delmax     : 5
+Popis      : Kód sídla matričního úřadu
+Nazev2     : 
+Por        : 0
+Co         : 5
+Nazev3     : KODMA
+
+Nazev      : KODMA(KODMA)
+Delka      : 40
+Delmax     : 40
+Popis      : Název sídla matrič. úřadu
+Nazev2     : KODMA
+Por        : 0
+Co         : 5
+Nazev3     : NAZMA
+
+Nazev      : KODOK
+Delka      : 4
+Delmax     : 5
+Popis      : Kód okresu
+Nazev2     : 
+Por        : 0
+Co         : 6
+Nazev3     : KODOK
+
+Nazev      : NAZOK
+Delka      : 20
+Delmax     : 20
+Popis      : Název okresu
+Nazev2     : 
+Por        : 0
+Co         : 6
+Nazev3     : NAZOK
+
+Nazev      : KODSRA
+Delka      : 5
+Delmax     : 6
+Popis      : Kód SRA/MR
+Nazev2     : 
+Por        : 0
+Co         : 7
+Nazev3     : KODSRA
+
+Nazev      : NAZSRA
+Delka      : 30
+Delmax     : 30
+Popis      : Název SRA/MR
+Nazev2     : 
+Por        : 0
+Co         : 7
+Nazev3     : NAZSRA
+
+Nazev      : KODOCR
+Delka      : 2
+Delmax     : 6
+Popis      : Kód oblasti cest. ruchu
+Nazev2     : 
+Por        : 0
+Co         : 8
+Nazev3     : KODOCR
+
+Nazev      : NAZOCR
+Delka      : 25
+Delmax     : 25
+Popis      : Název oblasti cest. ruchu
+Nazev2     : 
+Por        : 0
+Co         : 8
+Nazev3     : NAZOCR
+
+Nazev      : KODSOMV
+Delka      : 7
+Delmax     : 7
+Popis      : Kód SOOV
+Nazev2     : 
+Por        : 0
+Co         : 9
+Nazev3     : KODSOMV
+
+Nazev      : NAZSOMV
+Delka      : 40
+Delmax     : 40
+Popis      : Název SOOV
+Nazev2     : 
+Por        : 0
+Co         : 9
+Nazev3     : NAZSOMV
+
+Nazev      : KODSOMV
+Delka      : 7
+Delmax     : 7
+Popis      : Kód SOMV
+Nazev2     : 
+Por        : 0
+Co         : 0
+Nazev3     : KODSOMV
+
+Nazev      : NAZSOMV
+Delka      : 40
+Delmax     : 40
+Popis      : Název SOMV
+Nazev2     : 
+Por        : 0
+Co         : 0
+Nazev3     : NAZSOMV
+
+Nazev      : STR(VYMERA,10,2)
+Delka      : 10
+Delmax     : 10
+Popis      : Výměra
+Nazev2     : VYMERA
+Por        : 0
+Co         : 3
+Nazev3     : VYMERA
+
+Nazev      : STR(VYMERA,10,2)
+Delka      : 10
+Delmax     : 10
+Popis      : Výměra
+Nazev2     : VYMERA
+Por        : 0
+Co         : 6
+Nazev3     : VYMERA
+
+Nazev      : STR(OB91,8)
+Delka      : 8
+Delmax     : 8
+Popis      : Počet obyvatel k 3.3.1991
+Nazev2     : OB91
+Por        : 0
+Co         : 1
+Nazev3     : OB91
+
+Nazev      : STR(OBZSJ91,8)
+Delka      : 8
+Delmax     : 8
+Popis      : Počet obyv. ZSJ k 3.3.1991
+Nazev2     : OBZSJ91
+Por        : 0
+Co         : 1
+Nazev3     : OBZSJ91
+
+Nazev      : STR(OB91,8)
+Delka      : 8
+Delmax     : 8
+Popis      : Počet obyvatel k 3.3.1991
+Nazev2     : OB91
+Por        : 0
+Co         : 3
+Nazev3     : OB91
+
+Nazev      : STR(OB91,8)
+Delka      : 8
+Delmax     : 8
+Popis      : Počet obyvatel k 3.3.1991
+Nazev2     : OB91
+Por        : 0
+Co         : 4
+Nazev3     : OB91
+
+Nazev      : STR(OB91,8)
+Delka      : 8
+Delmax     : 8
+Popis      : Počet obyvatel k 3.3.1991
+Nazev2     : OB91
+Por        : 0
+Co         : 5
+Nazev3     : OB91
+
+Nazev      : STR(OB91,8)
+Delka      : 8
+Delmax     : 8
+Popis      : Počet obyvatel k 3.3.1991
+Nazev2     : OB91
+Por        : 0
+Co         : 6
+Nazev3     : OB91
+
+Nazev      : STR(OB01,8)
+Delka      : 8
+Delmax     : 8
+Popis      : Počet obyvatel k 1.3.2001
+Nazev2     : OB01
+Por        : 0
+Co         : 1
+Nazev3     : OB01
+
+Nazev      : STR(OBZSJ01,8)
+Delka      : 8
+Delmax     : 8
+Popis      : Počet obyv. ZSJ k 1.3.2001
+Nazev2     : OBZSJ01
+Por        : 0
+Co         : 1
+Nazev3     : OBZSJ01
+
+Nazev      : STR(OB01,8)
+Delka      : 8
+Delmax     : 8
+Popis      : Počet obyvatel k 1.3.2001
+Nazev2     : OB01
+Por        : 0
+Co         : 3
+Nazev3     : OB01
+
+Nazev      : STR(OB01,8)
+Delka      : 8
+Delmax     : 8
+Popis      : Počet obyvatel k 1.3.2001
+Nazev2     : OB01
+Por        : 0
+Co         : 4
+Nazev3     : OB01
+
+Nazev      : STR(OB01,8)
+Delka      : 8
+Delmax     : 8
+Popis      : Počet obyvatel k 1.3.2001
+Nazev2     : OB01
+Por        : 0
+Co         : 5
+Nazev3     : OB01
+
+Nazev      : STR(OB01,8)
+Delka      : 8
+Delmax     : 8
+Popis      : Počet obyvatel k 1.3.2001
+Nazev2     : OB01
+Por        : 0
+Co         : 6
+Nazev3     : OB01
+
+Nazev      : STR(OBAKT,8)
+Delka      : 8
+Delmax     : 8
+Popis      : Počet obyvatel aktuální
+Nazev2     : OBAKT
+Por        : 0
+Co         : 3
+Nazev3     : OBAKT
+
+Nazev      : STR(OBAKT,8)
+Delka      : 8
+Delmax     : 8
+Popis      : Počet obyvatel aktuální
+Nazev2     : OBAKT
+Por        : 0
+Co         : 6
+Nazev3     : OBAKT
+
+Nazev      : PSCOB(PSC,PSC2)
+Delka      : 30
+Delmax     : 30
+Popis      : PSČ v části obce
+Nazev2     : PSC,PSC2
+Por        : 0
+Co         : 4
+Nazev3     : PSC,PSC2
+
+Nazev      : SSTR(SYCOB,SXCOB)
+Delka      : 10
+Delmax     : 11
+Popis      : Souřadnice Y,X COB
+Nazev2     : SYCOB,SXCOB
+Por        : 0
+Co         : 4
+Nazev3     : SYCOB,SXCOB
+
+Nazev      : OKPO(OKPO)
+Delka      : 20
+Delmax     : 20
+Popis      : Název okresu
+Nazev2     : OKPO
+Por        : 0
+Co         : 2
+Nazev3     : NAZOK
+
+Nazev      : OKORP(OKORP)
+Delka      : 20
+Delmax     : 20
+Popis      : Název okresu
+Nazev2     : OKORP
+Por        : 0
+Co         : 2
+Nazev3     : NAZOK
+
+Nazev      : KDOMCOB
+Delka      : 5
+Delmax     : 5
+Popis      : Kód dominantní části obce
+Nazev2     : 
+Por        : 0
+Co         : 4
+Nazev3     : KDOMCOB
+
+Nazev      : KDOMCOB,KDC
+Delka      : 7
+Delmax     : 8
+Popis      : Kód domin.části obce a k.z.
+Nazev2     : 
+Por        : 0
+Co         : 4
+Nazev3     : KDOMCOB,KDC
+
+Nazev      : KDOMCOB(KDOMCOB)
+Delka      : 40
+Delmax     : 40
+Popis      : Název domin. části obce
+Nazev2     : KDOMCOB
+Por        : 0
+Co         : 4
+Nazev3     : NAZDOMCOB
+
+Nazev      : KODCOBE
+Delka      : 5
+Delmax     : 5
+Popis      : Kód části obce evidenční
+Nazev2     : 
+Por        : 0
+Co         : 4
+Nazev3     : KODCOBE
+
+Nazev      : KODCOBE,KCE
+Delka      : 7
+Delmax     : 8
+Popis      : Kód části obce evid. a k.z.
+Nazev2     : 
+Por        : 0
+Co         : 4
+Nazev3     : KODCOBE,KCE
+
+Nazev      : KODCOBE(KODCOBE)
+Delka      : 40
+Delmax     : 40
+Popis      : Název části obce evidenční
+Nazev2     : KODCOBE
+Por        : 0
+Co         : 4
+Nazev3     : NAZCOBE
+

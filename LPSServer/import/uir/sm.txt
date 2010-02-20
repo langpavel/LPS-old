@@ -1,0 +1,264 @@
+Sm         : 01
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Knuts      : 1100
+Kodok      : 3100
+Kodob      : 12702
+Icob       : 554782
+Nazob      : Praha
+
+Sm         : 02
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Kodob      : 02191
+Icob       : 544256
+Nazob      : České Budějovice
+
+Sm         : 03
+Kn         : 04
+Knok       : 0404
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Knuts      : 3203
+Kodok      : 3405
+Kodob      : 12198
+Icob       : 554791
+Nazob      : Plzeň
+
+Sm         : 04
+Kn         : 05
+Knok       : 0502
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Kodob      : 06343
+Icob       : 554961
+Nazob      : Karlovy Vary
+
+Sm         : 05
+Kn         : 06
+Knok       : 0607
+Kodnuts    : CZ0427
+Lau1       : CZ0427
+Knuts      : 4207
+Kodok      : 3510
+Kodob      : 17487
+Icob       : 554804
+Nazob      : Ústí nad Labem
+
+Sm         : 06
+Kn         : 07
+Knok       : 0703
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Kodob      : 08203
+Icob       : 563889
+Nazob      : Liberec
+
+Sm         : 07
+Kn         : 08
+Knok       : 0801
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Kodob      : 04687
+Icob       : 569810
+Nazob      : Hradec Králové
+
+Sm         : 08
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Kodob      : 11765
+Icob       : 555134
+Nazob      : Pardubice
+
+Sm         : 09
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Knuts      : 6202
+Kodok      : 3702
+Kodob      : 01000
+Icob       : 582786
+Nazob      : Brno
+
+Sm         : 10
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Kodob      : 03556
+Icob       : 585068
+Nazob      : Zlín
+
+Sm         : 11
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Kodob      : 11050
+Icob       : 500496
+Nazob      : Olomouc
+
+Sm         : 12
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Knuts      : 8106
+Kodok      : 3807
+Kodob      : 11352
+Icob       : 554821
+Nazob      : Ostrava
+
+Sm         : 13
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Kodob      : 11156
+Icob       : 505927
+Nazob      : Opava
+
+Sm         : 14
+Kn         : 13
+Knok       : 1303
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Kodob      : 03755
+Icob       : 555088
+Nazob      : Havířov
+
+Sm         : 15
+Kn         : 02
+Knok       : 0203
+Kodnuts    : CZ0203
+Lau1       : CZ0203
+Knuts      : 2103
+Kodok      : 3203
+Kodob      : 06506
+Icob       : 532053
+Nazob      : Kladno
+
+Sm         : 16
+Kn         : 06
+Knok       : 0605
+Kodnuts    : CZ0425
+Lau1       : CZ0425
+Knuts      : 4205
+Kodok      : 3508
+Kodob      : 09959
+Icob       : 567027
+Nazob      : Most
+
+Sm         : 17
+Kn         : 10
+Knok       : 1002
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Kodob      : 05967
+Icob       : 586846
+Nazob      : Jihlava
+
+Sm         : 18
+Kn         : 06
+Knok       : 0606
+Kodnuts    : CZ0426
+Lau1       : CZ0426
+Knuts      : 4206
+Kodok      : 3509
+Kodob      : 16600
+Icob       : 567442
+Nazob      : Teplice
+
+Sm         : 19
+Kn         : 13
+Knok       : 1303
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Kodob      : 06382
+Icob       : 598917
+Nazob      : Karviná
+
+Sm         : 20
+Kn         : 02
+Knok       : 0207
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Kodob      : 09629
+Icob       : 535419
+Nazob      : Mladá Boleslav
+
+Sm         : 21
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Kodob      : 13471
+Icob       : 511382
+Nazob      : Přerov
+
+Sm         : 22
+Kn         : 06
+Knok       : 0602
+Kodnuts    : CZ0422
+Lau1       : CZ0422
+Knuts      : 4202
+Kodok      : 3503
+Kodob      : 05245
+Icob       : 562971
+Nazob      : Chomutov
+
+Sm         : 23
+Kn         : 06
+Knok       : 0601
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Kodob      : 02492
+Icob       : 562335
+Nazob      : Děčín
+
+Sm         : 24
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Kodob      : 03495
+Icob       : 598003
+Nazob      : Frýdek-Místek
+

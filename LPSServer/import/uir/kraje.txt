@@ -1,0 +1,168 @@
+Nk         : HP
+Kn         : 01
+Kodnuts    : CZ010
+Nazkr      : Hlavní město Praha
+Vymera     : 49602.5461
+Ob91       : 1214174
+Ob01       : 1169106
+Obakt      : 1233211
+Nazcs      : INAZPK OFVXQ RTAIA
+Zmenazaz   : 01052004
+Zmenapol   : KODNUTS
+
+Nk         : ST
+Kn         : 02
+Kodnuts    : CZ020
+Nazkr      : Středočeský
+Vymera     : 1101499.1851
+Ob91       : 1112882
+Ob01       : 1122473
+Obakt      : 1230691
+Nazcs      : VXUFEQDFVMc
+Zmenazaz   : 01052004
+Zmenapol   : KODNUTS
+
+Nk         : JC
+Kn         : 03
+Kodnuts    : CZ031
+Nazkr      : Jihočeský
+Vymera     : 1005658.4136
+Ob91       : 622889
+Ob01       : 625267
+Obakt      : 636328
+Nazcs      : LKIQDFVMc
+Zmenazaz   : 31052001
+Zmenapol   : NAZKR
+
+Nk         : PL
+Kn         : 04
+Kodnuts    : CZ032
+Nazkr      : Plzeňský
+Vymera     : 756089.0761
+Ob91       : 558307
+Ob01       : 550688
+Obakt      : 569627
+Nazcs      : RNdFPVMc
+Zmenazaz   : 01012000
+Zmenapol   : 
+
+Nk         : KA
+Kn         : 05
+Kodnuts    : CZ041
+Nazkr      : Karlovarský
+Vymera     : 331444.5484
+Ob91       : 301985
+Ob01       : 304343
+Obakt      : 308403
+Nazcs      : MATNQZATVMc
+Zmenazaz   : 01012000
+Zmenapol   : 
+
+Nk         : US
+Kn         : 06
+Kodnuts    : CZ042
+Nazkr      : Ústecký
+Vymera     : 533453.4989
+Ob91       : 824461
+Ob01       : 820219
+Obakt      : 835891
+Nazcs      : YVXFCMc
+Zmenazaz   : 01012000
+Zmenapol   : 
+
+Nk         : LB
+Kn         : 07
+Kodnuts    : CZ051
+Nazkr      : Liberecký
+Vymera     : 316297.4923
+Ob91       : 425120
+Ob01       : 428184
+Obakt      : 437325
+Nazcs      : NKBFTFCMc
+Zmenazaz   : 01012000
+Zmenapol   : 
+
+Nk         : KH
+Kn         : 08
+Kodnuts    : CZ052
+Nazkr      : Královéhradecký
+Vymera     : 475852.7947
+Ob91       : 552809
+Ob01       : 550724
+Obakt      : 554520
+Nazcs      : MTANQZFITAEFCMc
+Zmenazaz   : 01012000
+Zmenapol   : 
+
+Nk         : PA
+Kn         : 09
+Kodnuts    : CZ053
+Nazkr      : Pardubický
+Vymera     : 451866.5425
+Ob91       : 508718
+Ob01       : 508281
+Obakt      : 515185
+Nazcs      : RATEYBKCMc
+Zmenazaz   : 01012000
+Zmenapol   : 
+
+Nk         : VY
+Kn         : 10
+Kodnuts    : CZ063
+Nazkr      : Vysočina
+Vymera     : 679547.0786
+Ob91       : 513740
+Ob01       : 512143
+Obakt      : 515411
+Nazcs      : ZcVQDKPA
+Zmenazaz   : 01012008
+Zmenapol   : KODNUTS
+
+Nk         : JM
+Kn         : 11
+Kodnuts    : CZ064
+Nazkr      : Jihomoravský
+Vymera     : 719540.5776
+Ob91       : 1144160
+Ob01       : 1134786
+Obakt      : 1147146
+Nazcs      : LKIQOQTAZVMc
+Zmenazaz   : 01012008
+Zmenapol   : KODNUTS
+
+Nk         : OL
+Kn         : 12
+Kodnuts    : CZ071
+Nazkr      : Olomoucký
+Vymera     : 526664.3635
+Ob91       : 647341
+Ob01       : 643817
+Obakt      : 642137
+Nazcs      : QNQOQYCMc
+Zmenazaz   : 01012005
+Zmenapol   : VYMERA-OB91-OB01
+
+Nk         : ZL
+Kn         : 14
+Kodnuts    : CZ072
+Nazkr      : Zlínský
+Vymera     : 396357.5488
+Ob91       : 596903
+Ob01       : 595010
+Obakt      : 591412
+Nazcs      : dNKPVMc
+Zmenazaz   : 01012000
+Zmenapol   : 
+
+Nk         : MS
+Kn         : 13
+Kodnuts    : CZ080
+Nazkr      : Moravskoslezský
+Vymera     : 542645.4161
+Ob91       : 1278726
+Ob01       : 1265019
+Obakt      : 1250255
+Nazcs      : OQTAZVMQVNFdVMc
+Zmenazaz   : 01012005
+Zmenapol   : VYMERA-OB91-OB01
+

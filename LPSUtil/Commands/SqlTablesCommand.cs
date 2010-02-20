@@ -5,10 +5,21 @@ using System.Collections.Generic;
 
 namespace LPS.Util
 {
-	public class SqlTablesCommand : ICommand
+	public class SqlTablesCommand : CommandBase
 	{
-		public SqlTablesCommand()
+		public SqlTablesCommand(CommandCollection Commands, string Name)
+			: base(Commands, Name)
 		{
+		}
+
+		public override Type[] ParamTypes
+		{
+			get { return new Type[] { typeof(string) }; }
+		}
+
+		public override string Help
+		{
+			get { return "zobrazí tabulky v databázi, přepínač missing a mismod"; }
 		}
 
 		public static string[] GetSqlTableNames()
@@ -27,7 +38,7 @@ namespace LPS.Util
 			return tables.ToArray();
 		}
 
-		public void Execute (CommandConsumer consumer, string cmd_name, string argline, TextWriter output)
+		public override object Execute(TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
 			List<string> tablenames = new List<string>(GetSqlTableNames());
 			if(argline == "missing")
@@ -61,11 +72,6 @@ namespace LPS.Util
 				tablenames.Remove(module.TableName);
 			foreach(ModulesTreeInfo info in module.Items)
 				RemoveByModuleInfo(tablenames, info);
-		}
-
-		public string GetHelp ()
-		{
-			return "Zobrazí tabulky v databázi, přepínač missing a mismod";
 		}
 	}
 }

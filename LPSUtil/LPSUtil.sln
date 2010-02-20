@@ -9,12 +9,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSClientShared", "..\LPSCl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportHelper", "..\ImportHelper\ImportHelper.csproj", "{F31B07F0-C6F6-4190-B12F-8EFD2C9EC5AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSClientSharedGUI", "..\LPSClientSharedGUI\LPSClientSharedGUI.csproj", "{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPSParser", "..\LPSParser\LPSParser.csproj", "{EA93C136-1964-4122-B619-0EBB3462938F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalithaLibrary", "..\contrib\CalithaGoldParser\CalithaLib\CalithaLibrary.csproj", "{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldParserEngine", "..\contrib\CalithaGoldParser\GoldParserEngine\GoldParserEngine.csproj", "{837DC4CB-4BEA-4171-8366-A1AA6207F576}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
+		StronglyNamedAssembly|Any CPU = StronglyNamedAssembly|Any CPU
+		Documentation|Any CPU = Documentation|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}.Debug|x86.Build.0 = Debug|Any CPU
+		{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}.Release|x86.ActiveCfg = Release|Any CPU
+		{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}.Release|x86.Build.0 = Release|Any CPU
 		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Debug|x86.Build.0 = Debug|Any CPU
 		{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}.Release|x86.ActiveCfg = Release|Any CPU
@@ -23,10 +37,30 @@ Global
 		{794C8AFA-18CF-4E67-9B8D-353BA68BDEC7}.Debug|x86.Build.0 = Debug|x86
 		{794C8AFA-18CF-4E67-9B8D-353BA68BDEC7}.Release|x86.ActiveCfg = Release|x86
 		{794C8AFA-18CF-4E67-9B8D-353BA68BDEC7}.Release|x86.Build.0 = Release|x86
+		{837DC4CB-4BEA-4171-8366-A1AA6207F576}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{837DC4CB-4BEA-4171-8366-A1AA6207F576}.Debug|x86.Build.0 = Debug|Any CPU
+		{837DC4CB-4BEA-4171-8366-A1AA6207F576}.Documentation|Any CPU.ActiveCfg = Documentation|Any CPU
+		{837DC4CB-4BEA-4171-8366-A1AA6207F576}.Documentation|Any CPU.Build.0 = Documentation|Any CPU
+		{837DC4CB-4BEA-4171-8366-A1AA6207F576}.Release|x86.ActiveCfg = Release|Any CPU
+		{837DC4CB-4BEA-4171-8366-A1AA6207F576}.Release|x86.Build.0 = Release|Any CPU
+		{837DC4CB-4BEA-4171-8366-A1AA6207F576}.StronglyNamedAssembly|Any CPU.ActiveCfg = StronglyNamedAssembly|Any CPU
+		{837DC4CB-4BEA-4171-8366-A1AA6207F576}.StronglyNamedAssembly|Any CPU.Build.0 = StronglyNamedAssembly|Any CPU
+		{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}.Debug|x86.Build.0 = Debug|Any CPU
+		{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}.Documentation|Any CPU.ActiveCfg = Documentation|Any CPU
+		{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}.Documentation|Any CPU.Build.0 = Documentation|Any CPU
+		{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}.Release|x86.ActiveCfg = Release|Any CPU
+		{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}.Release|x86.Build.0 = Release|Any CPU
+		{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}.StronglyNamedAssembly|Any CPU.ActiveCfg = StronglyNamedAssembly|Any CPU
+		{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}.StronglyNamedAssembly|Any CPU.Build.0 = StronglyNamedAssembly|Any CPU
 		{D2317E65-70CE-4367-B1A7-211FD6044720}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{D2317E65-70CE-4367-B1A7-211FD6044720}.Debug|x86.Build.0 = Debug|Any CPU
 		{D2317E65-70CE-4367-B1A7-211FD6044720}.Release|x86.ActiveCfg = Release|Any CPU
 		{D2317E65-70CE-4367-B1A7-211FD6044720}.Release|x86.Build.0 = Release|Any CPU
+		{EA93C136-1964-4122-B619-0EBB3462938F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EA93C136-1964-4122-B619-0EBB3462938F}.Debug|x86.Build.0 = Debug|Any CPU
+		{EA93C136-1964-4122-B619-0EBB3462938F}.Release|x86.ActiveCfg = Release|Any CPU
+		{EA93C136-1964-4122-B619-0EBB3462938F}.Release|x86.Build.0 = Release|Any CPU
 		{F31B07F0-C6F6-4190-B12F-8EFD2C9EC5AE}.Debug|x86.ActiveCfg = Debug|x86
 		{F31B07F0-C6F6-4190-B12F-8EFD2C9EC5AE}.Debug|x86.Build.0 = Debug|x86
 		{F31B07F0-C6F6-4190-B12F-8EFD2C9EC5AE}.Release|x86.ActiveCfg = Release|x86

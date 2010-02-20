@@ -1,0 +1,192 @@
+Kodocr     : 00
+Nazocr     : Mimo oblasti cest. ruchu
+Nazcs      : OKOQ QBNAVXK CFVX. TYJY
+
+Kodocr     : 01
+Nazocr     : Krušnohoří
+Nazcs      : MTYWPQIQUK
+
+Kodocr     : 02
+Nazocr     : Západočeské Lázně
+Nazcs      : dARAEQDFVMF NAdPF
+
+Kodocr     : 03
+Nazocr     : České Švýcarsko
+Nazcs      : DFVMF WZcCATVMQ
+
+Kodocr     : 04
+Nazocr     : České Středohoří
+Nazcs      : DFVMF VXUFEQIQUK
+
+Kodocr     : 05
+Nazocr     : Lužické hory
+Nazcs      : NYeKCMF IQTc
+
+Kodocr     : 06
+Nazocr     : Doksy - Máchův kraj
+Nazcs      : EQMVc - OAJYZ MTAL
+
+Kodocr     : 07
+Nazocr     : Frýdlantsko
+Nazcs      : GTcENAPXVMQ
+
+Kodocr     : 08
+Nazocr     : Jizerské hory
+Nazcs      : LKdFTVMF IQTc
+
+Kodocr     : 09
+Nazocr     : Trutnovsko - Český ráj
+Nazcs      : XTYXPQZVMQ - DFVMc TAL
+
+Kodocr     : 10
+Nazocr     : Krkonoše
+Nazcs      : MTMQPQWF
+
+Kodocr     : 11
+Nazocr     : Podkrkonoší
+Nazcs      : RQEMTMQPQWK
+
+Kodocr     : 12
+Nazocr     : Broumovsko
+Nazcs      : BTQYOQZVMQ
+
+Kodocr     : 13
+Nazocr     : Mělnicko
+Nazcs      : OFNPKCMQ
+
+Kodocr     : 14
+Nazocr     : Staroboleslavsko
+Nazcs      : VXATQBQNFVNAZVMQ
+
+Kodocr     : 15
+Nazocr     : Džbán
+Nazcs      : EeBAP
+
+Kodocr     : 16
+Nazocr     : Jesenicko - Žluticko
+Nazcs      : LFVFPKCMQ - eNYXKCMQ
+
+Kodocr     : 17
+Nazocr     : Stříbrsko
+Nazcs      : VXUKBTVMQ
+
+Kodocr     : 18
+Nazocr     : Český Les
+Nazcs      : DFVMc NFV
+
+Kodocr     : 19
+Nazocr     : Chodsko
+Nazcs      : JQEVMQ
+
+Kodocr     : 20
+Nazocr     : Přesticko
+Nazcs      : RUFVXKCMQ
+
+Kodocr     : 21
+Nazocr     : Blatensko
+Nazcs      : BNAXFPVMQ
+
+Kodocr     : 22
+Nazocr     : Pošumaví
+Nazcs      : RQWYOAZK
+
+Kodocr     : 23
+Nazocr     : Šumava
+Nazcs      : WYOAZA
+
+Kodocr     : 24
+Nazocr     : Horní Vltava
+Nazcs      : IQTPK ZNXAZA
+
+Kodocr     : 25
+Nazocr     : Kaplicko
+Nazcs      : MARNKCMQ
+
+Kodocr     : 26
+Nazocr     : Jihočeské rybníky
+Nazcs      : LKIQDFVMF TcBPKMc
+
+Kodocr     : 27
+Nazocr     : Střední Vltava
+Nazcs      : VXUFEPK ZNXAZA
+
+Kodocr     : 28
+Nazocr     : Brdy
+Nazcs      : BTEc
+
+Kodocr     : 29
+Nazocr     : Dolní Berounka
+Nazcs      : EQNPK BFTQYPMA
+
+Kodocr     : 30
+Nazocr     : Křivoklátsko
+Nazcs      : MUKZQMNAXVMQ
+
+Kodocr     : 31
+Nazocr     : Dolní Vltava
+Nazcs      : EQNPK ZNXAZA
+
+Kodocr     : 32
+Nazocr     : Táborsko
+Nazcs      : XABQTVMQ
+
+Kodocr     : 33
+Nazocr     : Posázaví
+Nazcs      : RQVAdAZK
+
+Kodocr     : 34
+Nazocr     : Železné hory
+Nazcs      : eFNFdPF IQTc
+
+Kodocr     : 35
+Nazocr     : Českomoravská vrchovina
+Nazcs      : DFVMQOQTAZVMA ZTJQZKPA
+
+Kodocr     : 36
+Nazocr     : Povodí Orlice
+Nazcs      : RQZQEK QTNKCF
+
+Kodocr     : 37
+Nazocr     : Orlické hory
+Nazcs      : QTNKCMF IQTc
+
+Kodocr     : 38
+Nazocr     : Jeseníky
+Nazcs      : LFVFPKMc
+
+Kodocr     : 39
+Nazocr     : Drahanská vysočina
+Nazcs      : ETAIAPVMA ZcVQDKPA
+
+Kodocr     : 40
+Nazocr     : Moravský kras
+Nazcs      : OQTAZVMc MTAV
+
+Kodocr     : 41
+Nazocr     : Podhorácko
+Nazcs      : RQEIQTACMQ
+
+Kodocr     : 42
+Nazocr     : Podyjí
+Nazcs      : RQEcLK
+
+Kodocr     : 43
+Nazocr     : Pavlovské vrchy
+Nazcs      : RAZNQZVMF ZTJc
+
+Kodocr     : 44
+Nazocr     : Chřiby
+Nazcs      : JUKBc
+
+Kodocr     : 45
+Nazocr     : Slovácko
+Nazcs      : VNQZACMQ
+
+Kodocr     : 46
+Nazocr     : Valašsko
+Nazcs      : ZANAWVMQ
+
+Kodocr     : 47
+Nazocr     : Beskydy
+Nazcs      : BFVMcEc
+

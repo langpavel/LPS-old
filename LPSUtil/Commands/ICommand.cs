@@ -5,7 +5,11 @@ namespace LPS.Util
 {
 	public interface ICommand
 	{
-		void Execute(CommandConsumer consumer, string cmd_name, string argline, TextWriter output);
-		string GetHelp();
+		string Name { get; }
+		string Help { get; }
+		CommandCollection Commands { get; }
+		Type[] ParamTypes { get; }
+
+		object Execute(TextWriter Out, TextWriter Info, TextWriter Err, object[] Params);
 	}
 }

@@ -1,0 +1,8668 @@
+Nk         : HP
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Knuts      : 1100
+Kodok      : 3100
+Cispou     : 11000
+Kodpo      : 12702
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Nazpo      : Hlavní město Praha
+Nazpo2     : Hlavní město Praha
+Nazob      : Praha
+Ur         : 0
+Urob       : 0
+Om         : 1
+Porob      : 001
+Cisorp     : 1100
+Kodorp     : 12702
+Okorp      : 3100
+Nazcs      : RTAIA
+
+Nk         : ST
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Cispou     : 21011
+Kodpo      : 00219
+Kodob      : 00219
+Ko         : 4
+Icob       : 529303
+Nazpo      : Benešov
+Nazpo2     : Benešov
+Nazob      : Benešov
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 2101
+Kodorp     : 00219
+Okorp      : 3201
+Nazcs      : BFPFWQZ
+
+Nk         : ST
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Cispou     : 21012
+Kodpo      : 14619
+Kodob      : 14619
+Ko         : 6
+Icob       : 534382
+Nazpo      : Sázava
+Nazpo2     : Sázava
+Nazob      : Sázava
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 082
+Cisorp     : 2101
+Kodorp     : 00219
+Okorp      : 3201
+Nazcs      : VAdAZA
+
+Nk         : ST
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Cispou     : 21013
+Kodpo      : 17239
+Kodob      : 17239
+Ko         : 1
+Icob       : 530841
+Nazpo      : Týnec nad Sázavou
+Nazpo2     : Týnec nad Sázavou
+Nazob      : Týnec nad Sázavou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 101
+Cisorp     : 2101
+Kodorp     : 00219
+Okorp      : 3201
+Nazcs      : XcPFC PAE VAdAZQY
+
+Nk         : ST
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Cispou     : 21251
+Kodpo      : 18354
+Kodob      : 18354
+Ko         : 7
+Icob       : 530883
+Nazpo      : Vlašim
+Nazpo2     : Vlašim
+Nazob      : Vlašim
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 104
+Cisorp     : 2125
+Kodorp     : 18354
+Okorp      : 3201
+Nazcs      : ZNAWKO
+
+Nk         : ST
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Cispou     : 21261
+Kodpo      : 18504
+Kodob      : 18504
+Ko         : 3
+Icob       : 530905
+Nazpo      : Votice
+Nazpo2     : Votice
+Nazob      : Votice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 107
+Cisorp     : 2126
+Kodorp     : 18504
+Okorp      : 3201
+Nazcs      : ZQXKCF
+
+Nk         : ST
+Kodnuts    : CZ0202
+Lau1       : CZ0202
+Knuts      : 2102
+Kodok      : 3202
+Cispou     : 21021
+Kodpo      : 00286
+Kodob      : 00286
+Ko         : 1
+Icob       : 531057
+Nazpo      : Beroun
+Nazpo2     : Beroun
+Nazob      : Beroun
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 2102
+Kodorp     : 00286
+Okorp      : 3202
+Nazcs      : BFTQYP
+
+Nk         : ST
+Kodnuts    : CZ0202
+Lau1       : CZ0202
+Knuts      : 2102
+Kodok      : 3202
+Cispou     : 21081
+Kodpo      : 04537
+Kodob      : 04537
+Ko         : 3
+Icob       : 531189
+Nazpo      : Hořovice
+Nazpo2     : Hořovice
+Nazob      : Hořovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 013
+Cisorp     : 2108
+Kodorp     : 04537
+Okorp      : 3202
+Nazcs      : IQUQZKCF
+
+Nk         : ST
+Kodnuts    : CZ0203
+Lau1       : CZ0203
+Knuts      : 2103
+Kodok      : 3203
+Cispou     : 21091
+Kodpo      : 06506
+Kodob      : 06506
+Ko         : 4
+Icob       : 532053
+Nazpo      : Kladno
+Nazpo2     : Kladno
+Nazob      : Kladno
+Ur         : 1
+Urob       : 1
+Om         : 4
+Porob      : 001
+Cisorp     : 2109
+Kodorp     : 06506
+Okorp      : 3203
+Nazcs      : MNAEPQ
+
+Nk         : ST
+Kodnuts    : CZ0203
+Lau1       : CZ0203
+Knuts      : 2103
+Kodok      : 3203
+Cispou     : 21241
+Kodpo      : 14936
+Kodob      : 14936
+Ko         : 5
+Icob       : 532819
+Nazpo      : Slaný
+Nazpo2     : Slaný
+Nazob      : Slaný
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 070
+Cisorp     : 2124
+Kodorp     : 14936
+Okorp      : 3203
+Nazcs      : VNAPc
+
+Nk         : ST
+Kodnuts    : CZ0203
+Lau1       : CZ0203
+Knuts      : 2103
+Kodok      : 3203
+Cispou     : 21092
+Kodpo      : 17449
+Kodob      : 17449
+Ko         : 1
+Icob       : 533017
+Nazpo      : Unhošť
+Nazpo2     : Unhošť
+Nazob      : Unhošť
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 086
+Cisorp     : 2109
+Kodorp     : 06506
+Okorp      : 3203
+Nazcs      : YPIQWX
+
+Nk         : ST
+Kodnuts    : CZ0203
+Lau1       : CZ0203
+Knuts      : 2103
+Kodok      : 3203
+Cispou     : 21242
+Kodpo      : 17996
+Kodob      : 17996
+Ko         : 5
+Icob       : 533041
+Nazpo      : Velvary
+Nazpo2     : Velvary
+Nazob      : Velvary
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 089
+Cisorp     : 2124
+Kodorp     : 14936
+Okorp      : 3203
+Nazcs      : ZFNZATc
+
+Nk         : ST
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Cispou     : 21101
+Kodpo      : 06815
+Kodob      : 06815
+Ko         : 2
+Icob       : 533165
+Nazpo      : Kolín
+Nazpo2     : Kolín
+Nazob      : Kolín
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 2110
+Kodorp     : 06815
+Okorp      : 3204
+Nazcs      : MQNKP
+
+Nk         : ST
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Cispou     : 21061
+Kodpo      : 02273
+Kodob      : 02273
+Ko         : 0
+Icob       : 533271
+Nazpo      : Český Brod
+Nazpo2     : Český Brod
+Nazob      : Český Brod
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 011
+Cisorp     : 2106
+Kodorp     : 02273
+Okorp      : 3204
+Nazcs      : DFVMc BTQE
+
+Nk         : ST
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Cispou     : 21102
+Kodpo      : 07121
+Kodob      : 07121
+Ko         : 8
+Icob       : 533424
+Nazpo      : Kouřim
+Nazpo2     : Kouřim
+Nazob      : Kouřim
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 029
+Cisorp     : 2110
+Kodorp     : 06815
+Okorp      : 3204
+Nazcs      : MQYUKO
+
+Nk         : ST
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Cispou     : 21103
+Kodpo      : 11882
+Kodob      : 11882
+Ko         : 6
+Icob       : 537641
+Nazpo      : Pečky
+Nazpo2     : Pečky
+Nazob      : Pečky
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 048
+Cisorp     : 2110
+Kodorp     : 06815
+Okorp      : 3204
+Nazcs      : RFDMc
+
+Nk         : ST
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Cispou     : 21104
+Kodpo      : 17235
+Kodob      : 17235
+Ko         : 9
+Icob       : 533807
+Nazpo      : Týnec nad Labem
+Nazpo2     : Týnec nad Labem
+Nazob      : Týnec nad Labem
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 074
+Cisorp     : 2110
+Kodorp     : 06815
+Okorp      : 3204
+Nazcs      : XcPFC PAE NABFO
+
+Nk         : ST
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Cispou     : 21121
+Kodpo      : 07771
+Kodob      : 07771
+Ko         : 2
+Icob       : 533955
+Nazpo      : Kutná Hora
+Nazpo2     : Kutná Hora
+Nazob      : Kutná Hora
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 2112
+Kodorp     : 07771
+Okorp      : 3205
+Nazcs      : MYXPA IQTA
+
+Nk         : ST
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Cispou     : 21041
+Kodpo      : 01834
+Kodob      : 01834
+Ko         : 1
+Icob       : 534005
+Nazpo      : Čáslav
+Nazpo2     : Čáslav
+Nazob      : Čáslav
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 010
+Cisorp     : 2104
+Kodorp     : 01834
+Okorp      : 3205
+Nazcs      : DAVNAZ
+
+Nk         : ST
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Cispou     : 21122
+Kodpo      : 17321
+Kodob      : 17321
+Ko         : 5
+Icob       : 534498
+Nazpo      : Uhlířské Janovice
+Nazpo2     : Uhlířské Janovice
+Nazob      : Uhlířské Janovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 070
+Cisorp     : 2112
+Kodorp     : 07771
+Okorp      : 3205
+Nazcs      : YINKUVMF LAPQZKCF
+
+Nk         : ST
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Cispou     : 21123
+Kodpo      : 19365
+Kodob      : 19365
+Ko         : 8
+Icob       : 534633
+Nazpo      : Zruč nad Sázavou
+Nazpo2     : Zruč nad Sázavou
+Nazob      : Zruč nad Sázavou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 085
+Cisorp     : 2112
+Kodorp     : 07771
+Okorp      : 3205
+Nazcs      : dTYD PAE VAdAZQY
+
+Nk         : ST
+Kodnuts    : CZ0206
+Lau1       : CZ0206
+Knuts      : 2106
+Kodok      : 3206
+Cispou     : 21141
+Kodpo      : 09281
+Kodob      : 09281
+Ko         : 9
+Icob       : 534676
+Nazpo      : Mělník
+Nazpo2     : Mělník
+Nazob      : Mělník
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 2114
+Kodorp     : 09281
+Okorp      : 3206
+Nazcs      : OFNPKM
+
+Nk         : ST
+Kodnuts    : CZ0206
+Lau1       : CZ0206
+Knuts      : 2106
+Kodok      : 3206
+Cispou     : 21111
+Kodpo      : 07271
+Kodob      : 07271
+Ko         : 1
+Icob       : 534951
+Nazpo      : Kralupy nad Vltavou
+Nazpo2     : Kralupy nad Vltavou
+Nazob      : Kralupy nad Vltavou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 027
+Cisorp     : 2111
+Kodorp     : 07271
+Okorp      : 3206
+Nazcs      : MTANYRc PAE ZNXAZQY
+
+Nk         : ST
+Kodnuts    : CZ0206
+Lau1       : CZ0206
+Knuts      : 2106
+Kodok      : 3206
+Cispou     : 21142
+Kodpo      : 10027
+Kodob      : 10027
+Ko         : 7
+Icob       : 535052
+Nazpo      : Mšeno
+Nazpo2     : Mšeno
+Nazob      : Mšeno
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 038
+Cisorp     : 2114
+Kodorp     : 09281
+Okorp      : 3206
+Nazcs      : OWFPQ
+
+Nk         : ST
+Kodnuts    : CZ0206
+Lau1       : CZ0206
+Knuts      : 2106
+Kodok      : 3206
+Cispou     : 21171
+Kodpo      : 10356
+Kodob      : 10356
+Ko         : 0
+Icob       : 535087
+Nazpo      : Neratovice
+Nazpo2     : Neratovice
+Nazob      : Neratovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 042
+Cisorp     : 2117
+Kodorp     : 10356
+Okorp      : 3206
+Nazcs      : PFTAXQZKCF
+
+Nk         : ST
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Cispou     : 21153
+Kodpo      : 09629
+Kodob      : 09629
+Ko         : 6
+Icob       : 535419
+Nazpo      : Mladá Boleslav
+Nazpo2     : Mladá Boleslav
+Nazob      : Mladá Boleslav
+Ur         : 1
+Urob       : 1
+Om         : 4
+Porob      : 001
+Cisorp     : 2115
+Kodorp     : 09629
+Okorp      : 3207
+Nazcs      : ONAEA BQNFVNAZ
+
+Nk         : ST
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Cispou     : 21151
+Kodpo      : 00170
+Kodob      : 00170
+Ko         : 8
+Icob       : 535443
+Nazpo      : Bělá pod Bezdězem
+Nazpo2     : Bělá pod Bezdězem
+Nazob      : Bělá pod Bezdězem
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 003
+Cisorp     : 2115
+Kodorp     : 09629
+Okorp      : 3207
+Nazcs      : BFNA RQE BFdEFdFO
+
+Nk         : ST
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Cispou     : 21152
+Kodpo      : 00210
+Kodob      : 00210
+Ko         : 1
+Icob       : 535451
+Nazpo      : Benátky nad Jizerou
+Nazpo2     : Benátky nad Jizerou
+Nazob      : Benátky nad Jizerou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 004
+Cisorp     : 2115
+Kodorp     : 09629
+Okorp      : 3207
+Nazcs      : BFPAXMc PAE LKdFTQY
+
+Nk         : ST
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Cispou     : 21161
+Kodpo      : 09757
+Kodob      : 09757
+Ko         : 8
+Icob       : 536326
+Nazpo      : Mnichovo Hradiště
+Nazpo2     : Mnichovo Hradiště
+Nazob      : Mnichovo Hradiště
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 067
+Cisorp     : 2116
+Kodorp     : 09757
+Okorp      : 3207
+Nazcs      : OPKJQZQ ITAEKWXF
+
+Nk         : ST
+Kodnuts    : CZ0208
+Lau1       : CZ0208
+Knuts      : 2108
+Kodok      : 3208
+Cispou     : 21181
+Kodpo      : 10823
+Kodob      : 10823
+Ko         : 5
+Icob       : 537004
+Nazpo      : Nymburk
+Nazpo2     : Nymburk
+Nazob      : Nymburk
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 2118
+Kodorp     : 10823
+Okorp      : 3208
+Nazcs      : PcOBYTM
+
+Nk         : ST
+Kodnuts    : CZ0208
+Lau1       : CZ0208
+Knuts      : 2108
+Kodok      : 3208
+Cispou     : 21131
+Kodpo      : 08950
+Kodob      : 08950
+Ko         : 8
+Icob       : 537454
+Nazpo      : Lysá nad Labem
+Nazpo2     : Lysá nad Labem
+Nazob      : Lysá nad Labem
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 042
+Cisorp     : 2113
+Kodorp     : 08950
+Okorp      : 3208
+Nazcs      : NcVA PAE NABFO
+
+Nk         : ST
+Kodnuts    : CZ0208
+Lau1       : CZ0208
+Knuts      : 2108
+Kodok      : 3208
+Cispou     : 21191
+Kodpo      : 09328
+Kodob      : 09328
+Ko         : 9
+Icob       : 537489
+Nazpo      : Městec Králové
+Nazpo2     : Městec Králové
+Nazob      : Městec Králové
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 044
+Cisorp     : 2119
+Kodorp     : 12349
+Okorp      : 3208
+Nazcs      : OFVXFC MTANQZF
+
+Nk         : ST
+Kodnuts    : CZ0208
+Lau1       : CZ0208
+Knuts      : 2108
+Kodok      : 3208
+Cispou     : 21192
+Kodpo      : 12349
+Kodob      : 12349
+Ko         : 8
+Icob       : 537683
+Nazpo      : Poděbrady
+Nazpo2     : Poděbrady
+Nazob      : Poděbrady
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 059
+Cisorp     : 2119
+Kodorp     : 12349
+Okorp      : 3208
+Nazcs      : RQEFBTAEc
+
+Nk         : ST
+Kodnuts    : CZ0208
+Lau1       : CZ0208
+Knuts      : 2108
+Kodok      : 3208
+Cispou     : 21182
+Kodpo      : 14592
+Kodob      : 14592
+Ko         : 1
+Icob       : 537764
+Nazpo      : Sadská
+Nazpo2     : Sadská
+Nazob      : Sadská
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 063
+Cisorp     : 2118
+Kodorp     : 10823
+Okorp      : 3208
+Nazcs      : VAEVMA
+
+Nk         : ST
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Cispou     : 21031
+Kodpo      : 00904
+Kodob      : 00904
+Ko         : 1
+Icob       : 538094
+Nazpo      : Brandýs nad Labem-Stará Boleslav
+Nazpo2     : Brandýs nad Labem-Stará Boleslav
+Nazob      : Brandýs nad Labem-Stará Boleslav
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 005
+Cisorp     : 2103
+Kodorp     : 00904
+Okorp      : 3209
+Nazcs      : BTAPEcV PAE NABFO-VXATA BQNFVNAZ
+
+Nk         : ST
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Cispou     : 21032
+Kodpo      : 01915
+Kodob      : 01915
+Ko         : 1
+Icob       : 538132
+Nazpo      : Čelákovice
+Nazpo2     : Čelákovice
+Nazob      : Čelákovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 008
+Cisorp     : 2103
+Kodorp     : 00904
+Okorp      : 3209
+Nazcs      : DFNAMQZKCF
+
+Nk         : ST
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Cispou     : 21221
+Kodpo      : 06242
+Kodob      : 06242
+Ko         : 1
+Icob       : 538299
+Nazpo      : Kamenice
+Nazpo2     : Kamenice
+Nazob      : Kamenice
+Ur         : 4
+Urob       : 4
+Om         : 8
+Porob      : 026
+Cisorp     : 2122
+Kodorp     : 14545
+Okorp      : 3209
+Nazcs      : MAOFPKCF
+
+Nk         : ST
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Cispou     : 21222
+Kodpo      : 07016
+Kodob      : 07016
+Ko         : 5
+Icob       : 533416
+Nazpo      : Kostelec nad Černými Lesy
+Nazpo2     : Kostelec nad Černými Lesy
+Nazob      : Kostelec nad Černými Lesy
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 033
+Cisorp     : 2122
+Kodorp     : 14545
+Okorp      : 3209
+Nazcs      : MQVXFNFC PAE DFTPcOK NFVc
+
+Nk         : ST
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Cispou     : 21033
+Kodpo      : 10899
+Kodob      : 10899
+Ko         : 5
+Icob       : 538574
+Nazpo      : Odolena Voda
+Nazpo2     : Odolena Voda
+Nazob      : Odolena Voda
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 059
+Cisorp     : 2103
+Kodorp     : 00904
+Okorp      : 3209
+Nazcs      : QEQNFPA ZQEA
+
+Nk         : ST
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Cispou     : 21223
+Kodpo      : 14545
+Kodob      : 14545
+Ko         : 9
+Icob       : 538728
+Nazpo      : Říčany
+Nazpo2     : Říčany
+Nazob      : Říčany
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 074
+Cisorp     : 2122
+Kodorp     : 14545
+Okorp      : 3209
+Nazcs      : UKDAPc
+
+Nk         : ST
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Cispou     : 21034
+Kodpo      : 17573
+Kodob      : 17573
+Ko         : 1
+Icob       : 538957
+Nazpo      : Úvaly
+Nazpo2     : Úvaly
+Nazob      : Úvaly
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 093
+Cisorp     : 2103
+Kodorp     : 00904
+Okorp      : 3209
+Nazcs      : YZANc
+
+Nk         : ST
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Cispou     : 21051
+Kodpo      : 02038
+Kodob      : 02038
+Ko         : 9
+Icob       : 539139
+Nazpo      : Černošice
+Nazpo2     : Černošice
+Nazob      : Černošice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 006
+Cisorp     : 2105
+Kodorp     : 02038
+Okorp      : 3210
+Nazcs      : DFTPQWKCF
+
+Nk         : ST
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Cispou     : 21052
+Kodpo      : 04583
+Kodob      : 04583
+Ko         : 7
+Icob       : 539244
+Nazpo      : Hostivice
+Nazpo2     : Hostivice
+Nazob      : Hostivice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 018
+Cisorp     : 2105
+Kodorp     : 02038
+Okorp      : 3210
+Nazcs      : IQVXKZKCF
+
+Nk         : ST
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Cispou     : 21053
+Kodpo      : 05861
+Kodob      : 05861
+Ko         : 1
+Icob       : 539325
+Nazpo      : Jesenice
+Nazpo2     : Jesenice (okres Praha-západ)
+Nazob      : Jesenice
+Ur         : 4
+Urob       : 4
+Om         : 8
+Porob      : 026
+Cisorp     : 2105
+Kodorp     : 02038
+Okorp      : 3210
+Nazcs      : LFVFPKCF
+
+Nk         : ST
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Cispou     : 21054
+Kodpo      : 06009
+Kodob      : 06009
+Ko         : 7
+Icob       : 539333
+Nazpo      : Jílové u Prahy
+Nazpo2     : Jílové u Prahy
+Nazob      : Jílové u Prahy
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 027
+Cisorp     : 2105
+Kodorp     : 02038
+Okorp      : 3210
+Nazcs      : LKNQZF Y RTAIc
+
+Nk         : ST
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Cispou     : 21055
+Kodpo      : 09762
+Kodob      : 09762
+Ko         : 4
+Icob       : 540765
+Nazpo      : Mníšek pod Brdy
+Nazpo2     : Mníšek pod Brdy
+Nazob      : Mníšek pod Brdy
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 042
+Cisorp     : 2105
+Kodorp     : 02038
+Okorp      : 3210
+Nazcs      : OPKWFM RQE BTEc
+
+Nk         : ST
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Cispou     : 21056
+Kodpo      : 14250
+Kodob      : 14250
+Ko         : 6
+Icob       : 539627
+Nazpo      : Roztoky
+Nazpo2     : Roztoky
+Nazob      : Roztoky
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 054
+Cisorp     : 2105
+Kodorp     : 02038
+Okorp      : 3210
+Nazcs      : TQdXQMc
+
+Nk         : ST
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Cispou     : 21202
+Kodpo      : 13542
+Kodob      : 13542
+Ko         : 9
+Icob       : 539911
+Nazpo      : Příbram
+Nazpo2     : Příbram
+Nazob      : Příbram
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 2120
+Kodorp     : 13542
+Okorp      : 3211
+Nazcs      : RUKBTAO
+
+Nk         : ST
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Cispou     : 21201
+Kodpo      : 01427
+Kodob      : 01427
+Ko         : 3
+Icob       : 540013
+Nazpo      : Březnice
+Nazpo2     : Březnice
+Nazob      : Březnice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 007
+Cisorp     : 2120
+Kodorp     : 13542
+Okorp      : 3211
+Nazcs      : BUFdPKCF
+
+Nk         : ST
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Cispou     : 21071
+Kodpo      : 02796
+Kodob      : 02796
+Ko         : 1
+Icob       : 540111
+Nazpo      : Dobříš
+Nazpo2     : Dobříš
+Nazob      : Dobříš
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 015
+Cisorp     : 2107
+Kodorp     : 02796
+Okorp      : 3211
+Nazcs      : EQBUKW
+
+Nk         : ST
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Cispou     : 21203
+Kodpo      : 14284
+Kodob      : 14284
+Ko         : 1
+Icob       : 541231
+Nazpo      : Rožmitál pod Třemšínem
+Nazpo2     : Rožmitál pod Třemšínem
+Nazob      : Rožmitál pod Třemšínem
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 087
+Cisorp     : 2120
+Kodorp     : 13542
+Okorp      : 3211
+Nazcs      : TQeOKXAN RQE XUFOWKPFO
+
+Nk         : ST
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Cispou     : 21231
+Kodpo      : 14653
+Kodob      : 14653
+Ko         : 6
+Icob       : 541281
+Nazpo      : Sedlčany
+Nazpo2     : Sedlčany
+Nazob      : Sedlčany
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 090
+Cisorp     : 2123
+Kodorp     : 14653
+Okorp      : 3211
+Nazcs      : VFENDAPc
+
+Nk         : ST
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Cispou     : 21209
+Kodpo      : 89902
+Kodob      : 00981
+Ko         : 4
+Icob       : 539996
+Nazpo      : Vojenský újezd Brdy
+Nazpo2     : Vojenský újezd Brdy
+Nazob      : Brdy
+Ur         : 9
+Urob       : 9
+Om         : 9
+Porob      : 121
+Cisorp     : 2120
+Kodorp     : 13542
+Okorp      : 3211
+Nazcs      : BTEc
+
+Nk         : ST
+Kodnuts    : CZ020C
+Lau1       : CZ020C
+Knuts      : 2112
+Kodok      : 3212
+Cispou     : 21214
+Kodpo      : 13908
+Kodob      : 13908
+Ko         : 4
+Icob       : 541656
+Nazpo      : Rakovník
+Nazpo2     : Rakovník
+Nazob      : Rakovník
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 2121
+Kodorp     : 13908
+Okorp      : 3212
+Nazcs      : TAMQZPKM
+
+Nk         : ST
+Kodnuts    : CZ020C
+Lau1       : CZ020C
+Knuts      : 2112
+Kodok      : 3212
+Cispou     : 21211
+Kodpo      : 05869
+Kodob      : 05869
+Ko         : 6
+Icob       : 541834
+Nazpo      : Jesenice
+Nazpo2     : Jesenice (okres Rakovník)
+Nazob      : Jesenice
+Ur         : 5
+Urob       : 5
+Om         : 8
+Porob      : 016
+Cisorp     : 2121
+Kodorp     : 13908
+Okorp      : 3212
+Nazcs      : LFVFPKCF
+
+Nk         : ST
+Kodnuts    : CZ020C
+Lau1       : CZ020C
+Knuts      : 2112
+Kodok      : 3212
+Cispou     : 21212
+Kodpo      : 07639
+Kodob      : 07639
+Ko         : 2
+Icob       : 541982
+Nazpo      : Křivoklát
+Nazpo2     : Křivoklát
+Nazob      : Křivoklát
+Ur         : 6
+Urob       : 6
+Om         : 8
+Porob      : 030
+Cisorp     : 2121
+Kodorp     : 13908
+Okorp      : 3212
+Nazcs      : MUKZQMNAX
+
+Nk         : ST
+Kodnuts    : CZ020C
+Lau1       : CZ020C
+Knuts      : 2112
+Kodok      : 3212
+Cispou     : 21213
+Kodpo      : 10674
+Kodob      : 10674
+Ko         : 7
+Icob       : 542164
+Nazpo      : Nové Strašecí
+Nazpo2     : Nové Strašecí
+Nazob      : Nové Strašecí
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 044
+Cisorp     : 2121
+Kodorp     : 13908
+Okorp      : 3212
+Nazcs      : PQZF VXTAWFCK
+
+Nk         : JC
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Cispou     : 31021
+Kodpo      : 02191
+Kodob      : 02191
+Ko         : 1
+Icob       : 544256
+Nazpo      : České Budějovice
+Nazpo2     : České Budějovice
+Nazob      : České Budějovice
+Ur         : 1
+Urob       : 1
+Om         : 2
+Porob      : 001
+Cisorp     : 3102
+Kodorp     : 02191
+Okorp      : 3301
+Nazcs      : DFVMF BYEFLQZKCF
+
+Nk         : JC
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Cispou     : 31022
+Kodpo      : 03960
+Kodob      : 03960
+Ko         : 8
+Icob       : 544485
+Nazpo      : Hluboká nad Vltavou
+Nazpo2     : Hluboká nad Vltavou
+Nazob      : Hluboká nad Vltavou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 033
+Cisorp     : 3102
+Kodorp     : 02191
+Okorp      : 3301
+Nazcs      : INYBQMA PAE ZNXAZQY
+
+Nk         : JC
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Cispou     : 31023
+Kodpo      : 08517
+Kodob      : 08517
+Ko         : 1
+Icob       : 544779
+Nazpo      : Lišov
+Nazpo2     : Lišov
+Nazob      : Lišov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 057
+Cisorp     : 3102
+Kodorp     : 02191
+Okorp      : 3301
+Nazcs      : NKWQZ
+
+Nk         : JC
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Cispou     : 31131
+Kodpo      : 10625
+Kodob      : 10625
+Ko         : 9
+Icob       : 544868
+Nazpo      : Nové Hrady
+Nazpo2     : Nové Hrady
+Nazob      : Nové Hrady
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 069
+Cisorp     : 3113
+Kodorp     : 16815
+Okorp      : 3301
+Nazcs      : PQZF ITAEc
+
+Nk         : JC
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Cispou     : 31132
+Kodpo      : 16815
+Kodob      : 16815
+Ko         : 7
+Icob       : 545171
+Nazpo      : Trhové Sviny
+Nazpo2     : Trhové Sviny
+Nazob      : Trhové Sviny
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 092
+Cisorp     : 3113
+Kodorp     : 16815
+Okorp      : 3301
+Nazcs      : XTIQZF VZKPc
+
+Nk         : JC
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Cispou     : 31151
+Kodpo      : 17212
+Kodob      : 17212
+Ko         : 0
+Icob       : 545201
+Nazpo      : Týn nad Vltavou
+Nazpo2     : Týn nad Vltavou
+Nazob      : Týn nad Vltavou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 093
+Cisorp     : 3115
+Kodorp     : 17212
+Okorp      : 3301
+Nazcs      : XcP PAE ZNXAZQY
+
+Nk         : JC
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Cispou     : 31024
+Kodpo      : 19327
+Kodob      : 19327
+Ko         : 5
+Icob       : 545341
+Nazpo      : Zliv
+Nazpo2     : Zliv
+Nazob      : Zliv
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 105
+Cisorp     : 3102
+Kodorp     : 02191
+Okorp      : 3301
+Nazcs      : dNKZ
+
+Nk         : JC
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Cispou     : 31031
+Kodpo      : 02293
+Kodob      : 02293
+Ko         : 4
+Icob       : 545392
+Nazpo      : Český Krumlov
+Nazpo2     : Český Krumlov
+Nazob      : Český Krumlov
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 3103
+Kodorp     : 02293
+Okorp      : 3302
+Nazcs      : DFVMc MTYONQZ
+
+Nk         : JC
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Cispou     : 31032
+Kodpo      : 04370
+Kodob      : 04370
+Ko         : 2
+Icob       : 545511
+Nazpo      : Horní Planá
+Nazpo2     : Horní Planá
+Nazob      : Horní Planá
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 013
+Cisorp     : 3103
+Kodorp     : 02293
+Okorp      : 3302
+Nazcs      : IQTPK RNAPA
+
+Nk         : JC
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Cispou     : 31061
+Kodpo      : 06306
+Kodob      : 06306
+Ko         : 1
+Icob       : 545562
+Nazpo      : Kaplice
+Nazpo2     : Kaplice
+Nazob      : Kaplice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 018
+Cisorp     : 3106
+Kodorp     : 06306
+Okorp      : 3302
+Nazcs      : MARNKCF
+
+Nk         : JC
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Cispou     : 31033
+Kodpo      : 18899
+Kodob      : 18899
+Ko         : 9
+Icob       : 545848
+Nazpo      : Vyšší Brod
+Nazpo2     : Vyšší Brod
+Nazob      : Vyšší Brod
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 042
+Cisorp     : 3103
+Kodorp     : 02293
+Okorp      : 3302
+Nazcs      : ZcWWK BTQE
+
+Nk         : JC
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Cispou     : 31039
+Kodpo      : 89903
+Kodob      : 00715
+Ko         : 3
+Icob       : 545422
+Nazpo      : Vojenský újezd Boletice
+Nazpo2     : Vojenský újezd Boletice
+Nazob      : Boletice
+Ur         : 9
+Urob       : 9
+Om         : 9
+Porob      : 046
+Cisorp     : 3103
+Kodorp     : 02293
+Okorp      : 3302
+Nazcs      : BQNFXKCF
+
+Nk         : JC
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Cispou     : 31051
+Kodpo      : 06052
+Kodob      : 06052
+Ko         : 6
+Icob       : 545881
+Nazpo      : Jindřichův Hradec
+Nazpo2     : Jindřichův Hradec
+Nazob      : Jindřichův Hradec
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 3105
+Kodorp     : 06052
+Okorp      : 3303
+Nazcs      : LKPEUKJYZ ITAEFC
+
+Nk         : JC
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Cispou     : 31141
+Kodpo      : 02271
+Kodob      : 02271
+Ko         : 3
+Icob       : 546089
+Nazpo      : České Velenice
+Nazpo2     : České Velenice
+Nazob      : České Velenice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 013
+Cisorp     : 3114
+Kodorp     : 17023
+Okorp      : 3303
+Nazcs      : DFVMF ZFNFPKCF
+
+Nk         : JC
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Cispou     : 31041
+Kodpo      : 02440
+Kodob      : 02440
+Ko         : 6
+Icob       : 546127
+Nazpo      : Dačice
+Nazpo2     : Dačice
+Nazob      : Dačice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 017
+Cisorp     : 3104
+Kodorp     : 02440
+Okorp      : 3303
+Nazcs      : EADKCF
+
+Nk         : JC
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Cispou     : 31052
+Kodpo      : 10497
+Kodob      : 10497
+Ko         : 3
+Icob       : 546798
+Nazpo      : Nová Bystřice
+Nazpo2     : Nová Bystřice
+Nazob      : Nová Bystřice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 059
+Cisorp     : 3105
+Kodorp     : 06052
+Okorp      : 3303
+Nazcs      : PQZA BcVXUKCF
+
+Nk         : JC
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Cispou     : 31042
+Kodpo      : 15036
+Kodob      : 15036
+Ko         : 3
+Icob       : 547166
+Nazpo      : Slavonice
+Nazpo2     : Slavonice
+Nazob      : Slavonice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 081
+Cisorp     : 3104
+Kodorp     : 02440
+Okorp      : 3303
+Nazcs      : VNAZQPKCF
+
+Nk         : JC
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Cispou     : 31142
+Kodpo      : 15914
+Kodob      : 15914
+Ko         : 0
+Icob       : 547280
+Nazpo      : Suchdol nad Lužnicí
+Nazpo2     : Suchdol nad Lužnicí
+Nazob      : Suchdol nad Lužnicí
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 091
+Cisorp     : 3114
+Kodorp     : 17023
+Okorp      : 3303
+Nazcs      : VYJEQN PAE NYePKCK
+
+Nk         : JC
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Cispou     : 31143
+Kodpo      : 17023
+Kodob      : 17023
+Ko         : 2
+Icob       : 547336
+Nazpo      : Třeboň
+Nazpo2     : Třeboň
+Nazob      : Třeboň
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 094
+Cisorp     : 3114
+Kodorp     : 17023
+Okorp      : 3303
+Nazcs      : XUFBQP
+
+Nk         : JC
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Cispou     : 31083
+Kodpo      : 12075
+Kodob      : 12075
+Ko         : 8
+Icob       : 549240
+Nazpo      : Písek
+Nazpo2     : Písek
+Nazob      : Písek
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 3108
+Kodorp     : 12075
+Okorp      : 3305
+Nazcs      : RKVFM
+
+Nk         : JC
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Cispou     : 31071
+Kodpo      : 09467
+Kodob      : 09467
+Ko         : 6
+Icob       : 549576
+Nazpo      : Milevsko
+Nazpo2     : Milevsko
+Nazob      : Milevsko
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 032
+Cisorp     : 3107
+Kodorp     : 09467
+Okorp      : 3305
+Nazcs      : OKNFZVMQ
+
+Nk         : JC
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Cispou     : 31081
+Kodpo      : 09550
+Kodob      : 09550
+Ko         : 8
+Icob       : 549584
+Nazpo      : Mirotice
+Nazpo2     : Mirotice
+Nazob      : Mirotice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 034
+Cisorp     : 3108
+Kodorp     : 12075
+Okorp      : 3305
+Nazcs      : OKTQXKCF
+
+Nk         : JC
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Cispou     : 31082
+Kodpo      : 09572
+Kodob      : 09572
+Ko         : 9
+Icob       : 549592
+Nazpo      : Mirovice
+Nazpo2     : Mirovice
+Nazob      : Mirovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 035
+Cisorp     : 3108
+Kodorp     : 12075
+Okorp      : 3305
+Nazcs      : OKTQZKCF
+
+Nk         : JC
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Cispou     : 31084
+Kodpo      : 13385
+Kodob      : 13385
+Ko         : 0
+Icob       : 549771
+Nazpo      : Protivín
+Nazpo2     : Protivín
+Nazob      : Protivín
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 049
+Cisorp     : 3108
+Kodorp     : 12075
+Okorp      : 3305
+Nazcs      : RTQXKZKP
+
+Nk         : JC
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Cispou     : 31092
+Kodpo      : 13263
+Kodob      : 13263
+Ko         : 2
+Icob       : 550094
+Nazpo      : Prachatice
+Nazpo2     : Prachatice
+Nazob      : Prachatice
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 3109
+Kodorp     : 13263
+Okorp      : 3306
+Nazcs      : RTAJAXKCF
+
+Nk         : JC
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Cispou     : 31091
+Kodpo      : 10394
+Kodob      : 10394
+Ko         : 2
+Icob       : 550442
+Nazpo      : Netolice
+Nazpo2     : Netolice
+Nazob      : Netolice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 036
+Cisorp     : 3109
+Kodorp     : 13263
+Okorp      : 3306
+Nazcs      : PFXQNKCF
+
+Nk         : JC
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Cispou     : 31161
+Kodpo      : 18208
+Kodob      : 18208
+Ko         : 7
+Icob       : 550647
+Nazpo      : Vimperk
+Nazpo2     : Vimperk
+Nazob      : Vimperk
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 053
+Cisorp     : 3116
+Kodorp     : 18208
+Okorp      : 3306
+Nazcs      : ZKORFTM
+
+Nk         : JC
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Cispou     : 31093
+Kodpo      : 18473
+Kodob      : 18473
+Ko         : 0
+Icob       : 550671
+Nazpo      : Volary
+Nazpo2     : Volary
+Nazob      : Volary
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 056
+Cisorp     : 3109
+Kodorp     : 13263
+Okorp      : 3306
+Nazcs      : ZQNATc
+
+Nk         : JC
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Cispou     : 31111
+Kodpo      : 15591
+Kodob      : 15591
+Ko         : 8
+Icob       : 550787
+Nazpo      : Strakonice
+Nazpo2     : Strakonice
+Nazob      : Strakonice
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 3111
+Kodorp     : 15591
+Okorp      : 3307
+Nazcs      : VXTAMQPKCF
+
+Nk         : JC
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Cispou     : 31011
+Kodpo      : 00524
+Kodob      : 00524
+Ko         : 0
+Icob       : 550850
+Nazpo      : Blatná
+Nazpo2     : Blatná
+Nazob      : Blatná
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 006
+Cisorp     : 3101
+Kodorp     : 00524
+Okorp      : 3307
+Nazcs      : BNAXPA
+
+Nk         : JC
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Cispou     : 31171
+Kodpo      : 18428
+Kodob      : 18428
+Ko         : 4
+Icob       : 551953
+Nazpo      : Vodňany
+Nazpo2     : Vodňany
+Nazob      : Vodňany
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 107
+Cisorp     : 3117
+Kodorp     : 18428
+Okorp      : 3307
+Nazcs      : ZQEPAPc
+
+Nk         : JC
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Cispou     : 31112
+Kodpo      : 18495
+Kodob      : 18495
+Ko         : 1
+Icob       : 551970
+Nazpo      : Volyně
+Nazpo2     : Volyně
+Nazob      : Volyně
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 109
+Cisorp     : 3111
+Kodorp     : 15591
+Okorp      : 3307
+Nazcs      : ZQNcPF
+
+Nk         : JC
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Cispou     : 31124
+Kodpo      : 16470
+Kodob      : 16470
+Ko         : 4
+Icob       : 552046
+Nazpo      : Tábor
+Nazpo2     : Tábor
+Nazob      : Tábor
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 3112
+Kodorp     : 16470
+Okorp      : 3308
+Nazcs      : XABQT
+
+Nk         : JC
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Cispou     : 31121
+Kodpo      : 00154
+Kodob      : 00154
+Ko         : 6
+Icob       : 552054
+Nazpo      : Bechyně
+Nazpo2     : Bechyně
+Nazob      : Bechyně
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 004
+Cisorp     : 3112
+Kodorp     : 16470
+Okorp      : 3308
+Nazcs      : BFJcPF
+
+Nk         : JC
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Cispou     : 31122
+Kodpo      : 09672
+Kodob      : 09672
+Ko         : 5
+Icob       : 552704
+Nazpo      : Mladá Vožice
+Nazpo2     : Mladá Vožice
+Nazob      : Mladá Vožice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 047
+Cisorp     : 3112
+Kodorp     : 16470
+Okorp      : 3308
+Nazcs      : ONAEA ZQeKCF
+
+Nk         : JC
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Cispou     : 31123
+Kodpo      : 14768
+Kodob      : 14768
+Ko         : 1
+Icob       : 553069
+Nazpo      : Sezimovo Ústí
+Nazpo2     : Sezimovo Ústí
+Nazob      : Sezimovo Ústí
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 076
+Cisorp     : 3112
+Kodorp     : 16470
+Okorp      : 3308
+Nazcs      : VFdKOQZQ YVXK
+
+Nk         : JC
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Cispou     : 31101
+Kodpo      : 15170
+Kodob      : 15170
+Ko         : 0
+Icob       : 553131
+Nazpo      : Soběslav
+Nazpo2     : Soběslav
+Nazob      : Soběslav
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 083
+Cisorp     : 3110
+Kodorp     : 15170
+Okorp      : 3308
+Nazcs      : VQBFVNAZ
+
+Nk         : JC
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Cispou     : 31102
+Kodpo      : 18068
+Kodob      : 18068
+Ko         : 8
+Icob       : 553271
+Nazpo      : Veselí nad Lužnicí
+Nazpo2     : Veselí nad Lužnicí
+Nazob      : Veselí nad Lužnicí
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 096
+Cisorp     : 3110
+Kodorp     : 15170
+Okorp      : 3308
+Nazcs      : ZFVFNK PAE NYePKCK
+
+Nk         : PL
+Kodnuts    : CZ0321
+Lau1       : CZ0321
+Knuts      : 3201
+Kodok      : 3401
+Cispou     : 32021
+Kodpo      : 03085
+Kodob      : 03085
+Ko         : 6
+Icob       : 553425
+Nazpo      : Domažlice
+Nazpo2     : Domažlice
+Nazob      : Domažlice
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 3202
+Kodorp     : 03085
+Okorp      : 3401
+Nazcs      : EQOAeNKCF
+
+Nk         : PL
+Kodnuts    : CZ0321
+Lau1       : CZ0321
+Knuts      : 3201
+Kodok      : 3401
+Cispou     : 32122
+Kodpo      : 04155
+Kodob      : 04155
+Ko         : 6
+Icob       : 553654
+Nazpo      : Holýšov
+Nazpo2     : Holýšov
+Nazob      : Holýšov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 016
+Cisorp     : 3212
+Kodorp     : 15551
+Okorp      : 3406
+Nazcs      : IQNcWQZ
+
+Nk         : PL
+Kodnuts    : CZ0321
+Lau1       : CZ0321
+Knuts      : 3201
+Kodok      : 3401
+Cispou     : 32041
+Kodpo      : 04487
+Kodob      : 04487
+Ko         : 3
+Icob       : 553671
+Nazpo      : Horšovský Týn
+Nazpo2     : Horšovský Týn
+Nazob      : Horšovský Týn
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 019
+Cisorp     : 3204
+Kodorp     : 04487
+Okorp      : 3401
+Nazcs      : IQTWQZVMc XcP
+
+Nk         : PL
+Kodnuts    : CZ0321
+Lau1       : CZ0321
+Knuts      : 3201
+Kodok      : 3401
+Cispou     : 32022
+Kodpo      : 06467
+Kodob      : 06467
+Ko         : 0
+Icob       : 553786
+Nazpo      : Kdyně
+Nazpo2     : Kdyně
+Nazob      : Kdyně
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 029
+Cisorp     : 3202
+Kodorp     : 03085
+Okorp      : 3401
+Nazcs      : MEcPF
+
+Nk         : PL
+Kodnuts    : CZ0321
+Lau1       : CZ0321
+Knuts      : 3201
+Kodok      : 3401
+Cispou     : 32023
+Kodpo      : 12286
+Kodob      : 12286
+Ko         : 6
+Icob       : 554111
+Nazpo      : Poběžovice
+Nazpo2     : Poběžovice
+Nazob      : Poběžovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 059
+Cisorp     : 3202
+Kodorp     : 03085
+Okorp      : 3401
+Nazcs      : RQBFeQZKCF
+
+Nk         : PL
+Kodnuts    : CZ0321
+Lau1       : CZ0321
+Knuts      : 3201
+Kodok      : 3401
+Cispou     : 32042
+Kodpo      : 15357
+Kodob      : 15357
+Ko         : 5
+Icob       : 554294
+Nazpo      : Staňkov
+Nazpo2     : Staňkov
+Nazob      : Staňkov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 069
+Cisorp     : 3204
+Kodorp     : 04487
+Okorp      : 3401
+Nazcs      : VXAPMQZ
+
+Nk         : PL
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Cispou     : 32051
+Kodpo      : 06579
+Kodob      : 06579
+Ko         : 0
+Icob       : 555771
+Nazpo      : Klatovy
+Nazpo2     : Klatovy
+Nazob      : Klatovy
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 3205
+Kodorp     : 06579
+Okorp      : 3404
+Nazcs      : MNAXQZc
+
+Nk         : PL
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Cispou     : 32031
+Kodpo      : 04185
+Kodob      : 04185
+Ko         : 8
+Icob       : 556254
+Nazpo      : Horažďovice
+Nazpo2     : Horažďovice
+Nazob      : Horažďovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 028
+Cisorp     : 3203
+Kodorp     : 04185
+Okorp      : 3404
+Nazcs      : IQTAeEQZKCF
+
+Nk         : PL
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Cispou     : 32141
+Kodpo      : 06439
+Kodob      : 06439
+Ko         : 4
+Icob       : 556432
+Nazpo      : Kašperské Hory
+Nazpo2     : Kašperské Hory
+Nazob      : Kašperské Hory
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 039
+Cisorp     : 3214
+Kodorp     : 15960
+Okorp      : 3404
+Nazcs      : MAWRFTVMF IQTc
+
+Nk         : PL
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Cispou     : 32052
+Kodpo      : 10845
+Kodob      : 10845
+Ko         : 6
+Icob       : 556831
+Nazpo      : Nýrsko
+Nazpo2     : Nýrsko
+Nazob      : Nýrsko
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 061
+Cisorp     : 3205
+Kodorp     : 06579
+Okorp      : 3404
+Nazcs      : PcTVMQ
+
+Nk         : PL
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Cispou     : 32053
+Kodpo      : 12147
+Kodob      : 12147
+Ko         : 9
+Icob       : 556955
+Nazpo      : Plánice
+Nazpo2     : Plánice
+Nazob      : Plánice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 067
+Cisorp     : 3205
+Kodorp     : 06579
+Okorp      : 3404
+Nazcs      : RNAPKCF
+
+Nk         : PL
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Cispou     : 32142
+Kodpo      : 15960
+Kodob      : 15960
+Ko         : 3
+Icob       : 557153
+Nazpo      : Sušice
+Nazpo2     : Sušice
+Nazob      : Sušice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 079
+Cisorp     : 3214
+Kodorp     : 15960
+Okorp      : 3404
+Nazcs      : VYWKCF
+
+Nk         : PL
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Knuts      : 3203
+Kodok      : 3405
+Cispou     : 32091
+Kodpo      : 12198
+Kodob      : 12198
+Ko         : 3
+Icob       : 554791
+Nazpo      : Plzeň
+Nazpo2     : Plzeň
+Nazob      : Plzeň
+Ur         : 1
+Urob       : 1
+Om         : 2
+Porob      : 001
+Cisorp     : 3209
+Kodorp     : 12198
+Okorp      : 3405
+Nazcs      : RNdFP
+
+Nk         : PL
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Knuts      : 3203
+Kodok      : 3405
+Cispou     : 32092
+Kodpo      : 15515
+Kodob      : 15515
+Ko         : 2
+Icob       : 558371
+Nazpo      : Starý Plzenec
+Nazpo2     : Starý Plzenec
+Nazob      : Starý Plzenec
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 012
+Cisorp     : 3209
+Kodorp     : 12198
+Okorp      : 3405
+Nazcs      : VXATc RNdFPFC
+
+Nk         : PL
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Cispou     : 32011
+Kodpo      : 00573
+Kodob      : 00573
+Ko         : 8
+Icob       : 557587
+Nazpo      : Blovice
+Nazpo2     : Blovice
+Nazob      : Blovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 001
+Cisorp     : 3201
+Kodorp     : 00573
+Okorp      : 3406
+Nazcs      : BNQZKCF
+
+Nk         : PL
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Cispou     : 32121
+Kodpo      : 02761
+Kodob      : 02761
+Ko         : 8
+Icob       : 557676
+Nazpo      : Dobřany
+Nazpo2     : Dobřany
+Nazob      : Dobřany
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 010
+Cisorp     : 3212
+Kodorp     : 15551
+Okorp      : 3406
+Nazcs      : EQBUAPc
+
+Nk         : PL
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Cispou     : 32071
+Kodpo      : 10347
+Kodob      : 10347
+Ko         : 1
+Icob       : 558109
+Nazpo      : Nepomuk
+Nazpo2     : Nepomuk
+Nazob      : Nepomuk
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 045
+Cisorp     : 3207
+Kodorp     : 10347
+Okorp      : 3406
+Nazcs      : PFRQOYM
+
+Nk         : PL
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Cispou     : 32101
+Kodpo      : 13525
+Kodob      : 13525
+Ko         : 9
+Icob       : 558249
+Nazpo      : Přeštice
+Nazpo2     : Přeštice
+Nazob      : Přeštice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 059
+Cisorp     : 3210
+Kodorp     : 13525
+Okorp      : 3406
+Nazcs      : RUFWXKCF
+
+Nk         : PL
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Cispou     : 32012
+Kodpo      : 15270
+Kodob      : 15270
+Ko         : 6
+Icob       : 558362
+Nazpo      : Spálené Poříčí
+Nazpo2     : Spálené Poříčí
+Nazob      : Spálené Poříčí
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 069
+Cisorp     : 3201
+Kodorp     : 00573
+Okorp      : 3406
+Nazcs      : VRANFPF RQUKDK
+
+Nk         : PL
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Cispou     : 32123
+Kodpo      : 15551
+Kodob      : 15551
+Ko         : 9
+Icob       : 558389
+Nazpo      : Stod
+Nazpo2     : Stod
+Nazob      : Stod
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 071
+Cisorp     : 3212
+Kodorp     : 15551
+Okorp      : 3406
+Nazcs      : VXQE
+
+Nk         : PL
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Cispou     : 32061
+Kodpo      : 07264
+Kodob      : 07264
+Ko         : 8
+Icob       : 559075
+Nazpo      : Kralovice
+Nazpo2     : Kralovice
+Nazob      : Kralovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 039
+Cisorp     : 3206
+Kodorp     : 07264
+Okorp      : 3407
+Nazcs      : MTANQZKCF
+
+Nk         : PL
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Cispou     : 32062
+Kodpo      : 09149
+Kodob      : 09149
+Ko         : 9
+Icob       : 559202
+Nazpo      : Manětín
+Nazpo2     : Manětín
+Nazob      : Manětín
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 050
+Cisorp     : 3206
+Kodorp     : 07264
+Okorp      : 3407
+Nazcs      : OAPFXKP
+
+Nk         : PL
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Cispou     : 32081
+Kodpo      : 09343
+Kodob      : 09343
+Ko         : 2
+Icob       : 559211
+Nazpo      : Město Touškov
+Nazpo2     : Město Touškov
+Nazob      : Město Touškov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 051
+Cisorp     : 3208
+Kodorp     : 10849
+Okorp      : 3407
+Nazcs      : OFVXQ XQYWMQZ
+
+Nk         : PL
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Cispou     : 32082
+Kodpo      : 10849
+Kodob      : 10849
+Ko         : 9
+Icob       : 559300
+Nazpo      : Nýřany
+Nazpo2     : Nýřany
+Nazob      : Nýřany
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 059
+Cisorp     : 3208
+Kodorp     : 10849
+Okorp      : 3407
+Nazcs      : PcUAPc
+
+Nk         : PL
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Cispou     : 32063
+Kodpo      : 12153
+Kodob      : 12153
+Ko         : 3
+Icob       : 559351
+Nazpo      : Plasy
+Nazpo2     : Plasy
+Nazob      : Plasy
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 065
+Cisorp     : 3206
+Kodorp     : 07264
+Okorp      : 3407
+Nazcs      : RNAVc
+
+Nk         : PL
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Cispou     : 32083
+Kodpo      : 17069
+Kodob      : 17069
+Ko         : 1
+Icob       : 559521
+Nazpo      : Třemošná
+Nazpo2     : Třemošná
+Nazob      : Třemošná
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 081
+Cisorp     : 3208
+Kodorp     : 10849
+Okorp      : 3407
+Nazcs      : XUFOQWPA
+
+Nk         : PL
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Cispou     : 32084
+Kodpo      : 18737
+Kodob      : 18737
+Ko         : 2
+Icob       : 559628
+Nazpo      : Všeruby
+Nazpo2     : Všeruby
+Nazob      : Všeruby
+Ur         : 4
+Urob       : 4
+Om         : 8
+Porob      : 091
+Cisorp     : 3208
+Kodorp     : 10849
+Okorp      : 3407
+Nazcs      : ZWFTYBc
+
+Nk         : PL
+Kodnuts    : CZ0326
+Lau1       : CZ0326
+Knuts      : 3206
+Kodok      : 3408
+Cispou     : 32112
+Kodpo      : 14069
+Kodob      : 14069
+Ko         : 4
+Icob       : 559717
+Nazpo      : Rokycany
+Nazpo2     : Rokycany
+Nazob      : Rokycany
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 3211
+Kodorp     : 14069
+Okorp      : 3408
+Nazcs      : TQMcCAPc
+
+Nk         : PL
+Kodnuts    : CZ0326
+Lau1       : CZ0326
+Knuts      : 3206
+Kodok      : 3408
+Cispou     : 32111
+Kodpo      : 13810
+Kodob      : 13810
+Ko         : 0
+Icob       : 560120
+Nazpo      : Radnice
+Nazpo2     : Radnice
+Nazob      : Radnice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 046
+Cisorp     : 3211
+Kodorp     : 14069
+Okorp      : 3408
+Nazcs      : TAEPKCF
+
+Nk         : PL
+Kodnuts    : CZ0326
+Lau1       : CZ0326
+Knuts      : 3206
+Kodok      : 3408
+Cispou     : 32113
+Kodpo      : 19150
+Kodob      : 19150
+Ko         : 7
+Icob       : 560260
+Nazpo      : Zbiroh
+Nazpo2     : Zbiroh
+Nazob      : Zbiroh
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 067
+Cisorp     : 3211
+Kodorp     : 14069
+Okorp      : 3408
+Nazcs      : dBKTQI
+
+Nk         : PL
+Kodnuts    : CZ0327
+Lau1       : CZ0327
+Knuts      : 3207
+Kodok      : 3410
+Cispou     : 32153
+Kodpo      : 16491
+Kodob      : 16491
+Ko         : 7
+Icob       : 560715
+Nazpo      : Tachov
+Nazpo2     : Tachov
+Nazob      : Tachov
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 3215
+Kodorp     : 16491
+Okorp      : 3410
+Nazcs      : XAJQZ
+
+Nk         : PL
+Kodnuts    : CZ0327
+Lau1       : CZ0327
+Knuts      : 3207
+Kodok      : 3410
+Cispou     : 32131
+Kodpo      : 00369
+Kodob      : 00369
+Ko         : 7
+Icob       : 560740
+Nazpo      : Bezdružice
+Nazpo2     : Bezdružice
+Nazob      : Bezdružice
+Ur         : 5
+Urob       : 5
+Om         : 8
+Porob      : 003
+Cisorp     : 3213
+Kodorp     : 15783
+Okorp      : 3410
+Nazcs      : BFdETYeKCF
+
+Nk         : PL
+Kodnuts    : CZ0327
+Lau1       : CZ0327
+Knuts      : 3207
+Kodok      : 3410
+Cispou     : 32151
+Kodpo      : 00730
+Kodob      : 00730
+Ko         : 7
+Icob       : 560758
+Nazpo      : Bor
+Nazpo2     : Bor
+Nazob      : Bor
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 004
+Cisorp     : 3215
+Kodorp     : 16491
+Okorp      : 3410
+Nazcs      : BQT
+
+Nk         : PL
+Kodnuts    : CZ0327
+Lau1       : CZ0327
+Knuts      : 3207
+Kodok      : 3410
+Cispou     : 32152
+Kodpo      : 12128
+Kodob      : 12128
+Ko         : 2
+Icob       : 561134
+Nazpo      : Planá
+Nazpo2     : Planá
+Nazob      : Planá
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 031
+Cisorp     : 3215
+Kodorp     : 16491
+Okorp      : 3410
+Nazcs      : RNAPA
+
+Nk         : PL
+Kodnuts    : CZ0327
+Lau1       : CZ0327
+Knuts      : 3207
+Kodok      : 3410
+Cispou     : 32132
+Kodpo      : 15783
+Kodob      : 15783
+Ko         : 0
+Icob       : 561215
+Nazpo      : Stříbro
+Nazpo2     : Stříbro
+Nazob      : Stříbro
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 039
+Cisorp     : 3213
+Kodorp     : 15783
+Okorp      : 3410
+Nazcs      : VXUKBTQ
+
+Nk         : KA
+Kodnuts    : CZ0411
+Lau1       : CZ0411
+Knuts      : 4101
+Kodok      : 3402
+Cispou     : 41021
+Kodpo      : 05091
+Kodob      : 05091
+Ko         : 1
+Icob       : 554481
+Nazpo      : Cheb
+Nazpo2     : Cheb
+Nazob      : Cheb
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 4102
+Kodorp     : 05091
+Okorp      : 3402
+Nazcs      : JFB
+
+Nk         : KA
+Kodnuts    : CZ0411
+Lau1       : CZ0411
+Knuts      : 4101
+Kodok      : 3402
+Cispou     : 41011
+Kodpo      : 00052
+Kodob      : 00052
+Ko         : 3
+Icob       : 554499
+Nazpo      : Aš
+Nazpo2     : Aš
+Nazob      : Aš
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 002
+Cisorp     : 4101
+Kodorp     : 00052
+Okorp      : 3402
+Nazcs      : AW
+
+Nk         : KA
+Kodnuts    : CZ0411
+Lau1       : CZ0411
+Knuts      : 4101
+Kodok      : 3402
+Cispou     : 41051
+Kodpo      : 09158
+Kodob      : 09158
+Ko         : 8
+Icob       : 554642
+Nazpo      : Mariánské Lázně
+Nazpo2     : Mariánské Lázně
+Nazob      : Mariánské Lázně
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 014
+Cisorp     : 4105
+Kodorp     : 09158
+Okorp      : 3402
+Nazcs      : OATKAPVMF NAdPF
+
+Nk         : KA
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Cispou     : 41031
+Kodpo      : 06343
+Kodob      : 06343
+Ko         : 6
+Icob       : 554961
+Nazpo      : Karlovy Vary
+Nazpo2     : Karlovy Vary
+Nazob      : Karlovy Vary
+Ur         : 1
+Urob       : 1
+Om         : 3
+Porob      : 001
+Cisorp     : 4103
+Kodorp     : 06343
+Okorp      : 3403
+Nazcs      : MATNQZc ZATc
+
+Nk         : KA
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Cispou     : 41032
+Kodpo      : 10262
+Kodob      : 10262
+Ko         : 8
+Icob       : 555380
+Nazpo      : Nejdek
+Nazpo2     : Nejdek
+Nazob      : Nejdek
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 027
+Cisorp     : 4103
+Kodorp     : 06343
+Okorp      : 3403
+Nazcs      : PFLEFM
+
+Nk         : KA
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Cispou     : 41061
+Kodpo      : 11588
+Kodob      : 11588
+Ko         : 6
+Icob       : 555428
+Nazpo      : Ostrov
+Nazpo2     : Ostrov
+Nazob      : Ostrov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 030
+Cisorp     : 4106
+Kodorp     : 11588
+Okorp      : 3403
+Nazcs      : QVXTQZ
+
+Nk         : KA
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Cispou     : 41033
+Kodpo      : 16794
+Kodob      : 16794
+Ko         : 1
+Icob       : 555657
+Nazpo      : Toužim
+Nazpo2     : Toužim
+Nazob      : Toužim
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 045
+Cisorp     : 4103
+Kodorp     : 06343
+Okorp      : 3403
+Nazcs      : XQYeKO
+
+Nk         : KA
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Cispou     : 41034
+Kodpo      : 19776
+Kodob      : 19776
+Ko         : 9
+Icob       : 555762
+Nazpo      : Žlutice
+Nazpo2     : Žlutice
+Nazob      : Žlutice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 053
+Cisorp     : 4103
+Kodorp     : 06343
+Okorp      : 3403
+Nazcs      : eNYXKCF
+
+Nk         : KA
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Cispou     : 41039
+Kodpo      : 89904
+Kodob      : 04746
+Ko         : 5
+Icob       : 555177
+Nazpo      : Vojenský újezd Hradiště
+Nazpo2     : Vojenský újezd Hradiště
+Nazob      : Hradiště
+Ur         : 9
+Urob       : 9
+Om         : 9
+Porob      : 054
+Cisorp     : 4103
+Kodorp     : 06343
+Okorp      : 3403
+Nazcs      : ITAEKWXF
+
+Nk         : KA
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Cispou     : 41075
+Kodpo      : 15222
+Kodob      : 15222
+Ko         : 6
+Icob       : 560286
+Nazpo      : Sokolov
+Nazpo2     : Sokolov
+Nazob      : Sokolov
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 4107
+Kodorp     : 15222
+Okorp      : 3409
+Nazcs      : VQMQNQZ
+
+Nk         : KA
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Cispou     : 41071
+Kodpo      : 04405
+Kodob      : 04405
+Ko         : 9
+Icob       : 560367
+Nazpo      : Horní Slavkov
+Nazpo2     : Horní Slavkov
+Nazob      : Horní Slavkov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 010
+Cisorp     : 4107
+Kodorp     : 15222
+Okorp      : 3409
+Nazcs      : IQTPK VNAZMQZ
+
+Nk         : KA
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Cispou     : 41072
+Kodpo      : 05217
+Kodob      : 05217
+Ko         : 5
+Icob       : 560383
+Nazpo      : Chodov
+Nazpo2     : Chodov
+Nazob      : Chodov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 012
+Cisorp     : 4107
+Kodorp     : 15222
+Okorp      : 3409
+Nazcs      : JQEQZ
+
+Nk         : KA
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Cispou     : 41041
+Kodpo      : 07329
+Kodob      : 07329
+Ko         : 6
+Icob       : 560472
+Nazpo      : Kraslice
+Nazpo2     : Kraslice
+Nazob      : Kraslice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 018
+Cisorp     : 4104
+Kodorp     : 07329
+Okorp      : 3409
+Nazcs      : MTAVNKCF
+
+Nk         : KA
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Cispou     : 41073
+Kodpo      : 07862
+Kodob      : 07862
+Ko         : 0
+Icob       : 560499
+Nazpo      : Kynšperk nad Ohří
+Nazpo2     : Kynšperk nad Ohří
+Nazob      : Kynšperk nad Ohří
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 020
+Cisorp     : 4107
+Kodorp     : 15222
+Okorp      : 3409
+Nazcs      : McPWRFTM PAE QIUK
+
+Nk         : KA
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Cispou     : 41074
+Kodpo      : 08651
+Kodob      : 08651
+Ko         : 7
+Icob       : 560537
+Nazpo      : Loket
+Nazpo2     : Loket
+Nazob      : Loket
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 022
+Cisorp     : 4107
+Kodorp     : 15222
+Okorp      : 3409
+Nazcs      : NQMFX
+
+Nk         : US
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Cispou     : 42023
+Kodpo      : 02492
+Kodob      : 02492
+Ko         : 9
+Icob       : 562335
+Nazpo      : Děčín
+Nazpo2     : Děčín
+Nazob      : Děčín
+Ur         : 1
+Urob       : 1
+Om         : 4
+Porob      : 001
+Cisorp     : 4202
+Kodorp     : 02492
+Okorp      : 3502
+Nazcs      : EFDKP
+
+Nk         : US
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Cispou     : 42021
+Kodpo      : 00245
+Kodob      : 00245
+Ko         : 3
+Icob       : 562351
+Nazpo      : Benešov nad Ploučnicí
+Nazpo2     : Benešov nad Ploučnicí
+Nazob      : Benešov nad Ploučnicí
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 003
+Cisorp     : 4202
+Kodorp     : 02492
+Okorp      : 3502
+Nazcs      : BFPFWQZ PAE RNQYDPKCK
+
+Nk         : US
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Cispou     : 42022
+Kodpo      : 02128
+Kodob      : 02128
+Ko         : 8
+Icob       : 562394
+Nazpo      : Česká Kamenice
+Nazpo2     : Česká Kamenice
+Nazob      : Česká Kamenice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 005
+Cisorp     : 4202
+Kodorp     : 02492
+Okorp      : 3502
+Nazcs      : DFVMA MAOFPKCF
+
+Nk         : US
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Cispou     : 42121
+Kodpo      : 14351
+Kodob      : 14351
+Ko         : 1
+Icob       : 562777
+Nazpo      : Rumburk
+Nazpo2     : Rumburk
+Nazob      : Rumburk
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 038
+Cisorp     : 4212
+Kodorp     : 14351
+Okorp      : 3502
+Nazcs      : TYOBYTM
+
+Nk         : US
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Cispou     : 42122
+Kodpo      : 16289
+Kodob      : 16289
+Ko         : 2
+Icob       : 562858
+Nazpo      : Šluknov
+Nazpo2     : Šluknov
+Nazob      : Šluknov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 044
+Cisorp     : 4212
+Kodorp     : 14351
+Okorp      : 3502
+Nazcs      : WNYMPQZ
+
+Nk         : US
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Cispou     : 42151
+Kodpo      : 17697
+Kodob      : 17697
+Ko         : 4
+Icob       : 562882
+Nazpo      : Varnsdorf
+Nazpo2     : Varnsdorf
+Nazob      : Varnsdorf
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 047
+Cisorp     : 4215
+Kodorp     : 17697
+Okorp      : 3502
+Nazcs      : ZATPVEQTG
+
+Nk         : US
+Kodnuts    : CZ0422
+Lau1       : CZ0422
+Knuts      : 4202
+Kodok      : 3503
+Cispou     : 42031
+Kodpo      : 05245
+Kodob      : 05245
+Ko         : 1
+Icob       : 562971
+Nazpo      : Chomutov
+Nazpo2     : Chomutov
+Nazob      : Chomutov
+Ur         : 1
+Urob       : 1
+Om         : 4
+Porob      : 001
+Cisorp     : 4203
+Kodorp     : 05245
+Okorp      : 3503
+Nazcs      : JQOYXQZ
+
+Nk         : US
+Kodnuts    : CZ0422
+Lau1       : CZ0422
+Knuts      : 4202
+Kodok      : 3503
+Cispou     : 42032
+Kodpo      : 06076
+Kodob      : 06076
+Ko         : 3
+Icob       : 563099
+Nazpo      : Jirkov
+Nazpo2     : Jirkov
+Nazob      : Jirkov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 012
+Cisorp     : 4203
+Kodorp     : 05245
+Okorp      : 3503
+Nazcs      : LKTMQZ
+
+Nk         : US
+Kodnuts    : CZ0422
+Lau1       : CZ0422
+Knuts      : 4202
+Kodok      : 3503
+Cispou     : 42041
+Kodpo      : 06168
+Kodob      : 06168
+Ko         : 9
+Icob       : 563102
+Nazpo      : Kadaň
+Nazpo2     : Kadaň
+Nazob      : Kadaň
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 013
+Cisorp     : 4204
+Kodorp     : 06168
+Okorp      : 3503
+Nazcs      : MAEAP
+
+Nk         : US
+Kodnuts    : CZ0422
+Lau1       : CZ0422
+Knuts      : 4202
+Kodok      : 3503
+Cispou     : 42042
+Kodpo      : 06562
+Kodob      : 06562
+Ko         : 5
+Icob       : 563129
+Nazpo      : Klášterec nad Ohří
+Nazpo2     : Klášterec nad Ohří
+Nazob      : Klášterec nad Ohří
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 015
+Cisorp     : 4204
+Kodorp     : 06168
+Okorp      : 3503
+Nazcs      : MNAWXFTFC PAE QIUK
+
+Nk         : US
+Kodnuts    : CZ0422
+Lau1       : CZ0422
+Knuts      : 4202
+Kodok      : 3503
+Cispou     : 42043
+Kodpo      : 17757
+Kodob      : 17757
+Ko         : 1
+Icob       : 563404
+Nazpo      : Vejprty
+Nazpo2     : Vejprty
+Nazob      : Vejprty
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 037
+Cisorp     : 4204
+Kodorp     : 06168
+Okorp      : 3503
+Nazcs      : ZFLRTXc
+
+Nk         : US
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Cispou     : 42051
+Kodpo      : 08542
+Kodob      : 08542
+Ko         : 1
+Icob       : 564567
+Nazpo      : Litoměřice
+Nazpo2     : Litoměřice
+Nazob      : Litoměřice
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 4205
+Kodorp     : 08542
+Okorp      : 3506
+Nazcs      : NKXQOFUKCF
+
+Nk         : US
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Cispou     : 42081
+Kodpo      : 08312
+Kodob      : 08312
+Ko         : 7
+Icob       : 565164
+Nazpo      : Libochovice
+Nazpo2     : Libochovice
+Nazob      : Libochovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 049
+Cisorp     : 4208
+Kodorp     : 08770
+Okorp      : 3506
+Nazcs      : NKBQJQZKCF
+
+Nk         : US
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Cispou     : 42082
+Kodpo      : 08770
+Kodob      : 08770
+Ko         : 0
+Icob       : 565229
+Nazpo      : Lovosice
+Nazpo2     : Lovosice
+Nazob      : Lovosice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 053
+Cisorp     : 4208
+Kodorp     : 08770
+Okorp      : 3506
+Nazcs      : NQZQVKCF
+
+Nk         : US
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Cispou     : 42111
+Kodpo      : 14164
+Kodob      : 14164
+Ko         : 0
+Icob       : 565555
+Nazpo      : Roudnice nad Labem
+Nazpo2     : Roudnice nad Labem
+Nazob      : Roudnice nad Labem
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 075
+Cisorp     : 4211
+Kodorp     : 14164
+Okorp      : 3506
+Nazcs      : TQYEPKCF PAE NABFO
+
+Nk         : US
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Cispou     : 42052
+Kodpo      : 16369
+Kodob      : 16369
+Ko         : 4
+Icob       : 565709
+Nazpo      : Štětí
+Nazpo2     : Štětí
+Nazob      : Štětí
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 083
+Cisorp     : 4205
+Kodorp     : 08542
+Okorp      : 3506
+Nazcs      : WXFXK
+
+Nk         : US
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Cispou     : 42053
+Kodpo      : 17553
+Kodob      : 17553
+Ko         : 6
+Icob       : 565814
+Nazpo      : Úštěk
+Nazpo2     : Úštěk
+Nazob      : Úštěk
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 091
+Cisorp     : 4205
+Kodorp     : 08542
+Okorp      : 3506
+Nazcs      : YWXFM
+
+Nk         : US
+Kodnuts    : CZ0424
+Lau1       : CZ0424
+Knuts      : 4204
+Kodok      : 3507
+Cispou     : 42071
+Kodpo      : 08739
+Kodob      : 08739
+Ko         : 4
+Icob       : 565971
+Nazpo      : Louny
+Nazpo2     : Louny
+Nazob      : Louny
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 4207
+Kodorp     : 08739
+Okorp      : 3507
+Nazcs      : NQYPc
+
+Nk         : US
+Kodnuts    : CZ0424
+Lau1       : CZ0424
+Knuts      : 4204
+Kodok      : 3507
+Cispou     : 42101
+Kodpo      : 12323
+Kodob      : 12323
+Ko         : 4
+Icob       : 566616
+Nazpo      : Podbořany
+Nazpo2     : Podbořany
+Nazob      : Podbořany
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 048
+Cisorp     : 4210
+Kodorp     : 12323
+Okorp      : 3507
+Nazcs      : RQEBQUAPc
+
+Nk         : US
+Kodnuts    : CZ0424
+Lau1       : CZ0424
+Knuts      : 4204
+Kodok      : 3507
+Cispou     : 42072
+Kodpo      : 12611
+Kodob      : 12611
+Ko         : 0
+Icob       : 566624
+Nazpo      : Postoloprty
+Nazpo2     : Postoloprty
+Nazob      : Postoloprty
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 049
+Cisorp     : 4207
+Kodorp     : 08739
+Okorp      : 3507
+Nazcs      : RQVXQNQRTXc
+
+Nk         : US
+Kodnuts    : CZ0424
+Lau1       : CZ0424
+Knuts      : 4204
+Kodok      : 3507
+Cispou     : 42161
+Kodpo      : 19473
+Kodob      : 19473
+Ko         : 5
+Icob       : 566985
+Nazpo      : Žatec
+Nazpo2     : Žatec
+Nazob      : Žatec
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 067
+Cisorp     : 4216
+Kodorp     : 19473
+Okorp      : 3507
+Nazcs      : eAXFC
+
+Nk         : US
+Kodnuts    : CZ0425
+Lau1       : CZ0425
+Knuts      : 4205
+Kodok      : 3508
+Cispou     : 42091
+Kodpo      : 09959
+Kodob      : 09959
+Ko         : 7
+Icob       : 567027
+Nazpo      : Most
+Nazpo2     : Most
+Nazob      : Most
+Ur         : 1
+Urob       : 1
+Om         : 4
+Porob      : 001
+Cisorp     : 4209
+Kodorp     : 09959
+Okorp      : 3508
+Nazcs      : OQVX
+
+Nk         : US
+Kodnuts    : CZ0425
+Lau1       : CZ0425
+Knuts      : 4205
+Kodok      : 3508
+Cispou     : 42061
+Kodpo      : 08604
+Kodob      : 08604
+Ko         : 5
+Icob       : 567256
+Nazpo      : Litvínov
+Nazpo2     : Litvínov
+Nazob      : Litvínov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 013
+Cisorp     : 4206
+Kodorp     : 08604
+Okorp      : 3508
+Nazcs      : NKXZKPQZ
+
+Nk         : US
+Kodnuts    : CZ0426
+Lau1       : CZ0426
+Knuts      : 4206
+Kodok      : 3509
+Cispou     : 42133
+Kodpo      : 16600
+Kodob      : 16600
+Ko         : 6
+Icob       : 567442
+Nazpo      : Teplice
+Nazpo2     : Teplice
+Nazob      : Teplice
+Ur         : 1
+Urob       : 1
+Om         : 4
+Porob      : 001
+Cisorp     : 4213
+Kodorp     : 16600
+Okorp      : 3509
+Nazcs      : XFRNKCF
+
+Nk         : US
+Kodnuts    : CZ0426
+Lau1       : CZ0426
+Knuts      : 4206
+Kodok      : 3509
+Cispou     : 42011
+Kodpo      : 00420
+Kodob      : 00420
+Ko         : 1
+Icob       : 567451
+Nazpo      : Bílina
+Nazpo2     : Bílina
+Nazob      : Bílina
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 002
+Cisorp     : 4201
+Kodorp     : 00420
+Okorp      : 3509
+Nazcs      : BKNKPA
+
+Nk         : US
+Kodnuts    : CZ0426
+Lau1       : CZ0426
+Knuts      : 4206
+Kodok      : 3509
+Cispou     : 42131
+Kodpo      : 03371
+Kodob      : 03371
+Ko         : 5
+Icob       : 567515
+Nazpo      : Duchcov
+Nazpo2     : Duchcov
+Nazob      : Duchcov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 007
+Cisorp     : 4213
+Kodorp     : 16600
+Okorp      : 3509
+Nazcs      : EYJCQZ
+
+Nk         : US
+Kodnuts    : CZ0426
+Lau1       : CZ0426
+Knuts      : 4206
+Kodok      : 3509
+Cispou     : 42132
+Kodpo      : 07526
+Kodob      : 07526
+Ko         : 4
+Icob       : 567639
+Nazpo      : Krupka
+Nazpo2     : Krupka
+Nazob      : Krupka
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 016
+Cisorp     : 4213
+Kodorp     : 16600
+Okorp      : 3509
+Nazcs      : MTYRMA
+
+Nk         : US
+Kodnuts    : CZ0427
+Lau1       : CZ0427
+Knuts      : 4207
+Kodok      : 3510
+Cispou     : 42142
+Kodpo      : 17487
+Kodob      : 17487
+Ko         : 4
+Icob       : 554804
+Nazpo      : Ústí nad Labem
+Nazpo2     : Ústí nad Labem
+Nazob      : Ústí nad Labem
+Ur         : 1
+Urob       : 1
+Om         : 2
+Porob      : 001
+Cisorp     : 4214
+Kodorp     : 17487
+Okorp      : 3510
+Nazcs      : YVXK PAE NABFO
+
+Nk         : US
+Kodnuts    : CZ0427
+Lau1       : CZ0427
+Knuts      : 4207
+Kodok      : 3510
+Cispou     : 42141
+Kodpo      : 08341
+Kodob      : 08341
+Ko         : 1
+Icob       : 568058
+Nazpo      : Libouchec
+Nazpo2     : Libouchec
+Nazob      : Libouchec
+Ur         : 4
+Urob       : 4
+Om         : 8
+Porob      : 008
+Cisorp     : 4214
+Kodorp     : 17487
+Okorp      : 3510
+Nazcs      : NKBQYJFC
+
+Nk         : US
+Kodnuts    : CZ0427
+Lau1       : CZ0427
+Knuts      : 4207
+Kodok      : 3510
+Cispou     : 42143
+Kodpo      : 17868
+Kodob      : 17868
+Ko         : 3
+Icob       : 568350
+Nazpo      : Velké Březno
+Nazpo2     : Velké Březno
+Nazob      : Velké Březno
+Ur         : 4
+Urob       : 4
+Om         : 8
+Porob      : 021
+Cisorp     : 4214
+Kodorp     : 17487
+Okorp      : 3510
+Nazcs      : ZFNMF BUFdPQ
+
+Nk         : LB
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Cispou     : 51011
+Kodpo      : 02138
+Kodob      : 02138
+Ko         : 5
+Icob       : 561380
+Nazpo      : Česká Lípa
+Nazpo2     : Česká Lípa
+Nazob      : Česká Lípa
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 5101
+Kodorp     : 02138
+Okorp      : 3501
+Nazcs      : DFVMA NKRA
+
+Nk         : LB
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Cispou     : 51061
+Kodpo      : 01808
+Kodob      : 01808
+Ko         : 2
+Icob       : 561479
+Nazpo      : Cvikov
+Nazpo2     : Cvikov
+Nazob      : Cvikov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 007
+Cisorp     : 5106
+Kodorp     : 10715
+Okorp      : 3501
+Nazcs      : CZKMQZ
+
+Nk         : LB
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Cispou     : 51012
+Kodpo      : 02821
+Kodob      : 02821
+Ko         : 5
+Icob       : 561495
+Nazpo      : Doksy
+Nazpo2     : Doksy
+Nazob      : Doksy
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 008
+Cisorp     : 5101
+Kodorp     : 02138
+Okorp      : 3501
+Nazcs      : EQMVc
+
+Nk         : LB
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Cispou     : 51013
+Kodpo      : 09525
+Kodob      : 09525
+Ko         : 7
+Icob       : 561835
+Nazpo      : Mimoň
+Nazpo2     : Mimoň
+Nazob      : Mimoň
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 026
+Cisorp     : 5101
+Kodorp     : 02138
+Okorp      : 3501
+Nazcs      : OKOQP
+
+Nk         : LB
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Cispou     : 51062
+Kodpo      : 10715
+Kodob      : 10715
+Ko         : 8
+Icob       : 561860
+Nazpo      : Nový Bor
+Nazpo2     : Nový Bor
+Nazob      : Nový Bor
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 028
+Cisorp     : 5106
+Kodorp     : 10715
+Okorp      : 3501
+Nazcs      : PQZc BQT
+
+Nk         : LB
+Kodnuts    : CZ0512
+Lau1       : CZ0512
+Knuts      : 5102
+Kodok      : 3504
+Cispou     : 51031
+Kodpo      : 05597
+Kodob      : 05597
+Ko         : 2
+Icob       : 563510
+Nazpo      : Jablonec nad Nisou
+Nazpo2     : Jablonec nad Nisou
+Nazob      : Jablonec nad Nisou
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 5103
+Kodorp     : 05597
+Okorp      : 3504
+Nazcs      : LABNQPFC PAE PKVQY
+
+Nk         : LB
+Kodnuts    : CZ0512
+Lau1       : CZ0512
+Knuts      : 5102
+Kodok      : 3504
+Cispou     : 51081
+Kodpo      : 16502
+Kodob      : 16502
+Ko         : 6
+Icob       : 563820
+Nazpo      : Tanvald
+Nazpo2     : Tanvald
+Nazob      : Tanvald
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 029
+Cisorp     : 5108
+Kodorp     : 16502
+Okorp      : 3504
+Nazcs      : XAPZANE
+
+Nk         : LB
+Kodnuts    : CZ0512
+Lau1       : CZ0512
+Knuts      : 5102
+Kodok      : 3504
+Cispou     : 51101
+Kodpo      : 19622
+Kodob      : 19622
+Ko         : 3
+Icob       : 563871
+Nazpo      : Železný Brod
+Nazpo2     : Železný Brod
+Nazob      : Železný Brod
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 034
+Cisorp     : 5110
+Kodorp     : 19622
+Okorp      : 3504
+Nazcs      : eFNFdPc BTQE
+
+Nk         : LB
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Cispou     : 51056
+Kodpo      : 08203
+Kodob      : 08203
+Ko         : 1
+Icob       : 563889
+Nazpo      : Liberec
+Nazpo2     : Liberec
+Nazob      : Liberec
+Ur         : 1
+Urob       : 1
+Om         : 3
+Porob      : 001
+Cisorp     : 5105
+Kodorp     : 08203
+Okorp      : 3505
+Nazcs      : NKBFTFC
+
+Nk         : LB
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Cispou     : 51051
+Kodpo      : 02284
+Kodob      : 02284
+Ko         : 5
+Icob       : 563960
+Nazpo      : Český Dub
+Nazpo2     : Český Dub
+Nazob      : Český Dub
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 008
+Cisorp     : 5105
+Kodorp     : 08203
+Okorp      : 3505
+Nazcs      : DFVMc EYB
+
+Nk         : LB
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Cispou     : 51021
+Kodpo      : 03509
+Kodob      : 03509
+Ko         : 2
+Icob       : 564028
+Nazpo      : Frýdlant
+Nazpo2     : Frýdlant
+Nazob      : Frýdlant
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 013
+Cisorp     : 5102
+Kodorp     : 03509
+Okorp      : 3505
+Nazcs      : GTcENAPX
+
+Nk         : LB
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Cispou     : 51052
+Kodpo      : 04034
+Kodob      : 04034
+Ko         : 7
+Icob       : 564061
+Nazpo      : Hodkovice nad Mohelkou
+Nazpo2     : Hodkovice nad Mohelkou
+Nazob      : Hodkovice nad Mohelkou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 018
+Cisorp     : 5105
+Kodorp     : 08203
+Okorp      : 3505
+Nazcs      : IQEMQZKCF PAE OQIFNMQY
+
+Nk         : LB
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Cispou     : 51053
+Kodpo      : 04739
+Kodob      : 04739
+Ko         : 2
+Icob       : 564095
+Nazpo      : Hrádek nad Nisou
+Nazpo2     : Hrádek nad Nisou
+Nazob      : Hrádek nad Nisou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 020
+Cisorp     : 5105
+Kodorp     : 08203
+Okorp      : 3505
+Nazcs      : ITAEFM PAE PKVQY
+
+Nk         : LB
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Cispou     : 51054
+Kodpo      : 05384
+Kodob      : 05384
+Ko         : 8
+Icob       : 564117
+Nazpo      : Chrastava
+Nazpo2     : Chrastava
+Nazob      : Chrastava
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 022
+Cisorp     : 5105
+Kodorp     : 08203
+Okorp      : 3505
+Nazcs      : JTAVXAZA
+
+Nk         : LB
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Cispou     : 51055
+Kodpo      : 05621
+Kodob      : 05621
+Ko         : 9
+Icob       : 561631
+Nazpo      : Jablonné v Podještědí
+Nazpo2     : Jablonné v Podještědí
+Nazob      : Jablonné v Podještědí
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 023
+Cisorp     : 5105
+Kodorp     : 08203
+Okorp      : 3505
+Nazcs      : LABNQPPF Z RQELFWXFEK
+
+Nk         : LB
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Cispou     : 51022
+Kodpo      : 10652
+Kodob      : 10652
+Ko         : 6
+Icob       : 564265
+Nazpo      : Nové Město pod Smrkem
+Nazpo2     : Nové Město pod Smrkem
+Nazob      : Nové Město pod Smrkem
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 037
+Cisorp     : 5102
+Kodorp     : 03509
+Okorp      : 3505
+Nazcs      : PQZF OFVXQ RQE VOTMFO
+
+Nk         : LB
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Cispou     : 51072
+Kodpo      : 14724
+Kodob      : 14724
+Ko         : 9
+Icob       : 576964
+Nazpo      : Semily
+Nazpo2     : Semily
+Nazob      : Semily
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 5107
+Kodorp     : 14724
+Okorp      : 3608
+Nazcs      : VFOKNc
+
+Nk         : LB
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Cispou     : 51041
+Kodpo      : 05995
+Kodob      : 05995
+Ko         : 1
+Icob       : 577197
+Nazpo      : Jilemnice
+Nazpo2     : Jilemnice
+Nazob      : Jilemnice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 020
+Cisorp     : 5104
+Kodorp     : 05995
+Okorp      : 3608
+Nazcs      : LKNFOPKCF
+
+Nk         : LB
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Cispou     : 51071
+Kodpo      : 08675
+Kodob      : 08675
+Ko         : 4
+Icob       : 577308
+Nazpo      : Lomnice nad Popelkou
+Nazpo2     : Lomnice nad Popelkou
+Nazob      : Lomnice nad Popelkou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 029
+Cisorp     : 5107
+Kodorp     : 14724
+Okorp      : 3608
+Nazcs      : NQOPKCF PAE RQRFNMQY
+
+Nk         : LB
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Cispou     : 51042
+Kodpo      : 14090
+Kodob      : 14090
+Ko         : 2
+Icob       : 577456
+Nazpo      : Rokytnice nad Jizerou
+Nazpo2     : Rokytnice nad Jizerou
+Nazob      : Rokytnice nad Jizerou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 045
+Cisorp     : 5104
+Kodorp     : 05995
+Okorp      : 3608
+Nazcs      : TQMcXPKCF PAE LKdFTQY
+
+Nk         : LB
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Cispou     : 51091
+Kodpo      : 17160
+Kodob      : 17160
+Ko         : 3
+Icob       : 577626
+Nazpo      : Turnov
+Nazpo2     : Turnov
+Nazob      : Turnov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 057
+Cisorp     : 5109
+Kodorp     : 17160
+Okorp      : 3608
+Nazcs      : XYTPQZ
+
+Nk         : KH
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Cispou     : 52051
+Kodpo      : 04687
+Kodob      : 04687
+Ko         : 6
+Icob       : 569810
+Nazpo      : Hradec Králové
+Nazpo2     : Hradec Králové
+Nazob      : Hradec Králové
+Ur         : 1
+Urob       : 1
+Om         : 2
+Porob      : 001
+Cisorp     : 5205
+Kodorp     : 04687
+Okorp      : 3602
+Nazcs      : ITAEFC MTANQZF
+
+Nk         : KH
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Cispou     : 52052
+Kodpo      : 05180
+Kodob      : 05180
+Ko         : 2
+Icob       : 570109
+Nazpo      : Chlumec nad Cidlinou
+Nazpo2     : Chlumec nad Cidlinou
+Nazob      : Chlumec nad Cidlinou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 023
+Cisorp     : 5205
+Kodorp     : 04687
+Okorp      : 3602
+Nazcs      : JNYOFC PAE CKENKPQY
+
+Nk         : KH
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Cispou     : 52053
+Kodpo      : 10247
+Kodob      : 10247
+Ko         : 4
+Icob       : 570451
+Nazpo      : Nechanice
+Nazpo2     : Nechanice
+Nazob      : Nechanice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 055
+Cisorp     : 5205
+Kodorp     : 04687
+Okorp      : 3602
+Nazcs      : PFJAPKCF
+
+Nk         : KH
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Cispou     : 52121
+Kodpo      : 10716
+Kodob      : 10716
+Ko         : 6
+Icob       : 570508
+Nazpo      : Nový Bydžov
+Nazpo2     : Nový Bydžov
+Nazob      : Nový Bydžov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 058
+Cisorp     : 5212
+Kodorp     : 10716
+Okorp      : 3602
+Nazcs      : PQZc BcEeQZ
+
+Nk         : KH
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Cispou     : 52054
+Kodpo      : 15108
+Kodob      : 15108
+Ko         : 4
+Icob       : 570877
+Nazpo      : Smiřice
+Nazpo2     : Smiřice
+Nazob      : Smiřice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 082
+Cisorp     : 5205
+Kodorp     : 04687
+Okorp      : 3602
+Nazcs      : VOKUKCF
+
+Nk         : KH
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Cispou     : 52055
+Kodpo      : 16945
+Kodob      : 16945
+Ko         : 5
+Icob       : 571041
+Nazpo      : Třebechovice pod Orebem
+Nazpo2     : Třebechovice pod Orebem
+Nazob      : Třebechovice pod Orebem
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 094
+Cisorp     : 5205
+Kodorp     : 04687
+Okorp      : 3602
+Nazcs      : XUFBFJQZKCF RQE QTFBFO
+
+Nk         : KH
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Cispou     : 52071
+Kodpo      : 05954
+Kodob      : 05954
+Ko         : 4
+Icob       : 572659
+Nazpo      : Jičín
+Nazpo2     : Jičín
+Nazob      : Jičín
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 5207
+Kodorp     : 05954
+Okorp      : 3604
+Nazcs      : LKDKP
+
+Nk         : KH
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Cispou     : 52041
+Kodpo      : 04516
+Kodob      : 04516
+Ko         : 1
+Icob       : 572926
+Nazpo      : Hořice
+Nazpo2     : Hořice
+Nazob      : Hořice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 025
+Cisorp     : 5204
+Kodorp     : 04516
+Okorp      : 3604
+Nazcs      : IQUKCF
+
+Nk         : KH
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Cispou     : 52072
+Kodpo      : 06929
+Kodob      : 06929
+Ko         : 9
+Icob       : 573060
+Nazpo      : Kopidlno
+Nazpo2     : Kopidlno
+Nazob      : Kopidlno
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 037
+Cisorp     : 5207
+Kodorp     : 05954
+Okorp      : 3604
+Nazcs      : MQRKENPQ
+
+Nk         : KH
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Cispou     : 52073
+Kodpo      : 07933
+Kodob      : 07933
+Ko         : 2
+Icob       : 573094
+Nazpo      : Lázně Bělohrad
+Nazpo2     : Lázně Bělohrad
+Nazob      : Lázně Bělohrad
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 042
+Cisorp     : 5207
+Kodorp     : 05954
+Okorp      : 3604
+Nazcs      : NAdPF BFNQITAE
+
+Nk         : KH
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Cispou     : 52101
+Kodpo      : 10512
+Kodob      : 10512
+Ko         : 1
+Icob       : 573248
+Nazpo      : Nová Paka
+Nazpo2     : Nová Paka
+Nazob      : Nová Paka
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 056
+Cisorp     : 5210
+Kodorp     : 10512
+Okorp      : 3604
+Nazcs      : PQZA RAMA
+
+Nk         : KH
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Cispou     : 52074
+Kodpo      : 15209
+Kodob      : 15209
+Ko         : 9
+Icob       : 573493
+Nazpo      : Sobotka
+Nazpo2     : Sobotka
+Nazob      : Sobotka
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 079
+Cisorp     : 5207
+Kodorp     : 05954
+Okorp      : 3604
+Nazcs      : VQBQXMA
+
+Nk         : KH
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Cispou     : 52094
+Kodpo      : 10126
+Kodob      : 10126
+Ko         : 5
+Icob       : 573868
+Nazpo      : Náchod
+Nazpo2     : Náchod
+Nazob      : Náchod
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 5209
+Kodorp     : 10126
+Okorp      : 3605
+Nazcs      : PAJQE
+
+Nk         : KH
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Cispou     : 52011
+Kodpo      : 01276
+Kodob      : 01276
+Ko         : 9
+Icob       : 573922
+Nazpo      : Broumov
+Nazpo2     : Broumov
+Nazob      : Broumov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 007
+Cisorp     : 5201
+Kodorp     : 01276
+Okorp      : 3605
+Nazcs      : BTQYOQZ
+
+Nk         : KH
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Cispou     : 52091
+Kodpo      : 02110
+Kodob      : 02110
+Ko         : 5
+Icob       : 573965
+Nazpo      : Červený Kostelec
+Nazpo2     : Červený Kostelec
+Nazob      : Červený Kostelec
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 012
+Cisorp     : 5209
+Kodorp     : 10126
+Okorp      : 3605
+Nazcs      : DFTZFPc MQVXFNFC
+
+Nk         : KH
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Cispou     : 52092
+Kodpo      : 02168
+Kodob      : 02168
+Ko         : 7
+Icob       : 573990
+Nazpo      : Česká Skalice
+Nazpo2     : Česká Skalice
+Nazob      : Česká Skalice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 015
+Cisorp     : 5209
+Kodorp     : 10126
+Okorp      : 3605
+Nazcs      : DFVMA VMANKCF
+
+Nk         : KH
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Cispou     : 52093
+Kodpo      : 04837
+Kodob      : 04837
+Ko         : 2
+Icob       : 574082
+Nazpo      : Hronov
+Nazpo2     : Hronov
+Nazob      : Hronov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 024
+Cisorp     : 5209
+Kodorp     : 10126
+Okorp      : 3605
+Nazcs      : ITQPQZ
+
+Nk         : KH
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Cispou     : 52061
+Kodpo      : 05733
+Kodob      : 05733
+Ko         : 9
+Icob       : 574121
+Nazpo      : Jaroměř
+Nazpo2     : Jaroměř
+Nazob      : Jaroměř
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 027
+Cisorp     : 5206
+Kodorp     : 05733
+Okorp      : 3605
+Nazcs      : LATQOFU
+
+Nk         : KH
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Cispou     : 52111
+Kodpo      : 10644
+Kodob      : 10644
+Ko         : 5
+Icob       : 574279
+Nazpo      : Nové Město nad Metují
+Nazpo2     : Nové Město nad Metují
+Nazob      : Nové Město nad Metují
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 042
+Cisorp     : 5211
+Kodorp     : 10644
+Okorp      : 3605
+Nazcs      : PQZF OFVXQ PAE OFXYLK
+
+Nk         : KH
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Cispou     : 52095
+Kodpo      : 12532
+Kodob      : 12532
+Ko         : 6
+Icob       : 574341
+Nazpo      : Police nad Metují
+Nazpo2     : Police nad Metují
+Nazob      : Police nad Metují
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 046
+Cisorp     : 5209
+Kodorp     : 10126
+Okorp      : 3605
+Nazcs      : RQNKCF PAE OFXYLK
+
+Nk         : KH
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Cispou     : 52012
+Kodpo      : 16639
+Kodob      : 16639
+Ko         : 1
+Icob       : 574538
+Nazpo      : Teplice nad Metují
+Nazpo2     : Teplice nad Metují
+Nazob      : Teplice nad Metují
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 062
+Cisorp     : 5201
+Kodorp     : 01276
+Okorp      : 3605
+Nazcs      : XFRNKCF PAE OFXYLK
+
+Nk         : KH
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Cispou     : 52132
+Kodpo      : 14410
+Kodob      : 14410
+Ko         : 0
+Icob       : 576069
+Nazpo      : Rychnov nad Kněžnou
+Nazpo2     : Rychnov nad Kněžnou
+Nazob      : Rychnov nad Kněžnou
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 5213
+Kodorp     : 14410
+Okorp      : 3607
+Nazcs      : TcJPQZ PAE MPFePQY
+
+Nk         : KH
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Cispou     : 52021
+Kodpo      : 02749
+Kodob      : 02749
+Ko         : 9
+Icob       : 576271
+Nazpo      : Dobruška
+Nazpo2     : Dobruška
+Nazob      : Dobruška
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 019
+Cisorp     : 5202
+Kodorp     : 02749
+Okorp      : 3607
+Nazcs      : EQBTYWMA
+
+Nk         : KH
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Cispou     : 52081
+Kodpo      : 07019
+Kodob      : 07019
+Ko         : 0
+Icob       : 576361
+Nazpo      : Kostelec nad Orlicí
+Nazpo2     : Kostelec nad Orlicí
+Nazob      : Kostelec nad Orlicí
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 028
+Cisorp     : 5208
+Kodorp     : 07019
+Okorp      : 3607
+Nazcs      : MQVXFNFC PAE QTNKCK
+
+Nk         : KH
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Cispou     : 52022
+Kodpo      : 11195
+Kodob      : 11195
+Ko         : 3
+Icob       : 576590
+Nazpo      : Opočno
+Nazpo2     : Opočno
+Nazob      : Opočno
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 047
+Cisorp     : 5202
+Kodorp     : 02749
+Okorp      : 3607
+Nazcs      : QRQDPQ
+
+Nk         : KH
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Cispou     : 52131
+Kodpo      : 14105
+Kodob      : 14105
+Ko         : 4
+Icob       : 576701
+Nazpo      : Rokytnice v Orlických horách
+Nazpo2     : Rokytnice v Orlických horách
+Nazob      : Rokytnice v Orlických horách
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 058
+Cisorp     : 5213
+Kodorp     : 14410
+Okorp      : 3607
+Nazcs      : TQMcXPKCF Z QTNKCMcJ IQTAJ
+
+Nk         : KH
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Cispou     : 52082
+Kodpo      : 17242
+Kodob      : 17242
+Ko         : 1
+Icob       : 576859
+Nazpo      : Týniště nad Orlicí
+Nazpo2     : Týniště nad Orlicí
+Nazob      : Týniště nad Orlicí
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 072
+Cisorp     : 5208
+Kodorp     : 07019
+Okorp      : 3607
+Nazcs      : XcPKWXF PAE QTNKCK
+
+Nk         : KH
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Cispou     : 52133
+Kodpo      : 17678
+Kodob      : 17678
+Ko         : 8
+Icob       : 576883
+Nazpo      : Vamberk
+Nazpo2     : Vamberk
+Nazob      : Vamberk
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 074
+Cisorp     : 5213
+Kodorp     : 14410
+Okorp      : 3607
+Nazcs      : ZAOBFTM
+
+Nk         : KH
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Cispou     : 52142
+Kodpo      : 16902
+Kodob      : 16902
+Ko         : 1
+Icob       : 579025
+Nazpo      : Trutnov
+Nazpo2     : Trutnov
+Nazob      : Trutnov
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 5214
+Kodorp     : 16902
+Okorp      : 3610
+Nazcs      : XTYXPQZ
+
+Nk         : KH
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Cispou     : 52031
+Kodpo      : 03396
+Kodob      : 03396
+Ko         : 1
+Icob       : 579203
+Nazpo      : Dvůr Králové nad Labem
+Nazpo2     : Dvůr Králové nad Labem
+Nazob      : Dvůr Králové nad Labem
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 018
+Cisorp     : 5203
+Kodorp     : 03396
+Okorp      : 3610
+Nazcs      : EZYT MTANQZF PAE NABFO
+
+Nk         : KH
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Cispou     : 52151
+Kodpo      : 04577
+Kodob      : 04577
+Ko         : 2
+Icob       : 579297
+Nazpo      : Hostinné
+Nazpo2     : Hostinné
+Nazob      : Hostinné
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 025
+Cisorp     : 5215
+Kodorp     : 18630
+Okorp      : 3610
+Nazcs      : IQVXKPPF
+
+Nk         : KH
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Cispou     : 52141
+Kodpo      : 16109
+Kodob      : 16109
+Ko         : 8
+Icob       : 579734
+Nazpo      : Svoboda nad Úpou
+Nazpo2     : Svoboda nad Úpou
+Nazob      : Svoboda nad Úpou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 060
+Cisorp     : 5214
+Kodorp     : 16902
+Okorp      : 3610
+Nazcs      : VZQBQEA PAE YRQY
+
+Nk         : KH
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Cispou     : 52143
+Kodpo      : 17465
+Kodob      : 17465
+Ko         : 3
+Icob       : 579777
+Nazpo      : Úpice
+Nazpo2     : Úpice
+Nazob      : Úpice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 064
+Cisorp     : 5214
+Kodorp     : 16902
+Okorp      : 3610
+Nazcs      : YRKCF
+
+Nk         : KH
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Cispou     : 52152
+Kodpo      : 18630
+Kodob      : 18630
+Ko         : 9
+Icob       : 579858
+Nazpo      : Vrchlabí
+Nazpo2     : Vrchlabí
+Nazob      : Vrchlabí
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 071
+Cisorp     : 5215
+Kodorp     : 18630
+Okorp      : 3610
+Nazcs      : ZTJNABK
+
+Nk         : KH
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Cispou     : 52144
+Kodpo      : 19424
+Kodob      : 19424
+Ko         : 7
+Icob       : 579874
+Nazpo      : Žacléř
+Nazpo2     : Žacléř
+Nazob      : Žacléř
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 075
+Cisorp     : 5214
+Kodorp     : 16902
+Okorp      : 3610
+Nazcs      : eACNFU
+
+Nk         : PA
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Cispou     : 53043
+Kodpo      : 05429
+Kodob      : 05429
+Ko         : 1
+Icob       : 571164
+Nazpo      : Chrudim
+Nazpo2     : Chrudim
+Nazob      : Chrudim
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 5304
+Kodorp     : 05429
+Okorp      : 3603
+Nazcs      : JTYEKO
+
+Nk         : PA
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Cispou     : 53041
+Kodpo      : 03873
+Kodob      : 03873
+Ko         : 3
+Icob       : 571385
+Nazpo      : Heřmanův Městec
+Nazpo2     : Heřmanův Městec
+Nazob      : Heřmanův Městec
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 018
+Cisorp     : 5304
+Kodorp     : 05429
+Okorp      : 3603
+Nazcs      : IFUOAPYZ OFVXFC
+
+Nk         : PA
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Cispou     : 53021
+Kodpo      : 03930
+Kodob      : 03930
+Ko         : 6
+Icob       : 571393
+Nazpo      : Hlinsko
+Nazpo2     : Hlinsko
+Nazob      : Hlinsko
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 019
+Cisorp     : 5302
+Kodorp     : 03930
+Okorp      : 3603
+Nazcs      : INKPVMQ
+
+Nk         : PA
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Cispou     : 53042
+Kodpo      : 05379
+Kodob      : 05379
+Ko         : 1
+Icob       : 571539
+Nazpo      : Chrast
+Nazpo2     : Chrast
+Nazob      : Chrast
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 029
+Cisorp     : 5304
+Kodorp     : 05429
+Okorp      : 3603
+Nazcs      : JTAVX
+
+Nk         : PA
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Cispou     : 53044
+Kodpo      : 10163
+Kodob      : 10163
+Ko         : 0
+Icob       : 571911
+Nazpo      : Nasavrky
+Nazpo2     : Nasavrky
+Nazob      : Nasavrky
+Ur         : 5
+Urob       : 5
+Om         : 8
+Porob      : 058
+Cisorp     : 5304
+Kodorp     : 05429
+Okorp      : 3603
+Nazcs      : PAVAZTMc
+
+Nk         : PA
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Cispou     : 53045
+Kodpo      : 14916
+Kodob      : 14916
+Ko         : 1
+Icob       : 572241
+Nazpo      : Skuteč
+Nazpo2     : Skuteč
+Nazob      : Skuteč
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 077
+Cisorp     : 5304
+Kodorp     : 05429
+Okorp      : 3603
+Nazcs      : VMYXFD
+
+Nk         : PA
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Cispou     : 53046
+Kodpo      : 17073
+Kodob      : 17073
+Ko         : 9
+Icob       : 572411
+Nazpo      : Třemošnice
+Nazpo2     : Třemošnice
+Nazob      : Třemošnice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 089
+Cisorp     : 5304
+Kodorp     : 05429
+Okorp      : 3603
+Nazcs      : XUFOQWPKCF
+
+Nk         : PA
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Cispou     : 53092
+Kodpo      : 11765
+Kodob      : 11765
+Ko         : 0
+Icob       : 555134
+Nazpo      : Pardubice
+Nazpo2     : Pardubice
+Nazob      : Pardubice
+Ur         : 1
+Urob       : 1
+Om         : 3
+Porob      : 001
+Cisorp     : 5309
+Kodorp     : 11765
+Okorp      : 3606
+Nazcs      : RATEYBKCF
+
+Nk         : PA
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Cispou     : 53031
+Kodpo      : 04114
+Kodob      : 04114
+Ko         : 9
+Icob       : 574988
+Nazpo      : Holice
+Nazpo2     : Holice
+Nazob      : Holice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 022
+Cisorp     : 5303
+Kodorp     : 04114
+Okorp      : 3606
+Nazcs      : IQNKCF
+
+Nk         : PA
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Cispou     : 53111
+Kodpo      : 16569
+Kodob      : 16569
+Ko         : 7
+Icob       : 575071
+Nazpo      : Chvaletice
+Nazpo2     : Chvaletice
+Nazob      : Chvaletice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 030
+Cisorp     : 5311
+Kodorp     : 13456
+Okorp      : 3606
+Nazcs      : JZANFXKCF
+
+Nk         : PA
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Cispou     : 53091
+Kodpo      : 00617
+Kodob      : 00617
+Ko         : 3
+Icob       : 574767
+Nazpo      : Lázně Bohdaneč
+Nazpo2     : Lázně Bohdaneč
+Nazob      : Lázně Bohdaneč
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 046
+Cisorp     : 5309
+Kodorp     : 11765
+Okorp      : 3606
+Nazcs      : NAdPF BQIEAPFD
+
+Nk         : PA
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Cispou     : 53112
+Kodpo      : 13456
+Kodob      : 13456
+Ko         : 2
+Icob       : 575500
+Nazpo      : Přelouč
+Nazpo2     : Přelouč
+Nazob      : Přelouč
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 065
+Cisorp     : 5311
+Kodorp     : 13456
+Okorp      : 3606
+Nazcs      : RUFNQYD
+
+Nk         : PA
+Kodnuts    : CZ0533
+Lau1       : CZ0533
+Knuts      : 5303
+Kodok      : 3609
+Cispou     : 53121
+Kodpo      : 16095
+Kodob      : 16095
+Ko         : 4
+Icob       : 577731
+Nazpo      : Svitavy
+Nazpo2     : Svitavy
+Nazob      : Svitavy
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 5312
+Kodorp     : 16095
+Okorp      : 3609
+Nazcs      : VZKXAZc
+
+Nk         : PA
+Kodnuts    : CZ0533
+Lau1       : CZ0533
+Knuts      : 5303
+Kodok      : 3609
+Cispou     : 53081
+Kodpo      : 05932
+Kodob      : 05932
+Ko         : 3
+Icob       : 578193
+Nazpo      : Jevíčko
+Nazpo2     : Jevíčko
+Nazob      : Jevíčko
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 043
+Cisorp     : 5308
+Kodorp     : 09880
+Okorp      : 3609
+Nazcs      : LFZKDMQ
+
+Nk         : PA
+Kodnuts    : CZ0533
+Lau1       : CZ0533
+Knuts      : 5303
+Kodok      : 3609
+Cispou     : 53071
+Kodpo      : 08567
+Kodob      : 08567
+Ko         : 7
+Icob       : 578347
+Nazpo      : Litomyšl
+Nazpo2     : Litomyšl
+Nazob      : Litomyšl
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 056
+Cisorp     : 5307
+Kodorp     : 08567
+Okorp      : 3609
+Nazcs      : NKXQOcWN
+
+Nk         : PA
+Kodnuts    : CZ0533
+Lau1       : CZ0533
+Knuts      : 5303
+Kodok      : 3609
+Cispou     : 53082
+Kodpo      : 09880
+Kodob      : 09880
+Ko         : 9
+Icob       : 578444
+Nazpo      : Moravská Třebová
+Nazpo2     : Moravská Třebová
+Nazob      : Moravská Třebová
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 064
+Cisorp     : 5308
+Kodorp     : 09880
+Okorp      : 3609
+Nazcs      : OQTAZVMA XUFBQZA
+
+Nk         : PA
+Kodnuts    : CZ0533
+Lau1       : CZ0533
+Knuts      : 5303
+Kodok      : 3609
+Cispou     : 53101
+Kodpo      : 12535
+Kodob      : 12535
+Ko         : 1
+Icob       : 578576
+Nazpo      : Polička
+Nazpo2     : Polička
+Nazob      : Polička
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 074
+Cisorp     : 5310
+Kodorp     : 12535
+Okorp      : 3609
+Nazcs      : RQNKDMA
+
+Nk         : PA
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Cispou     : 53131
+Kodpo      : 17527
+Kodob      : 17527
+Ko         : 7
+Icob       : 579891
+Nazpo      : Ústí nad Orlicí
+Nazpo2     : Ústí nad Orlicí
+Nazob      : Ústí nad Orlicí
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 5313
+Kodorp     : 17527
+Okorp      : 3611
+Nazcs      : YVXK PAE QTNKCK
+
+Nk         : PA
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Cispou     : 53011
+Kodpo      : 02175
+Kodob      : 02175
+Ko         : 0
+Icob       : 580031
+Nazpo      : Česká Třebová
+Nazpo2     : Česká Třebová
+Nazob      : Česká Třebová
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 013
+Cisorp     : 5301
+Kodorp     : 02175
+Okorp      : 3611
+Nazcs      : DFVMA XUFBQZA
+
+Nk         : PA
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Cispou     : 53141
+Kodpo      : 05197
+Kodob      : 05197
+Ko         : 7
+Icob       : 580350
+Nazpo      : Choceň
+Nazpo2     : Choceň
+Nazob      : Choceň
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 033
+Cisorp     : 5314
+Kodorp     : 18822
+Okorp      : 3611
+Nazcs      : JQCFP
+
+Nk         : PA
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Cispou     : 53151
+Kodpo      : 05619
+Kodob      : 05619
+Ko         : 7
+Icob       : 580376
+Nazpo      : Jablonné nad Orlicí
+Nazpo2     : Jablonné nad Orlicí
+Nazob      : Jablonné nad Orlicí
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 034
+Cisorp     : 5315
+Kodorp     : 19436
+Okorp      : 3611
+Nazcs      : LABNQPPF PAE QTNKCK
+
+Nk         : PA
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Cispou     : 53051
+Kodpo      : 07255
+Kodob      : 07255
+Ko         : 9
+Icob       : 580481
+Nazpo      : Králíky
+Nazpo2     : Králíky
+Nazob      : Králíky
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 042
+Cisorp     : 5305
+Kodorp     : 07255
+Okorp      : 3611
+Nazcs      : MTANKMc
+
+Nk         : PA
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Cispou     : 53061
+Kodpo      : 07892
+Kodob      : 07892
+Ko         : 1
+Icob       : 580511
+Nazpo      : Lanškroun
+Nazpo2     : Lanškroun
+Nazob      : Lanškroun
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 045
+Cisorp     : 5306
+Kodorp     : 07892
+Okorp      : 3611
+Nazcs      : NAPWMTQYP
+
+Nk         : PA
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Cispou     : 53152
+Kodpo      : 08066
+Kodob      : 08066
+Ko         : 7
+Icob       : 580538
+Nazpo      : Letohrad
+Nazpo2     : Letohrad
+Nazob      : Letohrad
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 047
+Cisorp     : 5315
+Kodorp     : 19436
+Okorp      : 3611
+Nazcs      : NFXQITAE
+
+Nk         : PA
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Cispou     : 53142
+Kodpo      : 18822
+Kodob      : 18822
+Ko         : 1
+Icob       : 581186
+Nazpo      : Vysoké Mýto
+Nazpo2     : Vysoké Mýto
+Nazob      : Vysoké Mýto
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 107
+Cisorp     : 5314
+Kodorp     : 18822
+Okorp      : 3611
+Nazcs      : ZcVQMF OcXQ
+
+Nk         : PA
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Cispou     : 53153
+Kodpo      : 19436
+Kodob      : 19436
+Ko         : 1
+Icob       : 581259
+Nazpo      : Žamberk
+Nazpo2     : Žamberk
+Nazob      : Žamberk
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 113
+Cisorp     : 5315
+Kodorp     : 19436
+Okorp      : 3611
+Nazcs      : eAOBFTM
+
+Nk         : VY
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Cispou     : 61022
+Kodpo      : 03782
+Kodob      : 03782
+Ko         : 6
+Icob       : 568414
+Nazpo      : Havlíčkův Brod
+Nazpo2     : Havlíčkův Brod
+Nazob      : Havlíčkův Brod
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 6102
+Kodorp     : 03782
+Okorp      : 3601
+Nazcs      : IAZNKDMYZ BTQE
+
+Nk         : VY
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Cispou     : 61021
+Kodpo      : 03548
+Kodob      : 03548
+Ko         : 3
+Icob       : 568635
+Nazpo      : Golčův Jeníkov
+Nazpo2     : Golčův Jeníkov
+Nazob      : Golčův Jeníkov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 019
+Cisorp     : 6102
+Kodorp     : 03782
+Okorp      : 3601
+Nazcs      : HQNDYZ LFPKMQZ
+
+Nk         : VY
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Cispou     : 61041
+Kodpo      : 05283
+Kodob      : 05283
+Ko         : 3
+Icob       : 568759
+Nazpo      : Chotěboř
+Nazpo2     : Chotěboř
+Nazob      : Chotěboř
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 029
+Cisorp     : 6104
+Kodorp     : 05283
+Okorp      : 3601
+Nazcs      : JQXFBQU
+
+Nk         : VY
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Cispou     : 61111
+Kodpo      : 07971
+Kodob      : 07971
+Ko         : 5
+Icob       : 568988
+Nazpo      : Ledeč nad Sázavou
+Nazpo2     : Ledeč nad Sázavou
+Nazob      : Ledeč nad Sázavou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 054
+Cisorp     : 6111
+Kodorp     : 16051
+Okorp      : 3601
+Nazcs      : NFEFD PAE VAdAZQY
+
+Nk         : VY
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Cispou     : 61023
+Kodpo      : 13569
+Kodob      : 13569
+Ko         : 1
+Icob       : 569321
+Nazpo      : Přibyslav
+Nazpo2     : Přibyslav
+Nazob      : Přibyslav
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 082
+Cisorp     : 6102
+Kodorp     : 03782
+Okorp      : 3601
+Nazcs      : RUKBcVNAZ
+
+Nk         : VY
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Cispou     : 61112
+Kodpo      : 16051
+Kodob      : 16051
+Ko         : 2
+Icob       : 569569
+Nazpo      : Světlá nad Sázavou
+Nazpo2     : Světlá nad Sázavou
+Nazob      : Světlá nad Sázavou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 100
+Cisorp     : 6111
+Kodorp     : 16051
+Okorp      : 3601
+Nazcs      : VZFXNA PAE VAdAZQY
+
+Nk         : VY
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Cispou     : 61051
+Kodpo      : 05967
+Kodob      : 05967
+Ko         : 6
+Icob       : 586846
+Nazpo      : Jihlava
+Nazpo2     : Jihlava
+Nazob      : Jihlava
+Ur         : 1
+Urob       : 1
+Om         : 3
+Porob      : 001
+Cisorp     : 6105
+Kodorp     : 05967
+Okorp      : 3707
+Nazcs      : LKINAZA
+
+Nk         : VY
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Cispou     : 61052
+Kodpo      : 12549
+Kodob      : 12549
+Ko         : 1
+Icob       : 587711
+Nazpo      : Polná
+Nazpo2     : Polná
+Nazob      : Polná
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 075
+Cisorp     : 6105
+Kodorp     : 05967
+Okorp      : 3707
+Nazcs      : RQNPA
+
+Nk         : VY
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Cispou     : 61121
+Kodpo      : 16554
+Kodob      : 16554
+Ko         : 9
+Icob       : 588024
+Nazpo      : Telč
+Nazpo2     : Telč
+Nazob      : Telč
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 098
+Cisorp     : 6112
+Kodorp     : 16554
+Okorp      : 3707
+Nazcs      : XFND
+
+Nk         : VY
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Cispou     : 61053
+Kodpo      : 17076
+Kodob      : 17076
+Ko         : 3
+Icob       : 588032
+Nazpo      : Třešť
+Nazpo2     : Třešť
+Nazob      : Třešť
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 099
+Cisorp     : 6105
+Kodorp     : 05967
+Okorp      : 3707
+Nazcs      : XUFWX
+
+Nk         : VY
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Cispou     : 61102
+Kodpo      : 11891
+Kodob      : 11891
+Ko         : 5
+Icob       : 547492
+Nazpo      : Pelhřimov
+Nazpo2     : Pelhřimov
+Nazob      : Pelhřimov
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 6110
+Kodorp     : 11891
+Okorp      : 3304
+Nazcs      : RFNIUKOQZ
+
+Nk         : VY
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Cispou     : 61031
+Kodpo      : 04932
+Kodob      : 04932
+Ko         : 8
+Icob       : 547999
+Nazpo      : Humpolec
+Nazpo2     : Humpolec
+Nazob      : Humpolec
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 035
+Cisorp     : 6103
+Kodorp     : 04932
+Okorp      : 3304
+Nazcs      : IYORQNFC
+
+Nk         : VY
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Cispou     : 61101
+Kodpo      : 06257
+Kodob      : 06257
+Ko         : 0
+Icob       : 548111
+Nazpo      : Kamenice nad Lipou
+Nazpo2     : Kamenice nad Lipou
+Nazob      : Kamenice nad Lipou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 043
+Cisorp     : 6110
+Kodorp     : 11891
+Okorp      : 3304
+Nazcs      : MAOFPKCF PAE NKRQY
+
+Nk         : VY
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Cispou     : 61091
+Kodpo      : 11721
+Kodob      : 11721
+Ko         : 8
+Icob       : 548511
+Nazpo      : Pacov
+Nazpo2     : Pacov
+Nazob      : Pacov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 074
+Cisorp     : 6109
+Kodorp     : 11721
+Okorp      : 3304
+Nazcs      : RACQZ
+
+Nk         : VY
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Cispou     : 61103
+Kodpo      : 12300
+Kodob      : 12300
+Ko         : 5
+Icob       : 548561
+Nazpo      : Počátky
+Nazpo2     : Počátky
+Nazob      : Počátky
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 077
+Cisorp     : 6110
+Kodorp     : 11891
+Okorp      : 3304
+Nazcs      : RQDAXMc
+
+Nk         : VY
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Cispou     : 61133
+Kodpo      : 16973
+Kodob      : 16973
+Ko         : 1
+Icob       : 590266
+Nazpo      : Třebíč
+Nazpo2     : Třebíč
+Nazob      : Třebíč
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 6113
+Kodorp     : 16973
+Okorp      : 3710
+Nazcs      : XUFBKD
+
+Nk         : VY
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Cispou     : 61131
+Kodpo      : 04846
+Kodob      : 04846
+Ko         : 1
+Icob       : 590673
+Nazpo      : Hrotovice
+Nazpo2     : Hrotovice
+Nazob      : Hrotovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 040
+Cisorp     : 6113
+Kodorp     : 16973
+Okorp      : 3710
+Nazcs      : ITQXQZKCF
+
+Nk         : VY
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Cispou     : 61132
+Kodpo      : 05750
+Kodob      : 05750
+Ko         : 9
+Icob       : 590754
+Nazpo      : Jaroměřice nad Rokytnou
+Nazpo2     : Jaroměřice nad Rokytnou
+Nazob      : Jaroměřice nad Rokytnou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 047
+Cisorp     : 6113
+Kodorp     : 16973
+Okorp      : 3710
+Nazcs      : LATQOFUKCF PAE TQMcXPQY
+
+Nk         : VY
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Cispou     : 61061
+Kodpo      : 05822
+Kodob      : 05822
+Ko         : 0
+Icob       : 590789
+Nazpo      : Jemnice
+Nazpo2     : Jemnice
+Nazob      : Jemnice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 049
+Cisorp     : 6106
+Kodorp     : 09890
+Okorp      : 3710
+Nazcs      : LFOPKCF
+
+Nk         : VY
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Cispou     : 61062
+Kodpo      : 09890
+Kodob      : 09890
+Ko         : 6
+Icob       : 591181
+Nazpo      : Moravské Budějovice
+Nazpo2     : Moravské Budějovice
+Nazob      : Moravské Budějovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 093
+Cisorp     : 6106
+Kodorp     : 09890
+Okorp      : 3710
+Nazcs      : OQTAZVMF BYEFLQZKCF
+
+Nk         : VY
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Cispou     : 61071
+Kodpo      : 10156
+Kodob      : 10156
+Ko         : 7
+Icob       : 591211
+Nazpo      : Náměšť nad Oslavou
+Nazpo2     : Náměšť nad Oslavou
+Nazob      : Náměšť nad Oslavou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 096
+Cisorp     : 6107
+Kodorp     : 10156
+Okorp      : 3710
+Nazcs      : PAOFWX PAE QVNAZQY
+
+Nk         : VY
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Cispou     : 61151
+Kodpo      : 19523
+Kodob      : 19523
+Ko         : 5
+Icob       : 595209
+Nazpo      : Žďár nad Sázavou
+Nazpo2     : Žďár nad Sázavou
+Nazob      : Žďár nad Sázavou
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 6115
+Kodorp     : 19523
+Okorp      : 3714
+Nazcs      : eEAT PAE VAdAZQY
+
+Nk         : VY
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Cispou     : 61011
+Kodpo      : 01695
+Kodob      : 01695
+Ko         : 1
+Icob       : 595411
+Nazpo      : Bystřice nad Pernštejnem
+Nazpo2     : Bystřice nad Pernštejnem
+Nazob      : Bystřice nad Pernštejnem
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 018
+Cisorp     : 6101
+Kodorp     : 01695
+Okorp      : 3714
+Nazcs      : BcVXUKCF PAE RFTPWXFLPFO
+
+Nk         : VY
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Cispou     : 61081
+Kodpo      : 10641
+Kodob      : 10641
+Ko         : 1
+Icob       : 596230
+Nazpo      : Nové Město na Moravě
+Nazpo2     : Nové Město na Moravě
+Nazob      : Nové Město na Moravě
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 080
+Cisorp     : 6108
+Kodorp     : 10641
+Okorp      : 3714
+Nazcs      : PQZF OFVXQ PA OQTAZF
+
+Nk         : VY
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Cispou     : 61141
+Kodpo      : 17821
+Kodob      : 17821
+Ko         : 7
+Icob       : 596973
+Nazpo      : Velká Bíteš
+Nazpo2     : Velká Bíteš
+Nazob      : Velká Bíteš
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 154
+Cisorp     : 6114
+Kodorp     : 17909
+Okorp      : 3714
+Nazcs      : ZFNMA BKXFW
+
+Nk         : VY
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Cispou     : 61142
+Kodpo      : 17909
+Kodob      : 17909
+Ko         : 4
+Icob       : 597007
+Nazpo      : Velké Meziříčí
+Nazpo2     : Velké Meziříčí
+Nazob      : Velké Meziříčí
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 157
+Cisorp     : 6114
+Kodorp     : 17909
+Okorp      : 3714
+Nazcs      : ZFNMF OFdKUKDK
+
+Nk         : JM
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Cispou     : 62012
+Kodpo      : 00501
+Kodob      : 00501
+Ko         : 1
+Icob       : 581283
+Nazpo      : Blansko
+Nazpo2     : Blansko
+Nazob      : Blansko
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 6201
+Kodorp     : 00501
+Okorp      : 3701
+Nazcs      : BNAPVMQ
+
+Nk         : JM
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Cispou     : 62011
+Kodpo      : 00004
+Kodob      : 00004
+Ko         : 3
+Icob       : 581291
+Nazpo      : Adamov
+Nazpo2     : Adamov
+Nazob      : Adamov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 002
+Cisorp     : 6201
+Kodorp     : 00501
+Okorp      : 3701
+Nazcs      : AEAOQZ
+
+Nk         : JM
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Cispou     : 62021
+Kodpo      : 00832
+Kodob      : 00832
+Ko         : 0
+Icob       : 581372
+Nazpo      : Boskovice
+Nazpo2     : Boskovice
+Nazob      : Boskovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 007
+Cisorp     : 6202
+Kodorp     : 00832
+Okorp      : 3701
+Nazcs      : BQVMQZKCF
+
+Nk         : JM
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Cispou     : 62022
+Kodpo      : 08071
+Kodob      : 08071
+Ko         : 3
+Icob       : 581917
+Nazpo      : Letovice
+Nazpo2     : Letovice
+Nazob      : Letovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 045
+Cisorp     : 6202
+Kodorp     : 00832
+Okorp      : 3701
+Nazcs      : NFXQZKCF
+
+Nk         : JM
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Cispou     : 62023
+Kodpo      : 17923
+Kodob      : 17923
+Ko         : 0
+Icob       : 582646
+Nazpo      : Velké Opatovice
+Nazpo2     : Velké Opatovice
+Nazob      : Velké Opatovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 105
+Cisorp     : 6202
+Kodorp     : 00832
+Okorp      : 3701
+Nazcs      : ZFNMF QRAXQZKCF
+
+Nk         : JM
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Knuts      : 6202
+Kodok      : 3702
+Cispou     : 62031
+Kodpo      : 01000
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Nazpo      : Brno
+Nazpo2     : Brno
+Nazob      : Brno
+Ur         : 1
+Urob       : 1
+Om         : 2
+Porob      : 001
+Cisorp     : 6203
+Kodorp     : 01000
+Okorp      : 3702
+Nazcs      : BTPQ
+
+Nk         : JM
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Cispou     : 62081
+Kodpo      : 05572
+Kodob      : 05572
+Ko         : 7
+Icob       : 583120
+Nazpo      : Ivančice
+Nazpo2     : Ivančice
+Nazob      : Ivančice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 041
+Cisorp     : 6208
+Kodorp     : 05572
+Okorp      : 3703
+Nazcs      : KZAPDKCF
+
+Nk         : JM
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Cispou     : 62091
+Kodpo      : 07765
+Kodob      : 07765
+Ko         : 8
+Icob       : 583251
+Nazpo      : Kuřim
+Nazpo2     : Kuřim
+Nazob      : Kuřim
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 054
+Cisorp     : 6209
+Kodorp     : 07765
+Okorp      : 3703
+Nazcs      : MYUKO
+
+Nk         : JM
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Cispou     : 62131
+Kodpo      : 12486
+Kodob      : 12486
+Ko         : 9
+Icob       : 584801
+Nazpo      : Pohořelice
+Nazpo2     : Pohořelice
+Nazob      : Pohořelice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 104
+Cisorp     : 6213
+Kodorp     : 12486
+Okorp      : 3704
+Nazcs      : RQIQUFNKCF
+
+Nk         : JM
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Cispou     : 62141
+Kodpo      : 14122
+Kodob      : 14122
+Ko         : 4
+Icob       : 583782
+Nazpo      : Rosice
+Nazpo2     : Rosice
+Nazob      : Rosice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 124
+Cisorp     : 6214
+Kodorp     : 14122
+Okorp      : 3703
+Nazcs      : TQVKCF
+
+Nk         : JM
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Cispou     : 62161
+Kodpo      : 16279
+Kodob      : 16279
+Ko         : 5
+Icob       : 583952
+Nazpo      : Šlapanice
+Nazpo2     : Šlapanice
+Nazob      : Šlapanice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 146
+Cisorp     : 6216
+Kodorp     : 16279
+Okorp      : 3703
+Nazcs      : WNARAPKCF
+
+Nk         : JM
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Cispou     : 62171
+Kodpo      : 16737
+Kodob      : 16737
+Ko         : 1
+Icob       : 584002
+Nazpo      : Tišnov
+Nazpo2     : Tišnov
+Nazob      : Tišnov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 152
+Cisorp     : 6217
+Kodorp     : 16737
+Okorp      : 3703
+Nazcs      : XKWPQZ
+
+Nk         : JM
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Cispou     : 62211
+Kodpo      : 19670
+Kodob      : 19670
+Ko         : 3
+Icob       : 584282
+Nazpo      : Židlochovice
+Nazpo2     : Židlochovice
+Nazob      : Židlochovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 187
+Cisorp     : 6221
+Kodorp     : 19670
+Okorp      : 3703
+Nazcs      : eKENQJQZKCF
+
+Nk         : JM
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Cispou     : 62041
+Kodpo      : 01358
+Kodob      : 01358
+Ko         : 7
+Icob       : 584291
+Nazpo      : Břeclav
+Nazpo2     : Břeclav
+Nazob      : Břeclav
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 6204
+Kodorp     : 01358
+Okorp      : 3704
+Nazcs      : BUFCNAZ
+
+Nk         : JM
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Cispou     : 62071
+Kodpo      : 04986
+Kodob      : 04986
+Ko         : 7
+Icob       : 584495
+Nazpo      : Hustopeče
+Nazpo2     : Hustopeče
+Nazob      : Hustopeče
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 019
+Cisorp     : 6207
+Kodorp     : 04986
+Okorp      : 3704
+Nazcs      : IYVXQRFDF
+
+Nk         : JM
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Cispou     : 62072
+Kodpo      : 06640
+Kodob      : 06640
+Ko         : 1
+Icob       : 584550
+Nazpo      : Klobouky u Brna
+Nazpo2     : Klobouky u Brna
+Nazob      : Klobouky u Brna
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 023
+Cisorp     : 6207
+Kodorp     : 04986
+Okorp      : 3704
+Nazcs      : MNQBQYMc Y BTPA
+
+Nk         : JM
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Cispou     : 62111
+Kodpo      : 09419
+Kodob      : 09419
+Ko         : 6
+Icob       : 584649
+Nazpo      : Mikulov
+Nazpo2     : Mikulov
+Nazob      : Mikulov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 032
+Cisorp     : 6211
+Kodorp     : 09419
+Okorp      : 3704
+Nazcs      : OKMYNQZ
+
+Nk         : JM
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Cispou     : 62061
+Kodpo      : 04041
+Kodob      : 04041
+Ko         : 0
+Icob       : 586021
+Nazpo      : Hodonín
+Nazpo2     : Hodonín
+Nazob      : Hodonín
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 6206
+Kodorp     : 04041
+Okorp      : 3706
+Nazcs      : IQEQPKP
+
+Nk         : JM
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Cispou     : 62101
+Kodpo      : 01727
+Kodob      : 01727
+Ko         : 2
+Icob       : 586081
+Nazpo      : Bzenec
+Nazpo2     : Bzenec
+Nazob      : Bzenec
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 006
+Cisorp     : 6210
+Kodorp     : 07843
+Okorp      : 3706
+Nazcs      : BdFPFC
+
+Nk         : JM
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Cispou     : 62102
+Kodpo      : 07843
+Kodob      : 07843
+Ko         : 3
+Icob       : 586307
+Nazpo      : Kyjov
+Nazpo2     : Kyjov
+Nazob      : Kyjov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 028
+Cisorp     : 6210
+Kodorp     : 07843
+Okorp      : 3706
+Nazcs      : McLQZ
+
+Nk         : JM
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Cispou     : 62181
+Kodpo      : 15665
+Kodob      : 15665
+Ko         : 5
+Icob       : 586587
+Nazpo      : Strážnice
+Nazpo2     : Strážnice
+Nazob      : Strážnice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 057
+Cisorp     : 6218
+Kodorp     : 18072
+Okorp      : 3706
+Nazcs      : VXTAePKCF
+
+Nk         : JM
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Cispou     : 62182
+Kodpo      : 17858
+Kodob      : 17858
+Ko         : 6
+Icob       : 586714
+Nazpo      : Velká nad Veličkou
+Nazpo2     : Velká nad Veličkou
+Nazob      : Velká nad Veličkou
+Ur         : 4
+Urob       : 4
+Om         : 8
+Porob      : 070
+Cisorp     : 6218
+Kodorp     : 18072
+Okorp      : 3706
+Nazcs      : ZFNMA PAE ZFNKDMQY
+
+Nk         : JM
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Cispou     : 62183
+Kodpo      : 18072
+Kodob      : 18072
+Ko         : 6
+Icob       : 586722
+Nazpo      : Veselí nad Moravou
+Nazpo2     : Veselí nad Moravou
+Nazob      : Veselí nad Moravou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 071
+Cisorp     : 6218
+Kodorp     : 18072
+Okorp      : 3706
+Nazcs      : ZFVFNK PAE OQTAZQY
+
+Nk         : JM
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Cispou     : 62103
+Kodpo      : 19496
+Kodob      : 19496
+Ko         : 4
+Icob       : 586803
+Nazpo      : Ždánice
+Nazpo2     : Ždánice
+Nazob      : Ždánice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 079
+Cisorp     : 6210
+Kodorp     : 07843
+Okorp      : 3706
+Nazcs      : eEAPKCF
+
+Nk         : JM
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Cispou     : 62193
+Kodpo      : 18857
+Kodob      : 18857
+Ko         : 3
+Icob       : 592889
+Nazpo      : Vyškov
+Nazpo2     : Vyškov
+Nazob      : Vyškov
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 6219
+Kodorp     : 18857
+Okorp      : 3712
+Nazcs      : ZcWMQZ
+
+Nk         : JM
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Cispou     : 62051
+Kodpo      : 01516
+Kodob      : 01516
+Ko         : 4
+Icob       : 592943
+Nazpo      : Bučovice
+Nazpo2     : Bučovice
+Nazob      : Bučovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 006
+Cisorp     : 6205
+Kodorp     : 01516
+Okorp      : 3712
+Nazcs      : BYDQZKCF
+
+Nk         : JM
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Cispou     : 62191
+Kodpo      : 05584
+Kodob      : 05584
+Ko         : 1
+Icob       : 593117
+Nazpo      : Ivanovice na Hané
+Nazpo2     : Ivanovice na Hané
+Nazob      : Ivanovice na Hané
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 022
+Cisorp     : 6219
+Kodorp     : 18857
+Okorp      : 3712
+Nazcs      : KZAPQZKCF PA IAPF
+
+Nk         : JM
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Cispou     : 62192
+Kodpo      : 14192
+Kodob      : 14192
+Ko         : 5
+Icob       : 593559
+Nazpo      : Rousínov
+Nazpo2     : Rousínov
+Nazob      : Rousínov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 064
+Cisorp     : 6219
+Kodorp     : 18857
+Okorp      : 3712
+Nazcs      : TQYVKPQZ
+
+Nk         : JM
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Cispou     : 62151
+Kodpo      : 15030
+Kodob      : 15030
+Ko         : 4
+Icob       : 593583
+Nazpo      : Slavkov u Brna
+Nazpo2     : Slavkov u Brna
+Nazob      : Slavkov u Brna
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 067
+Cisorp     : 6215
+Kodorp     : 15030
+Okorp      : 3712
+Nazcs      : VNAZMQZ Y BTPA
+
+Nk         : JM
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Cispou     : 62199
+Kodpo      : 89907
+Kodob      : 01412
+Ko         : 5
+Icob       : 592935
+Nazpo      : Vojenský újezd Březina
+Nazpo2     : Vojenský újezd Březina
+Nazob      : Březina
+Ur         : 9
+Urob       : 9
+Om         : 9
+Porob      : 080
+Cisorp     : 6219
+Kodorp     : 18857
+Okorp      : 3712
+Nazcs      : BUFdKPA
+
+Nk         : JM
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Cispou     : 62203
+Kodpo      : 19341
+Kodob      : 19341
+Ko         : 1
+Icob       : 593711
+Nazpo      : Znojmo
+Nazpo2     : Znojmo
+Nazob      : Znojmo
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 6220
+Kodorp     : 19341
+Okorp      : 3713
+Nazcs      : dPQLOQ
+
+Nk         : JM
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Cispou     : 62201
+Kodpo      : 04880
+Kodob      : 04880
+Ko         : 1
+Icob       : 594156
+Nazpo      : Hrušovany nad Jevišovkou
+Nazpo2     : Hrušovany nad Jevišovkou
+Nazob      : Hrušovany nad Jevišovkou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 043
+Cisorp     : 6220
+Kodorp     : 19341
+Okorp      : 3713
+Nazcs      : ITYWQZAPc PAE LFZKWQZMQY
+
+Nk         : JM
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Cispou     : 62121
+Kodpo      : 09537
+Kodob      : 09537
+Ko         : 1
+Icob       : 594458
+Nazpo      : Miroslav
+Nazpo2     : Miroslav
+Nazob      : Miroslav
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 073
+Cisorp     : 6212
+Kodorp     : 09912
+Okorp      : 3713
+Nazcs      : OKTQVNAZ
+
+Nk         : JM
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Cispou     : 62122
+Kodpo      : 09912
+Kodob      : 09912
+Ko         : 1
+Icob       : 594482
+Nazpo      : Moravský Krumlov
+Nazpo2     : Moravský Krumlov
+Nazob      : Moravský Krumlov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 076
+Cisorp     : 6212
+Kodorp     : 09912
+Okorp      : 3713
+Nazcs      : OQTAZVMc MTYONQZ
+
+Nk         : JM
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Cispou     : 62202
+Kodpo      : 18541
+Kodob      : 18541
+Ko         : 8
+Icob       : 595098
+Nazpo      : Vranov nad Dyjí
+Nazpo2     : Vranov nad Dyjí
+Nazob      : Vranov nad Dyjí
+Ur         : 6
+Urob       : 6
+Om         : 8
+Porob      : 134
+Cisorp     : 6220
+Kodorp     : 19341
+Okorp      : 3713
+Nazcs      : ZTAPQZ PAE EcLK
+
+Nk         : OL
+Kodnuts    : CZ0711
+Lau1       : CZ0711
+Knuts      : 7101
+Kodok      : 3811
+Cispou     : 71022
+Kodpo      : 05872
+Kodob      : 05872
+Ko         : 6
+Icob       : 536385
+Nazpo      : Jeseník
+Nazpo2     : Jeseník
+Nazob      : Jeseník
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 7102
+Kodorp     : 05872
+Okorp      : 3811
+Nazcs      : LFVFPKM
+
+Nk         : OL
+Kodnuts    : CZ0711
+Lau1       : CZ0711
+Knuts      : 7101
+Kodok      : 3811
+Cispou     : 71021
+Kodpo      : 05792
+Kodob      : 05792
+Ko         : 4
+Icob       : 536148
+Nazpo      : Javorník
+Nazpo2     : Javorník
+Nazob      : Javorník
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 008
+Cisorp     : 7102
+Kodorp     : 05872
+Okorp      : 3811
+Nazcs      : LAZQTPKM
+
+Nk         : OL
+Kodnuts    : CZ0711
+Lau1       : CZ0711
+Knuts      : 7101
+Kodok      : 3811
+Cispou     : 71023
+Kodpo      : 19319
+Kodob      : 19319
+Ko         : 4
+Icob       : 597996
+Nazpo      : Zlaté Hory
+Nazpo2     : Zlaté Hory
+Nazob      : Zlaté Hory
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 023
+Cisorp     : 7102
+Kodorp     : 05872
+Okorp      : 3811
+Nazcs      : dNAXF IQTc
+
+Nk         : OL
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Cispou     : 71072
+Kodpo      : 11050
+Kodob      : 11050
+Ko         : 7
+Icob       : 500496
+Nazpo      : Olomouc
+Nazpo2     : Olomouc
+Nazob      : Olomouc
+Ur         : 1
+Urob       : 1
+Om         : 3
+Porob      : 001
+Cisorp     : 7107
+Kodorp     : 11050
+Okorp      : 3805
+Nazcs      : QNQOQYC
+
+Nk         : OL
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Cispou     : 71071
+Kodpo      : 03952
+Kodob      : 03952
+Ko         : 7
+Icob       : 502146
+Nazpo      : Hlubočky
+Nazpo2     : Hlubočky
+Nazob      : Hlubočky
+Ur         : 4
+Urob       : 4
+Om         : 8
+Porob      : 025
+Cisorp     : 7107
+Kodorp     : 11050
+Okorp      : 3805
+Nazcs      : INYBQDMc
+
+Nk         : OL
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Cispou     : 71051
+Kodpo      : 08590
+Kodob      : 08590
+Ko         : 1
+Icob       : 503444
+Nazpo      : Litovel
+Nazpo2     : Litovel
+Nazob      : Litovel
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 043
+Cisorp     : 7105
+Kodorp     : 08590
+Okorp      : 3805
+Nazcs      : NKXQZFN
+
+Nk         : OL
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Cispou     : 71102
+Kodpo      : 09908
+Kodob      : 09908
+Ko         : 2
+Icob       : 597678
+Nazpo      : Moravský Beroun
+Nazpo2     : Moravský Beroun
+Nazob      : Moravský Beroun
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 055
+Cisorp     : 7110
+Kodorp     : 16352
+Okorp      : 3805
+Nazcs      : OQTAZVMc BFTQYP
+
+Nk         : OL
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Cispou     : 71101
+Kodpo      : 16352
+Kodob      : 16352
+Ko         : 0
+Icob       : 505188
+Nazpo      : Šternberk
+Nazpo2     : Šternberk
+Nazob      : Šternberk
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 080
+Cisorp     : 7110
+Kodorp     : 16352
+Okorp      : 3805
+Nazcs      : WXFTPBFTM
+
+Nk         : OL
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Cispou     : 71121
+Kodpo      : 17450
+Kodob      : 17450
+Ko         : 5
+Icob       : 505587
+Nazpo      : Uničov
+Nazpo2     : Uničov
+Nazob      : Uničov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 087
+Cisorp     : 7112
+Kodorp     : 17450
+Okorp      : 3805
+Nazcs      : YPKDQZ
+
+Nk         : OL
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Cispou     : 71079
+Kodpo      : 89908
+Kodob      : 09342
+Ko         : 4
+Icob       : 503941
+Nazpo      : Vojenský újezd Libavá
+Nazpo2     : Vojenský újezd Libavá
+Nazob      : Libavá
+Ur         : 9
+Urob       : 9
+Om         : 9
+Porob      : 096
+Cisorp     : 7107
+Kodorp     : 11050
+Okorp      : 3805
+Nazcs      : NKBAZA
+
+Nk         : OL
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Cispou     : 71082
+Kodpo      : 13349
+Kodob      : 13349
+Ko         : 3
+Icob       : 589250
+Nazpo      : Prostějov
+Nazpo2     : Prostějov
+Nazob      : Prostějov
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 7108
+Kodorp     : 13349
+Okorp      : 3709
+Nazcs      : RTQVXFLQZ
+
+Nk         : OL
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Cispou     : 71031
+Kodpo      : 06909
+Kodob      : 06909
+Ko         : 4
+Icob       : 589624
+Nazpo      : Konice
+Nazpo2     : Konice
+Nazob      : Konice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 038
+Cisorp     : 7103
+Kodorp     : 06909
+Okorp      : 3709
+Nazcs      : MQPKCF
+
+Nk         : OL
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Cispou     : 71081
+Kodpo      : 10304
+Kodob      : 10304
+Ko         : 7
+Icob       : 589756
+Nazpo      : Němčice nad Hanou
+Nazpo2     : Němčice nad Hanou
+Nazob      : Němčice nad Hanou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 051
+Cisorp     : 7108
+Kodorp     : 13349
+Okorp      : 3709
+Nazcs      : PFODKCF PAE IAPQY
+
+Nk         : OL
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Cispou     : 71092
+Kodpo      : 13471
+Kodob      : 13471
+Ko         : 6
+Icob       : 511382
+Nazpo      : Přerov
+Nazpo2     : Přerov
+Nazob      : Přerov
+Ur         : 1
+Urob       : 1
+Om         : 4
+Porob      : 001
+Cisorp     : 7109
+Kodorp     : 13471
+Okorp      : 3808
+Nazcs      : RUFTQZ
+
+Nk         : OL
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Cispou     : 71011
+Kodpo      : 04768
+Kodob      : 04768
+Ko         : 6
+Icob       : 513750
+Nazpo      : Hranice
+Nazpo2     : Hranice
+Nazob      : Hranice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 029
+Cisorp     : 7101
+Kodorp     : 04768
+Okorp      : 3808
+Nazcs      : ITAPKCF
+
+Nk         : OL
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Cispou     : 71091
+Kodpo      : 06789
+Kodob      : 06789
+Ko         : 0
+Icob       : 514055
+Nazpo      : Kojetín
+Nazpo2     : Kojetín
+Nazob      : Kojetín
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 035
+Cisorp     : 7109
+Kodorp     : 13471
+Okorp      : 3808
+Nazcs      : MQLFXKP
+
+Nk         : OL
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Cispou     : 71041
+Kodpo      : 08426
+Kodob      : 08426
+Ko         : 3
+Icob       : 514705
+Nazpo      : Lipník nad Bečvou
+Nazpo2     : Lipník nad Bečvou
+Nazob      : Lipník nad Bečvou
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 043
+Cisorp     : 7104
+Kodorp     : 08426
+Okorp      : 3808
+Nazcs      : NKRPKM PAE BFDZQY
+
+Nk         : OL
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Cispou     : 71112
+Kodpo      : 16426
+Kodob      : 16426
+Ko         : 7
+Icob       : 523704
+Nazpo      : Šumperk
+Nazpo2     : Šumperk
+Nazob      : Šumperk
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 7111
+Kodorp     : 16426
+Okorp      : 3809
+Nazcs      : WYORFTM
+
+Nk         : OL
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Cispou     : 71111
+Kodpo      : 03720
+Kodob      : 03720
+Ko         : 6
+Icob       : 535532
+Nazpo      : Hanušovice
+Nazpo2     : Hanušovice
+Nazob      : Hanušovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 014
+Cisorp     : 7111
+Kodorp     : 16426
+Okorp      : 3809
+Nazcs      : IAPYWQZKCF
+
+Nk         : OL
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Cispou     : 71061
+Kodpo      : 09803
+Kodob      : 09803
+Ko         : 5
+Icob       : 540471
+Nazpo      : Mohelnice
+Nazpo2     : Mohelnice
+Nazob      : Mohelnice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 043
+Cisorp     : 7106
+Kodorp     : 09803
+Okorp      : 3809
+Nazcs      : OQIFNPKCF
+
+Nk         : OL
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Cispou     : 71131
+Kodpo      : 18942
+Kodob      : 18942
+Ko         : 1
+Icob       : 541354
+Nazpo      : Zábřeh
+Nazpo2     : Zábřeh
+Nazob      : Zábřeh
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 075
+Cisorp     : 7113
+Kodorp     : 18942
+Okorp      : 3809
+Nazcs      : dABUFI
+
+Nk         : ZL
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Cispou     : 72034
+Kodpo      : 07483
+Kodob      : 07483
+Ko         : 7
+Icob       : 588296
+Nazpo      : Kroměříž
+Nazpo2     : Kroměříž
+Nazob      : Kroměříž
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 7203
+Kodorp     : 07483
+Okorp      : 3708
+Nazcs      : MTQOFUKe
+
+Nk         : ZL
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Cispou     : 72011
+Kodpo      : 01711
+Kodob      : 01711
+Ko         : 6
+Icob       : 588393
+Nazpo      : Bystřice pod Hostýnem
+Nazpo2     : Bystřice pod Hostýnem
+Nazob      : Bystřice pod Hostýnem
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 008
+Cisorp     : 7201
+Kodorp     : 01711
+Okorp      : 3708
+Nazcs      : BcVXUKCF RQE IQVXcPFO
+
+Nk         : ZL
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Cispou     : 72021
+Kodpo      : 04097
+Kodob      : 04097
+Ko         : 5
+Icob       : 588458
+Nazpo      : Holešov
+Nazpo2     : Holešov
+Nazob      : Holešov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 011
+Cisorp     : 7202
+Kodorp     : 04097
+Okorp      : 3708
+Nazcs      : IQNFWQZ
+
+Nk         : ZL
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Cispou     : 72031
+Kodpo      : 04930
+Kodob      : 04930
+Ko         : 1
+Icob       : 588491
+Nazpo      : Hulín
+Nazpo2     : Hulín
+Nazob      : Hulín
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 015
+Cisorp     : 7203
+Kodorp     : 07483
+Okorp      : 3708
+Nazcs      : IYNKP
+
+Nk         : ZL
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Cispou     : 72032
+Kodpo      : 05423
+Kodob      : 05423
+Ko         : 2
+Icob       : 588512
+Nazpo      : Chropyně
+Nazpo2     : Chropyně
+Nazob      : Chropyně
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 017
+Cisorp     : 7203
+Kodorp     : 07483
+Okorp      : 3708
+Nazcs      : JTQRcPF
+
+Nk         : ZL
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Cispou     : 72033
+Kodpo      : 06966
+Kodob      : 06966
+Ko         : 3
+Icob       : 588601
+Nazpo      : Koryčany
+Nazpo2     : Koryčany
+Nazob      : Koryčany
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 024
+Cisorp     : 7203
+Kodorp     : 07483
+Okorp      : 3708
+Nazcs      : MQTcDAPc
+
+Nk         : ZL
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Cispou     : 72035
+Kodpo      : 09926
+Kodob      : 09926
+Ko         : 1
+Icob       : 588768
+Nazpo      : Morkovice-Slížany
+Nazpo2     : Morkovice-Slížany
+Nazob      : Morkovice-Slížany
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 039
+Cisorp     : 7203
+Kodorp     : 07483
+Okorp      : 3708
+Nazcs      : OQTMQZKCF-VNKeAPc
+
+Nk         : ZL
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Cispou     : 72072
+Kodpo      : 17284
+Kodob      : 17284
+Ko         : 7
+Icob       : 592005
+Nazpo      : Uherské Hradiště
+Nazpo2     : Uherské Hradiště
+Nazob      : Uherské Hradiště
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 7207
+Kodorp     : 17284
+Okorp      : 3711
+Nazcs      : YIFTVMF ITAEKWXF
+
+Nk         : ZL
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Cispou     : 72081
+Kodpo      : 00697
+Kodob      : 00697
+Ko         : 1
+Icob       : 592048
+Nazpo      : Bojkovice
+Nazpo2     : Bojkovice
+Nazob      : Bojkovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 005
+Cisorp     : 7208
+Kodorp     : 17298
+Okorp      : 3711
+Nazcs      : BQLMQZKCF
+
+Nk         : ZL
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Cispou     : 72071
+Kodpo      : 15461
+Kodob      : 15461
+Ko         : 0
+Icob       : 550752
+Nazpo      : Staré Město
+Nazpo2     : Staré Město
+Nazob      : Staré Město
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 053
+Cisorp     : 7207
+Kodorp     : 17284
+Okorp      : 3711
+Nazcs      : VXATF OFVXQ
+
+Nk         : ZL
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Cispou     : 72082
+Kodpo      : 17298
+Kodob      : 17298
+Ko         : 7
+Icob       : 592731
+Nazpo      : Uherský Brod
+Nazpo2     : Uherský Brod
+Nazob      : Uherský Brod
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 066
+Cisorp     : 7208
+Kodorp     : 17298
+Okorp      : 3711
+Nazcs      : YIFTVMc BTQE
+
+Nk         : ZL
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Cispou     : 72073
+Kodpo      : 17313
+Kodob      : 17313
+Ko         : 4
+Icob       : 592749
+Nazpo      : Uherský Ostroh
+Nazpo2     : Uherský Ostroh
+Nazob      : Uherský Ostroh
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 067
+Cisorp     : 7207
+Kodorp     : 17284
+Okorp      : 3711
+Nazcs      : YIFTVMc QVXTQI
+
+Nk         : ZL
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Cispou     : 72123
+Kodpo      : 18676
+Kodob      : 18676
+Ko         : 7
+Icob       : 541630
+Nazpo      : Vsetín
+Nazpo2     : Vsetín
+Nazob      : Vsetín
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 7212
+Kodorp     : 18676
+Okorp      : 3810
+Nazcs      : ZVFXKP
+
+Nk         : ZL
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Cispou     : 72121
+Kodpo      : 04335
+Kodob      : 04335
+Ko         : 4
+Icob       : 542725
+Nazpo      : Horní Lideč
+Nazpo2     : Horní Lideč
+Nazob      : Horní Lideč
+Ur         : 4
+Urob       : 4
+Om         : 8
+Porob      : 008
+Cisorp     : 7212
+Kodorp     : 18676
+Okorp      : 3810
+Nazcs      : IQTPK NKEFD
+
+Nk         : ZL
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Cispou     : 72122
+Kodpo      : 06377
+Kodob      : 06377
+Ko         : 1
+Icob       : 542911
+Nazpo      : Karolinka
+Nazpo2     : Karolinka
+Nazob      : Karolinka
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 017
+Cisorp     : 7212
+Kodorp     : 18676
+Okorp      : 3810
+Nazcs      : MATQNKPMA
+
+Nk         : ZL
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Cispou     : 72061
+Kodpo      : 14293
+Kodob      : 14293
+Ko         : 0
+Icob       : 544841
+Nazpo      : Rožnov pod Radhoštěm
+Nazpo2     : Rožnov pod Radhoštěm
+Nazob      : Rožnov pod Radhoštěm
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 041
+Cisorp     : 7206
+Kodorp     : 14293
+Okorp      : 3810
+Nazcs      : TQePQZ RQE TAEIQWXFO
+
+Nk         : ZL
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Cispou     : 72101
+Kodpo      : 17636
+Kodob      : 17636
+Ko         : 2
+Icob       : 545058
+Nazpo      : Valašské Meziříčí
+Nazpo2     : Valašské Meziříčí
+Nazob      : Valašské Meziříčí
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 051
+Cisorp     : 7210
+Kodorp     : 17636
+Okorp      : 3810
+Nazcs      : ZANAWVMF OFdKUKDK
+
+Nk         : ZL
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Cispou     : 72131
+Kodpo      : 03556
+Kodob      : 03556
+Ko         : 4
+Icob       : 585068
+Nazpo      : Zlín
+Nazpo2     : Zlín
+Nazob      : Zlín
+Ur         : 1
+Urob       : 1
+Om         : 3
+Porob      : 001
+Cisorp     : 7213
+Kodorp     : 03556
+Okorp      : 3705
+Nazcs      : dNKP
+
+Nk         : ZL
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Cispou     : 72091
+Kodpo      : 01306
+Kodob      : 01306
+Ko         : 4
+Icob       : 585114
+Nazpo      : Brumov-Bylnice
+Nazpo2     : Brumov-Bylnice
+Nazob      : Brumov-Bylnice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 007
+Cisorp     : 7209
+Kodorp     : 17631
+Okorp      : 3705
+Nazcs      : BTYOQZ-BcNPKCF
+
+Nk         : ZL
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Cispou     : 72041
+Kodpo      : 08857
+Kodob      : 08857
+Ko         : 9
+Icob       : 585459
+Nazpo      : Luhačovice
+Nazpo2     : Luhačovice
+Nazob      : Luhačovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 039
+Cisorp     : 7204
+Kodorp     : 08857
+Okorp      : 3705
+Nazcs      : NYIADQZKCF
+
+Nk         : ZL
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Cispou     : 72051
+Kodpo      : 10157
+Kodob      : 10157
+Ko         : 5
+Icob       : 585513
+Nazpo      : Napajedla
+Nazpo2     : Napajedla
+Nazob      : Napajedla
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 045
+Cisorp     : 7205
+Kodorp     : 11673
+Okorp      : 3705
+Nazcs      : PARALFENA
+
+Nk         : ZL
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Cispou     : 72052
+Kodpo      : 11673
+Kodob      : 11673
+Ko         : 4
+Icob       : 585599
+Nazpo      : Otrokovice
+Nazpo2     : Otrokovice
+Nazob      : Otrokovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 052
+Cisorp     : 7205
+Kodorp     : 11673
+Okorp      : 3705
+Nazcs      : QXTQMQZKCF
+
+Nk         : ZL
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Cispou     : 72042
+Kodpo      : 15008
+Kodob      : 15008
+Ko         : 8
+Icob       : 585751
+Nazpo      : Slavičín
+Nazpo2     : Slavičín
+Nazob      : Slavičín
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 065
+Cisorp     : 7204
+Kodorp     : 08857
+Okorp      : 3705
+Nazcs      : VNAZKDKP
+
+Nk         : ZL
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Cispou     : 72092
+Kodpo      : 17631
+Kodob      : 17631
+Ko         : 1
+Icob       : 585891
+Nazpo      : Valašské Klobouky
+Nazpo2     : Valašské Klobouky
+Nazob      : Valašské Klobouky
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 078
+Cisorp     : 7209
+Kodorp     : 17631
+Okorp      : 3705
+Nazcs      : ZANAWVMF MNQBQYMc
+
+Nk         : ZL
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Cispou     : 72111
+Kodpo      : 18319
+Kodob      : 18319
+Ko         : 9
+Icob       : 585939
+Nazpo      : Vizovice
+Nazpo2     : Vizovice
+Nazob      : Vizovice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 081
+Cisorp     : 7211
+Kodorp     : 18319
+Okorp      : 3705
+Nazcs      : ZKdQZKCF
+
+Nk         : MS
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Cispou     : 81031
+Kodpo      : 01316
+Kodob      : 01316
+Ko         : 1
+Icob       : 597180
+Nazpo      : Bruntál
+Nazpo2     : Bruntál
+Nazob      : Bruntál
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 8103
+Kodorp     : 01316
+Okorp      : 3801
+Nazcs      : BTYPXAN
+
+Nk         : MS
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Cispou     : 81032
+Kodpo      : 04235
+Kodob      : 04235
+Ko         : 8
+Icob       : 597350
+Nazpo      : Horní Benešov
+Nazpo2     : Horní Benešov
+Nazob      : Horní Benešov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 017
+Cisorp     : 8103
+Kodorp     : 01316
+Okorp      : 3801
+Nazcs      : IQTPK BFPFWQZ
+
+Nk         : MS
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Cispou     : 81141
+Kodpo      : 07455
+Kodob      : 07455
+Ko         : 1
+Icob       : 597520
+Nazpo      : Krnov
+Nazpo2     : Krnov
+Nazob      : Krnov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 027
+Cisorp     : 8114
+Kodorp     : 07455
+Okorp      : 3801
+Nazcs      : MTPQZ
+
+Nk         : MS
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Cispou     : 81142
+Kodpo      : 09339
+Kodob      : 09339
+Ko         : 4
+Icob       : 597635
+Nazpo      : Město Albrechtice
+Nazpo2     : Město Albrechtice
+Nazob      : Město Albrechtice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 036
+Cisorp     : 8114
+Kodorp     : 07455
+Okorp      : 3801
+Nazcs      : OFVXQ ANBTFJXKCF
+
+Nk         : MS
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Cispou     : 81143
+Kodpo      : 11329
+Kodob      : 11329
+Ko         : 8
+Icob       : 597716
+Nazpo      : Osoblaha
+Nazpo2     : Osoblaha
+Nazob      : Osoblaha
+Ur         : 4
+Urob       : 4
+Om         : 8
+Porob      : 043
+Cisorp     : 8114
+Kodorp     : 07455
+Okorp      : 3801
+Nazcs      : QVQBNAIA
+
+Nk         : MS
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Cispou     : 81201
+Kodpo      : 14446
+Kodob      : 14446
+Ko         : 1
+Icob       : 597783
+Nazpo      : Rýmařov
+Nazpo2     : Rýmařov
+Nazob      : Rýmařov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 049
+Cisorp     : 8120
+Kodorp     : 14446
+Okorp      : 3801
+Nazcs      : TcOAUQZ
+
+Nk         : MS
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Cispou     : 81034
+Kodpo      : 18608
+Kodob      : 18608
+Ko         : 2
+Icob       : 597961
+Nazpo      : Vrbno pod Pradědem
+Nazpo2     : Vrbno pod Pradědem
+Nazob      : Vrbno pod Pradědem
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 065
+Cisorp     : 8103
+Kodorp     : 01316
+Okorp      : 3801
+Nazcs      : ZTBPQ RQE RTAEFEFO
+
+Nk         : MS
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Cispou     : 81061
+Kodpo      : 03495
+Kodob      : 03495
+Ko         : 9
+Icob       : 598003
+Nazpo      : Frýdek-Místek
+Nazpo2     : Frýdek-Místek
+Nazob      : Frýdek-Místek
+Ur         : 1
+Urob       : 1
+Om         : 4
+Porob      : 001
+Cisorp     : 8106
+Kodorp     : 03495
+Okorp      : 3802
+Nazcs      : GTcEFM-OKVXFM
+
+Nk         : MS
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Cispou     : 81071
+Kodpo      : 03517
+Kodob      : 03517
+Ko         : 3
+Icob       : 598143
+Nazpo      : Frýdlant nad Ostravicí
+Nazpo2     : Frýdlant nad Ostravicí
+Nazob      : Frýdlant nad Ostravicí
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 016
+Cisorp     : 8107
+Kodorp     : 03517
+Okorp      : 3802
+Nazcs      : GTcENAPX PAE QVXTAZKCK
+
+Nk         : MS
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Cispou     : 81101
+Kodpo      : 05630
+Kodob      : 05630
+Ko         : 8
+Icob       : 598259
+Nazpo      : Jablunkov
+Nazpo2     : Jablunkov
+Nazob      : Jablunkov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 024
+Cisorp     : 8110
+Kodorp     : 05630
+Okorp      : 3802
+Nazcs      : LABNYPMQZ
+
+Nk         : MS
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Cispou     : 81211
+Kodpo      : 17089
+Kodob      : 17089
+Ko         : 5
+Icob       : 598810
+Nazpo      : Třinec
+Nazpo2     : Třinec
+Nazob      : Třinec
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 066
+Cisorp     : 8121
+Kodorp     : 17089
+Okorp      : 3802
+Nazcs      : XUKPFC
+
+Nk         : MS
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Cispou     : 81111
+Kodpo      : 06382
+Kodob      : 06382
+Ko         : 7
+Icob       : 598917
+Nazpo      : Karviná
+Nazpo2     : Karviná
+Nazob      : Karviná
+Ur         : 1
+Urob       : 1
+Om         : 4
+Porob      : 001
+Cisorp     : 8111
+Kodorp     : 06382
+Okorp      : 3803
+Nazcs      : MATZKPA
+
+Nk         : MS
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Cispou     : 81021
+Kodpo      : 10703
+Kodob      : 10703
+Ko         : 4
+Icob       : 599051
+Nazpo      : Bohumín
+Nazpo2     : Bohumín
+Nazob      : Bohumín
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 003
+Cisorp     : 8102
+Kodorp     : 10703
+Okorp      : 3803
+Nazcs      : BQIYOKP
+
+Nk         : MS
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Cispou     : 81041
+Kodpo      : 02316
+Kodob      : 02316
+Ko         : 7
+Icob       : 598933
+Nazpo      : Český Těšín
+Nazpo2     : Český Těšín
+Nazob      : Český Těšín
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 004
+Cisorp     : 8104
+Kodorp     : 02316
+Okorp      : 3803
+Nazcs      : DFVMc XFWKP
+
+Nk         : MS
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Cispou     : 81081
+Kodpo      : 03755
+Kodob      : 03755
+Ko         : 9
+Icob       : 555088
+Nazpo      : Havířov
+Nazpo2     : Havířov
+Nazob      : Havířov
+Ur         : 1
+Urob       : 1
+Om         : 8
+Porob      : 008
+Cisorp     : 8108
+Kodorp     : 03755
+Okorp      : 3803
+Nazcs      : IAZKUQZ
+
+Nk         : MS
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Cispou     : 81181
+Kodpo      : 11236
+Kodob      : 11236
+Ko         : 4
+Icob       : 599069
+Nazpo      : Orlová
+Nazpo2     : Orlová
+Nazob      : Orlová
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 012
+Cisorp     : 8118
+Kodorp     : 11236
+Okorp      : 3803
+Nazcs      : QTNQZA
+
+Nk         : MS
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Cispou     : 81152
+Kodpo      : 10741
+Kodob      : 10741
+Ko         : 7
+Icob       : 599191
+Nazpo      : Nový Jičín
+Nazpo2     : Nový Jičín
+Nazob      : Nový Jičín
+Ur         : 3
+Urob       : 3
+Om         : 4
+Porob      : 001
+Cisorp     : 8115
+Kodorp     : 10741
+Okorp      : 3804
+Nazcs      : PQZc LKDKP
+
+Nk         : MS
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Cispou     : 81011
+Kodpo      : 00442
+Kodob      : 00442
+Ko         : 1
+Icob       : 599247
+Nazpo      : Bílovec
+Nazpo2     : Bílovec
+Nazob      : Bílovec
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 006
+Cisorp     : 8101
+Kodorp     : 00442
+Okorp      : 3804
+Nazcs      : BKNQZFC
+
+Nk         : MS
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Cispou     : 81051
+Kodpo      : 03471
+Kodob      : 03471
+Ko         : 1
+Icob       : 599344
+Nazpo      : Frenštát pod Radhoštěm
+Nazpo2     : Frenštát pod Radhoštěm
+Nazob      : Frenštát pod Radhoštěm
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 010
+Cisorp     : 8105
+Kodorp     : 03471
+Okorp      : 3804
+Nazcs      : GTFPWXAX RQE TAEIQWXFO
+
+Nk         : MS
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Cispou     : 81162
+Kodpo      : 03544
+Kodob      : 03544
+Ko         : 1
+Icob       : 599352
+Nazpo      : Fulnek
+Nazpo2     : Fulnek
+Nazob      : Fulnek
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 011
+Cisorp     : 8116
+Kodorp     : 10741
+Okorp      : 3804
+Nazcs      : GYNPFM
+
+Nk         : MS
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Cispou     : 81121
+Kodpo      : 06939
+Kodob      : 06939
+Ko         : 6
+Icob       : 599565
+Nazpo      : Kopřivnice
+Nazpo2     : Kopřivnice
+Nazob      : Kopřivnice
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 021
+Cisorp     : 8112
+Kodorp     : 06939
+Okorp      : 3804
+Nazcs      : MQRUKZPKCF
+
+Nk         : MS
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Cispou     : 81161
+Kodpo      : 10908
+Kodob      : 10908
+Ko         : 8
+Icob       : 599701
+Nazpo      : Odry
+Nazpo2     : Odry
+Nazob      : Odry
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 029
+Cisorp     : 8116
+Kodorp     : 10908
+Okorp      : 3804
+Nazcs      : QETc
+
+Nk         : MS
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Cispou     : 81122
+Kodpo      : 13532
+Kodob      : 13532
+Ko         : 1
+Icob       : 599808
+Nazpo      : Příbor
+Nazpo2     : Příbor
+Nazob      : Příbor
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 031
+Cisorp     : 8112
+Kodorp     : 06939
+Okorp      : 3804
+Nazcs      : RUKBQT
+
+Nk         : MS
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Cispou     : 81012
+Kodpo      : 15839
+Kodob      : 15839
+Ko         : 9
+Icob       : 599921
+Nazpo      : Studénka
+Nazpo2     : Studénka
+Nazob      : Studénka
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 039
+Cisorp     : 8101
+Kodorp     : 00442
+Okorp      : 3804
+Nazcs      : VXYEFPMA
+
+Nk         : MS
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Cispou     : 81171
+Kodpo      : 11156
+Kodob      : 11156
+Ko         : 2
+Icob       : 505927
+Nazpo      : Opava
+Nazpo2     : Opava
+Nazob      : Opava
+Ur         : 1
+Urob       : 1
+Om         : 4
+Porob      : 001
+Cisorp     : 8117
+Kodorp     : 11156
+Okorp      : 3806
+Nazcs      : QRAZA
+
+Nk         : MS
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Cispou     : 81091
+Kodpo      : 03971
+Kodob      : 03971
+Ko         : 3
+Icob       : 507016
+Nazpo      : Hlučín
+Nazpo2     : Hlučín
+Nazob      : Hlučín
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 021
+Cisorp     : 8109
+Kodorp     : 03971
+Okorp      : 3806
+Nazcs      : INYDKP
+
+Nk         : MS
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Cispou     : 81131
+Kodpo      : 07423
+Kodob      : 07423
+Ko         : 3
+Icob       : 507580
+Nazpo      : Kravaře
+Nazpo2     : Kravaře
+Nazob      : Kravaře
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 033
+Cisorp     : 8113
+Kodorp     : 07423
+Okorp      : 3806
+Nazcs      : MTAZAUF
+
+Nk         : MS
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Cispou     : 81221
+Kodpo      : 18299
+Kodob      : 18299
+Ko         : 1
+Icob       : 511021
+Nazpo      : Vítkov
+Nazpo2     : Vítkov
+Nazob      : Vítkov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 074
+Cisorp     : 8122
+Kodorp     : 18299
+Okorp      : 3806
+Nazcs      : ZKXMQZ
+
+Nk         : MS
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Knuts      : 8106
+Kodok      : 3807
+Cispou     : 81191
+Kodpo      : 11352
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Nazpo      : Ostrava
+Nazpo2     : Ostrava
+Nazob      : Ostrava
+Ur         : 1
+Urob       : 1
+Om         : 2
+Porob      : 001
+Cisorp     : 8119
+Kodorp     : 11352
+Okorp      : 3807
+Nazcs      : QVXTAZA
+
+Nk         : MS
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Knuts      : 8106
+Kodok      : 3807
+Cispou     : 81192
+Kodpo      : 18560
+Kodob      : 18560
+Ko         : 4
+Icob       : 598879
+Nazpo      : Vratimov
+Nazpo2     : Vratimov
+Nazob      : Vratimov
+Ur         : 3
+Urob       : 3
+Om         : 8
+Porob      : 011
+Cisorp     : 8119
+Kodorp     : 11352
+Okorp      : 3807
+Nazcs      : ZTAXKOQZ
+

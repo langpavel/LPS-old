@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EA93C136-1964-4122-B619-0EBB3462938F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LPS</RootNamespace>
+    <AssemblyName>LPSParser</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="ToolScript\ToolScriptParser.cs" />
+    <Compile Include="ToolScript\Exceptions.cs" />
+    <Compile Include="ToolScript\Tokens\TokenBase.cs" />
+    <Compile Include="ToolScript\Tokens\TerminalBase.cs" />
+    <Compile Include="ToolScript\Context.cs" />
+    <Compile Include="ToolScript\Tokens\NonterminalBase.cs" />
+    <Compile Include="ToolScript\Tokens\NonterminalList.cs" />
+    <Compile Include="grammars\ToolScriptConstants.cs" />
+    <Compile Include="grammars\ToolScriptParserBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="grammars\c-ansi.grm" />
+    <None Include="grammars\toolscript.grm" />
+    <None Include="grammars\ToolScriptConstants.pgt" />
+    <None Include="grammars\ToolScriptParserBase.pgt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ToolScript\Tokens\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <EmbeddedResource Include="grammars\toolscript.cgt">
+      <LogicalName>toolscript.cgt</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\contrib\CalithaGoldParser\CalithaLib\CalithaLibrary.csproj">
+      <Project>{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}</Project>
+      <Name>CalithaLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\contrib\CalithaGoldParser\GoldParserEngine\GoldParserEngine.csproj">
+      <Project>{837DC4CB-4BEA-4171-8366-A1AA6207F576}</Project>
+      <Name>GoldParserEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LPSShared\LPSShared.csproj">
+      <Project>{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}</Project>
+      <Name>LPSShared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties InternalTargetFrameworkVersion="3.5">
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="PrefixedHierarchical" ResourceNamePolicy="FileFormatDefault" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>

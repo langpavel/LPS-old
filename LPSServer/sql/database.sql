@@ -305,6 +305,17 @@ CREATE TABLE adresa (
 );
 INSERT INTO adresa VALUES (1, 3, 1, null, '24 Promotions s.r.o.');
 
+CREATE TABLE adr_obec (
+    id bigserial NOT NULL primary key,
+
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+
 CREATE TABLE sys_app_config (
     id bigserial not null primary key,
     sys_rok integer not null,

@@ -1,0 +1,80 @@
+Kodnuts    : CZ01
+Nazobl     : Praha
+Vymera     : 49602.5461
+Ob91       : 1214174
+Ob01       : 1169106
+Obakt      : 1233211
+Nazcs      : RTAIA
+Zmenazaz   : 01012000
+Zmenapol   : 
+
+Kodnuts    : CZ02
+Nazobl     : Střední Čechy
+Vymera     : 1101499.1851
+Ob91       : 1112882
+Ob01       : 1122473
+Obakt      : 1230691
+Nazcs      : VXUFEPK DFJc
+Zmenazaz   : 01012000
+Zmenapol   : 
+
+Kodnuts    : CZ03
+Nazobl     : Jihozápad
+Vymera     : 1761747.4897
+Ob91       : 1181196
+Ob01       : 1175955
+Obakt      : 1205955
+Nazcs      : LKIQdARAE
+Zmenazaz   : 01012000
+Zmenapol   : 
+
+Kodnuts    : CZ04
+Nazobl     : Severozápad
+Vymera     : 864898.0473
+Ob91       : 1126446
+Ob01       : 1124562
+Obakt      : 1144294
+Nazcs      : VFZFTQdARAE
+Zmenazaz   : 01012000
+Zmenapol   : 
+
+Kodnuts    : CZ05
+Nazobl     : Severovýchod
+Vymera     : 1244016.8295
+Ob91       : 1486647
+Ob01       : 1487189
+Obakt      : 1507030
+Nazcs      : VFZFTQZcJQE
+Zmenazaz   : 01012000
+Zmenapol   : 
+
+Kodnuts    : CZ06
+Nazobl     : Jihovýchod
+Vymera     : 1399087.6562
+Ob91       : 1657900
+Ob01       : 1646929
+Obakt      : 1662557
+Nazcs      : LKIQZcJQE
+Zmenazaz   : 01012000
+Zmenapol   : 
+
+Kodnuts    : CZ07
+Nazobl     : Střední Morava
+Vymera     : 923021.9123
+Ob91       : 1244244
+Ob01       : 1238827
+Obakt      : 1233549
+Nazcs      : VXUFEPK OQTAZA
+Zmenazaz   : 01012000
+Zmenapol   : 
+
+Kodnuts    : CZ08
+Nazobl     : Moravskoslezsko
+Vymera     : 542645.4161
+Ob91       : 1278726
+Ob01       : 1265019
+Obakt      : 1250255
+Nazcs      : OQTAZVMQVNFdVMQ
+Zmenazaz   : 15062001
+Zmenapol   : NAZOBL
+

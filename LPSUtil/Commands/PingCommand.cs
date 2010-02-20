@@ -1,25 +1,36 @@
 using System;
 using System.IO;
+using LPS.Client;
 
 namespace LPS.Util
 {
-	public class PingCommand : ICommand
+	public class PingCommand : CommandBase
 	{
-		public PingCommand()
+		public PingCommand(CommandCollection Commands, string Name)
+			: base(Commands, Name)
 		{
 		}
 
-		public void Execute (CommandConsumer consumer, string cmd_name, string argline, TextWriter output)
+		public override string Help
 		{
-			if(CommandConsumer.Connection == null)
-				output.WriteLine("Not logged in!");
+			get { return "otestuje spojení na server"; }
+		}
+
+		public override object Execute (TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		{
+			ServerConnection conn = Commands.Get<ServerConnection>("ServerConnection");
+			if(conn.Ping())
+			{
+				Info.WriteLine("Ping OK");
+				Out.WriteLine(true);
+				return true;
+			}
 			else
-				output.WriteLine(CommandConsumer.Connection.Ping());
-		}
-
-		public string GetHelp ()
-		{
-			return "Otestuje spojení se serverem";
+			{
+				Info.WriteLine("Ping selhal");
+				Out.WriteLine(false);
+				return false;
+			}
 		}
 	}
 }

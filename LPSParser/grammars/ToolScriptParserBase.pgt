@@ -1,0 +1,113 @@
+##TEMPLATE-NAME 'Sablona ToolScriptParserBase.cs'
+##LANGUAGE 'C#'
+##ENGINE-NAME 'ToolScript'
+##AUTHOR 'Pavel Lang'
+##FILE-EXTENSION 'cs'
+##NOTES
+Sablona ToolScriptParserBase.cs
+##END-NOTES
+##ID-CASE ProperCase
+using com.calitha.commons;
+using com.calitha.goldparser;
+using com.calitha.goldparser.lalr;
+using System;
+using System.IO;
+using System.Reflection;
+using System.Runtime.Serialization;
+using LPS.ToolScript.Tokens;
+
+namespace LPS.ToolScript
+{
+    public abstract class ToolScriptParserBase
+    {
+        private LALRParser parser;
+
+        public ToolScriptParserBase()
+        {
+        	using(Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream("toolscript.cgt"))
+        		Init(s);
+        }
+
+        private void Init(Stream stream)
+        {
+            CGTReader reader = new CGTReader(stream);
+            parser = reader.CreateNewParser();
+            parser.TrimReductions = false;
+            parser.StoreTokens = LALRParser.StoreTokensMode.NoUserObject;
+
+            parser.OnTokenError += new LALRParser.TokenErrorHandler(TokenErrorEvent);
+            parser.OnParseError += new LALRParser.ParseErrorHandler(ParseErrorEvent);
+        }
+
+        public virtual TokenBase Parse(string source)
+        {
+            NonterminalToken token = parser.Parse(source);
+            if (token == null)
+	            return null;
+            TokenBase obj = CreateObject(token);
+            return obj;
+        }
+
+        private TokenBase CreateObject(Token token)
+        {
+            if (token is TerminalToken)
+                return CreateObjectFromTerminal((TerminalToken)token);
+            else
+                return CreateObjectFromNonterminal((NonterminalToken)token);
+        }
+
+##SYMBOLS
+        /// <summary>
+        /// <para>Symbol: %Name.XML%</para>
+        /// <para><c>%Description.XML%</c></para>
+        /// </summary>
+        protected abstract TokenBase CreateTerminal%ID%(TerminalToken token);
+##END-SYMBOLS
+
+        private TokenBase CreateObjectFromTerminal(TerminalToken token)
+        {
+            switch (token.Symbol.Id)
+            {
+##SYMBOLS
+                case (int)SymbolConstants.%ID%: //%Description%
+                	return CreateTerminal%ID%(token);
+
+##END-SYMBOLS
+            }
+            throw new SymbolException("Unknown symbol");
+        }
+
+##RULES
+        /// <summary>
+        /// <para>Pravidlo: %Name.XML%</para>
+        /// <para><c>%Description.XML%</c></para>
+        /// </summary>
+        protected abstract TokenBase CreateNonterminal%ID%(NonterminalToken token);
+##END-RULES
+
+        public TokenBase CreateObjectFromNonterminal(NonterminalToken token)
+        {
+            switch (token.Rule.Id)
+            {
+##RULES
+                case (int)RuleConstants.%ID%: //%Description%
+                	return CreateNonterminal%ID%(token);
+##END-RULES
+            }
+            throw new RuleException("Unknown rule");
+        }
+
+        private void TokenErrorEvent(LALRParser parser, TokenErrorEventArgs args)
+        {
+            string message = "Token error with input: '"+args.Token.ToString()+"'";
+            Log.Error(message);
+        }
+
+        private void ParseErrorEvent(LALRParser parser, ParseErrorEventArgs args)
+        {
+            string message = "Parse error caused by token: '"+args.UnexpectedToken.ToString()+"'";
+            Log.Error(message);
+        }
+
+    }
+}

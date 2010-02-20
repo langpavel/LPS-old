@@ -3,24 +3,32 @@ using System.IO;
 
 namespace LPS.Util
 {
-	public class ChangeDirCommand : ICommand
+	public class ChangeDirCommand : CommandBase
 	{
-		public ChangeDirCommand()
+		public ChangeDirCommand(CommandCollection Commands, string Name)
+			: base(Commands, Name)
 		{
 		}
 
-		public void Execute(CommandConsumer consumer, string cmd_name, string argline, TextWriter output)
+		public override Type[] ParamTypes
 		{
-			string p = argline.Trim();
+			get { return new Type[] { typeof(string) }; }
+		}
+
+		public override string Help
+		{
+			get { return "změní pracovní adresář"; }
+		}
+
+		public override object Execute(TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		{
+			string p = Get<string>(Params, 0);
 			if(p != "")
 				System.IO.Directory.SetCurrentDirectory(p);
-			else
-				output.WriteLine(System.IO.Directory.GetCurrentDirectory());
-		}
 
-		public string GetHelp()
-		{
-			return "změní pracovní adresář";
+			curr_dir = System.IO.Directory.GetCurrentDirectory();
+			Info.WriteLine(curr_dir);
+			return curr_dir;
 		}
 	}
 }

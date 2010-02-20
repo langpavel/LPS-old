@@ -1,0 +1,30 @@
+Ur         : 0
+Nazur      : Magistrátní úřad hlavního města
+
+Ur         : 1
+Nazur      : Magistrát města
+
+Ur         : 2
+Nazur      : Úřad města
+
+Ur         : 3
+Nazur      : Městský úřad
+
+Ur         : 4
+Nazur      : Obecní úřad
+
+Ur         : 5
+Nazur      : Obvodní úřad
+
+Ur         : 6
+Nazur      : Úřad městského obvodu
+
+Ur         : 7
+Nazur      : Úřad městské části
+
+Ur         : 8
+Nazur      : Místní úřad
+
+Ur         : 9
+Nazur      : Újezdní úřad vojenského újezdu
+

@@ -1,0 +1,128 @@
+"Name"			= 'ToolScript'
+"Author"		= 'Pavel Lang'
+"Version"		= 'v0.1'
+"About"			= 'Tool scripting language'
+
+"Case Sensitive"	= True
+
+"Start Symbol"		= <Stm List>
+
+! ------------------------------------------------- Sets
+
+{ID Head}	= {Letter} + [_]
+{ID Tail}	= {Alphanumeric} + [_]
+{All Chars}	= {&1 .. &D7FF} + {&DC00 .. &FFEF}
+{String Chars1}	= {All Chars} - ['']
+{String Chars2}	= {All Chars} - ["\]
+{HexNum}	= {Number} + [abcdef] + [ABCDEF]
+
+! ------------------------------------------------- Terminals
+
+ID				= {ID Head}{ID Tail}*
+
+StringLiteral	= '' ( {String Chars1} | '''' )* ''
+				| '"' ( {String Chars2} | '\' {Printable} )* '"'
+
+IntLiteral		= {Number}+
+
+DecimalLiteral	= {Digit}*'.'{Digit}+
+
+! ------------------------------------------------- Rules
+
+Comment Start = '/*'
+Comment End   = '*/'
+Comment Line  = '//'
+
+! ===================================================================
+! Statements
+! ===================================================================
+
+<Stm>			::=	if '(' <Expr> ')' <Stm>
+               	|	if '(' <Expr> ')' <Then Stm> else <Stm>         
+               	|	while '(' <Expr> ')' <Stm> 
+               	|	for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>
+               	|	foreach '(' ID 'in' <Expr> ')' <Stm>
+               	|	<Normal Stm>
+
+<Then Stm>   	::=	if '(' <Expr> ')' <Then Stm> else <Then Stm> 
+               	|	while '(' <Expr> ')' <Then Stm> 
+               	|	for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Then Stm>
+               	|	<Normal Stm>
+
+<Normal Stm> 	::=	do <Stm> while '(' <Expr> ')'
+               	|	switch '(' <Expr> ')' '{' <Case Stms> '}'
+               	|	<Block>
+               	|	<Expr> ';'               
+               	|	break ';'
+               	|	continue ';'
+               	|	return <Expr> ';'
+               	|	';'              !Null statement
+
+<Args>       	::=	<Expr> ',' <Args>
+              	| 	<Expr>
+
+<Case Stms> 	::=	case <Value> ':' <Stm List> <Case Stms>
+              	|	default ':' <Stm List>                  
+              	|	
+
+<Block>     	::=	'{' <Stm List> '}' 
+
+<Stm List>  	::= 	<Stm> <Stm List> 
+              	| 
+
+
+! ===================================================================
+! Operator precedence
+! ===================================================================
+
+<Expr>			::=	<Op If> '=' <Expr>
+				|	<Op If>
+
+<Op If>			::=	<Op Or> '?' <Op If> ':' <Op If>
+				|	<Op Or>
+
+<Op Or>			::=	<Op Or> 'or' <Op And>
+				| 	<Op And>
+
+<Op And>		::=	<Op And> 'and' <Op Equate>
+				| 	<Op Equate>
+
+<Op Equate>		::=	<Op Equate> '==' <Op Compare>
+				| 	<Op Equate> '!=' <Op Compare>
+				|	<Op Compare>
+
+<Op Compare>	::=	<Op Compare> '<'  <Op Add>
+				|	<Op Compare> '>'  <Op Add>
+               	| 	<Op Compare> '<=' <Op Add>
+               	| 	<Op Compare> '>=' <Op Add>
+               	| 	<Op Add>
+
+<Op Add>     	::=	<Op Add> '+' <Op Mult>
+               	| 	<Op Add> '-' <Op Mult>
+               	| 	<Op Mult>
+
+<Op Mult>    	::=	<Op Mult> '*' <Op Unary>
+               	|	<Op Mult> '/' <Op Unary>
+               	|	<Op Mult> '%' <Op Unary>
+               	|	<Op Unary>
+
+<Op Unary>   	::=	'not'  <Op Unary>
+               	| 	'-'    <Op Unary>
+              	|	'cast' <Op Unary> 'as' ID
+               	| 	<Op Pointer>
+
+<Op Pointer>	::=	<Op Pointer> '.' <Value>
+				| 	<Op Pointer> '->' <Value>
+				| 	<Op Pointer> '[' <Expr> ']'
+				| 	<Value>
+
+<Value>			::=	IntLiteral
+				| 	StringLiteral
+				|	DecimalLiteral
+				|	'type' ID
+				|	ID '(' <Args> ')'
+				|	ID '(' ')'
+				|	ID
+				|	'(' <Expr> ')'
+
+

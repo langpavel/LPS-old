@@ -1,0 +1,6390 @@
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 500054
+Kodmc      : 80101
+Mo         : 01
+Mc         : 01
+Pormc      : 01
+Pormcs     : 01
+Nazmc      : Praha 1
+Nazevur    : Úřad městské části Praha 1
+Ico        : 00063410
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 11000
+Vymeru     : 554.0799
+Ob91       : 42590
+Ob01       : 34581
+Obakt      : 30343
+Spro       : 01
+Kodpo      : 80101
+Kodst      : 80101
+Porcsu     : 110101
+Kodfi      : 80101
+Cfu        : 001
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80101
+Pcmat      : 00019
+Symc       : 742600
+Sxmc       : 1043000
+Mapa       : 12-24-17
+Nazcs      : RTAIA p
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 500089
+Kodmc      : 80102
+Mo         : 02
+Mc         : 02
+Pormc      : 02
+Pormcs     : 02
+Nazmc      : Praha 2
+Nazevur    : Úřad městské části Praha 2
+Ico        : 00063461
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 12000
+Vymeru     : 417.9447
+Ob91       : 61873
+Ob01       : 51003
+Obakt      : 48575
+Spro       : 02
+Kodpo      : 80102
+Kodst      : 80102
+Porcsu     : 110201
+Kodfi      : 80102
+Cfu        : 002
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80102
+Pcmat      : 00027
+Symc       : 742900
+Sxmc       : 1044900
+Mapa       : 12-24-22
+Nazcs      : RTAIA q
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 500097
+Kodmc      : 80103
+Mo         : 03
+Mc         : 03
+Pormc      : 03
+Pormcs     : 03
+Nazmc      : Praha 3
+Nazevur    : Úřad městské části Praha 3
+Ico        : 00063517
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 13000
+Vymeru     : 648.1966
+Ob91       : 81927
+Ob01       : 72840
+Obakt      : 72991
+Spro       : 03
+Kodpo      : 80103
+Kodst      : 80103
+Porcsu     : 110301
+Kodfi      : 80103
+Cfu        : 003
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80103
+Pcmat      : 00035
+Symc       : 739600
+Sxmc       : 1043300
+Mapa       : 12-24-18
+Nazcs      : RTAIA r
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 500119
+Kodmc      : 80104
+Mo         : 04
+Mc         : 04
+Pormc      : 04
+Pormcs     : 04
+Nazmc      : Praha 4
+Nazevur    : Úřad městské části Praha 4
+Ico        : 00063584
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 14000
+Vymeru     : 2419.4294
+Ob91       : 143708
+Ob01       : 131597
+Obakt      : 130287
+Spro       : 04
+Kodpo      : 80104
+Kodst      : 80104
+Porcsu     : 110401
+Kodfi      : 80104
+Cfu        : 004
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80104
+Pcmat      : 00043
+Symc       : 742300
+Sxmc       : 1046100
+Mapa       : 12-24-22
+Nazcs      : RTAIA s
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547034
+Kodmc      : 80111
+Mo         : 04
+Mc         : 11
+Pormc      : 05
+Pormcs     : 21
+Nazmc      : Praha 11
+Nazevur    : Úřad městské části Praha 11
+Ico        : 00231126
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 14900
+Vymeru     : 979.5485
+Ob91       : 86425
+Ob01       : 81245
+Obakt      : 78519
+Spro       : 11
+Kodpo      : 80111
+Kodst      : 80111
+Porcsu     : 111101
+Kodfi      : 89809
+Cfu        : 011
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80111
+Pcmat      : 00051
+Symc       : 737600
+Sxmc       : 1049600
+Mapa       : 12-42-03
+Nazcs      : RTAIA yp
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547107
+Kodmc      : 80112
+Mo         : 04
+Mc         : 12
+Pormc      : 06
+Pormcs     : 25
+Nazmc      : Praha 12
+Nazevur    : Úřad městské části Praha 12
+Ico        : 00231151
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 14300
+Vymeru     : 2331.4601
+Ob91       : 59840
+Ob01       : 54856
+Obakt      : 54876
+Spro       : 12
+Kodpo      : 80112
+Kodst      : 80112
+Porcsu     : 111201
+Kodfi      : 89810
+Cfu        : 012
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80112
+Pcmat      : 00060
+Symc       : 745000
+Sxmc       : 1051400
+Mapa       : 12-42-07
+Nazcs      : RTAIA yq
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547042
+Kodmc      : 80122
+Mo         : 04
+Mc         : 22
+Pormc      : 07
+Pormcs     : 05
+Nazmc      : Praha-Kunratice
+Nazevur    : Úřad městské části Praha-Kunratice
+Ico        : 00231134
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 14800
+Vymeru     : 809.9456
+Ob91       : 3321
+Ob01       : 5470
+Obakt      : 8089
+Spro       : 04
+Kodpo      : 80104
+Kodst      : 80104
+Porcsu     : 110401
+Kodfi      : 89809
+Cfu        : 011
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80104
+Pcmat      : 00043
+Symc       : 739500
+Sxmc       : 1051500
+Mapa       : 12-42-03
+Nazcs      : RTAIA-MYPTAXKCF
+Zmenazaz   : 01052004
+Zmenapol   : KODPO-KODST-KODMA
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547051
+Kodmc      : 80123
+Mo         : 04
+Mc         : 23
+Pormc      : 08
+Pormcs     : 26
+Nazmc      : Praha-Libuš
+Nazevur    : Úřad městské části Praha-Libuš
+Ico        : 00231142
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 14200
+Vymeru     : 525.2650
+Ob91       : 6878
+Ob01       : 7865
+Obakt      : 10460
+Spro       : 12
+Kodpo      : 80112
+Kodst      : 80112
+Porcsu     : 111201
+Kodfi      : 89810
+Cfu        : 012
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80112
+Pcmat      : 00060
+Symc       : 741200
+Sxmc       : 1052300
+Mapa       : 12-42-08
+Nazcs      : RTAIA-NKBYW
+Zmenazaz   : 01052004
+Zmenapol   : KODPO-KODST-KODMA
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 539724
+Kodmc      : 80125
+Mo         : 04
+Mc         : 25
+Pormc      : 09
+Pormcs     : 23
+Nazmc      : Praha-Šeberov
+Nazevur    : Úřad městské části Praha-Šeberov
+Ico        : 00241717
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 14900
+Vymeru     : 500.1096
+Ob91       : 1240
+Ob01       : 1644
+Obakt      : 2666
+Spro       : 11
+Kodpo      : 80111
+Kodst      : 80111
+Porcsu     : 111101
+Kodfi      : 89809
+Cfu        : 011
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80111
+Pcmat      : 00051
+Symc       : 737600
+Sxmc       : 1052100
+Mapa       : 12-42-03
+Nazcs      : RTAIA-WFBFTQZ
+Zmenazaz   : 01052004
+Zmenapol   : KODPO
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 539791
+Kodmc      : 80126
+Mo         : 04
+Mc         : 26
+Pormc      : 10
+Pormcs     : 24
+Nazmc      : Praha-Újezd
+Nazevur    : Úřad městské části Praha-Újezd
+Ico        : 00241784
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 14900
+Vymeru     : 370.3164
+Ob91       : 494
+Ob01       : 1788
+Obakt      : 2516
+Spro       : 11
+Kodpo      : 80111
+Kodst      : 80111
+Porcsu     : 111101
+Kodfi      : 89809
+Cfu        : 011
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80111
+Pcmat      : 00051
+Symc       : 735100
+Sxmc       : 1052300
+Mapa       : 12-42-04
+Nazcs      : RTAIA-YLFdE
+Zmenazaz   : 01052004
+Zmenapol   : KODPO
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 500143
+Kodmc      : 80105
+Mo         : 05
+Mc         : 05
+Pormc      : 11
+Pormcs     : 06
+Nazmc      : Praha 5
+Nazevur    : Úřad městské části Praha 5
+Ico        : 00063631
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 15000
+Vymeru     : 2750.3846
+Ob91       : 76768
+Ob01       : 77170
+Obakt      : 83573
+Spro       : 05
+Kodpo      : 80105
+Kodst      : 80105
+Porcsu     : 110501
+Kodfi      : 80105
+Cfu        : 005
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80105
+Pcmat      : 00078
+Symc       : 744100
+Sxmc       : 1044200
+Mapa       : 12-24-22
+Nazcs      : RTAIA t
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 539694
+Kodmc      : 80113
+Mo         : 05
+Mc         : 13
+Pormc      : 12
+Pormcs     : 27
+Nazmc      : Praha 13
+Nazevur    : Úřad městské části Praha 13
+Ico        : 00241687
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 15500
+Vymeru     : 1323.2515
+Ob91       : 35917
+Ob01       : 52457
+Obakt      : 58204
+Spro       : 13
+Kodpo      : 80113
+Kodst      : 80113
+Porcsu     : 111301
+Kodfi      : 80105
+Cfu        : 005
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80113
+Pcmat      : 00086
+Symc       : 750800
+Sxmc       : 1046200
+Mapa       : 12-23-25
+Nazcs      : RTAIA yr
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 539601
+Kodmc      : 80129
+Mo         : 05
+Mc         : 29
+Pormc      : 13
+Pormcs     : 36
+Nazmc      : Praha 16
+Nazevur    : Úřad městské části Praha 16
+Ico        : 00241598
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 15300
+Vymeru     : 930.5975
+Ob91       : 7053
+Ob01       : 7089
+Obakt      : 8201
+Spro       : 16
+Kodpo      : 80129
+Kodst      : 80129
+Porcsu     : 110503
+Kodfi      : 80105
+Cfu        : 005
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80129
+Pcmat      : 00094
+Symc       : 748200
+Sxmc       : 1053400
+Mapa       : 12-42-06
+Nazcs      : RTAIA yu
+Zmenazaz   : 01062004
+Zmenapol   : NAZMC
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 539449
+Kodmc      : 80127
+Mo         : 05
+Mc         : 27
+Pormc      : 14
+Pormcs     : 37
+Nazmc      : Praha-Lipence
+Nazevur    : Úřad městské části Praha-Lipence
+Ico        : 00241431
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 15531
+Vymeru     : 821.0393
+Ob91       : 1305
+Ob01       : 1531
+Obakt      : 2134
+Spro       : 16
+Kodpo      : 80129
+Kodst      : 80129
+Porcsu     : 110503
+Kodfi      : 80105
+Cfu        : 005
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80129
+Pcmat      : 00094
+Symc       : 748600
+Sxmc       : 1056600
+Mapa       : 12-42-11
+Nazcs      : RTAIA-NKRFPCF
+Zmenazaz   : 01062004
+Zmenapol   : KODPO-KODST-KODMA
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 539465
+Kodmc      : 80128
+Mo         : 05
+Mc         : 28
+Pormc      : 15
+Pormcs     : 38
+Nazmc      : Praha-Lochkov
+Nazevur    : Úřad městské části Praha-Lochkov
+Ico        : 00241458
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 15400
+Vymeru     : 271.6226
+Ob91       : 565
+Ob01       : 582
+Obakt      : 592
+Spro       : 16
+Kodpo      : 80129
+Kodst      : 80129
+Porcsu     : 110503
+Kodfi      : 80105
+Cfu        : 005
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80129
+Pcmat      : 00094
+Symc       : 748900
+Sxmc       : 1051700
+Mapa       : 12-42-06
+Nazcs      : RTAIA-NQJMQZ
+Zmenazaz   : 01062004
+Zmenapol   : KODPO-KODMA
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 539635
+Kodmc      : 80130
+Mo         : 05
+Mc         : 30
+Pormc      : 16
+Pormcs     : 28
+Nazmc      : Praha-Řeporyje
+Nazevur    : Úřad městské části Praha-Řeporyje
+Ico        : 00241628
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 15500
+Vymeru     : 982.8538
+Ob91       : 2189
+Ob01       : 2310
+Obakt      : 3316
+Spro       : 13
+Kodpo      : 80113
+Kodst      : 80113
+Porcsu     : 111301
+Kodfi      : 80105
+Cfu        : 005
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80113
+Pcmat      : 00086
+Symc       : 751400
+Sxmc       : 1048000
+Mapa       : 12-41-05
+Nazcs      : RTAIA-UFRQTcLF
+Zmenazaz   : 01052004
+Zmenapol   : KODPO-KODMA
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 539678
+Kodmc      : 80131
+Mo         : 05
+Mc         : 31
+Pormc      : 17
+Pormcs     : 07
+Nazmc      : Praha-Slivenec
+Nazevur    : Úřad městské části Praha-Slivenec
+Ico        : 00241661
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 15400
+Vymeru     : 759.0827
+Ob91       : 1870
+Ob01       : 1994
+Obakt      : 2570
+Spro       : 05
+Kodpo      : 80105
+Kodst      : 80105
+Porcsu     : 110501
+Kodfi      : 80105
+Cfu        : 005
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80105
+Pcmat      : 00078
+Symc       : 748300
+Sxmc       : 1049800
+Mapa       : 12-42-01
+Nazcs      : RTAIA-VNKZFPFC
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547115
+Kodmc      : 80133
+Mo         : 05
+Mc         : 33
+Pormc      : 18
+Pormcs     : 39
+Nazmc      : Praha-Velká Chuchle
+Nazevur    : Úřad městské části Praha-Velká Chuchle
+Ico        : 00231185
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 15900
+Vymeru     : 603.0392
+Ob91       : 1592
+Ob01       : 1749
+Obakt      : 1833
+Spro       : 16
+Kodpo      : 80129
+Kodst      : 80129
+Porcsu     : 110503
+Kodfi      : 80105
+Cfu        : 005
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80129
+Pcmat      : 00094
+Symc       : 746800
+Sxmc       : 1051300
+Mapa       : 12-42-06
+Nazcs      : RTAIA-ZFNMA JYJNF
+Zmenazaz   : 01052004
+Zmenapol   : KODPO-KODMA
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 539864
+Kodmc      : 80134
+Mo         : 05
+Mc         : 34
+Pormc      : 19
+Pormcs     : 40
+Nazmc      : Praha-Zbraslav
+Nazevur    : Úřad městské části Praha-Zbraslav
+Ico        : 00241857
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 15600
+Vymeru     : 984.8984
+Ob91       : 7530
+Ob01       : 7838
+Obakt      : 9186
+Spro       : 16
+Kodpo      : 80129
+Kodst      : 80129
+Porcsu     : 110503
+Kodfi      : 80105
+Cfu        : 005
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80129
+Pcmat      : 00094
+Symc       : 746500
+Sxmc       : 1055100
+Mapa       : 12-42-12
+Nazcs      : RTAIA-dBTAVNAZ
+Zmenazaz   : 01052004
+Zmenapol   : KODPO-KODST-KODMA
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 539899
+Kodmc      : 80135
+Mo         : 05
+Mc         : 35
+Pormc      : 20
+Pormcs     : 42
+Nazmc      : Praha-Zličín
+Nazevur    : Úřad městské části Praha-Zličín
+Ico        : 00241881
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 15521
+Vymeru     : 717.8559
+Ob91       : 3053
+Ob01       : 3031
+Obakt      : 3972
+Spro       : 17
+Kodpo      : 80139
+Kodst      : 80139
+Porcsu     : 111302
+Kodfi      : 80105
+Cfu        : 005
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80139
+Pcmat      : 00116
+Symc       : 752500
+Sxmc       : 1044700
+Mapa       : 12-23-25
+Nazcs      : RTAIA-dNKDKP
+Zmenazaz   : 01052004
+Zmenapol   : KODPO
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 500178
+Kodmc      : 80106
+Mo         : 06
+Mc         : 06
+Pormc      : 21
+Pormcs     : 08
+Nazmc      : Praha 6
+Nazevur    : Úřad městské části Praha 6
+Ico        : 00063703
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 16000
+Vymeru     : 4151.0252
+Ob91       : 110243
+Ob01       : 101252
+Obakt      : 100600
+Spro       : 06
+Kodpo      : 80106
+Kodst      : 80106
+Porcsu     : 110601
+Kodfi      : 80106
+Cfu        : 006
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80106
+Pcmat      : 00108
+Symc       : 745700
+Sxmc       : 1040700
+Mapa       : 12-24-16
+Nazcs      : RTAIA u
+Zmenazaz   : 01012005
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547174
+Kodmc      : 80139
+Mo         : 06
+Mc         : 39
+Pormc      : 22
+Pormcs     : 41
+Nazmc      : Praha 17
+Nazevur    : Úřad městské části Praha 17
+Ico        : 00231223
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 16300
+Vymeru     : 325.5462
+Ob91       : 19731
+Ob01       : 23252
+Obakt      : 25365
+Spro       : 17
+Kodpo      : 80139
+Kodst      : 80139
+Porcsu     : 111302
+Kodfi      : 80106
+Cfu        : 006
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80139
+Pcmat      : 00116
+Symc       : 751600
+Sxmc       : 1043700
+Mapa       : 12-23-25
+Nazcs      : RTAIA yv
+Zmenazaz   : 01062004
+Zmenapol   : NAZMC
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547140
+Kodmc      : 80136
+Mo         : 06
+Mc         : 36
+Pormc      : 23
+Pormcs     : 09
+Nazmc      : Praha-Lysolaje
+Nazevur    : Úřad městské části Praha-Lysolaje
+Ico        : 00231207
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 16500
+Vymeru     : 247.5384
+Ob91       : 769
+Ob01       : 810
+Obakt      : 1119
+Spro       : 06
+Kodpo      : 80106
+Kodst      : 80106
+Porcsu     : 110601
+Kodfi      : 80106
+Cfu        : 006
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80106
+Pcmat      : 00108
+Symc       : 745100
+Sxmc       : 1038500
+Mapa       : 12-24-11
+Nazcs      : RTAIA-NcVQNALF
+Zmenazaz   : 01062004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547158
+Kodmc      : 80137
+Mo         : 06
+Mc         : 37
+Pormc      : 24
+Pormcs     : 10
+Nazmc      : Praha-Nebušice
+Nazevur    : Úřad městské části Praha-Nebušice
+Ico        : 00231215
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 16400
+Vymeru     : 368.0485
+Ob91       : 1849
+Ob01       : 2276
+Obakt      : 3104
+Spro       : 06
+Kodpo      : 80106
+Kodst      : 80106
+Porcsu     : 110601
+Kodfi      : 80106
+Cfu        : 006
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80106
+Pcmat      : 00108
+Symc       : 748800
+Sxmc       : 1039500
+Mapa       : 12-24-16
+Nazcs      : RTAIA-PFBYWKCF
+Zmenazaz   : 01062004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 539589
+Kodmc      : 80138
+Mo         : 06
+Mc         : 38
+Pormc      : 25
+Pormcs     : 11
+Nazmc      : Praha-Přední Kopanina
+Nazevur    : Úřad městské části Praha-Přední Kopanina
+Ico        : 00241571
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 16400
+Vymeru     : 327.4085
+Ob91       : 319
+Ob01       : 438
+Obakt      : 712
+Spro       : 06
+Kodpo      : 80106
+Kodst      : 80106
+Porcsu     : 110601
+Kodfi      : 80106
+Cfu        : 006
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80106
+Pcmat      : 00108
+Symc       : 751200
+Sxmc       : 1038500
+Mapa       : 12-23-15
+Nazcs      : RTAIA-RUFEPK MQRAPKPA
+Zmenazaz   : 01062004
+Zmenapol   : KODMA
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547271
+Kodmc      : 80140
+Mo         : 06
+Mc         : 40
+Pormc      : 26
+Pormcs     : 12
+Nazmc      : Praha-Suchdol
+Nazevur    : Úřad městské části Praha-Suchdol
+Ico        : 00231231
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 16500
+Vymeru     : 513.4136
+Ob91       : 4697
+Ob01       : 4965
+Obakt      : 6167
+Spro       : 06
+Kodpo      : 80106
+Kodst      : 80106
+Porcsu     : 110601
+Kodfi      : 80106
+Cfu        : 006
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80106
+Pcmat      : 00108
+Symc       : 745100
+Sxmc       : 1037300
+Mapa       : 12-24-11
+Nazcs      : RTAIA-VYJEQN
+Zmenazaz   : 01012005
+Zmenapol   : KODPO-KODMA
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 500186
+Kodmc      : 80107
+Mo         : 07
+Mc         : 07
+Pormc      : 27
+Pormcs     : 13
+Nazmc      : Praha 7
+Nazevur    : Úřad městské části Praha 7
+Ico        : 00063754
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 17000
+Vymeru     : 709.6630
+Ob91       : 46224
+Ob01       : 40839
+Obakt      : 40843
+Spro       : 07
+Kodpo      : 80107
+Kodst      : 80107
+Porcsu     : 110701
+Kodfi      : 80107
+Cfu        : 007
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80107
+Pcmat      : 00124
+Symc       : 741600
+Sxmc       : 1041700
+Mapa       : 12-24-17
+Nazcs      : RTAIA v
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547328
+Kodmc      : 80167
+Mo         : 07
+Mc         : 67
+Pormc      : 28
+Pormcs     : 14
+Nazmc      : Praha-Troja
+Nazevur    : Úřad městské části Praha-Troja
+Ico        : 45246858
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 17100
+Vymeru     : 336.9323
+Ob91       : 805
+Ob01       : 916
+Obakt      : 1193
+Spro       : 07
+Kodpo      : 80107
+Kodst      : 80107
+Porcsu     : 110701
+Kodfi      : 80107
+Cfu        : 007
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80107
+Pcmat      : 00124
+Symc       : 743100
+Sxmc       : 1039300
+Mapa       : 12-24-12
+Nazcs      : RTAIA-XTQLA
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 500208
+Kodmc      : 80108
+Mo         : 08
+Mc         : 08
+Pormc      : 29
+Pormcs     : 15
+Nazmc      : Praha 8
+Nazevur    : Úřad městské části Praha 8
+Ico        : 00063797
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 18000
+Vymeru     : 2180.1939
+Ob91       : 112790
+Ob01       : 102761
+Obakt      : 102021
+Spro       : 08
+Kodpo      : 80108
+Kodst      : 80108
+Porcsu     : 110801
+Kodfi      : 80108
+Cfu        : 008
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80108
+Pcmat      : 00132
+Symc       : 738600
+Sxmc       : 1040800
+Mapa       : 12-24-18
+Nazcs      : RTAIA w
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 538124
+Kodmc      : 80141
+Mo         : 08
+Mc         : 41
+Pormc      : 30
+Pormcs     : 16
+Nazmc      : Praha-Březiněves
+Nazevur    : Úřad městské části Praha-Březiněves
+Ico        : 00240109
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 18200
+Vymeru     : 338.5900
+Ob91       : 557
+Ob01       : 667
+Obakt      : 917
+Spro       : 08
+Kodpo      : 80108
+Kodst      : 80108
+Porcsu     : 110801
+Kodfi      : 80108
+Cfu        : 008
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80108
+Pcmat      : 00132
+Symc       : 737200
+Sxmc       : 1035100
+Mapa       : 12-24-08
+Nazcs      : RTAIA-BUFdKPFZFV
+Zmenazaz   : 01052004
+Zmenapol   : KODPO-KODST
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547298
+Kodmc      : 80142
+Mo         : 08
+Mc         : 42
+Pormc      : 31
+Pormcs     : 17
+Nazmc      : Praha-Ďáblice
+Nazevur    : Úřad městské části Praha-Ďáblice
+Ico        : 00231266
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 18200
+Vymeru     : 737.8407
+Ob91       : 2113
+Ob01       : 2196
+Obakt      : 3048
+Spro       : 08
+Kodpo      : 80108
+Kodst      : 80108
+Porcsu     : 110801
+Kodfi      : 80108
+Cfu        : 008
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80108
+Pcmat      : 00132
+Symc       : 737600
+Sxmc       : 1037200
+Mapa       : 12-24-13
+Nazcs      : RTAIA-EABNKCF
+Zmenazaz   : 01052004
+Zmenapol   : KODPO-KODST
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547301
+Kodmc      : 80143
+Mo         : 08
+Mc         : 43
+Pormc      : 32
+Pormcs     : 18
+Nazmc      : Praha-Dolní Chabry
+Nazevur    : Úřad městské části Praha-Dolní Chabry
+Ico        : 00231274
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 18400
+Vymeru     : 499.3757
+Ob91       : 2269
+Ob01       : 2483
+Obakt      : 3382
+Spro       : 08
+Kodpo      : 80108
+Kodst      : 80108
+Porcsu     : 110801
+Kodfi      : 80108
+Cfu        : 008
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80108
+Pcmat      : 00132
+Symc       : 740400
+Sxmc       : 1036400
+Mapa       : 12-24-12
+Nazcs      : RTAIA-EQNPK JABTc
+Zmenazaz   : 01052004
+Zmenapol   : KODPO-KODST
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 500216
+Kodmc      : 80109
+Mo         : 09
+Mc         : 09
+Pormc      : 33
+Pormcs     : 19
+Nazmc      : Praha 9
+Nazevur    : Úřad městské části Praha 9
+Ico        : 00063894
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 19000
+Vymeru     : 1330.9397
+Ob91       : 44867
+Ob01       : 41863
+Obakt      : 50364
+Spro       : 09
+Kodpo      : 80109
+Kodst      : 80109
+Porcsu     : 110901
+Kodfi      : 80109
+Cfu        : 009
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80109
+Pcmat      : 00140
+Symc       : 736900
+Sxmc       : 1041300
+Mapa       : 12-24-18
+Nazcs      : RTAIA x
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547361
+Kodmc      : 80114
+Mo         : 09
+Mc         : 14
+Pormc      : 34
+Pormcs     : 29
+Nazmc      : Praha 14
+Nazevur    : Úřad městské části Praha 14
+Ico        : 00231312
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 19800
+Vymeru     : 1351.1573
+Ob91       : 24301
+Ob01       : 36778
+Obakt      : 44639
+Spro       : 14
+Kodpo      : 80114
+Kodst      : 80114
+Porcsu     : 111401
+Kodfi      : 80109
+Cfu        : 009
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80114
+Pcmat      : 00159
+Symc       : 733300
+Sxmc       : 1042600
+Mapa       : 12-24-19
+Nazcs      : RTAIA ys
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547417
+Kodmc      : 80152
+Mo         : 09
+Mc         : 52
+Pormc      : 35
+Pormcs     : 43
+Nazmc      : Praha 18
+Nazevur    : Úřad městské části Praha 18
+Ico        : 00231321
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 19900
+Vymeru     : 561.0900
+Ob91       : 14432
+Ob01       : 14275
+Obakt      : 16433
+Spro       : 18
+Kodpo      : 80152
+Kodst      : 80152
+Porcsu     : 110903
+Kodfi      : 80109
+Cfu        : 009
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80152
+Pcmat      : 00183
+Symc       : 735400
+Sxmc       : 1038400
+Mapa       : 12-24-13
+Nazcs      : RTAIA yw
+Zmenazaz   : 01062004
+Zmenapol   : NAZMC
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547344
+Kodmc      : 80148
+Mo         : 09
+Mc         : 48
+Pormc      : 36
+Pormcs     : 45
+Nazmc      : Praha 19
+Nazevur    : Úřad městské části Praha 19
+Ico        : 00231304
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 19700
+Vymeru     : 599.4515
+Ob91       : 4669
+Ob01       : 4592
+Obakt      : 6149
+Spro       : 19
+Kodpo      : 80148
+Kodst      : 80148
+Porcsu     : 110904
+Kodfi      : 80109
+Cfu        : 009
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80148
+Pcmat      : 00175
+Symc       : 732900
+Sxmc       : 1039400
+Mapa       : 12-24-14
+Nazcs      : RTAIA yx
+Zmenazaz   : 01112007
+Zmenapol   : NAZMC
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 538213
+Kodmc      : 80147
+Mo         : 09
+Mc         : 47
+Pormc      : 37
+Pormcs     : 48
+Nazmc      : Praha 20
+Nazevur    : Úřad městské části Praha 20
+Ico        : 00240192
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 19300
+Vymeru     : 1693.4110
+Ob91       : 12162
+Ob01       : 13036
+Obakt      : 14571
+Spro       : 20
+Kodpo      : 80147
+Kodst      : 80147
+Porcsu     : 111403
+Kodfi      : 80109
+Cfu        : 009
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80147
+Pcmat      : 00167
+Symc       : 728200
+Sxmc       : 1041900
+Mapa       : 12-24-15
+Nazcs      : RTAIA zo
+Zmenazaz   : 01062004
+Zmenapol   : NAZMC
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 538949
+Kodmc      : 80154
+Mo         : 09
+Mc         : 54
+Pormc      : 38
+Pormcs     : 49
+Nazmc      : Praha 21
+Nazevur    : Úřad městské části Praha 21
+Ico        : 00240923
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 19016
+Vymeru     : 1014.8847
+Ob91       : 6147
+Ob01       : 7116
+Obakt      : 9209
+Spro       : 21
+Kodpo      : 80154
+Kodst      : 80154
+Porcsu     : 111402
+Kodfi      : 80109
+Cfu        : 009
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80154
+Pcmat      : 00191
+Symc       : 726100
+Sxmc       : 1046600
+Mapa       : 13-13-21
+Nazcs      : RTAIA zp
+Zmenazaz   : 01062004
+Zmenapol   : NAZMC
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 538060
+Kodmc      : 80144
+Mo         : 09
+Mc         : 44
+Pormc      : 39
+Pormcs     : 50
+Nazmc      : Praha-Běchovice
+Nazevur    : Úřad městské části Praha-Běchovice
+Ico        : 00240044
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 19011
+Vymeru     : 683.4525
+Ob91       : 1605
+Ob01       : 1538
+Obakt      : 4038
+Spro       : 21
+Kodpo      : 80154
+Kodst      : 80154
+Porcsu     : 111402
+Kodfi      : 80109
+Cfu        : 009
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80154
+Pcmat      : 00191
+Symc       : 729100
+Sxmc       : 1045600
+Mapa       : 12-24-20
+Nazcs      : RTAIA-BFJQZKCF
+Zmenazaz   : 01062004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547310
+Kodmc      : 80145
+Mo         : 09
+Mc         : 45
+Pormc      : 40
+Pormcs     : 44
+Nazmc      : Praha-Čakovice
+Nazevur    : Úřad městské části Praha-Čakovice
+Ico        : 00231291
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 19600
+Vymeru     : 1018.5186
+Ob91       : 5561
+Ob01       : 5681
+Obakt      : 8644
+Spro       : 18
+Kodpo      : 80152
+Kodst      : 80152
+Porcsu     : 110903
+Kodfi      : 80109
+Cfu        : 009
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80152
+Pcmat      : 00183
+Symc       : 734200
+Sxmc       : 1036800
+Mapa       : 12-24-09
+Nazcs      : RTAIA-DAMQZKCF
+Zmenazaz   : 01012008
+Zmenapol   : KODMA
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 538175
+Kodmc      : 80146
+Mo         : 09
+Mc         : 46
+Pormc      : 41
+Pormcs     : 30
+Nazmc      : Praha-Dolní Počernice
+Nazevur    : Úřad městské části Praha-Dolní Počernice
+Ico        : 00240150
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 19012
+Vymeru     : 576.0363
+Ob91       : 1780
+Ob01       : 1751
+Obakt      : 2190
+Spro       : 14
+Kodpo      : 80114
+Kodst      : 80114
+Porcsu     : 111401
+Kodfi      : 80109
+Cfu        : 009
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80114
+Pcmat      : 00159
+Symc       : 731900
+Sxmc       : 1044700
+Mapa       : 12-24-19
+Nazcs      : RTAIA-EQNPK RQDFTPKCF
+Zmenazaz   : 01062004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 538302
+Kodmc      : 80149
+Mo         : 09
+Mc         : 49
+Pormc      : 42
+Pormcs     : 51
+Nazmc      : Praha-Klánovice
+Nazevur    : Úřad městské části Praha-Klánovice
+Ico        : 00240281
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 19014
+Vymeru     : 589.6886
+Ob91       : 2339
+Ob01       : 2578
+Obakt      : 2939
+Spro       : 21
+Kodpo      : 80154
+Kodst      : 80154
+Porcsu     : 111402
+Kodfi      : 80109
+Cfu        : 009
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80154
+Pcmat      : 00191
+Symc       : 725100
+Sxmc       : 1044600
+Mapa       : 13-13-16
+Nazcs      : RTAIA-MNAPQZKCF
+Zmenazaz   : 01062004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 538353
+Kodmc      : 80150
+Mo         : 09
+Mc         : 50
+Pormc      : 43
+Pormcs     : 52
+Nazmc      : Praha-Koloděje
+Nazevur    : Úřad městské části Praha-Koloděje
+Ico        : 00240338
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 19016
+Vymeru     : 374.2675
+Ob91       : 628
+Ob01       : 832
+Obakt      : 1206
+Spro       : 21
+Kodpo      : 80154
+Kodst      : 80154
+Porcsu     : 111402
+Kodfi      : 80109
+Cfu        : 009
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80154
+Pcmat      : 00191
+Symc       : 727800
+Sxmc       : 1047900
+Mapa       : 12-24-25
+Nazcs      : RTAIA-MQNQEFLF
+Zmenazaz   : 01062004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 538736
+Kodmc      : 80153
+Mo         : 09
+Mc         : 53
+Pormc      : 44
+Pormcs     : 46
+Nazmc      : Praha-Satalice
+Nazevur    : Úřad městské části Praha-Satalice
+Ico        : 00240711
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 19015
+Vymeru     : 379.9013
+Ob91       : 1395
+Ob01       : 1348
+Obakt      : 2186
+Spro       : 19
+Kodpo      : 80148
+Kodst      : 80148
+Porcsu     : 110904
+Kodfi      : 80109
+Cfu        : 009
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80148
+Pcmat      : 00175
+Symc       : 731600
+Sxmc       : 1040300
+Mapa       : 12-24-14
+Nazcs      : RTAIA-VAXANKCF
+Zmenazaz   : 01062004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 539007
+Kodmc      : 80155
+Mo         : 09
+Mc         : 55
+Pormc      : 45
+Pormcs     : 47
+Nazmc      : Praha-Vinoř
+Nazevur    : Úřad městské části Praha-Vinoř
+Ico        : 00240982
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 19017
+Vymeru     : 599.9239
+Ob91       : 1851
+Ob01       : 2542
+Obakt      : 3350
+Spro       : 19
+Kodpo      : 80148
+Kodst      : 80148
+Porcsu     : 110904
+Kodfi      : 80109
+Cfu        : 009
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80148
+Pcmat      : 00175
+Symc       : 730600
+Sxmc       : 1038100
+Mapa       : 12-24-14
+Nazcs      : RTAIA-ZKPQU
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 500224
+Kodmc      : 80110
+Mo         : 10
+Mc         : 10
+Pormc      : 46
+Pormcs     : 20
+Nazmc      : Praha 10
+Nazevur    : Úřad městské části Praha 10
+Ico        : 00063941
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 10000
+Vymeru     : 1859.8016
+Ob91       : 120755
+Ob01       : 108609
+Obakt      : 111685
+Spro       : 10
+Kodpo      : 80110
+Kodst      : 80110
+Porcsu     : 111001
+Kodfi      : 80110
+Cfu        : 010
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80110
+Pcmat      : 00205
+Symc       : 737600
+Sxmc       : 1045500
+Mapa       : 12-24-23
+Nazcs      : RTAIA yo
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547387
+Kodmc      : 80115
+Mo         : 10
+Mc         : 15
+Pormc      : 47
+Pormcs     : 31
+Nazmc      : Praha 15
+Nazevur    : Úřad městské části Praha 15
+Ico        : 00231355
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 10900
+Vymeru     : 1024.2575
+Ob91       : 27454
+Ob01       : 27410
+Obakt      : 29902
+Spro       : 15
+Kodpo      : 80115
+Kodst      : 80115
+Porcsu     : 111501
+Kodfi      : 80110
+Cfu        : 010
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80115
+Pcmat      : 00213
+Symc       : 733800
+Sxmc       : 1049100
+Mapa       : 12-42-04
+Nazcs      : RTAIA yt
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 538931
+Kodmc      : 80166
+Mo         : 10
+Mc         : 66
+Pormc      : 48
+Pormcs     : 53
+Nazmc      : Praha 22
+Nazevur    : Úřad městské části Praha 22
+Ico        : 00240915
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 10400
+Vymeru     : 1561.2935
+Ob91       : 4314
+Ob01       : 4629
+Obakt      : 6812
+Spro       : 22
+Kodpo      : 80166
+Kodst      : 80166
+Porcsu     : 111502
+Kodfi      : 80110
+Cfu        : 010
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80166
+Pcmat      : 00221
+Symc       : 731600
+Sxmc       : 1050500
+Mapa       : 12-42-05
+Nazcs      : RTAIA zq
+Zmenazaz   : 01062004
+Zmenapol   : NAZMC
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 538078
+Kodmc      : 80156
+Mo         : 10
+Mc         : 56
+Pormc      : 49
+Pormcs     : 54
+Nazmc      : Praha-Benice
+Nazevur    : Úřad městské části Praha-Benice
+Ico        : 00240052
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 10300
+Vymeru     : 277.3952
+Ob91       : 256
+Ob01       : 358
+Obakt      : 467
+Spro       : 22
+Kodpo      : 80166
+Kodst      : 80166
+Porcsu     : 111502
+Kodfi      : 80110
+Cfu        : 010
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80166
+Pcmat      : 00221
+Symc       : 730900
+Sxmc       : 1053000
+Mapa       : 12-42-05
+Nazcs      : RTAIA-BFPKCF
+Zmenazaz   : 01062004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547379
+Kodmc      : 80157
+Mo         : 10
+Mc         : 57
+Pormc      : 50
+Pormcs     : 32
+Nazmc      : Praha-Dolní Měcholupy
+Nazevur    : Úřad městské části Praha-Dolní Měcholupy
+Ico        : 00231347
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 10900
+Vymeru     : 466.0000
+Ob91       : 1013
+Ob01       : 1154
+Obakt      : 1788
+Spro       : 15
+Kodpo      : 80115
+Kodst      : 80115
+Porcsu     : 111501
+Kodfi      : 80110
+Cfu        : 010
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80115
+Pcmat      : 00213
+Symc       : 733500
+Sxmc       : 1047500
+Mapa       : 12-24-24
+Nazcs      : RTAIA-EQNPK OFJQNYRc
+Zmenazaz   : 01062004
+Zmenapol   : KODPO-KODMA
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 538205
+Kodmc      : 80158
+Mo         : 10
+Mc         : 58
+Pormc      : 51
+Pormcs     : 33
+Nazmc      : Praha-Dubeč
+Nazevur    : Úřad městské části Praha-Dubeč
+Ico        : 00240184
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 10700
+Vymeru     : 860.0588
+Ob91       : 1843
+Ob01       : 1997
+Obakt      : 2971
+Spro       : 15
+Kodpo      : 80115
+Kodst      : 80115
+Porcsu     : 111501
+Kodfi      : 80110
+Cfu        : 010
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80115
+Pcmat      : 00213
+Symc       : 731200
+Sxmc       : 1047500
+Mapa       : 12-24-25
+Nazcs      : RTAIA-EYBFD
+Zmenazaz   : 01062004
+Zmenapol   : KODPO-KODST-KODMA
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 538361
+Kodmc      : 80160
+Mo         : 10
+Mc         : 60
+Pormc      : 52
+Pormcs     : 55
+Nazmc      : Praha-Kolovraty
+Nazevur    : Úřad městské části Praha-Kolovraty
+Ico        : 00240346
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 10300
+Vymeru     : 648.6286
+Ob91       : 1451
+Ob01       : 1756
+Obakt      : 3066
+Spro       : 22
+Kodpo      : 80166
+Kodst      : 80166
+Porcsu     : 111502
+Kodfi      : 80110
+Cfu        : 010
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80166
+Pcmat      : 00221
+Symc       : 729400
+Sxmc       : 1053300
+Mapa       : 12-42-05
+Nazcs      : RTAIA-MQNQZTAXc
+Zmenazaz   : 01062004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 538388
+Kodmc      : 80161
+Mo         : 10
+Mc         : 61
+Pormc      : 53
+Pormcs     : 56
+Nazmc      : Praha-Královice
+Nazevur    : Úřad městské části Praha-Královice
+Ico        : 00240362
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 10400
+Vymeru     : 495.9159
+Ob91       : 290
+Ob01       : 263
+Obakt      : 334
+Spro       : 22
+Kodpo      : 80166
+Kodst      : 80166
+Porcsu     : 111502
+Kodfi      : 80110
+Cfu        : 010
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80166
+Pcmat      : 00221
+Symc       : 728300
+Sxmc       : 1050500
+Mapa       : 12-42-05
+Nazcs      : RTAIA-MTANQZKCF
+Zmenazaz   : 01062004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 538400
+Kodmc      : 80162
+Mo         : 10
+Mc         : 62
+Pormc      : 54
+Pormcs     : 22
+Nazmc      : Praha-Křeslice
+Nazevur    : Úřad městské části Praha-Křeslice
+Ico        : 00240389
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 10400
+Vymeru     : 343.5014
+Ob91       : 235
+Ob01       : 343
+Obakt      : 771
+Spro       : 11
+Kodpo      : 80111
+Kodst      : 80111
+Porcsu     : 111101
+Kodfi      : 80110
+Cfu        : 010
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80111
+Pcmat      : 00051
+Symc       : 733700
+Sxmc       : 1051500
+Mapa       : 12-42-04
+Nazcs      : RTAIA-MUFVNKCF
+Zmenazaz   : 01062004
+Zmenapol   : KODPO
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 538531
+Kodmc      : 80163
+Mo         : 10
+Mc         : 63
+Pormc      : 55
+Pormcs     : 57
+Nazmc      : Praha-Nedvězí
+Nazevur    : Úřad městské části Praha-Nedvězí
+Ico        : 00240516
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 10300
+Vymeru     : 380.8511
+Ob91       : 218
+Ob01       : 232
+Obakt      : 249
+Spro       : 22
+Kodpo      : 80166
+Kodst      : 80166
+Porcsu     : 111502
+Kodfi      : 80110
+Cfu        : 010
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80166
+Pcmat      : 00221
+Symc       : 727500
+Sxmc       : 1052900
+Mapa       : 12-42-05
+Nazcs      : RTAIA-PFEZFdK
+Zmenazaz   : 01062004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547395
+Kodmc      : 80164
+Mo         : 10
+Mc         : 64
+Pormc      : 56
+Pormcs     : 34
+Nazmc      : Praha-Petrovice
+Nazevur    : Úřad městské části Praha-Petrovice
+Ico        : 00231363
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 10900
+Vymeru     : 178.6464
+Ob91       : 5305
+Ob01       : 5990
+Obakt      : 6169
+Spro       : 15
+Kodpo      : 80115
+Kodst      : 80115
+Porcsu     : 111501
+Kodfi      : 80110
+Cfu        : 010
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80115
+Pcmat      : 00213
+Symc       : 733900
+Sxmc       : 1049900
+Mapa       : 12-42-04
+Nazcs      : RTAIA-RFXTQZKCF
+Zmenazaz   : 01062004
+Zmenapol   : 
+
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Kodok      : 3100
+Kodob      : 12702
+Ko         : 7
+Icob       : 554782
+Porob      : 001
+Poroba     : 001
+Iczuj      : 547409
+Kodmc      : 80165
+Mo         : 10
+Mc         : 65
+Pormc      : 57
+Pormcs     : 35
+Nazmc      : Praha-Štěrboholy
+Nazevur    : Úřad městské části Praha-Štěrboholy
+Ico        : 00231371
+Ur         : 7
+Urob       : 0
+Urmc       : 7
+Sm         : 01
+Psc        : 10200
+Vymeru     : 296.9759
+Ob91       : 799
+Ob01       : 940
+Obakt      : 1705
+Spro       : 15
+Kodpo      : 80115
+Kodst      : 80115
+Porcsu     : 111501
+Kodfi      : 80110
+Cfu        : 010
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80115
+Pcmat      : 00213
+Symc       : 733700
+Sxmc       : 1046000
+Mapa       : 12-24-24
+Nazcs      : RTAIA-WXFTBQIQNc
+Zmenazaz   : 01062004
+Zmenapol   : KODPO-KODMA
+
+Kn         : 04
+Knok       : 0404
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Kodok      : 3405
+Kodob      : 12198
+Ko         : 3
+Icob       : 554791
+Porob      : 001
+Poroba     : 011
+Iczuj      : 545970
+Kodmc      : 80301
+Mo         : 01
+Mc         : 00
+Pormc      : 01
+Pormcs     : 01
+Nazmc      : Plzeň 1
+Nazevur    : Úřad městského obvodu Plzeň 1
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 03
+Psc        : 32300
+Vymeru     : 2491.0054
+Ob91       : 51895
+Ob01       : 51887
+Obakt      : 
+Spro       : 
+Kodpo      : 12198
+Kodst      : 80301
+Porcsu     : 320302
+Kodfi      : 12198
+Cfu        : 138
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80303
+Pcmat      : 03662
+Symc       : 822400
+Sxmc       : 1068500
+Mapa       : 12-33-11
+Nazcs      : RNdFP p
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 04
+Knok       : 0404
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Kodok      : 3405
+Kodob      : 12198
+Ko         : 3
+Icob       : 554791
+Porob      : 001
+Poroba     : 011
+Iczuj      : 545988
+Kodmc      : 80302
+Mo         : 02
+Mc         : 00
+Pormc      : 02
+Pormcs     : 02
+Nazmc      : Plzeň 2-Slovany
+Nazevur    : Úřad městského obvodu Plzeň 2-Slovany
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 03
+Psc        : 32600
+Vymeru     : 1864.9102
+Ob91       : 35907
+Ob01       : 34794
+Obakt      : 
+Spro       : 
+Kodpo      : 12198
+Kodst      : 80302
+Porcsu     : 320303
+Kodfi      : 12198
+Cfu        : 138
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80303
+Pcmat      : 03662
+Symc       : 821500
+Sxmc       : 1071300
+Mapa       : 12-33-17
+Nazcs      : RNdFP q-VNQZAPc
+Zmenazaz   : 01012003
+Zmenapol   : 
+
+Kn         : 04
+Knok       : 0404
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Kodok      : 3405
+Kodob      : 12198
+Ko         : 3
+Icob       : 554791
+Porob      : 001
+Poroba     : 011
+Iczuj      : 546003
+Kodmc      : 80303
+Mo         : 03
+Mc         : 00
+Pormc      : 03
+Pormcs     : 03
+Nazmc      : Plzeň 3
+Nazevur    : Úřad městského obvodu Plzeň 3
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 03
+Psc        : 30100
+Vymeru     : 3483.4340
+Ob91       : 55674
+Ob01       : 50127
+Obakt      : 
+Spro       : 
+Kodpo      : 12198
+Kodst      : 80303
+Porcsu     : 320304
+Kodfi      : 12198
+Cfu        : 138
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80303
+Pcmat      : 03662
+Symc       : 822400
+Sxmc       : 1069700
+Mapa       : 12-33-16
+Nazcs      : RNdFP r
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 04
+Knok       : 0404
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Kodok      : 3405
+Kodob      : 12198
+Ko         : 3
+Icob       : 554791
+Porob      : 001
+Poroba     : 011
+Iczuj      : 546208
+Kodmc      : 80304
+Mo         : 04
+Mc         : 00
+Pormc      : 04
+Pormcs     : 04
+Nazmc      : Plzeň 4
+Nazevur    : Úřad městského obvodu Plzeň 4
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 03
+Psc        : 31200
+Vymeru     : 1864.9436
+Ob91       : 25347
+Ob01       : 23876
+Obakt      : 
+Spro       : 
+Kodpo      : 12198
+Kodst      : 80304
+Porcsu     : 320305
+Kodfi      : 12198
+Cfu        : 138
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80303
+Pcmat      : 03662
+Symc       : 819200
+Sxmc       : 1069200
+Mapa       : 12-33-17
+Nazcs      : RNdFP s
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 04
+Knok       : 0404
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Kodok      : 3405
+Kodob      : 12198
+Ko         : 3
+Icob       : 554791
+Porob      : 001
+Poroba     : 011
+Iczuj      : 554731
+Kodmc      : 80305
+Mo         : 05
+Mc         : 00
+Pormc      : 05
+Pormcs     : 05
+Nazmc      : Plzeň 5-Křimice
+Nazevur    : Úřad městského obvodu Plzeň 5-Křimice
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 03
+Psc        : 32200
+Vymeru     : 776.6530
+Ob91       : 1320
+Ob01       : 1527
+Obakt      : 
+Spro       : 
+Kodpo      : 12198
+Kodst      : 80305
+Porcsu     : 320306
+Kodfi      : 12198
+Cfu        : 138
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80303
+Pcmat      : 03662
+Symc       : 827300
+Sxmc       : 1067800
+Mapa       : 11-44-20
+Nazcs      : RNdFP t-MUKOKCF
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 04
+Knok       : 0404
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Kodok      : 3405
+Kodob      : 12198
+Ko         : 3
+Icob       : 554791
+Porob      : 001
+Poroba     : 011
+Iczuj      : 554758
+Kodmc      : 80306
+Mo         : 06
+Mc         : 00
+Pormc      : 06
+Pormcs     : 06
+Nazmc      : Plzeň 6-Litice
+Nazevur    : Úřad městského obvodu Plzeň 6-Litice
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 03
+Psc        : 32100
+Vymeru     : 1081.5518
+Ob91       : 1342
+Ob01       : 1320
+Obakt      : 
+Spro       : 
+Kodpo      : 12198
+Kodst      : 80306
+Porcsu     : 320307
+Kodfi      : 12198
+Cfu        : 138
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80303
+Pcmat      : 03662
+Symc       : 825000
+Sxmc       : 1075000
+Mapa       : 22-11-01
+Nazcs      : RNdFP u-NKXKCF
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 04
+Knok       : 0404
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Kodok      : 3405
+Kodob      : 12198
+Ko         : 3
+Icob       : 554791
+Porob      : 001
+Poroba     : 011
+Iczuj      : 554766
+Kodmc      : 80307
+Mo         : 07
+Mc         : 00
+Pormc      : 07
+Pormcs     : 07
+Nazmc      : Plzeň 7-Radčice
+Nazevur    : Úřad městského obvodu Plzeň 7-Radčice
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 03
+Psc        : 32200
+Vymeru     : 411.2521
+Ob91       : 875
+Ob01       : 893
+Obakt      : 
+Spro       : 
+Kodpo      : 12198
+Kodst      : 80307
+Porcsu     : 320309
+Kodfi      : 12198
+Cfu        : 138
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80303
+Pcmat      : 03662
+Symc       : 825800
+Sxmc       : 1067500
+Mapa       : 12-33-16
+Nazcs      : RNdFP v-TAEDKCF
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 04
+Knok       : 0404
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Kodok      : 3405
+Kodob      : 12198
+Ko         : 3
+Icob       : 554791
+Porob      : 001
+Poroba     : 011
+Iczuj      : 554774
+Kodmc      : 80308
+Mo         : 08
+Mc         : 00
+Pormc      : 08
+Pormcs     : 08
+Nazmc      : Plzeň 8-Černice
+Nazevur    : Úřad městského obvodu Plzeň 8-Černice
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 03
+Psc        : 32600
+Vymeru     : 500.5823
+Ob91       : 648
+Ob01       : 835
+Obakt      : 
+Spro       : 
+Kodpo      : 12198
+Kodst      : 80308
+Porcsu     : 320308
+Kodfi      : 12198
+Cfu        : 138
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80303
+Pcmat      : 03662
+Symc       : 819930
+Sxmc       : 1076390
+Mapa       : 22-11-02
+Nazcs      : RNdFP w-DFTPKCF
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 04
+Knok       : 0404
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Kodok      : 3405
+Kodob      : 12198
+Ko         : 3
+Icob       : 554791
+Porob      : 001
+Poroba     : 011
+Iczuj      : 559199
+Kodmc      : 80309
+Mo         : 09
+Mc         : 00
+Pormc      : 09
+Pormcs     : 09
+Nazmc      : Plzeň 9-Malesice
+Nazevur    : Úřad městského obvodu Plzeň 9-Malesice
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 03
+Psc        : 31800
+Vymeru     : 903.3461
+Ob91       : 428
+Ob01       : 459
+Obakt      : 
+Spro       : 
+Kodpo      : 12198
+Kodst      : 80309
+Porcsu     : 320310
+Kodfi      : 12198
+Cfu        : 138
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80303
+Pcmat      : 03662
+Symc       : 827662
+Sxmc       : 1066292
+Mapa       : 11-44-15
+Nazcs      : RNdFP x-OANFVKCF
+Zmenazaz   : 01012003
+Zmenapol   : 
+
+Kn         : 04
+Knok       : 0404
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Kodok      : 3405
+Kodob      : 12198
+Ko         : 3
+Icob       : 554791
+Porob      : 001
+Poroba     : 011
+Iczuj      : 557978
+Kodmc      : 80310
+Mo         : 10
+Mc         : 00
+Pormc      : 10
+Pormcs     : 10
+Nazmc      : Plzeň 10-Lhota
+Nazevur    : Úřad městského obvodu Plzeň 10-Lhota
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 03
+Psc        : 30100
+Vymeru     : 389.0947
+Ob91       : 355
+Ob01       : 400
+Obakt      : 
+Spro       : 
+Kodpo      : 12198
+Kodst      : 80310
+Porcsu     : 320311
+Kodfi      : 12198
+Cfu        : 138
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80303
+Pcmat      : 03662
+Symc       : 827411
+Sxmc       : 1075422
+Mapa       : 21-22-05
+Nazcs      : RNdFP y-NIQXA
+Zmenazaz   : 01012003
+Zmenapol   : 
+
+Kn         : 06
+Knok       : 0607
+Kodnuts    : CZ0427
+Lau1       : CZ0427
+Kodok      : 3510
+Kodob      : 17487
+Ko         : 4
+Icob       : 554804
+Porob      : 001
+Poroba     : 020
+Iczuj      : 567892
+Kodmc      : 80501
+Mo         : 01
+Mc         : 00
+Pormc      : 01
+Pormcs     : 01
+Nazmc      : Ústí nad Labem-město
+Nazevur    : Úřad městského obvodu Ústí nad Labem-město
+Ico        : 00391352
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 05
+Psc        : 40001
+Vymeru     : 4817.5869
+Ob91       : 36036
+Ob01       : 35138
+Obakt      : 
+Spro       : 
+Kodpo      : 17487
+Kodst      : 17487
+Porcsu     : 420702
+Kodfi      : 17487
+Cfu        : 214
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80501
+Pcmat      : 05355
+Symc       : 762307
+Sxmc       : 974973
+Mapa       : 02-41-06
+Nazcs      : YVXK PAE NABFO-OFVXQ
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 06
+Knok       : 0607
+Kodnuts    : CZ0427
+Lau1       : CZ0427
+Kodok      : 3510
+Kodob      : 17487
+Ko         : 4
+Icob       : 554804
+Porob      : 001
+Poroba     : 020
+Iczuj      : 501298
+Kodmc      : 80502
+Mo         : 02
+Mc         : 00
+Pormc      : 02
+Pormcs     : 02
+Nazmc      : Ústí nad Labem-Severní Terasa
+Nazevur    : Úřad městského obvodu Ústí nad Labem-Severní Terasa
+Ico        : 00391506
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 05
+Psc        : 40011
+Vymeru     : 516.7535
+Ob91       : 22220
+Ob01       : 21989
+Obakt      : 
+Spro       : 
+Kodpo      : 17487
+Kodst      : 17487
+Porcsu     : 420702
+Kodfi      : 17487
+Cfu        : 214
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80501
+Pcmat      : 05355
+Symc       : 761246
+Sxmc       : 973615
+Mapa       : 02-41-06
+Nazcs      : YVXK PAE NABFO-VFZFTPK XFTAVA
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 06
+Knok       : 0607
+Kodnuts    : CZ0427
+Lau1       : CZ0427
+Kodok      : 3510
+Kodob      : 17487
+Ko         : 4
+Icob       : 554804
+Porob      : 001
+Poroba     : 020
+Iczuj      : 502081
+Kodmc      : 80503
+Mo         : 03
+Mc         : 00
+Pormc      : 03
+Pormcs     : 03
+Nazmc      : Ústí nad Labem-Neštěmice
+Nazevur    : Úřad městského obvodu Ústí nad Labem-Neštěmice
+Ico        : 00391760
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 05
+Psc        : 40007
+Vymeru     : 1031.8833
+Ob91       : 25525
+Ob01       : 24795
+Obakt      : 
+Spro       : 
+Kodpo      : 17487
+Kodst      : 17487
+Porcsu     : 420702
+Kodfi      : 17487
+Cfu        : 214
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80503
+Pcmat      : 05363
+Symc       : 758380
+Sxmc       : 975258
+Mapa       : 02-41-07
+Nazcs      : YVXK PAE NABFO-PFWXFOKCF
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 06
+Knok       : 0607
+Kodnuts    : CZ0427
+Lau1       : CZ0427
+Kodok      : 3510
+Kodob      : 17487
+Ko         : 4
+Icob       : 554804
+Porob      : 001
+Poroba     : 020
+Iczuj      : 502316
+Kodmc      : 80504
+Mo         : 04
+Mc         : 00
+Pormc      : 04
+Pormcs     : 04
+Nazmc      : Ústí nad Labem-Střekov
+Nazevur    : Úřad městského obvodu Ústí nad Labem-Střekov
+Ico        : 00392057
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 05
+Psc        : 40003
+Vymeru     : 3029.4624
+Ob91       : 14397
+Ob01       : 13514
+Obakt      : 
+Spro       : 
+Kodpo      : 17487
+Kodst      : 17487
+Porcsu     : 420702
+Kodfi      : 17487
+Cfu        : 214
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80501
+Pcmat      : 05355
+Symc       : 759248
+Sxmc       : 977319
+Mapa       : 02-41-12
+Nazcs      : YVXK PAE NABFO-VXUFMQZ
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 07
+Knok       : 0703
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Kodok      : 3505
+Kodob      : 08203
+Ko         : 1
+Icob       : 563889
+Porob      : 001
+Poroba     : 034
+Iczuj      : 556904
+Kodmc      : 80600
+Mo         : 00
+Mc         : 00
+Pormc      : 00
+Pormcs     : 00
+Nazmc      : Liberec (nečleněné město)
+Nazevur    : Magistrát města Liberec
+Ico        : 
+Ur         : 1
+Urob       : 1
+Urmc       : 1
+Sm         : 06
+Psc        : 46006
+Vymeru     : 9316.5873
+Ob91       : 95108
+Ob01       : 92445
+Obakt      : 
+Spro       : 
+Kodpo      : 08203
+Kodst      : 08203
+Porcsu     : 510302
+Kodfi      : 08203
+Cfu        : 192
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 08203
+Pcmat      : 05649
+Symc       : 687588
+Sxmc       : 976088
+Mapa       : 03-14-22
+Nazcs      : NKBFTFC (PFDNFPFPF OFVXQ)
+Zmenazaz   : 10022000
+Zmenapol   : OB91
+
+Kn         : 07
+Knok       : 0703
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Kodok      : 3505
+Kodob      : 08203
+Ko         : 1
+Icob       : 563889
+Porob      : 001
+Poroba     : 034
+Iczuj      : 556891
+Kodmc      : 80601
+Mo         : 01
+Mc         : 00
+Pormc      : 01
+Pormcs     : 01
+Nazmc      : Liberec-Vratislavice nad Nisou
+Nazevur    : Úřad městského obvodu Liberec-Vratislavice nad Nisou
+Ico        : 00830119
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 06
+Psc        : 46311
+Vymeru     : 1292.0881
+Ob91       : 6054
+Ob01       : 6657
+Obakt      : 
+Spro       : 
+Kodpo      : 08203
+Kodst      : 08203
+Porcsu     : 510302
+Kodfi      : 08203
+Cfu        : 192
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80601
+Pcmat      : 05665
+Symc       : 685621
+Sxmc       : 976976
+Mapa       : 03-14-22
+Nazcs      : NKBFTFC-ZTAXKVNAZKCF PAE PKVQY
+Zmenazaz   : 10022000
+Zmenapol   : OB91
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Kodok      : 3606
+Kodob      : 11765
+Ko         : 0
+Icob       : 555134
+Porob      : 001
+Poroba     : 059
+Iczuj      : 574716
+Kodmc      : 80801
+Mo         : 01
+Mc         : 00
+Pormc      : 01
+Pormcs     : 01
+Nazmc      : Pardubice I
+Nazevur    : Úřad městského obvodu Pardubice I
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 08
+Psc        : 53002
+Vymeru     : 569.2650
+Ob91       : 24724
+Ob01       : 21707
+Obakt      : 
+Spro       : 
+Kodpo      : 11765
+Kodst      : 80801
+Porcsu     : 530212
+Kodfi      : 11765
+Cfu        : 248
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11765
+Pcmat      : 06700
+Symc       : 647492
+Sxmc       : 1061163
+Mapa       : 13-42-02
+Nazcs      : RATEYBKCF K
+Zmenazaz   : 01012003
+Zmenapol   : KODST
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Kodok      : 3606
+Kodob      : 11765
+Ko         : 0
+Icob       : 555134
+Porob      : 001
+Poroba     : 059
+Iczuj      : 555126
+Kodmc      : 80802
+Mo         : 02
+Mc         : 00
+Pormc      : 02
+Pormcs     : 02
+Nazmc      : Pardubice II
+Nazevur    : Úřad městského obvodu Pardubice II
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 08
+Psc        : 53009
+Vymeru     : 457.1601
+Ob91       : 19722
+Ob01       : 20564
+Obakt      : 
+Spro       : 
+Kodpo      : 11765
+Kodst      : 80802
+Porcsu     : 530210
+Kodfi      : 11765
+Cfu        : 248
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11765
+Pcmat      : 06700
+Symc       : 648595
+Sxmc       : 1059928
+Mapa       : 13-24-22
+Nazcs      : RATEYBKCF KK
+Zmenazaz   : 01012002
+Zmenapol   : KODST
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Kodok      : 3606
+Kodob      : 11765
+Ko         : 0
+Icob       : 555134
+Porob      : 001
+Poroba     : 059
+Iczuj      : 557064
+Kodmc      : 80803
+Mo         : 03
+Mc         : 00
+Pormc      : 03
+Pormcs     : 03
+Nazmc      : Pardubice III
+Nazevur    : Úřad městského obvodu Pardubice III
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 08
+Psc        : 53012
+Vymeru     : 648.3820
+Ob91       : 17625
+Ob01       : 16872
+Obakt      : 
+Spro       : 
+Kodpo      : 11765
+Kodst      : 80803
+Porcsu     : 530213
+Kodfi      : 11765
+Cfu        : 248
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11765
+Pcmat      : 06700
+Symc       : 644891
+Sxmc       : 1060482
+Mapa       : 13-42-03
+Nazcs      : RATEYBKCF KKK
+Zmenazaz   : 01012003
+Zmenapol   : KODST
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Kodok      : 3606
+Kodob      : 11765
+Ko         : 0
+Icob       : 555134
+Porob      : 001
+Poroba     : 059
+Iczuj      : 555096
+Kodmc      : 80804
+Mo         : 04
+Mc         : 00
+Pormc      : 04
+Pormcs     : 04
+Nazmc      : Pardubice IV
+Nazevur    : Úřad městského obvodu Pardubice IV
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 08
+Psc        : 53003
+Vymeru     : 1760.0891
+Ob91       : 4157
+Ob01       : 4682
+Obakt      : 
+Spro       : 
+Kodpo      : 11765
+Kodst      : 80804
+Porcsu     : 530214
+Kodfi      : 11765
+Cfu        : 248
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11765
+Pcmat      : 06700
+Symc       : 646387
+Sxmc       : 1062414
+Mapa       : 13-42-02
+Nazcs      : RATEYBKCF KZ
+Zmenazaz   : 01012003
+Zmenapol   : KODST
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Kodok      : 3606
+Kodob      : 11765
+Ko         : 0
+Icob       : 555134
+Porob      : 001
+Poroba     : 059
+Iczuj      : 557072
+Kodmc      : 80805
+Mo         : 05
+Mc         : 00
+Pormc      : 05
+Pormcs     : 05
+Nazmc      : Pardubice V
+Nazevur    : Úřad městského obvodu Pardubice V
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 08
+Psc        : 53002
+Vymeru     : 789.9251
+Ob91       : 18302
+Ob01       : 17075
+Obakt      : 
+Spro       : 
+Kodpo      : 11765
+Kodst      : 80805
+Porcsu     : 530215
+Kodfi      : 11765
+Cfu        : 248
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11765
+Pcmat      : 06700
+Symc       : 648658
+Sxmc       : 1062222
+Mapa       : 13-42-02
+Nazcs      : RATEYBKCF Z
+Zmenazaz   : 01012003
+Zmenapol   : KODST
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Kodok      : 3606
+Kodob      : 11765
+Ko         : 0
+Icob       : 555134
+Porob      : 001
+Poroba     : 059
+Iczuj      : 555100
+Kodmc      : 80806
+Mo         : 06
+Mc         : 00
+Pormc      : 06
+Pormcs     : 06
+Nazmc      : Pardubice VI
+Nazevur    : Úřad městského obvodu Pardubice VI
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 08
+Psc        : 53006
+Vymeru     : 2376.6033
+Ob91       : 4372
+Ob01       : 4470
+Obakt      : 
+Spro       : 
+Kodpo      : 11765
+Kodst      : 80806
+Porcsu     : 530216
+Kodfi      : 11765
+Cfu        : 248
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11765
+Pcmat      : 06700
+Symc       : 650345
+Sxmc       : 1061525
+Mapa       : 13-42-02
+Nazcs      : RATEYBKCF ZK
+Zmenazaz   : 01012003
+Zmenapol   : KODST
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Kodok      : 3606
+Kodob      : 11765
+Ko         : 0
+Icob       : 555134
+Porob      : 001
+Poroba     : 059
+Iczuj      : 555118
+Kodmc      : 80807
+Mo         : 07
+Mc         : 00
+Pormc      : 07
+Pormcs     : 07
+Nazmc      : Pardubice VII
+Nazevur    : Úřad městského obvodu Pardubice VII
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 08
+Psc        : 53353
+Vymeru     : 1169.3028
+Ob91       : 5505
+Ob01       : 5298
+Obakt      : 
+Spro       : 
+Kodpo      : 11765
+Kodst      : 80807
+Porcsu     : 530211
+Kodfi      : 11765
+Cfu        : 248
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11765
+Pcmat      : 06700
+Symc       : 648312
+Sxmc       : 1057954
+Mapa       : 13-24-22
+Nazcs      : RATEYBKCF ZKK
+Zmenazaz   : 01012002
+Zmenapol   : KODST
+
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Kodok      : 3606
+Kodob      : 11765
+Ko         : 0
+Icob       : 555134
+Porob      : 001
+Poroba     : 059
+Iczuj      : 575020
+Kodmc      : 80808
+Mo         : 08
+Mc         : 00
+Pormc      : 08
+Pormcs     : 08
+Nazmc      : Pardubice VIII
+Nazevur    : Úřad městského obvodu Pardubice VIII
+Ico        : 00273619
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 08
+Psc        : 53002
+Vymeru     : 494.7845
+Ob91       : 203
+Ob01       : 221
+Obakt      : 
+Spro       : 
+Kodpo      : 11765
+Kodst      : 11765
+Porcsu     : 530202
+Kodfi      : 11765
+Cfu        : 248
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11765
+Pcmat      : 06700
+Symc       : 641246
+Sxmc       : 1065522
+Mapa       : 13-42-09
+Nazcs      : RATEYBKCF ZKKK
+Zmenazaz   : 20102006
+Zmenapol   : nový MO
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 550973
+Kodmc      : 80901
+Mo         : 00
+Mc         : 01
+Pormc      : 01
+Pormcs     : 01
+Nazmc      : Brno-střed
+Nazevur    : Úřad městské části Brno-střed
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 60200
+Vymeru     : 1464.1686
+Ob91       : 75857
+Ob01       : 67395
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80901
+Porcsu     : 620222
+Kodfi      : 89801
+Cfu        : 288
+Kodfi2     : 89803
+Cfu2       : 290
+Kodma      : 80901
+Pcmat      : 08265
+Symc       : 598763
+Sxmc       : 1160679
+Mapa       : 24-34-05
+Nazcs      : BTPQ-VXUFE
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 550990
+Kodmc      : 80902
+Mo         : 00
+Mc         : 02
+Pormc      : 02
+Pormcs     : 02
+Nazmc      : Brno-Žabovřesky
+Nazevur    : Úřad městské části Brno-Žabovřesky
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 61600
+Vymeru     : 434.8748
+Ob91       : 24069
+Ob01       : 22280
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80902
+Porcsu     : 620226
+Kodfi      : 89804
+Cfu        : 291
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80902
+Pcmat      : 08273
+Symc       : 600595
+Sxmc       : 1158458
+Mapa       : 24-32-24
+Nazcs      : BTPQ-eABQZUFVMc
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551007
+Kodmc      : 80903
+Mo         : 00
+Mc         : 03
+Pormc      : 03
+Pormcs     : 03
+Nazmc      : Brno-Královo Pole
+Nazevur    : Úřad městské části Brno-Královo Pole
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 60200
+Vymeru     : 1007.4503
+Ob91       : 29386
+Ob01       : 27729
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80903
+Porcsu     : 620213
+Kodfi      : 89803
+Cfu        : 290
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80903
+Pcmat      : 08281
+Symc       : 598250
+Sxmc       : 1158507
+Mapa       : 24-32-24
+Nazcs      : BTPQ-MTANQZQ RQNF
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551031
+Kodmc      : 80904
+Mo         : 00
+Mc         : 04
+Pormc      : 04
+Pormcs     : 04
+Nazmc      : Brno-sever
+Nazevur    : Úřad městské části Brno-sever
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 61400
+Vymeru     : 1224.2045
+Ob91       : 46808
+Ob01       : 45908
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80904
+Porcsu     : 620219
+Kodfi      : 89803
+Cfu        : 290
+Kodfi2     : 89801
+Cfu2       : 288
+Kodma      : 80904
+Pcmat      : 08290
+Symc       : 596266
+Sxmc       : 1159014
+Mapa       : 24-32-25
+Nazcs      : BTPQ-VFZFT
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551058
+Kodmc      : 80905
+Mo         : 00
+Mc         : 05
+Pormc      : 05
+Pormcs     : 05
+Nazmc      : Brno-Židenice
+Nazevur    : Úřad městské části Brno-Židenice
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 61500
+Vymeru     : 505.5679
+Ob91       : 21174
+Ob01       : 20376
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80905
+Porcsu     : 620228
+Kodfi      : 89802
+Cfu        : 289
+Kodfi2     : 89801
+Cfu2       : 288
+Kodma      : 80905
+Pcmat      : 08303
+Symc       : 595284
+Sxmc       : 1160930
+Mapa       : 24-34-05
+Nazcs      : BTPQ-eKEFPKCF
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551066
+Kodmc      : 80906
+Mo         : 00
+Mc         : 06
+Pormc      : 06
+Pormcs     : 06
+Nazmc      : Brno-Černovice
+Nazevur    : Úřad městské části Brno-Černovice
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 61800
+Vymeru     : 629.1977
+Ob91       : 7221
+Ob01       : 7263
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80906
+Porcsu     : 620205
+Kodfi      : 89802
+Cfu        : 289
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80905
+Pcmat      : 08303
+Symc       : 596249
+Sxmc       : 1162391
+Mapa       : 24-34-05
+Nazcs      : BTPQ-DFTPQZKCF
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551074
+Kodmc      : 80907
+Mo         : 00
+Mc         : 07
+Pormc      : 07
+Pormcs     : 07
+Nazmc      : Brno-jih
+Nazevur    : Úřad městské části Brno-jih
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 61700
+Vymeru     : 1280.0592
+Ob91       : 7582
+Ob01       : 7976
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80907
+Porcsu     : 620207
+Kodfi      : 89802
+Cfu        : 289
+Kodfi2     : 89801
+Cfu2       : 288
+Kodma      : 80905
+Pcmat      : 08303
+Symc       : 597153
+Sxmc       : 1162739
+Mapa       : 24-34-05
+Nazcs      : BTPQ-LKI
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551082
+Kodmc      : 80908
+Mo         : 00
+Mc         : 08
+Pormc      : 08
+Pormcs     : 08
+Nazmc      : Brno-Bohunice
+Nazevur    : Úřad městské části Brno-Bohunice
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 62500
+Vymeru     : 301.7085
+Ob91       : 17361
+Ob01       : 16398
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80908
+Porcsu     : 620202
+Kodfi      : 89804
+Cfu        : 291
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80901
+Pcmat      : 08265
+Symc       : 600515
+Sxmc       : 1162581
+Mapa       : 24-34-04
+Nazcs      : BTPQ-BQIYPKCF
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551091
+Kodmc      : 80909
+Mo         : 00
+Mc         : 09
+Pormc      : 09
+Pormcs     : 09
+Nazmc      : Brno-Starý Lískovec
+Nazevur    : Úřad městské části Brno-Starý Lískovec
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 62500
+Vymeru     : 328.4204
+Ob91       : 15862
+Ob01       : 14220
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80909
+Porcsu     : 620221
+Kodfi      : 89804
+Cfu        : 291
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80901
+Pcmat      : 08265
+Symc       : 601945
+Sxmc       : 1163894
+Mapa       : 24-34-04
+Nazcs      : BTPQ-VXATc NKVMQZFC
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551112
+Kodmc      : 80910
+Mo         : 00
+Mc         : 10
+Pormc      : 10
+Pormcs     : 10
+Nazmc      : Brno-Nový Lískovec
+Nazevur    : Úřad městské části Brno-Nový Lískovec
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 63400
+Vymeru     : 165.4445
+Ob91       : 5738
+Ob01       : 11400
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80910
+Porcsu     : 620217
+Kodfi      : 89804
+Cfu        : 291
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80901
+Pcmat      : 08265
+Symc       : 601783
+Sxmc       : 1161637
+Mapa       : 24-34-04
+Nazcs      : BTPQ-PQZc NKVMQZFC
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551147
+Kodmc      : 80911
+Mo         : 00
+Mc         : 11
+Pormc      : 11
+Pormcs     : 11
+Nazmc      : Brno-Kohoutovice
+Nazevur    : Úřad městské části Brno-Kohoutovice
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 62300
+Vymeru     : 408.5450
+Ob91       : 14339
+Ob01       : 13339
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80911
+Porcsu     : 620211
+Kodfi      : 89804
+Cfu        : 291
+Kodfi2     : 89801
+Cfu2       : 288
+Kodma      : 80901
+Pcmat      : 08265
+Symc       : 603058
+Sxmc       : 1160022
+Mapa       : 24-32-24
+Nazcs      : BTPQ-MQIQYXQZKCF
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551171
+Kodmc      : 80912
+Mo         : 00
+Mc         : 12
+Pormc      : 12
+Pormcs     : 12
+Nazmc      : Brno-Jundrov
+Nazevur    : Úřad městské části Brno-Jundrov
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 63700
+Vymeru     : 422.1250
+Ob91       : 3630
+Ob01       : 3844
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80912
+Porcsu     : 620209
+Kodfi      : 89804
+Cfu        : 291
+Kodfi2     : 89801
+Cfu2       : 288
+Kodma      : 80902
+Pcmat      : 08273
+Symc       : 601904
+Sxmc       : 1158870
+Mapa       : 24-32-24
+Nazcs      : BTPQ-LYPETQZ
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551198
+Kodmc      : 80913
+Mo         : 00
+Mc         : 13
+Pormc      : 13
+Pormcs     : 13
+Nazmc      : Brno-Bystrc
+Nazevur    : Úřad městské části Brno-Bystrc
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 63500
+Vymeru     : 2724.2152
+Ob91       : 23593
+Ob01       : 23805
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80913
+Porcsu     : 620204
+Kodfi      : 89804
+Cfu        : 291
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80913
+Pcmat      : 08311
+Symc       : 603508
+Sxmc       : 1156756
+Mapa       : 24-32-23
+Nazcs      : BTPQ-BcVXTC
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551210
+Kodmc      : 80914
+Mo         : 00
+Mc         : 14
+Pormc      : 14
+Pormcs     : 14
+Nazmc      : Brno-Kníničky
+Nazevur    : Úřad městské části Brno-Kníničky
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 63500
+Vymeru     : 1091.5516
+Ob91       : 549
+Ob01       : 513
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80913
+Porcsu     : 620204
+Kodfi      : 89804
+Cfu        : 291
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80913
+Pcmat      : 08311
+Symc       : 603693
+Sxmc       : 1155612
+Mapa       : 24-32-18
+Nazcs      : BTPQ-MPKPKDMc
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551228
+Kodmc      : 80915
+Mo         : 00
+Mc         : 15
+Pormc      : 15
+Pormcs     : 15
+Nazmc      : Brno-Komín
+Nazevur    : Úřad městské části Brno-Komín
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 62400
+Vymeru     : 759.9108
+Ob91       : 7827
+Ob01       : 7251
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80915
+Porcsu     : 620212
+Kodfi      : 89804
+Cfu        : 291
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80902
+Pcmat      : 08273
+Symc       : 601908
+Sxmc       : 1157572
+Mapa       : 24-32-24
+Nazcs      : BTPQ-MQOKP
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551236
+Kodmc      : 80916
+Mo         : 00
+Mc         : 16
+Pormc      : 16
+Pormcs     : 16
+Nazmc      : Brno-Medlánky
+Nazevur    : Úřad městské části Brno-Medlánky
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 62100
+Vymeru     : 351.4222
+Ob91       : 2425
+Ob01       : 3163
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80916
+Porcsu     : 620216
+Kodfi      : 89803
+Cfu        : 290
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80903
+Pcmat      : 08281
+Symc       : 600604
+Sxmc       : 1155547
+Mapa       : 24-32-19
+Nazcs      : BTPQ-OFENAPMc
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551244
+Kodmc      : 80917
+Mo         : 00
+Mc         : 17
+Pormc      : 17
+Pormcs     : 17
+Nazmc      : Brno-Řečkovice a Mokrá Hora
+Nazevur    : Úřad městské části Brno-Řečkovice a Mokrá Hora
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 62100
+Vymeru     : 756.8646
+Ob91       : 15804
+Ob01       : 14991
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80917
+Porcsu     : 620218
+Kodfi      : 89803
+Cfu        : 290
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80917
+Pcmat      : 08320
+Symc       : 599565
+Sxmc       : 1154298
+Mapa       : 24-32-19
+Nazcs      : BTPQ-UFDMQZKCF A OQMTA IQTA
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551252
+Kodmc      : 80918
+Mo         : 00
+Mc         : 18
+Pormc      : 18
+Pormcs     : 18
+Nazmc      : Brno-Maloměřice a Obřany
+Nazevur    : Úřad městské části Brno-Maloměřice a Obřany
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 61400
+Vymeru     : 929.1540
+Ob91       : 4775
+Ob01       : 4844
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80918
+Porcsu     : 620215
+Kodfi      : 89803
+Cfu        : 290
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80904
+Pcmat      : 08290
+Symc       : 595124
+Sxmc       : 1157272
+Mapa       : 24-32-25
+Nazcs      : BTPQ-OANQOFUKCF A QBUAPc
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551279
+Kodmc      : 80919
+Mo         : 00
+Mc         : 19
+Pormc      : 19
+Pormcs     : 19
+Nazmc      : Brno-Vinohrady
+Nazevur    : Úřad městské části Brno-Vinohrady
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 62800
+Vymeru     : 195.7935
+Ob91       : 15766
+Ob01       : 14823
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80919
+Porcsu     : 620225
+Kodfi      : 89802
+Cfu        : 289
+Kodfi2     : 89803
+Cfu2       : 290
+Kodma      : 80920
+Pcmat      : 08338
+Symc       : 594719
+Sxmc       : 1160278
+Mapa       : 24-32-25
+Nazcs      : BTPQ-ZKPQITAEc
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551287
+Kodmc      : 80920
+Mo         : 00
+Mc         : 20
+Pormc      : 20
+Pormcs     : 20
+Nazmc      : Brno-Líšeň
+Nazevur    : Úřad městské části Brno-Líšeň
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 62800
+Vymeru     : 1570.7474
+Ob91       : 26476
+Ob01       : 25388
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80920
+Porcsu     : 620214
+Kodfi      : 89802
+Cfu        : 289
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80920
+Pcmat      : 08338
+Symc       : 591523
+Sxmc       : 1160197
+Mapa       : 24-41-21
+Nazcs      : BTPQ-NKWFP
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551295
+Kodmc      : 80921
+Mo         : 00
+Mc         : 21
+Pormc      : 21
+Pormcs     : 21
+Nazmc      : Brno-Slatina
+Nazevur    : Úřad městské části Brno-Slatina
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 62700
+Vymeru     : 582.9769
+Ob91       : 8668
+Ob01       : 8530
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80921
+Porcsu     : 620220
+Kodfi      : 89802
+Cfu        : 289
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80905
+Pcmat      : 08303
+Symc       : 592653
+Sxmc       : 1163484
+Mapa       : 24-43-01
+Nazcs      : BTPQ-VNAXKPA
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551309
+Kodmc      : 80922
+Mo         : 00
+Mc         : 22
+Pormc      : 22
+Pormcs     : 22
+Nazmc      : Brno-Tuřany
+Nazevur    : Úřad městské části Brno-Tuřany
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 62000
+Vymeru     : 1784.1549
+Ob91       : 4526
+Ob01       : 4631
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80922
+Porcsu     : 620223
+Kodfi      : 89802
+Cfu        : 289
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80922
+Pcmat      : 08346
+Symc       : 594745
+Sxmc       : 1166475
+Mapa       : 24-34-10
+Nazcs      : BTPQ-XYUAPc
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551317
+Kodmc      : 80923
+Mo         : 00
+Mc         : 23
+Pormc      : 23
+Pormcs     : 23
+Nazmc      : Brno-Chrlice
+Nazevur    : Úřad městské části Brno-Chrlice
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 64300
+Vymeru     : 949.2938
+Ob91       : 3110
+Ob01       : 3176
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80923
+Porcsu     : 620230
+Kodfi      : 89802
+Cfu        : 289
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80922
+Pcmat      : 08346
+Symc       : 595696
+Sxmc       : 1168167
+Mapa       : 24-34-10
+Nazcs      : BTPQ-JTNKCF
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551325
+Kodmc      : 80924
+Mo         : 00
+Mc         : 24
+Pormc      : 24
+Pormcs     : 24
+Nazmc      : Brno-Bosonohy
+Nazevur    : Úřad městské části Brno-Bosonohy
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 64200
+Vymeru     : 714.7880
+Ob91       : 2137
+Ob01       : 2210
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80924
+Porcsu     : 620203
+Kodfi      : 89804
+Cfu        : 291
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80901
+Pcmat      : 08265
+Symc       : 604396
+Sxmc       : 1162269
+Mapa       : 24-34-03
+Nazcs      : BTPQ-BQVQPQIc
+Zmenazaz   : 
+Zmenapol   : 
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551368
+Kodmc      : 80925
+Mo         : 00
+Mc         : 25
+Pormc      : 25
+Pormcs     : 25
+Nazmc      : Brno-Žebětín
+Nazevur    : Úřad městské části Brno-Žebětín
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 64100
+Vymeru     : 1359.9226
+Ob91       : 1872
+Ob01       : 2070
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80925
+Porcsu     : 620227
+Kodfi      : 89804
+Cfu        : 291
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80913
+Pcmat      : 08311
+Symc       : 605930
+Sxmc       : 1158886
+Mapa       : 24-32-23
+Nazcs      : BTPQ-eFBFXKP
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551376
+Kodmc      : 80926
+Mo         : 00
+Mc         : 26
+Pormc      : 26
+Pormcs     : 26
+Nazmc      : Brno-Ivanovice
+Nazevur    : Úřad městské části Brno-Ivanovice
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 62100
+Vymeru     : 244.6107
+Ob91       : 687
+Ob01       : 999
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80926
+Porcsu     : 620206
+Kodfi      : 89803
+Cfu        : 290
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80903
+Pcmat      : 08281
+Symc       : 600333
+Sxmc       : 1152884
+Mapa       : 24-32-19
+Nazcs      : BTPQ-KZAPQZKCF
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551406
+Kodmc      : 80927
+Mo         : 00
+Mc         : 27
+Pormc      : 27
+Pormcs     : 27
+Nazmc      : Brno-Jehnice
+Nazevur    : Úřad městské části Brno-Jehnice
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 62100
+Vymeru     : 407.2898
+Ob91       : 532
+Ob01       : 752
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80903
+Porcsu     : 620213
+Kodfi      : 89803
+Cfu        : 290
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80903
+Pcmat      : 08281
+Symc       : 598232
+Sxmc       : 1151858
+Mapa       : 24-32-14
+Nazcs      : BTPQ-LFIPKCF
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551422
+Kodmc      : 80928
+Mo         : 00
+Mc         : 28
+Pormc      : 28
+Pormcs     : 28
+Nazmc      : Brno-Ořešín
+Nazevur    : Úřad městské části Brno-Ořešín
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 62100
+Vymeru     : 306.4520
+Ob91       : 311
+Ob01       : 452
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80928
+Porcsu     : 620229
+Kodfi      : 89803
+Cfu        : 290
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80917
+Pcmat      : 08320
+Symc       : 596987
+Sxmc       : 1151394
+Mapa       : 24-32-15
+Nazcs      : BTPQ-QUFWKP
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Kodok      : 3702
+Kodob      : 01000
+Ko         : 6
+Icob       : 582786
+Porob      : 001
+Poroba     : 001
+Iczuj      : 551431
+Kodmc      : 80929
+Mo         : 00
+Mc         : 29
+Pormc      : 29
+Pormcs     : 29
+Nazmc      : Brno-Útěchov
+Nazevur    : Úřad městské části Brno-Útěchov
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 09
+Psc        : 64400
+Vymeru     : 117.8125
+Ob91       : 211
+Ob01       : 446
+Obakt      : 
+Spro       : 
+Kodpo      : 01000
+Kodst      : 80929
+Porcsu     : 620224
+Kodfi      : 89803
+Cfu        : 290
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 80903
+Pcmat      : 08281
+Symc       : 595110
+Sxmc       : 1150692
+Mapa       : 24-32-15
+Nazcs      : BTPQ-YXFJQZ
+Zmenazaz   : 01012003
+Zmenapol   : KODMA
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Kodok      : 3806
+Kodob      : 11156
+Ko         : 2
+Icob       : 505927
+Porob      : 001
+Poroba     : 048
+Iczuj      : 555321
+Kodmc      : 81300
+Mo         : 00
+Mc         : 00
+Pormc      : 00
+Pormcs     : 00
+Nazmc      : Opava (nečleněná část města)
+Nazevur    : Magistrát města Opavy
+Ico        : 
+Ur         : 1
+Urob       : 1
+Urmc       : 1
+Sm         : 13
+Psc        : 74705
+Vymeru     : 4160.8047
+Ob91       : 56214
+Ob01       : 54401
+Obakt      : 
+Spro       : 
+Kodpo      : 11156
+Kodst      : 11156
+Porcsu     : 810502
+Kodfi      : 11156
+Cfu        : 384
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11156
+Pcmat      : 12440
+Symc       : 496249
+Sxmc       : 1087168
+Mapa       : 15-32-19
+Nazcs      : QRAZA (PFDNFPFPA DAVX OFVXA)
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Kodok      : 3806
+Kodob      : 11156
+Ko         : 2
+Icob       : 505927
+Porob      : 001
+Poroba     : 048
+Iczuj      : 555339
+Kodmc      : 81301
+Mo         : 00
+Mc         : 01
+Pormc      : 01
+Pormcs     : 01
+Nazmc      : Malé Hoštice
+Nazevur    : Úřad městské části Malé Hoštice
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 13
+Psc        : 74705
+Vymeru     : 555.0881
+Ob91       : 1660
+Ob01       : 1824
+Obakt      : 
+Spro       : 
+Kodpo      : 11156
+Kodst      : 11156
+Porcsu     : 810502
+Kodfi      : 11156
+Cfu        : 384
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11156
+Pcmat      : 12440
+Symc       : 493872
+Sxmc       : 1088126
+Mapa       : 15-32-20
+Nazcs      : OANF IQWXKCF
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Kodok      : 3806
+Kodob      : 11156
+Ko         : 2
+Icob       : 505927
+Porob      : 001
+Poroba     : 048
+Iczuj      : 555355
+Kodmc      : 81302
+Mo         : 00
+Mc         : 02
+Pormc      : 02
+Pormcs     : 02
+Nazmc      : Komárov
+Nazevur    : Úřad městské části Komárov
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 13
+Psc        : 74770
+Vymeru     : 740.5104
+Ob91       : 1332
+Ob01       : 1381
+Obakt      : 
+Spro       : 
+Kodpo      : 11156
+Kodst      : 11156
+Porcsu     : 810502
+Kodfi      : 11156
+Cfu        : 384
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11156
+Pcmat      : 12440
+Symc       : 492308
+Sxmc       : 1090867
+Mapa       : 15-32-20
+Nazcs      : MQOATQZ
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Kodok      : 3806
+Kodob      : 11156
+Ko         : 2
+Icob       : 505927
+Porob      : 001
+Poroba     : 048
+Iczuj      : 555371
+Kodmc      : 81303
+Mo         : 00
+Mc         : 03
+Pormc      : 03
+Pormcs     : 03
+Nazmc      : Suché Lazce
+Nazevur    : Úřad městské části Suché Lazce
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 13
+Psc        : 74795
+Vymeru     : 447.8358
+Ob91       : 930
+Ob01       : 1005
+Obakt      : 
+Spro       : 
+Kodpo      : 11156
+Kodst      : 11156
+Porcsu     : 810502
+Kodfi      : 11156
+Cfu        : 384
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11156
+Pcmat      : 12440
+Symc       : 491221
+Sxmc       : 1092427
+Mapa       : 15-32-25
+Nazcs      : VYJF NAdCF
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Kodok      : 3806
+Kodob      : 11156
+Ko         : 2
+Icob       : 505927
+Porob      : 001
+Poroba     : 048
+Iczuj      : 555401
+Kodmc      : 81304
+Mo         : 00
+Mc         : 04
+Pormc      : 04
+Pormcs     : 04
+Nazmc      : Podvihov
+Nazevur    : Úřad městské části Podvihov
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 13
+Psc        : 74706
+Vymeru     : 717.2131
+Ob91       : 586
+Ob01       : 609
+Obakt      : 
+Spro       : 
+Kodpo      : 11156
+Kodst      : 11156
+Porcsu     : 810502
+Kodfi      : 11156
+Cfu        : 384
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11156
+Pcmat      : 12440
+Symc       : 492218
+Sxmc       : 1095183
+Mapa       : 15-34-05
+Nazcs      : RQEZKIQZ
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Kodok      : 3806
+Kodob      : 11156
+Ko         : 2
+Icob       : 505927
+Porob      : 001
+Poroba     : 048
+Iczuj      : 555410
+Kodmc      : 81305
+Mo         : 00
+Mc         : 05
+Pormc      : 05
+Pormcs     : 05
+Nazmc      : Zlatníky
+Nazevur    : Úřad městské části Zlatníky
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 13
+Psc        : 74601
+Vymeru     : 449.9020
+Ob91       : 281
+Ob01       : 340
+Obakt      : 
+Spro       : 
+Kodpo      : 11156
+Kodst      : 11156
+Porcsu     : 810502
+Kodfi      : 11156
+Cfu        : 384
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11156
+Pcmat      : 12440
+Symc       : 501977
+Sxmc       : 1086854
+Mapa       : 15-32-18
+Nazcs      : dNAXPKMc
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Kodok      : 3806
+Kodob      : 11156
+Ko         : 2
+Icob       : 505927
+Porob      : 001
+Poroba     : 048
+Iczuj      : 555436
+Kodmc      : 81306
+Mo         : 00
+Mc         : 06
+Pormc      : 06
+Pormcs     : 06
+Nazmc      : Milostovice
+Nazevur    : Úřad městské části Milostovice
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 13
+Psc        : 74601
+Vymeru     : 514.8483
+Ob91       : 265
+Ob01       : 251
+Obakt      : 
+Spro       : 
+Kodpo      : 11156
+Kodst      : 11156
+Porcsu     : 810502
+Kodfi      : 11156
+Cfu        : 384
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11156
+Pcmat      : 12440
+Symc       : 501717
+Sxmc       : 1085954
+Mapa       : 15-32-13
+Nazcs      : OKNQVXQZKCF
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Kodok      : 3806
+Kodob      : 11156
+Ko         : 2
+Icob       : 505927
+Porob      : 001
+Poroba     : 048
+Iczuj      : 555461
+Kodmc      : 81307
+Mo         : 00
+Mc         : 07
+Pormc      : 07
+Pormcs     : 07
+Nazmc      : Vlaštovičky
+Nazevur    : Úřad městské části Vlaštovičky
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 13
+Psc        : 74601
+Vymeru     : 609.9788
+Ob91       : 332
+Ob01       : 358
+Obakt      : 
+Spro       : 
+Kodpo      : 11156
+Kodst      : 11156
+Porcsu     : 810502
+Kodfi      : 11156
+Cfu        : 384
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11156
+Pcmat      : 12440
+Symc       : 501957
+Sxmc       : 1083956
+Mapa       : 15-32-13
+Nazcs      : ZNAWXQZKDMc
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Kodok      : 3806
+Kodob      : 11156
+Ko         : 2
+Icob       : 505927
+Porob      : 001
+Poroba     : 048
+Iczuj      : 556700
+Kodmc      : 81308
+Mo         : 00
+Mc         : 08
+Pormc      : 08
+Pormcs     : 08
+Nazmc      : Vávrovice
+Nazevur    : Úřad městské části Vávrovice
+Ico        : 
+Ur         : 7
+Urob       : 1
+Urmc       : 7
+Sm         : 13
+Psc        : 74773
+Vymeru     : 864.6379
+Ob91       : 1215
+Ob01       : 1213
+Obakt      : 
+Spro       : 
+Kodpo      : 11156
+Kodst      : 11156
+Porcsu     : 810502
+Kodfi      : 11156
+Cfu        : 384
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 11156
+Pcmat      : 12440
+Symc       : 499361
+Sxmc       : 1083190
+Mapa       : 15-32-13
+Nazcs      : ZAZTQZKCF
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 545911
+Kodmc      : 81201
+Mo         : 01
+Mc         : 00
+Pormc      : 01
+Pormcs     : 01
+Nazmc      : Moravská Ostrava a Přívoz
+Nazevur    : Úřad městského obvodu Moravská Ostrava a Přívoz
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 70200
+Vymeru     : 1324.5549
+Ob91       : 46379
+Ob01       : 43428
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81201
+Porcsu     : 810607
+Kodfi      : 89805
+Cfu        : 388
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81201
+Pcmat      : 12688
+Symc       : 470650
+Sxmc       : 1101660
+Mapa       : 15-43-09
+Nazcs      : OQTAZVMA QVXTAZA A RUKZQd
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 546046
+Kodmc      : 81202
+Mo         : 02
+Mc         : 00
+Pormc      : 02
+Pormcs     : 02
+Nazmc      : Slezská Ostrava
+Nazevur    : Úřad městského obvodu Slezská Ostrava
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 71000
+Vymeru     : 4174.2242
+Ob91       : 19466
+Ob01       : 19484
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81202
+Porcsu     : 810619
+Kodfi      : 89805
+Cfu        : 388
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81202
+Pcmat      : 12696
+Symc       : 468090
+Sxmc       : 1101880
+Mapa       : 15-43-05
+Nazcs      : VNFdVMA QVXTAZA
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 546135
+Kodmc      : 81203
+Mo         : 03
+Mc         : 00
+Pormc      : 03
+Pormcs     : 03
+Nazmc      : Ostrava-Jih
+Nazevur    : Úřad městského obvodu Ostrava-Jih
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 70030
+Vymeru     : 1631.5284
+Ob91       : 118806
+Ob01       : 118094
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81203
+Porcsu     : 810613
+Kodfi      : 89806
+Cfu        : 389
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81203
+Pcmat      : 12700
+Symc       : 473990
+Sxmc       : 1105270
+Mapa       : 15-43-14
+Nazcs      : QVXTAZA-LKI
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 546224
+Kodmc      : 81204
+Mo         : 04
+Mc         : 00
+Pormc      : 04
+Pormcs     : 04
+Nazmc      : Poruba
+Nazevur    : Úřad městského obvodu Poruba
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 70800
+Vymeru     : 1317.9127
+Ob91       : 83982
+Ob01       : 74980
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81204
+Porcsu     : 810615
+Kodfi      : 89807
+Cfu        : 390
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81204
+Pcmat      : 12718
+Symc       : 478860
+Sxmc       : 1101200
+Mapa       : 15-43-03
+Nazcs      : RQTYBA
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554219
+Kodmc      : 81205
+Mo         : 05
+Mc         : 00
+Pormc      : 05
+Pormcs     : 05
+Nazmc      : Nová Bělá
+Nazevur    : Úřad městského obvodu Nová Bělá
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 72400
+Vymeru     : 717.5661
+Ob91       : 1460
+Ob01       : 1565
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81205
+Porcsu     : 810608
+Kodfi      : 89806
+Cfu        : 389
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81207
+Pcmat      : 12734
+Symc       : 473260
+Sxmc       : 1110680
+Mapa       : 15-43-19
+Nazcs      : PQZA BFNA
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554227
+Kodmc      : 81206
+Mo         : 06
+Mc         : 00
+Pormc      : 06
+Pormcs     : 06
+Nazmc      : Vítkovice
+Nazevur    : Úřad městského obvodu Vítkovice
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 70300
+Vymeru     : 647.5562
+Ob91       : 7292
+Ob01       : 7518
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81206
+Porcsu     : 810618
+Kodfi      : 89806
+Cfu        : 389
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81206
+Pcmat      : 12726
+Symc       : 472240
+Sxmc       : 1104670
+Mapa       : 15-43-14
+Nazcs      : ZKXMQZKCF
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554235
+Kodmc      : 81207
+Mo         : 07
+Mc         : 00
+Pormc      : 07
+Pormcs     : 07
+Nazmc      : Stará Bělá
+Nazevur    : Úřad městského obvodu Stará Bělá
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 72400
+Vymeru     : 1393.3678
+Ob91       : 2989
+Ob01       : 3233
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81207
+Porcsu     : 810620
+Kodfi      : 89806
+Cfu        : 389
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81207
+Pcmat      : 12734
+Symc       : 475070
+Sxmc       : 1108700
+Mapa       : 15-43-19
+Nazcs      : VXATA BFNA
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554243
+Kodmc      : 81208
+Mo         : 08
+Mc         : 00
+Pormc      : 08
+Pormcs     : 08
+Nazmc      : Pustkovec
+Nazevur    : Úřad městského obvodu Pustkovec
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 70800
+Vymeru     : 106.9358
+Ob91       : 999
+Ob01       : 1115
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81208
+Porcsu     : 810616
+Kodfi      : 89807
+Cfu        : 390
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81204
+Pcmat      : 12718
+Symc       : 478819
+Sxmc       : 1100201
+Mapa       : 15-43-08
+Nazcs      : RYVXMQZFC
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554286
+Kodmc      : 81209
+Mo         : 09
+Mc         : 00
+Pormc      : 09
+Pormcs     : 09
+Nazmc      : Mariánské Hory a Hulváky
+Nazevur    : Úřad městského obvodu Mariánské Hory a Hulváky
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 70900
+Vymeru     : 735.3186
+Ob91       : 14542
+Ob01       : 12998
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81209
+Porcsu     : 810605
+Kodfi      : 89807
+Cfu        : 390
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81209
+Pcmat      : 12742
+Symc       : 472430
+Sxmc       : 1101780
+Mapa       : 15-43-09
+Nazcs      : OATKAPVMF IQTc A IYNZAMc
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554308
+Kodmc      : 81210
+Mo         : 10
+Mc         : 00
+Pormc      : 10
+Pormcs     : 10
+Nazmc      : Petřkovice
+Nazevur    : Úřad městského obvodu Petřkovice
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 72529
+Vymeru     : 390.3999
+Ob91       : 2659
+Ob01       : 2783
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81210
+Porcsu     : 810610
+Kodfi      : 89805
+Cfu        : 388
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81201
+Pcmat      : 12688
+Symc       : 472210
+Sxmc       : 1097280
+Mapa       : 15-43-04
+Nazcs      : RFXUMQZKCF
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554324
+Kodmc      : 81211
+Mo         : 11
+Mc         : 00
+Pormc      : 11
+Pormcs     : 11
+Nazmc      : Lhotka
+Nazevur    : Úřad městského obvodu Lhotka
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 72528
+Vymeru     : 213.6455
+Ob91       : 941
+Ob01       : 1004
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81211
+Porcsu     : 810604
+Kodfi      : 89805
+Cfu        : 388
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81201
+Pcmat      : 12688
+Symc       : 474230
+Sxmc       : 1098680
+Mapa       : 15-43-04
+Nazcs      : NIQXMA
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554332
+Kodmc      : 81212
+Mo         : 12
+Mc         : 00
+Pormc      : 12
+Pormcs     : 12
+Nazmc      : Hošťálkovice
+Nazevur    : Úřad městského obvodu Hošťálkovice
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 72528
+Vymeru     : 529.5144
+Ob91       : 1538
+Ob01       : 1511
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81212
+Porcsu     : 810602
+Kodfi      : 89805
+Cfu        : 388
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81201
+Pcmat      : 12688
+Symc       : 475396
+Sxmc       : 1099797
+Mapa       : 15-43-04
+Nazcs      : IQWXANMQZKCF
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554367
+Kodmc      : 81213
+Mo         : 13
+Mc         : 00
+Pormc      : 13
+Pormcs     : 13
+Nazmc      : Nová Ves
+Nazevur    : Úřad městského obvodu Nová Ves
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 70900
+Vymeru     : 306.6996
+Ob91       : 640
+Ob01       : 603
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81209
+Porcsu     : 810605
+Kodfi      : 89807
+Cfu        : 390
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81209
+Pcmat      : 12742
+Symc       : 474680
+Sxmc       : 1101960
+Mapa       : 15-43-09
+Nazcs      : PQZA ZFV
+Zmenazaz   : 01052004
+Zmenapol   : KODMA
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554375
+Kodmc      : 81214
+Mo         : 14
+Mc         : 00
+Pormc      : 14
+Pormcs     : 14
+Nazmc      : Proskovice
+Nazevur    : Úřad městského obvodu Proskovice
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 72400
+Vymeru     : 342.7264
+Ob91       : 1052
+Ob01       : 1125
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81203
+Porcsu     : 810613
+Kodfi      : 89806
+Cfu        : 389
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81203
+Pcmat      : 12700
+Symc       : 477360
+Sxmc       : 1110220
+Mapa       : 15-43-18
+Nazcs      : RTQVMQZKCF
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554430
+Kodmc      : 81215
+Mo         : 15
+Mc         : 00
+Pormc      : 15
+Pormcs     : 15
+Nazmc      : Michálkovice
+Nazevur    : Úřad městského obvodu Michálkovice
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 71500
+Vymeru     : 289.1531
+Ob91       : 2466
+Ob01       : 2836
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81215
+Porcsu     : 810606
+Kodfi      : 89805
+Cfu        : 388
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81202
+Pcmat      : 12696
+Symc       : 465710
+Sxmc       : 1101710
+Mapa       : 15-44-06
+Nazcs      : OKJANMQZKCF
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554537
+Kodmc      : 81216
+Mo         : 16
+Mc         : 00
+Pormc      : 16
+Pormcs     : 16
+Nazmc      : Radvanice a Bartovice
+Nazevur    : Úřad městského obvodu Radvanice a Bartovice
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 71600
+Vymeru     : 1665.9103
+Ob91       : 5773
+Ob01       : 6284
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81216
+Porcsu     : 810612
+Kodfi      : 89805
+Cfu        : 388
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81216
+Pcmat      : 12750
+Symc       : 466430
+Sxmc       : 1104290
+Mapa       : 15-44-06
+Nazcs      : TAEZAPKCF A BATXQZKCF
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554561
+Kodmc      : 81217
+Mo         : 17
+Mc         : 00
+Pormc      : 17
+Pormcs     : 17
+Nazmc      : Krásné Pole
+Nazevur    : Úřad městského obvodu Krásné Pole
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 72526
+Vymeru     : 658.8026
+Ob91       : 1898
+Ob01       : 2101
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81217
+Porcsu     : 810622
+Kodfi      : 89807
+Cfu        : 390
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81221
+Pcmat      : 12777
+Symc       : 481510
+Sxmc       : 1098970
+Mapa       : 15-43-02
+Nazcs      : MTAVPF RQNF
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554570
+Kodmc      : 81218
+Mo         : 18
+Mc         : 00
+Pormc      : 18
+Pormcs     : 18
+Nazmc      : Martinov
+Nazevur    : Úřad městského obvodu Martinov
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 72300
+Vymeru     : 402.6794
+Ob91       : 1109
+Ob01       : 1093
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81218
+Porcsu     : 810614
+Kodfi      : 89807
+Cfu        : 390
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81204
+Pcmat      : 12718
+Symc       : 477861
+Sxmc       : 1098579
+Mapa       : 15-43-03
+Nazcs      : OATXKPQZ
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554588
+Kodmc      : 81219
+Mo         : 19
+Mc         : 00
+Pormc      : 19
+Pormcs     : 19
+Nazmc      : Polanka nad Odrou
+Nazevur    : Úřad městského obvodu Polanka nad Odrou
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 72525
+Vymeru     : 1723.8116
+Ob91       : 3934
+Ob01       : 4224
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81219
+Porcsu     : 810611
+Kodfi      : 89807
+Cfu        : 390
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81219
+Pcmat      : 12769
+Symc       : 479509
+Sxmc       : 1106090
+Mapa       : 15-43-13
+Nazcs      : RQNAPMA PAE QETQY
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554669
+Kodmc      : 81220
+Mo         : 20
+Mc         : 00
+Pormc      : 20
+Pormcs     : 20
+Nazmc      : Hrabová
+Nazevur    : Úřad městského obvodu Hrabová
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 72000
+Vymeru     : 921.0487
+Ob91       : 3446
+Ob01       : 3433
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81220
+Porcsu     : 810603
+Kodfi      : 89806
+Cfu        : 389
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81203
+Pcmat      : 12700
+Symc       : 470890
+Sxmc       : 1108910
+Mapa       : 15-43-20
+Nazcs      : ITABQZA
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554685
+Kodmc      : 81221
+Mo         : 21
+Mc         : 00
+Pormc      : 21
+Pormcs     : 21
+Nazmc      : Svinov
+Nazevur    : Úřad městského obvodu Svinov
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 72100
+Vymeru     : 1162.3068
+Ob91       : 3379
+Ob01       : 4536
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81221
+Porcsu     : 810621
+Kodfi      : 89807
+Cfu        : 390
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81221
+Pcmat      : 12777
+Symc       : 476770
+Sxmc       : 1103960
+Mapa       : 15-43-08
+Nazcs      : VZKPQZ
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554715
+Kodmc      : 81222
+Mo         : 22
+Mc         : 00
+Pormc      : 22
+Pormcs     : 22
+Nazmc      : Třebovice
+Nazevur    : Úřad městského obvodu Třebovice
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 72200
+Vymeru     : 282.0554
+Ob91       : 1620
+Ob01       : 1698
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81222
+Porcsu     : 810617
+Kodfi      : 89807
+Cfu        : 390
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81204
+Pcmat      : 12718
+Symc       : 477050
+Sxmc       : 1101270
+Mapa       : 15-43-08
+Nazcs      : XUFBQZKCF
+Zmenazaz   : 01052004
+Zmenapol   : 
+
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Kodok      : 3807
+Kodob      : 11352
+Ko         : 2
+Icob       : 554821
+Porob      : 001
+Poroba     : 006
+Iczuj      : 554723
+Kodmc      : 81223
+Mo         : 23
+Mc         : 00
+Pormc      : 23
+Pormcs     : 23
+Nazmc      : Plesná
+Nazevur    : Úřad městského obvodu Plesná
+Ico        : 
+Ur         : 6
+Urob       : 1
+Urmc       : 6
+Sm         : 12
+Psc        : 72527
+Vymeru     : 483.7349
+Ob91       : 1001
+Ob01       : 1098
+Obakt      : 
+Spro       : 
+Kodpo      : 11352
+Kodst      : 81204
+Porcsu     : 810615
+Kodfi      : 89807
+Cfu        : 390
+Kodfi2     : 
+Cfu2       : 
+Kodma      : 81204
+Pcmat      : 12718
+Symc       : 479680
+Sxmc       : 1098240
+Mapa       : 15-43-03
+Nazcs      : RNFVPA
+Zmenazaz   : 01052004
+Zmenapol   : 
+

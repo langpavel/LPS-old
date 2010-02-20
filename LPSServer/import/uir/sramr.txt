@@ -1,0 +1,136 @@
+Kodsra     : 12702
+Nazsra     : Pražská-středočeská SRA
+Nazcs      : RTAeVMA-VXUFEQDFVMA VTA
+
+Kodsra     : 02191
+Nazsra     : Českobudějovická SRA
+Nazcs      : DFVMQBYEFLQZKCMA VTA
+
+Kodsra     : 12198
+Nazsra     : Plzeňská SRA
+Nazcs      : RNdFPVMA VTA
+
+Kodsra     : 06343
+Nazsra     : Karlovarsko-chebská SRA
+Nazcs      : MATNQZATVMQ-JFBVMA VTA
+
+Kodsra     : 17487
+Nazsra     : Ústecko-chomutovská SRA
+Nazcs      : YVXFCMQ-JQOYXQZVMA VTA
+
+Kodsra     : 08203
+Nazsra     : Liberecká SRA
+Nazcs      : NKBFTFCMA VTA
+
+Kodsra     : 04687
+Nazsra     : Hradecko-pardubická SRA
+Nazcs      : ITAEFCMQ-RATEYBKCMA VTA
+
+Kodsra     : 01000
+Nazsra     : Brněnská SRA
+Nazcs      : BTPFPVMA VTA
+
+Kodsra     : 03556
+Nazsra     : Zlínská SRA
+Nazcs      : dNKPVMA VTA
+
+Kodsra     : 11352
+Nazsra     : Ostravská SRA
+Nazcs      : QVXTAZVMA VTA
+
+Kodsra     : 11050
+Nazsra     : Olomoucká SRA
+Nazcs      : QNQOQYCMA VTA
+
+Kodsra     : 06815
+Nazsra     : Kolínský MR
+Nazcs      : MQNKPVMc OT
+
+Kodsra     : 09629
+Nazsra     : Mladoboleslavský MR
+Nazcs      : ONAEQBQNFVNAZVMc OT
+
+Kodsra     : 13542
+Nazsra     : Příbramský MR
+Nazcs      : RUKBTAOVMc OT
+
+Kodsra     : 12075
+Nazsra     : Písecký MR
+Nazcs      : RKVFCMc OT
+
+Kodsra     : 15591
+Nazsra     : Strakonický MR
+Nazcs      : VXTAMQPKCMc OT
+
+Kodsra     : 16470
+Nazsra     : Táborský MR
+Nazcs      : XABQTVMc OT
+
+Kodsra     : 06579
+Nazsra     : Klatovský MR
+Nazcs      : MNAXQZVMc OT
+
+Kodsra     : 02138
+Nazsra     : Českolipský MR
+Nazcs      : DFVMQNKRVMc OT
+
+Kodsra     : 02492
+Nazsra     : Děčínský MR
+Nazcs      : EFDKPVMc OT
+
+Kodsra     : 08542
+Nazsra     : Litoměřický MR
+Nazcs      : NKXQOFUKCMc OT
+
+Kodsra     : 17697
+Nazsra     : Varnsdorfský MR
+Nazcs      : ZATPVEQTGVMc OT
+
+Kodsra     : 03782
+Nazsra     : Havlíčkobrodský MR
+Nazcs      : IAZNKDMQBTQEVMc OT
+
+Kodsra     : 10126
+Nazsra     : Náchodský MR
+Nazcs      : PAJQEVMc OT
+
+Kodsra     : 16902
+Nazsra     : Trutnovský MR
+Nazcs      : XTYXPQZVMc OT
+
+Kodsra     : 17527
+Nazsra     : Ústecký MR
+Nazcs      : YVXFCMc OT
+
+Kodsra     : 01358
+Nazsra     : Břeclavský MR
+Nazcs      : BUFCNAZVMc OT
+
+Kodsra     : 04041
+Nazsra     : Hodonínský MR
+Nazcs      : IQEQPKPVMc OT
+
+Kodsra     : 05967
+Nazsra     : Jihlavský MR
+Nazcs      : LKINAZVMc OT
+
+Kodsra     : 16973
+Nazsra     : Třebíčský MR
+Nazcs      : XUFBKDVMc OT
+
+Kodsra     : 19341
+Nazsra     : Znojemský MR
+Nazcs      : dPQLFOVMc OT
+
+Kodsra     : 19523
+Nazsra     : Žďárský MR
+Nazcs      : eEATVMc OT
+
+Kodsra     : 16426
+Nazsra     : Šumperský MR
+Nazcs      : WYORFTVMc OT
+
+Kodsra     : 18676
+Nazsra     : Vsetínský MR
+Nazcs      : ZVFXKPVMc OT
+

@@ -1,0 +1,4730 @@
+Polozka    : KODNUTS
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : OBLASTI
+Pors       : 01
+Porp       : 001
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : NAZOBL
+Tp         : C
+Del        : 20
+Dec        : 0
+Soubor     : OBLASTI
+Pors       : 01
+Porp       : 002
+Charp      : stand.
+Vyznam     : Název oblasti (jednotky NUTS 2)
+
+Polozka    : VYMERA
+Tp         : N
+Del        : 12
+Dec        : 4
+Soubor     : OBLASTI
+Pors       : 01
+Porp       : 003
+Charp      : inf.
+Vyznam     : Výměra v ha
+
+Polozka    : OB91
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : OBLASTI
+Pors       : 01
+Porp       : 004
+Charp      : inf.
+Vyznam     : Počet obyvatel k 3.3.1991
+
+Polozka    : OB01
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : OBLASTI
+Pors       : 01
+Porp       : 005
+Charp      : inf.
+Vyznam     : Počet obyvatel k 1.3.2001
+
+Polozka    : OBAKT
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : OBLASTI
+Pors       : 01
+Porp       : 006
+Charp      : inf.
+Vyznam     : Počet obyvatel aktuální (nejnovější dle ČSÚ)
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : OBLASTI
+Pors       : 01
+Porp       : 007
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : ZMENAZAZ
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : OBLASTI
+Pors       : 01
+Porp       : 008
+Charp      : prac.
+Vyznam     : Datum změny v záznamu
+
+Polozka    : ZMENAPOL
+Tp         : C
+Del        : 20
+Dec        : 0
+Soubor     : OBLASTI
+Pors       : 01
+Porp       : 009
+Charp      : prac.
+Vyznam     : Změněná položka v záznamu
+
+Polozka    : NK
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : KRAJE
+Pors       : 02
+Porp       : 001
+Charp      : prac.
+Vyznam     : Zkratka názvu kraje
+
+Polozka    : KN
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : KRAJE
+Pors       : 02
+Porp       : 002
+Charp      : prac.
+Vyznam     : Pořadové číslo kraje dle zákona o VÚSC
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : KRAJE
+Pors       : 02
+Porp       : 003
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : NAZKR
+Tp         : C
+Del        : 20
+Dec        : 0
+Soubor     : KRAJE
+Pors       : 02
+Porp       : 004
+Charp      : stand.
+Vyznam     : Název kraje
+
+Polozka    : VYMERA
+Tp         : N
+Del        : 12
+Dec        : 4
+Soubor     : KRAJE
+Pors       : 02
+Porp       : 005
+Charp      : inf.
+Vyznam     : Výměra v ha
+
+Polozka    : OB91
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : KRAJE
+Pors       : 02
+Porp       : 006
+Charp      : inf.
+Vyznam     : Počet obyvatel k 3.3.1991
+
+Polozka    : OB01
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : KRAJE
+Pors       : 02
+Porp       : 007
+Charp      : inf.
+Vyznam     : Počet obyvatel k 1.3.2001
+
+Polozka    : OBAKT
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : KRAJE
+Pors       : 02
+Porp       : 008
+Charp      : inf.
+Vyznam     : Počet obyvatel aktuální (nejnovější dle ČSÚ)
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : KRAJE
+Pors       : 02
+Porp       : 009
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : ZMENAZAZ
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : KRAJE
+Pors       : 02
+Porp       : 010
+Charp      : prac.
+Vyznam     : Datum změny v záznamu
+
+Polozka    : ZMENAPOL
+Tp         : C
+Del        : 20
+Dec        : 0
+Soubor     : KRAJE
+Pors       : 02
+Porp       : 011
+Charp      : prac.
+Vyznam     : Změněná položka v záznamu
+
+Polozka    : NK
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 001
+Charp      : prac.
+Vyznam     : Zkratka názvu kraje
+
+Polozka    : KN
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 002
+Charp      : prac.
+Vyznam     : Pořadové číslo kraje dle zákona o VÚSC
+
+Polozka    : KNOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 003
+Charp      : pomoc.
+Vyznam     : Pořadové číslo okresu dle zákona o VÚSC
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 004
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : KNUTS
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 006
+Charp      : pomoc.
+Vyznam     : Pracovní kód okresu (nový)
+
+Polozka    : KODOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 007
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý)
+
+Polozka    : NAZKR
+Tp         : C
+Del        : 20
+Dec        : 0
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 008
+Charp      : stand.
+Vyznam     : Název kraje
+
+Polozka    : NAZOK
+Tp         : C
+Del        : 20
+Dec        : 0
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 009
+Charp      : stand.
+Vyznam     : Název okresu
+
+Polozka    : VYMERA
+Tp         : N
+Del        : 12
+Dec        : 4
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 010
+Charp      : inf.
+Vyznam     : Výměra v ha
+
+Polozka    : VYMERU
+Tp         : N
+Del        : 12
+Dec        : 4
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 011
+Charp      : inf.
+Vyznam     : Výměra v ha (odhad dle GIS)
+
+Polozka    : OB91
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 012
+Charp      : inf.
+Vyznam     : Počet obyvatel k 3.3.1991
+
+Polozka    : OB01
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 013
+Charp      : inf.
+Vyznam     : Počet obyvatel k 1.3.2001
+
+Polozka    : OBAKT
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 014
+Charp      : inf.
+Vyznam     : Počet obyvatel aktuální (nejnovější dle ČSÚ)
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 015
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : ZMENAZAZ
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 016
+Charp      : prac.
+Vyznam     : Datum změny v záznamu
+
+Polozka    : ZMENAPOL
+Tp         : C
+Del        : 20
+Dec        : 0
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 017
+Charp      : prac.
+Vyznam     : Změněná položka v záznamu
+
+Polozka    : NK
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 001
+Charp      : prac.
+Vyznam     : Zkratka názvu kraje
+
+Polozka    : KN
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 002
+Charp      : prac.
+Vyznam     : Pořadové číslo kraje dle zákona o VÚSC
+
+Polozka    : KNOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 003
+Charp      : pomoc.
+Vyznam     : Pořadové číslo okresu dle zákona o VÚSC
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 004
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : KNUTS
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 006
+Charp      : pomoc.
+Vyznam     : Pracovní kód okresu (nový)
+
+Polozka    : KODOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 007
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý)
+
+Polozka    : POROB
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 008
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese
+
+Polozka    : POROBA
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 009
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese při abecedním třídění
+
+Polozka    : KODOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 010
+Charp      : prac.
+Vyznam     : Kód obce (historický)
+
+Polozka    : KO
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 011
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu obce
+
+Polozka    : ICOB
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 012
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo obce
+
+Polozka    : ICZUJ
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 013
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo základní územní jednotky
+
+Polozka    : NAZOB
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 014
+Charp      : stand.
+Vyznam     : Název obce
+
+Polozka    : NAZEVUR
+Tp         : C
+Del        : 60
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 015
+Charp      : inf.
+Vyznam     : Název úřadu
+
+Polozka    : ICO
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 016
+Charp      : inf.
+Vyznam     : IČO - Identifikační číslo organizace - obce, obecního úřadu
+
+Polozka    : OM
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 017
+Charp      : prac.
+Vyznam     : Příznak okresního města (pořadí obce v okrese)
+
+Polozka    : UR
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 018
+Charp      : prac.
+Vyznam     : Typ úřadu v obci nebo městském obvodu/městské části
+
+Polozka    : UROB
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 019
+Charp      : prac.
+Vyznam     : Typ úřadu v obci
+
+Polozka    : SM
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 020
+Charp      : prac.
+Vyznam     : Číslo statutárního města
+
+Polozka    : PSC
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 021
+Charp      : prac.
+Vyznam     : Poštovní směrovací číslo (jediné, první nebo hlavní)
+
+Polozka    : VYMERA
+Tp         : N
+Del        : 12
+Dec        : 4
+Soubor     : OBCE
+Pors       : 04
+Porp       : 022
+Charp      : inf.
+Vyznam     : Výměra v ha
+
+Polozka    : VYMERU
+Tp         : N
+Del        : 12
+Dec        : 4
+Soubor     : OBCE
+Pors       : 04
+Porp       : 023
+Charp      : inf.
+Vyznam     : Výměra v ha (odhad dle GIS)
+
+Polozka    : OB91
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 024
+Charp      : inf.
+Vyznam     : Počet obyvatel k 3.3.1991
+
+Polozka    : OB01
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 025
+Charp      : inf.
+Vyznam     : Počet obyvatel k 1.3.2001
+
+Polozka    : OBAKT
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 026
+Charp      : inf.
+Vyznam     : Počet obyvatel aktuální (nejnovější dle ČSÚ)
+
+Polozka    : KODST
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 027
+Charp      : prac.
+Vyznam     : Kód sídla stavebního úřadu (pomocí KODOB a KODMC)
+
+Polozka    : PORCSU
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 028
+Charp      : prac.
+Vyznam     : Pořadové číslo stavebního úřadu
+
+Polozka    : KODFI
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 029
+Charp      : prac.
+Vyznam     : Kód sídla finančního úřadu (pomocí KODOB)
+
+Polozka    : CFU
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 030
+Charp      : prac.
+Vyznam     : Číslo finančního úřadu
+
+Polozka    : KODMA
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 031
+Charp      : prac.
+Vyznam     : Kód sídla matričnního úřadu (pomocí KODOB)
+
+Polozka    : PCMAT
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 032
+Charp      : prac.
+Vyznam     : Pořadové číslo matričního úřadu
+
+Polozka    : PROBL
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 033
+Charp      : prac.
+Vyznam     : Příslušnost k problémové oblasti
+
+Polozka    : SYOB
+Tp         : N
+Del        : 6
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 034
+Charp      : prac.
+Vyznam     : Souřadnice Y definičního bodu obce
+
+Polozka    : SXOB
+Tp         : N
+Del        : 7
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 035
+Charp      : prac.
+Vyznam     : Souřadnice X definičního bodu obce
+
+Polozka    : MAPA
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 036
+Charp      : inf.
+Vyznam     : Číslo základní mapy 1:10 000
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 037
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : ZMENAZAZ
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 038
+Charp      : prac.
+Vyznam     : Datum změny v záznamu
+
+Polozka    : ZMENAPOL
+Tp         : C
+Del        : 30
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 039
+Charp      : prac.
+Vyznam     : Změněná položka v záznamu
+
+Polozka    : CISPOU
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 040
+Charp      : kód ČSÚ
+Vyznam     : Číslo (kód ČSÚ) obce s pověřeným obecním úřadem
+
+Polozka    : OKPO
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 041
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý) obce s pověřeným obecním úřadem
+
+Polozka    : KODPO
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 042
+Charp      : prac.
+Vyznam     : Kód obce s pověřeným obecním úřadem (pomocí KODOB)
+
+Polozka    : NAZPO
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 043
+Charp      : stand.
+Vyznam     : Název obce s pověřeným obecním úřadem
+
+Polozka    : CISORP
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 044
+Charp      : kód ČSÚ
+Vyznam     : Číslo (kód ČSÚ) obce s rozšířenou působností
+
+Polozka    : OKORP
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 045
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý) obce s rozšířenou působností
+
+Polozka    : KODORP
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 046
+Charp      : prac.
+Vyznam     : Kód obce s rozšířenou působností (pomocí KODOB)
+
+Polozka    : NAZORP
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 047
+Charp      : stand.
+Vyznam     : Název obce s rozšířenou působností
+
+Polozka    : KN
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 001
+Charp      : prac.
+Vyznam     : Pořadové číslo kraje dle zákona o VÚSC
+
+Polozka    : KNOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 002
+Charp      : pomoc.
+Vyznam     : Pořadové číslo okresu dle zákona o VÚSC
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 003
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : KODOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 005
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý)
+
+Polozka    : KODOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 006
+Charp      : prac.
+Vyznam     : Kód obce (historický)
+
+Polozka    : KO
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 007
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu obce
+
+Polozka    : ICOB
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 008
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo obce
+
+Polozka    : POROB
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 009
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese
+
+Polozka    : POROBA
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 010
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese při abecedním třídění
+
+Polozka    : ICZUJ
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 011
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo základní územní jednotky
+
+Polozka    : KODMC
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 012
+Charp      : prac.
+Vyznam     : Kód městského obvodu/městské části
+
+Polozka    : MO
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 013
+Charp      : prac.
+Vyznam     : Číslo městského obvodu
+
+Polozka    : MC
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 014
+Charp      : prac.
+Vyznam     : Číslo městské části
+
+Polozka    : PORMC
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 015
+Charp      : prac.
+Vyznam     : Pořadové číslo městského obvodu/městské části
+
+Polozka    : PORMCS
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 016
+Charp      : prac.
+Vyznam     : Pořadové číslo MO/MČ v rámci správního obvodu
+
+Polozka    : NAZMC
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 017
+Charp      : stand.
+Vyznam     : Název městského obvodu/městské části
+
+Polozka    : NAZEVUR
+Tp         : C
+Del        : 60
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 018
+Charp      : inf.
+Vyznam     : Název úřadu
+
+Polozka    : ICO
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 019
+Charp      : inf.
+Vyznam     : IČO - Identifikační číslo organizace - měst.obvodu/měst.části, úřadu MO/MČ
+
+Polozka    : UR
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 020
+Charp      : prac.
+Vyznam     : Typ úřadu v obci nebo městském obvodu/městské části
+
+Polozka    : UROB
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 021
+Charp      : prac.
+Vyznam     : Typ úřadu v obci
+
+Polozka    : URMC
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 022
+Charp      : prac.
+Vyznam     : Typ úřadu v městském obvodu/městské části
+
+Polozka    : SM
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 023
+Charp      : prac.
+Vyznam     : Číslo statutárního města
+
+Polozka    : PSC
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 024
+Charp      : prac.
+Vyznam     : Poštovní směrovací číslo (jediné, první nebo hlavní)
+
+Polozka    : VYMERU
+Tp         : N
+Del        : 12
+Dec        : 4
+Soubor     : MCAST
+Pors       : 05
+Porp       : 025
+Charp      : inf.
+Vyznam     : Výměra v ha (odhad dle GIS)
+
+Polozka    : OB91
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 026
+Charp      : inf.
+Vyznam     : Počet obyvatel k 3.3.1991
+
+Polozka    : OB01
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 027
+Charp      : inf.
+Vyznam     : Počet obyvatel k 1.3.2001
+
+Polozka    : SPRO
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 029
+Charp      : stand.
+Vyznam     : Číslo správního obvodu v Praze
+
+Polozka    : KODPO
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 030
+Charp      : prac.
+Vyznam     : Kód obce s pověřeným obecním úřadem (pomocí KODOB)
+
+Polozka    : KODST
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 031
+Charp      : prac.
+Vyznam     : Kód sídla stavebního úřadu (pomocí KODOB a KODMC)
+
+Polozka    : PORCSU
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 032
+Charp      : prac.
+Vyznam     : Pořadové číslo stavebního úřadu
+
+Polozka    : KODFI
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 033
+Charp      : prac.
+Vyznam     : Kód sídla finančního úřadu (pomocí KODOB)
+
+Polozka    : CFU
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 034
+Charp      : prac.
+Vyznam     : Číslo finančního úřadu
+
+Polozka    : KODFI2
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 035
+Charp      : prac.
+Vyznam     : Kód sídla druhého finančního úřadu (pomocí KODOB)
+
+Polozka    : CFU2
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 036
+Charp      : prac.
+Vyznam     : Číslo druhého finančního úřadu
+
+Polozka    : KODMA
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 037
+Charp      : prac.
+Vyznam     : Kód sídla matričnního úřadu (pomocí KODOB)
+
+Polozka    : PCMAT
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 038
+Charp      : prac.
+Vyznam     : Pořadové číslo matričního úřadu
+
+Polozka    : SYMC
+Tp         : N
+Del        : 6
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 039
+Charp      : prac.
+Vyznam     : Souřadnice Y definičního bodu městského obvodu/městské části
+
+Polozka    : SXMC
+Tp         : N
+Del        : 7
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 040
+Charp      : prac.
+Vyznam     : Souřadnice X definičního bodu městského obvodu/městské části
+
+Polozka    : MAPA
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 041
+Charp      : inf.
+Vyznam     : Číslo základní mapy 1:10 000
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 042
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : ZMENAZAZ
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 043
+Charp      : prac.
+Vyznam     : Datum změny v záznamu
+
+Polozka    : ZMENAPOL
+Tp         : C
+Del        : 30
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 044
+Charp      : prac.
+Vyznam     : Změněná položka v záznamu
+
+Polozka    : KN
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 001
+Charp      : prac.
+Vyznam     : Pořadové číslo kraje dle zákona o VÚSC
+
+Polozka    : KNOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 002
+Charp      : pomoc.
+Vyznam     : Pořadové číslo okresu dle zákona o VÚSC
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 003
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : KNUTS
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 005
+Charp      : pomoc.
+Vyznam     : Pracovní kód okresu (nový)
+
+Polozka    : KODOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 006
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý)
+
+Polozka    : KODOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 007
+Charp      : prac.
+Vyznam     : Kód obce (historický)
+
+Polozka    : KO
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 008
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu obce
+
+Polozka    : ICOB
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 009
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo obce
+
+Polozka    : ICZUJ
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 010
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo základní územní jednotky
+
+Polozka    : MO
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 011
+Charp      : prac.
+Vyznam     : Číslo městského obvodu
+
+Polozka    : MC
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 012
+Charp      : prac.
+Vyznam     : Číslo městské části
+
+Polozka    : KODCOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 013
+Charp      : stand.
+Vyznam     : Kód části obce (statistické)
+
+Polozka    : KC
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 014
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu části obce (statistické)
+
+Polozka    : PORCOB
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 015
+Charp      : prac.
+Vyznam     : Pořadové číslo části obce (statistické) v obci (nebo MO/MČ)
+
+Polozka    : NAZCOB
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 016
+Charp      : stand.
+Vyznam     : Název části obce (statistické)
+
+Polozka    : KODCOBE
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 017
+Charp      : stand.
+Vyznam     : Kód části obce evidenční
+
+Polozka    : KCE
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 018
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu části obce evidenční
+
+Polozka    : NAZCOBE
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 019
+Charp      : stand.
+Vyznam     : Název části obce evidenční
+
+Polozka    : KDOMCOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 020
+Charp      : prac.
+Vyznam     : Kód dominantní části obce
+
+Polozka    : KDC
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 021
+Charp      : prac.
+Vyznam     : Kontrolní znak dominantního kódu části obce
+
+Polozka    : PSC
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 022
+Charp      : prac.
+Vyznam     : Poštovní směrovací číslo (jediné, první nebo hlavní)
+
+Polozka    : PSC_2
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 023
+Charp      : prac.
+Vyznam     : Poštovní směrovací číslo v části obce - druhé
+
+Polozka    : PSC_3
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 024
+Charp      : prac.
+Vyznam     : Poštovní směrovací číslo v části obce - třetí
+
+Polozka    : PSC_4
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 025
+Charp      : prac.
+Vyznam     : Poštovní směrovací číslo v části obce - čtvrté
+
+Polozka    : PSC_5
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 026
+Charp      : prac.
+Vyznam     : Poštovní směrovací číslo v části obce - páté
+
+Polozka    : PSC_6
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 027
+Charp      : prac.
+Vyznam     : Poštovní směrovací číslo v části obce - šesté
+
+Polozka    : PSC_7
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 028
+Charp      : prac.
+Vyznam     : Poštovní směrovací číslo v části obce - sedmé
+
+Polozka    : PSC_8
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 029
+Charp      : prac.
+Vyznam     : Poštovní směrovací číslo v části obce - osmé
+
+Polozka    : PSC2
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 030
+Charp      : prac.
+Vyznam     : Poštovní směrovací čísla další - pro prohlížečku
+
+Polozka    : OB91
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 031
+Charp      : inf.
+Vyznam     : Počet obyvatel k 3.3.1991
+
+Polozka    : OB01
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 032
+Charp      : inf.
+Vyznam     : Počet obyvatel k 1.3.2001
+
+Polozka    : MAPA
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 033
+Charp      : inf.
+Vyznam     : Číslo základní mapy 1:10 000
+
+Polozka    : SYCOB
+Tp         : N
+Del        : 6
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 034
+Charp      : prac.
+Vyznam     : Souřadnice Y definičního bodu části obce
+
+Polozka    : SXCOB
+Tp         : N
+Del        : 7
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 035
+Charp      : prac.
+Vyznam     : Souřadnice X definičního bodu části obce
+
+Polozka    : POROB
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 036
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese
+
+Polozka    : POROBA
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 037
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese při abecedním třídění
+
+Polozka    : PORMC
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 038
+Charp      : prac.
+Vyznam     : Pořadové číslo městského obvodu/městské části
+
+Polozka    : KODMC
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 039
+Charp      : prac.
+Vyznam     : Kód městského obvodu/městské části
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 040
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : ALKCOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 041
+Charp      : prac.
+Vyznam     : Bývalý (alternativní) kód části obce
+
+Polozka    : AKC
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 042
+Charp      : prac.
+Vyznam     : Kontrolní znak bývalého (alternativního) kódu části obce
+
+Polozka    : ZMENAZAZ
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 043
+Charp      : prac.
+Vyznam     : Datum změny v záznamu
+
+Polozka    : ZMENAPOL
+Tp         : C
+Del        : 30
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 044
+Charp      : prac.
+Vyznam     : Změněná položka v záznamu
+
+Polozka    : KN
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 001
+Charp      : prac.
+Vyznam     : Pořadové číslo kraje dle zákona o VÚSC
+
+Polozka    : KNOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 002
+Charp      : pomoc.
+Vyznam     : Pořadové číslo okresu dle zákona o VÚSC
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 003
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : KNUTS
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 005
+Charp      : pomoc.
+Vyznam     : Pracovní kód okresu (nový)
+
+Polozka    : KODOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 006
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý)
+
+Polozka    : KODOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 007
+Charp      : prac.
+Vyznam     : Kód obce (historický)
+
+Polozka    : KO
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 008
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu obce
+
+Polozka    : ICOB
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 009
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo obce
+
+Polozka    : KODCOBE
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 010
+Charp      : stand.
+Vyznam     : Kód části obce evidenční
+
+Polozka    : KCE
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 011
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu části obce evidenční
+
+Polozka    : PORCOBE
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 012
+Charp      : prac.
+Vyznam     : POřadové číslo části obce evidenční v obci
+
+Polozka    : NAZCOBE
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 013
+Charp      : stand.
+Vyznam     : Název části obce evidenční
+
+Polozka    : KDOMCOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 014
+Charp      : prac.
+Vyznam     : Kód dominantní části obce
+
+Polozka    : KDC
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 015
+Charp      : prac.
+Vyznam     : Kontrolní znak dominantního kódu části obce
+
+Polozka    : OB91
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 016
+Charp      : inf.
+Vyznam     : Počet obyvatel k 3.3.1991
+
+Polozka    : OB01
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 017
+Charp      : inf.
+Vyznam     : Počet obyvatel k 1.3.2001
+
+Polozka    : MAPA
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 018
+Charp      : inf.
+Vyznam     : Číslo základní mapy 1:10 000
+
+Polozka    : SYCOB
+Tp         : N
+Del        : 6
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 019
+Charp      : prac.
+Vyznam     : Souřadnice Y definičního bodu části obce
+
+Polozka    : SXCOB
+Tp         : N
+Del        : 7
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 020
+Charp      : prac.
+Vyznam     : Souřadnice X definičního bodu části obce
+
+Polozka    : POROB
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 021
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese
+
+Polozka    : POROBA
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 022
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese při abecedním třídění
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 023
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : ALKCOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 024
+Charp      : prac.
+Vyznam     : Bývalý (alternativní) kód části obce
+
+Polozka    : AKC
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 025
+Charp      : prac.
+Vyznam     : Kontrolní znak bývalého (alternativního) kódu části obce
+
+Polozka    : ZMENAZAZ
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 026
+Charp      : prac.
+Vyznam     : Datum změny v záznamu
+
+Polozka    : ZMENAPOL
+Tp         : C
+Del        : 30
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 027
+Charp      : prac.
+Vyznam     : Změněná položka v záznamu
+
+Polozka    : KN
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 001
+Charp      : prac.
+Vyznam     : Pořadové číslo kraje dle zákona o VÚSC
+
+Polozka    : KNOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 002
+Charp      : pomoc.
+Vyznam     : Pořadové číslo okresu dle zákona o VÚSC
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 003
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : KNUTS
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 005
+Charp      : pomoc.
+Vyznam     : Pracovní kód okresu (nový)
+
+Polozka    : KODOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 006
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý)
+
+Polozka    : KODOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 007
+Charp      : prac.
+Vyznam     : Kód obce (historický)
+
+Polozka    : KO
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 008
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu obce
+
+Polozka    : ICOB
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 009
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo obce
+
+Polozka    : POROB
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 010
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese
+
+Polozka    : POROBA
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 011
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese při abecedním třídění
+
+Polozka    : KODKU
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 012
+Charp      : stand.
+Vyznam     : Kód katastrálního území
+
+Polozka    : KK
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 013
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu katastrálního území
+
+Polozka    : NAZKU
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 014
+Charp      : stand.
+Vyznam     : Název katastrálního území
+
+Polozka    : VYMERA
+Tp         : N
+Del        : 12
+Dec        : 4
+Soubor     : KU
+Pors       : 08
+Porp       : 015
+Charp      : inf.
+Vyznam     : Výměra v ha
+
+Polozka    : TU
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 016
+Charp      : prac.
+Vyznam     : Typ územně technické jednotky (ve vztahu ke katastrálnímu území)
+
+Polozka    : ICZUJ
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 017
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo základní územní jednotky
+
+Polozka    : PORMC
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 018
+Charp      : prac.
+Vyznam     : Pořadové číslo městského obvodu/městské části
+
+Polozka    : KODOCR
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 019
+Charp      : hist.
+Vyznam     : Kód oblasti cestovního ruchu (historický)
+
+Polozka    : KODSRA
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 020
+Charp      : hist.
+Vyznam     : Kód sídelní regionální aglomerace nebo městského regionu
+
+Polozka    : SYKU
+Tp         : N
+Del        : 6
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 021
+Charp      : prac.
+Vyznam     : Souřadnice Y definičního bodu katastrálního území
+
+Polozka    : SXKU
+Tp         : N
+Del        : 7
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 022
+Charp      : prac.
+Vyznam     : Souřadnice X definičního bodu katastrálního území
+
+Polozka    : MAPA
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 023
+Charp      : inf.
+Vyznam     : Číslo základní mapy 1:10 000
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 024
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : ZMENAZAZ
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 025
+Charp      : prac.
+Vyznam     : Datum změny v záznamu
+
+Polozka    : ZMENAPOL
+Tp         : C
+Del        : 20
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 026
+Charp      : prac.
+Vyznam     : Změněná položka v záznamu
+
+Polozka    : KN
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 001
+Charp      : prac.
+Vyznam     : Pořadové číslo kraje dle zákona o VÚSC
+
+Polozka    : KNOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 002
+Charp      : pomoc.
+Vyznam     : Pořadové číslo okresu dle zákona o VÚSC
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 003
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : KNUTS
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 005
+Charp      : pomoc.
+Vyznam     : Pracovní kód okresu (nový)
+
+Polozka    : KODOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 006
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý)
+
+Polozka    : KODOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 007
+Charp      : prac.
+Vyznam     : Kód obce (historický)
+
+Polozka    : KO
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 008
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu obce
+
+Polozka    : ICOB
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 009
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo obce
+
+Polozka    : POROB
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 010
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese
+
+Polozka    : POROBA
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 011
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese při abecedním třídění
+
+Polozka    : KODUTJ
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 012
+Charp      : stand.
+Vyznam     : Kód územně technické jednotky
+
+Polozka    : KU
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 013
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu územně technické jednotky
+
+Polozka    : NAZUTJ
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 014
+Charp      : stand.
+Vyznam     : Název územně technické jednotky
+
+Polozka    : TU
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 015
+Charp      : prac.
+Vyznam     : Typ územně technické jednotky (ve vztahu ke katastrálnímu území)
+
+Polozka    : KODKU
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 016
+Charp      : stand.
+Vyznam     : Kód katastrálního území
+
+Polozka    : KK
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 017
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu katastrálního území
+
+Polozka    : NAZKU
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 018
+Charp      : stand.
+Vyznam     : Název katastrálního území
+
+Polozka    : VYMERA
+Tp         : N
+Del        : 12
+Dec        : 4
+Soubor     : UTJ
+Pors       : 09
+Porp       : 019
+Charp      : inf.
+Vyznam     : Výměra v ha
+
+Polozka    : VYMERU
+Tp         : N
+Del        : 12
+Dec        : 4
+Soubor     : UTJ
+Pors       : 09
+Porp       : 020
+Charp      : inf.
+Vyznam     : Výměra v ha (odhad dle GIS)
+
+Polozka    : ICZUJ
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 021
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo základní územní jednotky
+
+Polozka    : MO
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 022
+Charp      : prac.
+Vyznam     : Číslo městského obvodu
+
+Polozka    : MC
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 023
+Charp      : prac.
+Vyznam     : Číslo městské části
+
+Polozka    : KODMC
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 024
+Charp      : prac.
+Vyznam     : Kód městského obvodu/městské části
+
+Polozka    : PORMC
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 025
+Charp      : prac.
+Vyznam     : Pořadové číslo městského obvodu/městské části
+
+Polozka    : CFU
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 026
+Charp      : prac.
+Vyznam     : Číslo finančního úřadu
+
+Polozka    : KODFI
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 027
+Charp      : prac.
+Vyznam     : Kód sídla finančního úřadu (pomocí KODOB)
+
+Polozka    : NAZFI
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 028
+Charp      : inf.
+Vyznam     : Název sídla finančního úřadu
+
+Polozka    : NAZEVFI
+Tp         : C
+Del        : 50
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 029
+Charp      : inf.
+Vyznam     : Název finančního úřadu
+
+Polozka    : KODOCR
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 030
+Charp      : hist.
+Vyznam     : Kód oblasti cestovního ruchu (historický)
+
+Polozka    : KODSRA
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 031
+Charp      : hist.
+Vyznam     : Kód sídelní regionální aglomerace nebo městského regionu
+
+Polozka    : SYKU
+Tp         : N
+Del        : 6
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 032
+Charp      : prac.
+Vyznam     : Souřadnice Y definičního bodu katastrálního území
+
+Polozka    : SXKU
+Tp         : N
+Del        : 7
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 033
+Charp      : prac.
+Vyznam     : Souřadnice X definičního bodu katastrálního území
+
+Polozka    : MAPA
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 034
+Charp      : inf.
+Vyznam     : Číslo základní mapy 1:10 000
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 035
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : ZMENAZAZ
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 036
+Charp      : prac.
+Vyznam     : Datum změny v záznamu
+
+Polozka    : ZMENAPOL
+Tp         : C
+Del        : 20
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 037
+Charp      : prac.
+Vyznam     : Změněná položka v záznamu
+
+Polozka    : KN
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 001
+Charp      : prac.
+Vyznam     : Pořadové číslo kraje dle zákona o VÚSC
+
+Polozka    : KNOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 002
+Charp      : pomoc.
+Vyznam     : Pořadové číslo okresu dle zákona o VÚSC
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 003
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : KNUTS
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 005
+Charp      : pomoc.
+Vyznam     : Pracovní kód okresu (nový)
+
+Polozka    : KODOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 006
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý)
+
+Polozka    : KODOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 007
+Charp      : prac.
+Vyznam     : Kód obce (historický)
+
+Polozka    : KO
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 008
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu obce
+
+Polozka    : KODZSJ
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 009
+Charp      : stand.
+Vyznam     : Kód základní sídelní jednotky (ZSJ)
+
+Polozka    : KZ
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 010
+Charp      : stand.
+Vyznam     : Kontrolní znak základní sídelní jednotky
+
+Polozka    : DIL
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 011
+Charp      : stand.
+Vyznam     : Díl ZSJ
+
+Polozka    : TYPD
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 012
+Charp      : prac.
+Vyznam     : Typ dílu základní sídelní jednotky
+
+Polozka    : DILY
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 013
+Charp      : prac.
+Vyznam     : Typy dílů při SLDB 3.3.1991
+
+Polozka    : CUO
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 014
+Charp      : prac.
+Vyznam     : Číslo urbanistického obvodu
+
+Polozka    : DUO
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 015
+Charp      : prac.
+Vyznam     : Díl urbanistického obvodu (nyní jen v Praze)
+
+Polozka    : CHARUO
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 016
+Charp      : prac.
+Vyznam     : Charakteristika urbanistického obvodu
+
+Polozka    : NAZZSJ
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 017
+Charp      : stand.
+Vyznam     : Název základní sídlení jednotky
+
+Polozka    : NAZZSJD
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 018
+Charp      : stand.
+Vyznam     : Název dílu základní sídelní jednotky
+
+Polozka    : VYMERU
+Tp         : N
+Del        : 12
+Dec        : 4
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 019
+Charp      : inf.
+Vyznam     : Výměra v ha (odhad dle GIS)
+
+Polozka    : OB91
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 020
+Charp      : inf.
+Vyznam     : Počet obyvatel k 3.3.1991
+
+Polozka    : OB01
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 021
+Charp      : inf.
+Vyznam     : Počet obyvatel k 1.3.2001
+
+Polozka    : OBZSJ91
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 022
+Charp      : inf.
+Vyznam     : Počet obyvatel v ZSJ při SLDB 3.3.1991
+
+Polozka    : OBZSJ01
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 023
+Charp      : inf.
+Vyznam     : Počet obyavtel v ZSJ při SLDB 1.3.2001
+
+Polozka    : KODZSL
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 024
+Charp      : inf.
+Vyznam     : Kód základní sídelní jednotky při SLDB 3.3.1991
+
+Polozka    : DILSL
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 025
+Charp      : inf.
+Vyznam     : Díl ZSJ při SLDB 3.3.1991
+
+Polozka    : KODZ01
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 026
+Charp      : inf.
+Vyznam     : Kód základní sídelní jednotky při SLDB 1.3.2001
+
+Polozka    : KZ01
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 027
+Charp      : inf.
+Vyznam     : Kontrolní znak základní sídelní jednotky při SLDB 1.3.2001
+
+Polozka    : DIL01
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 028
+Charp      : inf.
+Vyznam     : Díl ZSJ při SLDB 1.3.2001
+
+Polozka    : DODILU
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 029
+Charp      : inf.
+Vyznam     : Díl ZSJ do kterého patří zaniklý díl ZSJ
+
+Polozka    : KODCOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 030
+Charp      : stand.
+Vyznam     : Kód části obce (statistické)
+
+Polozka    : KC
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 031
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu části obce (statistické)
+
+Polozka    : NAZCOB
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 032
+Charp      : stand.
+Vyznam     : Název části obce (statistické)
+
+Polozka    : KODCOBE
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 033
+Charp      : stand.
+Vyznam     : Kód části obce evidenční
+
+Polozka    : KCE
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 034
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu části obce evidenční
+
+Polozka    : NAZCOBE
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 035
+Charp      : stand.
+Vyznam     : Název části obce evidenční
+
+Polozka    : KODKU
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 036
+Charp      : stand.
+Vyznam     : Kód katastrálního území
+
+Polozka    : KK
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 037
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu katastrálního území
+
+Polozka    : NAZKU
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 038
+Charp      : stand.
+Vyznam     : Název katastrálního území
+
+Polozka    : KODUTJ
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 039
+Charp      : stand.
+Vyznam     : Kód územně technické jednotky
+
+Polozka    : KU
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 040
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu územně technické jednotky
+
+Polozka    : NAZUTJ
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 041
+Charp      : stand.
+Vyznam     : Název územně technické jednotky
+
+Polozka    : ICOB
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 042
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo obce
+
+Polozka    : NAZOB
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 043
+Charp      : stand.
+Vyznam     : Název obce
+
+Polozka    : ICZUJ
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 044
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo základní územní jednotky
+
+Polozka    : OM
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 045
+Charp      : prac.
+Vyznam     : Příznak okresního města (pořadí obce v okrese)
+
+Polozka    : SM
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 046
+Charp      : prac.
+Vyznam     : Číslo statutárního města
+
+Polozka    : MO
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 047
+Charp      : prac.
+Vyznam     : Číslo městského obvodu
+
+Polozka    : MC
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 048
+Charp      : prac.
+Vyznam     : Číslo městské části
+
+Polozka    : KODMC
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 049
+Charp      : prac.
+Vyznam     : Kód městského obvodu/městské části
+
+Polozka    : NAZMC
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 050
+Charp      : stand.
+Vyznam     : Název městského obvodu/městské části
+
+Polozka    : POROB
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 051
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese
+
+Polozka    : POROBA
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 052
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese při abecedním třídění
+
+Polozka    : PORMC
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 053
+Charp      : prac.
+Vyznam     : Pořadové číslo městského obvodu/městské části
+
+Polozka    : PORCOB
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 054
+Charp      : prac.
+Vyznam     : Pořadové číslo části obce (statistické) v obci (nebo MO/MČ)
+
+Polozka    : STYP
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 055
+Charp      : hist.
+Vyznam     : Sídelní typ ZSJ
+
+Polozka    : CISTR
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 056
+Charp      : hist.
+Vyznam     : Číslo střediska osídlení (historické)
+
+Polozka    : KODSOOV
+Tp         : C
+Del        : 7
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 057
+Charp      : hist.
+Vyznam     : Kód střediska osídelní obvodního významu
+
+Polozka    : KODSOMV
+Tp         : C
+Del        : 7
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 058
+Charp      : hist.
+Vyznam     : Kód střediska osídlení místního významu
+
+Polozka    : KODSRA
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 059
+Charp      : hist.
+Vyznam     : Kód sídelní regionální aglomerace nebo městského regionu
+
+Polozka    : KODOCR
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 060
+Charp      : hist.
+Vyznam     : Kód oblasti cestovního ruchu (historický)
+
+Polozka    : MAPA
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 061
+Charp      : inf.
+Vyznam     : Číslo základní mapy 1:10 000
+
+Polozka    : SY
+Tp         : N
+Del        : 6
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 062
+Charp      : prac.
+Vyznam     : Souřadnice Y definičního bodu
+
+Polozka    : SX
+Tp         : N
+Del        : 7
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 063
+Charp      : prac.
+Vyznam     : Souřadnice X definičního bodu
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 064
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : TRID
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 065
+Charp      : pomoc.
+Vyznam     : Pomocné pořadové číslo pro třídění
+
+Polozka    : ZMENAZAZ
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 066
+Charp      : prac.
+Vyznam     : Datum změny v záznamu
+
+Polozka    : ZMENAPOL
+Tp         : C
+Del        : 30
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 067
+Charp      : prac.
+Vyznam     : Změněná položka v záznamu
+
+Polozka    : KN
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : SOMV
+Pors       : 11
+Porp       : 001
+Charp      : prac.
+Vyznam     : Pořadové číslo kraje dle zákona o VÚSC
+
+Polozka    : KNOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : SOMV
+Pors       : 11
+Porp       : 002
+Charp      : pomoc.
+Vyznam     : Pořadové číslo okresu dle zákona o VÚSC
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : SOMV
+Pors       : 11
+Porp       : 003
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : KNUTS
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : SOMV
+Pors       : 11
+Porp       : 005
+Charp      : pomoc.
+Vyznam     : Pracovní kód okresu (nový)
+
+Polozka    : KODOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : SOMV
+Pors       : 11
+Porp       : 006
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý)
+
+Polozka    : KODSOMV
+Tp         : C
+Del        : 7
+Dec        : 0
+Soubor     : SOMV
+Pors       : 11
+Porp       : 007
+Charp      : hist.
+Vyznam     : Kód střediska osídlení místního významu
+
+Polozka    : NAZSOMV
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : SOMV
+Pors       : 11
+Porp       : 008
+Charp      : hist.
+Vyznam     : Název střediska osídlení místního nebo obvodního významu
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : SOMV
+Pors       : 11
+Porp       : 009
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : KODSRA
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : SRAMR
+Pors       : 12
+Porp       : 001
+Charp      : hist.
+Vyznam     : Kód sídelní regionální aglomerace nebo městského regionu
+
+Polozka    : NAZSRA
+Tp         : C
+Del        : 30
+Dec        : 0
+Soubor     : SRAMR
+Pors       : 12
+Porp       : 002
+Charp      : hist.
+Vyznam     : Název sídelní regionální aglomearce nebo městského regionu
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 30
+Dec        : 0
+Soubor     : SRAMR
+Pors       : 12
+Porp       : 003
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : KODOCR
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : OCR
+Pors       : 13
+Porp       : 001
+Charp      : hist.
+Vyznam     : Kód oblasti cestovního ruchu (historický)
+
+Polozka    : NAZOCR
+Tp         : C
+Del        : 25
+Dec        : 0
+Soubor     : OCR
+Pors       : 13
+Porp       : 002
+Charp      : hist.
+Vyznam     : Název oblasti cestovního ruchu
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 25
+Dec        : 0
+Soubor     : OCR
+Pors       : 13
+Porp       : 003
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : SM
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : SM
+Pors       : 14
+Porp       : 001
+Charp      : prac.
+Vyznam     : Číslo statutárního města
+
+Polozka    : KN
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : SM
+Pors       : 14
+Porp       : 002
+Charp      : prac.
+Vyznam     : Pořadové číslo kraje dle zákona o VÚSC
+
+Polozka    : KNOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : SM
+Pors       : 14
+Porp       : 003
+Charp      : pomoc.
+Vyznam     : Pořadové číslo okresu dle zákona o VÚSC
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : SM
+Pors       : 14
+Porp       : 004
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : KNUTS
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : SM
+Pors       : 14
+Porp       : 006
+Charp      : pomoc.
+Vyznam     : Pracovní kód okresu (nový)
+
+Polozka    : KODOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : SM
+Pors       : 14
+Porp       : 007
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý)
+
+Polozka    : KODOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : SM
+Pors       : 14
+Porp       : 008
+Charp      : prac.
+Vyznam     : Kód obce (historický)
+
+Polozka    : ICOB
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : SM
+Pors       : 14
+Porp       : 009
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo obce
+
+Polozka    : NAZOB
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : SM
+Pors       : 14
+Porp       : 010
+Charp      : stand.
+Vyznam     : Název obce
+
+Polozka    : UR
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : UROBCE
+Pors       : 15
+Porp       : 001
+Charp      : prac.
+Vyznam     : Typ úřadu v obci nebo městském obvodu/městské části
+
+Polozka    : UROB
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : UROBCE
+Pors       : 15
+Porp       : 002
+Charp      : prac.
+Vyznam     : Typ úřadu v obci
+
+Polozka    : NAZUR
+Tp         : C
+Del        : 32
+Dec        : 0
+Soubor     : UROBCE
+Pors       : 15
+Porp       : 003
+Charp      : stand.
+Vyznam     : Název úřadu
+
+Polozka    : NAZEVUR
+Tp         : C
+Del        : 32
+Dec        : 0
+Soubor     : UROBCE
+Pors       : 15
+Porp       : 004
+Charp      : inf.
+Vyznam     : Název úřadu
+
+Polozka    : UR
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : URMCAST
+Pors       : 15
+Porp       : 001
+Charp      : prac.
+Vyznam     : Typ úřadu v obci nebo městském obvodu/městské části
+
+Polozka    : URMC
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : URMCAST
+Pors       : 15
+Porp       : 002
+Charp      : prac.
+Vyznam     : Typ úřadu v městském obvodu/městské části
+
+Polozka    : NAZUR
+Tp         : C
+Del        : 32
+Dec        : 0
+Soubor     : URMCAST
+Pors       : 15
+Porp       : 003
+Charp      : stand.
+Vyznam     : Název úřadu
+
+Polozka    : NAZEVUR
+Tp         : C
+Del        : 32
+Dec        : 0
+Soubor     : URMCAST
+Pors       : 15
+Porp       : 004
+Charp      : inf.
+Vyznam     : Název úřadu
+
+Polozka    : NK
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 001
+Charp      : prac.
+Vyznam     : Zkratka názvu kraje
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 002
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : KNUTS
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 004
+Charp      : pomoc.
+Vyznam     : Pracovní kód okresu (nový)
+
+Polozka    : KODOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 005
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý)
+
+Polozka    : CISORP
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 006
+Charp      : kód ČSÚ
+Vyznam     : Číslo (kód ČSÚ) obce s rozšířenou působností
+
+Polozka    : KODORP
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 007
+Charp      : prac.
+Vyznam     : Kód obce s rozšířenou působností (pomocí KODOB)
+
+Polozka    : KODOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 008
+Charp      : prac.
+Vyznam     : Kód obce (historický)
+
+Polozka    : KO
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 009
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu obce
+
+Polozka    : ICOB
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 010
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo obce
+
+Polozka    : NAZORP
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 011
+Charp      : stand.
+Vyznam     : Název obce s rozšířenou působností
+
+Polozka    : NAZOB
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 012
+Charp      : stand.
+Vyznam     : Název obce
+
+Polozka    : UR
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 013
+Charp      : prac.
+Vyznam     : Typ úřadu v obci nebo městském obvodu/městské části
+
+Polozka    : UROB
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 014
+Charp      : prac.
+Vyznam     : Typ úřadu v obci
+
+Polozka    : POROB
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 015
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese
+
+Polozka    : OM
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 016
+Charp      : prac.
+Vyznam     : Příznak okresního města (pořadí obce v okrese)
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 017
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : NK
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 001
+Charp      : prac.
+Vyznam     : Zkratka názvu kraje
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 002
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : KNUTS
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 004
+Charp      : pomoc.
+Vyznam     : Pracovní kód okresu (nový)
+
+Polozka    : KODOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 005
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý)
+
+Polozka    : CISPOU
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 006
+Charp      : kód ČSÚ
+Vyznam     : Číslo (kód ČSÚ) obce s pověřeným obecním úřadem
+
+Polozka    : KODPO
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 007
+Charp      : prac.
+Vyznam     : Kód obce s pověřeným obecním úřadem (pomocí KODOB)
+
+Polozka    : KODOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 008
+Charp      : prac.
+Vyznam     : Kód obce (historický)
+
+Polozka    : KO
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 009
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu obce
+
+Polozka    : ICOB
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 010
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo obce
+
+Polozka    : NAZPO
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 011
+Charp      : stand.
+Vyznam     : Název obce s pověřeným obecním úřadem
+
+Polozka    : NAZPO2
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 012
+Charp      : prac.
+Vyznam     : Název obce s pověřeným obecním úřadem (včetně poznámky)
+
+Polozka    : NAZOB
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 013
+Charp      : stand.
+Vyznam     : Název obce
+
+Polozka    : UR
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 014
+Charp      : prac.
+Vyznam     : Typ úřadu v obci nebo městském obvodu/městské části
+
+Polozka    : UROB
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 015
+Charp      : prac.
+Vyznam     : Typ úřadu v obci
+
+Polozka    : OM
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 016
+Charp      : prac.
+Vyznam     : Příznak okresního města (pořadí obce v okrese)
+
+Polozka    : POROB
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 017
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese
+
+Polozka    : CISORP
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 018
+Charp      : kód ČSÚ
+Vyznam     : Číslo (kód ČSÚ) obce s rozšířenou působností
+
+Polozka    : KODORP
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 019
+Charp      : prac.
+Vyznam     : Kód obce s rozšířenou působností (pomocí KODOB)
+
+Polozka    : OKORP
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 020
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý) obce s rozšířenou působností
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 021
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : NK
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 001
+Charp      : prac.
+Vyznam     : Zkratka názvu kraje
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 002
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : KNUTS
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 004
+Charp      : pomoc.
+Vyznam     : Pracovní kód okresu (nový)
+
+Polozka    : KODOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 005
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý)
+
+Polozka    : KODSU
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 006
+Charp      : kód ČSÚ
+Vyznam     : Kód stavebního úřadu (ČSÚ)
+
+Polozka    : PORCSU
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 007
+Charp      : prac.
+Vyznam     : Pořadové číslo stavebního úřadu
+
+Polozka    : KODST
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 008
+Charp      : prac.
+Vyznam     : Kód sídla stavebního úřadu (pomocí KODOB a KODMC)
+
+Polozka    : NAZEVSU
+Tp         : C
+Del        : 80
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 009
+Charp      : inf.
+Vyznam     : Název stavebního úřadu
+
+Polozka    : ICOB
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 010
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo obce
+
+Polozka    : KODOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 011
+Charp      : prac.
+Vyznam     : Kód obce (historický)
+
+Polozka    : KO
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 012
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu obce
+
+Polozka    : NAZOB
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 013
+Charp      : stand.
+Vyznam     : Název obce
+
+Polozka    : ICZUJ
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 014
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo základní územní jednotky
+
+Polozka    : KODMC
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 015
+Charp      : prac.
+Vyznam     : Kód městského obvodu/městské části
+
+Polozka    : NAZMC
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 016
+Charp      : stand.
+Vyznam     : Název městského obvodu/městské části
+
+Polozka    : UR
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 017
+Charp      : prac.
+Vyznam     : Typ úřadu v obci nebo městském obvodu/městské části
+
+Polozka    : UROB
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 018
+Charp      : prac.
+Vyznam     : Typ úřadu v obci
+
+Polozka    : URMC
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 019
+Charp      : prac.
+Vyznam     : Typ úřadu v městském obvodu/městské části
+
+Polozka    : OM
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 020
+Charp      : prac.
+Vyznam     : Příznak okresního města (pořadí obce v okrese)
+
+Polozka    : POROB
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 021
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese
+
+Polozka    : PORMC
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 022
+Charp      : prac.
+Vyznam     : Pořadové číslo městského obvodu/městské části
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 023
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : NK
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 001
+Charp      : prac.
+Vyznam     : Zkratka názvu kraje
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 002
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : KNUTS
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 004
+Charp      : pomoc.
+Vyznam     : Pracovní kód okresu (nový)
+
+Polozka    : KODOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 005
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý)
+
+Polozka    : KODMA
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 006
+Charp      : prac.
+Vyznam     : Kód sídla matričnního úřadu (pomocí KODOB)
+
+Polozka    : PCMAT
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 007
+Charp      : prac.
+Vyznam     : Pořadové číslo matričního úřadu
+
+Polozka    : NAZEVMA
+Tp         : C
+Del        : 60
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 008
+Charp      : inf.
+Vyznam     : Název matričního úřadu
+
+Polozka    : ICOB
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 009
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo obce
+
+Polozka    : KODOB
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 010
+Charp      : prac.
+Vyznam     : Kód obce (historický)
+
+Polozka    : KO
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 011
+Charp      : stand.
+Vyznam     : Kontrolní znak kódu obce
+
+Polozka    : NAZOB
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 012
+Charp      : stand.
+Vyznam     : Název obce
+
+Polozka    : ICZUJ
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 013
+Charp      : kód ČSÚ
+Vyznam     : IČZÚJ - Identifikační číslo základní územní jednotky
+
+Polozka    : KODMC
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 014
+Charp      : prac.
+Vyznam     : Kód městského obvodu/městské části
+
+Polozka    : NAZMC
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 015
+Charp      : stand.
+Vyznam     : Název městského obvodu/městské části
+
+Polozka    : UR
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 016
+Charp      : prac.
+Vyznam     : Typ úřadu v obci nebo městském obvodu/městské části
+
+Polozka    : UROB
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 017
+Charp      : prac.
+Vyznam     : Typ úřadu v obci
+
+Polozka    : URMC
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 018
+Charp      : prac.
+Vyznam     : Typ úřadu v městském obvodu/městské části
+
+Polozka    : POROB
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 019
+Charp      : prac.
+Vyznam     : Pořadové číslo obce v okrese
+
+Polozka    : PORMC
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 020
+Charp      : prac.
+Vyznam     : Pořadové číslo městského obvodu/městské části
+
+Polozka    : OM
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 021
+Charp      : prac.
+Vyznam     : Příznak okresního města (pořadí obce v okrese)
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 022
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : FINUR
+Pors       : 20
+Porp       : 001
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : KNUTS
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : FINUR
+Pors       : 20
+Porp       : 003
+Charp      : pomoc.
+Vyznam     : Pracovní kód okresu (nový)
+
+Polozka    : KODOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : FINUR
+Pors       : 20
+Porp       : 004
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý)
+
+Polozka    : CFU
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : FINUR
+Pors       : 20
+Porp       : 005
+Charp      : prac.
+Vyznam     : Číslo finančního úřadu
+
+Polozka    : KODFI
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : FINUR
+Pors       : 20
+Porp       : 006
+Charp      : prac.
+Vyznam     : Kód sídla finančního úřadu (pomocí KODOB)
+
+Polozka    : NAZFI
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : FINUR
+Pors       : 20
+Porp       : 007
+Charp      : inf.
+Vyznam     : Název sídla finančního úřadu
+
+Polozka    : NAZEVFI
+Tp         : C
+Del        : 50
+Dec        : 0
+Soubor     : FINUR
+Pors       : 20
+Porp       : 008
+Charp      : inf.
+Vyznam     : Název finančního úřadu
+
+Polozka    : ZMENAZAZ
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : FINUR
+Pors       : 20
+Porp       : 009
+Charp      : prac.
+Vyznam     : Datum změny v záznamu
+
+Polozka    : ZMENAPOL
+Tp         : C
+Del        : 20
+Dec        : 0
+Soubor     : FINUR
+Pors       : 20
+Porp       : 010
+Charp      : prac.
+Vyznam     : Změněná položka v záznamu
+
+Polozka    : KN
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : NEST
+Pors       : 21
+Porp       : 001
+Charp      : prac.
+Vyznam     : Pořadové číslo kraje dle zákona o VÚSC
+
+Polozka    : KNOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : NEST
+Pors       : 21
+Porp       : 002
+Charp      : pomoc.
+Vyznam     : Pořadové číslo okresu dle zákona o VÚSC
+
+Polozka    : KODNUTS
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : NEST
+Pors       : 21
+Porp       : 003
+Charp      : kód ČSÚ
+Vyznam     : Kód jednotky NUTS
+
+Polozka    : KNUTS
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : NEST
+Pors       : 21
+Porp       : 005
+Charp      : pomoc.
+Vyznam     : Pracovní kód okresu (nový)
+
+Polozka    : KODOK
+Tp         : C
+Del        : 4
+Dec        : 0
+Soubor     : NEST
+Pors       : 21
+Porp       : 006
+Charp      : prac.
+Vyznam     : Kód okresu (bývalý)
+
+Polozka    : KODNEST
+Tp         : C
+Del        : 5
+Dec        : 0
+Soubor     : NEST
+Pors       : 21
+Porp       : 007
+Charp      : prac.
+Vyznam     : Kód jednotky s nestandardním názvem
+
+Polozka    : NAZNEST
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : NEST
+Pors       : 21
+Porp       : 008
+Charp      : prac.
+Vyznam     : Název jednotky s nestandardním názvem
+
+Polozka    : NAZCS
+Tp         : C
+Del        : 40
+Dec        : 0
+Soubor     : NEST
+Pors       : 21
+Porp       : 009
+Charp      : pomoc.
+Vyznam     : Tvar názvu pro abecední třídění (pomocný)
+
+Polozka    : POLOZKA
+Tp         : C
+Del        : 10
+Dec        : 0
+Soubor     : POLOZKY
+Pors       : 22
+Porp       : 001
+Charp      : inf.
+Vyznam     : Akronym (zkrácený název) položky
+
+Polozka    : TP
+Tp         : C
+Del        : 1
+Dec        : 0
+Soubor     : POLOZKY
+Pors       : 22
+Porp       : 002
+Charp      : inf.
+Vyznam     : Typ položky (C=Character, N=Numeric) v seznamu položek
+
+Polozka    : DEL
+Tp         : N
+Del        : 3
+Dec        : 0
+Soubor     : POLOZKY
+Pors       : 22
+Porp       : 003
+Charp      : inf.
+Vyznam     : Délka položky v seznamu položek
+
+Polozka    : DEC
+Tp         : N
+Del        : 1
+Dec        : 0
+Soubor     : POLOZKY
+Pors       : 22
+Porp       : 004
+Charp      : inf.
+Vyznam     : Počet desetinných míst v položce v seznamu položek
+
+Polozka    : SOUBOR
+Tp         : C
+Del        : 8
+Dec        : 0
+Soubor     : POLOZKY
+Pors       : 22
+Porp       : 005
+Charp      : inf.
+Vyznam     : Soubor ve kterém se vyskytuje uvedená položka v seznamu položek
+
+Polozka    : PORS
+Tp         : C
+Del        : 2
+Dec        : 0
+Soubor     : POLOZKY
+Pors       : 22
+Porp       : 006
+Charp      : inf.
+Vyznam     : Pořadové číslo položky v seznamu položek podle souborů
+
+Polozka    : PORP
+Tp         : C
+Del        : 3
+Dec        : 0
+Soubor     : POLOZKY
+Pors       : 22
+Porp       : 007
+Charp      : inf.
+Vyznam     : Pořadové číslo souboru v seznamu položek
+
+Polozka    : CHARP
+Tp         : C
+Del        : 7
+Dec        : 0
+Soubor     : POLOZKY
+Pors       : 22
+Porp       : 008
+Charp      : inf.
+Vyznam     : Poznámka k charakteru položky (stand.,inf.,prac. atd.) v seznamu položek
+
+Polozka    : VYZNAM
+Tp         : C
+Del        : 100
+Dec        : 0
+Soubor     : POLOZKY
+Pors       : 22
+Porp       : 009
+Charp      : inf.
+Vyznam     : Význam položky
+
+Polozka    : LAU1
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : OKRESY
+Pors       : 03
+Porp       : 005
+Charp      : kód ČSÚ
+Vyznam     : Kód okresu jako jednotky NUTS
+
+Polozka    : LAU1
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : OBCE
+Pors       : 04
+Porp       : 005
+Charp      : kód ČSÚ
+Vyznam     : Kód okresu jako jednotky NUTS
+
+Polozka    : LAU1
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 004
+Charp      : kód ČSÚ
+Vyznam     : Kód okresu jako jednotky NUTS
+
+Polozka    : LAU1
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : COB
+Pors       : 06
+Porp       : 004
+Charp      : kód ČSÚ
+Vyznam     : Kód okresu jako jednotky NUTS
+
+Polozka    : LAU1
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : COBE
+Pors       : 07
+Porp       : 004
+Charp      : kód ČSÚ
+Vyznam     : Kód okresu jako jednotky NUTS
+
+Polozka    : LAU1
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : KU
+Pors       : 08
+Porp       : 004
+Charp      : kód ČSÚ
+Vyznam     : Kód okresu jako jednotky NUTS
+
+Polozka    : LAU1
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : UTJ
+Pors       : 09
+Porp       : 004
+Charp      : kód ČSÚ
+Vyznam     : Kód okresu jako jednotky NUTS
+
+Polozka    : LAU1
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : ZSJ
+Pors       : 10
+Porp       : 004
+Charp      : kód ČSÚ
+Vyznam     : Kód okresu jako jednotky NUTS
+
+Polozka    : LAU1
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : SOMV
+Pors       : 11
+Porp       : 004
+Charp      : kód ČSÚ
+Vyznam     : Kód okresu jako jednotky NUTS
+
+Polozka    : LAU1
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : SM
+Pors       : 14
+Porp       : 005
+Charp      : kód ČSÚ
+Vyznam     : Kód okresu jako jednotky NUTS
+
+Polozka    : LAU1
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : ORP
+Pors       : 16
+Porp       : 003
+Charp      : kód ČSÚ
+Vyznam     : Kód okresu jako jednotky NUTS
+
+Polozka    : LAU1
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : POU
+Pors       : 17
+Porp       : 003
+Charp      : kód ČSÚ
+Vyznam     : Kód okresu jako jednotky NUTS
+
+Polozka    : LAU1
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : STUR
+Pors       : 18
+Porp       : 003
+Charp      : kód ČSÚ
+Vyznam     : Kód okresu jako jednotky NUTS
+
+Polozka    : LAU1
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : MATUR
+Pors       : 19
+Porp       : 003
+Charp      : kód ČSÚ
+Vyznam     : Kód okresu jako jednotky NUTS
+
+Polozka    : LAU1
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : FINUR
+Pors       : 20
+Porp       : 002
+Charp      : kód ČSÚ
+Vyznam     : Kód okresu jako jednotky NUTS
+
+Polozka    : LAU1
+Tp         : C
+Del        : 6
+Dec        : 0
+Soubor     : NEST
+Pors       : 21
+Porp       : 004
+Charp      : kód ČSÚ
+Vyznam     : Kód okresu jako jednotky NUTS
+
+Polozka    : OBAKT
+Tp         : N
+Del        : 8
+Dec        : 0
+Soubor     : MCAST
+Pors       : 05
+Porp       : 028
+Charp      : inf.
+Vyznam     : Počet obyvatel aktuální (nejnovější dle ČSÚ)
+

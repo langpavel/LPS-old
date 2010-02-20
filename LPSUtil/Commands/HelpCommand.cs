@@ -4,23 +4,31 @@ using System.IO;
 
 namespace LPS.Util
 {
-	public class HelpCommand : ICommand
+	public class HelpCommand : CommandBase
 	{
-		public HelpCommand()
+		public HelpCommand(CommandCollection Commands, string Name)
+			: base(Commands, Name)
 		{
 		}
 
-		public void Execute (CommandConsumer consumer, string cmd_name, string argline, TextWriter output)
+		public override Type[] ParamTypes
 		{
-			foreach(KeyValuePair<string, ICommand> kw in CommandConsumer.Commands)
+			get { return new Type[] { }; }
+		}
+
+		public override string Help
+		{
+			get { return "vypíše tento seznam na výstup"; }
+		}
+
+		public override object Execute(TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		{
+			foreach(ICommand cmd in this.Commands.Commands)
 			{
-				output.WriteLine("{0} \t- {1}", kw.Key, kw.Value.GetHelp());
+				Out.WriteLine("{0}", cmd.ToString());
+				Out.WriteLine("\t{0}", cmd.Help);
 			}
-		}
-
-		public string GetHelp()
-		{
-			return "vypíše tento seznam na výstup";
+			return null;
 		}
 	}
 }

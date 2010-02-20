@@ -1,0 +1,1386 @@
+Nk         : HP
+Kn         : 01
+Knok       : 0100
+Kodnuts    : CZ0100
+Lau1       : CZ0100
+Knuts      : 1100
+Kodok      : 3100
+Nazkr      : Hlavní město Praha
+Nazok      : Hlavní město Praha
+Vymera     : 49602.5461
+Vymeru     : 49602.5461
+Ob91       : 1214174
+Ob01       : 1169106
+Obakt      : 1233211
+Nazcs      : INAZPK OFVXQ RTAIA
+Zmenazaz   : 01052004
+Zmenapol   : KODNUTS
+
+Nk         : ST
+Kn         : 02
+Knok       : 0201
+Kodnuts    : CZ0201
+Lau1       : CZ0201
+Knuts      : 2101
+Kodok      : 3201
+Nazkr      : Středočeský
+Nazok      : Benešov
+Vymera     : 147473.6855
+Vymeru     : 147473.6855
+Ob91       : 91619
+Ob01       : 90625
+Obakt      : 93446
+Nazcs      : BFPFWQZ
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : ST
+Kn         : 02
+Knok       : 0202
+Kodnuts    : CZ0202
+Lau1       : CZ0202
+Knuts      : 2102
+Kodok      : 3202
+Nazkr      : Středočeský
+Nazok      : Beroun
+Vymera     : 66207.3794
+Vymeru     : 66207.3794
+Ob91       : 75859
+Ob01       : 75684
+Obakt      : 82941
+Nazcs      : BFTQYP
+Zmenazaz   : 01052004
+Zmenapol   : KODNUTS
+
+Nk         : ST
+Kn         : 02
+Knok       : 0203
+Kodnuts    : CZ0203
+Lau1       : CZ0203
+Knuts      : 2103
+Kodok      : 3203
+Nazkr      : Středočeský
+Nazok      : Kladno
+Vymera     : 71964.6870
+Vymeru     : 71964.6870
+Ob91       : 150625
+Ob01       : 151360
+Obakt      : 157375
+Nazcs      : MNAEPQ
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : ST
+Kn         : 02
+Knok       : 0204
+Kodnuts    : CZ0204
+Lau1       : CZ0204
+Knuts      : 2104
+Kodok      : 3204
+Nazkr      : Středočeský
+Nazok      : Kolín
+Vymera     : 74357.9559
+Vymeru     : 74266.0574
+Ob91       : 91637
+Ob01       : 89379
+Obakt      : 94370
+Nazcs      : MQNKP
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : ST
+Kn         : 02
+Knok       : 0205
+Kodnuts    : CZ0205
+Lau1       : CZ0205
+Knuts      : 2105
+Kodok      : 3205
+Nazkr      : Středočeský
+Nazok      : Kutná Hora
+Vymera     : 91700.0944
+Vymeru     : 91700.0944
+Ob91       : 75250
+Ob01       : 73628
+Obakt      : 74850
+Nazcs      : MYXPA IQTA
+Zmenazaz   : 01052004
+Zmenapol   : KODNUTS
+
+Nk         : ST
+Kn         : 02
+Knok       : 0206
+Kodnuts    : CZ0206
+Lau1       : CZ0206
+Knuts      : 2106
+Kodok      : 3206
+Nazkr      : Středočeský
+Nazok      : Mělník
+Vymera     : 70106.5760
+Vymeru     : 70106.5760
+Ob91       : 94241
+Ob01       : 94635
+Obakt      : 100049
+Nazcs      : OFNPKM
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : ST
+Kn         : 02
+Knok       : 0207
+Kodnuts    : CZ0207
+Lau1       : CZ0207
+Knuts      : 2107
+Kodok      : 3207
+Nazkr      : Středočeský
+Nazok      : Mladá Boleslav
+Vymera     : 102282.4385
+Vymeru     : 102282.4385
+Ob91       : 110664
+Ob01       : 113241
+Obakt      : 123363
+Nazcs      : ONAEA BQNFVNAZ
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : ST
+Kn         : 02
+Knok       : 0208
+Kodnuts    : CZ0208
+Lau1       : CZ0208
+Knuts      : 2108
+Kodok      : 3208
+Nazkr      : Středočeský
+Nazok      : Nymburk
+Vymera     : 85013.3134
+Vymeru     : 85013.3134
+Ob91       : 81247
+Ob01       : 82804
+Obakt      : 90195
+Nazcs      : PcOBYTM
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : ST
+Kn         : 02
+Knok       : 0209
+Kodnuts    : CZ0209
+Lau1       : CZ0209
+Knuts      : 2109
+Kodok      : 3209
+Nazkr      : Středočeský
+Nazok      : Praha-východ
+Vymera     : 75498.2427
+Vymeru     : 75590.1412
+Ob91       : 101923
+Ob01       : 105541
+Obakt      : 135484
+Nazcs      : RTAIA-ZcJQE
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : ST
+Kn         : 02
+Knok       : 0210
+Kodnuts    : CZ020A
+Lau1       : CZ020A
+Knuts      : 2110
+Kodok      : 3210
+Nazkr      : Středočeský
+Nazok      : Praha-západ
+Vymera     : 58063.6363
+Vymeru     : 58063.6363
+Ob91       : 74265
+Ob01       : 82404
+Obakt      : 112211
+Nazcs      : RTAIA-dARAE
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : ST
+Kn         : 02
+Knok       : 0211
+Kodnuts    : CZ020B
+Lau1       : CZ020B
+Knuts      : 2111
+Kodok      : 3211
+Nazkr      : Středočeský
+Nazok      : Příbram
+Vymera     : 169205.6700
+Vymeru     : 169205.6700
+Ob91       : 112007
+Ob01       : 110685
+Obakt      : 111714
+Nazcs      : RUKBTAO
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : ST
+Kn         : 02
+Knok       : 0212
+Kodnuts    : CZ020C
+Lau1       : CZ020C
+Knuts      : 2112
+Kodok      : 3212
+Nazkr      : Středočeský
+Nazok      : Rakovník
+Vymera     : 89625.5060
+Vymeru     : 89625.5060
+Ob91       : 53545
+Ob01       : 52487
+Obakt      : 54693
+Nazcs      : TAMQZPKM
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : JC
+Kn         : 03
+Knok       : 0301
+Kodnuts    : CZ0311
+Lau1       : CZ0311
+Knuts      : 3101
+Kodok      : 3301
+Nazkr      : Jihočeský
+Nazok      : České Budějovice
+Vymera     : 163827.3672
+Vymeru     : 163827.3672
+Ob91       : 173765
+Ob01       : 178506
+Obakt      : 185584
+Nazcs      : DFVMF BYEFLQZKCF
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : JC
+Kn         : 03
+Knok       : 0302
+Kodnuts    : CZ0312
+Lau1       : CZ0312
+Knuts      : 3102
+Kodok      : 3302
+Nazkr      : Jihočeský
+Nazok      : Český Krumlov
+Vymera     : 161506.6620
+Vymeru     : 161506.6620
+Ob91       : 57388
+Ob01       : 59569
+Obakt      : 61516
+Nazcs      : DFVMc MTYONQZ
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : JC
+Kn         : 03
+Knok       : 0303
+Kodnuts    : CZ0313
+Lau1       : CZ0313
+Knuts      : 3103
+Kodok      : 3303
+Nazkr      : Jihočeský
+Nazok      : Jindřichův Hradec
+Vymera     : 194362.9656
+Vymeru     : 194362.9656
+Ob91       : 93048
+Ob01       : 92887
+Obakt      : 93298
+Nazcs      : LKPEUKJYZ ITAEFC
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : JC
+Kn         : 03
+Knok       : 0304
+Kodnuts    : CZ0314
+Lau1       : CZ0314
+Knuts      : 3104
+Kodok      : 3305
+Nazkr      : Jihočeský
+Nazok      : Písek
+Vymera     : 112676.2906
+Vymeru     : 112659.0592
+Ob91       : 71747
+Ob01       : 70300
+Obakt      : 70550
+Nazcs      : RKVFM
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : JC
+Kn         : 03
+Knok       : 0305
+Kodnuts    : CZ0315
+Lau1       : CZ0315
+Knuts      : 3105
+Kodok      : 3306
+Nazkr      : Jihočeský
+Nazok      : Prachatice
+Vymera     : 137505.8620
+Vymeru     : 137505.8620
+Ob91       : 50985
+Ob01       : 51369
+Obakt      : 51548
+Nazcs      : RTAJAXKCF
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : JC
+Kn         : 03
+Knok       : 0306
+Kodnuts    : CZ0316
+Lau1       : CZ0316
+Knuts      : 3106
+Kodok      : 3307
+Nazkr      : Jihočeský
+Nazok      : Strakonice
+Vymera     : 103203.3382
+Vymeru     : 103203.3382
+Ob91       : 71978
+Ob01       : 69863
+Obakt      : 71054
+Nazcs      : VXTAMQPKCF
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : JC
+Kn         : 03
+Knok       : 0307
+Kodnuts    : CZ0317
+Lau1       : CZ0317
+Knuts      : 3107
+Kodok      : 3308
+Nazkr      : Jihočeský
+Nazok      : Tábor
+Vymera     : 132575.9280
+Vymeru     : 132593.1594
+Ob91       : 103978
+Ob01       : 102773
+Obakt      : 102778
+Nazcs      : XABQT
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : PL
+Kn         : 04
+Knok       : 0401
+Kodnuts    : CZ0321
+Lau1       : CZ0321
+Knuts      : 3201
+Kodok      : 3401
+Nazkr      : Plzeňský
+Nazok      : Domažlice
+Vymera     : 112341.4072
+Vymeru     : 112341.4072
+Ob91       : 58355
+Ob01       : 58511
+Obakt      : 60239
+Nazcs      : EQOAeNKCF
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : PL
+Kn         : 04
+Knok       : 0402
+Kodnuts    : CZ0322
+Lau1       : CZ0322
+Knuts      : 3202
+Kodok      : 3404
+Nazkr      : Plzeňský
+Nazok      : Klatovy
+Vymera     : 194557.2982
+Vymeru     : 194557.2982
+Ob91       : 89666
+Ob01       : 87943
+Obakt      : 88669
+Nazcs      : MNAXQZc
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : PL
+Kn         : 04
+Knok       : 0404
+Kodnuts    : CZ0323
+Lau1       : CZ0323
+Knuts      : 3203
+Kodok      : 3405
+Nazkr      : Plzeňský
+Nazok      : Plzeň-město
+Vymera     : 26142.3222
+Vymeru     : 26142.3222
+Ob91       : 188158
+Ob01       : 180748
+Obakt      : 185125
+Nazcs      : RNdFP-OFVXQ
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : PL
+Kn         : 04
+Knok       : 0403
+Kodnuts    : CZ0324
+Lau1       : CZ0324
+Knuts      : 3204
+Kodok      : 3406
+Nazkr      : Plzeňský
+Nazok      : Plzeň-jih
+Vymera     : 98998.4070
+Vymeru     : 98998.4070
+Ob91       : 57554
+Ob01       : 57244
+Obakt      : 60856
+Nazcs      : RNdFP-LKI
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : PL
+Kn         : 04
+Knok       : 0405
+Kodnuts    : CZ0325
+Lau1       : CZ0325
+Knuts      : 3205
+Kodok      : 3407
+Nazkr      : Plzeňský
+Nazok      : Plzeň-sever
+Vymera     : 128669.6311
+Vymeru     : 128669.6311
+Ob91       : 68420
+Ob01       : 69015
+Obakt      : 74003
+Nazcs      : RNdFP-VFZFT
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : PL
+Kn         : 04
+Knok       : 0406
+Kodnuts    : CZ0326
+Lau1       : CZ0326
+Knuts      : 3206
+Kodok      : 3408
+Nazkr      : Plzeňský
+Nazok      : Rokycany
+Vymera     : 57515.1855
+Vymeru     : 57515.1855
+Ob91       : 46118
+Ob01       : 45788
+Obakt      : 47341
+Nazcs      : TQMcCAPc
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : PL
+Kn         : 04
+Knok       : 0407
+Kodnuts    : CZ0327
+Lau1       : CZ0327
+Knuts      : 3207
+Kodok      : 3410
+Nazkr      : Plzeňský
+Nazok      : Tachov
+Vymera     : 137864.8249
+Vymeru     : 137864.8249
+Ob91       : 50036
+Ob01       : 51439
+Obakt      : 53394
+Nazcs      : XAJQZ
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : KA
+Kn         : 05
+Knok       : 0501
+Kodnuts    : CZ0411
+Lau1       : CZ0411
+Knuts      : 4101
+Kodok      : 3402
+Nazkr      : Karlovarský
+Nazok      : Cheb
+Vymera     : 104592.4010
+Vymeru     : 104592.4010
+Ob91       : 89856
+Ob01       : 91839
+Obakt      : 95452
+Nazcs      : JFB
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : KA
+Kn         : 05
+Knok       : 0502
+Kodnuts    : CZ0412
+Lau1       : CZ0412
+Knuts      : 4102
+Kodok      : 3403
+Nazkr      : Karlovarský
+Nazok      : Karlovy Vary
+Vymera     : 151493.7054
+Vymeru     : 151493.7054
+Ob91       : 119506
+Ob01       : 118897
+Obakt      : 119923
+Nazcs      : MATNQZc ZATc
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : KA
+Kn         : 05
+Knok       : 0503
+Kodnuts    : CZ0413
+Lau1       : CZ0413
+Knuts      : 4103
+Kodok      : 3409
+Nazkr      : Karlovarský
+Nazok      : Sokolov
+Vymera     : 75358.4420
+Vymeru     : 75358.4420
+Ob91       : 92623
+Ob01       : 93607
+Obakt      : 93028
+Nazcs      : VQMQNQZ
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : US
+Kn         : 06
+Knok       : 0601
+Kodnuts    : CZ0421
+Lau1       : CZ0421
+Knuts      : 4201
+Kodok      : 3502
+Nazkr      : Ústecký
+Nazok      : Děčín
+Vymera     : 90856.8813
+Vymeru     : 90856.8813
+Ob91       : 133448
+Ob01       : 133887
+Obakt      : 135710
+Nazcs      : EFDKP
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : US
+Kn         : 06
+Knok       : 0602
+Kodnuts    : CZ0422
+Lau1       : CZ0422
+Knuts      : 4202
+Kodok      : 3503
+Nazkr      : Ústecký
+Nazok      : Chomutov
+Vymera     : 93534.4287
+Vymeru     : 93534.4287
+Ob91       : 124081
+Ob01       : 124979
+Obakt      : 126353
+Nazcs      : JQOYXQZ
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : US
+Kn         : 06
+Knok       : 0603
+Kodnuts    : CZ0423
+Lau1       : CZ0423
+Knuts      : 4203
+Kodok      : 3506
+Nazkr      : Ústecký
+Nazok      : Litoměřice
+Vymera     : 103217.5558
+Vymeru     : 103217.5558
+Ob91       : 113883
+Ob01       : 114259
+Obakt      : 118243
+Nazcs      : NKXQOFUKCF
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : US
+Kn         : 06
+Knok       : 0604
+Kodnuts    : CZ0424
+Lau1       : CZ0424
+Knuts      : 4204
+Kodok      : 3507
+Nazkr      : Ústecký
+Nazok      : Louny
+Vymera     : 111762.6584
+Vymeru     : 111762.6584
+Ob91       : 86640
+Ob01       : 86020
+Obakt      : 87197
+Nazcs      : NQYPc
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : US
+Kn         : 06
+Knok       : 0605
+Kodnuts    : CZ0425
+Lau1       : CZ0425
+Knuts      : 4205
+Kodok      : 3508
+Nazkr      : Ústecký
+Nazok      : Most
+Vymera     : 46710.7553
+Vymeru     : 46710.7553
+Ob91       : 120212
+Ob01       : 117196
+Obakt      : 117294
+Nazcs      : OQVX
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : US
+Kn         : 06
+Knok       : 0606
+Kodnuts    : CZ0426
+Lau1       : CZ0426
+Knuts      : 4206
+Kodok      : 3509
+Nazkr      : Ústecký
+Nazok      : Teplice
+Vymera     : 46900.6909
+Vymeru     : 46900.6909
+Ob91       : 127872
+Ob01       : 126098
+Obakt      : 130070
+Nazcs      : XFRNKCF
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : US
+Kn         : 06
+Knok       : 0607
+Kodnuts    : CZ0427
+Lau1       : CZ0427
+Knuts      : 4207
+Kodok      : 3510
+Nazkr      : Ústecký
+Nazok      : Ústí nad Labem
+Vymera     : 40470.5285
+Vymeru     : 40470.5285
+Ob91       : 118325
+Ob01       : 117780
+Obakt      : 121024
+Nazcs      : YVXK PAE NABFO
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : LB
+Kn         : 07
+Knok       : 0701
+Kodnuts    : CZ0511
+Lau1       : CZ0511
+Knuts      : 5101
+Kodok      : 3501
+Nazkr      : Liberecký
+Nazok      : Česká Lípa
+Vymera     : 107289.0551
+Vymeru     : 107289.0551
+Ob91       : 98348
+Ob01       : 101895
+Obakt      : 103990
+Nazcs      : DFVMA NKRA
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : LB
+Kn         : 07
+Knok       : 0702
+Kodnuts    : CZ0512
+Lau1       : CZ0512
+Knuts      : 5102
+Kodok      : 3504
+Nazkr      : Liberecký
+Nazok      : Jablonec nad Nisou
+Vymera     : 40230.2629
+Vymeru     : 40230.2629
+Ob91       : 88118
+Ob01       : 88154
+Obakt      : 90076
+Nazcs      : LABNQPFC PAE PKVQY
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : LB
+Kn         : 07
+Knok       : 0703
+Kodnuts    : CZ0513
+Lau1       : CZ0513
+Knuts      : 5103
+Kodok      : 3505
+Nazkr      : Liberecký
+Nazok      : Liberec
+Vymera     : 98886.3810
+Vymeru     : 98886.3810
+Ob91       : 163107
+Ob01       : 162780
+Obakt      : 168561
+Nazcs      : NKBFTFC
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : LB
+Kn         : 07
+Knok       : 0704
+Kodnuts    : CZ0514
+Lau1       : CZ0514
+Knuts      : 5104
+Kodok      : 3608
+Nazkr      : Liberecký
+Nazok      : Semily
+Vymera     : 69891.7933
+Vymeru     : 69891.7933
+Ob91       : 75547
+Ob01       : 75355
+Obakt      : 74698
+Nazcs      : VFOKNc
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : KH
+Kn         : 08
+Knok       : 0801
+Kodnuts    : CZ0521
+Lau1       : CZ0521
+Knuts      : 5201
+Kodok      : 3602
+Nazkr      : Královéhradecký
+Nazok      : Hradec Králové
+Vymera     : 89158.8497
+Vymeru     : 89158.8497
+Ob91       : 162662
+Ob01       : 161178
+Obakt      : 162377
+Nazcs      : ITAEFC MTANQZF
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : KH
+Kn         : 08
+Knok       : 0802
+Kodnuts    : CZ0522
+Lau1       : CZ0522
+Knuts      : 5202
+Kodok      : 3604
+Nazkr      : Královéhradecký
+Nazok      : Jičín
+Vymera     : 88665.2390
+Vymeru     : 88665.2390
+Ob91       : 78650
+Ob01       : 77761
+Obakt      : 79585
+Nazcs      : LKDKP
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : KH
+Kn         : 08
+Knok       : 0803
+Kodnuts    : CZ0523
+Lau1       : CZ0523
+Knuts      : 5203
+Kodok      : 3605
+Nazkr      : Královéhradecký
+Nazok      : Náchod
+Vymera     : 85162.7476
+Vymeru     : 85162.7476
+Ob91       : 111939
+Ob01       : 112714
+Obakt      : 112582
+Nazcs      : PAJQE
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : KH
+Kn         : 08
+Knok       : 0804
+Kodnuts    : CZ0524
+Lau1       : CZ0524
+Knuts      : 5204
+Kodok      : 3607
+Nazkr      : Královéhradecký
+Nazok      : Rychnov nad Kněžnou
+Vymera     : 98187.9913
+Vymeru     : 98187.9913
+Ob91       : 78144
+Ob01       : 78294
+Obakt      : 79198
+Nazcs      : TcJPQZ PAE MPFePQY
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : KH
+Kn         : 08
+Knok       : 0805
+Kodnuts    : CZ0525
+Lau1       : CZ0525
+Knuts      : 5205
+Kodok      : 3610
+Nazkr      : Královéhradecký
+Nazok      : Trutnov
+Vymera     : 114677.9671
+Vymeru     : 114677.9671
+Ob91       : 121414
+Ob01       : 120777
+Obakt      : 120778
+Nazcs      : XTYXPQZ
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : PA
+Kn         : 09
+Knok       : 0901
+Kodnuts    : CZ0531
+Lau1       : CZ0531
+Knuts      : 5301
+Kodok      : 3603
+Nazkr      : Pardubický
+Nazok      : Chrudim
+Vymera     : 99262.7962
+Vymeru     : 99262.7962
+Ob91       : 104662
+Ob01       : 103934
+Obakt      : 104351
+Nazcs      : JTYEKO
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : PA
+Kn         : 09
+Knok       : 0902
+Kodnuts    : CZ0532
+Lau1       : CZ0532
+Knuts      : 5302
+Kodok      : 3606
+Nazkr      : Pardubický
+Nazok      : Pardubice
+Vymera     : 88009.9055
+Vymeru     : 88009.9055
+Ob91       : 162772
+Ob01       : 160658
+Obakt      : 166519
+Nazcs      : RATEYBKCF
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : PA
+Kn         : 09
+Knok       : 0903
+Kodnuts    : CZ0533
+Lau1       : CZ0533
+Knuts      : 5303
+Kodok      : 3609
+Nazkr      : Pardubický
+Nazok      : Svitavy
+Vymera     : 137862.2622
+Vymeru     : 137862.2622
+Ob91       : 105134
+Ob01       : 105442
+Obakt      : 104934
+Nazcs      : VZKXAZc
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : PA
+Kn         : 09
+Knok       : 0904
+Kodnuts    : CZ0534
+Lau1       : CZ0534
+Knuts      : 5304
+Kodok      : 3611
+Nazkr      : Pardubický
+Nazok      : Ústí nad Orlicí
+Vymera     : 126731.5786
+Vymeru     : 126731.5786
+Ob91       : 136150
+Ob01       : 138247
+Obakt      : 139381
+Nazcs      : YVXK PAE QTNKCK
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : VY
+Kn         : 10
+Knok       : 1001
+Kodnuts    : CZ0631
+Lau1       : CZ0631
+Knuts      : 6101
+Kodok      : 3601
+Nazkr      : Vysočina
+Nazok      : Havlíčkův Brod
+Vymera     : 126482.2183
+Vymeru     : 126482.2183
+Ob91       : 96113
+Ob01       : 95040
+Obakt      : 96079
+Nazcs      : IAZNKDMYZ BTQE
+Zmenazaz   : 01012008
+Zmenapol   : 
+
+Nk         : VY
+Kn         : 10
+Knok       : 1002
+Kodnuts    : CZ0632
+Lau1       : CZ0632
+Knuts      : 6102
+Kodok      : 3707
+Nazkr      : Vysočina
+Nazok      : Jihlava
+Vymera     : 119928.8884
+Vymeru     : 119928.8884
+Ob91       : 109883
+Ob01       : 109856
+Obakt      : 112031
+Nazcs      : LKINAZA
+Zmenazaz   : 01012008
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : VY
+Kn         : 10
+Knok       : 1003
+Kodnuts    : CZ0633
+Lau1       : CZ0633
+Knuts      : 6103
+Kodok      : 3304
+Nazkr      : Vysočina
+Nazok      : Pelhřimov
+Vymera     : 128988.6360
+Vymeru     : 128988.6360
+Ob91       : 74614
+Ob01       : 72984
+Obakt      : 73227
+Nazcs      : RFNIUKOQZ
+Zmenazaz   : 01012008
+Zmenapol   : 
+
+Nk         : VY
+Kn         : 10
+Knok       : 1004
+Kodnuts    : CZ0634
+Lau1       : CZ0634
+Knuts      : 6104
+Kodok      : 3710
+Nazkr      : Vysočina
+Nazok      : Třebíč
+Vymera     : 146295.3051
+Vymeru     : 146295.3051
+Ob91       : 114289
+Ob01       : 114636
+Obakt      : 114028
+Nazcs      : XUFBKD
+Zmenazaz   : 01012008
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : VY
+Kn         : 10
+Knok       : 1005
+Kodnuts    : CZ0635
+Lau1       : CZ0635
+Knuts      : 6105
+Kodok      : 3714
+Nazkr      : Vysočina
+Nazok      : Žďár nad Sázavou
+Vymera     : 157852.0308
+Vymeru     : 157852.0308
+Ob91       : 118841
+Ob01       : 119627
+Obakt      : 120046
+Nazcs      : eEAT PAE VAdAZQY
+Zmenazaz   : 01012008
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : JM
+Kn         : 11
+Knok       : 1101
+Kodnuts    : CZ0641
+Lau1       : CZ0641
+Knuts      : 6201
+Kodok      : 3701
+Nazkr      : Jihomoravský
+Nazok      : Blansko
+Vymera     : 86271.3905
+Vymeru     : 86271.3905
+Ob91       : 104106
+Ob01       : 104101
+Obakt      : 106248
+Nazcs      : BNAPVMQ
+Zmenazaz   : 01012008
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : JM
+Kn         : 11
+Knok       : 1102
+Kodnuts    : CZ0642
+Lau1       : CZ0642
+Knuts      : 6202
+Kodok      : 3702
+Nazkr      : Jihomoravský
+Nazok      : Brno-město
+Vymera     : 23018.7269
+Vymeru     : 23018.7269
+Ob91       : 388296
+Ob01       : 376172
+Obakt      : 370592
+Nazcs      : BTPQ-OFVXQ
+Zmenazaz   : 01012008
+Zmenapol   : 
+
+Nk         : JM
+Kn         : 11
+Knok       : 1103
+Kodnuts    : CZ0643
+Lau1       : CZ0643
+Knuts      : 6203
+Kodok      : 3703
+Nazkr      : Jihomoravský
+Nazok      : Brno-venkov
+Vymera     : 149889.1591
+Vymeru     : 149889.1591
+Ob91       : 179099
+Ob01       : 181686
+Obakt      : 198379
+Nazcs      : BTPQ-ZFPMQZ
+Zmenazaz   : 01012008
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : JM
+Kn         : 11
+Knok       : 1104
+Kodnuts    : CZ0644
+Lau1       : CZ0644
+Knuts      : 6204
+Kodok      : 3704
+Nazkr      : Jihomoravský
+Nazok      : Břeclav
+Vymera     : 103815.1332
+Vymeru     : 103815.1332
+Ob91       : 113261
+Ob01       : 114197
+Obakt      : 113479
+Nazcs      : BUFCNAZ
+Zmenazaz   : 01012008
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : JM
+Kn         : 11
+Knok       : 1105
+Kodnuts    : CZ0645
+Lau1       : CZ0645
+Knuts      : 6205
+Kodok      : 3706
+Nazkr      : Jihomoravský
+Nazok      : Hodonín
+Vymera     : 109898.6707
+Vymeru     : 109898.6707
+Ob91       : 161474
+Ob01       : 160237
+Obakt      : 157084
+Nazcs      : IQEQPKP
+Zmenazaz   : 01012008
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : JM
+Kn         : 11
+Knok       : 1106
+Kodnuts    : CZ0646
+Lau1       : CZ0646
+Knuts      : 6206
+Kodok      : 3712
+Nazkr      : Jihomoravský
+Nazok      : Vyškov
+Vymera     : 87608.4124
+Vymeru     : 87608.4124
+Ob91       : 86219
+Ob01       : 86116
+Obakt      : 88057
+Nazcs      : ZcWMQZ
+Zmenazaz   : 01012008
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : JM
+Kn         : 11
+Knok       : 1107
+Kodnuts    : CZ0647
+Lau1       : CZ0647
+Knuts      : 6207
+Kodok      : 3713
+Nazkr      : Jihomoravský
+Nazok      : Znojmo
+Vymera     : 159039.0848
+Vymeru     : 159039.0848
+Ob91       : 111705
+Ob01       : 112277
+Obakt      : 113307
+Nazcs      : dPQLOQ
+Zmenazaz   : 01012008
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : OL
+Kn         : 12
+Knok       : 1201
+Kodnuts    : CZ0711
+Lau1       : CZ0711
+Knuts      : 7101
+Kodok      : 3811
+Nazkr      : Olomoucký
+Nazok      : Jeseník
+Vymera     : 71895.7115
+Vymeru     : 71895.7115
+Ob91       : 42583
+Ob01       : 42413
+Obakt      : 41404
+Nazcs      : LFVFPKM
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : OL
+Kn         : 12
+Knok       : 1202
+Kodnuts    : CZ0712
+Lau1       : CZ0712
+Knuts      : 7102
+Kodok      : 3805
+Nazkr      : Olomoucký
+Nazok      : Olomouc
+Vymera     : 162022.7493
+Vymeru     : 162022.7493
+Ob91       : 228199
+Ob01       : 229273
+Obakt      : 231339
+Nazcs      : QNQOQYC
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : OL
+Kn         : 12
+Knok       : 1203
+Kodnuts    : CZ0713
+Lau1       : CZ0713
+Knuts      : 7103
+Kodok      : 3709
+Nazkr      : Olomoucký
+Nazok      : Prostějov
+Vymera     : 76970.2233
+Vymeru     : 76970.2233
+Ob91       : 112208
+Ob01       : 109890
+Obakt      : 110159
+Nazcs      : RTQVXFLQZ
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : OL
+Kn         : 12
+Knok       : 1204
+Kodnuts    : CZ0714
+Lau1       : CZ0714
+Knuts      : 7104
+Kodok      : 3808
+Nazkr      : Olomoucký
+Nazok      : Přerov
+Vymera     : 84473.8521
+Vymeru     : 84473.8521
+Ob91       : 138379
+Ob01       : 135886
+Obakt      : 134722
+Nazcs      : RUFTQZ
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : OL
+Kn         : 12
+Knok       : 1205
+Kodnuts    : CZ0715
+Lau1       : CZ0715
+Knuts      : 7105
+Kodok      : 3809
+Nazkr      : Olomoucký
+Nazok      : Šumperk
+Vymera     : 131301.8273
+Vymeru     : 131301.8273
+Ob91       : 125972
+Ob01       : 126355
+Obakt      : 124513
+Nazcs      : WYORFTM
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : ZL
+Kn         : 14
+Knok       : 1401
+Kodnuts    : CZ0721
+Lau1       : CZ0721
+Knuts      : 7201
+Kodok      : 3708
+Nazkr      : Zlínský
+Nazok      : Kroměříž
+Vymera     : 79569.8513
+Vymeru     : 79569.8513
+Ob91       : 107746
+Ob01       : 107811
+Obakt      : 107875
+Nazcs      : MTQOFUKe
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : ZL
+Kn         : 14
+Knok       : 1402
+Kodnuts    : CZ0722
+Lau1       : CZ0722
+Knuts      : 7202
+Kodok      : 3711
+Nazkr      : Zlínský
+Nazok      : Uherské Hradiště
+Vymera     : 99140.1089
+Vymeru     : 99140.1089
+Ob91       : 145188
+Ob01       : 144517
+Obakt      : 144533
+Nazcs      : YIFTVMF ITAEKWXF
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : ZL
+Kn         : 14
+Knok       : 1403
+Kodnuts    : CZ0723
+Lau1       : CZ0723
+Knuts      : 7203
+Kodok      : 3810
+Nazkr      : Zlínský
+Nazok      : Vsetín
+Vymera     : 114285.6471
+Vymeru     : 114285.6471
+Ob91       : 146898
+Ob01       : 147064
+Obakt      : 145850
+Nazcs      : ZVFXKP
+Zmenazaz   : 
+Zmenapol   : 
+
+Nk         : ZL
+Kn         : 14
+Knok       : 1404
+Kodnuts    : CZ0724
+Lau1       : CZ0724
+Knuts      : 7204
+Kodok      : 3705
+Nazkr      : Zlínský
+Nazok      : Zlín
+Vymera     : 103361.9415
+Vymeru     : 103361.9415
+Ob91       : 197071
+Ob01       : 195618
+Obakt      : 193154
+Nazcs      : dNKP
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : MS
+Kn         : 13
+Knok       : 1301
+Kodnuts    : CZ0801
+Lau1       : CZ0801
+Knuts      : 8101
+Kodok      : 3801
+Nazkr      : Moravskoslezský
+Nazok      : Bruntál
+Vymera     : 153586.8303
+Vymeru     : 153586.8303
+Ob91       : 99461
+Ob01       : 100272
+Obakt      : 97868
+Nazcs      : BTYPXAN
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : MS
+Kn         : 13
+Knok       : 1302
+Kodnuts    : CZ0802
+Lau1       : CZ0802
+Knuts      : 8102
+Kodok      : 3802
+Nazkr      : Moravskoslezský
+Nazok      : Frýdek-Místek
+Vymera     : 120810.4056
+Vymeru     : 120810.4056
+Ob91       : 210106
+Ob01       : 209452
+Obakt      : 211070
+Nazcs      : GTcEFM-OKVXFM
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : MS
+Kn         : 13
+Knok       : 1303
+Kodnuts    : CZ0803
+Lau1       : CZ0803
+Knuts      : 8103
+Kodok      : 3803
+Nazkr      : Moravskoslezský
+Nazok      : Karviná
+Vymera     : 35624.8533
+Vymeru     : 35624.8533
+Ob91       : 285998
+Ob01       : 281000
+Obakt      : 274863
+Nazcs      : MATZKPA
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : MS
+Kn         : 13
+Knok       : 1304
+Kodnuts    : CZ0804
+Lau1       : CZ0804
+Knuts      : 8104
+Kodok      : 3804
+Nazkr      : Moravskoslezský
+Nazok      : Nový Jičín
+Vymera     : 88158.0326
+Vymeru     : 88158.0326
+Ob91       : 151802
+Ob01       : 152766
+Obakt      : 152506
+Nazcs      : PQZc LKDKP
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : MS
+Kn         : 13
+Knok       : 1305
+Kodnuts    : CZ0805
+Lau1       : CZ0805
+Knuts      : 8105
+Kodok      : 3806
+Nazkr      : Moravskoslezský
+Nazok      : Opava
+Vymera     : 111316.7462
+Vymeru     : 111316.7462
+Ob91       : 177370
+Ob01       : 177970
+Obakt      : 177213
+Nazcs      : QRAZA
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
+Nk         : MS
+Kn         : 13
+Knok       : 1306
+Kodnuts    : CZ0806
+Lau1       : CZ0806
+Knuts      : 8106
+Kodok      : 3807
+Nazkr      : Moravskoslezský
+Nazok      : Ostrava-město
+Vymera     : 33148.5481
+Vymeru     : 33148.5481
+Ob91       : 353989
+Ob01       : 343559
+Obakt      : 336735
+Nazcs      : QVXTAZA-OFVXQ
+Zmenazaz   : 01012007
+Zmenapol   : VYMERA-OBAKT
+
