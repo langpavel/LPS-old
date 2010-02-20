@@ -18,13 +18,12 @@ namespace LPS.ToolScript.Tokens
 		public TerminalToken Terminal { get { return this.Token as TerminalToken; } }
 		public NonterminalToken Nonterminal { get { return this.Token as NonterminalToken; } }
 
-		public virtual void Prepare(Context c)
+		public static Symbols GetSymbol(Token tok)
 		{
-		}
-
-		public virtual object Execute()
-		{
-			return null;
+			if(tok is TerminalToken)
+				return (Symbols)(((TerminalToken)tok).Symbol.Id);
+			else
+				return (Symbols)(((NonterminalToken)tok).Rule.Id + ToolScriptParserBase.RulesOffset);
 		}
 
 		public override string ToString ()

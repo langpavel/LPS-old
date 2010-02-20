@@ -2,11 +2,11 @@ using com.calitha.commons;
 using com.calitha.goldparser;
 using com.calitha.goldparser.lalr;
 using System;
+using System.Collections;
 using System.IO;
 using System.Reflection;
 using System.Runtime.Serialization;
 using LPS.ToolScript.Tokens;
-using System.Collections;
 
 namespace LPS.ToolScript
 {
@@ -1746,6 +1746,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalStmIfLparanRparan(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1760,6 +1762,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalStmIfLparanRparanElse(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1774,6 +1778,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalStmWhileLparanRparan(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1788,6 +1794,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalStmForLparanSemiSemiRparan(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1802,6 +1810,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalStmForeachLparanIdInRparan(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1816,6 +1826,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalStm(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1830,6 +1842,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalThenstmIfLparanRparanElse(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1844,6 +1858,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalThenstmWhileLparanRparan(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1858,6 +1874,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalThenstmForLparanSemiSemiRparan(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1872,6 +1890,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalThenstm(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1886,6 +1906,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalNormalstmDoWhileLparanRparan(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1900,6 +1922,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalNormalstmSwitchLparanRparanLbraceRbrace(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1914,6 +1938,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalNormalstm(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1928,6 +1954,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalNormalstmSemi(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1942,6 +1970,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalNormalstmBreakSemi(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1956,6 +1986,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalNormalstmContinueSemi(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1970,6 +2002,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalNormalstmReturnSemi(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1984,6 +2018,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalNormalstmSemi2(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -1998,6 +2034,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalArgsComma(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2012,6 +2050,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalArgs(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2026,6 +2066,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalCasestmsCaseColon(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2040,6 +2082,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalCasestmsDefaultColon(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2054,6 +2098,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalCasestms(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2068,6 +2114,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalBlockLbraceRbrace(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2082,6 +2130,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalStmlist(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2096,6 +2146,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalStmlist2(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2110,6 +2162,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalExprEq(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2124,6 +2178,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalExpr(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2138,6 +2194,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpifQuestionColon(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2152,6 +2210,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpif(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2166,6 +2226,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOporOr(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2180,6 +2242,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpor(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2194,6 +2258,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpandAnd(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2208,6 +2274,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpand(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2222,6 +2290,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpequateEqeq(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2236,6 +2306,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpequateExclameq(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2250,6 +2322,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpequate(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2264,6 +2338,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpcompareLt(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2278,6 +2354,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpcompareGt(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2292,6 +2370,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpcompareLteq(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2306,6 +2386,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpcompareGteq(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2320,6 +2402,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpcompare(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2334,6 +2418,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpaddPlus(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2348,6 +2434,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpaddMinus(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2362,6 +2450,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpadd(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2376,6 +2466,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpmultTimes(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2390,6 +2482,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpmultDiv(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2404,6 +2498,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpmultPercent(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2418,6 +2514,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpmult(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2432,6 +2530,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpunaryNot(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2446,6 +2546,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpunaryMinus(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2460,6 +2562,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpunaryCastAsId(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2474,6 +2578,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOpunary(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2488,6 +2594,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOppointerDot(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2502,6 +2610,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOppointerMinusgt(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2516,6 +2626,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOppointerLbracketRbracket(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2530,6 +2642,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalOppointer(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2544,6 +2658,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalValueIntliteral(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2558,6 +2674,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalValueStringliteral(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2572,6 +2690,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalValueDecimalliteral(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2586,6 +2706,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalValueTypeId(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2600,6 +2722,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalValueIdLparanRparan(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2614,6 +2738,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalValueIdLparanRparan2(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2628,6 +2754,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalValueId(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();
@@ -2642,6 +2770,8 @@ namespace LPS.ToolScript
         /// </summary>
         protected virtual object CreateNonterminalValueLparanRparan(NonterminalToken token)
         {
+        	if(token.Tokens.Length == 0)
+        		return null;
         	if(token.Tokens.Length == 1)
 	        	return CreateObject(token.Tokens[0]);
         	ArrayList result = new ArrayList();

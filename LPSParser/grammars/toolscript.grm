@@ -124,5 +124,6 @@ Comment Line  = '//'
 				|	ID '(' ')'
 				|	ID
 				|	'(' <Expr> ')'
+				|	'null'
 
 

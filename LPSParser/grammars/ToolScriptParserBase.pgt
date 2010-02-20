@@ -11,6 +11,7 @@ using com.calitha.commons;
 using com.calitha.goldparser;
 using com.calitha.goldparser.lalr;
 using System;
+using System.Collections;
 using System.IO;
 using System.Reflection;
 using System.Runtime.Serialization;
@@ -18,8 +19,39 @@ using LPS.ToolScript.Tokens;
 
 namespace LPS.ToolScript
 {
+
+    /// <sumarry>Symboly</summary>
+    public enum Symbols : int
+    {
+		#region Terminaly
+##SYMBOLS
+##DELIMITER ','   
+        /// <summary>
+        /// <para>Symbol: %Name.XML%</para>
+        /// <para><c>%Description.XML%</c></para>
+        /// </summary>
+        %ID% = %Value%,
+
+##END-SYMBOLS
+		#endregion
+
+		#region Neterminaly
+##RULES
+##DELIMITER ','   
+        /// <summary>
+        /// <para>Pravidlo: %Name.XML%</para>
+        /// <para><c>%Description.XML%</c></para>
+        /// </summary>
+        Rule%ID% = ToolScriptParserBase.RulesOffset + %Value%%Delimiter%
+
+##END-RULES
+    };
+    #endregion
+
+	#region ToolScriptParserBase
     public abstract class ToolScriptParserBase
     {
+		public const int RulesOffset = 10000;
         private LALRParser parser;
 
         public ToolScriptParserBase()
@@ -39,16 +71,15 @@ namespace LPS.ToolScript
             parser.OnParseError += new LALRParser.ParseErrorHandler(ParseErrorEvent);
         }
 
-        public virtual TokenBase Parse(string source)
+        public virtual object Parse(string source)
         {
             NonterminalToken token = parser.Parse(source);
             if (token == null)
 	            return null;
-            TokenBase obj = CreateObject(token);
-            return obj;
+	        return CreateObject(token);
         }
 
-        private TokenBase CreateObject(Token token)
+        protected virtual object CreateObject(Token token)
         {
             if (token is TerminalToken)
                 return CreateObjectFromTerminal((TerminalToken)token);
@@ -56,20 +87,26 @@ namespace LPS.ToolScript
                 return CreateObjectFromNonterminal((NonterminalToken)token);
         }
 
+		#region ToolScriptParserBase.Symboly
 ##SYMBOLS
         /// <summary>
         /// <para>Symbol: %Name.XML%</para>
         /// <para><c>%Description.XML%</c></para>
         /// </summary>
-        protected abstract TokenBase CreateTerminal%ID%(TerminalToken token);
-##END-SYMBOLS
+        protected virtual object CreateTerminal%ID%(TerminalToken token)
+        {
+        	return token;
+        }
 
-        private TokenBase CreateObjectFromTerminal(TerminalToken token)
+##END-SYMBOLS
+		#endregion
+
+        protected virtual object CreateObjectFromTerminal(TerminalToken token)
         {
             switch (token.Symbol.Id)
             {
 ##SYMBOLS
-                case (int)SymbolConstants.%ID%: //%Description%
+                case (int)Symbols.%ID%: //%Description%
                 	return CreateTerminal%ID%(token);
 
 ##END-SYMBOLS
@@ -77,20 +114,33 @@ namespace LPS.ToolScript
             throw new SymbolException("Unknown symbol");
         }
 
+		#region ToolScriptParserBase.Pravidla
 ##RULES
         /// <summary>
         /// <para>Pravidlo: %Name.XML%</para>
         /// <para><c>%Description.XML%</c></para>
         /// </summary>
-        protected abstract TokenBase CreateNonterminal%ID%(NonterminalToken token);
-##END-RULES
-
-        public TokenBase CreateObjectFromNonterminal(NonterminalToken token)
+        protected virtual object CreateNonterminal%ID%(NonterminalToken token)
         {
-            switch (token.Rule.Id)
+        	if(token.Tokens.Length == 0)
+        		return null;
+        	if(token.Tokens.Length == 1)
+	        	return CreateObject(token.Tokens[0]);
+        	ArrayList result = new ArrayList();
+        	foreach(Token tok in token.Tokens)
+        		result.Add(CreateObject(tok));
+        	return result.ToArray();
+        }
+        
+##END-RULES
+		#endregion
+
+        protected virtual object CreateObjectFromNonterminal(NonterminalToken token)
+        {
+            switch (token.Rule.Id + ToolScriptParserBase.RulesOffset)
             {
 ##RULES
-                case (int)RuleConstants.%ID%: //%Description%
+                case (int)Symbols.Rule%ID%: //%Description%
                 	return CreateNonterminal%ID%(token);
 ##END-RULES
             }
@@ -108,6 +158,8 @@ namespace LPS.ToolScript
             string message = "Parse error caused by token: '"+args.UnexpectedToken.ToString()+"'";
             Log.Error(message);
         }
+
+		#endregion
 
     }
 }

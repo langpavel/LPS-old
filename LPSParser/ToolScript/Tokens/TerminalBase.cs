@@ -15,5 +15,9 @@ namespace LPS.ToolScript.Tokens
 			return this.Terminal.Text;
 		}
 
+		public string TerminalText
+		{
+			get { return this.Terminal.Text; }
+		}
 	}
 }

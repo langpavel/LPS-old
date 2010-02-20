@@ -40,17 +40,30 @@
     <Compile Include="ToolScript\Context.cs" />
     <Compile Include="ToolScript\Tokens\NonterminalBase.cs" />
     <Compile Include="ToolScript\Tokens\NonterminalList.cs" />
-    <Compile Include="grammars\ToolScriptConstants.cs" />
     <Compile Include="grammars\ToolScriptParserBase.cs" />
+    <Compile Include="ToolScript\Tokens\Terminals\StringLiteral.cs" />
+    <Compile Include="ToolScript\Tokens\Terminals\IntLiteral.cs" />
+    <Compile Include="ToolScript\Tokens\Interfaces\IStatement.cs" />
+    <Compile Include="ToolScript\Tokens\Terminals\DecimalLiteral.cs" />
+    <Compile Include="ToolScript\Tokens\Terminals\Variable.cs" />
+    <Compile Include="ToolScript\Tokens\Interfaces\IValue.cs" />
+    <Compile Include="ToolScript\Tokens\Terminals\TypeLiteral.cs" />
+    <Compile Include="ToolScript\Tokens\Nonterminals\FunctionCall.cs" />
+    <Compile Include="ToolScript\Tokens\Interfaces\IExpression.cs" />
+    <Compile Include="ToolScript\Tokens\Interfaces\IConstantValue.cs" />
+    <Compile Include="ToolScript\Tokens\Interfaces\IVariable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />
     <None Include="grammars\toolscript.grm" />
-    <None Include="grammars\ToolScriptConstants.pgt" />
     <None Include="grammars\ToolScriptParserBase.pgt" />
+    <None Include="grammars\ToolScript.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ToolScript\Tokens\" />
+    <Folder Include="ToolScript\Tokens\Terminals\" />
+    <Folder Include="ToolScript\Tokens\Nonterminals\" />
+    <Folder Include="ToolScript\Tokens\Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
