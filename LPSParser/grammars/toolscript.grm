@@ -112,9 +112,13 @@ Comment Line  = '//'
 				|	<Op Compare> '>'  <Op In>
                	| 	<Op Compare> '<=' <Op In>
                	| 	<Op Compare> '>=' <Op In>
-               	| 	<Op In>
+				| 	<Op In>
 
 <Op In>			::=	<Op In> 'in' <Op Add>
+				|	<Op In> 'in' '<' <Op Add> ',' <Op Add> '>'
+				|	<Op In> 'in' '<' <Op Add> ',' <Op Add> ')'
+				|	<Op In> 'in' '(' <Op Add> ',' <Op Add> '>'
+				|	<Op In> 'in' '(' <Op Add> ',' <Op Add> ')'
 				|	<Op Add>
 
 <Op Add>     	::=	<Op Add> '+' <Op Mult>
@@ -154,6 +158,7 @@ Comment Line  = '//'
 				|	ID '(' <Args> ')'
 				|	ID '(' ')'
 				|	ID
+				|	'var' ID
 				|	'(' <Expr> ')'
 				|	'{' <Expr List> '}'
 				|	'null'

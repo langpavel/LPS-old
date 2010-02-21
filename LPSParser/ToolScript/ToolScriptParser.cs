@@ -41,7 +41,6 @@ namespace LPS.ToolScript
 		{
 			return new BooleanLiteral(false);
 		}
-
 		#endregion
 
 		IStatement Statement(NonterminalToken token, int index)
@@ -102,16 +101,15 @@ namespace LPS.ToolScript
 		// <Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>
 		protected override object RuleStmForLparanSemiSemiRparan(NonterminalToken token)
 		{
-			//CheckRule(token, Symbols.For, Symbols.Lparan, Symbols.Expr, Symbols.Semi, Symbols.Expr, Symbols.Semi, Symbols.Expr, Symbols.Rparan, Symbols.Stm);
-			throw new NotImplementedException("<Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>");
+			return new ForStatement(Expr(token, 2), Expr(token, 4), Expr(token, 6), Statement(token, 8));
 		}
 
 		// <Stm> ::= foreach '(' ID in <Expr> ')' <Stm>
 		protected override object RuleStmForeachLparanIdInRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Stm> ::= foreach '(' ID in <Expr> ')' <Stm>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new ForeachStatement(
+				new VariableInit(TText(token, 2)),
+				Expr(token, 4), Statement(token, 6));
 		}
 
 		// <Stm> ::= observed '(' <Expr> ')' <Stm>
@@ -180,9 +178,7 @@ namespace LPS.ToolScript
 		// <Then Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Then Stm>
 		protected override object RuleThenstmForLparanSemiSemiRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Then Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Then Stm>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new ForStatement(Expr(token, 2), Expr(token, 4), Expr(token, 6), Statement(token, 8));
 		}
 
 		// <Then Stm> ::= <Normal Stm>
@@ -286,13 +282,13 @@ namespace LPS.ToolScript
 		// <Block> ::= '{' <Stm List> '}'
 		protected override object RuleBlockLbraceRbrace(NonterminalToken token)
 		{
-			return new BlockStatement(true, (List<IStatement>)CreateObject(token.Tokens[1]));
+			return new BlockStatement(true, (StatementList)CreateObject(token.Tokens[1]));
 		}
 
 		// <Stm List> ::= <Stm> <Stm List>    -- start symbol
 		protected override object RuleStmlist (NonterminalToken token)
 		{
-			List<IStatement> list = (List<IStatement>)CreateObject(token.Tokens[1]);
+			StatementList list = (StatementList)CreateObject(token.Tokens[1]);
 			list.Insert(0, Statement(token, 0));
 			return list;
 		}
@@ -300,7 +296,7 @@ namespace LPS.ToolScript
 		// <Stm List> ::=
 		protected override object RuleStmlist2(NonterminalToken token)
 		{
-			return new List<IStatement>();
+			return new StatementList();
 		}
 
 		// <Expr List> ::= <Expr List> ',' <Expr>
@@ -328,33 +324,29 @@ namespace LPS.ToolScript
 		// <Expr> ::= <Op If> '+=' <Expr>
 		protected override object RuleExprPluseq(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Expr> ::= <Op If> '+=' <Expr>");
-			//CheckRule(token, Symbols);
-			//return new
+			IExpression op1 = Expr(token, 0);
+			return new AssignExpression(op1, new AddExpression(op1, Expr(token, 2)));
 		}
 
 		// <Expr> ::= <Op If> '-=' <Expr>
 		protected override object RuleExprMinuseq(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Expr> ::= <Op If> '-=' <Expr>");
-			//CheckRule(token, Symbols);
-			//return new
+			IExpression op1 = Expr(token, 0);
+			return new AssignExpression(op1, new SubstractExpression(op1, Expr(token, 2)));
 		}
 
 		// <Expr> ::= <Op If> '*=' <Expr>
 		protected override object RuleExprTimeseq(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Expr> ::= <Op If> '*=' <Expr>");
-			//CheckRule(token, Symbols);
-			//return new
+			IExpression op1 = Expr(token, 0);
+			return new AssignExpression(op1, new MultiplyExpression(op1, Expr(token, 2)));
 		}
 
 		// <Expr> ::= <Op If> '/=' <Expr>
 		protected override object RuleExprDiveq(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Expr> ::= <Op If> '/=' <Expr>");
-			//CheckRule(token, Symbols);
-			//return new
+			IExpression op1 = Expr(token, 0);
+			return new AssignExpression(op1, new DivideExpression(op1, Expr(token, 2)));
 		}
 
 		// <Expr> ::= <Op If> '<==' <Expr>
@@ -396,9 +388,7 @@ namespace LPS.ToolScript
 		// <Op Or> ::= <Op Or> or <Op And>
 		protected override object RuleOporOr(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Or> ::= <Op Or> or <Op And>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new OrExpression(Expr(token, 0), Expr(token, 2));
 		}
 
 		// <Op Or> ::= <Op And>
@@ -410,9 +400,7 @@ namespace LPS.ToolScript
 		// <Op And> ::= <Op And> and <Op Equate>
 		protected override object RuleOpandAnd(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op And> ::= <Op And> and <Op Equate>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new AndExpression(Expr(token, 0), Expr(token, 2));
 		}
 
 		// <Op And> ::= <Op Equate>
@@ -424,17 +412,13 @@ namespace LPS.ToolScript
 		// <Op Equate> ::= <Op Equate> '==' <Op Compare>
 		protected override object RuleOpequateEqeq(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Equate> ::= <Op Equate> '==' <Op Compare>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new CompareExpression(ComparisonType.Equal, Expr(token, 0), Expr(token, 2));
 		}
 
 		// <Op Equate> ::= <Op Equate> '!=' <Op Compare>
 		protected override object RuleOpequateExclameq(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Equate> ::= <Op Equate> '!=' <Op Compare>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new CompareExpression(ComparisonType.NonEqual, Expr(token, 0), Expr(token, 2));
 		}
 
 		// <Op Equate> ::= <Op Compare>
@@ -446,33 +430,25 @@ namespace LPS.ToolScript
 		// <Op Compare> ::= <Op Compare> '<' <Op In>
 		protected override object RuleOpcompareLt(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Compare> ::= <Op Compare> '<' <Op In>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new CompareExpression(ComparisonType.Less, Expr(token, 0), Expr(token, 2));
 		}
 
 		// <Op Compare> ::= <Op Compare> '>' <Op In>
 		protected override object RuleOpcompareGt(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Compare> ::= <Op Compare> '>' <Op In>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new CompareExpression(ComparisonType.Greater, Expr(token, 0), Expr(token, 2));
 		}
 
 		// <Op Compare> ::= <Op Compare> '<=' <Op In>
 		protected override object RuleOpcompareLteq(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Compare> ::= <Op Compare> '<=' <Op In>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new CompareExpression(ComparisonType.LessOrEqual, Expr(token, 0), Expr(token, 2));
 		}
 
 		// <Op Compare> ::= <Op Compare> '>=' <Op In>
 		protected override object RuleOpcompareGteq(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Compare> ::= <Op Compare> '>=' <Op In>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new CompareExpression(ComparisonType.GreaterOrEqual, Expr(token, 0), Expr(token, 2));
 		}
 
 		// <Op Compare> ::= <Op In>
@@ -489,6 +465,38 @@ namespace LPS.ToolScript
 			//return new
 		}
 
+		// <Op In> ::= <Op In> in '<' <Op Add> ',' <Op Add> '>'
+		protected override object RuleOpinInLtCommaGt(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op In> ::= <Op In> in '<' <Op Add> ',' <Op Add> '>'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op In> ::= <Op In> in '<' <Op Add> ',' <Op Add> ')'
+		protected override object RuleOpinInLtCommaRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op In> ::= <Op In> in '<' <Op Add> ',' <Op Add> ')'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op In> ::= <Op In> in '(' <Op Add> ',' <Op Add> '>'
+		protected override object RuleOpinInLparanCommaGt(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op In> ::= <Op In> in '(' <Op Add> ',' <Op Add> '>'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op In> ::= <Op In> in '(' <Op Add> ',' <Op Add> ')'
+		protected override object RuleOpinInLparanCommaRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op In> ::= <Op In> in '(' <Op Add> ',' <Op Add> ')'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
 		// <Op In> ::= <Op Add>
 		protected override object RuleOpin(NonterminalToken token)
 		{
@@ -498,17 +506,13 @@ namespace LPS.ToolScript
 		// <Op Add> ::= <Op Add> '+' <Op Mult>
 		protected override object RuleOpaddPlus(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Add> ::= <Op Add> '+' <Op Mult>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new AddExpression(Expr(token, 0), Expr(token, 2));
 		}
 
 		// <Op Add> ::= <Op Add> '-' <Op Mult>
 		protected override object RuleOpaddMinus(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Add> ::= <Op Add> '-' <Op Mult>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new SubstractExpression(Expr(token, 0), Expr(token, 2));
 		}
 
 		// <Op Add> ::= <Op Mult>
@@ -520,25 +524,19 @@ namespace LPS.ToolScript
 		// <Op Mult> ::= <Op Mult> '*' <Op Unary>
 		protected override object RuleOpmultTimes(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Mult> ::= <Op Mult> '*' <Op Unary>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new MultiplyExpression(Expr(token, 0), Expr(token, 2));
 		}
 
 		// <Op Mult> ::= <Op Mult> '/' <Op Unary>
 		protected override object RuleOpmultDiv(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Mult> ::= <Op Mult> '/' <Op Unary>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new DivideExpression(Expr(token, 0), Expr(token, 2));
 		}
 
 		// <Op Mult> ::= <Op Mult> '%' <Op Unary>
 		protected override object RuleOpmultPercent(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Mult> ::= <Op Mult> '%' <Op Unary>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new ModuloExpression(Expr(token, 0), Expr(token, 2));
 		}
 
 		// <Op Mult> ::= <Op Unary>
@@ -582,57 +580,43 @@ namespace LPS.ToolScript
 		// <Op Unary> ::= '++' <Op Unary>
 		protected override object RuleOpunaryPlusplus(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Unary> ::= '++' <Op Unary>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new UnaryIncDec(Expr(token, 1), true, false);
 		}
 
 		// <Op Unary> ::= -- <Op Unary>
 		protected override object RuleOpunaryMinusminus(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Unary> ::= -- <Op Unary>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new UnaryIncDec(Expr(token, 1), false, false);
 		}
 
 		// <Op Unary> ::= <Op Pointer> '++'
 		protected override object RuleOpunaryPlusplus2(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Unary> ::= <Op Pointer> '++'");
-			//CheckRule(token, Symbols);
-			//return new
+			return new UnaryIncDec(Expr(token, 0), true, true);
 		}
 
 		// <Op Unary> ::= <Op Pointer> --
 		protected override object RuleOpunaryMinusminus2(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Unary> ::= <Op Pointer> --");
-			//CheckRule(token, Symbols);
-			//return new
+			return new UnaryIncDec(Expr(token, 0), false, true);
 		}
 
 		// <Op Unary> ::= <Op Pointer> is null
 		protected override object RuleOpunaryIsNull(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Unary> ::= <Op Pointer> is null");
-			//CheckRule(token, Symbols);
-			//return new
+			return new CompareExpression(ComparisonType.Equal, Expr(token, 0), new NullLiteral());
 		}
 
 		// <Op Unary> ::= <Op Pointer> not null
 		protected override object RuleOpunaryNotNull(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Unary> ::= <Op Pointer> not null");
-			//CheckRule(token, Symbols);
-			//return new
+			return new CompareExpression(ComparisonType.NonEqual, Expr(token, 0), new NullLiteral());
 		}
 
 		// <Op Unary> ::= <Op Pointer> is not null
 		protected override object RuleOpunaryIsNotNull(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Unary> ::= <Op Pointer> is not null");
-			//CheckRule(token, Symbols);
-			//return new
+			return new CompareExpression(ComparisonType.NonEqual, Expr(token, 0), new NullLiteral());
 		}
 
 		// <Op Unary> ::= <Op Pointer>
@@ -729,6 +713,12 @@ namespace LPS.ToolScript
 		protected override object RuleValueId (NonterminalToken token)
 		{
 			return new Variable(TText(token, 0));
+		}
+
+		// <Value> ::= var ID
+		protected override object RuleValueVarId(NonterminalToken token)
+		{
+			return new VariableInit(TText(token, 1));
 		}
 
 		// <Value> ::= '(' <Expr> ')'

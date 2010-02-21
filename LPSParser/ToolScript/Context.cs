@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace LPS.ToolScript
 {
@@ -49,20 +50,6 @@ namespace LPS.ToolScript
 			return false;
 		}
 
-		public object GetVariable(string name)
-		{
-			object result;
-			if(this.TryGetVariable(name, out result))
-				return result;
-			throw new Exception(String.Format("Proměnná {0} nebyla nalezena", name));
-		}
-
-		public void SetVariable(string name, object val)
-		{
-			if(!TrySetVariable(name, val))
-				variables.Add(name, val);
-		}
-
 		public object FunctionCall(string name, params object[] args)
 		{
 			if(name == "Format")
@@ -75,12 +62,59 @@ namespace LPS.ToolScript
 				return String.Format((string)args[0], o);
 			}
 			else
+			if(name == "Print")
+			{
+				if(args.Length < 1)
+					throw new InvalidOperationException("minimum je 1 parametr typu string");
+				if(args.Length == 1)
+					Console.WriteLine(args[0]);
+				else if (args[0] is string)
+				{
+					object[] o = new object[args.Length - 1];
+					for(int i = 0; i < o.Length; i++)
+						o[i] = args[i+1];
+					Console.WriteLine((string)args[0], o);
+				}
+				else
+				{
+					StringBuilder sb = new StringBuilder("Pole: ");
+					for(int i=0; i<args.Length; i++)
+						sb.AppendFormat("[{0}]:{1}; ", i, args[i]);
+					Console.WriteLine(sb.ToString());
+				}
+				return null;
+			}
+			else
 				throw new InvalidOperationException("Funkce "+name+" nenalezena");
 		}
 
 		public void Dispose()
 		{
 			this.variables.Clear();
+		}
+
+		public void InitVariable(string name, object val)
+		{
+			this.variables[name] = val;
+		}
+
+		public object GetVariable(string name)
+		{
+			object result;
+			if(this.TryGetVariable(name, out result))
+				return result;
+			throw new Exception(String.Format("Proměnná {0} nebyla inicializována", name));
+		}
+
+		public void SetVariable(string name, object val)
+		{
+			if(!TrySetVariable(name, val))
+				throw new Exception(String.Format("Proměnná {0} nebyla inicializována", name));
+		}
+
+		public void UnsetVariable(string name)
+		{
+			this.variables.Remove(name);
 		}
 	}
 }

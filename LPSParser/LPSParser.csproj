@@ -39,9 +39,7 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="ToolScript\ToolScriptParser.cs" />
     <Compile Include="ToolScript\Exceptions.cs" />
-    <Compile Include="ToolScript\Tokens\TokenBase.cs" />
     <Compile Include="ToolScript\Context.cs" />
-    <Compile Include="ToolScript\Tokens\NonterminalBase.cs" />
     <Compile Include="grammars\ToolScriptParserBase.cs" />
     <Compile Include="ToolScript\Tokens\Interfaces\IStatement.cs" />
     <Compile Include="ToolScript\Tokens\Interfaces\IValue.cs" />
@@ -71,6 +69,20 @@
     <Compile Include="ToolScript\Tokens\Expressions\ExpressionEq.cs" />
     <Compile Include="ToolScript\Tokens\Expressions\BinaryExpression.cs" />
     <Compile Include="ToolScript\Tokens\Expressions\AssignExpression.cs" />
+    <Compile Include="ToolScript\Tokens\Statements\StatementList.cs" />
+    <Compile Include="ToolScript\Tokens\Statements\ForStatement.cs" />
+    <Compile Include="ToolScript\Tokens\Statements\ForeachStatement.cs" />
+    <Compile Include="ToolScript\Tokens\Expressions\CompareExpression.cs" />
+    <Compile Include="ToolScript\Tokens\Expressions\UnaryExpression.cs" />
+    <Compile Include="ToolScript\Tokens\Expressions\UnaryIncDec.cs" />
+    <Compile Include="ToolScript\Tokens\Expressions\VariableInit.cs" />
+    <Compile Include="ToolScript\Tokens\Expressions\AddExpression.cs" />
+    <Compile Include="ToolScript\Tokens\Expressions\SubstractExpression.cs" />
+    <Compile Include="ToolScript\Tokens\Expressions\MultiplyExpression.cs" />
+    <Compile Include="ToolScript\Tokens\Expressions\DivideExpression.cs" />
+    <Compile Include="ToolScript\Tokens\Expressions\ModuloExpression.cs" />
+    <Compile Include="ToolScript\Tokens\Expressions\OrExpression.cs" />
+    <Compile Include="ToolScript\Tokens\Expressions\AndExpression.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />

@@ -69,17 +69,24 @@ namespace LPS.ToolScript
             parser.OnParseError += new LALRParser.ParseErrorHandler(ParseErrorEvent);
         }
 
-        public virtual List<IStatement> Parse(string source)
+        public virtual StatementList Parse(string source)
         {
             NonterminalToken token = parser.Parse(source);
             if (token == null)
 	            return null;
-	        return CreateObject(token) as List<IStatement>;
+	        return CreateObject(token) as StatementList;
         }
 
-		protected bool IsRule(NonterminalToken token, params Symbols[] symbols)
+		public static bool IsRule(NonterminalToken token, params Symbols[] symbols)
 		{
-			return NonterminalBase.IsRule(token, symbols);
+			if(symbols.Length != token.Tokens.Length)
+				return false;
+			for(int i = 0; i < symbols.Length; i++)
+			{
+				if(symbols[i] != GetSymbol(token.Tokens[i]))
+					return false;
+			}
+			return true;
 		}
 
 		protected void CheckRule(NonterminalToken token, params Symbols[] symbols)
@@ -187,5 +194,14 @@ namespace LPS.ToolScript
 ##END-RULES
 		*/
 		#endregion
+
+		#region Test templates for user overrided rules functions
+		/*
+##RULES
+			Test(@"%Description%");
+##END-RULES
+		*/
+		#endregion
+
     }
 }
