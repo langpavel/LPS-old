@@ -4,6 +4,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Xml;
+using LPS.Client;
 
 namespace LPS.Util
 {
@@ -14,12 +15,9 @@ namespace LPS.Util
 		{
 		}
 
-		public static DataSet GetTableInfoDataSet(string table_name)
+		public static DataSet GetTableInfoDataSet(ServerConnection conn, string table_name)
 		{
-			if(CommandConsumer.Connection == null)
-				throw new Exception("login required");
-
-			DataSet ds = CommandConsumer.Connection.GetDataSetBySql(String.Format(
+			DataSet ds = conn.GetDataSetBySql(String.Format(
 				@"SELECT cols.ordinal_position, cols.column_name, cols.udt_name, cols.is_nullable,
 					cols.character_maximum_length, cols.numeric_precision, cols.numeric_precision_radix, cols.numeric_scale,
 					tc.constraint_type, tc.constraint_name, tc.table_name, kcu.column_name,
@@ -66,14 +64,15 @@ namespace LPS.Util
 
 		public override object Execute (TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
-			string tabname = Get<string>(0);
+			string tabname = Get<string>(ref Params, 0);
 			string UserFriendTitle = Capitalize(tabname, true, "sys_", "c_");
-			using(DataSet ds = GetTableInfoDataSet(tabname))
+			ServerConnection conn = Commands.GetVar<ServerConnection>("ServerConnection");
+			using(DataSet ds = GetTableInfoDataSet(conn, tabname))
 			{
 				TableInfo info;
 				try
 				{
-					info = CommandConsumer.Connection.Resources.GetTableInfo(tabname);
+					info = conn.Resources.GetTableInfo(tabname);
 					info = info.Clone();
 					Log.Info("Updating TableInfo name {0}", tabname);
 					if(String.IsNullOrEmpty(info.Id))
@@ -191,13 +190,14 @@ namespace LPS.Util
 					info.DetailName = "generic";
 	
 				XmlSerializer xser = new XmlSerializer(typeof(TableInfo));
-				using(XmlTextWriter writer = new XmlTextWriter(output))
+				using(XmlTextWriter writer = new XmlTextWriter(Out))
 				{
 					writer.Formatting = Formatting.Indented;
 					writer.Indentation = 1;
 					writer.IndentChar = '\t';
 					xser.Serialize(writer, info);
 				}
+				return info;
 			}
 		}
 

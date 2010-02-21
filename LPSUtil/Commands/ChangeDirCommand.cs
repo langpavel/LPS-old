@@ -22,11 +22,11 @@ namespace LPS.Util
 
 		public override object Execute(TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
-			string p = Get<string>(Params, 0);
+			string p = Get<string>(ref Params, 0);
 			if(p != "")
 				System.IO.Directory.SetCurrentDirectory(p);
 
-			curr_dir = System.IO.Directory.GetCurrentDirectory();
+			string curr_dir = System.IO.Directory.GetCurrentDirectory();
 			Info.WriteLine(curr_dir);
 			return curr_dir;
 		}

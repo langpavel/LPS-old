@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Text;
 
 namespace LPS.Util
 {
@@ -22,13 +23,10 @@ namespace LPS.Util
 
 		public override object Execute(TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
-			string command = Get<string>(Params, 0);
+			string command = Get<string>(ref Params, 0);
 			if(String.IsNullOrEmpty(command))
 				return null;
-
-
-
-
+			return null;
 		}
 	}
 }

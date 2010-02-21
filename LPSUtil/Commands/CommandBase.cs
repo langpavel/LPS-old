@@ -10,7 +10,7 @@ namespace LPS.Util
 		protected CommandBase(CommandCollection Commands, string Name)
 		{
 			this.name = Name;
-			this.Commands = Consumer;
+			this.Commands = Commands;
 			this.Commands.Commands.Add(this);
 		}
 
@@ -50,7 +50,7 @@ namespace LPS.Util
 			sb.Append(Name).Append("(");
 			for(int i=0; i<ParamTypes.Length; i++)
 			{
-				sb.Append(t.Name);
+				sb.Append(ParamTypes[i].Name);
 				if(i < ParamTypes.Length-1)
 					sb.Append(", ");
 			}

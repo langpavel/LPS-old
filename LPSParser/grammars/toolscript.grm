@@ -19,6 +19,8 @@
 ! ------------------------------------------------- Terminals
 
 ID				= {ID Head}{ID Tail}*
+QualifiedName	= ('global::')?{ID Head}{ID Tail}*('.'{ID Head}{ID Tail}*)+
+				| 'global::'{ID Head}{ID Tail}*
 
 StringLiteral	= '' ( {String Chars1} | '''' )* ''
 				| '"' ( {String Chars2} | '\' {Printable} )* '"'
@@ -42,6 +44,11 @@ Comment Line  = '//'
                	|	while '(' <Expr> ')' <Stm> 
                	|	for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>
                	|	foreach '(' ID 'in' <Expr> ')' <Stm>
+               	|	observed '(' <Expr> ')' <Stm>
+               	|	using QualifiedName ';'
+               	|	using QualifiedName from StringLiteral ';'
+               	|	using QualifiedName 'as' ID ';'
+               	|	using QualifiedName 'as' ID 'from' StringLiteral ';'
                	|	<Normal Stm>
 
 <Then Stm>   	::=	if '(' <Expr> ')' <Then Stm> else <Then Stm> 
@@ -65,9 +72,9 @@ Comment Line  = '//'
               	|	default ':' <Stm List>                  
               	|	
 
-<Block>     	::=	'{' <Stm List> '}' 
+<Block>     	::=	'{' <Stm List> '}'
 
-<Stm List>  	::= 	<Stm> <Stm List> 
+<Stm List>  	::=	<Stm> <Stm List>
               	| 
 
 
@@ -75,7 +82,17 @@ Comment Line  = '//'
 ! Operator precedence
 ! ===================================================================
 
-<Expr>			::=	<Op If> '=' <Expr>
+<Expr List>		::=	<Expr List> ',' <Expr>
+				|	<Expr>
+
+
+<Expr>			::=	<Op If> '='   <Expr>
+				|	<Op If> '+='  <Expr>
+				|	<Op If> '-='  <Expr>
+				|	<Op If> '*='  <Expr>
+				|	<Op If> '/='  <Expr>
+				|	<Op If> '<==' <Expr>
+				|	<Op If> '<==>' <Expr>
 				|	<Op If>
 
 <Op If>			::=	<Op Or> '?' <Op If> ':' <Op If>
@@ -91,11 +108,14 @@ Comment Line  = '//'
 				| 	<Op Equate> '!=' <Op Compare>
 				|	<Op Compare>
 
-<Op Compare>	::=	<Op Compare> '<'  <Op Add>
-				|	<Op Compare> '>'  <Op Add>
-               	| 	<Op Compare> '<=' <Op Add>
-               	| 	<Op Compare> '>=' <Op Add>
-               	| 	<Op Add>
+<Op Compare>	::=	<Op Compare> '<'  <Op In>
+				|	<Op Compare> '>'  <Op In>
+               	| 	<Op Compare> '<=' <Op In>
+               	| 	<Op Compare> '>=' <Op In>
+               	| 	<Op In>
+
+<Op In>			::=	<Op In> 'in' <Op Add>
+				|	<Op Add>
 
 <Op Add>     	::=	<Op Add> '+' <Op Mult>
                	| 	<Op Add> '-' <Op Mult>
@@ -109,10 +129,18 @@ Comment Line  = '//'
 <Op Unary>   	::=	'not'  <Op Unary>
                	| 	'-'    <Op Unary>
               	|	'cast' <Op Unary> 'as' ID
+              	|	'cast' <Op Unary> 'as' QualifiedName
+               	|	'++'   <Op Unary>
+               	|	'--'   <Op Unary>
+               	|	<Op Pointer> '++'
+               	|	<Op Pointer> '--'
+               	|	<Op Pointer> 'is' 'null'
+               	|	<Op Pointer> 'not' 'null'
+               	|	<Op Pointer> 'is' 'not' 'null'
                	| 	<Op Pointer>
 
 <Op Pointer>	::=	<Op Pointer> '.' <Value>
-				| 	<Op Pointer> '->' <Value>
+				| 	<Op Pointer> '->' <Value>	! if not null, lookup value else return null - safe referencing
 				| 	<Op Pointer> '[' <Expr> ']'
 				| 	<Value>
 
@@ -120,10 +148,16 @@ Comment Line  = '//'
 				| 	StringLiteral
 				|	DecimalLiteral
 				|	'type' ID
+				|	'type' QualifiedName
+				|	QualifiedName '(' <Args> ')'
+				|	QualifiedName '(' ')'
 				|	ID '(' <Args> ')'
 				|	ID '(' ')'
 				|	ID
 				|	'(' <Expr> ')'
+				|	'{' <Expr List> '}'
 				|	'null'
+				|	'true'
+				|	'false'
 
 

@@ -27,12 +27,12 @@ namespace LPS.Util
 
 		public override object Execute (TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
-			string url = Get<string>(0);
+			string url = Get<string>(ref Params, 0);
 			ServerConnection conn = new ServerConnection(url);
 			Info.WriteLine("Připojeno k {0}", url);
-			conn.Login(Get<string>(1), Get<string>(2));
-			Info.WriteLine("Uživatel {0} přihlášen", Get<string>(1));
-			this.Commands.Variables["ServerConnection"] = conn;
+			conn.Login(Get<string>(ref Params, 1), Get<string>(ref Params, 2));
+			Info.WriteLine("Uživatel {0} přihlášen", Get<string>(ref Params, 1));
+			this.Commands.SetVar("ServerConnection", conn);
 			return conn;
 		}
 	}

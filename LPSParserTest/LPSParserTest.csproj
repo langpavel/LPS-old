@@ -1,1 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  <PropertyGroup>    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>    <ProductVersion>8.0.50727</ProductVersion>    <SchemaVersion>2.0</SchemaVersion>    <ProjectGuid>{8E3F1A47-D005-4D9A-B810-0C6B8508C54D}</ProjectGuid>    <OutputType>Exe</OutputType>    <RootNamespace>LPS.ToolScript.Test</RootNamespace>    <AssemblyName>LPSParserTest</AssemblyName>  </PropertyGroup>  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">    <DebugSymbols>true</DebugSymbols>    <DebugType>full</DebugType>    <Optimize>false</Optimize>    <OutputPath>bin\Debug</OutputPath>    <DefineConstants>DEBUG</DefineConstants>    <ErrorReport>prompt</ErrorReport>    <WarningLevel>4</WarningLevel>  </PropertyGroup>  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">    <DebugType>none</DebugType>    <Optimize>false</Optimize>    <OutputPath>bin\Release</OutputPath>    <ErrorReport>prompt</ErrorReport>    <WarningLevel>4</WarningLevel>  </PropertyGroup>  <ItemGroup>    <Reference Include="System" />  </ItemGroup>  <ItemGroup>    <Compile Include="Main.cs" />    <Compile Include="AssemblyInfo.cs" />  </ItemGroup>  <ItemGroup>    <ProjectReference Include="..\LPSParser\LPSParser.csproj">      <Project>{EA93C136-1964-4122-B619-0EBB3462938F}</Project>      <Name>LPSParser</Name>    </ProjectReference>    <ProjectReference Include="..\LPSShared\LPSShared.csproj">      <Project>{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}</Project>      <Name>LPSShared</Name>    </ProjectReference>    <ProjectReference Include="..\contrib\CalithaGoldParser\GoldParserEngine\GoldParserEngine.csproj">      <Project>{837DC4CB-4BEA-4171-8366-A1AA6207F576}</Project>      <Name>GoldParserEngine</Name>    </ProjectReference>    <ProjectReference Include="..\contrib\CalithaGoldParser\CalithaLib\CalithaLibrary.csproj">      <Project>{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}</Project>      <Name>CalithaLibrary</Name>    </ProjectReference>  </ItemGroup>  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />  <ProjectExtensions>    <MonoDevelop>      <Properties InternalTargetFrameworkVersion="3.5" xmlns="" />    </MonoDevelop>  </ProjectExtensions></Project>
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8E3F1A47-D005-4D9A-B810-0C6B8508C54D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>LPS.ToolScript.Test</RootNamespace>
+    <AssemblyName>LPSParserTest</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LPSParser\LPSParser.csproj">
+      <Project>{EA93C136-1964-4122-B619-0EBB3462938F}</Project>
+      <Name>LPSParser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LPSShared\LPSShared.csproj">
+      <Project>{6A58E0DF-970C-4DFA-B7E3-6F57A283A371}</Project>
+      <Name>LPSShared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\contrib\CalithaGoldParser\GoldParserEngine\GoldParserEngine.csproj">
+      <Project>{837DC4CB-4BEA-4171-8366-A1AA6207F576}</Project>
+      <Name>GoldParserEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\contrib\CalithaGoldParser\CalithaLib\CalithaLibrary.csproj">
+      <Project>{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}</Project>
+      <Name>CalithaLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

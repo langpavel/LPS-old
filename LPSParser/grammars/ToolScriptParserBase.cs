@@ -1,17 +1,15 @@
-using com.calitha.commons;
 using com.calitha.goldparser;
-using com.calitha.goldparser.lalr;
+using LPS.ToolScript.Tokens;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using System.Runtime.Serialization;
-using LPS.ToolScript.Tokens;
-using System.Collections;
+using System.Text;
 
 namespace LPS.ToolScript
 {
 
-    /// <sumarry>Symboly</summary>
+    /// <sumarry>Symboly terminalu a neterminalu</summary>
     public enum Symbols : int
     {
 		#region Terminaly
@@ -58,388 +56,496 @@ namespace LPS.ToolScript
         Minus = 6,
 
         /// <summary>
+        /// <para>Symbol: --</para>
+        /// <para><c>--</c></para>
+        /// </summary>
+        Minusminus = 7,
+
+        /// <summary>
         /// <para>Symbol: ,</para>
         /// <para><c>','</c></para>
         /// </summary>
-        Comma = 7,
+        Comma = 8,
 
         /// <summary>
         /// <para>Symbol: ;</para>
         /// <para><c>';'</c></para>
         /// </summary>
-        Semi = 8,
+        Semi = 9,
 
         /// <summary>
         /// <para>Symbol: :</para>
         /// <para><c>':'</c></para>
         /// </summary>
-        Colon = 9,
+        Colon = 10,
 
         /// <summary>
         /// <para>Symbol: !=</para>
         /// <para><c>'!='</c></para>
         /// </summary>
-        Exclameq = 10,
+        Exclameq = 11,
 
         /// <summary>
         /// <para>Symbol: ?</para>
         /// <para><c>'?'</c></para>
         /// </summary>
-        Question = 11,
+        Question = 12,
 
         /// <summary>
         /// <para>Symbol: .</para>
         /// <para><c>'.'</c></para>
         /// </summary>
-        Dot = 12,
+        Dot = 13,
 
         /// <summary>
         /// <para>Symbol: (</para>
         /// <para><c>'('</c></para>
         /// </summary>
-        Lparan = 13,
+        Lparan = 14,
 
         /// <summary>
         /// <para>Symbol: )</para>
         /// <para><c>')'</c></para>
         /// </summary>
-        Rparan = 14,
+        Rparan = 15,
 
         /// <summary>
         /// <para>Symbol: [</para>
         /// <para><c>'['</c></para>
         /// </summary>
-        Lbracket = 15,
+        Lbracket = 16,
 
         /// <summary>
         /// <para>Symbol: ]</para>
         /// <para><c>']'</c></para>
         /// </summary>
-        Rbracket = 16,
+        Rbracket = 17,
 
         /// <summary>
         /// <para>Symbol: {</para>
         /// <para><c>'{'</c></para>
         /// </summary>
-        Lbrace = 17,
+        Lbrace = 18,
 
         /// <summary>
         /// <para>Symbol: }</para>
         /// <para><c>'}'</c></para>
         /// </summary>
-        Rbrace = 18,
+        Rbrace = 19,
 
         /// <summary>
         /// <para>Symbol: *</para>
         /// <para><c>'*'</c></para>
         /// </summary>
-        Times = 19,
+        Times = 20,
+
+        /// <summary>
+        /// <para>Symbol: *=</para>
+        /// <para><c>'*='</c></para>
+        /// </summary>
+        Timeseq = 21,
 
         /// <summary>
         /// <para>Symbol: /</para>
         /// <para><c>'/'</c></para>
         /// </summary>
-        Div = 20,
+        Div = 22,
+
+        /// <summary>
+        /// <para>Symbol: /=</para>
+        /// <para><c>'/='</c></para>
+        /// </summary>
+        Diveq = 23,
 
         /// <summary>
         /// <para>Symbol: %</para>
         /// <para><c>'%'</c></para>
         /// </summary>
-        Percent = 21,
+        Percent = 24,
 
         /// <summary>
         /// <para>Symbol: +</para>
         /// <para><c>'+'</c></para>
         /// </summary>
-        Plus = 22,
+        Plus = 25,
+
+        /// <summary>
+        /// <para>Symbol: ++</para>
+        /// <para><c>'++'</c></para>
+        /// </summary>
+        Plusplus = 26,
+
+        /// <summary>
+        /// <para>Symbol: +=</para>
+        /// <para><c>'+='</c></para>
+        /// </summary>
+        Pluseq = 27,
 
         /// <summary>
         /// <para>Symbol: &lt;</para>
         /// <para><c>'&lt;'</c></para>
         /// </summary>
-        Lt = 23,
+        Lt = 28,
 
         /// <summary>
         /// <para>Symbol: &lt;=</para>
         /// <para><c>'&lt;='</c></para>
         /// </summary>
-        Lteq = 24,
+        Lteq = 29,
+
+        /// <summary>
+        /// <para>Symbol: &lt;==</para>
+        /// <para><c>'&lt;=='</c></para>
+        /// </summary>
+        Lteqeq = 30,
+
+        /// <summary>
+        /// <para>Symbol: &lt;==&gt;</para>
+        /// <para><c>'&lt;==&gt;'</c></para>
+        /// </summary>
+        Lteqeqgt = 31,
 
         /// <summary>
         /// <para>Symbol: =</para>
         /// <para><c>'='</c></para>
         /// </summary>
-        Eq = 25,
+        Eq = 32,
+
+        /// <summary>
+        /// <para>Symbol: -=</para>
+        /// <para><c>'-='</c></para>
+        /// </summary>
+        Minuseq = 33,
 
         /// <summary>
         /// <para>Symbol: ==</para>
         /// <para><c>'=='</c></para>
         /// </summary>
-        Eqeq = 26,
+        Eqeq = 34,
 
         /// <summary>
         /// <para>Symbol: &gt;</para>
         /// <para><c>'&gt;'</c></para>
         /// </summary>
-        Gt = 27,
+        Gt = 35,
 
         /// <summary>
         /// <para>Symbol: -&gt;</para>
         /// <para><c>'-&gt;'</c></para>
         /// </summary>
-        Minusgt = 28,
+        Minusgt = 36,
 
         /// <summary>
         /// <para>Symbol: &gt;=</para>
         /// <para><c>'&gt;='</c></para>
         /// </summary>
-        Gteq = 29,
+        Gteq = 37,
 
         /// <summary>
         /// <para>Symbol: and</para>
         /// <para><c>and</c></para>
         /// </summary>
-        And = 30,
+        And = 38,
 
         /// <summary>
         /// <para>Symbol: as</para>
         /// <para><c>as</c></para>
         /// </summary>
-        As = 31,
+        As = 39,
 
         /// <summary>
         /// <para>Symbol: break</para>
         /// <para><c>break</c></para>
         /// </summary>
-        Break = 32,
+        Break = 40,
 
         /// <summary>
         /// <para>Symbol: case</para>
         /// <para><c>case</c></para>
         /// </summary>
-        Case = 33,
+        Case = 41,
 
         /// <summary>
         /// <para>Symbol: cast</para>
         /// <para><c>cast</c></para>
         /// </summary>
-        Cast = 34,
+        Cast = 42,
 
         /// <summary>
         /// <para>Symbol: continue</para>
         /// <para><c>continue</c></para>
         /// </summary>
-        Continue = 35,
+        Continue = 43,
 
         /// <summary>
         /// <para>Symbol: DecimalLiteral</para>
         /// <para><c>DecimalLiteral</c></para>
         /// </summary>
-        Decimalliteral = 36,
+        Decimalliteral = 44,
 
         /// <summary>
         /// <para>Symbol: default</para>
         /// <para><c>default</c></para>
         /// </summary>
-        Default = 37,
+        Default = 45,
 
         /// <summary>
         /// <para>Symbol: do</para>
         /// <para><c>do</c></para>
         /// </summary>
-        Do = 38,
+        Do = 46,
 
         /// <summary>
         /// <para>Symbol: else</para>
         /// <para><c>else</c></para>
         /// </summary>
-        Else = 39,
+        Else = 47,
+
+        /// <summary>
+        /// <para>Symbol: false</para>
+        /// <para><c>false</c></para>
+        /// </summary>
+        False = 48,
 
         /// <summary>
         /// <para>Symbol: for</para>
         /// <para><c>for</c></para>
         /// </summary>
-        For = 40,
+        For = 49,
 
         /// <summary>
         /// <para>Symbol: foreach</para>
         /// <para><c>foreach</c></para>
         /// </summary>
-        Foreach = 41,
+        Foreach = 50,
+
+        /// <summary>
+        /// <para>Symbol: from</para>
+        /// <para><c>from</c></para>
+        /// </summary>
+        From = 51,
 
         /// <summary>
         /// <para>Symbol: ID</para>
         /// <para><c>ID</c></para>
         /// </summary>
-        Id = 42,
+        Id = 52,
 
         /// <summary>
         /// <para>Symbol: if</para>
         /// <para><c>if</c></para>
         /// </summary>
-        If = 43,
+        If = 53,
 
         /// <summary>
         /// <para>Symbol: in</para>
         /// <para><c>in</c></para>
         /// </summary>
-        In = 44,
+        In = 54,
 
         /// <summary>
         /// <para>Symbol: IntLiteral</para>
         /// <para><c>IntLiteral</c></para>
         /// </summary>
-        Intliteral = 45,
+        Intliteral = 55,
+
+        /// <summary>
+        /// <para>Symbol: is</para>
+        /// <para><c>is</c></para>
+        /// </summary>
+        Is = 56,
 
         /// <summary>
         /// <para>Symbol: not</para>
         /// <para><c>not</c></para>
         /// </summary>
-        Not = 46,
+        Not = 57,
+
+        /// <summary>
+        /// <para>Symbol: null</para>
+        /// <para><c>null</c></para>
+        /// </summary>
+        Null = 58,
+
+        /// <summary>
+        /// <para>Symbol: observed</para>
+        /// <para><c>observed</c></para>
+        /// </summary>
+        Observed = 59,
 
         /// <summary>
         /// <para>Symbol: or</para>
         /// <para><c>or</c></para>
         /// </summary>
-        Or = 47,
+        Or = 60,
+
+        /// <summary>
+        /// <para>Symbol: QualifiedName</para>
+        /// <para><c>QualifiedName</c></para>
+        /// </summary>
+        Qualifiedname = 61,
 
         /// <summary>
         /// <para>Symbol: return</para>
         /// <para><c>return</c></para>
         /// </summary>
-        Return = 48,
+        Return = 62,
 
         /// <summary>
         /// <para>Symbol: StringLiteral</para>
         /// <para><c>StringLiteral</c></para>
         /// </summary>
-        Stringliteral = 49,
+        Stringliteral = 63,
 
         /// <summary>
         /// <para>Symbol: switch</para>
         /// <para><c>switch</c></para>
         /// </summary>
-        Switch = 50,
+        Switch = 64,
+
+        /// <summary>
+        /// <para>Symbol: true</para>
+        /// <para><c>true</c></para>
+        /// </summary>
+        True = 65,
 
         /// <summary>
         /// <para>Symbol: type</para>
         /// <para><c>type</c></para>
         /// </summary>
-        Type = 51,
+        Type = 66,
+
+        /// <summary>
+        /// <para>Symbol: using</para>
+        /// <para><c>using</c></para>
+        /// </summary>
+        Using = 67,
 
         /// <summary>
         /// <para>Symbol: while</para>
         /// <para><c>while</c></para>
         /// </summary>
-        While = 52,
+        While = 68,
 
         /// <summary>
         /// <para>Symbol: Args</para>
         /// <para><c>&lt;Args&gt;</c></para>
         /// </summary>
-        Args = 53,
+        Args = 69,
 
         /// <summary>
         /// <para>Symbol: Block</para>
         /// <para><c>&lt;Block&gt;</c></para>
         /// </summary>
-        Block = 54,
+        Block = 70,
 
         /// <summary>
         /// <para>Symbol: Case Stms</para>
         /// <para><c>&lt;Case Stms&gt;</c></para>
         /// </summary>
-        Casestms = 55,
+        Casestms = 71,
 
         /// <summary>
         /// <para>Symbol: Expr</para>
         /// <para><c>&lt;Expr&gt;</c></para>
         /// </summary>
-        Expr = 56,
+        Expr = 72,
+
+        /// <summary>
+        /// <para>Symbol: Expr List</para>
+        /// <para><c>&lt;Expr List&gt;</c></para>
+        /// </summary>
+        Exprlist = 73,
 
         /// <summary>
         /// <para>Symbol: Normal Stm</para>
         /// <para><c>&lt;Normal Stm&gt;</c></para>
         /// </summary>
-        Normalstm = 57,
+        Normalstm = 74,
 
         /// <summary>
         /// <para>Symbol: Op Add</para>
         /// <para><c>&lt;Op Add&gt;</c></para>
         /// </summary>
-        Opadd = 58,
+        Opadd = 75,
 
         /// <summary>
         /// <para>Symbol: Op And</para>
         /// <para><c>&lt;Op And&gt;</c></para>
         /// </summary>
-        Opand = 59,
+        Opand = 76,
 
         /// <summary>
         /// <para>Symbol: Op Compare</para>
         /// <para><c>&lt;Op Compare&gt;</c></para>
         /// </summary>
-        Opcompare = 60,
+        Opcompare = 77,
 
         /// <summary>
         /// <para>Symbol: Op Equate</para>
         /// <para><c>&lt;Op Equate&gt;</c></para>
         /// </summary>
-        Opequate = 61,
+        Opequate = 78,
 
         /// <summary>
         /// <para>Symbol: Op If</para>
         /// <para><c>&lt;Op If&gt;</c></para>
         /// </summary>
-        Opif = 62,
+        Opif = 79,
+
+        /// <summary>
+        /// <para>Symbol: Op In</para>
+        /// <para><c>&lt;Op In&gt;</c></para>
+        /// </summary>
+        Opin = 80,
 
         /// <summary>
         /// <para>Symbol: Op Mult</para>
         /// <para><c>&lt;Op Mult&gt;</c></para>
         /// </summary>
-        Opmult = 63,
+        Opmult = 81,
 
         /// <summary>
         /// <para>Symbol: Op Or</para>
         /// <para><c>&lt;Op Or&gt;</c></para>
         /// </summary>
-        Opor = 64,
+        Opor = 82,
 
         /// <summary>
         /// <para>Symbol: Op Pointer</para>
         /// <para><c>&lt;Op Pointer&gt;</c></para>
         /// </summary>
-        Oppointer = 65,
+        Oppointer = 83,
 
         /// <summary>
         /// <para>Symbol: Op Unary</para>
         /// <para><c>&lt;Op Unary&gt;</c></para>
         /// </summary>
-        Opunary = 66,
+        Opunary = 84,
 
         /// <summary>
         /// <para>Symbol: Stm</para>
         /// <para><c>&lt;Stm&gt;</c></para>
         /// </summary>
-        Stm = 67,
+        Stm = 85,
 
         /// <summary>
         /// <para>Symbol: Stm List</para>
         /// <para><c>&lt;Stm List&gt;</c></para>
         /// </summary>
-        Stmlist = 68,
+        Stmlist = 86,
 
         /// <summary>
         /// <para>Symbol: Then Stm</para>
         /// <para><c>&lt;Then Stm&gt;</c></para>
         /// </summary>
-        Thenstm = 69,
+        Thenstm = 87,
 
         /// <summary>
         /// <para>Symbol: Value</para>
         /// <para><c>&lt;Value&gt;</c></para>
         /// </summary>
-        Value = 70,
+        Value = 88,
 
 		#endregion
 
@@ -476,366 +582,546 @@ namespace LPS.ToolScript
 
         /// <summary>
         /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Stm&gt; ::= observed '(' &lt;Expr&gt; ')' &lt;Stm&gt;</c></para>
+        /// </summary>
+        RuleStmObservedLparanRparan = ToolScriptParserBase.RulesOffset + 5,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Stm&gt; ::= using QualifiedName ';'</c></para>
+        /// </summary>
+        RuleStmUsingQualifiednameSemi = ToolScriptParserBase.RulesOffset + 6,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Stm&gt; ::= using QualifiedName from StringLiteral ';'</c></para>
+        /// </summary>
+        RuleStmUsingQualifiednameFromStringliteralSemi = ToolScriptParserBase.RulesOffset + 7,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Stm&gt; ::= using QualifiedName as ID ';'</c></para>
+        /// </summary>
+        RuleStmUsingQualifiednameAsIdSemi = ToolScriptParserBase.RulesOffset + 8,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Stm&gt; ::= using QualifiedName as ID from StringLiteral ';'</c></para>
+        /// </summary>
+        RuleStmUsingQualifiednameAsIdFromStringliteralSemi = ToolScriptParserBase.RulesOffset + 9,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
         /// <para><c>&lt;Stm&gt; ::= &lt;Normal Stm&gt;</c></para>
         /// </summary>
-        RuleStm = ToolScriptParserBase.RulesOffset + 5,
+        RuleStm = ToolScriptParserBase.RulesOffset + 10,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Then Stm&gt; ::= if '(' &lt;Expr&gt; ')' &lt;Then Stm&gt; else &lt;Then Stm&gt;</c></para>
         /// </summary>
-        RuleThenstmIfLparanRparanElse = ToolScriptParserBase.RulesOffset + 6,
+        RuleThenstmIfLparanRparanElse = ToolScriptParserBase.RulesOffset + 11,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Then Stm&gt; ::= while '(' &lt;Expr&gt; ')' &lt;Then Stm&gt;</c></para>
         /// </summary>
-        RuleThenstmWhileLparanRparan = ToolScriptParserBase.RulesOffset + 7,
+        RuleThenstmWhileLparanRparan = ToolScriptParserBase.RulesOffset + 12,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Then Stm&gt; ::= for '(' &lt;Expr&gt; ';' &lt;Expr&gt; ';' &lt;Expr&gt; ')' &lt;Then Stm&gt;</c></para>
         /// </summary>
-        RuleThenstmForLparanSemiSemiRparan = ToolScriptParserBase.RulesOffset + 8,
+        RuleThenstmForLparanSemiSemiRparan = ToolScriptParserBase.RulesOffset + 13,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Then Stm&gt; ::= &lt;Normal Stm&gt;</c></para>
         /// </summary>
-        RuleThenstm = ToolScriptParserBase.RulesOffset + 9,
+        RuleThenstm = ToolScriptParserBase.RulesOffset + 14,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= do &lt;Stm&gt; while '(' &lt;Expr&gt; ')'</c></para>
         /// </summary>
-        RuleNormalstmDoWhileLparanRparan = ToolScriptParserBase.RulesOffset + 10,
+        RuleNormalstmDoWhileLparanRparan = ToolScriptParserBase.RulesOffset + 15,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= switch '(' &lt;Expr&gt; ')' '{' &lt;Case Stms&gt; '}'</c></para>
         /// </summary>
-        RuleNormalstmSwitchLparanRparanLbraceRbrace = ToolScriptParserBase.RulesOffset + 11,
+        RuleNormalstmSwitchLparanRparanLbraceRbrace = ToolScriptParserBase.RulesOffset + 16,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= &lt;Block&gt;</c></para>
         /// </summary>
-        RuleNormalstm = ToolScriptParserBase.RulesOffset + 12,
+        RuleNormalstm = ToolScriptParserBase.RulesOffset + 17,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= &lt;Expr&gt; ';'</c></para>
         /// </summary>
-        RuleNormalstmSemi = ToolScriptParserBase.RulesOffset + 13,
+        RuleNormalstmSemi = ToolScriptParserBase.RulesOffset + 18,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= break ';'</c></para>
         /// </summary>
-        RuleNormalstmBreakSemi = ToolScriptParserBase.RulesOffset + 14,
+        RuleNormalstmBreakSemi = ToolScriptParserBase.RulesOffset + 19,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= continue ';'</c></para>
         /// </summary>
-        RuleNormalstmContinueSemi = ToolScriptParserBase.RulesOffset + 15,
+        RuleNormalstmContinueSemi = ToolScriptParserBase.RulesOffset + 20,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= return &lt;Expr&gt; ';'</c></para>
         /// </summary>
-        RuleNormalstmReturnSemi = ToolScriptParserBase.RulesOffset + 16,
+        RuleNormalstmReturnSemi = ToolScriptParserBase.RulesOffset + 21,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= ';'</c></para>
         /// </summary>
-        RuleNormalstmSemi2 = ToolScriptParserBase.RulesOffset + 17,
+        RuleNormalstmSemi2 = ToolScriptParserBase.RulesOffset + 22,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Args&gt; ::= &lt;Expr&gt; ',' &lt;Args&gt;</c></para>
         /// </summary>
-        RuleArgsComma = ToolScriptParserBase.RulesOffset + 18,
+        RuleArgsComma = ToolScriptParserBase.RulesOffset + 23,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Args&gt; ::= &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleArgs = ToolScriptParserBase.RulesOffset + 19,
+        RuleArgs = ToolScriptParserBase.RulesOffset + 24,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Case Stms&gt; ::= case &lt;Value&gt; ':' &lt;Stm List&gt; &lt;Case Stms&gt;</c></para>
         /// </summary>
-        RuleCasestmsCaseColon = ToolScriptParserBase.RulesOffset + 20,
+        RuleCasestmsCaseColon = ToolScriptParserBase.RulesOffset + 25,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Case Stms&gt; ::= default ':' &lt;Stm List&gt;</c></para>
         /// </summary>
-        RuleCasestmsDefaultColon = ToolScriptParserBase.RulesOffset + 21,
+        RuleCasestmsDefaultColon = ToolScriptParserBase.RulesOffset + 26,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Case Stms&gt; ::= </c></para>
         /// </summary>
-        RuleCasestms = ToolScriptParserBase.RulesOffset + 22,
+        RuleCasestms = ToolScriptParserBase.RulesOffset + 27,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Block&gt; ::= '{' &lt;Stm List&gt; '}'</c></para>
         /// </summary>
-        RuleBlockLbraceRbrace = ToolScriptParserBase.RulesOffset + 23,
+        RuleBlockLbraceRbrace = ToolScriptParserBase.RulesOffset + 28,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Stm List&gt; ::= &lt;Stm&gt; &lt;Stm List&gt;</c></para>
         /// </summary>
-        RuleStmlist = ToolScriptParserBase.RulesOffset + 24,
+        RuleStmlist = ToolScriptParserBase.RulesOffset + 29,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Stm List&gt; ::= </c></para>
         /// </summary>
-        RuleStmlist2 = ToolScriptParserBase.RulesOffset + 25,
+        RuleStmlist2 = ToolScriptParserBase.RulesOffset + 30,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Expr List&gt; ::= &lt;Expr List&gt; ',' &lt;Expr&gt;</c></para>
+        /// </summary>
+        RuleExprlistComma = ToolScriptParserBase.RulesOffset + 31,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Expr List&gt; ::= &lt;Expr&gt;</c></para>
+        /// </summary>
+        RuleExprlist = ToolScriptParserBase.RulesOffset + 32,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprEq = ToolScriptParserBase.RulesOffset + 26,
+        RuleExprEq = ToolScriptParserBase.RulesOffset + 33,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '+=' &lt;Expr&gt;</c></para>
+        /// </summary>
+        RuleExprPluseq = ToolScriptParserBase.RulesOffset + 34,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '-=' &lt;Expr&gt;</c></para>
+        /// </summary>
+        RuleExprMinuseq = ToolScriptParserBase.RulesOffset + 35,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '*=' &lt;Expr&gt;</c></para>
+        /// </summary>
+        RuleExprTimeseq = ToolScriptParserBase.RulesOffset + 36,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '/=' &lt;Expr&gt;</c></para>
+        /// </summary>
+        RuleExprDiveq = ToolScriptParserBase.RulesOffset + 37,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '&lt;==' &lt;Expr&gt;</c></para>
+        /// </summary>
+        RuleExprLteqeq = ToolScriptParserBase.RulesOffset + 38,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '&lt;==&gt;' &lt;Expr&gt;</c></para>
+        /// </summary>
+        RuleExprLteqeqgt = ToolScriptParserBase.RulesOffset + 39,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt;</c></para>
         /// </summary>
-        RuleExpr = ToolScriptParserBase.RulesOffset + 27,
+        RuleExpr = ToolScriptParserBase.RulesOffset + 40,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op If&gt; ::= &lt;Op Or&gt; '?' &lt;Op If&gt; ':' &lt;Op If&gt;</c></para>
         /// </summary>
-        RuleOpifQuestionColon = ToolScriptParserBase.RulesOffset + 28,
+        RuleOpifQuestionColon = ToolScriptParserBase.RulesOffset + 41,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op If&gt; ::= &lt;Op Or&gt;</c></para>
         /// </summary>
-        RuleOpif = ToolScriptParserBase.RulesOffset + 29,
+        RuleOpif = ToolScriptParserBase.RulesOffset + 42,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Or&gt; ::= &lt;Op Or&gt; or &lt;Op And&gt;</c></para>
         /// </summary>
-        RuleOporOr = ToolScriptParserBase.RulesOffset + 30,
+        RuleOporOr = ToolScriptParserBase.RulesOffset + 43,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Or&gt; ::= &lt;Op And&gt;</c></para>
         /// </summary>
-        RuleOpor = ToolScriptParserBase.RulesOffset + 31,
+        RuleOpor = ToolScriptParserBase.RulesOffset + 44,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op And&gt; ::= &lt;Op And&gt; and &lt;Op Equate&gt;</c></para>
         /// </summary>
-        RuleOpandAnd = ToolScriptParserBase.RulesOffset + 32,
+        RuleOpandAnd = ToolScriptParserBase.RulesOffset + 45,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op And&gt; ::= &lt;Op Equate&gt;</c></para>
         /// </summary>
-        RuleOpand = ToolScriptParserBase.RulesOffset + 33,
+        RuleOpand = ToolScriptParserBase.RulesOffset + 46,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Equate&gt; ::= &lt;Op Equate&gt; '==' &lt;Op Compare&gt;</c></para>
         /// </summary>
-        RuleOpequateEqeq = ToolScriptParserBase.RulesOffset + 34,
+        RuleOpequateEqeq = ToolScriptParserBase.RulesOffset + 47,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Equate&gt; ::= &lt;Op Equate&gt; '!=' &lt;Op Compare&gt;</c></para>
         /// </summary>
-        RuleOpequateExclameq = ToolScriptParserBase.RulesOffset + 35,
+        RuleOpequateExclameq = ToolScriptParserBase.RulesOffset + 48,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Equate&gt; ::= &lt;Op Compare&gt;</c></para>
         /// </summary>
-        RuleOpequate = ToolScriptParserBase.RulesOffset + 36,
+        RuleOpequate = ToolScriptParserBase.RulesOffset + 49,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&lt;' &lt;Op Add&gt;</c></para>
+        /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&lt;' &lt;Op In&gt;</c></para>
         /// </summary>
-        RuleOpcompareLt = ToolScriptParserBase.RulesOffset + 37,
+        RuleOpcompareLt = ToolScriptParserBase.RulesOffset + 50,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&gt;' &lt;Op Add&gt;</c></para>
+        /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&gt;' &lt;Op In&gt;</c></para>
         /// </summary>
-        RuleOpcompareGt = ToolScriptParserBase.RulesOffset + 38,
+        RuleOpcompareGt = ToolScriptParserBase.RulesOffset + 51,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&lt;=' &lt;Op Add&gt;</c></para>
+        /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&lt;=' &lt;Op In&gt;</c></para>
         /// </summary>
-        RuleOpcompareLteq = ToolScriptParserBase.RulesOffset + 39,
+        RuleOpcompareLteq = ToolScriptParserBase.RulesOffset + 52,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&gt;=' &lt;Op Add&gt;</c></para>
+        /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&gt;=' &lt;Op In&gt;</c></para>
         /// </summary>
-        RuleOpcompareGteq = ToolScriptParserBase.RulesOffset + 40,
+        RuleOpcompareGteq = ToolScriptParserBase.RulesOffset + 53,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Add&gt;</c></para>
+        /// <para><c>&lt;Op Compare&gt; ::= &lt;Op In&gt;</c></para>
         /// </summary>
-        RuleOpcompare = ToolScriptParserBase.RulesOffset + 41,
+        RuleOpcompare = ToolScriptParserBase.RulesOffset + 54,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Op In&gt; ::= &lt;Op In&gt; in &lt;Op Add&gt;</c></para>
+        /// </summary>
+        RuleOpinIn = ToolScriptParserBase.RulesOffset + 55,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Op In&gt; ::= &lt;Op Add&gt;</c></para>
+        /// </summary>
+        RuleOpin = ToolScriptParserBase.RulesOffset + 56,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Add&gt; ::= &lt;Op Add&gt; '+' &lt;Op Mult&gt;</c></para>
         /// </summary>
-        RuleOpaddPlus = ToolScriptParserBase.RulesOffset + 42,
+        RuleOpaddPlus = ToolScriptParserBase.RulesOffset + 57,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Add&gt; ::= &lt;Op Add&gt; '-' &lt;Op Mult&gt;</c></para>
         /// </summary>
-        RuleOpaddMinus = ToolScriptParserBase.RulesOffset + 43,
+        RuleOpaddMinus = ToolScriptParserBase.RulesOffset + 58,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Add&gt; ::= &lt;Op Mult&gt;</c></para>
         /// </summary>
-        RuleOpadd = ToolScriptParserBase.RulesOffset + 44,
+        RuleOpadd = ToolScriptParserBase.RulesOffset + 59,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Mult&gt; '*' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpmultTimes = ToolScriptParserBase.RulesOffset + 45,
+        RuleOpmultTimes = ToolScriptParserBase.RulesOffset + 60,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Mult&gt; '/' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpmultDiv = ToolScriptParserBase.RulesOffset + 46,
+        RuleOpmultDiv = ToolScriptParserBase.RulesOffset + 61,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Mult&gt; '%' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpmultPercent = ToolScriptParserBase.RulesOffset + 47,
+        RuleOpmultPercent = ToolScriptParserBase.RulesOffset + 62,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpmult = ToolScriptParserBase.RulesOffset + 48,
+        RuleOpmult = ToolScriptParserBase.RulesOffset + 63,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= not &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryNot = ToolScriptParserBase.RulesOffset + 49,
+        RuleOpunaryNot = ToolScriptParserBase.RulesOffset + 64,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= '-' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryMinus = ToolScriptParserBase.RulesOffset + 50,
+        RuleOpunaryMinus = ToolScriptParserBase.RulesOffset + 65,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= cast &lt;Op Unary&gt; as ID</c></para>
         /// </summary>
-        RuleOpunaryCastAsId = ToolScriptParserBase.RulesOffset + 51,
+        RuleOpunaryCastAsId = ToolScriptParserBase.RulesOffset + 66,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Op Unary&gt; ::= cast &lt;Op Unary&gt; as QualifiedName</c></para>
+        /// </summary>
+        RuleOpunaryCastAsQualifiedname = ToolScriptParserBase.RulesOffset + 67,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Op Unary&gt; ::= '++' &lt;Op Unary&gt;</c></para>
+        /// </summary>
+        RuleOpunaryPlusplus = ToolScriptParserBase.RulesOffset + 68,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Op Unary&gt; ::= -- &lt;Op Unary&gt;</c></para>
+        /// </summary>
+        RuleOpunaryMinusminus = ToolScriptParserBase.RulesOffset + 69,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; '++'</c></para>
+        /// </summary>
+        RuleOpunaryPlusplus2 = ToolScriptParserBase.RulesOffset + 70,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; --</c></para>
+        /// </summary>
+        RuleOpunaryMinusminus2 = ToolScriptParserBase.RulesOffset + 71,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; is null</c></para>
+        /// </summary>
+        RuleOpunaryIsNull = ToolScriptParserBase.RulesOffset + 72,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; not null</c></para>
+        /// </summary>
+        RuleOpunaryNotNull = ToolScriptParserBase.RulesOffset + 73,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; is not null</c></para>
+        /// </summary>
+        RuleOpunaryIsNotNull = ToolScriptParserBase.RulesOffset + 74,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt;</c></para>
         /// </summary>
-        RuleOpunary = ToolScriptParserBase.RulesOffset + 52,
+        RuleOpunary = ToolScriptParserBase.RulesOffset + 75,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '.' &lt;Value&gt;</c></para>
         /// </summary>
-        RuleOppointerDot = ToolScriptParserBase.RulesOffset + 53,
+        RuleOppointerDot = ToolScriptParserBase.RulesOffset + 76,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '-&gt;' &lt;Value&gt;</c></para>
         /// </summary>
-        RuleOppointerMinusgt = ToolScriptParserBase.RulesOffset + 54,
+        RuleOppointerMinusgt = ToolScriptParserBase.RulesOffset + 77,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '[' &lt;Expr&gt; ']'</c></para>
         /// </summary>
-        RuleOppointerLbracketRbracket = ToolScriptParserBase.RulesOffset + 55,
+        RuleOppointerLbracketRbracket = ToolScriptParserBase.RulesOffset + 78,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Value&gt;</c></para>
         /// </summary>
-        RuleOppointer = ToolScriptParserBase.RulesOffset + 56,
+        RuleOppointer = ToolScriptParserBase.RulesOffset + 79,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= IntLiteral</c></para>
         /// </summary>
-        RuleValueIntliteral = ToolScriptParserBase.RulesOffset + 57,
+        RuleValueIntliteral = ToolScriptParserBase.RulesOffset + 80,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= StringLiteral</c></para>
         /// </summary>
-        RuleValueStringliteral = ToolScriptParserBase.RulesOffset + 58,
+        RuleValueStringliteral = ToolScriptParserBase.RulesOffset + 81,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= DecimalLiteral</c></para>
         /// </summary>
-        RuleValueDecimalliteral = ToolScriptParserBase.RulesOffset + 59,
+        RuleValueDecimalliteral = ToolScriptParserBase.RulesOffset + 82,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= type ID</c></para>
         /// </summary>
-        RuleValueTypeId = ToolScriptParserBase.RulesOffset + 60,
+        RuleValueTypeId = ToolScriptParserBase.RulesOffset + 83,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Value&gt; ::= type QualifiedName</c></para>
+        /// </summary>
+        RuleValueTypeQualifiedname = ToolScriptParserBase.RulesOffset + 84,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Value&gt; ::= QualifiedName '(' &lt;Args&gt; ')'</c></para>
+        /// </summary>
+        RuleValueQualifiednameLparanRparan = ToolScriptParserBase.RulesOffset + 85,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Value&gt; ::= QualifiedName '(' ')'</c></para>
+        /// </summary>
+        RuleValueQualifiednameLparanRparan2 = ToolScriptParserBase.RulesOffset + 86,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= ID '(' &lt;Args&gt; ')'</c></para>
         /// </summary>
-        RuleValueIdLparanRparan = ToolScriptParserBase.RulesOffset + 61,
+        RuleValueIdLparanRparan = ToolScriptParserBase.RulesOffset + 87,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= ID '(' ')'</c></para>
         /// </summary>
-        RuleValueIdLparanRparan2 = ToolScriptParserBase.RulesOffset + 62,
+        RuleValueIdLparanRparan2 = ToolScriptParserBase.RulesOffset + 88,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= ID</c></para>
         /// </summary>
-        RuleValueId = ToolScriptParserBase.RulesOffset + 63,
+        RuleValueId = ToolScriptParserBase.RulesOffset + 89,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= '(' &lt;Expr&gt; ')'</c></para>
         /// </summary>
-        RuleValueLparanRparan = ToolScriptParserBase.RulesOffset + 64 
+        RuleValueLparanRparan = ToolScriptParserBase.RulesOffset + 90,
 
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Value&gt; ::= '{' &lt;Expr List&gt; '}'</c></para>
+        /// </summary>
+        RuleValueLbraceRbrace = ToolScriptParserBase.RulesOffset + 91,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Value&gt; ::= null</c></para>
+        /// </summary>
+        RuleValueNull = ToolScriptParserBase.RulesOffset + 92,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Value&gt; ::= true</c></para>
+        /// </summary>
+        RuleValueTrue = ToolScriptParserBase.RulesOffset + 93,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Value&gt; ::= false</c></para>
+        /// </summary>
+        RuleValueFalse = ToolScriptParserBase.RulesOffset + 94 
+
+	    #endregion
     };
-    #endregion
 
 	#region ToolScriptParserBase
     public abstract class ToolScriptParserBase
@@ -860,15 +1146,26 @@ namespace LPS.ToolScript
             parser.OnParseError += new LALRParser.ParseErrorHandler(ParseErrorEvent);
         }
 
-        public virtual object Parse(string source)
+        public virtual List<IStatement> Parse(string source)
         {
             NonterminalToken token = parser.Parse(source);
             if (token == null)
 	            return null;
-	        return CreateObject(token);
+	        return CreateObject(token) as List<IStatement>;
         }
 
-        protected virtual object CreateObject(Token token)
+		protected bool IsRule(NonterminalToken token, params Symbols[] symbols)
+		{
+			return NonterminalBase.IsRule(token, symbols);
+		}
+
+		protected void CheckRule(NonterminalToken token, params Symbols[] symbols)
+		{
+			if(!IsRule(token, symbols))
+				throw new Exception("Nesprávné pravidlo");
+		}
+
+        public virtual object CreateObject(Token token)
         {
             if (token is TerminalToken)
                 return CreateObjectFromTerminal((TerminalToken)token);
@@ -876,1916 +1173,1395 @@ namespace LPS.ToolScript
                 return CreateObjectFromNonterminal((NonterminalToken)token);
         }
 
+		public static Symbols GetSymbol(Token tok)
+		{
+			if(tok is TerminalToken)
+				return (Symbols)(((TerminalToken)tok).Symbol.Id);
+			else
+				return (Symbols)(((NonterminalToken)tok).Rule.Id + ToolScriptParserBase.RulesOffset);
+		}
+
 		#region ToolScriptParserBase.Symboly
-        /// <summary>
-        /// <para>Symbol: EOF</para>
-        /// <para><c>(EOF)</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalEof(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Error</para>
-        /// <para><c>(Error)</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalError(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Whitespace</para>
-        /// <para><c>(Whitespace)</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalWhitespace(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Comment End</para>
-        /// <para><c>(Comment End)</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalCommentend(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Comment Line</para>
-        /// <para><c>(Comment Line)</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalCommentline(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Comment Start</para>
-        /// <para><c>(Comment Start)</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalCommentstart(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: -</para>
-        /// <para><c>'-'</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalMinus(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: ,</para>
-        /// <para><c>','</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalComma(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: ;</para>
-        /// <para><c>';'</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalSemi(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: :</para>
-        /// <para><c>':'</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalColon(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: !=</para>
-        /// <para><c>'!='</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalExclameq(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: ?</para>
-        /// <para><c>'?'</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalQuestion(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: .</para>
-        /// <para><c>'.'</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalDot(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: (</para>
-        /// <para><c>'('</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalLparan(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: )</para>
-        /// <para><c>')'</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalRparan(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: [</para>
-        /// <para><c>'['</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalLbracket(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: ]</para>
-        /// <para><c>']'</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalRbracket(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: {</para>
-        /// <para><c>'{'</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalLbrace(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: }</para>
-        /// <para><c>'}'</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalRbrace(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: *</para>
-        /// <para><c>'*'</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalTimes(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: /</para>
-        /// <para><c>'/'</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalDiv(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: %</para>
-        /// <para><c>'%'</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalPercent(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: +</para>
-        /// <para><c>'+'</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalPlus(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: &lt;</para>
-        /// <para><c>'&lt;'</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalLt(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: &lt;=</para>
-        /// <para><c>'&lt;='</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalLteq(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: =</para>
-        /// <para><c>'='</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalEq(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: ==</para>
-        /// <para><c>'=='</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalEqeq(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: &gt;</para>
-        /// <para><c>'&gt;'</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalGt(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: -&gt;</para>
-        /// <para><c>'-&gt;'</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalMinusgt(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: &gt;=</para>
-        /// <para><c>'&gt;='</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalGteq(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: and</para>
-        /// <para><c>and</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalAnd(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: as</para>
-        /// <para><c>as</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalAs(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: break</para>
-        /// <para><c>break</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalBreak(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: case</para>
-        /// <para><c>case</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalCase(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: cast</para>
-        /// <para><c>cast</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalCast(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: continue</para>
-        /// <para><c>continue</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalContinue(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: DecimalLiteral</para>
-        /// <para><c>DecimalLiteral</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalDecimalliteral(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: default</para>
-        /// <para><c>default</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalDefault(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: do</para>
-        /// <para><c>do</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalDo(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: else</para>
-        /// <para><c>else</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalElse(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: for</para>
-        /// <para><c>for</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalFor(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: foreach</para>
-        /// <para><c>foreach</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalForeach(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: ID</para>
-        /// <para><c>ID</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalId(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: if</para>
-        /// <para><c>if</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalIf(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: in</para>
-        /// <para><c>in</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalIn(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: IntLiteral</para>
-        /// <para><c>IntLiteral</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalIntliteral(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: not</para>
-        /// <para><c>not</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalNot(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: or</para>
-        /// <para><c>or</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalOr(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: return</para>
-        /// <para><c>return</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalReturn(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: StringLiteral</para>
-        /// <para><c>StringLiteral</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalStringliteral(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: switch</para>
-        /// <para><c>switch</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalSwitch(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: type</para>
-        /// <para><c>type</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalType(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: while</para>
-        /// <para><c>while</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalWhile(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Args</para>
-        /// <para><c>&lt;Args&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalArgs(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Block</para>
-        /// <para><c>&lt;Block&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalBlock(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Case Stms</para>
-        /// <para><c>&lt;Case Stms&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalCasestms(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Expr</para>
-        /// <para><c>&lt;Expr&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalExpr(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Normal Stm</para>
-        /// <para><c>&lt;Normal Stm&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalNormalstm(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Op Add</para>
-        /// <para><c>&lt;Op Add&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalOpadd(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Op And</para>
-        /// <para><c>&lt;Op And&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalOpand(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Op Compare</para>
-        /// <para><c>&lt;Op Compare&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalOpcompare(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Op Equate</para>
-        /// <para><c>&lt;Op Equate&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalOpequate(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Op If</para>
-        /// <para><c>&lt;Op If&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalOpif(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Op Mult</para>
-        /// <para><c>&lt;Op Mult&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalOpmult(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Op Or</para>
-        /// <para><c>&lt;Op Or&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalOpor(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Op Pointer</para>
-        /// <para><c>&lt;Op Pointer&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalOppointer(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Op Unary</para>
-        /// <para><c>&lt;Op Unary&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalOpunary(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Stm</para>
-        /// <para><c>&lt;Stm&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalStm(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Stm List</para>
-        /// <para><c>&lt;Stm List&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalStmlist(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Then Stm</para>
-        /// <para><c>&lt;Then Stm&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalThenstm(TerminalToken token)
-        {
-        	return token;
-        }
-
-        /// <summary>
-        /// <para>Symbol: Value</para>
-        /// <para><c>&lt;Value&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateTerminalValue(TerminalToken token)
-        {
-        	return token;
-        }
+		/// <summary>
+		/// <para>Symbol: EOF</para>
+		/// <para><c>(EOF)</c></para>
+		/// </summary>
+		protected virtual object TerminalEof(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol EOF");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Error</para>
+		/// <para><c>(Error)</c></para>
+		/// </summary>
+		protected virtual object TerminalError(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Error");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Whitespace</para>
+		/// <para><c>(Whitespace)</c></para>
+		/// </summary>
+		protected virtual object TerminalWhitespace(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Whitespace");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Comment End</para>
+		/// <para><c>(Comment End)</c></para>
+		/// </summary>
+		protected virtual object TerminalCommentend(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Comment End");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Comment Line</para>
+		/// <para><c>(Comment Line)</c></para>
+		/// </summary>
+		protected virtual object TerminalCommentline(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Comment Line");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Comment Start</para>
+		/// <para><c>(Comment Start)</c></para>
+		/// </summary>
+		protected virtual object TerminalCommentstart(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Comment Start");
+		}
+
+		/// <summary>
+		/// <para>Symbol: -</para>
+		/// <para><c>'-'</c></para>
+		/// </summary>
+		protected virtual object TerminalMinus(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol -");
+		}
+
+		/// <summary>
+		/// <para>Symbol: --</para>
+		/// <para><c>--</c></para>
+		/// </summary>
+		protected virtual object TerminalMinusminus(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol --");
+		}
+
+		/// <summary>
+		/// <para>Symbol: ,</para>
+		/// <para><c>','</c></para>
+		/// </summary>
+		protected virtual object TerminalComma(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol ,");
+		}
+
+		/// <summary>
+		/// <para>Symbol: ;</para>
+		/// <para><c>';'</c></para>
+		/// </summary>
+		protected virtual object TerminalSemi(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol ;");
+		}
+
+		/// <summary>
+		/// <para>Symbol: :</para>
+		/// <para><c>':'</c></para>
+		/// </summary>
+		protected virtual object TerminalColon(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol :");
+		}
+
+		/// <summary>
+		/// <para>Symbol: !=</para>
+		/// <para><c>'!='</c></para>
+		/// </summary>
+		protected virtual object TerminalExclameq(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol !=");
+		}
+
+		/// <summary>
+		/// <para>Symbol: ?</para>
+		/// <para><c>'?'</c></para>
+		/// </summary>
+		protected virtual object TerminalQuestion(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol ?");
+		}
+
+		/// <summary>
+		/// <para>Symbol: .</para>
+		/// <para><c>'.'</c></para>
+		/// </summary>
+		protected virtual object TerminalDot(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol .");
+		}
+
+		/// <summary>
+		/// <para>Symbol: (</para>
+		/// <para><c>'('</c></para>
+		/// </summary>
+		protected virtual object TerminalLparan(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol (");
+		}
+
+		/// <summary>
+		/// <para>Symbol: )</para>
+		/// <para><c>')'</c></para>
+		/// </summary>
+		protected virtual object TerminalRparan(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol )");
+		}
+
+		/// <summary>
+		/// <para>Symbol: [</para>
+		/// <para><c>'['</c></para>
+		/// </summary>
+		protected virtual object TerminalLbracket(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol [");
+		}
+
+		/// <summary>
+		/// <para>Symbol: ]</para>
+		/// <para><c>']'</c></para>
+		/// </summary>
+		protected virtual object TerminalRbracket(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol ]");
+		}
+
+		/// <summary>
+		/// <para>Symbol: {</para>
+		/// <para><c>'{'</c></para>
+		/// </summary>
+		protected virtual object TerminalLbrace(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol {");
+		}
+
+		/// <summary>
+		/// <para>Symbol: }</para>
+		/// <para><c>'}'</c></para>
+		/// </summary>
+		protected virtual object TerminalRbrace(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol }");
+		}
+
+		/// <summary>
+		/// <para>Symbol: *</para>
+		/// <para><c>'*'</c></para>
+		/// </summary>
+		protected virtual object TerminalTimes(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol *");
+		}
+
+		/// <summary>
+		/// <para>Symbol: *=</para>
+		/// <para><c>'*='</c></para>
+		/// </summary>
+		protected virtual object TerminalTimeseq(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol *=");
+		}
+
+		/// <summary>
+		/// <para>Symbol: /</para>
+		/// <para><c>'/'</c></para>
+		/// </summary>
+		protected virtual object TerminalDiv(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol /");
+		}
+
+		/// <summary>
+		/// <para>Symbol: /=</para>
+		/// <para><c>'/='</c></para>
+		/// </summary>
+		protected virtual object TerminalDiveq(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol /=");
+		}
+
+		/// <summary>
+		/// <para>Symbol: %</para>
+		/// <para><c>'%'</c></para>
+		/// </summary>
+		protected virtual object TerminalPercent(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol %");
+		}
+
+		/// <summary>
+		/// <para>Symbol: +</para>
+		/// <para><c>'+'</c></para>
+		/// </summary>
+		protected virtual object TerminalPlus(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol +");
+		}
+
+		/// <summary>
+		/// <para>Symbol: ++</para>
+		/// <para><c>'++'</c></para>
+		/// </summary>
+		protected virtual object TerminalPlusplus(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol ++");
+		}
+
+		/// <summary>
+		/// <para>Symbol: +=</para>
+		/// <para><c>'+='</c></para>
+		/// </summary>
+		protected virtual object TerminalPluseq(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol +=");
+		}
+
+		/// <summary>
+		/// <para>Symbol: &lt;</para>
+		/// <para><c>'&lt;'</c></para>
+		/// </summary>
+		protected virtual object TerminalLt(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol <");
+		}
+
+		/// <summary>
+		/// <para>Symbol: &lt;=</para>
+		/// <para><c>'&lt;='</c></para>
+		/// </summary>
+		protected virtual object TerminalLteq(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol <=");
+		}
+
+		/// <summary>
+		/// <para>Symbol: &lt;==</para>
+		/// <para><c>'&lt;=='</c></para>
+		/// </summary>
+		protected virtual object TerminalLteqeq(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol <==");
+		}
+
+		/// <summary>
+		/// <para>Symbol: &lt;==&gt;</para>
+		/// <para><c>'&lt;==&gt;'</c></para>
+		/// </summary>
+		protected virtual object TerminalLteqeqgt(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol <==>");
+		}
+
+		/// <summary>
+		/// <para>Symbol: =</para>
+		/// <para><c>'='</c></para>
+		/// </summary>
+		protected virtual object TerminalEq(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol =");
+		}
+
+		/// <summary>
+		/// <para>Symbol: -=</para>
+		/// <para><c>'-='</c></para>
+		/// </summary>
+		protected virtual object TerminalMinuseq(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol -=");
+		}
+
+		/// <summary>
+		/// <para>Symbol: ==</para>
+		/// <para><c>'=='</c></para>
+		/// </summary>
+		protected virtual object TerminalEqeq(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol ==");
+		}
+
+		/// <summary>
+		/// <para>Symbol: &gt;</para>
+		/// <para><c>'&gt;'</c></para>
+		/// </summary>
+		protected virtual object TerminalGt(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol >");
+		}
+
+		/// <summary>
+		/// <para>Symbol: -&gt;</para>
+		/// <para><c>'-&gt;'</c></para>
+		/// </summary>
+		protected virtual object TerminalMinusgt(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol ->");
+		}
+
+		/// <summary>
+		/// <para>Symbol: &gt;=</para>
+		/// <para><c>'&gt;='</c></para>
+		/// </summary>
+		protected virtual object TerminalGteq(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol >=");
+		}
+
+		/// <summary>
+		/// <para>Symbol: and</para>
+		/// <para><c>and</c></para>
+		/// </summary>
+		protected virtual object TerminalAnd(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol and");
+		}
+
+		/// <summary>
+		/// <para>Symbol: as</para>
+		/// <para><c>as</c></para>
+		/// </summary>
+		protected virtual object TerminalAs(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol as");
+		}
+
+		/// <summary>
+		/// <para>Symbol: break</para>
+		/// <para><c>break</c></para>
+		/// </summary>
+		protected virtual object TerminalBreak(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol break");
+		}
+
+		/// <summary>
+		/// <para>Symbol: case</para>
+		/// <para><c>case</c></para>
+		/// </summary>
+		protected virtual object TerminalCase(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol case");
+		}
+
+		/// <summary>
+		/// <para>Symbol: cast</para>
+		/// <para><c>cast</c></para>
+		/// </summary>
+		protected virtual object TerminalCast(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol cast");
+		}
+
+		/// <summary>
+		/// <para>Symbol: continue</para>
+		/// <para><c>continue</c></para>
+		/// </summary>
+		protected virtual object TerminalContinue(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol continue");
+		}
+
+		/// <summary>
+		/// <para>Symbol: DecimalLiteral</para>
+		/// <para><c>DecimalLiteral</c></para>
+		/// </summary>
+		protected virtual object TerminalDecimalliteral(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol DecimalLiteral");
+		}
+
+		/// <summary>
+		/// <para>Symbol: default</para>
+		/// <para><c>default</c></para>
+		/// </summary>
+		protected virtual object TerminalDefault(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol default");
+		}
+
+		/// <summary>
+		/// <para>Symbol: do</para>
+		/// <para><c>do</c></para>
+		/// </summary>
+		protected virtual object TerminalDo(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol do");
+		}
+
+		/// <summary>
+		/// <para>Symbol: else</para>
+		/// <para><c>else</c></para>
+		/// </summary>
+		protected virtual object TerminalElse(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol else");
+		}
+
+		/// <summary>
+		/// <para>Symbol: false</para>
+		/// <para><c>false</c></para>
+		/// </summary>
+		protected virtual object TerminalFalse(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol false");
+		}
+
+		/// <summary>
+		/// <para>Symbol: for</para>
+		/// <para><c>for</c></para>
+		/// </summary>
+		protected virtual object TerminalFor(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol for");
+		}
+
+		/// <summary>
+		/// <para>Symbol: foreach</para>
+		/// <para><c>foreach</c></para>
+		/// </summary>
+		protected virtual object TerminalForeach(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol foreach");
+		}
+
+		/// <summary>
+		/// <para>Symbol: from</para>
+		/// <para><c>from</c></para>
+		/// </summary>
+		protected virtual object TerminalFrom(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol from");
+		}
+
+		/// <summary>
+		/// <para>Symbol: ID</para>
+		/// <para><c>ID</c></para>
+		/// </summary>
+		protected virtual object TerminalId(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol ID");
+		}
+
+		/// <summary>
+		/// <para>Symbol: if</para>
+		/// <para><c>if</c></para>
+		/// </summary>
+		protected virtual object TerminalIf(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol if");
+		}
+
+		/// <summary>
+		/// <para>Symbol: in</para>
+		/// <para><c>in</c></para>
+		/// </summary>
+		protected virtual object TerminalIn(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol in");
+		}
+
+		/// <summary>
+		/// <para>Symbol: IntLiteral</para>
+		/// <para><c>IntLiteral</c></para>
+		/// </summary>
+		protected virtual object TerminalIntliteral(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol IntLiteral");
+		}
+
+		/// <summary>
+		/// <para>Symbol: is</para>
+		/// <para><c>is</c></para>
+		/// </summary>
+		protected virtual object TerminalIs(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol is");
+		}
+
+		/// <summary>
+		/// <para>Symbol: not</para>
+		/// <para><c>not</c></para>
+		/// </summary>
+		protected virtual object TerminalNot(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol not");
+		}
+
+		/// <summary>
+		/// <para>Symbol: null</para>
+		/// <para><c>null</c></para>
+		/// </summary>
+		protected virtual object TerminalNull(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol null");
+		}
+
+		/// <summary>
+		/// <para>Symbol: observed</para>
+		/// <para><c>observed</c></para>
+		/// </summary>
+		protected virtual object TerminalObserved(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol observed");
+		}
+
+		/// <summary>
+		/// <para>Symbol: or</para>
+		/// <para><c>or</c></para>
+		/// </summary>
+		protected virtual object TerminalOr(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol or");
+		}
+
+		/// <summary>
+		/// <para>Symbol: QualifiedName</para>
+		/// <para><c>QualifiedName</c></para>
+		/// </summary>
+		protected virtual object TerminalQualifiedname(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol QualifiedName");
+		}
+
+		/// <summary>
+		/// <para>Symbol: return</para>
+		/// <para><c>return</c></para>
+		/// </summary>
+		protected virtual object TerminalReturn(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol return");
+		}
+
+		/// <summary>
+		/// <para>Symbol: StringLiteral</para>
+		/// <para><c>StringLiteral</c></para>
+		/// </summary>
+		protected virtual object TerminalStringliteral(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol StringLiteral");
+		}
+
+		/// <summary>
+		/// <para>Symbol: switch</para>
+		/// <para><c>switch</c></para>
+		/// </summary>
+		protected virtual object TerminalSwitch(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol switch");
+		}
+
+		/// <summary>
+		/// <para>Symbol: true</para>
+		/// <para><c>true</c></para>
+		/// </summary>
+		protected virtual object TerminalTrue(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol true");
+		}
+
+		/// <summary>
+		/// <para>Symbol: type</para>
+		/// <para><c>type</c></para>
+		/// </summary>
+		protected virtual object TerminalType(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol type");
+		}
+
+		/// <summary>
+		/// <para>Symbol: using</para>
+		/// <para><c>using</c></para>
+		/// </summary>
+		protected virtual object TerminalUsing(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol using");
+		}
+
+		/// <summary>
+		/// <para>Symbol: while</para>
+		/// <para><c>while</c></para>
+		/// </summary>
+		protected virtual object TerminalWhile(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol while");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Args</para>
+		/// <para><c>&lt;Args&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalArgs(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Args");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Block</para>
+		/// <para><c>&lt;Block&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalBlock(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Block");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Case Stms</para>
+		/// <para><c>&lt;Case Stms&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalCasestms(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Case Stms");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Expr</para>
+		/// <para><c>&lt;Expr&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalExpr(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Expr");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Expr List</para>
+		/// <para><c>&lt;Expr List&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalExprlist(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Expr List");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Normal Stm</para>
+		/// <para><c>&lt;Normal Stm&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalNormalstm(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Normal Stm");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Op Add</para>
+		/// <para><c>&lt;Op Add&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalOpadd(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Op Add");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Op And</para>
+		/// <para><c>&lt;Op And&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalOpand(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Op And");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Op Compare</para>
+		/// <para><c>&lt;Op Compare&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalOpcompare(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Op Compare");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Op Equate</para>
+		/// <para><c>&lt;Op Equate&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalOpequate(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Op Equate");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Op If</para>
+		/// <para><c>&lt;Op If&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalOpif(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Op If");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Op In</para>
+		/// <para><c>&lt;Op In&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalOpin(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Op In");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Op Mult</para>
+		/// <para><c>&lt;Op Mult&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalOpmult(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Op Mult");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Op Or</para>
+		/// <para><c>&lt;Op Or&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalOpor(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Op Or");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Op Pointer</para>
+		/// <para><c>&lt;Op Pointer&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalOppointer(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Op Pointer");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Op Unary</para>
+		/// <para><c>&lt;Op Unary&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalOpunary(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Op Unary");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Stm</para>
+		/// <para><c>&lt;Stm&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalStm(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Stm");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Stm List</para>
+		/// <para><c>&lt;Stm List&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalStmlist(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Stm List");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Then Stm</para>
+		/// <para><c>&lt;Then Stm&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalThenstm(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Then Stm");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Value</para>
+		/// <para><c>&lt;Value&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalValue(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Value");
+		}
 
 		#endregion
 
-        protected virtual object CreateObjectFromTerminal(TerminalToken token)
+        public virtual object CreateObjectFromTerminal(TerminalToken token)
         {
             switch (token.Symbol.Id)
             {
                 case (int)Symbols.Eof: //(EOF)
-                	return CreateTerminalEof(token);
+                	return TerminalEof(token);
 
                 case (int)Symbols.Error: //(Error)
-                	return CreateTerminalError(token);
+                	return TerminalError(token);
 
                 case (int)Symbols.Whitespace: //(Whitespace)
-                	return CreateTerminalWhitespace(token);
+                	return TerminalWhitespace(token);
 
                 case (int)Symbols.Commentend: //(Comment End)
-                	return CreateTerminalCommentend(token);
+                	return TerminalCommentend(token);
 
                 case (int)Symbols.Commentline: //(Comment Line)
-                	return CreateTerminalCommentline(token);
+                	return TerminalCommentline(token);
 
                 case (int)Symbols.Commentstart: //(Comment Start)
-                	return CreateTerminalCommentstart(token);
+                	return TerminalCommentstart(token);
 
                 case (int)Symbols.Minus: //'-'
-                	return CreateTerminalMinus(token);
+                	return TerminalMinus(token);
+
+                case (int)Symbols.Minusminus: //--
+                	return TerminalMinusminus(token);
 
                 case (int)Symbols.Comma: //','
-                	return CreateTerminalComma(token);
+                	return TerminalComma(token);
 
                 case (int)Symbols.Semi: //';'
-                	return CreateTerminalSemi(token);
+                	return TerminalSemi(token);
 
                 case (int)Symbols.Colon: //':'
-                	return CreateTerminalColon(token);
+                	return TerminalColon(token);
 
                 case (int)Symbols.Exclameq: //'!='
-                	return CreateTerminalExclameq(token);
+                	return TerminalExclameq(token);
 
                 case (int)Symbols.Question: //'?'
-                	return CreateTerminalQuestion(token);
+                	return TerminalQuestion(token);
 
                 case (int)Symbols.Dot: //'.'
-                	return CreateTerminalDot(token);
+                	return TerminalDot(token);
 
                 case (int)Symbols.Lparan: //'('
-                	return CreateTerminalLparan(token);
+                	return TerminalLparan(token);
 
                 case (int)Symbols.Rparan: //')'
-                	return CreateTerminalRparan(token);
+                	return TerminalRparan(token);
 
                 case (int)Symbols.Lbracket: //'['
-                	return CreateTerminalLbracket(token);
+                	return TerminalLbracket(token);
 
                 case (int)Symbols.Rbracket: //']'
-                	return CreateTerminalRbracket(token);
+                	return TerminalRbracket(token);
 
                 case (int)Symbols.Lbrace: //'{'
-                	return CreateTerminalLbrace(token);
+                	return TerminalLbrace(token);
 
                 case (int)Symbols.Rbrace: //'}'
-                	return CreateTerminalRbrace(token);
+                	return TerminalRbrace(token);
 
                 case (int)Symbols.Times: //'*'
-                	return CreateTerminalTimes(token);
+                	return TerminalTimes(token);
+
+                case (int)Symbols.Timeseq: //'*='
+                	return TerminalTimeseq(token);
 
                 case (int)Symbols.Div: //'/'
-                	return CreateTerminalDiv(token);
+                	return TerminalDiv(token);
+
+                case (int)Symbols.Diveq: //'/='
+                	return TerminalDiveq(token);
 
                 case (int)Symbols.Percent: //'%'
-                	return CreateTerminalPercent(token);
+                	return TerminalPercent(token);
 
                 case (int)Symbols.Plus: //'+'
-                	return CreateTerminalPlus(token);
+                	return TerminalPlus(token);
+
+                case (int)Symbols.Plusplus: //'++'
+                	return TerminalPlusplus(token);
+
+                case (int)Symbols.Pluseq: //'+='
+                	return TerminalPluseq(token);
 
                 case (int)Symbols.Lt: //'<'
-                	return CreateTerminalLt(token);
+                	return TerminalLt(token);
 
                 case (int)Symbols.Lteq: //'<='
-                	return CreateTerminalLteq(token);
+                	return TerminalLteq(token);
+
+                case (int)Symbols.Lteqeq: //'<=='
+                	return TerminalLteqeq(token);
+
+                case (int)Symbols.Lteqeqgt: //'<==>'
+                	return TerminalLteqeqgt(token);
 
                 case (int)Symbols.Eq: //'='
-                	return CreateTerminalEq(token);
+                	return TerminalEq(token);
+
+                case (int)Symbols.Minuseq: //'-='
+                	return TerminalMinuseq(token);
 
                 case (int)Symbols.Eqeq: //'=='
-                	return CreateTerminalEqeq(token);
+                	return TerminalEqeq(token);
 
                 case (int)Symbols.Gt: //'>'
-                	return CreateTerminalGt(token);
+                	return TerminalGt(token);
 
                 case (int)Symbols.Minusgt: //'->'
-                	return CreateTerminalMinusgt(token);
+                	return TerminalMinusgt(token);
 
                 case (int)Symbols.Gteq: //'>='
-                	return CreateTerminalGteq(token);
+                	return TerminalGteq(token);
 
                 case (int)Symbols.And: //and
-                	return CreateTerminalAnd(token);
+                	return TerminalAnd(token);
 
                 case (int)Symbols.As: //as
-                	return CreateTerminalAs(token);
+                	return TerminalAs(token);
 
                 case (int)Symbols.Break: //break
-                	return CreateTerminalBreak(token);
+                	return TerminalBreak(token);
 
                 case (int)Symbols.Case: //case
-                	return CreateTerminalCase(token);
+                	return TerminalCase(token);
 
                 case (int)Symbols.Cast: //cast
-                	return CreateTerminalCast(token);
+                	return TerminalCast(token);
 
                 case (int)Symbols.Continue: //continue
-                	return CreateTerminalContinue(token);
+                	return TerminalContinue(token);
 
                 case (int)Symbols.Decimalliteral: //DecimalLiteral
-                	return CreateTerminalDecimalliteral(token);
+                	return TerminalDecimalliteral(token);
 
                 case (int)Symbols.Default: //default
-                	return CreateTerminalDefault(token);
+                	return TerminalDefault(token);
 
                 case (int)Symbols.Do: //do
-                	return CreateTerminalDo(token);
+                	return TerminalDo(token);
 
                 case (int)Symbols.Else: //else
-                	return CreateTerminalElse(token);
+                	return TerminalElse(token);
+
+                case (int)Symbols.False: //false
+                	return TerminalFalse(token);
 
                 case (int)Symbols.For: //for
-                	return CreateTerminalFor(token);
+                	return TerminalFor(token);
 
                 case (int)Symbols.Foreach: //foreach
-                	return CreateTerminalForeach(token);
+                	return TerminalForeach(token);
+
+                case (int)Symbols.From: //from
+                	return TerminalFrom(token);
 
                 case (int)Symbols.Id: //ID
-                	return CreateTerminalId(token);
+                	return TerminalId(token);
 
                 case (int)Symbols.If: //if
-                	return CreateTerminalIf(token);
+                	return TerminalIf(token);
 
                 case (int)Symbols.In: //in
-                	return CreateTerminalIn(token);
+                	return TerminalIn(token);
 
                 case (int)Symbols.Intliteral: //IntLiteral
-                	return CreateTerminalIntliteral(token);
+                	return TerminalIntliteral(token);
+
+                case (int)Symbols.Is: //is
+                	return TerminalIs(token);
 
                 case (int)Symbols.Not: //not
-                	return CreateTerminalNot(token);
+                	return TerminalNot(token);
+
+                case (int)Symbols.Null: //null
+                	return TerminalNull(token);
+
+                case (int)Symbols.Observed: //observed
+                	return TerminalObserved(token);
 
                 case (int)Symbols.Or: //or
-                	return CreateTerminalOr(token);
+                	return TerminalOr(token);
+
+                case (int)Symbols.Qualifiedname: //QualifiedName
+                	return TerminalQualifiedname(token);
 
                 case (int)Symbols.Return: //return
-                	return CreateTerminalReturn(token);
+                	return TerminalReturn(token);
 
                 case (int)Symbols.Stringliteral: //StringLiteral
-                	return CreateTerminalStringliteral(token);
+                	return TerminalStringliteral(token);
 
                 case (int)Symbols.Switch: //switch
-                	return CreateTerminalSwitch(token);
+                	return TerminalSwitch(token);
+
+                case (int)Symbols.True: //true
+                	return TerminalTrue(token);
 
                 case (int)Symbols.Type: //type
-                	return CreateTerminalType(token);
+                	return TerminalType(token);
+
+                case (int)Symbols.Using: //using
+                	return TerminalUsing(token);
 
                 case (int)Symbols.While: //while
-                	return CreateTerminalWhile(token);
+                	return TerminalWhile(token);
 
                 case (int)Symbols.Args: //<Args>
-                	return CreateTerminalArgs(token);
+                	return TerminalArgs(token);
 
                 case (int)Symbols.Block: //<Block>
-                	return CreateTerminalBlock(token);
+                	return TerminalBlock(token);
 
                 case (int)Symbols.Casestms: //<Case Stms>
-                	return CreateTerminalCasestms(token);
+                	return TerminalCasestms(token);
 
                 case (int)Symbols.Expr: //<Expr>
-                	return CreateTerminalExpr(token);
+                	return TerminalExpr(token);
+
+                case (int)Symbols.Exprlist: //<Expr List>
+                	return TerminalExprlist(token);
 
                 case (int)Symbols.Normalstm: //<Normal Stm>
-                	return CreateTerminalNormalstm(token);
+                	return TerminalNormalstm(token);
 
                 case (int)Symbols.Opadd: //<Op Add>
-                	return CreateTerminalOpadd(token);
+                	return TerminalOpadd(token);
 
                 case (int)Symbols.Opand: //<Op And>
-                	return CreateTerminalOpand(token);
+                	return TerminalOpand(token);
 
                 case (int)Symbols.Opcompare: //<Op Compare>
-                	return CreateTerminalOpcompare(token);
+                	return TerminalOpcompare(token);
 
                 case (int)Symbols.Opequate: //<Op Equate>
-                	return CreateTerminalOpequate(token);
+                	return TerminalOpequate(token);
 
                 case (int)Symbols.Opif: //<Op If>
-                	return CreateTerminalOpif(token);
+                	return TerminalOpif(token);
+
+                case (int)Symbols.Opin: //<Op In>
+                	return TerminalOpin(token);
 
                 case (int)Symbols.Opmult: //<Op Mult>
-                	return CreateTerminalOpmult(token);
+                	return TerminalOpmult(token);
 
                 case (int)Symbols.Opor: //<Op Or>
-                	return CreateTerminalOpor(token);
+                	return TerminalOpor(token);
 
                 case (int)Symbols.Oppointer: //<Op Pointer>
-                	return CreateTerminalOppointer(token);
+                	return TerminalOppointer(token);
 
                 case (int)Symbols.Opunary: //<Op Unary>
-                	return CreateTerminalOpunary(token);
+                	return TerminalOpunary(token);
 
                 case (int)Symbols.Stm: //<Stm>
-                	return CreateTerminalStm(token);
+                	return TerminalStm(token);
 
                 case (int)Symbols.Stmlist: //<Stm List>
-                	return CreateTerminalStmlist(token);
+                	return TerminalStmlist(token);
 
                 case (int)Symbols.Thenstm: //<Then Stm>
-                	return CreateTerminalThenstm(token);
+                	return TerminalThenstm(token);
 
                 case (int)Symbols.Value: //<Value>
-                	return CreateTerminalValue(token);
+                	return TerminalValue(token);
 
             }
             throw new SymbolException("Unknown symbol");
         }
 
+		public string TokenSymbolsToString(params Token[] tokens)
+		{
+			StringBuilder sb = new StringBuilder();
+			foreach(Token tok in tokens)
+				sb.Append(GetSymbol(tok)).Append(" ");
+			return sb.ToString();
+		}
+
 		#region ToolScriptParserBase.Pravidla
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Stm&gt; ::= if '(' &lt;Expr&gt; ')' &lt;Stm&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalStmIfLparanRparan(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Stm&gt; ::= if '(' &lt;Expr&gt; ')' &lt;Then Stm&gt; else &lt;Stm&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalStmIfLparanRparanElse(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Stm&gt; ::= while '(' &lt;Expr&gt; ')' &lt;Stm&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalStmWhileLparanRparan(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Stm&gt; ::= for '(' &lt;Expr&gt; ';' &lt;Expr&gt; ';' &lt;Expr&gt; ')' &lt;Stm&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalStmForLparanSemiSemiRparan(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Stm&gt; ::= foreach '(' ID in &lt;Expr&gt; ')' &lt;Stm&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalStmForeachLparanIdInRparan(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Stm&gt; ::= &lt;Normal Stm&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalStm(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Then Stm&gt; ::= if '(' &lt;Expr&gt; ')' &lt;Then Stm&gt; else &lt;Then Stm&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalThenstmIfLparanRparanElse(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Then Stm&gt; ::= while '(' &lt;Expr&gt; ')' &lt;Then Stm&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalThenstmWhileLparanRparan(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Then Stm&gt; ::= for '(' &lt;Expr&gt; ';' &lt;Expr&gt; ';' &lt;Expr&gt; ')' &lt;Then Stm&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalThenstmForLparanSemiSemiRparan(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Then Stm&gt; ::= &lt;Normal Stm&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalThenstm(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Normal Stm&gt; ::= do &lt;Stm&gt; while '(' &lt;Expr&gt; ')'</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalNormalstmDoWhileLparanRparan(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Normal Stm&gt; ::= switch '(' &lt;Expr&gt; ')' '{' &lt;Case Stms&gt; '}'</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalNormalstmSwitchLparanRparanLbraceRbrace(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Normal Stm&gt; ::= &lt;Block&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalNormalstm(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Normal Stm&gt; ::= &lt;Expr&gt; ';'</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalNormalstmSemi(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Normal Stm&gt; ::= break ';'</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalNormalstmBreakSemi(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Normal Stm&gt; ::= continue ';'</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalNormalstmContinueSemi(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Normal Stm&gt; ::= return &lt;Expr&gt; ';'</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalNormalstmReturnSemi(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Normal Stm&gt; ::= ';'</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalNormalstmSemi2(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Args&gt; ::= &lt;Expr&gt; ',' &lt;Args&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalArgsComma(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Args&gt; ::= &lt;Expr&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalArgs(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Case Stms&gt; ::= case &lt;Value&gt; ':' &lt;Stm List&gt; &lt;Case Stms&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalCasestmsCaseColon(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Case Stms&gt; ::= default ':' &lt;Stm List&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalCasestmsDefaultColon(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Case Stms&gt; ::= </c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalCasestms(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Block&gt; ::= '{' &lt;Stm List&gt; '}'</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalBlockLbraceRbrace(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Stm List&gt; ::= &lt;Stm&gt; &lt;Stm List&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalStmlist(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Stm List&gt; ::= </c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalStmlist2(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '=' &lt;Expr&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalExprEq(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalExpr(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op If&gt; ::= &lt;Op Or&gt; '?' &lt;Op If&gt; ':' &lt;Op If&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpifQuestionColon(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op If&gt; ::= &lt;Op Or&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpif(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Or&gt; ::= &lt;Op Or&gt; or &lt;Op And&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOporOr(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Or&gt; ::= &lt;Op And&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpor(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op And&gt; ::= &lt;Op And&gt; and &lt;Op Equate&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpandAnd(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op And&gt; ::= &lt;Op Equate&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpand(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Equate&gt; ::= &lt;Op Equate&gt; '==' &lt;Op Compare&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpequateEqeq(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Equate&gt; ::= &lt;Op Equate&gt; '!=' &lt;Op Compare&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpequateExclameq(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Equate&gt; ::= &lt;Op Compare&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpequate(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&lt;' &lt;Op Add&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpcompareLt(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&gt;' &lt;Op Add&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpcompareGt(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&lt;=' &lt;Op Add&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpcompareLteq(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&gt;=' &lt;Op Add&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpcompareGteq(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Add&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpcompare(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Add&gt; ::= &lt;Op Add&gt; '+' &lt;Op Mult&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpaddPlus(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Add&gt; ::= &lt;Op Add&gt; '-' &lt;Op Mult&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpaddMinus(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Add&gt; ::= &lt;Op Mult&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpadd(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Mult&gt; '*' &lt;Op Unary&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpmultTimes(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Mult&gt; '/' &lt;Op Unary&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpmultDiv(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Mult&gt; '%' &lt;Op Unary&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpmultPercent(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Unary&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpmult(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Unary&gt; ::= not &lt;Op Unary&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpunaryNot(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Unary&gt; ::= '-' &lt;Op Unary&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpunaryMinus(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Unary&gt; ::= cast &lt;Op Unary&gt; as ID</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpunaryCastAsId(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOpunary(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '.' &lt;Value&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOppointerDot(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '-&gt;' &lt;Value&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOppointerMinusgt(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '[' &lt;Expr&gt; ']'</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOppointerLbracketRbracket(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Pointer&gt; ::= &lt;Value&gt;</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalOppointer(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= IntLiteral</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalValueIntliteral(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= StringLiteral</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalValueStringliteral(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= DecimalLiteral</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalValueDecimalliteral(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= type ID</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalValueTypeId(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= ID '(' &lt;Args&gt; ')'</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalValueIdLparanRparan(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= ID '(' ')'</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalValueIdLparanRparan2(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= ID</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalValueId(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= '(' &lt;Expr&gt; ')'</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminalValueLparanRparan(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
+        protected abstract object RuleStmIfLparanRparan(NonterminalToken token); // <Stm> ::= if '(' <Expr> ')' <Stm>
+        protected abstract object RuleStmIfLparanRparanElse(NonterminalToken token); // <Stm> ::= if '(' <Expr> ')' <Then Stm> else <Stm>
+        protected abstract object RuleStmWhileLparanRparan(NonterminalToken token); // <Stm> ::= while '(' <Expr> ')' <Stm>
+        protected abstract object RuleStmForLparanSemiSemiRparan(NonterminalToken token); // <Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>
+        protected abstract object RuleStmForeachLparanIdInRparan(NonterminalToken token); // <Stm> ::= foreach '(' ID in <Expr> ')' <Stm>
+        protected abstract object RuleStmObservedLparanRparan(NonterminalToken token); // <Stm> ::= observed '(' <Expr> ')' <Stm>
+        protected abstract object RuleStmUsingQualifiednameSemi(NonterminalToken token); // <Stm> ::= using QualifiedName ';'
+        protected abstract object RuleStmUsingQualifiednameFromStringliteralSemi(NonterminalToken token); // <Stm> ::= using QualifiedName from StringLiteral ';'
+        protected abstract object RuleStmUsingQualifiednameAsIdSemi(NonterminalToken token); // <Stm> ::= using QualifiedName as ID ';'
+        protected abstract object RuleStmUsingQualifiednameAsIdFromStringliteralSemi(NonterminalToken token); // <Stm> ::= using QualifiedName as ID from StringLiteral ';'
+        protected abstract object RuleStm(NonterminalToken token); // <Stm> ::= <Normal Stm>
+        protected abstract object RuleThenstmIfLparanRparanElse(NonterminalToken token); // <Then Stm> ::= if '(' <Expr> ')' <Then Stm> else <Then Stm>
+        protected abstract object RuleThenstmWhileLparanRparan(NonterminalToken token); // <Then Stm> ::= while '(' <Expr> ')' <Then Stm>
+        protected abstract object RuleThenstmForLparanSemiSemiRparan(NonterminalToken token); // <Then Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Then Stm>
+        protected abstract object RuleThenstm(NonterminalToken token); // <Then Stm> ::= <Normal Stm>
+        protected abstract object RuleNormalstmDoWhileLparanRparan(NonterminalToken token); // <Normal Stm> ::= do <Stm> while '(' <Expr> ')'
+        protected abstract object RuleNormalstmSwitchLparanRparanLbraceRbrace(NonterminalToken token); // <Normal Stm> ::= switch '(' <Expr> ')' '{' <Case Stms> '}'
+        protected abstract object RuleNormalstm(NonterminalToken token); // <Normal Stm> ::= <Block>
+        protected abstract object RuleNormalstmSemi(NonterminalToken token); // <Normal Stm> ::= <Expr> ';'
+        protected abstract object RuleNormalstmBreakSemi(NonterminalToken token); // <Normal Stm> ::= break ';'
+        protected abstract object RuleNormalstmContinueSemi(NonterminalToken token); // <Normal Stm> ::= continue ';'
+        protected abstract object RuleNormalstmReturnSemi(NonterminalToken token); // <Normal Stm> ::= return <Expr> ';'
+        protected abstract object RuleNormalstmSemi2(NonterminalToken token); // <Normal Stm> ::= ';'
+        protected abstract object RuleArgsComma(NonterminalToken token); // <Args> ::= <Expr> ',' <Args>
+        protected abstract object RuleArgs(NonterminalToken token); // <Args> ::= <Expr>
+        protected abstract object RuleCasestmsCaseColon(NonterminalToken token); // <Case Stms> ::= case <Value> ':' <Stm List> <Case Stms>
+        protected abstract object RuleCasestmsDefaultColon(NonterminalToken token); // <Case Stms> ::= default ':' <Stm List>
+        protected abstract object RuleCasestms(NonterminalToken token); // <Case Stms> ::= 
+        protected abstract object RuleBlockLbraceRbrace(NonterminalToken token); // <Block> ::= '{' <Stm List> '}'
+        protected abstract object RuleStmlist(NonterminalToken token); // <Stm List> ::= <Stm> <Stm List>
+        protected abstract object RuleStmlist2(NonterminalToken token); // <Stm List> ::= 
+        protected abstract object RuleExprlistComma(NonterminalToken token); // <Expr List> ::= <Expr List> ',' <Expr>
+        protected abstract object RuleExprlist(NonterminalToken token); // <Expr List> ::= <Expr>
+        protected abstract object RuleExprEq(NonterminalToken token); // <Expr> ::= <Op If> '=' <Expr>
+        protected abstract object RuleExprPluseq(NonterminalToken token); // <Expr> ::= <Op If> '+=' <Expr>
+        protected abstract object RuleExprMinuseq(NonterminalToken token); // <Expr> ::= <Op If> '-=' <Expr>
+        protected abstract object RuleExprTimeseq(NonterminalToken token); // <Expr> ::= <Op If> '*=' <Expr>
+        protected abstract object RuleExprDiveq(NonterminalToken token); // <Expr> ::= <Op If> '/=' <Expr>
+        protected abstract object RuleExprLteqeq(NonterminalToken token); // <Expr> ::= <Op If> '<==' <Expr>
+        protected abstract object RuleExprLteqeqgt(NonterminalToken token); // <Expr> ::= <Op If> '<==>' <Expr>
+        protected abstract object RuleExpr(NonterminalToken token); // <Expr> ::= <Op If>
+        protected abstract object RuleOpifQuestionColon(NonterminalToken token); // <Op If> ::= <Op Or> '?' <Op If> ':' <Op If>
+        protected abstract object RuleOpif(NonterminalToken token); // <Op If> ::= <Op Or>
+        protected abstract object RuleOporOr(NonterminalToken token); // <Op Or> ::= <Op Or> or <Op And>
+        protected abstract object RuleOpor(NonterminalToken token); // <Op Or> ::= <Op And>
+        protected abstract object RuleOpandAnd(NonterminalToken token); // <Op And> ::= <Op And> and <Op Equate>
+        protected abstract object RuleOpand(NonterminalToken token); // <Op And> ::= <Op Equate>
+        protected abstract object RuleOpequateEqeq(NonterminalToken token); // <Op Equate> ::= <Op Equate> '==' <Op Compare>
+        protected abstract object RuleOpequateExclameq(NonterminalToken token); // <Op Equate> ::= <Op Equate> '!=' <Op Compare>
+        protected abstract object RuleOpequate(NonterminalToken token); // <Op Equate> ::= <Op Compare>
+        protected abstract object RuleOpcompareLt(NonterminalToken token); // <Op Compare> ::= <Op Compare> '<' <Op In>
+        protected abstract object RuleOpcompareGt(NonterminalToken token); // <Op Compare> ::= <Op Compare> '>' <Op In>
+        protected abstract object RuleOpcompareLteq(NonterminalToken token); // <Op Compare> ::= <Op Compare> '<=' <Op In>
+        protected abstract object RuleOpcompareGteq(NonterminalToken token); // <Op Compare> ::= <Op Compare> '>=' <Op In>
+        protected abstract object RuleOpcompare(NonterminalToken token); // <Op Compare> ::= <Op In>
+        protected abstract object RuleOpinIn(NonterminalToken token); // <Op In> ::= <Op In> in <Op Add>
+        protected abstract object RuleOpin(NonterminalToken token); // <Op In> ::= <Op Add>
+        protected abstract object RuleOpaddPlus(NonterminalToken token); // <Op Add> ::= <Op Add> '+' <Op Mult>
+        protected abstract object RuleOpaddMinus(NonterminalToken token); // <Op Add> ::= <Op Add> '-' <Op Mult>
+        protected abstract object RuleOpadd(NonterminalToken token); // <Op Add> ::= <Op Mult>
+        protected abstract object RuleOpmultTimes(NonterminalToken token); // <Op Mult> ::= <Op Mult> '*' <Op Unary>
+        protected abstract object RuleOpmultDiv(NonterminalToken token); // <Op Mult> ::= <Op Mult> '/' <Op Unary>
+        protected abstract object RuleOpmultPercent(NonterminalToken token); // <Op Mult> ::= <Op Mult> '%' <Op Unary>
+        protected abstract object RuleOpmult(NonterminalToken token); // <Op Mult> ::= <Op Unary>
+        protected abstract object RuleOpunaryNot(NonterminalToken token); // <Op Unary> ::= not <Op Unary>
+        protected abstract object RuleOpunaryMinus(NonterminalToken token); // <Op Unary> ::= '-' <Op Unary>
+        protected abstract object RuleOpunaryCastAsId(NonterminalToken token); // <Op Unary> ::= cast <Op Unary> as ID
+        protected abstract object RuleOpunaryCastAsQualifiedname(NonterminalToken token); // <Op Unary> ::= cast <Op Unary> as QualifiedName
+        protected abstract object RuleOpunaryPlusplus(NonterminalToken token); // <Op Unary> ::= '++' <Op Unary>
+        protected abstract object RuleOpunaryMinusminus(NonterminalToken token); // <Op Unary> ::= -- <Op Unary>
+        protected abstract object RuleOpunaryPlusplus2(NonterminalToken token); // <Op Unary> ::= <Op Pointer> '++'
+        protected abstract object RuleOpunaryMinusminus2(NonterminalToken token); // <Op Unary> ::= <Op Pointer> --
+        protected abstract object RuleOpunaryIsNull(NonterminalToken token); // <Op Unary> ::= <Op Pointer> is null
+        protected abstract object RuleOpunaryNotNull(NonterminalToken token); // <Op Unary> ::= <Op Pointer> not null
+        protected abstract object RuleOpunaryIsNotNull(NonterminalToken token); // <Op Unary> ::= <Op Pointer> is not null
+        protected abstract object RuleOpunary(NonterminalToken token); // <Op Unary> ::= <Op Pointer>
+        protected abstract object RuleOppointerDot(NonterminalToken token); // <Op Pointer> ::= <Op Pointer> '.' <Value>
+        protected abstract object RuleOppointerMinusgt(NonterminalToken token); // <Op Pointer> ::= <Op Pointer> '->' <Value>
+        protected abstract object RuleOppointerLbracketRbracket(NonterminalToken token); // <Op Pointer> ::= <Op Pointer> '[' <Expr> ']'
+        protected abstract object RuleOppointer(NonterminalToken token); // <Op Pointer> ::= <Value>
+        protected abstract object RuleValueIntliteral(NonterminalToken token); // <Value> ::= IntLiteral
+        protected abstract object RuleValueStringliteral(NonterminalToken token); // <Value> ::= StringLiteral
+        protected abstract object RuleValueDecimalliteral(NonterminalToken token); // <Value> ::= DecimalLiteral
+        protected abstract object RuleValueTypeId(NonterminalToken token); // <Value> ::= type ID
+        protected abstract object RuleValueTypeQualifiedname(NonterminalToken token); // <Value> ::= type QualifiedName
+        protected abstract object RuleValueQualifiednameLparanRparan(NonterminalToken token); // <Value> ::= QualifiedName '(' <Args> ')'
+        protected abstract object RuleValueQualifiednameLparanRparan2(NonterminalToken token); // <Value> ::= QualifiedName '(' ')'
+        protected abstract object RuleValueIdLparanRparan(NonterminalToken token); // <Value> ::= ID '(' <Args> ')'
+        protected abstract object RuleValueIdLparanRparan2(NonterminalToken token); // <Value> ::= ID '(' ')'
+        protected abstract object RuleValueId(NonterminalToken token); // <Value> ::= ID
+        protected abstract object RuleValueLparanRparan(NonterminalToken token); // <Value> ::= '(' <Expr> ')'
+        protected abstract object RuleValueLbraceRbrace(NonterminalToken token); // <Value> ::= '{' <Expr List> '}'
+        protected abstract object RuleValueNull(NonterminalToken token); // <Value> ::= null
+        protected abstract object RuleValueTrue(NonterminalToken token); // <Value> ::= true
+        protected abstract object RuleValueFalse(NonterminalToken token); // <Value> ::= false
+
+
 		#endregion
 
-        protected virtual object CreateObjectFromNonterminal(NonterminalToken token)
+        public virtual object CreateObjectFromNonterminal(NonterminalToken token)
         {
             switch (token.Rule.Id + ToolScriptParserBase.RulesOffset)
             {
                 case (int)Symbols.RuleStmIfLparanRparan: //<Stm> ::= if '(' <Expr> ')' <Stm>
-                	return CreateNonterminalStmIfLparanRparan(token);
+                	return RuleStmIfLparanRparan(token);
                 case (int)Symbols.RuleStmIfLparanRparanElse: //<Stm> ::= if '(' <Expr> ')' <Then Stm> else <Stm>
-                	return CreateNonterminalStmIfLparanRparanElse(token);
+                	return RuleStmIfLparanRparanElse(token);
                 case (int)Symbols.RuleStmWhileLparanRparan: //<Stm> ::= while '(' <Expr> ')' <Stm>
-                	return CreateNonterminalStmWhileLparanRparan(token);
+                	return RuleStmWhileLparanRparan(token);
                 case (int)Symbols.RuleStmForLparanSemiSemiRparan: //<Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>
-                	return CreateNonterminalStmForLparanSemiSemiRparan(token);
+                	return RuleStmForLparanSemiSemiRparan(token);
                 case (int)Symbols.RuleStmForeachLparanIdInRparan: //<Stm> ::= foreach '(' ID in <Expr> ')' <Stm>
-                	return CreateNonterminalStmForeachLparanIdInRparan(token);
+                	return RuleStmForeachLparanIdInRparan(token);
+                case (int)Symbols.RuleStmObservedLparanRparan: //<Stm> ::= observed '(' <Expr> ')' <Stm>
+                	return RuleStmObservedLparanRparan(token);
+                case (int)Symbols.RuleStmUsingQualifiednameSemi: //<Stm> ::= using QualifiedName ';'
+                	return RuleStmUsingQualifiednameSemi(token);
+                case (int)Symbols.RuleStmUsingQualifiednameFromStringliteralSemi: //<Stm> ::= using QualifiedName from StringLiteral ';'
+                	return RuleStmUsingQualifiednameFromStringliteralSemi(token);
+                case (int)Symbols.RuleStmUsingQualifiednameAsIdSemi: //<Stm> ::= using QualifiedName as ID ';'
+                	return RuleStmUsingQualifiednameAsIdSemi(token);
+                case (int)Symbols.RuleStmUsingQualifiednameAsIdFromStringliteralSemi: //<Stm> ::= using QualifiedName as ID from StringLiteral ';'
+                	return RuleStmUsingQualifiednameAsIdFromStringliteralSemi(token);
                 case (int)Symbols.RuleStm: //<Stm> ::= <Normal Stm>
-                	return CreateNonterminalStm(token);
+                	return RuleStm(token);
                 case (int)Symbols.RuleThenstmIfLparanRparanElse: //<Then Stm> ::= if '(' <Expr> ')' <Then Stm> else <Then Stm>
-                	return CreateNonterminalThenstmIfLparanRparanElse(token);
+                	return RuleThenstmIfLparanRparanElse(token);
                 case (int)Symbols.RuleThenstmWhileLparanRparan: //<Then Stm> ::= while '(' <Expr> ')' <Then Stm>
-                	return CreateNonterminalThenstmWhileLparanRparan(token);
+                	return RuleThenstmWhileLparanRparan(token);
                 case (int)Symbols.RuleThenstmForLparanSemiSemiRparan: //<Then Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Then Stm>
-                	return CreateNonterminalThenstmForLparanSemiSemiRparan(token);
+                	return RuleThenstmForLparanSemiSemiRparan(token);
                 case (int)Symbols.RuleThenstm: //<Then Stm> ::= <Normal Stm>
-                	return CreateNonterminalThenstm(token);
+                	return RuleThenstm(token);
                 case (int)Symbols.RuleNormalstmDoWhileLparanRparan: //<Normal Stm> ::= do <Stm> while '(' <Expr> ')'
-                	return CreateNonterminalNormalstmDoWhileLparanRparan(token);
+                	return RuleNormalstmDoWhileLparanRparan(token);
                 case (int)Symbols.RuleNormalstmSwitchLparanRparanLbraceRbrace: //<Normal Stm> ::= switch '(' <Expr> ')' '{' <Case Stms> '}'
-                	return CreateNonterminalNormalstmSwitchLparanRparanLbraceRbrace(token);
+                	return RuleNormalstmSwitchLparanRparanLbraceRbrace(token);
                 case (int)Symbols.RuleNormalstm: //<Normal Stm> ::= <Block>
-                	return CreateNonterminalNormalstm(token);
+                	return RuleNormalstm(token);
                 case (int)Symbols.RuleNormalstmSemi: //<Normal Stm> ::= <Expr> ';'
-                	return CreateNonterminalNormalstmSemi(token);
+                	return RuleNormalstmSemi(token);
                 case (int)Symbols.RuleNormalstmBreakSemi: //<Normal Stm> ::= break ';'
-                	return CreateNonterminalNormalstmBreakSemi(token);
+                	return RuleNormalstmBreakSemi(token);
                 case (int)Symbols.RuleNormalstmContinueSemi: //<Normal Stm> ::= continue ';'
-                	return CreateNonterminalNormalstmContinueSemi(token);
+                	return RuleNormalstmContinueSemi(token);
                 case (int)Symbols.RuleNormalstmReturnSemi: //<Normal Stm> ::= return <Expr> ';'
-                	return CreateNonterminalNormalstmReturnSemi(token);
+                	return RuleNormalstmReturnSemi(token);
                 case (int)Symbols.RuleNormalstmSemi2: //<Normal Stm> ::= ';'
-                	return CreateNonterminalNormalstmSemi2(token);
+                	return RuleNormalstmSemi2(token);
                 case (int)Symbols.RuleArgsComma: //<Args> ::= <Expr> ',' <Args>
-                	return CreateNonterminalArgsComma(token);
+                	return RuleArgsComma(token);
                 case (int)Symbols.RuleArgs: //<Args> ::= <Expr>
-                	return CreateNonterminalArgs(token);
+                	return RuleArgs(token);
                 case (int)Symbols.RuleCasestmsCaseColon: //<Case Stms> ::= case <Value> ':' <Stm List> <Case Stms>
-                	return CreateNonterminalCasestmsCaseColon(token);
+                	return RuleCasestmsCaseColon(token);
                 case (int)Symbols.RuleCasestmsDefaultColon: //<Case Stms> ::= default ':' <Stm List>
-                	return CreateNonterminalCasestmsDefaultColon(token);
+                	return RuleCasestmsDefaultColon(token);
                 case (int)Symbols.RuleCasestms: //<Case Stms> ::= 
-                	return CreateNonterminalCasestms(token);
+                	return RuleCasestms(token);
                 case (int)Symbols.RuleBlockLbraceRbrace: //<Block> ::= '{' <Stm List> '}'
-                	return CreateNonterminalBlockLbraceRbrace(token);
+                	return RuleBlockLbraceRbrace(token);
                 case (int)Symbols.RuleStmlist: //<Stm List> ::= <Stm> <Stm List>
-                	return CreateNonterminalStmlist(token);
+                	return RuleStmlist(token);
                 case (int)Symbols.RuleStmlist2: //<Stm List> ::= 
-                	return CreateNonterminalStmlist2(token);
+                	return RuleStmlist2(token);
+                case (int)Symbols.RuleExprlistComma: //<Expr List> ::= <Expr List> ',' <Expr>
+                	return RuleExprlistComma(token);
+                case (int)Symbols.RuleExprlist: //<Expr List> ::= <Expr>
+                	return RuleExprlist(token);
                 case (int)Symbols.RuleExprEq: //<Expr> ::= <Op If> '=' <Expr>
-                	return CreateNonterminalExprEq(token);
+                	return RuleExprEq(token);
+                case (int)Symbols.RuleExprPluseq: //<Expr> ::= <Op If> '+=' <Expr>
+                	return RuleExprPluseq(token);
+                case (int)Symbols.RuleExprMinuseq: //<Expr> ::= <Op If> '-=' <Expr>
+                	return RuleExprMinuseq(token);
+                case (int)Symbols.RuleExprTimeseq: //<Expr> ::= <Op If> '*=' <Expr>
+                	return RuleExprTimeseq(token);
+                case (int)Symbols.RuleExprDiveq: //<Expr> ::= <Op If> '/=' <Expr>
+                	return RuleExprDiveq(token);
+                case (int)Symbols.RuleExprLteqeq: //<Expr> ::= <Op If> '<==' <Expr>
+                	return RuleExprLteqeq(token);
+                case (int)Symbols.RuleExprLteqeqgt: //<Expr> ::= <Op If> '<==>' <Expr>
+                	return RuleExprLteqeqgt(token);
                 case (int)Symbols.RuleExpr: //<Expr> ::= <Op If>
-                	return CreateNonterminalExpr(token);
+                	return RuleExpr(token);
                 case (int)Symbols.RuleOpifQuestionColon: //<Op If> ::= <Op Or> '?' <Op If> ':' <Op If>
-                	return CreateNonterminalOpifQuestionColon(token);
+                	return RuleOpifQuestionColon(token);
                 case (int)Symbols.RuleOpif: //<Op If> ::= <Op Or>
-                	return CreateNonterminalOpif(token);
+                	return RuleOpif(token);
                 case (int)Symbols.RuleOporOr: //<Op Or> ::= <Op Or> or <Op And>
-                	return CreateNonterminalOporOr(token);
+                	return RuleOporOr(token);
                 case (int)Symbols.RuleOpor: //<Op Or> ::= <Op And>
-                	return CreateNonterminalOpor(token);
+                	return RuleOpor(token);
                 case (int)Symbols.RuleOpandAnd: //<Op And> ::= <Op And> and <Op Equate>
-                	return CreateNonterminalOpandAnd(token);
+                	return RuleOpandAnd(token);
                 case (int)Symbols.RuleOpand: //<Op And> ::= <Op Equate>
-                	return CreateNonterminalOpand(token);
+                	return RuleOpand(token);
                 case (int)Symbols.RuleOpequateEqeq: //<Op Equate> ::= <Op Equate> '==' <Op Compare>
-                	return CreateNonterminalOpequateEqeq(token);
+                	return RuleOpequateEqeq(token);
                 case (int)Symbols.RuleOpequateExclameq: //<Op Equate> ::= <Op Equate> '!=' <Op Compare>
-                	return CreateNonterminalOpequateExclameq(token);
+                	return RuleOpequateExclameq(token);
                 case (int)Symbols.RuleOpequate: //<Op Equate> ::= <Op Compare>
-                	return CreateNonterminalOpequate(token);
-                case (int)Symbols.RuleOpcompareLt: //<Op Compare> ::= <Op Compare> '<' <Op Add>
-                	return CreateNonterminalOpcompareLt(token);
-                case (int)Symbols.RuleOpcompareGt: //<Op Compare> ::= <Op Compare> '>' <Op Add>
-                	return CreateNonterminalOpcompareGt(token);
-                case (int)Symbols.RuleOpcompareLteq: //<Op Compare> ::= <Op Compare> '<=' <Op Add>
-                	return CreateNonterminalOpcompareLteq(token);
-                case (int)Symbols.RuleOpcompareGteq: //<Op Compare> ::= <Op Compare> '>=' <Op Add>
-                	return CreateNonterminalOpcompareGteq(token);
-                case (int)Symbols.RuleOpcompare: //<Op Compare> ::= <Op Add>
-                	return CreateNonterminalOpcompare(token);
+                	return RuleOpequate(token);
+                case (int)Symbols.RuleOpcompareLt: //<Op Compare> ::= <Op Compare> '<' <Op In>
+                	return RuleOpcompareLt(token);
+                case (int)Symbols.RuleOpcompareGt: //<Op Compare> ::= <Op Compare> '>' <Op In>
+                	return RuleOpcompareGt(token);
+                case (int)Symbols.RuleOpcompareLteq: //<Op Compare> ::= <Op Compare> '<=' <Op In>
+                	return RuleOpcompareLteq(token);
+                case (int)Symbols.RuleOpcompareGteq: //<Op Compare> ::= <Op Compare> '>=' <Op In>
+                	return RuleOpcompareGteq(token);
+                case (int)Symbols.RuleOpcompare: //<Op Compare> ::= <Op In>
+                	return RuleOpcompare(token);
+                case (int)Symbols.RuleOpinIn: //<Op In> ::= <Op In> in <Op Add>
+                	return RuleOpinIn(token);
+                case (int)Symbols.RuleOpin: //<Op In> ::= <Op Add>
+                	return RuleOpin(token);
                 case (int)Symbols.RuleOpaddPlus: //<Op Add> ::= <Op Add> '+' <Op Mult>
-                	return CreateNonterminalOpaddPlus(token);
+                	return RuleOpaddPlus(token);
                 case (int)Symbols.RuleOpaddMinus: //<Op Add> ::= <Op Add> '-' <Op Mult>
-                	return CreateNonterminalOpaddMinus(token);
+                	return RuleOpaddMinus(token);
                 case (int)Symbols.RuleOpadd: //<Op Add> ::= <Op Mult>
-                	return CreateNonterminalOpadd(token);
+                	return RuleOpadd(token);
                 case (int)Symbols.RuleOpmultTimes: //<Op Mult> ::= <Op Mult> '*' <Op Unary>
-                	return CreateNonterminalOpmultTimes(token);
+                	return RuleOpmultTimes(token);
                 case (int)Symbols.RuleOpmultDiv: //<Op Mult> ::= <Op Mult> '/' <Op Unary>
-                	return CreateNonterminalOpmultDiv(token);
+                	return RuleOpmultDiv(token);
                 case (int)Symbols.RuleOpmultPercent: //<Op Mult> ::= <Op Mult> '%' <Op Unary>
-                	return CreateNonterminalOpmultPercent(token);
+                	return RuleOpmultPercent(token);
                 case (int)Symbols.RuleOpmult: //<Op Mult> ::= <Op Unary>
-                	return CreateNonterminalOpmult(token);
+                	return RuleOpmult(token);
                 case (int)Symbols.RuleOpunaryNot: //<Op Unary> ::= not <Op Unary>
-                	return CreateNonterminalOpunaryNot(token);
+                	return RuleOpunaryNot(token);
                 case (int)Symbols.RuleOpunaryMinus: //<Op Unary> ::= '-' <Op Unary>
-                	return CreateNonterminalOpunaryMinus(token);
+                	return RuleOpunaryMinus(token);
                 case (int)Symbols.RuleOpunaryCastAsId: //<Op Unary> ::= cast <Op Unary> as ID
-                	return CreateNonterminalOpunaryCastAsId(token);
+                	return RuleOpunaryCastAsId(token);
+                case (int)Symbols.RuleOpunaryCastAsQualifiedname: //<Op Unary> ::= cast <Op Unary> as QualifiedName
+                	return RuleOpunaryCastAsQualifiedname(token);
+                case (int)Symbols.RuleOpunaryPlusplus: //<Op Unary> ::= '++' <Op Unary>
+                	return RuleOpunaryPlusplus(token);
+                case (int)Symbols.RuleOpunaryMinusminus: //<Op Unary> ::= -- <Op Unary>
+                	return RuleOpunaryMinusminus(token);
+                case (int)Symbols.RuleOpunaryPlusplus2: //<Op Unary> ::= <Op Pointer> '++'
+                	return RuleOpunaryPlusplus2(token);
+                case (int)Symbols.RuleOpunaryMinusminus2: //<Op Unary> ::= <Op Pointer> --
+                	return RuleOpunaryMinusminus2(token);
+                case (int)Symbols.RuleOpunaryIsNull: //<Op Unary> ::= <Op Pointer> is null
+                	return RuleOpunaryIsNull(token);
+                case (int)Symbols.RuleOpunaryNotNull: //<Op Unary> ::= <Op Pointer> not null
+                	return RuleOpunaryNotNull(token);
+                case (int)Symbols.RuleOpunaryIsNotNull: //<Op Unary> ::= <Op Pointer> is not null
+                	return RuleOpunaryIsNotNull(token);
                 case (int)Symbols.RuleOpunary: //<Op Unary> ::= <Op Pointer>
-                	return CreateNonterminalOpunary(token);
+                	return RuleOpunary(token);
                 case (int)Symbols.RuleOppointerDot: //<Op Pointer> ::= <Op Pointer> '.' <Value>
-                	return CreateNonterminalOppointerDot(token);
+                	return RuleOppointerDot(token);
                 case (int)Symbols.RuleOppointerMinusgt: //<Op Pointer> ::= <Op Pointer> '->' <Value>
-                	return CreateNonterminalOppointerMinusgt(token);
+                	return RuleOppointerMinusgt(token);
                 case (int)Symbols.RuleOppointerLbracketRbracket: //<Op Pointer> ::= <Op Pointer> '[' <Expr> ']'
-                	return CreateNonterminalOppointerLbracketRbracket(token);
+                	return RuleOppointerLbracketRbracket(token);
                 case (int)Symbols.RuleOppointer: //<Op Pointer> ::= <Value>
-                	return CreateNonterminalOppointer(token);
+                	return RuleOppointer(token);
                 case (int)Symbols.RuleValueIntliteral: //<Value> ::= IntLiteral
-                	return CreateNonterminalValueIntliteral(token);
+                	return RuleValueIntliteral(token);
                 case (int)Symbols.RuleValueStringliteral: //<Value> ::= StringLiteral
-                	return CreateNonterminalValueStringliteral(token);
+                	return RuleValueStringliteral(token);
                 case (int)Symbols.RuleValueDecimalliteral: //<Value> ::= DecimalLiteral
-                	return CreateNonterminalValueDecimalliteral(token);
+                	return RuleValueDecimalliteral(token);
                 case (int)Symbols.RuleValueTypeId: //<Value> ::= type ID
-                	return CreateNonterminalValueTypeId(token);
+                	return RuleValueTypeId(token);
+                case (int)Symbols.RuleValueTypeQualifiedname: //<Value> ::= type QualifiedName
+                	return RuleValueTypeQualifiedname(token);
+                case (int)Symbols.RuleValueQualifiednameLparanRparan: //<Value> ::= QualifiedName '(' <Args> ')'
+                	return RuleValueQualifiednameLparanRparan(token);
+                case (int)Symbols.RuleValueQualifiednameLparanRparan2: //<Value> ::= QualifiedName '(' ')'
+                	return RuleValueQualifiednameLparanRparan2(token);
                 case (int)Symbols.RuleValueIdLparanRparan: //<Value> ::= ID '(' <Args> ')'
-                	return CreateNonterminalValueIdLparanRparan(token);
+                	return RuleValueIdLparanRparan(token);
                 case (int)Symbols.RuleValueIdLparanRparan2: //<Value> ::= ID '(' ')'
-                	return CreateNonterminalValueIdLparanRparan2(token);
+                	return RuleValueIdLparanRparan2(token);
                 case (int)Symbols.RuleValueId: //<Value> ::= ID
-                	return CreateNonterminalValueId(token);
+                	return RuleValueId(token);
                 case (int)Symbols.RuleValueLparanRparan: //<Value> ::= '(' <Expr> ')'
-                	return CreateNonterminalValueLparanRparan(token);
+                	return RuleValueLparanRparan(token);
+                case (int)Symbols.RuleValueLbraceRbrace: //<Value> ::= '{' <Expr List> '}'
+                	return RuleValueLbraceRbrace(token);
+                case (int)Symbols.RuleValueNull: //<Value> ::= null
+                	return RuleValueNull(token);
+                case (int)Symbols.RuleValueTrue: //<Value> ::= true
+                	return RuleValueTrue(token);
+                case (int)Symbols.RuleValueFalse: //<Value> ::= false
+                	return RuleValueFalse(token);
             }
             throw new RuleException("Unknown rule");
         }
@@ -2804,5 +2580,769 @@ namespace LPS.ToolScript
 
 		#endregion
 
+		#region Templates for user overrided rules functions
+		/*
+		// <Stm> ::= if '(' <Expr> ')' <Stm>
+		protected override object RuleStmIfLparanRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Stm> ::= if '(' <Expr> ')' <Stm>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Stm> ::= if '(' <Expr> ')' <Then Stm> else <Stm>
+		protected override object RuleStmIfLparanRparanElse(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Stm> ::= if '(' <Expr> ')' <Then Stm> else <Stm>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Stm> ::= while '(' <Expr> ')' <Stm>
+		protected override object RuleStmWhileLparanRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Stm> ::= while '(' <Expr> ')' <Stm>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>
+		protected override object RuleStmForLparanSemiSemiRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Stm> ::= foreach '(' ID in <Expr> ')' <Stm>
+		protected override object RuleStmForeachLparanIdInRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Stm> ::= foreach '(' ID in <Expr> ')' <Stm>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Stm> ::= observed '(' <Expr> ')' <Stm>
+		protected override object RuleStmObservedLparanRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Stm> ::= observed '(' <Expr> ')' <Stm>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Stm> ::= using QualifiedName ';'
+		protected override object RuleStmUsingQualifiednameSemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Stm> ::= using QualifiedName ';'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Stm> ::= using QualifiedName from StringLiteral ';'
+		protected override object RuleStmUsingQualifiednameFromStringliteralSemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Stm> ::= using QualifiedName from StringLiteral ';'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Stm> ::= using QualifiedName as ID ';'
+		protected override object RuleStmUsingQualifiednameAsIdSemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Stm> ::= using QualifiedName as ID ';'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Stm> ::= using QualifiedName as ID from StringLiteral ';'
+		protected override object RuleStmUsingQualifiednameAsIdFromStringliteralSemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Stm> ::= using QualifiedName as ID from StringLiteral ';'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Stm> ::= <Normal Stm>
+		protected override object RuleStm(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Stm> ::= <Normal Stm>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Then Stm> ::= if '(' <Expr> ')' <Then Stm> else <Then Stm>
+		protected override object RuleThenstmIfLparanRparanElse(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Then Stm> ::= if '(' <Expr> ')' <Then Stm> else <Then Stm>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Then Stm> ::= while '(' <Expr> ')' <Then Stm>
+		protected override object RuleThenstmWhileLparanRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Then Stm> ::= while '(' <Expr> ')' <Then Stm>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Then Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Then Stm>
+		protected override object RuleThenstmForLparanSemiSemiRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Then Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Then Stm>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Then Stm> ::= <Normal Stm>
+		protected override object RuleThenstm(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Then Stm> ::= <Normal Stm>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Normal Stm> ::= do <Stm> while '(' <Expr> ')'
+		protected override object RuleNormalstmDoWhileLparanRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Normal Stm> ::= do <Stm> while '(' <Expr> ')'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Normal Stm> ::= switch '(' <Expr> ')' '{' <Case Stms> '}'
+		protected override object RuleNormalstmSwitchLparanRparanLbraceRbrace(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Normal Stm> ::= switch '(' <Expr> ')' '{' <Case Stms> '}'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Normal Stm> ::= <Block>
+		protected override object RuleNormalstm(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Normal Stm> ::= <Block>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Normal Stm> ::= <Expr> ';'
+		protected override object RuleNormalstmSemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Normal Stm> ::= <Expr> ';'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Normal Stm> ::= break ';'
+		protected override object RuleNormalstmBreakSemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Normal Stm> ::= break ';'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Normal Stm> ::= continue ';'
+		protected override object RuleNormalstmContinueSemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Normal Stm> ::= continue ';'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Normal Stm> ::= return <Expr> ';'
+		protected override object RuleNormalstmReturnSemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Normal Stm> ::= return <Expr> ';'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Normal Stm> ::= ';'
+		protected override object RuleNormalstmSemi2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Normal Stm> ::= ';'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Args> ::= <Expr> ',' <Args>
+		protected override object RuleArgsComma(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Args> ::= <Expr> ',' <Args>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Args> ::= <Expr>
+		protected override object RuleArgs(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Args> ::= <Expr>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Case Stms> ::= case <Value> ':' <Stm List> <Case Stms>
+		protected override object RuleCasestmsCaseColon(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Case Stms> ::= case <Value> ':' <Stm List> <Case Stms>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Case Stms> ::= default ':' <Stm List>
+		protected override object RuleCasestmsDefaultColon(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Case Stms> ::= default ':' <Stm List>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Case Stms> ::= 
+		protected override object RuleCasestms(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Case Stms> ::= ");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Block> ::= '{' <Stm List> '}'
+		protected override object RuleBlockLbraceRbrace(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Block> ::= '{' <Stm List> '}'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Stm List> ::= <Stm> <Stm List>
+		protected override object RuleStmlist(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Stm List> ::= <Stm> <Stm List>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Stm List> ::= 
+		protected override object RuleStmlist2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Stm List> ::= ");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Expr List> ::= <Expr List> ',' <Expr>
+		protected override object RuleExprlistComma(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Expr List> ::= <Expr List> ',' <Expr>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Expr List> ::= <Expr>
+		protected override object RuleExprlist(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Expr List> ::= <Expr>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Expr> ::= <Op If> '=' <Expr>
+		protected override object RuleExprEq(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Expr> ::= <Op If> '=' <Expr>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Expr> ::= <Op If> '+=' <Expr>
+		protected override object RuleExprPluseq(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Expr> ::= <Op If> '+=' <Expr>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Expr> ::= <Op If> '-=' <Expr>
+		protected override object RuleExprMinuseq(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Expr> ::= <Op If> '-=' <Expr>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Expr> ::= <Op If> '*=' <Expr>
+		protected override object RuleExprTimeseq(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Expr> ::= <Op If> '*=' <Expr>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Expr> ::= <Op If> '/=' <Expr>
+		protected override object RuleExprDiveq(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Expr> ::= <Op If> '/=' <Expr>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Expr> ::= <Op If> '<==' <Expr>
+		protected override object RuleExprLteqeq(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Expr> ::= <Op If> '<==' <Expr>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Expr> ::= <Op If> '<==>' <Expr>
+		protected override object RuleExprLteqeqgt(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Expr> ::= <Op If> '<==>' <Expr>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Expr> ::= <Op If>
+		protected override object RuleExpr(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Expr> ::= <Op If>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op If> ::= <Op Or> '?' <Op If> ':' <Op If>
+		protected override object RuleOpifQuestionColon(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op If> ::= <Op Or> '?' <Op If> ':' <Op If>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op If> ::= <Op Or>
+		protected override object RuleOpif(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op If> ::= <Op Or>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Or> ::= <Op Or> or <Op And>
+		protected override object RuleOporOr(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Or> ::= <Op Or> or <Op And>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Or> ::= <Op And>
+		protected override object RuleOpor(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Or> ::= <Op And>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op And> ::= <Op And> and <Op Equate>
+		protected override object RuleOpandAnd(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op And> ::= <Op And> and <Op Equate>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op And> ::= <Op Equate>
+		protected override object RuleOpand(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op And> ::= <Op Equate>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Equate> ::= <Op Equate> '==' <Op Compare>
+		protected override object RuleOpequateEqeq(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Equate> ::= <Op Equate> '==' <Op Compare>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Equate> ::= <Op Equate> '!=' <Op Compare>
+		protected override object RuleOpequateExclameq(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Equate> ::= <Op Equate> '!=' <Op Compare>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Equate> ::= <Op Compare>
+		protected override object RuleOpequate(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Equate> ::= <Op Compare>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Compare> ::= <Op Compare> '<' <Op In>
+		protected override object RuleOpcompareLt(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Compare> ::= <Op Compare> '<' <Op In>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Compare> ::= <Op Compare> '>' <Op In>
+		protected override object RuleOpcompareGt(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Compare> ::= <Op Compare> '>' <Op In>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Compare> ::= <Op Compare> '<=' <Op In>
+		protected override object RuleOpcompareLteq(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Compare> ::= <Op Compare> '<=' <Op In>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Compare> ::= <Op Compare> '>=' <Op In>
+		protected override object RuleOpcompareGteq(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Compare> ::= <Op Compare> '>=' <Op In>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Compare> ::= <Op In>
+		protected override object RuleOpcompare(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Compare> ::= <Op In>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op In> ::= <Op In> in <Op Add>
+		protected override object RuleOpinIn(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op In> ::= <Op In> in <Op Add>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op In> ::= <Op Add>
+		protected override object RuleOpin(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op In> ::= <Op Add>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Add> ::= <Op Add> '+' <Op Mult>
+		protected override object RuleOpaddPlus(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Add> ::= <Op Add> '+' <Op Mult>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Add> ::= <Op Add> '-' <Op Mult>
+		protected override object RuleOpaddMinus(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Add> ::= <Op Add> '-' <Op Mult>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Add> ::= <Op Mult>
+		protected override object RuleOpadd(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Add> ::= <Op Mult>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Mult> ::= <Op Mult> '*' <Op Unary>
+		protected override object RuleOpmultTimes(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Mult> ::= <Op Mult> '*' <Op Unary>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Mult> ::= <Op Mult> '/' <Op Unary>
+		protected override object RuleOpmultDiv(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Mult> ::= <Op Mult> '/' <Op Unary>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Mult> ::= <Op Mult> '%' <Op Unary>
+		protected override object RuleOpmultPercent(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Mult> ::= <Op Mult> '%' <Op Unary>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Mult> ::= <Op Unary>
+		protected override object RuleOpmult(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Mult> ::= <Op Unary>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Unary> ::= not <Op Unary>
+		protected override object RuleOpunaryNot(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Unary> ::= not <Op Unary>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Unary> ::= '-' <Op Unary>
+		protected override object RuleOpunaryMinus(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Unary> ::= '-' <Op Unary>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Unary> ::= cast <Op Unary> as ID
+		protected override object RuleOpunaryCastAsId(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Unary> ::= cast <Op Unary> as ID");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Unary> ::= cast <Op Unary> as QualifiedName
+		protected override object RuleOpunaryCastAsQualifiedname(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Unary> ::= cast <Op Unary> as QualifiedName");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Unary> ::= '++' <Op Unary>
+		protected override object RuleOpunaryPlusplus(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Unary> ::= '++' <Op Unary>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Unary> ::= -- <Op Unary>
+		protected override object RuleOpunaryMinusminus(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Unary> ::= -- <Op Unary>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Unary> ::= <Op Pointer> '++'
+		protected override object RuleOpunaryPlusplus2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Unary> ::= <Op Pointer> '++'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Unary> ::= <Op Pointer> --
+		protected override object RuleOpunaryMinusminus2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Unary> ::= <Op Pointer> --");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Unary> ::= <Op Pointer> is null
+		protected override object RuleOpunaryIsNull(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Unary> ::= <Op Pointer> is null");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Unary> ::= <Op Pointer> not null
+		protected override object RuleOpunaryNotNull(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Unary> ::= <Op Pointer> not null");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Unary> ::= <Op Pointer> is not null
+		protected override object RuleOpunaryIsNotNull(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Unary> ::= <Op Pointer> is not null");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Unary> ::= <Op Pointer>
+		protected override object RuleOpunary(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Unary> ::= <Op Pointer>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Pointer> ::= <Op Pointer> '.' <Value>
+		protected override object RuleOppointerDot(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Pointer> ::= <Op Pointer> '.' <Value>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Pointer> ::= <Op Pointer> '->' <Value>
+		protected override object RuleOppointerMinusgt(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Pointer> ::= <Op Pointer> '->' <Value>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Pointer> ::= <Op Pointer> '[' <Expr> ']'
+		protected override object RuleOppointerLbracketRbracket(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Pointer> ::= <Op Pointer> '[' <Expr> ']'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Op Pointer> ::= <Value>
+		protected override object RuleOppointer(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Pointer> ::= <Value>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Value> ::= IntLiteral
+		protected override object RuleValueIntliteral(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= IntLiteral");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Value> ::= StringLiteral
+		protected override object RuleValueStringliteral(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= StringLiteral");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Value> ::= DecimalLiteral
+		protected override object RuleValueDecimalliteral(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= DecimalLiteral");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Value> ::= type ID
+		protected override object RuleValueTypeId(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= type ID");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Value> ::= type QualifiedName
+		protected override object RuleValueTypeQualifiedname(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= type QualifiedName");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Value> ::= QualifiedName '(' <Args> ')'
+		protected override object RuleValueQualifiednameLparanRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= QualifiedName '(' <Args> ')'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Value> ::= QualifiedName '(' ')'
+		protected override object RuleValueQualifiednameLparanRparan2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= QualifiedName '(' ')'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Value> ::= ID '(' <Args> ')'
+		protected override object RuleValueIdLparanRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= ID '(' <Args> ')'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Value> ::= ID '(' ')'
+		protected override object RuleValueIdLparanRparan2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= ID '(' ')'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Value> ::= ID
+		protected override object RuleValueId(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= ID");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Value> ::= '(' <Expr> ')'
+		protected override object RuleValueLparanRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= '(' <Expr> ')'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Value> ::= '{' <Expr List> '}'
+		protected override object RuleValueLbraceRbrace(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= '{' <Expr List> '}'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Value> ::= null
+		protected override object RuleValueNull(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= null");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Value> ::= true
+		protected override object RuleValueTrue(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= true");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Value> ::= false
+		protected override object RuleValueFalse(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= false");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		*/
+		#endregion
     }
 }

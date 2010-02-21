@@ -1,5 +1,6 @@
 using System;
 using LPS.ToolScript.Tokens;
+using System.Collections.Generic;
 
 namespace LPS.ToolScript.Test
 {
@@ -20,14 +21,40 @@ namespace LPS.ToolScript.Test
 
 		}
 
+		public static void ParseAndDisplay(string code)
+		{
+			try
+			{
+				Console.WriteLine("==============================");
+				Console.WriteLine("Parsing: {0}", code);
+				ToolScriptParser p = new ToolScriptParser();
+				List<IStatement> result = p.Parse(code);
+				Context context = Context.CreateRootContext();
+				foreach(IStatement statement in result)
+				{
+					Console.WriteLine(statement.GetType());
+					if(statement is IExpression)
+						Console.WriteLine(((IExpression)statement).Eval(context));
+					else
+						statement.Run(context);
+				}
+			}
+			catch(Exception err)
+			{
+				Console.WriteLine(err);
+			}
+		}
+
 		public static void Main(string[] args)
 		{
-			ToolScriptParser p = new ToolScriptParser();
+			Log.Add(new TextLogger(Console.Out, Verbosity.Debug));
 
-			Console.WriteLine("Parsing:");
-			object result = p.Parse("\"Ahojda!\"; // funkce(parametr, 1, 2.2, 'Ahojda');");
-			//Console.WriteLine("Executing:");
-			WriteVar(result);
+			ParseAndDisplay("\"Ahojda!\";");
+			ParseAndDisplay("\"Druhý text ěščřžýáíé!\";");
+			ParseAndDisplay("1234.56789;");
+			ParseAndDisplay("55667; \"Ahojda\"; null; true; false;");
+			ParseAndDisplay("promenna = 123; promenna;");
+			ParseAndDisplay("Format(\"Ahojda {0}\", \"svete!\");");
 		}
 	}
 }

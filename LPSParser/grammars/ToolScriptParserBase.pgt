@@ -7,20 +7,18 @@
 Sablona ToolScriptParserBase.cs
 ##END-NOTES
 ##ID-CASE ProperCase
-using com.calitha.commons;
 using com.calitha.goldparser;
-using com.calitha.goldparser.lalr;
+using LPS.ToolScript.Tokens;
 using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using System.Runtime.Serialization;
-using LPS.ToolScript.Tokens;
+using System.Text;
 
 namespace LPS.ToolScript
 {
 
-    /// <sumarry>Symboly</summary>
+    /// <sumarry>Symboly terminalu a neterminalu</summary>
     public enum Symbols : int
     {
 		#region Terminaly
@@ -45,8 +43,8 @@ namespace LPS.ToolScript
         Rule%ID% = ToolScriptParserBase.RulesOffset + %Value%%Delimiter%
 
 ##END-RULES
+	    #endregion
     };
-    #endregion
 
 	#region ToolScriptParserBase
     public abstract class ToolScriptParserBase
@@ -71,15 +69,26 @@ namespace LPS.ToolScript
             parser.OnParseError += new LALRParser.ParseErrorHandler(ParseErrorEvent);
         }
 
-        public virtual object Parse(string source)
+        public virtual List<IStatement> Parse(string source)
         {
             NonterminalToken token = parser.Parse(source);
             if (token == null)
 	            return null;
-	        return CreateObject(token);
+	        return CreateObject(token) as List<IStatement>;
         }
 
-        protected virtual object CreateObject(Token token)
+		protected bool IsRule(NonterminalToken token, params Symbols[] symbols)
+		{
+			return NonterminalBase.IsRule(token, symbols);
+		}
+
+		protected void CheckRule(NonterminalToken token, params Symbols[] symbols)
+		{
+			if(!IsRule(token, symbols))
+				throw new Exception("Nesprávné pravidlo");
+		}
+
+        public virtual object CreateObject(Token token)
         {
             if (token is TerminalToken)
                 return CreateObjectFromTerminal((TerminalToken)token);
@@ -87,61 +96,64 @@ namespace LPS.ToolScript
                 return CreateObjectFromNonterminal((NonterminalToken)token);
         }
 
+		public static Symbols GetSymbol(Token tok)
+		{
+			if(tok is TerminalToken)
+				return (Symbols)(((TerminalToken)tok).Symbol.Id);
+			else
+				return (Symbols)(((NonterminalToken)tok).Rule.Id + ToolScriptParserBase.RulesOffset);
+		}
+
 		#region ToolScriptParserBase.Symboly
 ##SYMBOLS
-        /// <summary>
-        /// <para>Symbol: %Name.XML%</para>
-        /// <para><c>%Description.XML%</c></para>
-        /// </summary>
-        protected virtual object CreateTerminal%ID%(TerminalToken token)
-        {
-        	return token;
-        }
+		/// <summary>
+		/// <para>Symbol: %Name.XML%</para>
+		/// <para><c>%Description.XML%</c></para>
+		/// </summary>
+		protected virtual object Terminal%ID%(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol %Name%");
+		}
 
 ##END-SYMBOLS
 		#endregion
 
-        protected virtual object CreateObjectFromTerminal(TerminalToken token)
+        public virtual object CreateObjectFromTerminal(TerminalToken token)
         {
             switch (token.Symbol.Id)
             {
 ##SYMBOLS
                 case (int)Symbols.%ID%: //%Description%
-                	return CreateTerminal%ID%(token);
+                	return Terminal%ID%(token);
 
 ##END-SYMBOLS
             }
             throw new SymbolException("Unknown symbol");
         }
 
+		public string TokenSymbolsToString(params Token[] tokens)
+		{
+			StringBuilder sb = new StringBuilder();
+			foreach(Token tok in tokens)
+				sb.Append(GetSymbol(tok)).Append(" ");
+			return sb.ToString();
+		}
+
 		#region ToolScriptParserBase.Pravidla
 ##RULES
-        /// <summary>
-        /// <para>Pravidlo: %Name.XML%</para>
-        /// <para><c>%Description.XML%</c></para>
-        /// </summary>
-        protected virtual object CreateNonterminal%ID%(NonterminalToken token)
-        {
-        	if(token.Tokens.Length == 0)
-        		return null;
-        	if(token.Tokens.Length == 1)
-	        	return CreateObject(token.Tokens[0]);
-        	ArrayList result = new ArrayList();
-        	foreach(Token tok in token.Tokens)
-        		result.Add(CreateObject(tok));
-        	return result.ToArray();
-        }
-        
+        protected abstract object Rule%ID%(NonterminalToken token); // %Description%
 ##END-RULES
+
+
 		#endregion
 
-        protected virtual object CreateObjectFromNonterminal(NonterminalToken token)
+        public virtual object CreateObjectFromNonterminal(NonterminalToken token)
         {
             switch (token.Rule.Id + ToolScriptParserBase.RulesOffset)
             {
 ##RULES
                 case (int)Symbols.Rule%ID%: //%Description%
-                	return CreateNonterminal%ID%(token);
+                	return Rule%ID%(token);
 ##END-RULES
             }
             throw new RuleException("Unknown rule");
@@ -161,5 +173,19 @@ namespace LPS.ToolScript
 
 		#endregion
 
+		#region Templates for user overrided rules functions
+		/*
+##RULES
+		// %Description%
+		protected override object Rule%ID%(NonterminalToken token)
+		{
+			throw new NotImplementedException("%Description%");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+##END-RULES
+		*/
+		#endregion
     }
 }

@@ -65,7 +65,7 @@ namespace LPS.Util
 			StringBuilder buider = new StringBuilder();
 			using(StringWriter writer = new StringWriter(buider))
 			{
-				commands.Execute(cmd, writer);
+				commands.Execute(cmd, writer, writer, writer);
 			}
 			string output = buider.ToString().Trim();
 			if(output != "")

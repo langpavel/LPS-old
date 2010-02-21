@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using System.IO;
 using System.Collections.Generic;
+using LPS.Client;
 
 namespace LPS.Util
 {
@@ -22,13 +23,10 @@ namespace LPS.Util
 			get { return "zobrazí tabulky v databázi, přepínač missing a mismod"; }
 		}
 
-		public static string[] GetSqlTableNames()
+		public string[] GetSqlTableNames(ServerConnection conn)
 		{
-			if(CommandConsumer.Connection == null)
-				throw new Exception("login required");
-
 			List<string> tables = new List<string>();
-			using(DataSet ds = CommandConsumer.Connection.GetDataSetBySql(@"
+			using(DataSet ds = conn.GetDataSetBySql(@"
 				select distinct table_name from information_schema.columns where table_schema = 'public'"))
 			{
 				foreach(DataRow r in ds.Tables[0].Rows)
@@ -40,30 +38,33 @@ namespace LPS.Util
 
 		public override object Execute(TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
-			List<string> tablenames = new List<string>(GetSqlTableNames());
-			if(argline == "missing")
+			ServerConnection conn = Commands.GetVar<ServerConnection>("ServerConnection");
+			List<string> tablenames = new List<string>(GetSqlTableNames(conn));
+			if(Get<string>(ref Params, 0) == "missing")
 			{
 				foreach(string table in tablenames.ToArray())
 				{
 					try
 					{
-						if(CommandConsumer.Connection.Resources.GetTableInfo(table) != null)
+						if(conn.Resources.GetTableInfo(table) != null)
 						{
 							tablenames.Remove(table);
 						}
 					}
 					catch
-					{ }
+					{
+					}
 				}
 			}
-			else if(argline == "mismod")
+			else if(Get<string>(ref Params, 0) == "mismod")
 			{
-				ModulesTreeInfo root = CommandConsumer.Connection.Resources.GetModulesInfo("root");
+				ModulesTreeInfo root = conn.Resources.GetModulesInfo("root");
 				RemoveByModuleInfo(tablenames, root);
 			}
 
 			foreach(string table in tablenames)
-				output.WriteLine(table);
+				Out.WriteLine(table);
+			return tablenames.ToArray();
 		}
 
 		private void RemoveByModuleInfo(List<String> tablenames, ModulesTreeInfo module)

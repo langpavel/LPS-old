@@ -17,12 +17,42 @@ namespace LPS.Util
 			vars = new Dictionary<string, object>();
 		}
 
+		public ICommand FindCommand(string name)
+		{
+			foreach(ICommand cmd in Commands)
+			{
+				if(cmd.Name == name)
+					return cmd;
+			}
+			return null;
+		}
+
+		public void SetVar(string name, object value)
+		{
+			vars[name] = value;
+		}
+
 		public object GetVar(string name)
 		{
 			object result;
 			if(!vars.TryGetValue(name, out result))
 				throw new ApplicationException("Proměnná se jménem '"+name+"' nenalezena");
 			return result;
+		}
+
+		public bool TryGetVar<T>(string name, out T value)
+		{
+			object result = null;
+			if(vars.TryGetValue(name, out result))
+			{
+				value = (T)result;
+				return true;
+			}
+			else
+			{
+				value = default(T);
+				return false;
+			}
 		}
 
 		public T GetVar<T>(string name)
@@ -53,37 +83,35 @@ namespace LPS.Util
 			return null;
 		}
 
-		public void Execute(string cmdline, TextWriter output)
+		public void Execute(string cmdname, TextWriter Out, TextWriter Info, TextWriter Err, params object[] Params)
 		{
-			string[] line_bits = cmdline.Split(new char[] {' ','(',',',';'}, 2, StringSplitOptions.RemoveEmptyEntries);
-			ICommand cmd;
-			if(Commands.TryGetValue(line_bits[0], out cmd))
+			ICommand cmd = FindCommand(cmdname);
+			if(cmd != null)
 			{
 				try
 				{
-					if(line_bits.Length == 1)
-						cmd.Execute(this, line_bits[0], "", output);
-					else
-						cmd.Execute(this, line_bits[0], line_bits[1], output);
+					cmd.Execute(Out, Info, Err, Params);
 				}
 				catch(Exception err)
 				{
-					Log.Error("Příkaz '{0}' vyvolal vyjímku {1}", line_bits[0], err);
+					Err.WriteLine(err);
+					Log.Error("Příkaz '{0}' vyvolal vyjímku {1}", cmdname, err);
 				}
 			}
 			else
 			{
-				Log.Error("Příkaz nenalezen: '{0}'", line_bits[0]);
+				Log.Error("Příkaz nenalezen: '{0}'", cmdname);
 			}
 		}
 
 		public virtual void Dispose()
 		{
-			if(Connection != null)
+			foreach(IDisposable obj in this.vars.Values)
 			{
-				Connection.Dispose();
-				Connection = null;
+				if(obj != null)
+					obj.Dispose();
 			}
+			this.vars.Clear();
 		}
 	}
 }

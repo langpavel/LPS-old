@@ -3,7 +3,7 @@ using com.calitha.goldparser;
 
 namespace LPS.ToolScript.Tokens
 {
-	public abstract class TokenBase
+	public abstract class TokenBase : IStatement
 	{
 		public TokenBase(Token token)
 		{
@@ -29,6 +29,13 @@ namespace LPS.ToolScript.Tokens
 		public override string ToString ()
 		{
 			return this.Token.ToString();
+		}
+
+		public virtual void Run(Context context)
+		{
+			IExpression expr = this as IExpression;
+			if(expr != null)
+				expr.Eval(context);
 		}
 	}
 }

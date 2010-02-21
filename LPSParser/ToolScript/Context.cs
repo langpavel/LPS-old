@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace LPS.ToolScript
 {
-	public sealed class Context
+	public sealed class Context : IDisposable
 	{
 		public Context GlobalContext { get; private set; }
 		public Context ParentContext { get; private set; }
@@ -12,7 +12,7 @@ namespace LPS.ToolScript
 
 		private Context(Context ParentContext, Context GlobalContext)
 		{
-			this.GlobalContext = GlobalContext;
+			this.GlobalContext = GlobalContext ?? this;
 			this.ParentContext = ParentContext;
 			variables = new Dictionary<string, object>();
 		}
@@ -76,6 +76,11 @@ namespace LPS.ToolScript
 			}
 			else
 				throw new InvalidOperationException("Funkce "+name+" nenalezena");
+		}
+
+		public void Dispose()
+		{
+			this.variables.Clear();
 		}
 	}
 }

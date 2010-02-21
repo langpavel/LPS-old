@@ -18,7 +18,7 @@ namespace LPS.Util
 
 		public override object Execute (TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
-			ServerConnection conn = Commands.Get<ServerConnection>("ServerConnection");
+			ServerConnection conn = Commands.GetVar<ServerConnection>("ServerConnection");
 			if(conn.Ping())
 			{
 				Info.WriteLine("Ping OK");

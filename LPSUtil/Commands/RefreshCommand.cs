@@ -25,6 +25,7 @@ namespace LPS.Util
 		{
 			Commands.GetVar<ServerConnection>("ServerConnection").Resources.FlushModulesInfo();
 			Info.WriteLine("FlushModulesInfo: OK");
+			return true;
 		}
 	}
 }
