@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using LPS.ToolScript.Parser;
 
 namespace LPS.ToolScript
 {
@@ -9,23 +10,34 @@ namespace LPS.ToolScript
 		public Context GlobalContext { get; private set; }
 		public Context ParentContext { get; private set; }
 
+		/// <summary>
+		/// Parser is user for evaluating eval function
+		/// </summary>
+		public ToolScriptParser Parser { get; set; }
+
 		private Dictionary<string, object> variables;
 
-		private Context(Context ParentContext, Context GlobalContext)
+		private Context(Context ParentContext, Context GlobalContext, ToolScriptParser Parser)
 		{
 			this.GlobalContext = GlobalContext ?? this;
 			this.ParentContext = ParentContext;
+			this.Parser = Parser;
 			variables = new Dictionary<string, object>();
 		}
 
 		public static Context CreateRootContext()
 		{
-			return new Context(null, null);
+			return new Context(null, null, null);
+		}
+
+		public static Context CreateRootContext(ToolScriptParser parser)
+		{
+			return new Context(null, null, parser);
 		}
 
 		public Context CreateChildContext()
 		{
-			return new Context(this, this.GlobalContext ?? this);
+			return new Context(this, this.GlobalContext ?? this, Parser);
 		}
 
 		private bool TryGetVariable(string name, out object val)
@@ -84,8 +96,39 @@ namespace LPS.ToolScript
 				}
 				return null;
 			}
+			else if(name == "eval")
+			{
+				if(args.Length != 1 || !(args[0] is string))
+					throw new InvalidOperationException("pro eval() je pozadovan jeden parametr typu string");
+				return Eval((string)args[0]);
+			}
 			else
 				throw new InvalidOperationException("Funkce "+name+" nenalezena");
+		}
+
+		public object Eval(string code)
+		{
+			if(Parser == null)
+				throw new Exception("Parser must be assigned while executing evals");
+			code = code.Trim().TrimEnd(';') + ';';
+			StatementList list = this.Parser.Parse(code);
+			if(list == null)
+				throw new Exception("Parse errror: Output is null");
+			if(list.Count == 1 && (list[0] is IExpression))
+				return ((IExpression)list[0]).Eval(this);
+			else
+			{
+				try
+				{
+					list.Run(this);
+				}
+				catch(IterationTermination info)
+				{
+					if(info.Reason == TerminationReason.Return)
+						return info.ReturnValue;
+				}
+			}
+			return SpecialValue.Void;
 		}
 
 		public void Dispose()

@@ -13,7 +13,7 @@ namespace LPS.ToolScript
 			StatementList result = parser.Parse(prog);
 			if(result == null)
 				throw new Exception(String.Format("Parse err: {0}", prog));
-			return result.Run();
+			return result.Run(parser);
 		}
 
 		[Test]
@@ -186,6 +186,13 @@ namespace LPS.ToolScript
 			Eq(new object[] {  1,  1 }, "var i = 0; return {++i, i};");
 			Eq(new object[] {  0, -1 }, "var i = 0; return {i--, i};");
 			Eq(new object[] { -1, -1 }, "var i = 0; return {--i, i};");
+		}
+
+		[Test]
+		public void TestEval()
+		{
+			Eq("ocekavane", "return eval(\"'ocekavane'\");");
+			Eq(1+1, "return eval('1+1');");
 		}
 
 	}

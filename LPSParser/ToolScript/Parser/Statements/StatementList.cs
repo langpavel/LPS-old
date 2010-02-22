@@ -18,16 +18,16 @@ namespace LPS.ToolScript
 			}
 		}
 
-		public object Run()
+		public object Run(ToolScriptParser parser)
 		{
-			Context context = Context.CreateRootContext();
+			Context context = Context.CreateRootContext(parser);
 			try
 			{
 				foreach(IStatement s in this)
 				{
 					s.Run(context);
 				}
-				return null;
+				return SpecialValue.Void;
 			}
 			catch(IterationTermination info)
 			{

@@ -35,7 +35,7 @@ namespace LPS.ToolScript.Test
 				Console.WriteLine("============================================================");
 				Console.WriteLine("Test: {0}", code);
 				StatementList result = parser.Parse(code);
-				object o = result.Run();
+				object o = result.Run(parser);
 				if(o != null)
 					Console.WriteLine("Result: {0}: {1}", o.GetType().Name, o);
 				else

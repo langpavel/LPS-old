@@ -2873,13 +2873,13 @@ namespace LPS.ToolScript
         private void TokenErrorEvent(LALRParser parser, TokenErrorEventArgs args)
         {
             string message = "Token error with input: '"+args.Token.ToString()+"'";
-            Log.Error(message);
+            throw new Exception(message);
         }
 
         private void ParseErrorEvent(LALRParser parser, ParseErrorEventArgs args)
         {
             string message = "Parse error caused by token: '"+args.UnexpectedToken.ToString()+"'";
-            Log.Error(message);
+            throw new Exception(message);
         }
 
 		#endregion

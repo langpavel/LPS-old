@@ -11,6 +11,13 @@ namespace LPS.ToolScript
 {
     public class ToolScriptParser : ToolScriptParserBase
     {
+
+		public object ParseAndRun(string source)
+		{
+			StatementList list = this.Parse(source);
+			return list.Run(this);
+		}
+
 		#region Terminaly
 		protected override object TerminalStringliteral (TerminalToken token)
 		{
