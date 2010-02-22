@@ -1,5 +1,5 @@
 using System;
-using LPS.ToolScript.Tokens;
+using LPS.ToolScript.Parser;
 using System.Collections.Generic;
 
 namespace LPS.ToolScript.Test
@@ -35,7 +35,12 @@ namespace LPS.ToolScript.Test
 				Console.WriteLine("============================================================");
 				Console.WriteLine("Test: {0}", code);
 				StatementList result = parser.Parse(code);
-				result.Run();
+				object o = result.Run();
+				if(o != null)
+					Console.WriteLine("Result: {0}: {1}", o.GetType().Name, o);
+				else
+					Console.WriteLine("No result");
+
 				/*
 				foreach(IStatement statement in result)
 				{
@@ -57,18 +62,23 @@ namespace LPS.ToolScript.Test
 		{
 			Log.Add(new TextLogger(Console.Out, Verbosity.Debug));
 
-			Test("\"Ahojda!\";");
-			Test("\"Druhý text ěščřžýáíé!\";");
-			Test("1234.56789;");
-			Test("55667; \"Ahojda\"; null; true; false;");
-			Test("promenna = 123; promenna;");
-			Test("Format(\"Ahojda {0}\", \"svete!\");");
-			Test("if(null) 123; else 456;");
+			//Test("\"Ahojda!\";");
+			//Test("\"Druhý text ěščřžýáíé!\";");
+			//Test("1234.56789;");
+			//Test("55667; \"Ahojda\"; null; true; false;");
+			//Test("promenna = 123; promenna;");
+			//Test("Format(\"Ahojda {0}\", \"svete!\");");
+			//Test("if(null) 123; else 456;");
+			//Test(@"for(var i=1;i<3;i++) for(var j=1;j<3;j++) { Print('Iterace {0}:{1}', i+1, j+1); }");
 
-			Test(@"if(true) 1;");
-			Test(@"if(true) 1; else 2;");
-			Test(@"if(true) if(true) 1; else 2; else if(true) 3; else 4;");
-			Test(@"for(var i=1;i<3;i++) for(var j=1;j<3;i++) { Print('Iterace {0}:{1}', i+1, j+1); }");
+			Test(@"return 'Return works?';");
+			Test(@"if(true) return 'If works?';");
+			Test(@"if(false) return 'Oops'; return 'If - else works?';");
+			//Test(@"if(1==2) return 'Error'; else return 'OK';");
+			//Test(@"if(1>2) return 'Error'; else return 'OK';");
+			//Test(@"if(1>=2) return 'Error'; else return 'OK';");
+			//Test(@"if(2<1) return 'Error'; else return 'OK';");
+			//Test(@"if(2<=1) return 'Error'; else return 'OK';");
 
 /*
 			Test(@"<Stm> ::= foreach '(' ID in <Expr> ')' <Stm>");

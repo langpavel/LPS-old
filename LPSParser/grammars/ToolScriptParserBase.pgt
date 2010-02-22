@@ -8,7 +8,7 @@ Sablona ToolScriptParserBase.cs
 ##END-NOTES
 ##ID-CASE ProperCase
 using com.calitha.goldparser;
-using LPS.ToolScript.Tokens;
+using LPS.ToolScript.Parser;
 using System;
 using System.Collections.Generic;
 using System.IO;

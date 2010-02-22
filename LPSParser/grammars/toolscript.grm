@@ -22,6 +22,7 @@ ID				= {ID Head}{ID Tail}*
 QualifiedName	= ('global::')?{ID Head}{ID Tail}*('.'{ID Head}{ID Tail}*)+
 				| 'global::'{ID Head}{ID Tail}*
 
+
 StringLiteral	= '' ( {String Chars1} | '''' )* ''
 				| '"' ( {String Chars2} | '\' {Printable} )* '"'
 
@@ -45,13 +46,13 @@ Comment Line  = '//'
                	|	for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>
                	|	foreach '(' ID 'in' <Expr> ')' <Stm>
                	|	observed '(' <Expr> ')' <Stm>
-               	|	using QualifiedName ';'
-               	|	using QualifiedName from StringLiteral ';'
-               	|	using QualifiedName 'as' ID ';'
-               	|	using QualifiedName 'as' ID 'from' StringLiteral ';'
+               	|	using ID ';'						! import .NET nodule
+               	|	using QualifiedName ';'				! import .NET nodule
+               	|	using StringLiteral ';'				! open file
+               	|	using QualifiedName 'as' ID ';'		! Save with alias
                	|	<Normal Stm>
 
-<Then Stm>   	::=	if '(' <Expr> ')' <Then Stm> else <Then Stm> 
+<Then Stm>   	::=	if '(' <Expr> ')' <Then Stm> else <Then Stm>
                	|	while '(' <Expr> ')' <Then Stm> 
                	|	for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Then Stm>
                	|	<Normal Stm>
@@ -77,6 +78,19 @@ Comment Line  = '//'
 <Stm List>  	::=	<Stm> <Stm List>
               	| 
 
+! ===================================================================
+! Function support
+! ===================================================================
+
+<Function>		::=	'function' ID '(' <Param List> ')' <Stm>
+				|	'function' ID '(' ')' <Stm>
+				|	'function' '(' <Param List> ')' <Stm>
+				|	'function' '(' ')' <Stm>
+
+<Param List>	::=	<Param List> ',' <Param decl>
+				|	<Param decl>
+
+<Param decl>	::= ID
 
 ! ===================================================================
 ! Operator precedence
@@ -131,6 +145,7 @@ Comment Line  = '//'
                	|	<Op Unary>
 
 <Op Unary>   	::=	'not'  <Op Unary>
+				|	'!'    <Op Unary>
                	| 	'-'    <Op Unary>
               	|	'cast' <Op Unary> 'as' ID
               	|	'cast' <Op Unary> 'as' QualifiedName
@@ -153,12 +168,18 @@ Comment Line  = '//'
 				|	DecimalLiteral
 				|	'type' ID
 				|	'type' QualifiedName
-				|	QualifiedName '(' <Args> ')'
-				|	QualifiedName '(' ')'
 				|	ID '(' <Args> ')'
 				|	ID '(' ')'
+				|	<Function>
+				|	QualifiedName '(' <Args> ')'
+				|	QualifiedName '(' ')'
+				|	'new' ID '(' <Args> ')'
+				|	'new' ID '(' ')'
+				|	'new' QualifiedName '(' <Args> ')'
+				|	'new' QualifiedName '(' ')'
 				|	ID
 				|	'var' ID
+				|	'static' ID
 				|	'(' <Expr> ')'
 				|	'{' <Expr List> '}'
 				|	'null'

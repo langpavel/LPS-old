@@ -93,6 +93,12 @@ namespace LPS.ToolScript
 			this.variables.Clear();
 		}
 
+		public void InitVariable(string name)
+		{
+			if(!this.variables.ContainsKey(name))
+				this.variables[name] = SpecialValue.VariableNotSet;
+		}
+
 		public void InitVariable(string name, object val)
 		{
 			this.variables[name] = val;
@@ -103,13 +109,13 @@ namespace LPS.ToolScript
 			object result;
 			if(this.TryGetVariable(name, out result))
 				return result;
-			throw new Exception(String.Format("Proměnná {0} nebyla inicializována", name));
+			throw new VariableNotInitialized(name);
 		}
 
 		public void SetVariable(string name, object val)
 		{
 			if(!TrySetVariable(name, val))
-				throw new Exception(String.Format("Proměnná {0} nebyla inicializována", name));
+				throw new VariableNotInitialized(name);
 		}
 
 		public void UnsetVariable(string name)
