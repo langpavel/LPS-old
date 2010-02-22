@@ -75,34 +75,24 @@ namespace LPS.ToolScript
 			return ((TerminalToken)token.Tokens[index]).Text;
 		}
 
+		#region Rules
 
 		// <Stm> ::= if '(' <Expr> ')' <Stm>
 		protected override object RuleStmIfLparanRparan(NonterminalToken token)
 		{
-			//CheckRule(token, Symbols.If, Symbols.Lparan, Symbols.Expr, Symbols.Rparan, Symbols.Stm);
-			return new IfStatement(
-				(IExpression)CreateObject(token.Tokens[2]),
-			    (IStatement)CreateObject(token.Tokens[4]),
-				null);
+			return new IfStatement(Expr(token, 2), Statement(token, 4), null);
 		}
 
 		// <Stm> ::= if '(' <Expr> ')' <Then Stm> else <Stm>
 		protected override object RuleStmIfLparanRparanElse(NonterminalToken token)
 		{
-			//CheckRule(token, Symbols.If, Symbols.Lparan, Symbols.Expr, Symbols.Rparan, Symbols.Thenstm, Symbols.Else, Symbols.Stm);
-			return new IfStatement(
-				(IExpression)CreateObject(token.Tokens[2]),
-			    (IStatement)CreateObject(token.Tokens[4]),
-				(IStatement)CreateObject(token.Tokens[6]));
+			return new IfStatement(Expr(token, 2), Statement(token, 4), Statement(token, 6));
 		}
 
 		// <Stm> ::= while '(' <Expr> ')' <Stm>
 		protected override object RuleStmWhileLparanRparan(NonterminalToken token)
 		{
-			//CheckRule(token, Symbols.While, Symbols.Lparan, Symbols.Expr, Symbols.Rparan, Symbols.Expr);
-			return new WhileStatement(
-				(IExpression)CreateObject(token.Tokens[2]),
-			    (IStatement)CreateObject(token.Tokens[4]));
+			return new WhileStatement(Expr(token, 2), Statement(token, 4));
 		}
 
 		// <Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>
@@ -123,40 +113,30 @@ namespace LPS.ToolScript
 		protected override object RuleStmObservedLparanRparan(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Stm> ::= observed '(' <Expr> ')' <Stm>");
-			//CheckRule(token, Symbols);
-			//return new
 		}
 
 		// <Stm> ::= using ID ';'
 		protected override object RuleStmUsingIdSemi(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Stm> ::= using ID ';'");
-			//CheckRule(token, Symbols);
-			//return new
+			return new UsingStatement(TText(token, 1));
 		}
 
 		// <Stm> ::= using QualifiedName ';'
 		protected override object RuleStmUsingQualifiednameSemi(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Stm> ::= using QualifiedName ';'");
-			//CheckRule(token, Symbols);
-			//return new
+			return new UsingStatement(TText(token, 1));
 		}
 
 		// <Stm> ::= using QualifiedName as ID ';'
 		protected override object RuleStmUsingQualifiednameAsIdSemi(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Stm> ::= using QualifiedName as ID ';'");
-			//CheckRule(token, Symbols);
-			//return new
+			return new UsingStatement(TText(token, 1), TText(token, 3));
 		}
 
 		// <Stm> ::= using StringLiteral ';'
 		protected override object RuleStmUsingStringliteralSemi(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Stm> ::= using StringLiteral ';'");
-			//CheckRule(token, Symbols);
-			//return new
+			return new UsingStatement(StringLiteral.Parse(TText(token, 1)));
 		}
 
 		// <Stm> ::= <Normal Stm>
@@ -168,18 +148,13 @@ namespace LPS.ToolScript
 		// <Then Stm> ::= if '(' <Expr> ')' <Then Stm> else <Then Stm>
 		protected override object RuleThenstmIfLparanRparanElse(NonterminalToken token)
 		{
-			return new IfStatement(
-				(IExpression)CreateObject(token.Tokens[2]),
-			    (IStatement)CreateObject(token.Tokens[4]),
-				(IStatement)CreateObject(token.Tokens[6]));
+			return new IfStatement(Expr(token,2), Statement(token, 4),Statement(token, 6));
 		}
 
 		// <Then Stm> ::= while '(' <Expr> ')' <Then Stm>
 		protected override object RuleThenstmWhileLparanRparan(NonterminalToken token)
 		{
-			return new WhileStatement(
-				(IExpression)CreateObject(token.Tokens[2]),
-			    (IStatement)CreateObject(token.Tokens[4]));
+			return new WhileStatement(Expr(token, 2), Statement(token, 4));
 		}
 
 		// <Then Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Then Stm>
@@ -197,17 +172,13 @@ namespace LPS.ToolScript
 		// <Normal Stm> ::= do <Stm> while '(' <Expr> ')'
 		protected override object RuleNormalstmDoWhileLparanRparan(NonterminalToken token)
 		{
-			return new DoWhileStatement(
-			    (IStatement)CreateObject(token.Tokens[1]),
-				(IExpression)CreateObject(token.Tokens[4]));
+			return new DoWhileStatement(Statement(token, 1), Expr(token, 4));
 		}
 
 		// <Normal Stm> ::= switch '(' <Expr> ')' '{' <Case Stms> '}'
 		protected override object RuleNormalstmSwitchLparanRparanLbraceRbrace(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Normal Stm> ::= switch '(' <Expr> ')' '{' <Case Stms> '}'");
-			//CheckRule(token, Symbols);
-			//return new
 		}
 
 		// <Normal Stm> ::= <Block>
@@ -266,24 +237,18 @@ namespace LPS.ToolScript
 		protected override object RuleCasestmsCaseColon(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Case Stms> ::= case <Value> ':' <Stm List> <Case Stms>");
-			//CheckRule(token, Symbols);
-			//return new
 		}
 
 		// <Case Stms> ::= default ':' <Stm List>
 		protected override object RuleCasestmsDefaultColon(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Case Stms> ::= default ':' <Stm List>");
-			//CheckRule(token, Symbols);
-			//return new
 		}
 
 		// <Case Stms> ::= 
 		protected override object RuleCasestms(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Case Stms> ::= ");
-			//CheckRule(token, Symbols);
-			//return new
 		}
 
 		// <Block> ::= '{' <Stm List> '}'
@@ -309,57 +274,59 @@ namespace LPS.ToolScript
 		// <Function> ::= function ID '(' <Param List> ')' <Stm>
 		protected override object RuleFunctionFunctionIdLparanRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Function> ::= function ID '(' <Param List> ')' <Stm>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new FunctionExpression(
+				TText(token, 1),
+				(List<ParamDeclStatement>)CreateObject(token.Tokens[3]),
+				Statement(token, 5));
 		}
 
 		// <Function> ::= function ID '(' ')' <Stm>
 		protected override object RuleFunctionFunctionIdLparanRparan2(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Function> ::= function ID '(' ')' <Stm>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new FunctionExpression(
+				TText(token, 1),
+				null,
+				Statement(token, 4));
 		}
 
 		// <Function> ::= function '(' <Param List> ')' <Stm>
 		protected override object RuleFunctionFunctionLparanRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Function> ::= function '(' <Param List> ')' <Stm>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new FunctionExpression(
+				null,
+				(List<ParamDeclStatement>)CreateObject(token.Tokens[2]),
+				Statement(token, 4));
 		}
 
 		// <Function> ::= function '(' ')' <Stm>
 		protected override object RuleFunctionFunctionLparanRparan2(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Function> ::= function '(' ')' <Stm>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new FunctionExpression(
+				null,
+				null,
+				Statement(token, 3));
 		}
 
 		// <Param List> ::= <Param List> ',' <Param decl>
 		protected override object RuleParamlistComma(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Param List> ::= <Param List> ',' <Param decl>");
-			//CheckRule(token, Symbols);
-			//return new
+			List<ParamDeclStatement> list = (List<ParamDeclStatement>)CreateObject(token.Tokens[0]);
+			list.Add((ParamDeclStatement)CreateObject(token.Tokens[2]));
+			return list;
 		}
 
 		// <Param List> ::= <Param decl>
 		protected override object RuleParamlist(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Param List> ::= <Param decl>");
-			//CheckRule(token, Symbols);
-			//return new
+			List<ParamDeclStatement> list = new List<ParamDeclStatement>();
+			list.Add((ParamDeclStatement)CreateObject(token.Tokens[0]));
+			return list;
 		}
 
 		// <Param decl> ::= ID
 		protected override object RuleParamdeclId(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Param decl> ::= ID");
-			//CheckRule(token, Symbols);
-			//return new
+			return new ParamDeclStatement(TText(token, 0), null);
 		}
 
 		// <Expr List> ::= <Expr List> ',' <Expr>
@@ -751,9 +718,7 @@ namespace LPS.ToolScript
 		// <Value> ::= <Function>
 		protected override object RuleValue(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Value> ::= <Function>");
-			//CheckRule(token, Symbols);
-			//return new
+			return CreateObject(token.Tokens[0]);
 		}
 
 		// <Value> ::= QualifiedName '(' <Args> ')'
@@ -854,5 +819,213 @@ namespace LPS.ToolScript
 			return new BooleanLiteral(false);
 		}
 
+		#region Window support
+		// <Value> ::= <Window>
+		protected override object RuleValue2(NonterminalToken token)
+		{
+			return CreateObject(token.Tokens[0]);
+		}
+
+		// <Window> ::= window ID <WndParam List> <Layout Block>
+		protected override object RuleWindowWindowId(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Window> ::= window ID <WndParam List> <Layout Block>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Window> ::= window <WndParam List> <Layout Block>
+		protected override object RuleWindowWindow(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Window> ::= window <WndParam List> <Layout Block>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <WndParam List> ::= <WndParam> <WndParam List>
+		protected override object RuleWndparamlist(NonterminalToken token)
+		{
+			throw new NotImplementedException("<WndParam List> ::= <WndParam> <WndParam List>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <WndParam List> ::= 
+		protected override object RuleWndparamlist2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<WndParam List> ::= ");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <WndParam> ::= ID '=' <Expr> ';'
+		protected override object RuleWndparamIdEqSemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<WndParam> ::= ID '=' <Expr> ';'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Layout Block> ::= hbox <WndParam List> <Layout Block> end
+		protected override object RuleLayoutblockHboxEnd(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= hbox <WndParam List> <Layout Block> end");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Layout Block> ::= vbox <WndParam List> <Layout Block> end
+		protected override object RuleLayoutblockVboxEnd(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= vbox <WndParam List> <Layout Block> end");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Layout Block> ::= table <WndParam List> <TabRow Block> end
+		protected override object RuleLayoutblockTableEnd(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= table <WndParam List> <TabRow Block> end");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Layout Block> ::= table <WndParam List> <TabCol Block> end
+		protected override object RuleLayoutblockTableEnd2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= table <WndParam List> <TabCol Block> end");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Layout Block> ::= <Menu Block>
+		protected override object RuleLayoutblock(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= <Menu Block>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Layout Block> ::= ref ID <WndParam List>
+		protected override object RuleLayoutblockRefId(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= ref ID <WndParam List>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Layout Block> ::= ref QualifiedName <WndParam List>
+		protected override object RuleLayoutblockRefQualifiedname(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= ref QualifiedName <WndParam List>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Layout Block> ::= ref StringLiteral <WndParam List>
+		protected override object RuleLayoutblockRefStringliteral(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= ref StringLiteral <WndParam List>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Layout Block> ::= '[' <Expr> ']' <WndParam List>
+		protected override object RuleLayoutblockLbracketRbracket(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= '[' <Expr> ']' <WndParam List>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <TabRow Block> ::= row <WndParam List> <Tab Cells> end
+		protected override object RuleTabrowblockRowEnd(NonterminalToken token)
+		{
+			throw new NotImplementedException("<TabRow Block> ::= row <WndParam List> <Tab Cells> end");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <TabCol Block> ::= column <WndParam List> <Tab Cells> end
+		protected override object RuleTabcolblockColumnEnd(NonterminalToken token)
+		{
+			throw new NotImplementedException("<TabCol Block> ::= column <WndParam List> <Tab Cells> end");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Tab Cells> ::= <Tab Cells> <Tab Cell>
+		protected override object RuleTabcells(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Tab Cells> ::= <Tab Cells> <Tab Cell>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Tab Cells> ::= 
+		protected override object RuleTabcells2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Tab Cells> ::= ");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Tab Cell> ::= <Layout Block>
+		protected override object RuleTabcell(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Tab Cell> ::= <Layout Block>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Menu Block> ::= menu <WndParam List> <MenuItems List> end
+		protected override object RuleMenublockMenuEnd(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Menu Block> ::= menu <WndParam List> <MenuItems List> end");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <MenuItems List> ::= <Menu Item> <MenuItems List>
+		protected override object RuleMenuitemslist(NonterminalToken token)
+		{
+			throw new NotImplementedException("<MenuItems List> ::= <Menu Item> <MenuItems List>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <MenuItems List> ::= 
+		protected override object RuleMenuitemslist2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<MenuItems List> ::= ");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Menu Item> ::= <Menu Block>
+		protected override object RuleMenuitem(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Menu Item> ::= <Menu Block>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Menu Item> ::= item <WndParam List>
+		protected override object RuleMenuitemItem(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Menu Item> ::= item <WndParam List>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Menu Item> ::= separator
+		protected override object RuleMenuitemSeparator(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Menu Item> ::= separator");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+		#endregion
+		#endregion
     }
 }

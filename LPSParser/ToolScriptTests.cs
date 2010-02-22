@@ -192,7 +192,19 @@ namespace LPS.ToolScript
 		public void TestEval()
 		{
 			Eq("ocekavane", "return eval(\"'ocekavane'\");");
-			Eq(1+1, "return eval('1+1');");
+			Eq(2, "return eval('1+1');");
+		}
+
+		[Test]
+		public void TestFunction()
+		{
+			Eq("z funkce ! :-)", @"
+				function ff(val)
+				{
+					return val;
+				};
+				return ff('z funkce ! ') + ff(':-)');
+			");
 		}
 
 	}

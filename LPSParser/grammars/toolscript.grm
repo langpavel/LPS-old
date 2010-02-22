@@ -93,6 +93,45 @@ Comment Line  = '//'
 <Param decl>	::= ID
 
 ! ===================================================================
+! Window support
+! ===================================================================
+
+<Window>		::=	'window' ID <WndParam List> <Layout Block>
+				|	'window' <WndParam List> <Layout Block>
+
+<WndParam List>	::=	<WndParam> <WndParam List>	! if switched shift-reduce
+				|
+
+<WndParam>		::= ID '=' <Expr> ';'
+
+<Layout Block>	::= 'hbox'  <WndParam List> <Layout Block> 'end'
+				|	'vbox'  <WndParam List> <Layout Block> 'end'
+				|	'table' <WndParam List> <TabRow Block> 'end'
+				|	'table' <WndParam List> <TabCol Block> 'end'
+				|	<Menu Block>
+				|	'ref' ID 			<WndParam List>
+				|	'ref' QualifiedName	<WndParam List>
+				|	'ref' StringLiteral	<WndParam List>
+				|	'[' <Expr> ']' <WndParam List>
+
+<TabRow Block>	::=	'row' <WndParam List> <Tab Cells> 'end'
+<TabCol Block>	::=	'column' <WndParam List> <Tab Cells> 'end'
+
+<Tab Cells>		::= <Tab Cells> <Tab Cell>
+				|
+
+<Tab Cell>		::= <Layout Block>
+
+<Menu Block>	::=	'menu' <WndParam List> <MenuItems List> 'end'
+
+<MenuItems List> ::= <Menu Item> <MenuItems List>
+				|
+
+<Menu Item>		::= <Menu Block>
+				|	'item' <WndParam List>
+				|	'separator'
+
+! ===================================================================
 ! Operator precedence
 ! ===================================================================
 
@@ -171,6 +210,7 @@ Comment Line  = '//'
 				|	ID '(' <Args> ')'
 				|	ID '(' ')'
 				|	<Function>
+				|	<Window>
 				|	QualifiedName '(' <Args> ')'
 				|	QualifiedName '(' ')'
 				|	'new' ID '(' <Args> ')'

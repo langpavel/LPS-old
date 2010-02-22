@@ -89,6 +89,11 @@
     <Compile Include="ToolScript\Parser\Expressions\Unary\UnaryMinusExpression.cs" />
     <Compile Include="ToolScript\Parser\Statements\StatementList.cs" />
     <Compile Include="ToolScript\Parser\Expressions\TernaryOperatorExpression.cs" />
+    <Compile Include="ToolScript\Parser\Statements\UsingStatement.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\FunctionExpression.cs" />
+    <Compile Include="ToolScript\Parser\Interfaces\IFunction.cs" />
+    <Compile Include="ToolScript\Parser\Statements\ParamDeclStatement.cs" />
+    <Compile Include="ToolScript\Parser\Statements\NamedArgument.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />

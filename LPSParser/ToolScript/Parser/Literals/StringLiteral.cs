@@ -8,8 +8,7 @@ namespace LPS.ToolScript.Parser
 		private string val;
 		public StringLiteral(TerminalToken token)
 		{
-			val = token.Text;
-			val = val.Substring(1, val.Length - 2);
+			this.val = Parse(token.Text);
 		}
 
 		public override object Eval(Context context)
@@ -30,6 +29,14 @@ namespace LPS.ToolScript.Parser
 		public override bool EvalAsBool(Context context)
 		{
 			throw new Exception("Nelze vyhodnotit string jako boolean");
+		}
+
+		/// <summary>
+		/// remove quotes etc...
+		/// </summary>
+		public static string Parse(string code)
+		{
+			return code.Substring(1, code.Length - 2);
 		}
 	}
 }

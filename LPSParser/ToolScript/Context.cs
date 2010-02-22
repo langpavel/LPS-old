@@ -64,6 +64,7 @@ namespace LPS.ToolScript
 
 		public object FunctionCall(string name, params object[] args)
 		{
+			object func;
 			if(name == "Format")
 			{
 				if(args.Length < 1)
@@ -102,8 +103,14 @@ namespace LPS.ToolScript
 					throw new InvalidOperationException("pro eval() je pozadovan jeden parametr typu string");
 				return Eval((string)args[0]);
 			}
+			else if(TryGetVariable(name, out func))
+			{
+				if(!(func is IFunction))
+					throw new InvalidOperationException("Proměnná "+name+" není funkce!");
+				return ((IFunction)func).Execute(this, args);
+			}
 			else
-				throw new InvalidOperationException("Funkce "+name+" nenalezena");
+				throw new InvalidOperationException("Funkce "+name+" nebyla nalezena!");
 		}
 
 		public object Eval(string code)

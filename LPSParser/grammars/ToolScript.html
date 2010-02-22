@@ -437,6 +437,164 @@ H2
   <td nowrap><span class="ssTerminal">ID</span> </td>
 </tr>
 </table><br>
+<a name=window></a>
+<table class="ssSyntaxTable">
+<tr>
+  <td nowrap><span class="ssNonTerminal"><a href=#window>&lt;Window&gt;</a></span></td>
+  <td align="center">::=</td>
+  <td nowrap><span class="ssTerminal">window</span> <span class="ssTerminal">ID</span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> <span class="ssNonTerminal"><a href="#layout_block">&lt;Layout Block&gt;</a></span> </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align="center">|</td>
+  <td nowrap><span class="ssTerminal">window</span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> <span class="ssNonTerminal"><a href="#layout_block">&lt;Layout Block&gt;</a></span> </td>
+</tr>
+</table><br>
+<a name=wndparam_list></a>
+<table class="ssSyntaxTable">
+<tr>
+  <td nowrap><span class="ssNonTerminal"><a href=#wndparam_list>&lt;WndParam List&gt;</a></span></td>
+  <td align="center">::=</td>
+  <td nowrap><span class="ssNonTerminal"><a href="#wndparam">&lt;WndParam&gt;</a></span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align="center">|</td>
+  <td>&nbsp;</td>
+</tr>
+</table><br>
+<a name=wndparam></a>
+<table class="ssSyntaxTable">
+<tr>
+  <td nowrap><span class="ssNonTerminal"><a href=#wndparam>&lt;WndParam&gt;</a></span></td>
+  <td align="center">::=</td>
+  <td nowrap><span class="ssTerminal">ID</span> <span class="ssTerminal">'='</span> <span class="ssNonTerminal"><a href="#expr">&lt;Expr&gt;</a></span> <span class="ssTerminal">';'</span> </td>
+</tr>
+</table><br>
+<a name=layout_block></a>
+<table class="ssSyntaxTable">
+<tr>
+  <td nowrap><span class="ssNonTerminal"><a href=#layout_block>&lt;Layout Block&gt;</a></span></td>
+  <td align="center">::=</td>
+  <td nowrap><span class="ssTerminal">hbox</span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> <span class="ssNonTerminal"><a href="#layout_block">&lt;Layout Block&gt;</a></span> <span class="ssTerminal">end</span> </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align="center">|</td>
+  <td nowrap><span class="ssTerminal">vbox</span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> <span class="ssNonTerminal"><a href="#layout_block">&lt;Layout Block&gt;</a></span> <span class="ssTerminal">end</span> </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align="center">|</td>
+  <td nowrap><span class="ssTerminal">table</span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> <span class="ssNonTerminal"><a href="#tabrow_block">&lt;TabRow Block&gt;</a></span> <span class="ssTerminal">end</span> </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align="center">|</td>
+  <td nowrap><span class="ssTerminal">table</span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> <span class="ssNonTerminal"><a href="#tabcol_block">&lt;TabCol Block&gt;</a></span> <span class="ssTerminal">end</span> </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align="center">|</td>
+  <td nowrap><span class="ssNonTerminal"><a href="#menu_block">&lt;Menu Block&gt;</a></span> </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align="center">|</td>
+  <td nowrap><span class="ssTerminal">ref</span> <span class="ssTerminal">ID</span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align="center">|</td>
+  <td nowrap><span class="ssTerminal">ref</span> <span class="ssTerminal">QualifiedName</span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align="center">|</td>
+  <td nowrap><span class="ssTerminal">ref</span> <span class="ssTerminal">StringLiteral</span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align="center">|</td>
+  <td nowrap><span class="ssTerminal">'['</span> <span class="ssNonTerminal"><a href="#expr">&lt;Expr&gt;</a></span> <span class="ssTerminal">']'</span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> </td>
+</tr>
+</table><br>
+<a name=tabrow_block></a>
+<table class="ssSyntaxTable">
+<tr>
+  <td nowrap><span class="ssNonTerminal"><a href=#tabrow_block>&lt;TabRow Block&gt;</a></span></td>
+  <td align="center">::=</td>
+  <td nowrap><span class="ssTerminal">row</span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> <span class="ssNonTerminal"><a href="#tab_cells">&lt;Tab Cells&gt;</a></span> <span class="ssTerminal">end</span> </td>
+</tr>
+</table><br>
+<a name=tabcol_block></a>
+<table class="ssSyntaxTable">
+<tr>
+  <td nowrap><span class="ssNonTerminal"><a href=#tabcol_block>&lt;TabCol Block&gt;</a></span></td>
+  <td align="center">::=</td>
+  <td nowrap><span class="ssTerminal">column</span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> <span class="ssNonTerminal"><a href="#tab_cells">&lt;Tab Cells&gt;</a></span> <span class="ssTerminal">end</span> </td>
+</tr>
+</table><br>
+<a name=tab_cells></a>
+<table class="ssSyntaxTable">
+<tr>
+  <td nowrap><span class="ssNonTerminal"><a href=#tab_cells>&lt;Tab Cells&gt;</a></span></td>
+  <td align="center">::=</td>
+  <td nowrap><span class="ssNonTerminal"><a href="#tab_cells">&lt;Tab Cells&gt;</a></span> <span class="ssNonTerminal"><a href="#tab_cell">&lt;Tab Cell&gt;</a></span> </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align="center">|</td>
+  <td>&nbsp;</td>
+</tr>
+</table><br>
+<a name=tab_cell></a>
+<table class="ssSyntaxTable">
+<tr>
+  <td nowrap><span class="ssNonTerminal"><a href=#tab_cell>&lt;Tab Cell&gt;</a></span></td>
+  <td align="center">::=</td>
+  <td nowrap><span class="ssNonTerminal"><a href="#layout_block">&lt;Layout Block&gt;</a></span> </td>
+</tr>
+</table><br>
+<a name=menu_block></a>
+<table class="ssSyntaxTable">
+<tr>
+  <td nowrap><span class="ssNonTerminal"><a href=#menu_block>&lt;Menu Block&gt;</a></span></td>
+  <td align="center">::=</td>
+  <td nowrap><span class="ssTerminal">menu</span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> <span class="ssNonTerminal"><a href="#menuitems_list">&lt;MenuItems List&gt;</a></span> <span class="ssTerminal">end</span> </td>
+</tr>
+</table><br>
+<a name=menuitems_list></a>
+<table class="ssSyntaxTable">
+<tr>
+  <td nowrap><span class="ssNonTerminal"><a href=#menuitems_list>&lt;MenuItems List&gt;</a></span></td>
+  <td align="center">::=</td>
+  <td nowrap><span class="ssNonTerminal"><a href="#menu_item">&lt;Menu Item&gt;</a></span> <span class="ssNonTerminal"><a href="#menuitems_list">&lt;MenuItems List&gt;</a></span> </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align="center">|</td>
+  <td>&nbsp;</td>
+</tr>
+</table><br>
+<a name=menu_item></a>
+<table class="ssSyntaxTable">
+<tr>
+  <td nowrap><span class="ssNonTerminal"><a href=#menu_item>&lt;Menu Item&gt;</a></span></td>
+  <td align="center">::=</td>
+  <td nowrap><span class="ssNonTerminal"><a href="#menu_block">&lt;Menu Block&gt;</a></span> </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align="center">|</td>
+  <td nowrap><span class="ssTerminal">item</span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align="center">|</td>
+  <td nowrap><span class="ssTerminal">separator</span> </td>
+</tr>
+</table><br>
 <a name=expr_list></a>
 <table class="ssSyntaxTable">
 <tr>
@@ -788,6 +946,11 @@ H2
 <tr>
   <td>&nbsp;</td>
   <td align="center">|</td>
+  <td nowrap><span class="ssNonTerminal"><a href="#window">&lt;Window&gt;</a></span> </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align="center">|</td>
   <td nowrap><span class="ssTerminal">QualifiedName</span> <span class="ssTerminal">'('</span> <span class="ssNonTerminal"><a href="#args">&lt;Args&gt;</a></span> <span class="ssTerminal">')'</span> </td>
 </tr>
 <tr>
@@ -905,309 +1068,6 @@ H2
 <br>
 <table class="ssTable" cellspacing=0>
 <tr>
-  <td colspan=2 class="ssCellTitle">Terminals</td>
-</tr>
-<tr>
-  <td class="ssCellColumn">Index</td>
-  <td class="ssCellColumn">Name</td>
-</tr>
-<tr>
-  <td class="ssCell">0</td>
-  <td class="ssCell">(EOF)</td>
-</tr>
-<tr>
-  <td class="ssCell">1</td>
-  <td class="ssCell">(Error)</td>
-</tr>
-<tr>
-  <td class="ssCell">2</td>
-  <td class="ssCell">(Whitespace)</td>
-</tr>
-<tr>
-  <td class="ssCell">3</td>
-  <td class="ssCell">(Comment End)</td>
-</tr>
-<tr>
-  <td class="ssCell">4</td>
-  <td class="ssCell">(Comment Line)</td>
-</tr>
-<tr>
-  <td class="ssCell">5</td>
-  <td class="ssCell">(Comment Start)</td>
-</tr>
-<tr>
-  <td class="ssCell">6</td>
-  <td class="ssCell">'-'</td>
-</tr>
-<tr>
-  <td class="ssCell">7</td>
-  <td class="ssCell">--</td>
-</tr>
-<tr>
-  <td class="ssCell">8</td>
-  <td class="ssCell">','</td>
-</tr>
-<tr>
-  <td class="ssCell">9</td>
-  <td class="ssCell">';'</td>
-</tr>
-<tr>
-  <td class="ssCell">10</td>
-  <td class="ssCell">':'</td>
-</tr>
-<tr>
-  <td class="ssCell">11</td>
-  <td class="ssCell">'!'</td>
-</tr>
-<tr>
-  <td class="ssCell">12</td>
-  <td class="ssCell">'!='</td>
-</tr>
-<tr>
-  <td class="ssCell">13</td>
-  <td class="ssCell">'?'</td>
-</tr>
-<tr>
-  <td class="ssCell">14</td>
-  <td class="ssCell">'.'</td>
-</tr>
-<tr>
-  <td class="ssCell">15</td>
-  <td class="ssCell">'('</td>
-</tr>
-<tr>
-  <td class="ssCell">16</td>
-  <td class="ssCell">')'</td>
-</tr>
-<tr>
-  <td class="ssCell">17</td>
-  <td class="ssCell">'['</td>
-</tr>
-<tr>
-  <td class="ssCell">18</td>
-  <td class="ssCell">']'</td>
-</tr>
-<tr>
-  <td class="ssCell">19</td>
-  <td class="ssCell">'{'</td>
-</tr>
-<tr>
-  <td class="ssCell">20</td>
-  <td class="ssCell">'}'</td>
-</tr>
-<tr>
-  <td class="ssCell">21</td>
-  <td class="ssCell">'*'</td>
-</tr>
-<tr>
-  <td class="ssCell">22</td>
-  <td class="ssCell">'*='</td>
-</tr>
-<tr>
-  <td class="ssCell">23</td>
-  <td class="ssCell">'/'</td>
-</tr>
-<tr>
-  <td class="ssCell">24</td>
-  <td class="ssCell">'/='</td>
-</tr>
-<tr>
-  <td class="ssCell">25</td>
-  <td class="ssCell">'%'</td>
-</tr>
-<tr>
-  <td class="ssCell">26</td>
-  <td class="ssCell">'+'</td>
-</tr>
-<tr>
-  <td class="ssCell">27</td>
-  <td class="ssCell">'++'</td>
-</tr>
-<tr>
-  <td class="ssCell">28</td>
-  <td class="ssCell">'+='</td>
-</tr>
-<tr>
-  <td class="ssCell">29</td>
-  <td class="ssCell">'&lt;'</td>
-</tr>
-<tr>
-  <td class="ssCell">30</td>
-  <td class="ssCell">'&lt;='</td>
-</tr>
-<tr>
-  <td class="ssCell">31</td>
-  <td class="ssCell">'&lt;=='</td>
-</tr>
-<tr>
-  <td class="ssCell">32</td>
-  <td class="ssCell">'&lt;==&gt;'</td>
-</tr>
-<tr>
-  <td class="ssCell">33</td>
-  <td class="ssCell">'='</td>
-</tr>
-<tr>
-  <td class="ssCell">34</td>
-  <td class="ssCell">'-='</td>
-</tr>
-<tr>
-  <td class="ssCell">35</td>
-  <td class="ssCell">'=='</td>
-</tr>
-<tr>
-  <td class="ssCell">36</td>
-  <td class="ssCell">'&gt;'</td>
-</tr>
-<tr>
-  <td class="ssCell">37</td>
-  <td class="ssCell">'-&gt;'</td>
-</tr>
-<tr>
-  <td class="ssCell">38</td>
-  <td class="ssCell">'&gt;='</td>
-</tr>
-<tr>
-  <td class="ssCell">39</td>
-  <td class="ssCell">and</td>
-</tr>
-<tr>
-  <td class="ssCell">40</td>
-  <td class="ssCell">as</td>
-</tr>
-<tr>
-  <td class="ssCell">41</td>
-  <td class="ssCell">break</td>
-</tr>
-<tr>
-  <td class="ssCell">42</td>
-  <td class="ssCell">case</td>
-</tr>
-<tr>
-  <td class="ssCell">43</td>
-  <td class="ssCell">cast</td>
-</tr>
-<tr>
-  <td class="ssCell">44</td>
-  <td class="ssCell">continue</td>
-</tr>
-<tr>
-  <td class="ssCell">45</td>
-  <td class="ssCell">DecimalLiteral</td>
-</tr>
-<tr>
-  <td class="ssCell">46</td>
-  <td class="ssCell">default</td>
-</tr>
-<tr>
-  <td class="ssCell">47</td>
-  <td class="ssCell">do</td>
-</tr>
-<tr>
-  <td class="ssCell">48</td>
-  <td class="ssCell">else</td>
-</tr>
-<tr>
-  <td class="ssCell">49</td>
-  <td class="ssCell">false</td>
-</tr>
-<tr>
-  <td class="ssCell">50</td>
-  <td class="ssCell">for</td>
-</tr>
-<tr>
-  <td class="ssCell">51</td>
-  <td class="ssCell">foreach</td>
-</tr>
-<tr>
-  <td class="ssCell">52</td>
-  <td class="ssCell">function</td>
-</tr>
-<tr>
-  <td class="ssCell">53</td>
-  <td class="ssCell">ID</td>
-</tr>
-<tr>
-  <td class="ssCell">54</td>
-  <td class="ssCell">if</td>
-</tr>
-<tr>
-  <td class="ssCell">55</td>
-  <td class="ssCell">in</td>
-</tr>
-<tr>
-  <td class="ssCell">56</td>
-  <td class="ssCell">IntLiteral</td>
-</tr>
-<tr>
-  <td class="ssCell">57</td>
-  <td class="ssCell">is</td>
-</tr>
-<tr>
-  <td class="ssCell">58</td>
-  <td class="ssCell">new</td>
-</tr>
-<tr>
-  <td class="ssCell">59</td>
-  <td class="ssCell">not</td>
-</tr>
-<tr>
-  <td class="ssCell">60</td>
-  <td class="ssCell">null</td>
-</tr>
-<tr>
-  <td class="ssCell">61</td>
-  <td class="ssCell">observed</td>
-</tr>
-<tr>
-  <td class="ssCell">62</td>
-  <td class="ssCell">or</td>
-</tr>
-<tr>
-  <td class="ssCell">63</td>
-  <td class="ssCell">QualifiedName</td>
-</tr>
-<tr>
-  <td class="ssCell">64</td>
-  <td class="ssCell">return</td>
-</tr>
-<tr>
-  <td class="ssCell">65</td>
-  <td class="ssCell">static</td>
-</tr>
-<tr>
-  <td class="ssCell">66</td>
-  <td class="ssCell">StringLiteral</td>
-</tr>
-<tr>
-  <td class="ssCell">67</td>
-  <td class="ssCell">switch</td>
-</tr>
-<tr>
-  <td class="ssCell">68</td>
-  <td class="ssCell">true</td>
-</tr>
-<tr>
-  <td class="ssCell">69</td>
-  <td class="ssCell">type</td>
-</tr>
-<tr>
-  <td class="ssCell">70</td>
-  <td class="ssCell">using</td>
-</tr>
-<tr>
-  <td class="ssCell">71</td>
-  <td class="ssCell">var</td>
-</tr>
-<tr>
-  <td class="ssCell">72</td>
-  <td class="ssCell">while</td>
-</tr>
-</table>
-<br>
-<br>
-<table class="ssTable" cellspacing=0>
-<tr>
   <td colspan=2 class="ssCellTitle">Nonterminals</td>
 </tr>
 <tr>
@@ -1215,96 +1075,140 @@ H2
   <td class="ssCellColumn">Name</td>
 </tr>
 <tr>
-  <td class="ssCell">73</td>
+  <td class="ssCell">84</td>
   <td class="ssCell">&lt;Args&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell">74</td>
+  <td class="ssCell">85</td>
   <td class="ssCell">&lt;Block&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell">75</td>
+  <td class="ssCell">86</td>
   <td class="ssCell">&lt;Case Stms&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell">76</td>
+  <td class="ssCell">87</td>
   <td class="ssCell">&lt;Expr&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell">77</td>
+  <td class="ssCell">88</td>
   <td class="ssCell">&lt;Expr List&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell">78</td>
+  <td class="ssCell">89</td>
   <td class="ssCell">&lt;Function&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell">79</td>
-  <td class="ssCell">&lt;Normal Stm&gt;</td>
-</tr>
-<tr>
-  <td class="ssCell">80</td>
-  <td class="ssCell">&lt;Op Add&gt;</td>
-</tr>
-<tr>
-  <td class="ssCell">81</td>
-  <td class="ssCell">&lt;Op And&gt;</td>
-</tr>
-<tr>
-  <td class="ssCell">82</td>
-  <td class="ssCell">&lt;Op Compare&gt;</td>
-</tr>
-<tr>
-  <td class="ssCell">83</td>
-  <td class="ssCell">&lt;Op Equate&gt;</td>
-</tr>
-<tr>
-  <td class="ssCell">84</td>
-  <td class="ssCell">&lt;Op If&gt;</td>
-</tr>
-<tr>
-  <td class="ssCell">85</td>
-  <td class="ssCell">&lt;Op In&gt;</td>
-</tr>
-<tr>
-  <td class="ssCell">86</td>
-  <td class="ssCell">&lt;Op Mult&gt;</td>
-</tr>
-<tr>
-  <td class="ssCell">87</td>
-  <td class="ssCell">&lt;Op Or&gt;</td>
-</tr>
-<tr>
-  <td class="ssCell">88</td>
-  <td class="ssCell">&lt;Op Pointer&gt;</td>
-</tr>
-<tr>
-  <td class="ssCell">89</td>
-  <td class="ssCell">&lt;Op Unary&gt;</td>
-</tr>
-<tr>
   <td class="ssCell">90</td>
-  <td class="ssCell">&lt;Param decl&gt;</td>
+  <td class="ssCell">&lt;Layout Block&gt;</td>
 </tr>
 <tr>
   <td class="ssCell">91</td>
-  <td class="ssCell">&lt;Param List&gt;</td>
+  <td class="ssCell">&lt;Menu Block&gt;</td>
 </tr>
 <tr>
   <td class="ssCell">92</td>
-  <td class="ssCell">&lt;Stm&gt;</td>
+  <td class="ssCell">&lt;Menu Item&gt;</td>
 </tr>
 <tr>
   <td class="ssCell">93</td>
-  <td class="ssCell">&lt;Stm List&gt;</td>
+  <td class="ssCell">&lt;MenuItems List&gt;</td>
 </tr>
 <tr>
   <td class="ssCell">94</td>
-  <td class="ssCell">&lt;Then Stm&gt;</td>
+  <td class="ssCell">&lt;Normal Stm&gt;</td>
 </tr>
 <tr>
   <td class="ssCell">95</td>
+  <td class="ssCell">&lt;Op Add&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">96</td>
+  <td class="ssCell">&lt;Op And&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">97</td>
+  <td class="ssCell">&lt;Op Compare&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">98</td>
+  <td class="ssCell">&lt;Op Equate&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">99</td>
+  <td class="ssCell">&lt;Op If&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">100</td>
+  <td class="ssCell">&lt;Op In&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">101</td>
+  <td class="ssCell">&lt;Op Mult&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">102</td>
+  <td class="ssCell">&lt;Op Or&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">103</td>
+  <td class="ssCell">&lt;Op Pointer&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">104</td>
+  <td class="ssCell">&lt;Op Unary&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">105</td>
+  <td class="ssCell">&lt;Param decl&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">106</td>
+  <td class="ssCell">&lt;Param List&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">107</td>
+  <td class="ssCell">&lt;Stm&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">108</td>
+  <td class="ssCell">&lt;Stm List&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">109</td>
+  <td class="ssCell">&lt;Tab Cell&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">110</td>
+  <td class="ssCell">&lt;Tab Cells&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">111</td>
+  <td class="ssCell">&lt;TabCol Block&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">112</td>
+  <td class="ssCell">&lt;TabRow Block&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">113</td>
+  <td class="ssCell">&lt;Then Stm&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">114</td>
   <td class="ssCell">&lt;Value&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">115</td>
+  <td class="ssCell">&lt;Window&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">116</td>
+  <td class="ssCell">&lt;WndParam&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell">117</td>
+  <td class="ssCell">&lt;WndParam List&gt;</td>
 </tr>
 </table>
 <br>
@@ -1549,456 +1453,612 @@ H2
 </tr>
 <tr>
   <td class="ssCell" valign="top">38</td>
+  <td class="ssCell">&lt;Window&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">window ID &lt;WndParam List&gt; &lt;Layout Block&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">39</td>
+  <td class="ssCell">&lt;Window&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">window &lt;WndParam List&gt; &lt;Layout Block&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">40</td>
+  <td class="ssCell">&lt;WndParam List&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">&lt;WndParam&gt; &lt;WndParam List&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">41</td>
+  <td class="ssCell">&lt;WndParam List&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">&nbsp;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">42</td>
+  <td class="ssCell">&lt;WndParam&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">ID '=' &lt;Expr&gt; ';'</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">43</td>
+  <td class="ssCell">&lt;Layout Block&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">hbox &lt;WndParam List&gt; &lt;Layout Block&gt; end</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">44</td>
+  <td class="ssCell">&lt;Layout Block&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">vbox &lt;WndParam List&gt; &lt;Layout Block&gt; end</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">45</td>
+  <td class="ssCell">&lt;Layout Block&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">table &lt;WndParam List&gt; &lt;TabRow Block&gt; end</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">46</td>
+  <td class="ssCell">&lt;Layout Block&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">table &lt;WndParam List&gt; &lt;TabCol Block&gt; end</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">47</td>
+  <td class="ssCell">&lt;Layout Block&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">&lt;Menu Block&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">48</td>
+  <td class="ssCell">&lt;Layout Block&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">ref ID &lt;WndParam List&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">49</td>
+  <td class="ssCell">&lt;Layout Block&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">ref QualifiedName &lt;WndParam List&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">50</td>
+  <td class="ssCell">&lt;Layout Block&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">ref StringLiteral &lt;WndParam List&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">51</td>
+  <td class="ssCell">&lt;Layout Block&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">'[' &lt;Expr&gt; ']' &lt;WndParam List&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">52</td>
+  <td class="ssCell">&lt;TabRow Block&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">row &lt;WndParam List&gt; &lt;Tab Cells&gt; end</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">53</td>
+  <td class="ssCell">&lt;TabCol Block&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">column &lt;WndParam List&gt; &lt;Tab Cells&gt; end</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">54</td>
+  <td class="ssCell">&lt;Tab Cells&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">&lt;Tab Cells&gt; &lt;Tab Cell&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">55</td>
+  <td class="ssCell">&lt;Tab Cells&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">&nbsp;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">56</td>
+  <td class="ssCell">&lt;Tab Cell&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">&lt;Layout Block&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">57</td>
+  <td class="ssCell">&lt;Menu Block&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">menu &lt;WndParam List&gt; &lt;MenuItems List&gt; end</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">58</td>
+  <td class="ssCell">&lt;MenuItems List&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">&lt;Menu Item&gt; &lt;MenuItems List&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">59</td>
+  <td class="ssCell">&lt;MenuItems List&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">&nbsp;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">60</td>
+  <td class="ssCell">&lt;Menu Item&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">&lt;Menu Block&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">61</td>
+  <td class="ssCell">&lt;Menu Item&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">item &lt;WndParam List&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">62</td>
+  <td class="ssCell">&lt;Menu Item&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">separator</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">63</td>
   <td class="ssCell">&lt;Expr List&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Expr List&gt; ',' &lt;Expr&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">39</td>
+  <td class="ssCell" valign="top">64</td>
   <td class="ssCell">&lt;Expr List&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Expr&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">40</td>
+  <td class="ssCell" valign="top">65</td>
   <td class="ssCell">&lt;Expr&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op If&gt; '=' &lt;Expr&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">41</td>
+  <td class="ssCell" valign="top">66</td>
   <td class="ssCell">&lt;Expr&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op If&gt; '+=' &lt;Expr&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">42</td>
+  <td class="ssCell" valign="top">67</td>
   <td class="ssCell">&lt;Expr&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op If&gt; '-=' &lt;Expr&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">43</td>
+  <td class="ssCell" valign="top">68</td>
   <td class="ssCell">&lt;Expr&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op If&gt; '*=' &lt;Expr&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">44</td>
+  <td class="ssCell" valign="top">69</td>
   <td class="ssCell">&lt;Expr&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op If&gt; '/=' &lt;Expr&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">45</td>
+  <td class="ssCell" valign="top">70</td>
   <td class="ssCell">&lt;Expr&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op If&gt; '&lt;==' &lt;Expr&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">46</td>
+  <td class="ssCell" valign="top">71</td>
   <td class="ssCell">&lt;Expr&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op If&gt; '&lt;==&gt;' &lt;Expr&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">47</td>
+  <td class="ssCell" valign="top">72</td>
   <td class="ssCell">&lt;Expr&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op If&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">48</td>
+  <td class="ssCell" valign="top">73</td>
   <td class="ssCell">&lt;Op If&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Or&gt; '?' &lt;Op If&gt; ':' &lt;Op If&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">49</td>
+  <td class="ssCell" valign="top">74</td>
   <td class="ssCell">&lt;Op If&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Or&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">50</td>
+  <td class="ssCell" valign="top">75</td>
   <td class="ssCell">&lt;Op Or&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Or&gt; or &lt;Op And&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">51</td>
+  <td class="ssCell" valign="top">76</td>
   <td class="ssCell">&lt;Op Or&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op And&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">52</td>
+  <td class="ssCell" valign="top">77</td>
   <td class="ssCell">&lt;Op And&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op And&gt; and &lt;Op Equate&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">53</td>
+  <td class="ssCell" valign="top">78</td>
   <td class="ssCell">&lt;Op And&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Equate&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">54</td>
+  <td class="ssCell" valign="top">79</td>
   <td class="ssCell">&lt;Op Equate&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Equate&gt; '==' &lt;Op Compare&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">55</td>
+  <td class="ssCell" valign="top">80</td>
   <td class="ssCell">&lt;Op Equate&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Equate&gt; '!=' &lt;Op Compare&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">56</td>
+  <td class="ssCell" valign="top">81</td>
   <td class="ssCell">&lt;Op Equate&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Compare&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">57</td>
+  <td class="ssCell" valign="top">82</td>
   <td class="ssCell">&lt;Op Compare&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Compare&gt; '&lt;' &lt;Op In&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">58</td>
+  <td class="ssCell" valign="top">83</td>
   <td class="ssCell">&lt;Op Compare&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Compare&gt; '&gt;' &lt;Op In&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">59</td>
+  <td class="ssCell" valign="top">84</td>
   <td class="ssCell">&lt;Op Compare&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Compare&gt; '&lt;=' &lt;Op In&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">60</td>
+  <td class="ssCell" valign="top">85</td>
   <td class="ssCell">&lt;Op Compare&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Compare&gt; '&gt;=' &lt;Op In&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">61</td>
+  <td class="ssCell" valign="top">86</td>
   <td class="ssCell">&lt;Op Compare&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op In&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">62</td>
+  <td class="ssCell" valign="top">87</td>
   <td class="ssCell">&lt;Op In&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op In&gt; in &lt;Op Add&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">63</td>
+  <td class="ssCell" valign="top">88</td>
   <td class="ssCell">&lt;Op In&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op In&gt; in '&lt;' &lt;Op Add&gt; ',' &lt;Op Add&gt; '&gt;'</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">64</td>
+  <td class="ssCell" valign="top">89</td>
   <td class="ssCell">&lt;Op In&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op In&gt; in '&lt;' &lt;Op Add&gt; ',' &lt;Op Add&gt; ')'</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">65</td>
+  <td class="ssCell" valign="top">90</td>
   <td class="ssCell">&lt;Op In&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op In&gt; in '(' &lt;Op Add&gt; ',' &lt;Op Add&gt; '&gt;'</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">66</td>
+  <td class="ssCell" valign="top">91</td>
   <td class="ssCell">&lt;Op In&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op In&gt; in '(' &lt;Op Add&gt; ',' &lt;Op Add&gt; ')'</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">67</td>
+  <td class="ssCell" valign="top">92</td>
   <td class="ssCell">&lt;Op In&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Add&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">68</td>
+  <td class="ssCell" valign="top">93</td>
   <td class="ssCell">&lt;Op Add&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Add&gt; '+' &lt;Op Mult&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">69</td>
+  <td class="ssCell" valign="top">94</td>
   <td class="ssCell">&lt;Op Add&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Add&gt; '-' &lt;Op Mult&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">70</td>
+  <td class="ssCell" valign="top">95</td>
   <td class="ssCell">&lt;Op Add&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Mult&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">71</td>
+  <td class="ssCell" valign="top">96</td>
   <td class="ssCell">&lt;Op Mult&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Mult&gt; '*' &lt;Op Unary&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">72</td>
+  <td class="ssCell" valign="top">97</td>
   <td class="ssCell">&lt;Op Mult&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Mult&gt; '/' &lt;Op Unary&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">73</td>
+  <td class="ssCell" valign="top">98</td>
   <td class="ssCell">&lt;Op Mult&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Mult&gt; '%' &lt;Op Unary&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">74</td>
+  <td class="ssCell" valign="top">99</td>
   <td class="ssCell">&lt;Op Mult&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Unary&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">75</td>
+  <td class="ssCell" valign="top">100</td>
   <td class="ssCell">&lt;Op Unary&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">not &lt;Op Unary&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">76</td>
+  <td class="ssCell" valign="top">101</td>
   <td class="ssCell">&lt;Op Unary&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">'!' &lt;Op Unary&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">77</td>
+  <td class="ssCell" valign="top">102</td>
   <td class="ssCell">&lt;Op Unary&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">'-' &lt;Op Unary&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">78</td>
+  <td class="ssCell" valign="top">103</td>
   <td class="ssCell">&lt;Op Unary&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">cast &lt;Op Unary&gt; as ID</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">79</td>
+  <td class="ssCell" valign="top">104</td>
   <td class="ssCell">&lt;Op Unary&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">cast &lt;Op Unary&gt; as QualifiedName</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">80</td>
+  <td class="ssCell" valign="top">105</td>
   <td class="ssCell">&lt;Op Unary&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">'++' &lt;Op Unary&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">81</td>
+  <td class="ssCell" valign="top">106</td>
   <td class="ssCell">&lt;Op Unary&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">-- &lt;Op Unary&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">82</td>
+  <td class="ssCell" valign="top">107</td>
   <td class="ssCell">&lt;Op Unary&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Pointer&gt; '++'</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">83</td>
+  <td class="ssCell" valign="top">108</td>
   <td class="ssCell">&lt;Op Unary&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Pointer&gt; --</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">84</td>
+  <td class="ssCell" valign="top">109</td>
   <td class="ssCell">&lt;Op Unary&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Pointer&gt; is null</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">85</td>
+  <td class="ssCell" valign="top">110</td>
   <td class="ssCell">&lt;Op Unary&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Pointer&gt; not null</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">86</td>
+  <td class="ssCell" valign="top">111</td>
   <td class="ssCell">&lt;Op Unary&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Pointer&gt; is not null</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">87</td>
+  <td class="ssCell" valign="top">112</td>
   <td class="ssCell">&lt;Op Unary&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Pointer&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">88</td>
+  <td class="ssCell" valign="top">113</td>
   <td class="ssCell">&lt;Op Pointer&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Pointer&gt; '.' &lt;Value&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">89</td>
+  <td class="ssCell" valign="top">114</td>
   <td class="ssCell">&lt;Op Pointer&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Pointer&gt; '-&gt;' &lt;Value&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">90</td>
+  <td class="ssCell" valign="top">115</td>
   <td class="ssCell">&lt;Op Pointer&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Op Pointer&gt; '[' &lt;Expr&gt; ']'</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">91</td>
+  <td class="ssCell" valign="top">116</td>
   <td class="ssCell">&lt;Op Pointer&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Value&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">92</td>
+  <td class="ssCell" valign="top">117</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">IntLiteral</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">93</td>
+  <td class="ssCell" valign="top">118</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">StringLiteral</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">94</td>
+  <td class="ssCell" valign="top">119</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">DecimalLiteral</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">95</td>
+  <td class="ssCell" valign="top">120</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">type ID</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">96</td>
+  <td class="ssCell" valign="top">121</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">type QualifiedName</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">97</td>
+  <td class="ssCell" valign="top">122</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">ID '(' &lt;Args&gt; ')'</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">98</td>
+  <td class="ssCell" valign="top">123</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">ID '(' ')'</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">99</td>
+  <td class="ssCell" valign="top">124</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">&lt;Function&gt;</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">100</td>
+  <td class="ssCell" valign="top">125</td>
+  <td class="ssCell">&lt;Value&gt;</td>
+  <td class="ssCell">::=</td>
+  <td class="ssCell">&lt;Window&gt;</td>
+</tr>
+<tr>
+  <td class="ssCell" valign="top">126</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">QualifiedName '(' &lt;Args&gt; ')'</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">101</td>
+  <td class="ssCell" valign="top">127</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">QualifiedName '(' ')'</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">102</td>
+  <td class="ssCell" valign="top">128</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">new ID '(' &lt;Args&gt; ')'</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">103</td>
+  <td class="ssCell" valign="top">129</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">new ID '(' ')'</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">104</td>
+  <td class="ssCell" valign="top">130</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">new QualifiedName '(' &lt;Args&gt; ')'</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">105</td>
+  <td class="ssCell" valign="top">131</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">new QualifiedName '(' ')'</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">106</td>
+  <td class="ssCell" valign="top">132</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">ID</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">107</td>
+  <td class="ssCell" valign="top">133</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">var ID</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">108</td>
+  <td class="ssCell" valign="top">134</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">static ID</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">109</td>
+  <td class="ssCell" valign="top">135</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">'(' &lt;Expr&gt; ')'</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">110</td>
+  <td class="ssCell" valign="top">136</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">'{' &lt;Expr List&gt; '}'</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">111</td>
+  <td class="ssCell" valign="top">137</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">null</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">112</td>
+  <td class="ssCell" valign="top">138</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">true</td>
 </tr>
 <tr>
-  <td class="ssCell" valign="top">113</td>
+  <td class="ssCell" valign="top">139</td>
   <td class="ssCell">&lt;Value&gt;</td>
   <td class="ssCell">::=</td>
   <td class="ssCell">false</td>
