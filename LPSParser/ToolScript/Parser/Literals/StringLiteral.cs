@@ -6,9 +6,9 @@ namespace LPS.ToolScript.Parser
 	public sealed class StringLiteral : LiteralBase, IConstantValue
 	{
 		private string val;
-		public StringLiteral(TerminalToken token)
+		public StringLiteral(string val)
 		{
-			this.val = Parse(token.Text);
+			this.val = val;
 		}
 
 		public override object Eval(Context context)

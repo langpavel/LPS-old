@@ -10,8 +10,8 @@ namespace LPS.Util
 {
 	public class XtableCommand : CommandBase
 	{
-		public XtableCommand(CommandCollection Commands, string Name)
-			: base(Commands, Name)
+		public XtableCommand(string Name)
+			: base(Name)
 		{
 		}
 
@@ -62,11 +62,11 @@ namespace LPS.Util
 			return s[0].ToString().ToUpper() + s.Substring(1);
 		}
 
-		public override object Execute (TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		public override object Execute (LPS.ToolScript.Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
-			string tabname = Get<string>(ref Params, 0);
+			string tabname = Get<string>(Params, 0);
 			string UserFriendTitle = Capitalize(tabname, true, "sys_", "c_");
-			ServerConnection conn = Commands.GetVar<ServerConnection>("ServerConnection");
+			ServerConnection conn = (ServerConnection)context.LocalVariables["ServerConnection"];
 			using(DataSet ds = GetTableInfoDataSet(conn, tabname))
 			{
 				TableInfo info;

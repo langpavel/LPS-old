@@ -19,8 +19,8 @@
 ! ------------------------------------------------- Terminals
 
 ID				= {ID Head}{ID Tail}*
-QualifiedName	= ('global::')?{ID Head}{ID Tail}*('.'{ID Head}{ID Tail}*)+
-				| 'global::'{ID Head}{ID Tail}*
+!QualifiedName	= ('global::')?{ID Head}{ID Tail}*('.'{ID Head}{ID Tail}*)+
+!				| 'global::'{ID Head}{ID Tail}*
 
 
 StringLiteral	= '' ( {String Chars1} | '''' )* ''
@@ -40,16 +40,19 @@ Comment Line  = '//'
 ! Statements
 ! ===================================================================
 
+<QualifiedName>	::= ID '.' <QualifiedName>
+				|	ID
+
 <Stm>			::=	if '(' <Expr> ')' <Stm>
                	|	if '(' <Expr> ')' <Then Stm> else <Stm>         
                	|	while '(' <Expr> ')' <Stm> 
                	|	for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>
                	|	foreach '(' ID 'in' <Expr> ')' <Stm>
                	|	observed '(' <Expr> ')' <Stm>
-               	|	using ID ';'						! import .NET nodule
-               	|	using QualifiedName ';'				! import .NET nodule
+               	|	using <QualifiedName> ';'						! import .NET nodule
                	|	using StringLiteral ';'				! open file
-               	|	using QualifiedName 'as' ID ';'		! Save with alias
+               	|	using <QualifiedName> 'as' ID ';'				! import .NET nodule
+               	|	using StringLiteral 'as' ID ';'		! open file
                	|	<Normal Stm>
 
 <Then Stm>   	::=	if '(' <Expr> ')' <Then Stm> else <Then Stm>
@@ -66,8 +69,19 @@ Comment Line  = '//'
                	|	return <Expr> ';'
                	|	';'              !Null statement
 
-<Args>       	::=	<Expr> ',' <Args>
-              	| 	<Expr>
+<Func args>    	::=	<Func args> ',' <Func Arg>
+				|	<Func Arg>
+				|
+
+<Func Arg>		::=	ID
+				|	ID '=' <Expr>
+
+<Args>       	::=	<Args> ',' <Arg>
+				|	<Arg>
+				|
+
+<Arg>			::=	<Op If>
+				|	ID '=' <Expr>
 
 <Case Stms> 	::=	case <Value> ':' <Stm List> <Case Stms>
               	|	default ':' <Stm List>                  
@@ -82,15 +96,8 @@ Comment Line  = '//'
 ! Function support
 ! ===================================================================
 
-<Function>		::=	'function' ID '(' <Param List> ')' <Stm>
-				|	'function' ID '(' ')' <Stm>
-				|	'function' '(' <Param List> ')' <Stm>
-				|	'function' '(' ')' <Stm>
-
-<Param List>	::=	<Param List> ',' <Param decl>
-				|	<Param decl>
-
-<Param decl>	::= ID
+<Function>		::=	'function' ID '(' <Func args> ')' <Stm>
+				|	'function' '(' <Func args> ')' <Stm>
 
 ! ===================================================================
 ! Window support
@@ -109,9 +116,8 @@ Comment Line  = '//'
 				|	'table' <WndParam List> <TabRow Block> 'end'
 				|	'table' <WndParam List> <TabCol Block> 'end'
 				|	<Menu Block>
-				|	'ref' ID 			<WndParam List>
-				|	'ref' QualifiedName	<WndParam List>
-				|	'ref' StringLiteral	<WndParam List>
+				|	'ref' <QualifiedName> <WndParam List>
+				|	'ref' StringLiteral <WndParam List>
 				|	'[' <Expr> ']' <WndParam List>
 
 <TabRow Block>	::=	'row' <WndParam List> <Tab Cells> 'end'
@@ -138,6 +144,8 @@ Comment Line  = '//'
 <Expr List>		::=	<Expr List> ',' <Expr>
 				|	<Expr>
 
+<Dict List>		::=	<Dict List> ',' <Expr> ':' <Expr>
+				|	<Expr> ':' <Expr>
 
 <Expr>			::=	<Op If> '='   <Expr>
 				|	<Op If> '+='  <Expr>
@@ -186,8 +194,7 @@ Comment Line  = '//'
 <Op Unary>   	::=	'not'  <Op Unary>
 				|	'!'    <Op Unary>
                	| 	'-'    <Op Unary>
-              	|	'cast' <Op Unary> 'as' ID
-              	|	'cast' <Op Unary> 'as' QualifiedName
+              	|	'cast' <Op Unary> 'as' <QualifiedName>
                	|	'++'   <Op Unary>
                	|	'--'   <Op Unary>
                	|	<Op Pointer> '++'
@@ -200,28 +207,22 @@ Comment Line  = '//'
 <Op Pointer>	::=	<Op Pointer> '.' <Value>
 				| 	<Op Pointer> '->' <Value>	! if not null, lookup value else return null - safe referencing
 				| 	<Op Pointer> '[' <Expr> ']'
+				| 	<Op Pointer> '(' <Args> ')' ! function call
 				| 	<Value>
 
 <Value>			::=	IntLiteral
 				| 	StringLiteral
 				|	DecimalLiteral
-				|	'type' ID
-				|	'type' QualifiedName
-				|	ID '(' <Args> ')'
-				|	ID '(' ')'
+				|	'type' <QualifiedName>
 				|	<Function>
 				|	<Window>
-				|	QualifiedName '(' <Args> ')'
-				|	QualifiedName '(' ')'
-				|	'new' ID '(' <Args> ')'
-				|	'new' ID '(' ')'
-				|	'new' QualifiedName '(' <Args> ')'
-				|	'new' QualifiedName '(' ')'
+				|	'new' <QualifiedName> '(' <Args> ')'
 				|	ID
 				|	'var' ID
 				|	'static' ID
 				|	'(' <Expr> ')'
-				|	'{' <Expr List> '}'
+				|	'[' <Expr List> ']'
+				|	'{' <Dict List> '}'
 				|	'null'
 				|	'true'
 				|	'false'

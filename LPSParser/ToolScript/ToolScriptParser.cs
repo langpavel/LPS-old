@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using LPS.ToolScript.Parser;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace LPS.ToolScript
 {
@@ -18,56 +19,29 @@ namespace LPS.ToolScript
 			return list.Run(this);
 		}
 
-		#region Terminaly
-		protected override object TerminalStringliteral (TerminalToken token)
-		{
-			return new StringLiteral(token);
-		}
-
-		protected override object TerminalIntliteral (TerminalToken token)
-		{
-			return new IntLiteral(token);
-		}
-
-		protected override object TerminalDecimalliteral (TerminalToken token)
-		{
-			return new DecimalLiteral(token);
-		}
-
-		protected override object TerminalNull (TerminalToken token)
-		{
-			return new NullLiteral();
-		}
-
-		protected override object TerminalTrue (TerminalToken token)
-		{
-			return new BooleanLiteral(true);
-		}
-
-		protected override object TerminalFalse (TerminalToken token)
-		{
-			return new BooleanLiteral(false);
-		}
-		#endregion
-
-		IStatement Statement(NonterminalToken token, int index)
+		private T Get<T>(NonterminalToken token, int index)
 		{
 			object obj = CreateObject(token.Tokens[index]);
 			try
 			{
-				return (IStatement)obj;
+				return (T)obj;
 			}
 			catch(InvalidCastException err)
 			{
 				StackFrame stack = new StackFrame(1);
-				Console.WriteLine("Cannot cast from {0} to IStatement {1}", obj.GetType(), stack.GetMethod().Name);
+				Console.WriteLine("Cannot cast from {0} to {1} at {2}", obj.GetType(), typeof(T).Name, stack.GetMethod().Name);
 				throw err;
 			}
 		}
 
+		private IStatement Statement(NonterminalToken token, int index)
+		{
+			return Get<IStatement>(token, index);
+		}
+
 		private IExpression Expr(NonterminalToken token, int index)
 		{
-			return (IExpression)CreateObject(token.Tokens[index]);
+			return Get<IExpression>(token, index);
 		}
 
 		private string TText(NonterminalToken token, int index)
@@ -76,6 +50,20 @@ namespace LPS.ToolScript
 		}
 
 		#region Rules
+
+		// <QualifiedName> ::= ID '.' <QualifiedName>
+		protected override object RuleQualifiednameIdDot(NonterminalToken token)
+		{
+			QualifiedName names = Get<QualifiedName>(token, 2);
+			names.Names.Insert(0, TText(token,0));
+			return names;
+		}
+
+		// <QualifiedName> ::= ID
+		protected override object RuleQualifiednameId(NonterminalToken token)
+		{
+			return new QualifiedName(TText(token, 0));
+		}
 
 		// <Stm> ::= if '(' <Expr> ')' <Stm>
 		protected override object RuleStmIfLparanRparan(NonterminalToken token)
@@ -115,28 +103,28 @@ namespace LPS.ToolScript
 			throw new NotImplementedException("<Stm> ::= observed '(' <Expr> ')' <Stm>");
 		}
 
-		// <Stm> ::= using ID ';'
-		protected override object RuleStmUsingIdSemi(NonterminalToken token)
+		// <Stm> ::= using <QualifiedName> ';'
+		protected override object RuleStmUsingSemi(NonterminalToken token)
 		{
-			return new UsingStatement(TText(token, 1));
-		}
-
-		// <Stm> ::= using QualifiedName ';'
-		protected override object RuleStmUsingQualifiednameSemi(NonterminalToken token)
-		{
-			return new UsingStatement(TText(token, 1));
-		}
-
-		// <Stm> ::= using QualifiedName as ID ';'
-		protected override object RuleStmUsingQualifiednameAsIdSemi(NonterminalToken token)
-		{
-			return new UsingStatement(TText(token, 1), TText(token, 3));
+			return new UsingStatement(Get<QualifiedName>(token,1).Names.ToArray());
 		}
 
 		// <Stm> ::= using StringLiteral ';'
 		protected override object RuleStmUsingStringliteralSemi(NonterminalToken token)
 		{
-			return new UsingStatement(StringLiteral.Parse(TText(token, 1)));
+			return new UsingStatement(StringLiteral.Parse(TText(token, 1)).Split('.'));
+		}
+
+		// <Stm> ::= using <QualifiedName> as ID ';'
+		protected override object RuleStmUsingAsIdSemi(NonterminalToken token)
+		{
+			return new UsingStatement(Get<QualifiedName>(token,1).Names.ToArray(), TText(token,3));
+		}
+
+		// <Stm> ::= using StringLiteral 'as' ID ';'
+		protected override object RuleStmUsingStringliteralAsIdSemi(NonterminalToken token)
+		{
+			return new UsingStatement(StringLiteral.Parse(TText(token, 1)).Split('.'), TText(token,3));
 		}
 
 		// <Stm> ::= <Normal Stm>
@@ -217,20 +205,72 @@ namespace LPS.ToolScript
 			return new NoopStatement();
 		}
 
-		// <Args> ::= <Expr> ',' <Args>
-		protected override object RuleArgsComma(NonterminalToken token)
+		// <Func args> ::= <Func args> ',' <Func Arg>
+		protected override object RuleFuncargsComma(NonterminalToken token)
 		{
-			List<IExpression> list = (List<IExpression>)CreateObject(token.Tokens[2]);
-			list.Insert(0, (IExpression)CreateObject(token.Tokens[0]));
+			NamedArgumentList list = (NamedArgumentList)CreateObject(token.Tokens[0]);
+			list.Add((NamedArgument)CreateObject(token.Tokens[2]));
 			return list;
 		}
 
-		// <Args> ::= <Expr>
+		// <Func args> ::= <Func Arg>
+		protected override object RuleFuncargs(NonterminalToken token)
+		{
+			NamedArgumentList list = new NamedArgumentList(NamedArgumentListMode.DefaultArguments);
+			list.Add((NamedArgument)CreateObject(token.Tokens[0]));
+			return list;
+		}
+
+		// <Func args> ::=
+		protected override object RuleFuncargs2(NonterminalToken token)
+		{
+			return new NamedArgumentList(NamedArgumentListMode.DefaultArguments);
+		}
+
+		// <Func Arg> ::= ID
+		protected override object RuleFuncargId(NonterminalToken token)
+		{
+			return new NamedArgument(TText(token,0), null);
+		}
+
+		// <Func Arg> ::= ID '=' <Expr>
+		protected override object RuleFuncargIdEq(NonterminalToken token)
+		{
+			return new NamedArgument(TText(token,0), Expr(token,2));
+		}
+
+		// <Args> ::= <Args> ',' <Arg>
+		protected override object RuleArgsComma(NonterminalToken token)
+		{
+			NamedArgumentList list = (NamedArgumentList)CreateObject(token.Tokens[0]);
+			list.Add(Get<NamedArgument>(token, 2));
+			return list;
+		}
+
+		// <Args> ::= <Arg>
 		protected override object RuleArgs(NonterminalToken token)
 		{
-			List<IExpression> list = new List<IExpression>();
-			list.Add((IExpression)CreateObject(token.Tokens[0]));
+			NamedArgumentList list = new NamedArgumentList(NamedArgumentListMode.CallArguments);
+			list.Add((NamedArgument)CreateObject(token.Tokens[0]));
 			return list;
+		}
+
+		// <Args> ::=
+		protected override object RuleArgs2(NonterminalToken token)
+		{
+			return new NamedArgumentList(NamedArgumentListMode.CallArguments);
+		}
+
+		// <Arg> ::= <Op If>
+		protected override object RuleArg(NonterminalToken token)
+		{
+			return new NamedArgument(null, Expr(token, 0));
+		}
+
+		// <Arg> ::= ID '=' <Expr>
+		protected override object RuleArgIdEq(NonterminalToken token)
+		{
+			return new NamedArgument(TText(token,0), Expr(token, 2));
 		}
 
 		// <Case Stms> ::= case <Value> ':' <Stm List> <Case Stms>
@@ -271,62 +311,22 @@ namespace LPS.ToolScript
 			return new StatementList();
 		}
 
-		// <Function> ::= function ID '(' <Param List> ')' <Stm>
+		// <Function> ::= function ID '(' <Func Args> ')' <Stm>
 		protected override object RuleFunctionFunctionIdLparanRparan(NonterminalToken token)
 		{
 			return new FunctionExpression(
 				TText(token, 1),
-				(List<ParamDeclStatement>)CreateObject(token.Tokens[3]),
+				(NamedArgumentList)CreateObject(token.Tokens[3]),
 				Statement(token, 5));
 		}
 
-		// <Function> ::= function ID '(' ')' <Stm>
-		protected override object RuleFunctionFunctionIdLparanRparan2(NonterminalToken token)
-		{
-			return new FunctionExpression(
-				TText(token, 1),
-				null,
-				Statement(token, 4));
-		}
-
-		// <Function> ::= function '(' <Param List> ')' <Stm>
+		// <Function> ::= function '(' <Func Args> ')' <Stm>
 		protected override object RuleFunctionFunctionLparanRparan(NonterminalToken token)
 		{
 			return new FunctionExpression(
 				null,
-				(List<ParamDeclStatement>)CreateObject(token.Tokens[2]),
+				(NamedArgumentList)CreateObject(token.Tokens[2]),
 				Statement(token, 4));
-		}
-
-		// <Function> ::= function '(' ')' <Stm>
-		protected override object RuleFunctionFunctionLparanRparan2(NonterminalToken token)
-		{
-			return new FunctionExpression(
-				null,
-				null,
-				Statement(token, 3));
-		}
-
-		// <Param List> ::= <Param List> ',' <Param decl>
-		protected override object RuleParamlistComma(NonterminalToken token)
-		{
-			List<ParamDeclStatement> list = (List<ParamDeclStatement>)CreateObject(token.Tokens[0]);
-			list.Add((ParamDeclStatement)CreateObject(token.Tokens[2]));
-			return list;
-		}
-
-		// <Param List> ::= <Param decl>
-		protected override object RuleParamlist(NonterminalToken token)
-		{
-			List<ParamDeclStatement> list = new List<ParamDeclStatement>();
-			list.Add((ParamDeclStatement)CreateObject(token.Tokens[0]));
-			return list;
-		}
-
-		// <Param decl> ::= ID
-		protected override object RuleParamdeclId(NonterminalToken token)
-		{
-			return new ParamDeclStatement(TText(token, 0), null);
 		}
 
 		// <Expr List> ::= <Expr List> ',' <Expr>
@@ -591,22 +591,6 @@ namespace LPS.ToolScript
 			return new UnaryMinusExpression(Expr(token,1));
 		}
 
-		// <Op Unary> ::= cast <Op Unary> as ID
-		protected override object RuleOpunaryCastAsId(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Op Unary> ::= cast <Op Unary> as ID");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Op Unary> ::= cast <Op Unary> as QualifiedName
-		protected override object RuleOpunaryCastAsQualifiedname(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Op Unary> ::= cast <Op Unary> as QualifiedName");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
 		// <Op Unary> ::= '++' <Op Unary>
 		protected override object RuleOpunaryPlusplus(NonterminalToken token)
 		{
@@ -649,6 +633,14 @@ namespace LPS.ToolScript
 			return new CompareExpression(ComparisonType.NonEqual, Expr(token, 0), new NullLiteral());
 		}
 
+		// <Op Unary> ::= cast <Op Unary> as <QualifiedName>
+		protected override object RuleOpunaryCastAs(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Unary> ::= cast <Op Unary> as <QualifiedName>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
 		// <Op Unary> ::= <Op Pointer>
 		protected override object RuleOpunary(NonterminalToken token)
 		{
@@ -658,9 +650,7 @@ namespace LPS.ToolScript
 		// <Op Pointer> ::= <Op Pointer> '.' <Value>
 		protected override object RuleOppointerDot(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Pointer> ::= <Op Pointer> '.' <Value>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new OpMember(Expr(token, 0), Expr(token, 2));
 		}
 
 		// <Op Pointer> ::= <Op Pointer> '->' <Value>
@@ -674,9 +664,13 @@ namespace LPS.ToolScript
 		// <Op Pointer> ::= <Op Pointer> '[' <Expr> ']'
 		protected override object RuleOppointerLbracketRbracket(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Pointer> ::= <Op Pointer> '[' <Expr> ']'");
-			//CheckRule(token, Symbols);
-			//return new
+			return new ArrayMember(Expr(token,0), Expr(token,2));
+		}
+
+		// <Op Pointer> ::= <Op Pointer> '(' <Args> ')'
+		protected override object RuleOppointerLparanRparan(NonterminalToken token)
+		{
+			return new FunctionCall(Expr(token, 0), (NamedArgumentList)CreateObject(token.Tokens[2]));
 		}
 
 		// <Op Pointer> ::= <Value>
@@ -688,31 +682,19 @@ namespace LPS.ToolScript
 		// <Value> ::= IntLiteral
 		protected override object RuleValueIntliteral(NonterminalToken token)
 		{
-			return Expr(token, 0);
+			return new IntLiteral(Int64.Parse(TText(token, 0), CultureInfo.InvariantCulture));
 		}
 
 		// <Value> ::= StringLiteral
 		protected override object RuleValueStringliteral(NonterminalToken token)
 		{
-			return Expr(token, 0);
+			return new StringLiteral(StringLiteral.Parse(TText(token, 0)));
 		}
 
 		// <Value> ::= DecimalLiteral
 		protected override object RuleValueDecimalliteral(NonterminalToken token)
 		{
-			return Expr(token, 0);
-		}
-
-		// <Value> ::= type ID
-		protected override object RuleValueTypeId(NonterminalToken token)
-		{
-			return Expr(token, 0);
-		}
-
-		// <Value> ::= type QualifiedName
-		protected override object RuleValueTypeQualifiedname (NonterminalToken token)
-		{
-			return new TypeLiteral(TText(token, 1));
+			return new DecimalLiteral(Decimal.Parse(TText(token, 0), CultureInfo.InvariantCulture));
 		}
 
 		// <Value> ::= <Function>
@@ -721,52 +703,20 @@ namespace LPS.ToolScript
 			return CreateObject(token.Tokens[0]);
 		}
 
-		// <Value> ::= QualifiedName '(' <Args> ')'
-		protected override object RuleValueQualifiednameLparanRparan(NonterminalToken token)
+		// <Value> ::= type <QualifiedName>
+		protected override object RuleValueType(NonterminalToken token)
 		{
-			return new FunctionCall(TText(token,0), (List<IExpression>)CreateObject(token.Tokens[2]));
+			throw new NotImplementedException("<Value> ::= type <QualifiedName>");
+			//CheckRule(token, Symbols);
+			//return new
 		}
 
-		// <Value> ::= QualifiedName '(' ')'
-		protected override object RuleValueQualifiednameLparanRparan2(NonterminalToken token)
+		// <Value> ::= new <QualifiedName> '(' <Args> ')'
+		protected override object RuleValueNewLparanRparan(NonterminalToken token)
 		{
-			return new FunctionCall(TText(token,0), null);
-		}
-
-		// <Value> ::= ID '(' <Args> ')'
-		protected override object RuleValueIdLparanRparan(NonterminalToken token)
-		{
-			return new FunctionCall(TText(token,0), (List<IExpression>)CreateObject(token.Tokens[2]));
-		}
-
-		// <Value> ::= ID '(' ')'
-		protected override object RuleValueIdLparanRparan2(NonterminalToken token)
-		{
-			return new FunctionCall(TText(token,0), null);
-		}
-
-		// <Value> ::= new ID '(' <Args> ')'
-		protected override object RuleValueNewIdLparanRparan(NonterminalToken token)
-		{
-			return new NewExpression(TText(token, 1), (List<IExpression>)CreateObject(token.Tokens[3]));
-		}
-
-		// <Value> ::= new ID '(' ')'
-		protected override object RuleValueNewIdLparanRparan2(NonterminalToken token)
-		{
-			return new NewExpression(TText(token, 1), null);
-		}
-
-		// <Value> ::= new QualifiedName '(' <Args> ')'
-		protected override object RuleValueNewQualifiednameLparanRparan(NonterminalToken token)
-		{
-			return new NewExpression(TText(token, 1), (List<IExpression>)CreateObject(token.Tokens[3]));
-		}
-
-		// <Value> ::= new QualifiedName '(' ')'
-		protected override object RuleValueNewQualifiednameLparanRparan2(NonterminalToken token)
-		{
-			return new NewExpression(TText(token, 1), null);
+			throw new NotImplementedException("<Value> ::= new <QualifiedName> '(' <Args> ')'");
+			//CheckRule(token, Symbols);
+			//return new
 		}
 
 		// <Value> ::= ID
@@ -795,10 +745,16 @@ namespace LPS.ToolScript
 			return CreateObject(token.Tokens[1]);
 		}
 
-		// <Value> ::= '{' <Expr List> '}'
-		protected override object RuleValueLbraceRbrace(NonterminalToken token)
+		// <Value> ::= '[' <Expr List> ']'
+		protected override object RuleValueLbracketRbracket(NonterminalToken token)
 		{
 			return new ArrayExpression((List<IExpression>)CreateObject(token.Tokens[1]));
+		}
+
+		// <Value> ::= '{' <Dict List> '}'
+		protected override object RuleValueLbraceRbrace(NonterminalToken token)
+		{
+			return Get<DictionaryExpression>(token, 1);
 		}
 
 		// <Value> ::= null
@@ -906,18 +862,10 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Layout Block> ::= ref ID <WndParam List>
-		protected override object RuleLayoutblockRefId(NonterminalToken token)
+		// <Layout Block> ::= ref <QualifiedName> <WndParam List>
+		protected override object RuleLayoutblockRef(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Layout Block> ::= ref ID <WndParam List>");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Layout Block> ::= ref QualifiedName <WndParam List>
-		protected override object RuleLayoutblockRefQualifiedname(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Layout Block> ::= ref QualifiedName <WndParam List>");
+			throw new NotImplementedException("<Layout Block> ::= ref <QualifiedName> <WndParam List>");
 			//CheckRule(token, Symbols);
 			//return new
 		}
@@ -1025,6 +973,23 @@ namespace LPS.ToolScript
 			//CheckRule(token, Symbols);
 			//return new
 		}
+
+		// <Dict List> ::= <Dict List> ',' <Expr> ':' <Expr>
+		protected override object RuleDictlistCommaColon(NonterminalToken token)
+		{
+			DictionaryExpression dict = Get<DictionaryExpression>(token,0);
+			dict.Add(Expr(token,2), Expr(token,4));
+			return dict;
+		}
+
+		// <Dict List> ::= <Expr> ':' <Expr>
+		protected override object RuleDictlistColon(NonterminalToken token)
+		{
+			DictionaryExpression dict = new DictionaryExpression();
+			dict.Add(Expr(token,0), Expr(token,2));
+			return dict;
+		}
+
 		#endregion
 		#endregion
     }

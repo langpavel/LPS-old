@@ -51,13 +51,14 @@
     <Compile Include="Commands\RefreshCommand.cs" />
     <Compile Include="Commands\ChangeDirCommand.cs" />
     <Compile Include="Commands\LsDirCommand.cs" />
-    <Compile Include="CommandCollection.cs" />
     <Compile Include="Commands\LoadTxtTableCommand.cs" />
-    <Compile Include="gtk-gui\generated.cs" />
-    <Compile Include="UtilMainWindow.cs" />
-    <Compile Include="gtk-gui\LPS.Util.UtilMainWindow.cs" />
     <Compile Include="Commands\CommandBase.cs" />
-    <Compile Include="Commands\EvalCommand.cs" />
+    <Compile Include="Commands\WriteFileCommand.cs" />
+    <Compile Include="Commands\ReadFileCommand.cs" />
+    <Compile Include="UtilMainWindow.cs">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="UtilMain.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPSShared\LPSShared.csproj">
@@ -72,14 +73,20 @@
       <Project>{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}</Project>
       <Name>LPSClientSharedGUI</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LPSParser\LPSParser.csproj">
+      <Project>{EA93C136-1964-4122-B619-0EBB3462938F}</Project>
+      <Name>LPSParser</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Commands\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="gtk-gui\gui.stetic">
-      <LogicalName>gui.stetic</LogicalName>
-    </EmbeddedResource>
+    <None Include="Scripts\00_init.ts">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

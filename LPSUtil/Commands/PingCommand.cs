@@ -6,8 +6,8 @@ namespace LPS.Util
 {
 	public class PingCommand : CommandBase
 	{
-		public PingCommand(CommandCollection Commands, string Name)
-			: base(Commands, Name)
+		public PingCommand(string Name)
+			: base(Name)
 		{
 		}
 
@@ -16,9 +16,9 @@ namespace LPS.Util
 			get { return "otestuje spojení na server"; }
 		}
 
-		public override object Execute (TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		public override object Execute (LPS.ToolScript.Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
-			ServerConnection conn = Commands.GetVar<ServerConnection>("ServerConnection");
+			ServerConnection conn = (ServerConnection)context.LocalVariables["ServerConnection"];
 			if(conn.Ping())
 			{
 				Info.WriteLine("Ping OK");

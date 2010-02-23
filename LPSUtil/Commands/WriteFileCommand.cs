@@ -1,24 +1,24 @@
 using System;
 using System.IO;
+using System.Text;
 
 namespace LPS.Util
 {
-	public class EchoCommand : CommandBase
+	public class WriteFileCommand : CommandBase
 	{
-		public EchoCommand(string Name)
+		public WriteFileCommand(string Name)
 			: base(Name)
 		{
 		}
 
 		public override string Help
 		{
-			get { return "vypíše parametr na výstup"; }
+			get { return "otevře soubor pro zápis"; }
 		}
 
 		public override object Execute(LPS.ToolScript.Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
-			Out.WriteLine(Params[0]);
-			return Params[0];
+			return new StreamWriter(Get<string>(Params, 0), false, Encoding.UTF8);
 		}
 	}
 }

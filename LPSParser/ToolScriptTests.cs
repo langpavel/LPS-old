@@ -1,5 +1,6 @@
 using System;
 using NUnit.Framework;
+using System.Reflection;
 
 namespace LPS.ToolScript
 {
@@ -13,7 +14,9 @@ namespace LPS.ToolScript
 			StatementList result = parser.Parse(prog);
 			if(result == null)
 				throw new Exception(String.Format("Parse err: {0}", prog));
-			return result.Run(parser);
+			Context context = Context.CreateRootContext(parser);
+			context.InitVariable("this", this);
+			return result.RunAsMain(context);
 		}
 
 		[Test]
@@ -32,7 +35,7 @@ namespace LPS.ToolScript
 				else return 4.0;"));
 			Assert.AreEqual("if else return", Run("if(false) ; else return 'if else return';"));
 			Assert.AreEqual(new object[] { null, 1L, 2M, "3", true, false, null},
-				Run("return { null, 1, 2.0, '3', true, false, null};"));
+				Run("return [ null, 1, 2.0, '3', true, false, null];"));
 		}
 
 		[Test]
@@ -40,7 +43,7 @@ namespace LPS.ToolScript
 		{
 			Assert.AreEqual(20L ,Run(@"
 				var result = 5;
-				foreach(i in {1,2,3,4,5})
+				foreach(i in [1,2,3,4,5])
 				{
 					result+=i;
 				}
@@ -53,7 +56,7 @@ namespace LPS.ToolScript
 		{
 			Assert.AreEqual(15L ,Run(@"
 				var result;
-				foreach(i in {1,2,3,4,5})
+				foreach(i in [1,2,3,4,5])
 				{
 					result+=i;
 				}
@@ -74,8 +77,11 @@ namespace LPS.ToolScript
 				}
 				return result;
 			"));
+		}
 
-
+		[Test]
+		public void TestBlockNesting2()
+		{
 			Assert.AreEqual(2M ,Run(@"
 				var result;
 				{
@@ -175,17 +181,29 @@ namespace LPS.ToolScript
 						continue;
 					t++;
 				} while(++i < 200)
-				return {i, j, t};
+				return [i, j, t];
 			");
 		}
 
 		[Test]
 		public void TestUnaryIncrementors()
 		{
-			Eq(new object[] {  0,  1 }, "var i = 0; return {i++, i};");
-			Eq(new object[] {  1,  1 }, "var i = 0; return {++i, i};");
-			Eq(new object[] {  0, -1 }, "var i = 0; return {i--, i};");
-			Eq(new object[] { -1, -1 }, "var i = 0; return {--i, i};");
+			Eq(new object[] {  0,  1 }, "var i = 0; return [i++, i];");
+			Eq(new object[] {  1,  1 }, "var i = 0; return [++i, i];");
+			Eq(new object[] {  0, -1 }, "var i = 0; return [i--, i];");
+			Eq(new object[] { -1, -1 }, "var i = 0; return [--i, i];");
+		}
+
+		[Test]
+		public void TestHashTable()
+		{
+			Eq(new object[] {"aaa", "bbc", "abc"}, "var dict = {'A': 'aaa', 'B': 'bbb'}; dict['C'] = 'abc'; dict['B'] = 'bbc'; return [dict['A'], dict['B'], dict['C']];");
+		}
+
+		[Test]
+		public void TestArrayTable()
+		{
+			Eq(new object[] {"ccc", "bbb"}, "var array = ['aaa', 'bbb']; array[0] = 'ccc'; return array;");
 		}
 
 		[Test]
@@ -198,6 +216,18 @@ namespace LPS.ToolScript
 		[Test]
 		public void TestFunction()
 		{
+			Eq("z funkce !", @"
+				function ff()
+				{
+					return 'z funkce !';
+				};
+				return ff();
+			");
+		}
+
+		[Test]
+		public void TestFunction2()
+		{
 			Eq("z funkce ! :-)", @"
 				function ff(val)
 				{
@@ -207,5 +237,133 @@ namespace LPS.ToolScript
 			");
 		}
 
+		[Test]
+		public void PropertyGet()
+		{
+			Eq(3, "return 'abc'.Length;");
+		}
+
+		[Test]
+		public void NativeInvokeTest1()
+		{
+			Eq("3", "return 'abc'.Length.ToString();");
+			Eq(1, "return 'abc'.Length.ToString().Length;");
+			Eq("1", "return 'abc'.Length.ToString().Length.ToString();");
+		}
+
+		[Test]
+		public void NativeInvokeTest2()
+		{
+			Eq("abc", "return this.ToString('abc');");
+			Eq(this.ToString(), "return this.ToString();");
+		}
+
+		//[Test] // FAIL - type downcast needed
+		public void NativeInvokeTest3()
+		{
+			Eq(3, "return this.Add(1,2);");
+			Eq(this.ToString(), "return this.ToString();");
+		}
+
+		[Test]
+		public void NativeInvokeTest4()
+		{
+			Eq("abcde", "return this.Format('a{0}cd{1}',['b','e']);");
+		}
+
+		public string TestField;
+		public string TestProp { get; set; }
+
+		[Test]
+		public void NativeInvokeTest5()
+		{
+			aa.aa = new BB();
+			Eq("aaa", "return this.TestProp = 'aaa';");
+			Eq("aaa", "return this.TestProp;");
+			Eq("aaa", "return this.TestField = 'aaa';");
+			Eq("aaa", "return this.TestField;");
+			Eq("aaa", "return this.aa.TestProp = 'aaa';");
+			Eq("aaa", "return this.aa.TestProp;");
+			Eq("aaa", "return this.aa.TestField = 'aaa';");
+			Eq("aaa", "return this.aa.TestField;");
+			Eq("aaa", "return this.aa.aa.TestProp = 'aaa';");
+			Eq("aaa", "return this.aa.aa.TestProp;");
+			Eq("aaa", "return this.aa.aa.TestField = 'aaa';");
+			this.aa.aa.TestField = "cc";
+			Eq("cc", "return this.aa.aa.TestField;");
+		}
+
+		public AA aa = new BB();
+
+		public class AA
+		{
+			public AA() {}
+			public AA aa;
+			public string TestField;
+			public string TestProp { get; set; }
+		}
+		class BB : AA { public BB() {} }
+
+		[Test]
+		public void ConversionTests()
+		{
+			AA a = new AA();
+			BB b = new BB();
+			Assert.AreEqual(true, b.GetType().IsSubclassOf(a.GetType()));
+			Assert.AreEqual(false, b.GetType().IsSubclassOf(b.GetType()));
+			//Convert.ChangeType(b, typeof(AA));
+		}
+
+		public string Format(string s, params object[] args)
+		{
+			return String.Format(s, args);
+		}
+
+		public string ToString(string asdf)
+		{
+			return asdf;
+		}
+
+		public long Add(long a, int b)
+		{
+			return a+b;
+		}
+
+		//[Test]
+		public void FindMembersTest()
+		{
+	        Object objTest = this;
+	        Type objType = objTest.GetType ();
+	        MemberInfo[] arrayMemberInfo;
+	        try
+	        {
+	            //Find all static or public methods in the Object class that match the specified name.
+	            arrayMemberInfo = objType.FindMembers(MemberTypes.Method | MemberTypes.All,
+	                BindingFlags.Public | BindingFlags.Static| BindingFlags.Instance,
+	                new MemberFilter(DelegateToSearchCriteria),
+	                "ReferenceEquals");
+	
+	            for(int index=0;index < arrayMemberInfo.Length ;index++)
+	                Console.WriteLine ("Result of FindMembers -\t"+ arrayMemberInfo[index].ToString());
+	        }
+	        catch (Exception e)
+	        {
+	            Console.WriteLine ("Exception : " + e.ToString() );
+	        }
+			throw new Exception("show");
+		}
+
+		private string PTEXT;
+		public string TEXT { get { return PTEXT;}  set { PTEXT = value;} }
+
+	    public static bool DelegateToSearchCriteria(MemberInfo objMemberInfo, Object objSearch)
+	    {
+			return true;
+	        // Compare the name of the member function with the filter criteria.
+	        //if(objMemberInfo.Name.ToString() == objSearch.ToString())
+	            //return true;
+	        //else
+	          //  return false;
+	    }
 	}
 }

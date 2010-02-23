@@ -15,24 +15,33 @@ namespace LPS.ToolScript
 		/// </summary>
 		public ToolScriptParser Parser { get; set; }
 
-		private Dictionary<string, object> variables;
+		public Dictionary<string, object> LocalVariables { get; private set; }
 
 		private Context(Context ParentContext, Context GlobalContext, ToolScriptParser Parser)
 		{
 			this.GlobalContext = GlobalContext ?? this;
 			this.ParentContext = ParentContext;
 			this.Parser = Parser;
-			variables = new Dictionary<string, object>();
+			LocalVariables = new Dictionary<string, object>();
 		}
 
 		public static Context CreateRootContext()
 		{
-			return new Context(null, null, null);
+			return CreateRootContext(null);
 		}
 
 		public static Context CreateRootContext(ToolScriptParser parser)
 		{
-			return new Context(null, null, parser);
+			Context root = new Context(null, null, parser);
+			root.LocalVariables["eval"] = new ToolScriptFunction(EvalInvoked);
+			return root;
+		}
+
+		private static void EvalInvoked (object sender, ToolScriptFunctionArgs e)
+		{
+			if(e.Args.Count != 1 || !(e.Args[0].Value is string))
+				throw new Exception("Funkce eval přijímá jeden parametr typu string");
+			e.ReturnValue = e.ParserContext.Eval((string)e.Args[0].Value);
 		}
 
 		public Context CreateChildContext()
@@ -42,7 +51,7 @@ namespace LPS.ToolScript
 
 		private bool TryGetVariable(string name, out object val)
 		{
-			if(variables.TryGetValue(name, out val))
+			if(LocalVariables.TryGetValue(name, out val))
 				return true;
 			if(this.ParentContext != null)
 				return this.ParentContext.TryGetVariable(name, out val);
@@ -52,65 +61,14 @@ namespace LPS.ToolScript
 
 		private bool TrySetVariable(string name, object val)
 		{
-			if(variables.ContainsKey(name))
+			if(LocalVariables.ContainsKey(name))
 			{
-				variables[name] = val;
+				LocalVariables[name] = val;
 				return true;
 			}
 			if(this.ParentContext != null)
 				return this.ParentContext.TrySetVariable(name, val);
 			return false;
-		}
-
-		public object FunctionCall(string name, params object[] args)
-		{
-			object func;
-			if(name == "Format")
-			{
-				if(args.Length < 1)
-					throw new InvalidOperationException("minimum je 1 parametr typu string");
-				object[] o = new object[args.Length - 1];
-				for(int i = 0; i < o.Length; i++)
-					o[i] = args[i+1];
-				return String.Format((string)args[0], o);
-			}
-			else
-			if(name == "Print")
-			{
-				if(args.Length < 1)
-					throw new InvalidOperationException("minimum je 1 parametr typu string");
-				if(args.Length == 1)
-					Console.WriteLine(args[0]);
-				else if (args[0] is string)
-				{
-					object[] o = new object[args.Length - 1];
-					for(int i = 0; i < o.Length; i++)
-						o[i] = args[i+1];
-					Console.WriteLine((string)args[0], o);
-				}
-				else
-				{
-					StringBuilder sb = new StringBuilder("Pole: ");
-					for(int i=0; i<args.Length; i++)
-						sb.AppendFormat("[{0}]:{1}; ", i, args[i]);
-					Console.WriteLine(sb.ToString());
-				}
-				return null;
-			}
-			else if(name == "eval")
-			{
-				if(args.Length != 1 || !(args[0] is string))
-					throw new InvalidOperationException("pro eval() je pozadovan jeden parametr typu string");
-				return Eval((string)args[0]);
-			}
-			else if(TryGetVariable(name, out func))
-			{
-				if(!(func is IFunction))
-					throw new InvalidOperationException("Proměnná "+name+" není funkce!");
-				return ((IFunction)func).Execute(this, args);
-			}
-			else
-				throw new InvalidOperationException("Funkce "+name+" nebyla nalezena!");
 		}
 
 		public object Eval(string code)
@@ -140,18 +98,18 @@ namespace LPS.ToolScript
 
 		public void Dispose()
 		{
-			this.variables.Clear();
+			this.LocalVariables.Clear();
 		}
 
 		public void InitVariable(string name)
 		{
-			if(!this.variables.ContainsKey(name))
-				this.variables[name] = SpecialValue.VariableNotSet;
+			if(!this.LocalVariables.ContainsKey(name))
+				this.LocalVariables[name] = SpecialValue.VariableNotSet;
 		}
 
 		public void InitVariable(string name, object val)
 		{
-			this.variables[name] = val;
+			this.LocalVariables[name] = val;
 		}
 
 		public object GetVariable(string name)
@@ -170,7 +128,7 @@ namespace LPS.ToolScript
 
 		public void UnsetVariable(string name)
 		{
-			this.variables.Remove(name);
+			this.LocalVariables.Remove(name);
 		}
 	}
 }

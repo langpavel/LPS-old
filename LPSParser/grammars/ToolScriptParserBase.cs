@@ -422,100 +422,100 @@ namespace LPS.ToolScript
         Or = 67,
 
         /// <summary>
-        /// <para>Symbol: QualifiedName</para>
-        /// <para><c>QualifiedName</c></para>
-        /// </summary>
-        Qualifiedname = 68,
-
-        /// <summary>
         /// <para>Symbol: ref</para>
         /// <para><c>ref</c></para>
         /// </summary>
-        Ref = 69,
+        Ref = 68,
 
         /// <summary>
         /// <para>Symbol: return</para>
         /// <para><c>return</c></para>
         /// </summary>
-        Return = 70,
+        Return = 69,
 
         /// <summary>
         /// <para>Symbol: row</para>
         /// <para><c>row</c></para>
         /// </summary>
-        Row = 71,
+        Row = 70,
 
         /// <summary>
         /// <para>Symbol: separator</para>
         /// <para><c>separator</c></para>
         /// </summary>
-        Separator = 72,
+        Separator = 71,
 
         /// <summary>
         /// <para>Symbol: static</para>
         /// <para><c>static</c></para>
         /// </summary>
-        Static = 73,
+        Static = 72,
 
         /// <summary>
         /// <para>Symbol: StringLiteral</para>
         /// <para><c>StringLiteral</c></para>
         /// </summary>
-        Stringliteral = 74,
+        Stringliteral = 73,
 
         /// <summary>
         /// <para>Symbol: switch</para>
         /// <para><c>switch</c></para>
         /// </summary>
-        Switch = 75,
+        Switch = 74,
 
         /// <summary>
         /// <para>Symbol: table</para>
         /// <para><c>table</c></para>
         /// </summary>
-        Table = 76,
+        Table = 75,
 
         /// <summary>
         /// <para>Symbol: true</para>
         /// <para><c>true</c></para>
         /// </summary>
-        True = 77,
+        True = 76,
 
         /// <summary>
         /// <para>Symbol: type</para>
         /// <para><c>type</c></para>
         /// </summary>
-        Type = 78,
+        Type = 77,
 
         /// <summary>
         /// <para>Symbol: using</para>
         /// <para><c>using</c></para>
         /// </summary>
-        Using = 79,
+        Using = 78,
 
         /// <summary>
         /// <para>Symbol: var</para>
         /// <para><c>var</c></para>
         /// </summary>
-        Var = 80,
+        Var = 79,
 
         /// <summary>
         /// <para>Symbol: vbox</para>
         /// <para><c>vbox</c></para>
         /// </summary>
-        Vbox = 81,
+        Vbox = 80,
 
         /// <summary>
         /// <para>Symbol: while</para>
         /// <para><c>while</c></para>
         /// </summary>
-        While = 82,
+        While = 81,
 
         /// <summary>
         /// <para>Symbol: window</para>
         /// <para><c>window</c></para>
         /// </summary>
-        Window = 83,
+        Window = 82,
+
+        /// <summary>
+        /// <para>Symbol: Arg</para>
+        /// <para><c>&lt;Arg&gt;</c></para>
+        /// </summary>
+        Arg = 83,
 
         /// <summary>
         /// <para>Symbol: Args</para>
@@ -536,1033 +536,1039 @@ namespace LPS.ToolScript
         Casestms = 86,
 
         /// <summary>
+        /// <para>Symbol: Dict List</para>
+        /// <para><c>&lt;Dict List&gt;</c></para>
+        /// </summary>
+        Dictlist = 87,
+
+        /// <summary>
         /// <para>Symbol: Expr</para>
         /// <para><c>&lt;Expr&gt;</c></para>
         /// </summary>
-        Expr = 87,
+        Expr = 88,
 
         /// <summary>
         /// <para>Symbol: Expr List</para>
         /// <para><c>&lt;Expr List&gt;</c></para>
         /// </summary>
-        Exprlist = 88,
+        Exprlist = 89,
+
+        /// <summary>
+        /// <para>Symbol: Func Arg</para>
+        /// <para><c>&lt;Func Arg&gt;</c></para>
+        /// </summary>
+        Funcarg = 90,
+
+        /// <summary>
+        /// <para>Symbol: Func args</para>
+        /// <para><c>&lt;Func args&gt;</c></para>
+        /// </summary>
+        Funcargs = 91,
 
         /// <summary>
         /// <para>Symbol: Function</para>
         /// <para><c>&lt;Function&gt;</c></para>
         /// </summary>
-        Function2 = 89,
+        Function2 = 92,
 
         /// <summary>
         /// <para>Symbol: Layout Block</para>
         /// <para><c>&lt;Layout Block&gt;</c></para>
         /// </summary>
-        Layoutblock = 90,
+        Layoutblock = 93,
 
         /// <summary>
         /// <para>Symbol: Menu Block</para>
         /// <para><c>&lt;Menu Block&gt;</c></para>
         /// </summary>
-        Menublock = 91,
+        Menublock = 94,
 
         /// <summary>
         /// <para>Symbol: Menu Item</para>
         /// <para><c>&lt;Menu Item&gt;</c></para>
         /// </summary>
-        Menuitem = 92,
+        Menuitem = 95,
 
         /// <summary>
         /// <para>Symbol: MenuItems List</para>
         /// <para><c>&lt;MenuItems List&gt;</c></para>
         /// </summary>
-        Menuitemslist = 93,
+        Menuitemslist = 96,
 
         /// <summary>
         /// <para>Symbol: Normal Stm</para>
         /// <para><c>&lt;Normal Stm&gt;</c></para>
         /// </summary>
-        Normalstm = 94,
+        Normalstm = 97,
 
         /// <summary>
         /// <para>Symbol: Op Add</para>
         /// <para><c>&lt;Op Add&gt;</c></para>
         /// </summary>
-        Opadd = 95,
+        Opadd = 98,
 
         /// <summary>
         /// <para>Symbol: Op And</para>
         /// <para><c>&lt;Op And&gt;</c></para>
         /// </summary>
-        Opand = 96,
+        Opand = 99,
 
         /// <summary>
         /// <para>Symbol: Op Compare</para>
         /// <para><c>&lt;Op Compare&gt;</c></para>
         /// </summary>
-        Opcompare = 97,
+        Opcompare = 100,
 
         /// <summary>
         /// <para>Symbol: Op Equate</para>
         /// <para><c>&lt;Op Equate&gt;</c></para>
         /// </summary>
-        Opequate = 98,
+        Opequate = 101,
 
         /// <summary>
         /// <para>Symbol: Op If</para>
         /// <para><c>&lt;Op If&gt;</c></para>
         /// </summary>
-        Opif = 99,
+        Opif = 102,
 
         /// <summary>
         /// <para>Symbol: Op In</para>
         /// <para><c>&lt;Op In&gt;</c></para>
         /// </summary>
-        Opin = 100,
+        Opin = 103,
 
         /// <summary>
         /// <para>Symbol: Op Mult</para>
         /// <para><c>&lt;Op Mult&gt;</c></para>
         /// </summary>
-        Opmult = 101,
+        Opmult = 104,
 
         /// <summary>
         /// <para>Symbol: Op Or</para>
         /// <para><c>&lt;Op Or&gt;</c></para>
         /// </summary>
-        Opor = 102,
+        Opor = 105,
 
         /// <summary>
         /// <para>Symbol: Op Pointer</para>
         /// <para><c>&lt;Op Pointer&gt;</c></para>
         /// </summary>
-        Oppointer = 103,
+        Oppointer = 106,
 
         /// <summary>
         /// <para>Symbol: Op Unary</para>
         /// <para><c>&lt;Op Unary&gt;</c></para>
         /// </summary>
-        Opunary = 104,
+        Opunary = 107,
 
         /// <summary>
-        /// <para>Symbol: Param decl</para>
-        /// <para><c>&lt;Param decl&gt;</c></para>
+        /// <para>Symbol: QualifiedName</para>
+        /// <para><c>&lt;QualifiedName&gt;</c></para>
         /// </summary>
-        Paramdecl = 105,
-
-        /// <summary>
-        /// <para>Symbol: Param List</para>
-        /// <para><c>&lt;Param List&gt;</c></para>
-        /// </summary>
-        Paramlist = 106,
+        Qualifiedname = 108,
 
         /// <summary>
         /// <para>Symbol: Stm</para>
         /// <para><c>&lt;Stm&gt;</c></para>
         /// </summary>
-        Stm = 107,
+        Stm = 109,
 
         /// <summary>
         /// <para>Symbol: Stm List</para>
         /// <para><c>&lt;Stm List&gt;</c></para>
         /// </summary>
-        Stmlist = 108,
+        Stmlist = 110,
 
         /// <summary>
         /// <para>Symbol: Tab Cell</para>
         /// <para><c>&lt;Tab Cell&gt;</c></para>
         /// </summary>
-        Tabcell = 109,
+        Tabcell = 111,
 
         /// <summary>
         /// <para>Symbol: Tab Cells</para>
         /// <para><c>&lt;Tab Cells&gt;</c></para>
         /// </summary>
-        Tabcells = 110,
+        Tabcells = 112,
 
         /// <summary>
         /// <para>Symbol: TabCol Block</para>
         /// <para><c>&lt;TabCol Block&gt;</c></para>
         /// </summary>
-        Tabcolblock = 111,
+        Tabcolblock = 113,
 
         /// <summary>
         /// <para>Symbol: TabRow Block</para>
         /// <para><c>&lt;TabRow Block&gt;</c></para>
         /// </summary>
-        Tabrowblock = 112,
+        Tabrowblock = 114,
 
         /// <summary>
         /// <para>Symbol: Then Stm</para>
         /// <para><c>&lt;Then Stm&gt;</c></para>
         /// </summary>
-        Thenstm = 113,
+        Thenstm = 115,
 
         /// <summary>
         /// <para>Symbol: Value</para>
         /// <para><c>&lt;Value&gt;</c></para>
         /// </summary>
-        Value = 114,
+        Value = 116,
 
         /// <summary>
         /// <para>Symbol: Window</para>
         /// <para><c>&lt;Window&gt;</c></para>
         /// </summary>
-        Window2 = 115,
+        Window2 = 117,
 
         /// <summary>
         /// <para>Symbol: WndParam</para>
         /// <para><c>&lt;WndParam&gt;</c></para>
         /// </summary>
-        Wndparam = 116,
+        Wndparam = 118,
 
         /// <summary>
         /// <para>Symbol: WndParam List</para>
         /// <para><c>&lt;WndParam List&gt;</c></para>
         /// </summary>
-        Wndparamlist = 117,
+        Wndparamlist = 119,
 
 		#endregion
 
 		#region Neterminaly
         /// <summary>
         /// <para>Pravidlo: </para>
+        /// <para><c>&lt;QualifiedName&gt; ::= ID '.' &lt;QualifiedName&gt;</c></para>
+        /// </summary>
+        RuleQualifiednameIdDot = ToolScriptParserBase.RulesOffset + 0,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;QualifiedName&gt; ::= ID</c></para>
+        /// </summary>
+        RuleQualifiednameId = ToolScriptParserBase.RulesOffset + 1,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
         /// <para><c>&lt;Stm&gt; ::= if '(' &lt;Expr&gt; ')' &lt;Stm&gt;</c></para>
         /// </summary>
-        RuleStmIfLparanRparan = ToolScriptParserBase.RulesOffset + 0,
+        RuleStmIfLparanRparan = ToolScriptParserBase.RulesOffset + 2,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Stm&gt; ::= if '(' &lt;Expr&gt; ')' &lt;Then Stm&gt; else &lt;Stm&gt;</c></para>
         /// </summary>
-        RuleStmIfLparanRparanElse = ToolScriptParserBase.RulesOffset + 1,
+        RuleStmIfLparanRparanElse = ToolScriptParserBase.RulesOffset + 3,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Stm&gt; ::= while '(' &lt;Expr&gt; ')' &lt;Stm&gt;</c></para>
         /// </summary>
-        RuleStmWhileLparanRparan = ToolScriptParserBase.RulesOffset + 2,
+        RuleStmWhileLparanRparan = ToolScriptParserBase.RulesOffset + 4,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Stm&gt; ::= for '(' &lt;Expr&gt; ';' &lt;Expr&gt; ';' &lt;Expr&gt; ')' &lt;Stm&gt;</c></para>
         /// </summary>
-        RuleStmForLparanSemiSemiRparan = ToolScriptParserBase.RulesOffset + 3,
+        RuleStmForLparanSemiSemiRparan = ToolScriptParserBase.RulesOffset + 5,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Stm&gt; ::= foreach '(' ID in &lt;Expr&gt; ')' &lt;Stm&gt;</c></para>
         /// </summary>
-        RuleStmForeachLparanIdInRparan = ToolScriptParserBase.RulesOffset + 4,
+        RuleStmForeachLparanIdInRparan = ToolScriptParserBase.RulesOffset + 6,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Stm&gt; ::= observed '(' &lt;Expr&gt; ')' &lt;Stm&gt;</c></para>
         /// </summary>
-        RuleStmObservedLparanRparan = ToolScriptParserBase.RulesOffset + 5,
+        RuleStmObservedLparanRparan = ToolScriptParserBase.RulesOffset + 7,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Stm&gt; ::= using ID ';'</c></para>
+        /// <para><c>&lt;Stm&gt; ::= using &lt;QualifiedName&gt; ';'</c></para>
         /// </summary>
-        RuleStmUsingIdSemi = ToolScriptParserBase.RulesOffset + 6,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Stm&gt; ::= using QualifiedName ';'</c></para>
-        /// </summary>
-        RuleStmUsingQualifiednameSemi = ToolScriptParserBase.RulesOffset + 7,
+        RuleStmUsingSemi = ToolScriptParserBase.RulesOffset + 8,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Stm&gt; ::= using StringLiteral ';'</c></para>
         /// </summary>
-        RuleStmUsingStringliteralSemi = ToolScriptParserBase.RulesOffset + 8,
+        RuleStmUsingStringliteralSemi = ToolScriptParserBase.RulesOffset + 9,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Stm&gt; ::= using QualifiedName as ID ';'</c></para>
+        /// <para><c>&lt;Stm&gt; ::= using &lt;QualifiedName&gt; as ID ';'</c></para>
         /// </summary>
-        RuleStmUsingQualifiednameAsIdSemi = ToolScriptParserBase.RulesOffset + 9,
+        RuleStmUsingAsIdSemi = ToolScriptParserBase.RulesOffset + 10,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Stm&gt; ::= using StringLiteral as ID ';'</c></para>
+        /// </summary>
+        RuleStmUsingStringliteralAsIdSemi = ToolScriptParserBase.RulesOffset + 11,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Stm&gt; ::= &lt;Normal Stm&gt;</c></para>
         /// </summary>
-        RuleStm = ToolScriptParserBase.RulesOffset + 10,
+        RuleStm = ToolScriptParserBase.RulesOffset + 12,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Then Stm&gt; ::= if '(' &lt;Expr&gt; ')' &lt;Then Stm&gt; else &lt;Then Stm&gt;</c></para>
         /// </summary>
-        RuleThenstmIfLparanRparanElse = ToolScriptParserBase.RulesOffset + 11,
+        RuleThenstmIfLparanRparanElse = ToolScriptParserBase.RulesOffset + 13,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Then Stm&gt; ::= while '(' &lt;Expr&gt; ')' &lt;Then Stm&gt;</c></para>
         /// </summary>
-        RuleThenstmWhileLparanRparan = ToolScriptParserBase.RulesOffset + 12,
+        RuleThenstmWhileLparanRparan = ToolScriptParserBase.RulesOffset + 14,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Then Stm&gt; ::= for '(' &lt;Expr&gt; ';' &lt;Expr&gt; ';' &lt;Expr&gt; ')' &lt;Then Stm&gt;</c></para>
         /// </summary>
-        RuleThenstmForLparanSemiSemiRparan = ToolScriptParserBase.RulesOffset + 13,
+        RuleThenstmForLparanSemiSemiRparan = ToolScriptParserBase.RulesOffset + 15,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Then Stm&gt; ::= &lt;Normal Stm&gt;</c></para>
         /// </summary>
-        RuleThenstm = ToolScriptParserBase.RulesOffset + 14,
+        RuleThenstm = ToolScriptParserBase.RulesOffset + 16,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= do &lt;Stm&gt; while '(' &lt;Expr&gt; ')'</c></para>
         /// </summary>
-        RuleNormalstmDoWhileLparanRparan = ToolScriptParserBase.RulesOffset + 15,
+        RuleNormalstmDoWhileLparanRparan = ToolScriptParserBase.RulesOffset + 17,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= switch '(' &lt;Expr&gt; ')' '{' &lt;Case Stms&gt; '}'</c></para>
         /// </summary>
-        RuleNormalstmSwitchLparanRparanLbraceRbrace = ToolScriptParserBase.RulesOffset + 16,
+        RuleNormalstmSwitchLparanRparanLbraceRbrace = ToolScriptParserBase.RulesOffset + 18,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= &lt;Block&gt;</c></para>
         /// </summary>
-        RuleNormalstm = ToolScriptParserBase.RulesOffset + 17,
+        RuleNormalstm = ToolScriptParserBase.RulesOffset + 19,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= &lt;Expr&gt; ';'</c></para>
         /// </summary>
-        RuleNormalstmSemi = ToolScriptParserBase.RulesOffset + 18,
+        RuleNormalstmSemi = ToolScriptParserBase.RulesOffset + 20,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= break ';'</c></para>
         /// </summary>
-        RuleNormalstmBreakSemi = ToolScriptParserBase.RulesOffset + 19,
+        RuleNormalstmBreakSemi = ToolScriptParserBase.RulesOffset + 21,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= continue ';'</c></para>
         /// </summary>
-        RuleNormalstmContinueSemi = ToolScriptParserBase.RulesOffset + 20,
+        RuleNormalstmContinueSemi = ToolScriptParserBase.RulesOffset + 22,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= return &lt;Expr&gt; ';'</c></para>
         /// </summary>
-        RuleNormalstmReturnSemi = ToolScriptParserBase.RulesOffset + 21,
+        RuleNormalstmReturnSemi = ToolScriptParserBase.RulesOffset + 23,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= ';'</c></para>
         /// </summary>
-        RuleNormalstmSemi2 = ToolScriptParserBase.RulesOffset + 22,
+        RuleNormalstmSemi2 = ToolScriptParserBase.RulesOffset + 24,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Args&gt; ::= &lt;Expr&gt; ',' &lt;Args&gt;</c></para>
+        /// <para><c>&lt;Func args&gt; ::= &lt;Func args&gt; ',' &lt;Func Arg&gt;</c></para>
         /// </summary>
-        RuleArgsComma = ToolScriptParserBase.RulesOffset + 23,
+        RuleFuncargsComma = ToolScriptParserBase.RulesOffset + 25,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Args&gt; ::= &lt;Expr&gt;</c></para>
+        /// <para><c>&lt;Func args&gt; ::= &lt;Func Arg&gt;</c></para>
         /// </summary>
-        RuleArgs = ToolScriptParserBase.RulesOffset + 24,
+        RuleFuncargs = ToolScriptParserBase.RulesOffset + 26,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Func args&gt; ::= </c></para>
+        /// </summary>
+        RuleFuncargs2 = ToolScriptParserBase.RulesOffset + 27,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Func Arg&gt; ::= ID</c></para>
+        /// </summary>
+        RuleFuncargId = ToolScriptParserBase.RulesOffset + 28,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Func Arg&gt; ::= ID '=' &lt;Expr&gt;</c></para>
+        /// </summary>
+        RuleFuncargIdEq = ToolScriptParserBase.RulesOffset + 29,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Args&gt; ::= &lt;Args&gt; ',' &lt;Arg&gt;</c></para>
+        /// </summary>
+        RuleArgsComma = ToolScriptParserBase.RulesOffset + 30,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Args&gt; ::= &lt;Arg&gt;</c></para>
+        /// </summary>
+        RuleArgs = ToolScriptParserBase.RulesOffset + 31,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Args&gt; ::= </c></para>
+        /// </summary>
+        RuleArgs2 = ToolScriptParserBase.RulesOffset + 32,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Arg&gt; ::= &lt;Op If&gt;</c></para>
+        /// </summary>
+        RuleArg = ToolScriptParserBase.RulesOffset + 33,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Arg&gt; ::= ID '=' &lt;Expr&gt;</c></para>
+        /// </summary>
+        RuleArgIdEq = ToolScriptParserBase.RulesOffset + 34,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Case Stms&gt; ::= case &lt;Value&gt; ':' &lt;Stm List&gt; &lt;Case Stms&gt;</c></para>
         /// </summary>
-        RuleCasestmsCaseColon = ToolScriptParserBase.RulesOffset + 25,
+        RuleCasestmsCaseColon = ToolScriptParserBase.RulesOffset + 35,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Case Stms&gt; ::= default ':' &lt;Stm List&gt;</c></para>
         /// </summary>
-        RuleCasestmsDefaultColon = ToolScriptParserBase.RulesOffset + 26,
+        RuleCasestmsDefaultColon = ToolScriptParserBase.RulesOffset + 36,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Case Stms&gt; ::= </c></para>
         /// </summary>
-        RuleCasestms = ToolScriptParserBase.RulesOffset + 27,
+        RuleCasestms = ToolScriptParserBase.RulesOffset + 37,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Block&gt; ::= '{' &lt;Stm List&gt; '}'</c></para>
         /// </summary>
-        RuleBlockLbraceRbrace = ToolScriptParserBase.RulesOffset + 28,
+        RuleBlockLbraceRbrace = ToolScriptParserBase.RulesOffset + 38,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Stm List&gt; ::= &lt;Stm&gt; &lt;Stm List&gt;</c></para>
         /// </summary>
-        RuleStmlist = ToolScriptParserBase.RulesOffset + 29,
+        RuleStmlist = ToolScriptParserBase.RulesOffset + 39,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Stm List&gt; ::= </c></para>
         /// </summary>
-        RuleStmlist2 = ToolScriptParserBase.RulesOffset + 30,
+        RuleStmlist2 = ToolScriptParserBase.RulesOffset + 40,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Function&gt; ::= function ID '(' &lt;Param List&gt; ')' &lt;Stm&gt;</c></para>
+        /// <para><c>&lt;Function&gt; ::= function ID '(' &lt;Func args&gt; ')' &lt;Stm&gt;</c></para>
         /// </summary>
-        RuleFunctionFunctionIdLparanRparan = ToolScriptParserBase.RulesOffset + 31,
+        RuleFunctionFunctionIdLparanRparan = ToolScriptParserBase.RulesOffset + 41,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Function&gt; ::= function ID '(' ')' &lt;Stm&gt;</c></para>
+        /// <para><c>&lt;Function&gt; ::= function '(' &lt;Func args&gt; ')' &lt;Stm&gt;</c></para>
         /// </summary>
-        RuleFunctionFunctionIdLparanRparan2 = ToolScriptParserBase.RulesOffset + 32,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Function&gt; ::= function '(' &lt;Param List&gt; ')' &lt;Stm&gt;</c></para>
-        /// </summary>
-        RuleFunctionFunctionLparanRparan = ToolScriptParserBase.RulesOffset + 33,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Function&gt; ::= function '(' ')' &lt;Stm&gt;</c></para>
-        /// </summary>
-        RuleFunctionFunctionLparanRparan2 = ToolScriptParserBase.RulesOffset + 34,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Param List&gt; ::= &lt;Param List&gt; ',' &lt;Param decl&gt;</c></para>
-        /// </summary>
-        RuleParamlistComma = ToolScriptParserBase.RulesOffset + 35,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Param List&gt; ::= &lt;Param decl&gt;</c></para>
-        /// </summary>
-        RuleParamlist = ToolScriptParserBase.RulesOffset + 36,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Param decl&gt; ::= ID</c></para>
-        /// </summary>
-        RuleParamdeclId = ToolScriptParserBase.RulesOffset + 37,
+        RuleFunctionFunctionLparanRparan = ToolScriptParserBase.RulesOffset + 42,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Window&gt; ::= window ID &lt;WndParam List&gt; &lt;Layout Block&gt;</c></para>
         /// </summary>
-        RuleWindowWindowId = ToolScriptParserBase.RulesOffset + 38,
+        RuleWindowWindowId = ToolScriptParserBase.RulesOffset + 43,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Window&gt; ::= window &lt;WndParam List&gt; &lt;Layout Block&gt;</c></para>
         /// </summary>
-        RuleWindowWindow = ToolScriptParserBase.RulesOffset + 39,
+        RuleWindowWindow = ToolScriptParserBase.RulesOffset + 44,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;WndParam List&gt; ::= &lt;WndParam&gt; &lt;WndParam List&gt;</c></para>
         /// </summary>
-        RuleWndparamlist = ToolScriptParserBase.RulesOffset + 40,
+        RuleWndparamlist = ToolScriptParserBase.RulesOffset + 45,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;WndParam List&gt; ::= </c></para>
         /// </summary>
-        RuleWndparamlist2 = ToolScriptParserBase.RulesOffset + 41,
+        RuleWndparamlist2 = ToolScriptParserBase.RulesOffset + 46,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;WndParam&gt; ::= ID '=' &lt;Expr&gt; ';'</c></para>
         /// </summary>
-        RuleWndparamIdEqSemi = ToolScriptParserBase.RulesOffset + 42,
+        RuleWndparamIdEqSemi = ToolScriptParserBase.RulesOffset + 47,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= hbox &lt;WndParam List&gt; &lt;Layout Block&gt; end</c></para>
         /// </summary>
-        RuleLayoutblockHboxEnd = ToolScriptParserBase.RulesOffset + 43,
+        RuleLayoutblockHboxEnd = ToolScriptParserBase.RulesOffset + 48,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= vbox &lt;WndParam List&gt; &lt;Layout Block&gt; end</c></para>
         /// </summary>
-        RuleLayoutblockVboxEnd = ToolScriptParserBase.RulesOffset + 44,
+        RuleLayoutblockVboxEnd = ToolScriptParserBase.RulesOffset + 49,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= table &lt;WndParam List&gt; &lt;TabRow Block&gt; end</c></para>
         /// </summary>
-        RuleLayoutblockTableEnd = ToolScriptParserBase.RulesOffset + 45,
+        RuleLayoutblockTableEnd = ToolScriptParserBase.RulesOffset + 50,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= table &lt;WndParam List&gt; &lt;TabCol Block&gt; end</c></para>
         /// </summary>
-        RuleLayoutblockTableEnd2 = ToolScriptParserBase.RulesOffset + 46,
+        RuleLayoutblockTableEnd2 = ToolScriptParserBase.RulesOffset + 51,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= &lt;Menu Block&gt;</c></para>
         /// </summary>
-        RuleLayoutblock = ToolScriptParserBase.RulesOffset + 47,
+        RuleLayoutblock = ToolScriptParserBase.RulesOffset + 52,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Layout Block&gt; ::= ref ID &lt;WndParam List&gt;</c></para>
+        /// <para><c>&lt;Layout Block&gt; ::= ref &lt;QualifiedName&gt; &lt;WndParam List&gt;</c></para>
         /// </summary>
-        RuleLayoutblockRefId = ToolScriptParserBase.RulesOffset + 48,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Layout Block&gt; ::= ref QualifiedName &lt;WndParam List&gt;</c></para>
-        /// </summary>
-        RuleLayoutblockRefQualifiedname = ToolScriptParserBase.RulesOffset + 49,
+        RuleLayoutblockRef = ToolScriptParserBase.RulesOffset + 53,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= ref StringLiteral &lt;WndParam List&gt;</c></para>
         /// </summary>
-        RuleLayoutblockRefStringliteral = ToolScriptParserBase.RulesOffset + 50,
+        RuleLayoutblockRefStringliteral = ToolScriptParserBase.RulesOffset + 54,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= '[' &lt;Expr&gt; ']' &lt;WndParam List&gt;</c></para>
         /// </summary>
-        RuleLayoutblockLbracketRbracket = ToolScriptParserBase.RulesOffset + 51,
+        RuleLayoutblockLbracketRbracket = ToolScriptParserBase.RulesOffset + 55,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;TabRow Block&gt; ::= row &lt;WndParam List&gt; &lt;Tab Cells&gt; end</c></para>
         /// </summary>
-        RuleTabrowblockRowEnd = ToolScriptParserBase.RulesOffset + 52,
+        RuleTabrowblockRowEnd = ToolScriptParserBase.RulesOffset + 56,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;TabCol Block&gt; ::= column &lt;WndParam List&gt; &lt;Tab Cells&gt; end</c></para>
         /// </summary>
-        RuleTabcolblockColumnEnd = ToolScriptParserBase.RulesOffset + 53,
+        RuleTabcolblockColumnEnd = ToolScriptParserBase.RulesOffset + 57,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Tab Cells&gt; ::= &lt;Tab Cells&gt; &lt;Tab Cell&gt;</c></para>
         /// </summary>
-        RuleTabcells = ToolScriptParserBase.RulesOffset + 54,
+        RuleTabcells = ToolScriptParserBase.RulesOffset + 58,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Tab Cells&gt; ::= </c></para>
         /// </summary>
-        RuleTabcells2 = ToolScriptParserBase.RulesOffset + 55,
+        RuleTabcells2 = ToolScriptParserBase.RulesOffset + 59,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Tab Cell&gt; ::= &lt;Layout Block&gt;</c></para>
         /// </summary>
-        RuleTabcell = ToolScriptParserBase.RulesOffset + 56,
+        RuleTabcell = ToolScriptParserBase.RulesOffset + 60,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Menu Block&gt; ::= menu &lt;WndParam List&gt; &lt;MenuItems List&gt; end</c></para>
         /// </summary>
-        RuleMenublockMenuEnd = ToolScriptParserBase.RulesOffset + 57,
+        RuleMenublockMenuEnd = ToolScriptParserBase.RulesOffset + 61,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;MenuItems List&gt; ::= &lt;Menu Item&gt; &lt;MenuItems List&gt;</c></para>
         /// </summary>
-        RuleMenuitemslist = ToolScriptParserBase.RulesOffset + 58,
+        RuleMenuitemslist = ToolScriptParserBase.RulesOffset + 62,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;MenuItems List&gt; ::= </c></para>
         /// </summary>
-        RuleMenuitemslist2 = ToolScriptParserBase.RulesOffset + 59,
+        RuleMenuitemslist2 = ToolScriptParserBase.RulesOffset + 63,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Menu Item&gt; ::= &lt;Menu Block&gt;</c></para>
         /// </summary>
-        RuleMenuitem = ToolScriptParserBase.RulesOffset + 60,
+        RuleMenuitem = ToolScriptParserBase.RulesOffset + 64,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Menu Item&gt; ::= item &lt;WndParam List&gt;</c></para>
         /// </summary>
-        RuleMenuitemItem = ToolScriptParserBase.RulesOffset + 61,
+        RuleMenuitemItem = ToolScriptParserBase.RulesOffset + 65,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Menu Item&gt; ::= separator</c></para>
         /// </summary>
-        RuleMenuitemSeparator = ToolScriptParserBase.RulesOffset + 62,
+        RuleMenuitemSeparator = ToolScriptParserBase.RulesOffset + 66,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr List&gt; ::= &lt;Expr List&gt; ',' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprlistComma = ToolScriptParserBase.RulesOffset + 63,
+        RuleExprlistComma = ToolScriptParserBase.RulesOffset + 67,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr List&gt; ::= &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprlist = ToolScriptParserBase.RulesOffset + 64,
+        RuleExprlist = ToolScriptParserBase.RulesOffset + 68,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Dict List&gt; ::= &lt;Dict List&gt; ',' &lt;Expr&gt; ':' &lt;Expr&gt;</c></para>
+        /// </summary>
+        RuleDictlistCommaColon = ToolScriptParserBase.RulesOffset + 69,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Dict List&gt; ::= &lt;Expr&gt; ':' &lt;Expr&gt;</c></para>
+        /// </summary>
+        RuleDictlistColon = ToolScriptParserBase.RulesOffset + 70,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprEq = ToolScriptParserBase.RulesOffset + 65,
+        RuleExprEq = ToolScriptParserBase.RulesOffset + 71,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '+=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprPluseq = ToolScriptParserBase.RulesOffset + 66,
+        RuleExprPluseq = ToolScriptParserBase.RulesOffset + 72,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '-=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprMinuseq = ToolScriptParserBase.RulesOffset + 67,
+        RuleExprMinuseq = ToolScriptParserBase.RulesOffset + 73,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '*=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprTimeseq = ToolScriptParserBase.RulesOffset + 68,
+        RuleExprTimeseq = ToolScriptParserBase.RulesOffset + 74,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '/=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprDiveq = ToolScriptParserBase.RulesOffset + 69,
+        RuleExprDiveq = ToolScriptParserBase.RulesOffset + 75,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '&lt;==' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprLteqeq = ToolScriptParserBase.RulesOffset + 70,
+        RuleExprLteqeq = ToolScriptParserBase.RulesOffset + 76,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '&lt;==&gt;' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprLteqeqgt = ToolScriptParserBase.RulesOffset + 71,
+        RuleExprLteqeqgt = ToolScriptParserBase.RulesOffset + 77,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt;</c></para>
         /// </summary>
-        RuleExpr = ToolScriptParserBase.RulesOffset + 72,
+        RuleExpr = ToolScriptParserBase.RulesOffset + 78,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op If&gt; ::= &lt;Op Or&gt; '?' &lt;Op If&gt; ':' &lt;Op If&gt;</c></para>
         /// </summary>
-        RuleOpifQuestionColon = ToolScriptParserBase.RulesOffset + 73,
+        RuleOpifQuestionColon = ToolScriptParserBase.RulesOffset + 79,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op If&gt; ::= &lt;Op Or&gt;</c></para>
         /// </summary>
-        RuleOpif = ToolScriptParserBase.RulesOffset + 74,
+        RuleOpif = ToolScriptParserBase.RulesOffset + 80,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Or&gt; ::= &lt;Op Or&gt; or &lt;Op And&gt;</c></para>
         /// </summary>
-        RuleOporOr = ToolScriptParserBase.RulesOffset + 75,
+        RuleOporOr = ToolScriptParserBase.RulesOffset + 81,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Or&gt; ::= &lt;Op And&gt;</c></para>
         /// </summary>
-        RuleOpor = ToolScriptParserBase.RulesOffset + 76,
+        RuleOpor = ToolScriptParserBase.RulesOffset + 82,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op And&gt; ::= &lt;Op And&gt; and &lt;Op Equate&gt;</c></para>
         /// </summary>
-        RuleOpandAnd = ToolScriptParserBase.RulesOffset + 77,
+        RuleOpandAnd = ToolScriptParserBase.RulesOffset + 83,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op And&gt; ::= &lt;Op Equate&gt;</c></para>
         /// </summary>
-        RuleOpand = ToolScriptParserBase.RulesOffset + 78,
+        RuleOpand = ToolScriptParserBase.RulesOffset + 84,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Equate&gt; ::= &lt;Op Equate&gt; '==' &lt;Op Compare&gt;</c></para>
         /// </summary>
-        RuleOpequateEqeq = ToolScriptParserBase.RulesOffset + 79,
+        RuleOpequateEqeq = ToolScriptParserBase.RulesOffset + 85,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Equate&gt; ::= &lt;Op Equate&gt; '!=' &lt;Op Compare&gt;</c></para>
         /// </summary>
-        RuleOpequateExclameq = ToolScriptParserBase.RulesOffset + 80,
+        RuleOpequateExclameq = ToolScriptParserBase.RulesOffset + 86,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Equate&gt; ::= &lt;Op Compare&gt;</c></para>
         /// </summary>
-        RuleOpequate = ToolScriptParserBase.RulesOffset + 81,
+        RuleOpequate = ToolScriptParserBase.RulesOffset + 87,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&lt;' &lt;Op In&gt;</c></para>
         /// </summary>
-        RuleOpcompareLt = ToolScriptParserBase.RulesOffset + 82,
+        RuleOpcompareLt = ToolScriptParserBase.RulesOffset + 88,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&gt;' &lt;Op In&gt;</c></para>
         /// </summary>
-        RuleOpcompareGt = ToolScriptParserBase.RulesOffset + 83,
+        RuleOpcompareGt = ToolScriptParserBase.RulesOffset + 89,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&lt;=' &lt;Op In&gt;</c></para>
         /// </summary>
-        RuleOpcompareLteq = ToolScriptParserBase.RulesOffset + 84,
+        RuleOpcompareLteq = ToolScriptParserBase.RulesOffset + 90,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&gt;=' &lt;Op In&gt;</c></para>
         /// </summary>
-        RuleOpcompareGteq = ToolScriptParserBase.RulesOffset + 85,
+        RuleOpcompareGteq = ToolScriptParserBase.RulesOffset + 91,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Compare&gt; ::= &lt;Op In&gt;</c></para>
         /// </summary>
-        RuleOpcompare = ToolScriptParserBase.RulesOffset + 86,
+        RuleOpcompare = ToolScriptParserBase.RulesOffset + 92,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op In&gt; ::= &lt;Op In&gt; in &lt;Op Add&gt;</c></para>
         /// </summary>
-        RuleOpinIn = ToolScriptParserBase.RulesOffset + 87,
+        RuleOpinIn = ToolScriptParserBase.RulesOffset + 93,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op In&gt; ::= &lt;Op In&gt; in '&lt;' &lt;Op Add&gt; ',' &lt;Op Add&gt; '&gt;'</c></para>
         /// </summary>
-        RuleOpinInLtCommaGt = ToolScriptParserBase.RulesOffset + 88,
+        RuleOpinInLtCommaGt = ToolScriptParserBase.RulesOffset + 94,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op In&gt; ::= &lt;Op In&gt; in '&lt;' &lt;Op Add&gt; ',' &lt;Op Add&gt; ')'</c></para>
         /// </summary>
-        RuleOpinInLtCommaRparan = ToolScriptParserBase.RulesOffset + 89,
+        RuleOpinInLtCommaRparan = ToolScriptParserBase.RulesOffset + 95,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op In&gt; ::= &lt;Op In&gt; in '(' &lt;Op Add&gt; ',' &lt;Op Add&gt; '&gt;'</c></para>
         /// </summary>
-        RuleOpinInLparanCommaGt = ToolScriptParserBase.RulesOffset + 90,
+        RuleOpinInLparanCommaGt = ToolScriptParserBase.RulesOffset + 96,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op In&gt; ::= &lt;Op In&gt; in '(' &lt;Op Add&gt; ',' &lt;Op Add&gt; ')'</c></para>
         /// </summary>
-        RuleOpinInLparanCommaRparan = ToolScriptParserBase.RulesOffset + 91,
+        RuleOpinInLparanCommaRparan = ToolScriptParserBase.RulesOffset + 97,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op In&gt; ::= &lt;Op Add&gt;</c></para>
         /// </summary>
-        RuleOpin = ToolScriptParserBase.RulesOffset + 92,
+        RuleOpin = ToolScriptParserBase.RulesOffset + 98,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Add&gt; ::= &lt;Op Add&gt; '+' &lt;Op Mult&gt;</c></para>
         /// </summary>
-        RuleOpaddPlus = ToolScriptParserBase.RulesOffset + 93,
+        RuleOpaddPlus = ToolScriptParserBase.RulesOffset + 99,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Add&gt; ::= &lt;Op Add&gt; '-' &lt;Op Mult&gt;</c></para>
         /// </summary>
-        RuleOpaddMinus = ToolScriptParserBase.RulesOffset + 94,
+        RuleOpaddMinus = ToolScriptParserBase.RulesOffset + 100,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Add&gt; ::= &lt;Op Mult&gt;</c></para>
         /// </summary>
-        RuleOpadd = ToolScriptParserBase.RulesOffset + 95,
+        RuleOpadd = ToolScriptParserBase.RulesOffset + 101,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Mult&gt; '*' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpmultTimes = ToolScriptParserBase.RulesOffset + 96,
+        RuleOpmultTimes = ToolScriptParserBase.RulesOffset + 102,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Mult&gt; '/' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpmultDiv = ToolScriptParserBase.RulesOffset + 97,
+        RuleOpmultDiv = ToolScriptParserBase.RulesOffset + 103,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Mult&gt; '%' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpmultPercent = ToolScriptParserBase.RulesOffset + 98,
+        RuleOpmultPercent = ToolScriptParserBase.RulesOffset + 104,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpmult = ToolScriptParserBase.RulesOffset + 99,
+        RuleOpmult = ToolScriptParserBase.RulesOffset + 105,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= not &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryNot = ToolScriptParserBase.RulesOffset + 100,
+        RuleOpunaryNot = ToolScriptParserBase.RulesOffset + 106,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= '!' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryExclam = ToolScriptParserBase.RulesOffset + 101,
+        RuleOpunaryExclam = ToolScriptParserBase.RulesOffset + 107,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= '-' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryMinus = ToolScriptParserBase.RulesOffset + 102,
+        RuleOpunaryMinus = ToolScriptParserBase.RulesOffset + 108,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Unary&gt; ::= cast &lt;Op Unary&gt; as ID</c></para>
+        /// <para><c>&lt;Op Unary&gt; ::= cast &lt;Op Unary&gt; as &lt;QualifiedName&gt;</c></para>
         /// </summary>
-        RuleOpunaryCastAsId = ToolScriptParserBase.RulesOffset + 103,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Op Unary&gt; ::= cast &lt;Op Unary&gt; as QualifiedName</c></para>
-        /// </summary>
-        RuleOpunaryCastAsQualifiedname = ToolScriptParserBase.RulesOffset + 104,
+        RuleOpunaryCastAs = ToolScriptParserBase.RulesOffset + 109,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= '++' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryPlusplus = ToolScriptParserBase.RulesOffset + 105,
+        RuleOpunaryPlusplus = ToolScriptParserBase.RulesOffset + 110,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= -- &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryMinusminus = ToolScriptParserBase.RulesOffset + 106,
+        RuleOpunaryMinusminus = ToolScriptParserBase.RulesOffset + 111,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; '++'</c></para>
         /// </summary>
-        RuleOpunaryPlusplus2 = ToolScriptParserBase.RulesOffset + 107,
+        RuleOpunaryPlusplus2 = ToolScriptParserBase.RulesOffset + 112,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; --</c></para>
         /// </summary>
-        RuleOpunaryMinusminus2 = ToolScriptParserBase.RulesOffset + 108,
+        RuleOpunaryMinusminus2 = ToolScriptParserBase.RulesOffset + 113,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; is null</c></para>
         /// </summary>
-        RuleOpunaryIsNull = ToolScriptParserBase.RulesOffset + 109,
+        RuleOpunaryIsNull = ToolScriptParserBase.RulesOffset + 114,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; not null</c></para>
         /// </summary>
-        RuleOpunaryNotNull = ToolScriptParserBase.RulesOffset + 110,
+        RuleOpunaryNotNull = ToolScriptParserBase.RulesOffset + 115,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; is not null</c></para>
         /// </summary>
-        RuleOpunaryIsNotNull = ToolScriptParserBase.RulesOffset + 111,
+        RuleOpunaryIsNotNull = ToolScriptParserBase.RulesOffset + 116,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt;</c></para>
         /// </summary>
-        RuleOpunary = ToolScriptParserBase.RulesOffset + 112,
+        RuleOpunary = ToolScriptParserBase.RulesOffset + 117,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '.' &lt;Value&gt;</c></para>
         /// </summary>
-        RuleOppointerDot = ToolScriptParserBase.RulesOffset + 113,
+        RuleOppointerDot = ToolScriptParserBase.RulesOffset + 118,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '-&gt;' &lt;Value&gt;</c></para>
         /// </summary>
-        RuleOppointerMinusgt = ToolScriptParserBase.RulesOffset + 114,
+        RuleOppointerMinusgt = ToolScriptParserBase.RulesOffset + 119,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '[' &lt;Expr&gt; ']'</c></para>
         /// </summary>
-        RuleOppointerLbracketRbracket = ToolScriptParserBase.RulesOffset + 115,
+        RuleOppointerLbracketRbracket = ToolScriptParserBase.RulesOffset + 120,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '(' &lt;Args&gt; ')'</c></para>
+        /// </summary>
+        RuleOppointerLparanRparan = ToolScriptParserBase.RulesOffset + 121,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Value&gt;</c></para>
         /// </summary>
-        RuleOppointer = ToolScriptParserBase.RulesOffset + 116,
+        RuleOppointer = ToolScriptParserBase.RulesOffset + 122,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= IntLiteral</c></para>
         /// </summary>
-        RuleValueIntliteral = ToolScriptParserBase.RulesOffset + 117,
+        RuleValueIntliteral = ToolScriptParserBase.RulesOffset + 123,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= StringLiteral</c></para>
         /// </summary>
-        RuleValueStringliteral = ToolScriptParserBase.RulesOffset + 118,
+        RuleValueStringliteral = ToolScriptParserBase.RulesOffset + 124,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= DecimalLiteral</c></para>
         /// </summary>
-        RuleValueDecimalliteral = ToolScriptParserBase.RulesOffset + 119,
+        RuleValueDecimalliteral = ToolScriptParserBase.RulesOffset + 125,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= type ID</c></para>
+        /// <para><c>&lt;Value&gt; ::= type &lt;QualifiedName&gt;</c></para>
         /// </summary>
-        RuleValueTypeId = ToolScriptParserBase.RulesOffset + 120,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= type QualifiedName</c></para>
-        /// </summary>
-        RuleValueTypeQualifiedname = ToolScriptParserBase.RulesOffset + 121,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= ID '(' &lt;Args&gt; ')'</c></para>
-        /// </summary>
-        RuleValueIdLparanRparan = ToolScriptParserBase.RulesOffset + 122,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= ID '(' ')'</c></para>
-        /// </summary>
-        RuleValueIdLparanRparan2 = ToolScriptParserBase.RulesOffset + 123,
+        RuleValueType = ToolScriptParserBase.RulesOffset + 126,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= &lt;Function&gt;</c></para>
         /// </summary>
-        RuleValue = ToolScriptParserBase.RulesOffset + 124,
+        RuleValue = ToolScriptParserBase.RulesOffset + 127,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= &lt;Window&gt;</c></para>
         /// </summary>
-        RuleValue2 = ToolScriptParserBase.RulesOffset + 125,
+        RuleValue2 = ToolScriptParserBase.RulesOffset + 128,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= QualifiedName '(' &lt;Args&gt; ')'</c></para>
+        /// <para><c>&lt;Value&gt; ::= new &lt;QualifiedName&gt; '(' &lt;Args&gt; ')'</c></para>
         /// </summary>
-        RuleValueQualifiednameLparanRparan = ToolScriptParserBase.RulesOffset + 126,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= QualifiedName '(' ')'</c></para>
-        /// </summary>
-        RuleValueQualifiednameLparanRparan2 = ToolScriptParserBase.RulesOffset + 127,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= new ID '(' &lt;Args&gt; ')'</c></para>
-        /// </summary>
-        RuleValueNewIdLparanRparan = ToolScriptParserBase.RulesOffset + 128,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= new ID '(' ')'</c></para>
-        /// </summary>
-        RuleValueNewIdLparanRparan2 = ToolScriptParserBase.RulesOffset + 129,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= new QualifiedName '(' &lt;Args&gt; ')'</c></para>
-        /// </summary>
-        RuleValueNewQualifiednameLparanRparan = ToolScriptParserBase.RulesOffset + 130,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= new QualifiedName '(' ')'</c></para>
-        /// </summary>
-        RuleValueNewQualifiednameLparanRparan2 = ToolScriptParserBase.RulesOffset + 131,
+        RuleValueNewLparanRparan = ToolScriptParserBase.RulesOffset + 129,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= ID</c></para>
         /// </summary>
-        RuleValueId = ToolScriptParserBase.RulesOffset + 132,
+        RuleValueId = ToolScriptParserBase.RulesOffset + 130,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= var ID</c></para>
         /// </summary>
-        RuleValueVarId = ToolScriptParserBase.RulesOffset + 133,
+        RuleValueVarId = ToolScriptParserBase.RulesOffset + 131,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= static ID</c></para>
         /// </summary>
-        RuleValueStaticId = ToolScriptParserBase.RulesOffset + 134,
+        RuleValueStaticId = ToolScriptParserBase.RulesOffset + 132,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= '(' &lt;Expr&gt; ')'</c></para>
         /// </summary>
-        RuleValueLparanRparan = ToolScriptParserBase.RulesOffset + 135,
+        RuleValueLparanRparan = ToolScriptParserBase.RulesOffset + 133,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= '{' &lt;Expr List&gt; '}'</c></para>
+        /// <para><c>&lt;Value&gt; ::= '[' &lt;Expr List&gt; ']'</c></para>
         /// </summary>
-        RuleValueLbraceRbrace = ToolScriptParserBase.RulesOffset + 136,
+        RuleValueLbracketRbracket = ToolScriptParserBase.RulesOffset + 134,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Value&gt; ::= '{' &lt;Dict List&gt; '}'</c></para>
+        /// </summary>
+        RuleValueLbraceRbrace = ToolScriptParserBase.RulesOffset + 135,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= null</c></para>
         /// </summary>
-        RuleValueNull = ToolScriptParserBase.RulesOffset + 137,
+        RuleValueNull = ToolScriptParserBase.RulesOffset + 136,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= true</c></para>
         /// </summary>
-        RuleValueTrue = ToolScriptParserBase.RulesOffset + 138,
+        RuleValueTrue = ToolScriptParserBase.RulesOffset + 137,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= false</c></para>
         /// </summary>
-        RuleValueFalse = ToolScriptParserBase.RulesOffset + 139 
+        RuleValueFalse = ToolScriptParserBase.RulesOffset + 138 
 
 	    #endregion
     };
@@ -2246,15 +2252,6 @@ namespace LPS.ToolScript
 		}
 
 		/// <summary>
-		/// <para>Symbol: QualifiedName</para>
-		/// <para><c>QualifiedName</c></para>
-		/// </summary>
-		protected virtual object TerminalQualifiedname(TerminalToken token)
-		{
-			throw new NotImplementedException("Symbol QualifiedName");
-		}
-
-		/// <summary>
 		/// <para>Symbol: ref</para>
 		/// <para><c>ref</c></para>
 		/// </summary>
@@ -2390,6 +2387,15 @@ namespace LPS.ToolScript
 		}
 
 		/// <summary>
+		/// <para>Symbol: Arg</para>
+		/// <para><c>&lt;Arg&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalArg(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Arg");
+		}
+
+		/// <summary>
 		/// <para>Symbol: Args</para>
 		/// <para><c>&lt;Args&gt;</c></para>
 		/// </summary>
@@ -2417,6 +2423,15 @@ namespace LPS.ToolScript
 		}
 
 		/// <summary>
+		/// <para>Symbol: Dict List</para>
+		/// <para><c>&lt;Dict List&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalDictlist(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Dict List");
+		}
+
+		/// <summary>
 		/// <para>Symbol: Expr</para>
 		/// <para><c>&lt;Expr&gt;</c></para>
 		/// </summary>
@@ -2432,6 +2447,24 @@ namespace LPS.ToolScript
 		protected virtual object TerminalExprlist(TerminalToken token)
 		{
 			throw new NotImplementedException("Symbol Expr List");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Func Arg</para>
+		/// <para><c>&lt;Func Arg&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalFuncarg(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Func Arg");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Func args</para>
+		/// <para><c>&lt;Func args&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalFuncargs(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Func args");
 		}
 
 		/// <summary>
@@ -2579,21 +2612,12 @@ namespace LPS.ToolScript
 		}
 
 		/// <summary>
-		/// <para>Symbol: Param decl</para>
-		/// <para><c>&lt;Param decl&gt;</c></para>
+		/// <para>Symbol: QualifiedName</para>
+		/// <para><c>&lt;QualifiedName&gt;</c></para>
 		/// </summary>
-		protected virtual object TerminalParamdecl(TerminalToken token)
+		protected virtual object TerminalQualifiedname(TerminalToken token)
 		{
-			throw new NotImplementedException("Symbol Param decl");
-		}
-
-		/// <summary>
-		/// <para>Symbol: Param List</para>
-		/// <para><c>&lt;Param List&gt;</c></para>
-		/// </summary>
-		protected virtual object TerminalParamlist(TerminalToken token)
-		{
-			throw new NotImplementedException("Symbol Param List");
+			throw new NotImplementedException("Symbol QualifiedName");
 		}
 
 		/// <summary>
@@ -2905,9 +2929,6 @@ namespace LPS.ToolScript
                 case (int)Symbols.Or: //or
                 	return TerminalOr(token);
 
-                case (int)Symbols.Qualifiedname: //QualifiedName
-                	return TerminalQualifiedname(token);
-
                 case (int)Symbols.Ref: //ref
                 	return TerminalRef(token);
 
@@ -2953,6 +2974,9 @@ namespace LPS.ToolScript
                 case (int)Symbols.Window: //window
                 	return TerminalWindow(token);
 
+                case (int)Symbols.Arg: //<Arg>
+                	return TerminalArg(token);
+
                 case (int)Symbols.Args: //<Args>
                 	return TerminalArgs(token);
 
@@ -2962,11 +2986,20 @@ namespace LPS.ToolScript
                 case (int)Symbols.Casestms: //<Case Stms>
                 	return TerminalCasestms(token);
 
+                case (int)Symbols.Dictlist: //<Dict List>
+                	return TerminalDictlist(token);
+
                 case (int)Symbols.Expr: //<Expr>
                 	return TerminalExpr(token);
 
                 case (int)Symbols.Exprlist: //<Expr List>
                 	return TerminalExprlist(token);
+
+                case (int)Symbols.Funcarg: //<Func Arg>
+                	return TerminalFuncarg(token);
+
+                case (int)Symbols.Funcargs: //<Func args>
+                	return TerminalFuncargs(token);
 
                 case (int)Symbols.Function2: //<Function>
                 	return TerminalFunction2(token);
@@ -3016,11 +3049,8 @@ namespace LPS.ToolScript
                 case (int)Symbols.Opunary: //<Op Unary>
                 	return TerminalOpunary(token);
 
-                case (int)Symbols.Paramdecl: //<Param decl>
-                	return TerminalParamdecl(token);
-
-                case (int)Symbols.Paramlist: //<Param List>
-                	return TerminalParamlist(token);
+                case (int)Symbols.Qualifiedname: //<QualifiedName>
+                	return TerminalQualifiedname(token);
 
                 case (int)Symbols.Stm: //<Stm>
                 	return TerminalStm(token);
@@ -3068,16 +3098,18 @@ namespace LPS.ToolScript
 		}
 
 		#region ToolScriptParserBase.Pravidla
+        protected abstract object RuleQualifiednameIdDot(NonterminalToken token); // <QualifiedName> ::= ID '.' <QualifiedName>
+        protected abstract object RuleQualifiednameId(NonterminalToken token); // <QualifiedName> ::= ID
         protected abstract object RuleStmIfLparanRparan(NonterminalToken token); // <Stm> ::= if '(' <Expr> ')' <Stm>
         protected abstract object RuleStmIfLparanRparanElse(NonterminalToken token); // <Stm> ::= if '(' <Expr> ')' <Then Stm> else <Stm>
         protected abstract object RuleStmWhileLparanRparan(NonterminalToken token); // <Stm> ::= while '(' <Expr> ')' <Stm>
         protected abstract object RuleStmForLparanSemiSemiRparan(NonterminalToken token); // <Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>
         protected abstract object RuleStmForeachLparanIdInRparan(NonterminalToken token); // <Stm> ::= foreach '(' ID in <Expr> ')' <Stm>
         protected abstract object RuleStmObservedLparanRparan(NonterminalToken token); // <Stm> ::= observed '(' <Expr> ')' <Stm>
-        protected abstract object RuleStmUsingIdSemi(NonterminalToken token); // <Stm> ::= using ID ';'
-        protected abstract object RuleStmUsingQualifiednameSemi(NonterminalToken token); // <Stm> ::= using QualifiedName ';'
+        protected abstract object RuleStmUsingSemi(NonterminalToken token); // <Stm> ::= using <QualifiedName> ';'
         protected abstract object RuleStmUsingStringliteralSemi(NonterminalToken token); // <Stm> ::= using StringLiteral ';'
-        protected abstract object RuleStmUsingQualifiednameAsIdSemi(NonterminalToken token); // <Stm> ::= using QualifiedName as ID ';'
+        protected abstract object RuleStmUsingAsIdSemi(NonterminalToken token); // <Stm> ::= using <QualifiedName> as ID ';'
+        protected abstract object RuleStmUsingStringliteralAsIdSemi(NonterminalToken token); // <Stm> ::= using StringLiteral as ID ';'
         protected abstract object RuleStm(NonterminalToken token); // <Stm> ::= <Normal Stm>
         protected abstract object RuleThenstmIfLparanRparanElse(NonterminalToken token); // <Then Stm> ::= if '(' <Expr> ')' <Then Stm> else <Then Stm>
         protected abstract object RuleThenstmWhileLparanRparan(NonterminalToken token); // <Then Stm> ::= while '(' <Expr> ')' <Then Stm>
@@ -3091,21 +3123,24 @@ namespace LPS.ToolScript
         protected abstract object RuleNormalstmContinueSemi(NonterminalToken token); // <Normal Stm> ::= continue ';'
         protected abstract object RuleNormalstmReturnSemi(NonterminalToken token); // <Normal Stm> ::= return <Expr> ';'
         protected abstract object RuleNormalstmSemi2(NonterminalToken token); // <Normal Stm> ::= ';'
-        protected abstract object RuleArgsComma(NonterminalToken token); // <Args> ::= <Expr> ',' <Args>
-        protected abstract object RuleArgs(NonterminalToken token); // <Args> ::= <Expr>
+        protected abstract object RuleFuncargsComma(NonterminalToken token); // <Func args> ::= <Func args> ',' <Func Arg>
+        protected abstract object RuleFuncargs(NonterminalToken token); // <Func args> ::= <Func Arg>
+        protected abstract object RuleFuncargs2(NonterminalToken token); // <Func args> ::= 
+        protected abstract object RuleFuncargId(NonterminalToken token); // <Func Arg> ::= ID
+        protected abstract object RuleFuncargIdEq(NonterminalToken token); // <Func Arg> ::= ID '=' <Expr>
+        protected abstract object RuleArgsComma(NonterminalToken token); // <Args> ::= <Args> ',' <Arg>
+        protected abstract object RuleArgs(NonterminalToken token); // <Args> ::= <Arg>
+        protected abstract object RuleArgs2(NonterminalToken token); // <Args> ::= 
+        protected abstract object RuleArg(NonterminalToken token); // <Arg> ::= <Op If>
+        protected abstract object RuleArgIdEq(NonterminalToken token); // <Arg> ::= ID '=' <Expr>
         protected abstract object RuleCasestmsCaseColon(NonterminalToken token); // <Case Stms> ::= case <Value> ':' <Stm List> <Case Stms>
         protected abstract object RuleCasestmsDefaultColon(NonterminalToken token); // <Case Stms> ::= default ':' <Stm List>
         protected abstract object RuleCasestms(NonterminalToken token); // <Case Stms> ::= 
         protected abstract object RuleBlockLbraceRbrace(NonterminalToken token); // <Block> ::= '{' <Stm List> '}'
         protected abstract object RuleStmlist(NonterminalToken token); // <Stm List> ::= <Stm> <Stm List>
         protected abstract object RuleStmlist2(NonterminalToken token); // <Stm List> ::= 
-        protected abstract object RuleFunctionFunctionIdLparanRparan(NonterminalToken token); // <Function> ::= function ID '(' <Param List> ')' <Stm>
-        protected abstract object RuleFunctionFunctionIdLparanRparan2(NonterminalToken token); // <Function> ::= function ID '(' ')' <Stm>
-        protected abstract object RuleFunctionFunctionLparanRparan(NonterminalToken token); // <Function> ::= function '(' <Param List> ')' <Stm>
-        protected abstract object RuleFunctionFunctionLparanRparan2(NonterminalToken token); // <Function> ::= function '(' ')' <Stm>
-        protected abstract object RuleParamlistComma(NonterminalToken token); // <Param List> ::= <Param List> ',' <Param decl>
-        protected abstract object RuleParamlist(NonterminalToken token); // <Param List> ::= <Param decl>
-        protected abstract object RuleParamdeclId(NonterminalToken token); // <Param decl> ::= ID
+        protected abstract object RuleFunctionFunctionIdLparanRparan(NonterminalToken token); // <Function> ::= function ID '(' <Func args> ')' <Stm>
+        protected abstract object RuleFunctionFunctionLparanRparan(NonterminalToken token); // <Function> ::= function '(' <Func args> ')' <Stm>
         protected abstract object RuleWindowWindowId(NonterminalToken token); // <Window> ::= window ID <WndParam List> <Layout Block>
         protected abstract object RuleWindowWindow(NonterminalToken token); // <Window> ::= window <WndParam List> <Layout Block>
         protected abstract object RuleWndparamlist(NonterminalToken token); // <WndParam List> ::= <WndParam> <WndParam List>
@@ -3116,8 +3151,7 @@ namespace LPS.ToolScript
         protected abstract object RuleLayoutblockTableEnd(NonterminalToken token); // <Layout Block> ::= table <WndParam List> <TabRow Block> end
         protected abstract object RuleLayoutblockTableEnd2(NonterminalToken token); // <Layout Block> ::= table <WndParam List> <TabCol Block> end
         protected abstract object RuleLayoutblock(NonterminalToken token); // <Layout Block> ::= <Menu Block>
-        protected abstract object RuleLayoutblockRefId(NonterminalToken token); // <Layout Block> ::= ref ID <WndParam List>
-        protected abstract object RuleLayoutblockRefQualifiedname(NonterminalToken token); // <Layout Block> ::= ref QualifiedName <WndParam List>
+        protected abstract object RuleLayoutblockRef(NonterminalToken token); // <Layout Block> ::= ref <QualifiedName> <WndParam List>
         protected abstract object RuleLayoutblockRefStringliteral(NonterminalToken token); // <Layout Block> ::= ref StringLiteral <WndParam List>
         protected abstract object RuleLayoutblockLbracketRbracket(NonterminalToken token); // <Layout Block> ::= '[' <Expr> ']' <WndParam List>
         protected abstract object RuleTabrowblockRowEnd(NonterminalToken token); // <TabRow Block> ::= row <WndParam List> <Tab Cells> end
@@ -3133,6 +3167,8 @@ namespace LPS.ToolScript
         protected abstract object RuleMenuitemSeparator(NonterminalToken token); // <Menu Item> ::= separator
         protected abstract object RuleExprlistComma(NonterminalToken token); // <Expr List> ::= <Expr List> ',' <Expr>
         protected abstract object RuleExprlist(NonterminalToken token); // <Expr List> ::= <Expr>
+        protected abstract object RuleDictlistCommaColon(NonterminalToken token); // <Dict List> ::= <Dict List> ',' <Expr> ':' <Expr>
+        protected abstract object RuleDictlistColon(NonterminalToken token); // <Dict List> ::= <Expr> ':' <Expr>
         protected abstract object RuleExprEq(NonterminalToken token); // <Expr> ::= <Op If> '=' <Expr>
         protected abstract object RuleExprPluseq(NonterminalToken token); // <Expr> ::= <Op If> '+=' <Expr>
         protected abstract object RuleExprMinuseq(NonterminalToken token); // <Expr> ::= <Op If> '-=' <Expr>
@@ -3171,8 +3207,7 @@ namespace LPS.ToolScript
         protected abstract object RuleOpunaryNot(NonterminalToken token); // <Op Unary> ::= not <Op Unary>
         protected abstract object RuleOpunaryExclam(NonterminalToken token); // <Op Unary> ::= '!' <Op Unary>
         protected abstract object RuleOpunaryMinus(NonterminalToken token); // <Op Unary> ::= '-' <Op Unary>
-        protected abstract object RuleOpunaryCastAsId(NonterminalToken token); // <Op Unary> ::= cast <Op Unary> as ID
-        protected abstract object RuleOpunaryCastAsQualifiedname(NonterminalToken token); // <Op Unary> ::= cast <Op Unary> as QualifiedName
+        protected abstract object RuleOpunaryCastAs(NonterminalToken token); // <Op Unary> ::= cast <Op Unary> as <QualifiedName>
         protected abstract object RuleOpunaryPlusplus(NonterminalToken token); // <Op Unary> ::= '++' <Op Unary>
         protected abstract object RuleOpunaryMinusminus(NonterminalToken token); // <Op Unary> ::= -- <Op Unary>
         protected abstract object RuleOpunaryPlusplus2(NonterminalToken token); // <Op Unary> ::= <Op Pointer> '++'
@@ -3184,27 +3219,21 @@ namespace LPS.ToolScript
         protected abstract object RuleOppointerDot(NonterminalToken token); // <Op Pointer> ::= <Op Pointer> '.' <Value>
         protected abstract object RuleOppointerMinusgt(NonterminalToken token); // <Op Pointer> ::= <Op Pointer> '->' <Value>
         protected abstract object RuleOppointerLbracketRbracket(NonterminalToken token); // <Op Pointer> ::= <Op Pointer> '[' <Expr> ']'
+        protected abstract object RuleOppointerLparanRparan(NonterminalToken token); // <Op Pointer> ::= <Op Pointer> '(' <Args> ')'
         protected abstract object RuleOppointer(NonterminalToken token); // <Op Pointer> ::= <Value>
         protected abstract object RuleValueIntliteral(NonterminalToken token); // <Value> ::= IntLiteral
         protected abstract object RuleValueStringliteral(NonterminalToken token); // <Value> ::= StringLiteral
         protected abstract object RuleValueDecimalliteral(NonterminalToken token); // <Value> ::= DecimalLiteral
-        protected abstract object RuleValueTypeId(NonterminalToken token); // <Value> ::= type ID
-        protected abstract object RuleValueTypeQualifiedname(NonterminalToken token); // <Value> ::= type QualifiedName
-        protected abstract object RuleValueIdLparanRparan(NonterminalToken token); // <Value> ::= ID '(' <Args> ')'
-        protected abstract object RuleValueIdLparanRparan2(NonterminalToken token); // <Value> ::= ID '(' ')'
+        protected abstract object RuleValueType(NonterminalToken token); // <Value> ::= type <QualifiedName>
         protected abstract object RuleValue(NonterminalToken token); // <Value> ::= <Function>
         protected abstract object RuleValue2(NonterminalToken token); // <Value> ::= <Window>
-        protected abstract object RuleValueQualifiednameLparanRparan(NonterminalToken token); // <Value> ::= QualifiedName '(' <Args> ')'
-        protected abstract object RuleValueQualifiednameLparanRparan2(NonterminalToken token); // <Value> ::= QualifiedName '(' ')'
-        protected abstract object RuleValueNewIdLparanRparan(NonterminalToken token); // <Value> ::= new ID '(' <Args> ')'
-        protected abstract object RuleValueNewIdLparanRparan2(NonterminalToken token); // <Value> ::= new ID '(' ')'
-        protected abstract object RuleValueNewQualifiednameLparanRparan(NonterminalToken token); // <Value> ::= new QualifiedName '(' <Args> ')'
-        protected abstract object RuleValueNewQualifiednameLparanRparan2(NonterminalToken token); // <Value> ::= new QualifiedName '(' ')'
+        protected abstract object RuleValueNewLparanRparan(NonterminalToken token); // <Value> ::= new <QualifiedName> '(' <Args> ')'
         protected abstract object RuleValueId(NonterminalToken token); // <Value> ::= ID
         protected abstract object RuleValueVarId(NonterminalToken token); // <Value> ::= var ID
         protected abstract object RuleValueStaticId(NonterminalToken token); // <Value> ::= static ID
         protected abstract object RuleValueLparanRparan(NonterminalToken token); // <Value> ::= '(' <Expr> ')'
-        protected abstract object RuleValueLbraceRbrace(NonterminalToken token); // <Value> ::= '{' <Expr List> '}'
+        protected abstract object RuleValueLbracketRbracket(NonterminalToken token); // <Value> ::= '[' <Expr List> ']'
+        protected abstract object RuleValueLbraceRbrace(NonterminalToken token); // <Value> ::= '{' <Dict List> '}'
         protected abstract object RuleValueNull(NonterminalToken token); // <Value> ::= null
         protected abstract object RuleValueTrue(NonterminalToken token); // <Value> ::= true
         protected abstract object RuleValueFalse(NonterminalToken token); // <Value> ::= false
@@ -3216,6 +3245,10 @@ namespace LPS.ToolScript
         {
             switch (token.Rule.Id + ToolScriptParserBase.RulesOffset)
             {
+                case (int)Symbols.RuleQualifiednameIdDot: //<QualifiedName> ::= ID '.' <QualifiedName>
+                	return RuleQualifiednameIdDot(token);
+                case (int)Symbols.RuleQualifiednameId: //<QualifiedName> ::= ID
+                	return RuleQualifiednameId(token);
                 case (int)Symbols.RuleStmIfLparanRparan: //<Stm> ::= if '(' <Expr> ')' <Stm>
                 	return RuleStmIfLparanRparan(token);
                 case (int)Symbols.RuleStmIfLparanRparanElse: //<Stm> ::= if '(' <Expr> ')' <Then Stm> else <Stm>
@@ -3228,14 +3261,14 @@ namespace LPS.ToolScript
                 	return RuleStmForeachLparanIdInRparan(token);
                 case (int)Symbols.RuleStmObservedLparanRparan: //<Stm> ::= observed '(' <Expr> ')' <Stm>
                 	return RuleStmObservedLparanRparan(token);
-                case (int)Symbols.RuleStmUsingIdSemi: //<Stm> ::= using ID ';'
-                	return RuleStmUsingIdSemi(token);
-                case (int)Symbols.RuleStmUsingQualifiednameSemi: //<Stm> ::= using QualifiedName ';'
-                	return RuleStmUsingQualifiednameSemi(token);
+                case (int)Symbols.RuleStmUsingSemi: //<Stm> ::= using <QualifiedName> ';'
+                	return RuleStmUsingSemi(token);
                 case (int)Symbols.RuleStmUsingStringliteralSemi: //<Stm> ::= using StringLiteral ';'
                 	return RuleStmUsingStringliteralSemi(token);
-                case (int)Symbols.RuleStmUsingQualifiednameAsIdSemi: //<Stm> ::= using QualifiedName as ID ';'
-                	return RuleStmUsingQualifiednameAsIdSemi(token);
+                case (int)Symbols.RuleStmUsingAsIdSemi: //<Stm> ::= using <QualifiedName> as ID ';'
+                	return RuleStmUsingAsIdSemi(token);
+                case (int)Symbols.RuleStmUsingStringliteralAsIdSemi: //<Stm> ::= using StringLiteral as ID ';'
+                	return RuleStmUsingStringliteralAsIdSemi(token);
                 case (int)Symbols.RuleStm: //<Stm> ::= <Normal Stm>
                 	return RuleStm(token);
                 case (int)Symbols.RuleThenstmIfLparanRparanElse: //<Then Stm> ::= if '(' <Expr> ')' <Then Stm> else <Then Stm>
@@ -3262,10 +3295,26 @@ namespace LPS.ToolScript
                 	return RuleNormalstmReturnSemi(token);
                 case (int)Symbols.RuleNormalstmSemi2: //<Normal Stm> ::= ';'
                 	return RuleNormalstmSemi2(token);
-                case (int)Symbols.RuleArgsComma: //<Args> ::= <Expr> ',' <Args>
+                case (int)Symbols.RuleFuncargsComma: //<Func args> ::= <Func args> ',' <Func Arg>
+                	return RuleFuncargsComma(token);
+                case (int)Symbols.RuleFuncargs: //<Func args> ::= <Func Arg>
+                	return RuleFuncargs(token);
+                case (int)Symbols.RuleFuncargs2: //<Func args> ::= 
+                	return RuleFuncargs2(token);
+                case (int)Symbols.RuleFuncargId: //<Func Arg> ::= ID
+                	return RuleFuncargId(token);
+                case (int)Symbols.RuleFuncargIdEq: //<Func Arg> ::= ID '=' <Expr>
+                	return RuleFuncargIdEq(token);
+                case (int)Symbols.RuleArgsComma: //<Args> ::= <Args> ',' <Arg>
                 	return RuleArgsComma(token);
-                case (int)Symbols.RuleArgs: //<Args> ::= <Expr>
+                case (int)Symbols.RuleArgs: //<Args> ::= <Arg>
                 	return RuleArgs(token);
+                case (int)Symbols.RuleArgs2: //<Args> ::= 
+                	return RuleArgs2(token);
+                case (int)Symbols.RuleArg: //<Arg> ::= <Op If>
+                	return RuleArg(token);
+                case (int)Symbols.RuleArgIdEq: //<Arg> ::= ID '=' <Expr>
+                	return RuleArgIdEq(token);
                 case (int)Symbols.RuleCasestmsCaseColon: //<Case Stms> ::= case <Value> ':' <Stm List> <Case Stms>
                 	return RuleCasestmsCaseColon(token);
                 case (int)Symbols.RuleCasestmsDefaultColon: //<Case Stms> ::= default ':' <Stm List>
@@ -3278,20 +3327,10 @@ namespace LPS.ToolScript
                 	return RuleStmlist(token);
                 case (int)Symbols.RuleStmlist2: //<Stm List> ::= 
                 	return RuleStmlist2(token);
-                case (int)Symbols.RuleFunctionFunctionIdLparanRparan: //<Function> ::= function ID '(' <Param List> ')' <Stm>
+                case (int)Symbols.RuleFunctionFunctionIdLparanRparan: //<Function> ::= function ID '(' <Func args> ')' <Stm>
                 	return RuleFunctionFunctionIdLparanRparan(token);
-                case (int)Symbols.RuleFunctionFunctionIdLparanRparan2: //<Function> ::= function ID '(' ')' <Stm>
-                	return RuleFunctionFunctionIdLparanRparan2(token);
-                case (int)Symbols.RuleFunctionFunctionLparanRparan: //<Function> ::= function '(' <Param List> ')' <Stm>
+                case (int)Symbols.RuleFunctionFunctionLparanRparan: //<Function> ::= function '(' <Func args> ')' <Stm>
                 	return RuleFunctionFunctionLparanRparan(token);
-                case (int)Symbols.RuleFunctionFunctionLparanRparan2: //<Function> ::= function '(' ')' <Stm>
-                	return RuleFunctionFunctionLparanRparan2(token);
-                case (int)Symbols.RuleParamlistComma: //<Param List> ::= <Param List> ',' <Param decl>
-                	return RuleParamlistComma(token);
-                case (int)Symbols.RuleParamlist: //<Param List> ::= <Param decl>
-                	return RuleParamlist(token);
-                case (int)Symbols.RuleParamdeclId: //<Param decl> ::= ID
-                	return RuleParamdeclId(token);
                 case (int)Symbols.RuleWindowWindowId: //<Window> ::= window ID <WndParam List> <Layout Block>
                 	return RuleWindowWindowId(token);
                 case (int)Symbols.RuleWindowWindow: //<Window> ::= window <WndParam List> <Layout Block>
@@ -3312,10 +3351,8 @@ namespace LPS.ToolScript
                 	return RuleLayoutblockTableEnd2(token);
                 case (int)Symbols.RuleLayoutblock: //<Layout Block> ::= <Menu Block>
                 	return RuleLayoutblock(token);
-                case (int)Symbols.RuleLayoutblockRefId: //<Layout Block> ::= ref ID <WndParam List>
-                	return RuleLayoutblockRefId(token);
-                case (int)Symbols.RuleLayoutblockRefQualifiedname: //<Layout Block> ::= ref QualifiedName <WndParam List>
-                	return RuleLayoutblockRefQualifiedname(token);
+                case (int)Symbols.RuleLayoutblockRef: //<Layout Block> ::= ref <QualifiedName> <WndParam List>
+                	return RuleLayoutblockRef(token);
                 case (int)Symbols.RuleLayoutblockRefStringliteral: //<Layout Block> ::= ref StringLiteral <WndParam List>
                 	return RuleLayoutblockRefStringliteral(token);
                 case (int)Symbols.RuleLayoutblockLbracketRbracket: //<Layout Block> ::= '[' <Expr> ']' <WndParam List>
@@ -3346,6 +3383,10 @@ namespace LPS.ToolScript
                 	return RuleExprlistComma(token);
                 case (int)Symbols.RuleExprlist: //<Expr List> ::= <Expr>
                 	return RuleExprlist(token);
+                case (int)Symbols.RuleDictlistCommaColon: //<Dict List> ::= <Dict List> ',' <Expr> ':' <Expr>
+                	return RuleDictlistCommaColon(token);
+                case (int)Symbols.RuleDictlistColon: //<Dict List> ::= <Expr> ':' <Expr>
+                	return RuleDictlistColon(token);
                 case (int)Symbols.RuleExprEq: //<Expr> ::= <Op If> '=' <Expr>
                 	return RuleExprEq(token);
                 case (int)Symbols.RuleExprPluseq: //<Expr> ::= <Op If> '+=' <Expr>
@@ -3422,10 +3463,8 @@ namespace LPS.ToolScript
                 	return RuleOpunaryExclam(token);
                 case (int)Symbols.RuleOpunaryMinus: //<Op Unary> ::= '-' <Op Unary>
                 	return RuleOpunaryMinus(token);
-                case (int)Symbols.RuleOpunaryCastAsId: //<Op Unary> ::= cast <Op Unary> as ID
-                	return RuleOpunaryCastAsId(token);
-                case (int)Symbols.RuleOpunaryCastAsQualifiedname: //<Op Unary> ::= cast <Op Unary> as QualifiedName
-                	return RuleOpunaryCastAsQualifiedname(token);
+                case (int)Symbols.RuleOpunaryCastAs: //<Op Unary> ::= cast <Op Unary> as <QualifiedName>
+                	return RuleOpunaryCastAs(token);
                 case (int)Symbols.RuleOpunaryPlusplus: //<Op Unary> ::= '++' <Op Unary>
                 	return RuleOpunaryPlusplus(token);
                 case (int)Symbols.RuleOpunaryMinusminus: //<Op Unary> ::= -- <Op Unary>
@@ -3448,6 +3487,8 @@ namespace LPS.ToolScript
                 	return RuleOppointerMinusgt(token);
                 case (int)Symbols.RuleOppointerLbracketRbracket: //<Op Pointer> ::= <Op Pointer> '[' <Expr> ']'
                 	return RuleOppointerLbracketRbracket(token);
+                case (int)Symbols.RuleOppointerLparanRparan: //<Op Pointer> ::= <Op Pointer> '(' <Args> ')'
+                	return RuleOppointerLparanRparan(token);
                 case (int)Symbols.RuleOppointer: //<Op Pointer> ::= <Value>
                 	return RuleOppointer(token);
                 case (int)Symbols.RuleValueIntliteral: //<Value> ::= IntLiteral
@@ -3456,30 +3497,14 @@ namespace LPS.ToolScript
                 	return RuleValueStringliteral(token);
                 case (int)Symbols.RuleValueDecimalliteral: //<Value> ::= DecimalLiteral
                 	return RuleValueDecimalliteral(token);
-                case (int)Symbols.RuleValueTypeId: //<Value> ::= type ID
-                	return RuleValueTypeId(token);
-                case (int)Symbols.RuleValueTypeQualifiedname: //<Value> ::= type QualifiedName
-                	return RuleValueTypeQualifiedname(token);
-                case (int)Symbols.RuleValueIdLparanRparan: //<Value> ::= ID '(' <Args> ')'
-                	return RuleValueIdLparanRparan(token);
-                case (int)Symbols.RuleValueIdLparanRparan2: //<Value> ::= ID '(' ')'
-                	return RuleValueIdLparanRparan2(token);
+                case (int)Symbols.RuleValueType: //<Value> ::= type <QualifiedName>
+                	return RuleValueType(token);
                 case (int)Symbols.RuleValue: //<Value> ::= <Function>
                 	return RuleValue(token);
                 case (int)Symbols.RuleValue2: //<Value> ::= <Window>
                 	return RuleValue2(token);
-                case (int)Symbols.RuleValueQualifiednameLparanRparan: //<Value> ::= QualifiedName '(' <Args> ')'
-                	return RuleValueQualifiednameLparanRparan(token);
-                case (int)Symbols.RuleValueQualifiednameLparanRparan2: //<Value> ::= QualifiedName '(' ')'
-                	return RuleValueQualifiednameLparanRparan2(token);
-                case (int)Symbols.RuleValueNewIdLparanRparan: //<Value> ::= new ID '(' <Args> ')'
-                	return RuleValueNewIdLparanRparan(token);
-                case (int)Symbols.RuleValueNewIdLparanRparan2: //<Value> ::= new ID '(' ')'
-                	return RuleValueNewIdLparanRparan2(token);
-                case (int)Symbols.RuleValueNewQualifiednameLparanRparan: //<Value> ::= new QualifiedName '(' <Args> ')'
-                	return RuleValueNewQualifiednameLparanRparan(token);
-                case (int)Symbols.RuleValueNewQualifiednameLparanRparan2: //<Value> ::= new QualifiedName '(' ')'
-                	return RuleValueNewQualifiednameLparanRparan2(token);
+                case (int)Symbols.RuleValueNewLparanRparan: //<Value> ::= new <QualifiedName> '(' <Args> ')'
+                	return RuleValueNewLparanRparan(token);
                 case (int)Symbols.RuleValueId: //<Value> ::= ID
                 	return RuleValueId(token);
                 case (int)Symbols.RuleValueVarId: //<Value> ::= var ID
@@ -3488,7 +3513,9 @@ namespace LPS.ToolScript
                 	return RuleValueStaticId(token);
                 case (int)Symbols.RuleValueLparanRparan: //<Value> ::= '(' <Expr> ')'
                 	return RuleValueLparanRparan(token);
-                case (int)Symbols.RuleValueLbraceRbrace: //<Value> ::= '{' <Expr List> '}'
+                case (int)Symbols.RuleValueLbracketRbracket: //<Value> ::= '[' <Expr List> ']'
+                	return RuleValueLbracketRbracket(token);
+                case (int)Symbols.RuleValueLbraceRbrace: //<Value> ::= '{' <Dict List> '}'
                 	return RuleValueLbraceRbrace(token);
                 case (int)Symbols.RuleValueNull: //<Value> ::= null
                 	return RuleValueNull(token);
@@ -3516,6 +3543,22 @@ namespace LPS.ToolScript
 
 		#region Templates for user overrided rules functions
 		/*
+		// <QualifiedName> ::= ID '.' <QualifiedName>
+		protected override object RuleQualifiednameIdDot(NonterminalToken token)
+		{
+			throw new NotImplementedException("<QualifiedName> ::= ID '.' <QualifiedName>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <QualifiedName> ::= ID
+		protected override object RuleQualifiednameId(NonterminalToken token)
+		{
+			throw new NotImplementedException("<QualifiedName> ::= ID");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
 		// <Stm> ::= if '(' <Expr> ')' <Stm>
 		protected override object RuleStmIfLparanRparan(NonterminalToken token)
 		{
@@ -3564,18 +3607,10 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Stm> ::= using ID ';'
-		protected override object RuleStmUsingIdSemi(NonterminalToken token)
+		// <Stm> ::= using <QualifiedName> ';'
+		protected override object RuleStmUsingSemi(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Stm> ::= using ID ';'");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Stm> ::= using QualifiedName ';'
-		protected override object RuleStmUsingQualifiednameSemi(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Stm> ::= using QualifiedName ';'");
+			throw new NotImplementedException("<Stm> ::= using <QualifiedName> ';'");
 			//CheckRule(token, Symbols);
 			//return new
 		}
@@ -3588,10 +3623,18 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Stm> ::= using QualifiedName as ID ';'
-		protected override object RuleStmUsingQualifiednameAsIdSemi(NonterminalToken token)
+		// <Stm> ::= using <QualifiedName> as ID ';'
+		protected override object RuleStmUsingAsIdSemi(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Stm> ::= using QualifiedName as ID ';'");
+			throw new NotImplementedException("<Stm> ::= using <QualifiedName> as ID ';'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Stm> ::= using StringLiteral as ID ';'
+		protected override object RuleStmUsingStringliteralAsIdSemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Stm> ::= using StringLiteral as ID ';'");
 			//CheckRule(token, Symbols);
 			//return new
 		}
@@ -3700,18 +3743,82 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Args> ::= <Expr> ',' <Args>
-		protected override object RuleArgsComma(NonterminalToken token)
+		// <Func args> ::= <Func args> ',' <Func Arg>
+		protected override object RuleFuncargsComma(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Args> ::= <Expr> ',' <Args>");
+			throw new NotImplementedException("<Func args> ::= <Func args> ',' <Func Arg>");
 			//CheckRule(token, Symbols);
 			//return new
 		}
 
-		// <Args> ::= <Expr>
+		// <Func args> ::= <Func Arg>
+		protected override object RuleFuncargs(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Func args> ::= <Func Arg>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Func args> ::= 
+		protected override object RuleFuncargs2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Func args> ::= ");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Func Arg> ::= ID
+		protected override object RuleFuncargId(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Func Arg> ::= ID");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Func Arg> ::= ID '=' <Expr>
+		protected override object RuleFuncargIdEq(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Func Arg> ::= ID '=' <Expr>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Args> ::= <Args> ',' <Arg>
+		protected override object RuleArgsComma(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Args> ::= <Args> ',' <Arg>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Args> ::= <Arg>
 		protected override object RuleArgs(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Args> ::= <Expr>");
+			throw new NotImplementedException("<Args> ::= <Arg>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Args> ::= 
+		protected override object RuleArgs2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Args> ::= ");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Arg> ::= <Op If>
+		protected override object RuleArg(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Arg> ::= <Op If>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Arg> ::= ID '=' <Expr>
+		protected override object RuleArgIdEq(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Arg> ::= ID '=' <Expr>");
 			//CheckRule(token, Symbols);
 			//return new
 		}
@@ -3764,58 +3871,18 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Function> ::= function ID '(' <Param List> ')' <Stm>
+		// <Function> ::= function ID '(' <Func args> ')' <Stm>
 		protected override object RuleFunctionFunctionIdLparanRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Function> ::= function ID '(' <Param List> ')' <Stm>");
+			throw new NotImplementedException("<Function> ::= function ID '(' <Func args> ')' <Stm>");
 			//CheckRule(token, Symbols);
 			//return new
 		}
 
-		// <Function> ::= function ID '(' ')' <Stm>
-		protected override object RuleFunctionFunctionIdLparanRparan2(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Function> ::= function ID '(' ')' <Stm>");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Function> ::= function '(' <Param List> ')' <Stm>
+		// <Function> ::= function '(' <Func args> ')' <Stm>
 		protected override object RuleFunctionFunctionLparanRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Function> ::= function '(' <Param List> ')' <Stm>");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Function> ::= function '(' ')' <Stm>
-		protected override object RuleFunctionFunctionLparanRparan2(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Function> ::= function '(' ')' <Stm>");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Param List> ::= <Param List> ',' <Param decl>
-		protected override object RuleParamlistComma(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Param List> ::= <Param List> ',' <Param decl>");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Param List> ::= <Param decl>
-		protected override object RuleParamlist(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Param List> ::= <Param decl>");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Param decl> ::= ID
-		protected override object RuleParamdeclId(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Param decl> ::= ID");
+			throw new NotImplementedException("<Function> ::= function '(' <Func args> ')' <Stm>");
 			//CheckRule(token, Symbols);
 			//return new
 		}
@@ -3900,18 +3967,10 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Layout Block> ::= ref ID <WndParam List>
-		protected override object RuleLayoutblockRefId(NonterminalToken token)
+		// <Layout Block> ::= ref <QualifiedName> <WndParam List>
+		protected override object RuleLayoutblockRef(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Layout Block> ::= ref ID <WndParam List>");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Layout Block> ::= ref QualifiedName <WndParam List>
-		protected override object RuleLayoutblockRefQualifiedname(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Layout Block> ::= ref QualifiedName <WndParam List>");
+			throw new NotImplementedException("<Layout Block> ::= ref <QualifiedName> <WndParam List>");
 			//CheckRule(token, Symbols);
 			//return new
 		}
@@ -4032,6 +4091,22 @@ namespace LPS.ToolScript
 		protected override object RuleExprlist(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Expr List> ::= <Expr>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Dict List> ::= <Dict List> ',' <Expr> ':' <Expr>
+		protected override object RuleDictlistCommaColon(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Dict List> ::= <Dict List> ',' <Expr> ':' <Expr>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Dict List> ::= <Expr> ':' <Expr>
+		protected override object RuleDictlistColon(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Dict List> ::= <Expr> ':' <Expr>");
 			//CheckRule(token, Symbols);
 			//return new
 		}
@@ -4340,18 +4415,10 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Op Unary> ::= cast <Op Unary> as ID
-		protected override object RuleOpunaryCastAsId(NonterminalToken token)
+		// <Op Unary> ::= cast <Op Unary> as <QualifiedName>
+		protected override object RuleOpunaryCastAs(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Unary> ::= cast <Op Unary> as ID");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Op Unary> ::= cast <Op Unary> as QualifiedName
-		protected override object RuleOpunaryCastAsQualifiedname(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Op Unary> ::= cast <Op Unary> as QualifiedName");
+			throw new NotImplementedException("<Op Unary> ::= cast <Op Unary> as <QualifiedName>");
 			//CheckRule(token, Symbols);
 			//return new
 		}
@@ -4444,6 +4511,14 @@ namespace LPS.ToolScript
 			//return new
 		}
 
+		// <Op Pointer> ::= <Op Pointer> '(' <Args> ')'
+		protected override object RuleOppointerLparanRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Op Pointer> ::= <Op Pointer> '(' <Args> ')'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
 		// <Op Pointer> ::= <Value>
 		protected override object RuleOppointer(NonterminalToken token)
 		{
@@ -4476,34 +4551,10 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Value> ::= type ID
-		protected override object RuleValueTypeId(NonterminalToken token)
+		// <Value> ::= type <QualifiedName>
+		protected override object RuleValueType(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Value> ::= type ID");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Value> ::= type QualifiedName
-		protected override object RuleValueTypeQualifiedname(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Value> ::= type QualifiedName");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Value> ::= ID '(' <Args> ')'
-		protected override object RuleValueIdLparanRparan(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Value> ::= ID '(' <Args> ')'");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Value> ::= ID '(' ')'
-		protected override object RuleValueIdLparanRparan2(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Value> ::= ID '(' ')'");
+			throw new NotImplementedException("<Value> ::= type <QualifiedName>");
 			//CheckRule(token, Symbols);
 			//return new
 		}
@@ -4524,50 +4575,10 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Value> ::= QualifiedName '(' <Args> ')'
-		protected override object RuleValueQualifiednameLparanRparan(NonterminalToken token)
+		// <Value> ::= new <QualifiedName> '(' <Args> ')'
+		protected override object RuleValueNewLparanRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Value> ::= QualifiedName '(' <Args> ')'");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Value> ::= QualifiedName '(' ')'
-		protected override object RuleValueQualifiednameLparanRparan2(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Value> ::= QualifiedName '(' ')'");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Value> ::= new ID '(' <Args> ')'
-		protected override object RuleValueNewIdLparanRparan(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Value> ::= new ID '(' <Args> ')'");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Value> ::= new ID '(' ')'
-		protected override object RuleValueNewIdLparanRparan2(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Value> ::= new ID '(' ')'");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Value> ::= new QualifiedName '(' <Args> ')'
-		protected override object RuleValueNewQualifiednameLparanRparan(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Value> ::= new QualifiedName '(' <Args> ')'");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Value> ::= new QualifiedName '(' ')'
-		protected override object RuleValueNewQualifiednameLparanRparan2(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Value> ::= new QualifiedName '(' ')'");
+			throw new NotImplementedException("<Value> ::= new <QualifiedName> '(' <Args> ')'");
 			//CheckRule(token, Symbols);
 			//return new
 		}
@@ -4604,10 +4615,18 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Value> ::= '{' <Expr List> '}'
+		// <Value> ::= '[' <Expr List> ']'
+		protected override object RuleValueLbracketRbracket(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= '[' <Expr List> ']'");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Value> ::= '{' <Dict List> '}'
 		protected override object RuleValueLbraceRbrace(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Value> ::= '{' <Expr List> '}'");
+			throw new NotImplementedException("<Value> ::= '{' <Dict List> '}'");
 			//CheckRule(token, Symbols);
 			//return new
 		}
@@ -4641,16 +4660,18 @@ namespace LPS.ToolScript
 
 		#region Test templates for user overrided rules functions
 		/*
+			Test(@"<QualifiedName> ::= ID '.' <QualifiedName>");
+			Test(@"<QualifiedName> ::= ID");
 			Test(@"<Stm> ::= if '(' <Expr> ')' <Stm>");
 			Test(@"<Stm> ::= if '(' <Expr> ')' <Then Stm> else <Stm>");
 			Test(@"<Stm> ::= while '(' <Expr> ')' <Stm>");
 			Test(@"<Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>");
 			Test(@"<Stm> ::= foreach '(' ID in <Expr> ')' <Stm>");
 			Test(@"<Stm> ::= observed '(' <Expr> ')' <Stm>");
-			Test(@"<Stm> ::= using ID ';'");
-			Test(@"<Stm> ::= using QualifiedName ';'");
+			Test(@"<Stm> ::= using <QualifiedName> ';'");
 			Test(@"<Stm> ::= using StringLiteral ';'");
-			Test(@"<Stm> ::= using QualifiedName as ID ';'");
+			Test(@"<Stm> ::= using <QualifiedName> as ID ';'");
+			Test(@"<Stm> ::= using StringLiteral as ID ';'");
 			Test(@"<Stm> ::= <Normal Stm>");
 			Test(@"<Then Stm> ::= if '(' <Expr> ')' <Then Stm> else <Then Stm>");
 			Test(@"<Then Stm> ::= while '(' <Expr> ')' <Then Stm>");
@@ -4664,21 +4685,24 @@ namespace LPS.ToolScript
 			Test(@"<Normal Stm> ::= continue ';'");
 			Test(@"<Normal Stm> ::= return <Expr> ';'");
 			Test(@"<Normal Stm> ::= ';'");
-			Test(@"<Args> ::= <Expr> ',' <Args>");
-			Test(@"<Args> ::= <Expr>");
+			Test(@"<Func args> ::= <Func args> ',' <Func Arg>");
+			Test(@"<Func args> ::= <Func Arg>");
+			Test(@"<Func args> ::= ");
+			Test(@"<Func Arg> ::= ID");
+			Test(@"<Func Arg> ::= ID '=' <Expr>");
+			Test(@"<Args> ::= <Args> ',' <Arg>");
+			Test(@"<Args> ::= <Arg>");
+			Test(@"<Args> ::= ");
+			Test(@"<Arg> ::= <Op If>");
+			Test(@"<Arg> ::= ID '=' <Expr>");
 			Test(@"<Case Stms> ::= case <Value> ':' <Stm List> <Case Stms>");
 			Test(@"<Case Stms> ::= default ':' <Stm List>");
 			Test(@"<Case Stms> ::= ");
 			Test(@"<Block> ::= '{' <Stm List> '}'");
 			Test(@"<Stm List> ::= <Stm> <Stm List>");
 			Test(@"<Stm List> ::= ");
-			Test(@"<Function> ::= function ID '(' <Param List> ')' <Stm>");
-			Test(@"<Function> ::= function ID '(' ')' <Stm>");
-			Test(@"<Function> ::= function '(' <Param List> ')' <Stm>");
-			Test(@"<Function> ::= function '(' ')' <Stm>");
-			Test(@"<Param List> ::= <Param List> ',' <Param decl>");
-			Test(@"<Param List> ::= <Param decl>");
-			Test(@"<Param decl> ::= ID");
+			Test(@"<Function> ::= function ID '(' <Func args> ')' <Stm>");
+			Test(@"<Function> ::= function '(' <Func args> ')' <Stm>");
 			Test(@"<Window> ::= window ID <WndParam List> <Layout Block>");
 			Test(@"<Window> ::= window <WndParam List> <Layout Block>");
 			Test(@"<WndParam List> ::= <WndParam> <WndParam List>");
@@ -4689,8 +4713,7 @@ namespace LPS.ToolScript
 			Test(@"<Layout Block> ::= table <WndParam List> <TabRow Block> end");
 			Test(@"<Layout Block> ::= table <WndParam List> <TabCol Block> end");
 			Test(@"<Layout Block> ::= <Menu Block>");
-			Test(@"<Layout Block> ::= ref ID <WndParam List>");
-			Test(@"<Layout Block> ::= ref QualifiedName <WndParam List>");
+			Test(@"<Layout Block> ::= ref <QualifiedName> <WndParam List>");
 			Test(@"<Layout Block> ::= ref StringLiteral <WndParam List>");
 			Test(@"<Layout Block> ::= '[' <Expr> ']' <WndParam List>");
 			Test(@"<TabRow Block> ::= row <WndParam List> <Tab Cells> end");
@@ -4706,6 +4729,8 @@ namespace LPS.ToolScript
 			Test(@"<Menu Item> ::= separator");
 			Test(@"<Expr List> ::= <Expr List> ',' <Expr>");
 			Test(@"<Expr List> ::= <Expr>");
+			Test(@"<Dict List> ::= <Dict List> ',' <Expr> ':' <Expr>");
+			Test(@"<Dict List> ::= <Expr> ':' <Expr>");
 			Test(@"<Expr> ::= <Op If> '=' <Expr>");
 			Test(@"<Expr> ::= <Op If> '+=' <Expr>");
 			Test(@"<Expr> ::= <Op If> '-=' <Expr>");
@@ -4744,8 +4769,7 @@ namespace LPS.ToolScript
 			Test(@"<Op Unary> ::= not <Op Unary>");
 			Test(@"<Op Unary> ::= '!' <Op Unary>");
 			Test(@"<Op Unary> ::= '-' <Op Unary>");
-			Test(@"<Op Unary> ::= cast <Op Unary> as ID");
-			Test(@"<Op Unary> ::= cast <Op Unary> as QualifiedName");
+			Test(@"<Op Unary> ::= cast <Op Unary> as <QualifiedName>");
 			Test(@"<Op Unary> ::= '++' <Op Unary>");
 			Test(@"<Op Unary> ::= -- <Op Unary>");
 			Test(@"<Op Unary> ::= <Op Pointer> '++'");
@@ -4757,27 +4781,21 @@ namespace LPS.ToolScript
 			Test(@"<Op Pointer> ::= <Op Pointer> '.' <Value>");
 			Test(@"<Op Pointer> ::= <Op Pointer> '->' <Value>");
 			Test(@"<Op Pointer> ::= <Op Pointer> '[' <Expr> ']'");
+			Test(@"<Op Pointer> ::= <Op Pointer> '(' <Args> ')'");
 			Test(@"<Op Pointer> ::= <Value>");
 			Test(@"<Value> ::= IntLiteral");
 			Test(@"<Value> ::= StringLiteral");
 			Test(@"<Value> ::= DecimalLiteral");
-			Test(@"<Value> ::= type ID");
-			Test(@"<Value> ::= type QualifiedName");
-			Test(@"<Value> ::= ID '(' <Args> ')'");
-			Test(@"<Value> ::= ID '(' ')'");
+			Test(@"<Value> ::= type <QualifiedName>");
 			Test(@"<Value> ::= <Function>");
 			Test(@"<Value> ::= <Window>");
-			Test(@"<Value> ::= QualifiedName '(' <Args> ')'");
-			Test(@"<Value> ::= QualifiedName '(' ')'");
-			Test(@"<Value> ::= new ID '(' <Args> ')'");
-			Test(@"<Value> ::= new ID '(' ')'");
-			Test(@"<Value> ::= new QualifiedName '(' <Args> ')'");
-			Test(@"<Value> ::= new QualifiedName '(' ')'");
+			Test(@"<Value> ::= new <QualifiedName> '(' <Args> ')'");
 			Test(@"<Value> ::= ID");
 			Test(@"<Value> ::= var ID");
 			Test(@"<Value> ::= static ID");
 			Test(@"<Value> ::= '(' <Expr> ')'");
-			Test(@"<Value> ::= '{' <Expr List> '}'");
+			Test(@"<Value> ::= '[' <Expr List> ']'");
+			Test(@"<Value> ::= '{' <Dict List> '}'");
 			Test(@"<Value> ::= null");
 			Test(@"<Value> ::= true");
 			Test(@"<Value> ::= false");

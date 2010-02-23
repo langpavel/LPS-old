@@ -57,7 +57,6 @@
     <Compile Include="ToolScript\Parser\Statements\BreakStatement.cs" />
     <Compile Include="ToolScript\Parser\Statements\ContinueStatement.cs" />
     <Compile Include="ToolScript\Parser\Statements\ReturnStatement.cs" />
-    <Compile Include="ToolScript\Parser\Expressions\FunctionCall.cs" />
     <Compile Include="ToolScript\Parser\Statements\WhileStatement.cs" />
     <Compile Include="ToolScript\Parser\Literals\LiteralBase.cs" />
     <Compile Include="ToolScript\Parser\Expressions\ExpressionBase.cs" />
@@ -66,14 +65,12 @@
     <Compile Include="ToolScript\Parser\Statements\DoWhileStatement.cs" />
     <Compile Include="ToolScript\Parser\Statements\BlockStatement.cs" />
     <Compile Include="ToolScript\Parser\Statements\NoopStatement.cs" />
-    <Compile Include="ToolScript\Parser\Expressions\AssignExpression.cs" />
     <Compile Include="ToolScript\Parser\Statements\ForStatement.cs" />
     <Compile Include="ToolScript\Parser\Statements\ForeachStatement.cs" />
     <Compile Include="ToolScriptTests.cs" />
     <Compile Include="ToolScript\Parser\Expressions\ArrayExpression.cs" />
     <Compile Include="ToolScript\Exceptions\VariableNotInitialized.cs" />
     <Compile Include="ToolScript\SpecialValue.cs" />
-    <Compile Include="ToolScript\Parser\Expressions\NewExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Binary\BinaryExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Binary\AddExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Binary\AndExpression.cs" />
@@ -90,10 +87,20 @@
     <Compile Include="ToolScript\Parser\Statements\StatementList.cs" />
     <Compile Include="ToolScript\Parser\Expressions\TernaryOperatorExpression.cs" />
     <Compile Include="ToolScript\Parser\Statements\UsingStatement.cs" />
-    <Compile Include="ToolScript\Parser\Expressions\FunctionExpression.cs" />
     <Compile Include="ToolScript\Parser\Interfaces\IFunction.cs" />
-    <Compile Include="ToolScript\Parser\Statements\ParamDeclStatement.cs" />
-    <Compile Include="ToolScript\Parser\Statements\NamedArgument.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Callable\FunctionCall.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Callable\FunctionExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Callable\NamedArgument.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Callable\NewExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Callable\NamedArgVal.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Callable\NamedArgumentList.cs" />
+    <Compile Include="ToolScript\ToolScriptFunction.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\OpMember.cs" />
+    <Compile Include="ToolScript\Parser\Literals\QualifiedName.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Binary\AssignExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Callable\MethodWraper.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\DictionaryExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\ArrayMember.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />
@@ -109,6 +116,7 @@
     <Folder Include="ToolScript\Exceptions\" />
     <Folder Include="ToolScript\Parser\Expressions\Unary\" />
     <Folder Include="ToolScript\Parser\Expressions\Binary\" />
+    <Folder Include="ToolScript\Parser\Expressions\Callable\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

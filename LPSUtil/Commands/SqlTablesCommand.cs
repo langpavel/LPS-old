@@ -8,14 +8,9 @@ namespace LPS.Util
 {
 	public class SqlTablesCommand : CommandBase
 	{
-		public SqlTablesCommand(CommandCollection Commands, string Name)
-			: base(Commands, Name)
+		public SqlTablesCommand(string Name)
+			: base(Name)
 		{
-		}
-
-		public override Type[] ParamTypes
-		{
-			get { return new Type[] { typeof(string) }; }
 		}
 
 		public override string Help
@@ -36,11 +31,11 @@ namespace LPS.Util
 			return tables.ToArray();
 		}
 
-		public override object Execute(TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		public override object Execute(LPS.ToolScript.Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
-			ServerConnection conn = Commands.GetVar<ServerConnection>("ServerConnection");
+			ServerConnection conn = (ServerConnection)context.LocalVariables["ServerConnection"];
 			List<string> tablenames = new List<string>(GetSqlTableNames(conn));
-			if(Get<string>(ref Params, 0) == "missing")
+			if(Get<string>(Params, 0) == "missing")
 			{
 				foreach(string table in tablenames.ToArray())
 				{
@@ -56,7 +51,7 @@ namespace LPS.Util
 					}
 				}
 			}
-			else if(Get<string>(ref Params, 0) == "mismod")
+			else if(Get<string>(Params, 0) == "mismod")
 			{
 				ModulesTreeInfo root = conn.Resources.GetModulesInfo("root");
 				RemoveByModuleInfo(tablenames, root);

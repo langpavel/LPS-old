@@ -18,9 +18,8 @@ namespace LPS.ToolScript
 			}
 		}
 
-		public object Run(ToolScriptParser parser)
+		public object RunAsMain(Context context)
 		{
-			Context context = Context.CreateRootContext(parser);
 			try
 			{
 				foreach(IStatement s in this)
@@ -37,6 +36,12 @@ namespace LPS.ToolScript
 			{
 				context.Dispose();
 			}
+		}
+
+		public object Run(ToolScriptParser parser)
+		{
+			Context context = Context.CreateRootContext(parser);
+			return RunAsMain(context);
 		}
 	}
 }

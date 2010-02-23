@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using LPS.ToolScript;
 
 namespace LPS.Util
 {
@@ -7,9 +8,7 @@ namespace LPS.Util
 	{
 		string Name { get; }
 		string Help { get; }
-		CommandCollection Commands { get; }
-		Type[] ParamTypes { get; }
 
-		object Execute(TextWriter Out, TextWriter Info, TextWriter Err, object[] Params);
+		object Execute(Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params);
 	}
 }

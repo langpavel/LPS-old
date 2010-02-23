@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{794C8AFA-18CF-4E67-9B8D-353BA68BDEC7}</ProjectGuid>
+    <ProjectGuid>{794C8AFA-18CF-4E67-9B8D-353BA68BDED7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>LPS.Util</RootNamespace>
     <AssemblyName>LPSUtilOld</AssemblyName>

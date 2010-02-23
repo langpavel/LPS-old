@@ -1,17 +1,17 @@
 using System;
 using System.IO;
 using System.Text;
+using LPS.ToolScript.Parser;
+using LPS.ToolScript;
 
 namespace LPS.Util
 {
-	public abstract class CommandBase : ICommand
+	public abstract class CommandBase : ICommand, IFunction
 	{
 		private string name;
-		protected CommandBase(CommandCollection Commands, string Name)
+		protected CommandBase(string Name)
 		{
 			this.name = Name;
-			this.Commands = Commands;
-			this.Commands.Commands.Add(this);
 		}
 
 		public string Name { get { return this.name; } }
@@ -20,42 +20,32 @@ namespace LPS.Util
 			get { return "nedokumentováno";}
 		}
 
-		public TextWriter Out { get; set; }
-		public TextWriter Info { get; set; }
-		public TextWriter Err { get; set; }
-		public CommandCollection Commands { get; set; }
-
-		public virtual Type[] ParamTypes
+		protected T Get<T>(object[] parameters, int index)
 		{
-			get { return new Type[] { }; }
-		}
-
-		protected T Get<T>(ref object[] parameters, int index)
-		{
-			if(typeof(T) != ParamTypes[index])
-				throw new InvalidOperationException("typová chyba");
+			if(parameters == null || index >= parameters.Length)
+				return default(T);
 			object val = parameters[index];
 			if(val == null || val is T)
 			   return (T)val;
-			val = Convert.ChangeType(val, typeof(T));
-			parameters[index] = val;
-			return (T)val;
+			return (T)Convert.ChangeType(val, typeof(T));
 		}
 
-		public abstract object Execute(TextWriter Out, TextWriter Info, TextWriter Err, object[] Params);
+		public abstract object Execute(Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params);
 
 		public override string ToString ()
 		{
-			StringBuilder sb = new StringBuilder();
-			sb.Append(Name).Append("(");
-			for(int i=0; i<ParamTypes.Length; i++)
-			{
-				sb.Append(ParamTypes[i].Name);
-				if(i < ParamTypes.Length-1)
-					sb.Append(", ");
-			}
-			sb.Append(")");
-			return sb.ToString();
+			return String.Format("function {0}(...);", Name);
+		}
+
+		public virtual object Execute (Context context, NamedArgumentList argumentValues)
+		{
+			TextWriter Out = (TextWriter)context.GetVariable("__STD_OUT");
+			TextWriter Info = (TextWriter)context.GetVariable("__STD_INFO");
+			TextWriter Err = (TextWriter)context.GetVariable("__STD_ERR");
+			object[] args = new object[argumentValues.Count];
+			for(int i=0; i<argumentValues.Count; i++)
+				args[i] = argumentValues[i].Value;
+			return Execute(context, Out, Info, Err, args);
 		}
 	}
 }
