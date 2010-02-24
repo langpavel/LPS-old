@@ -1,0 +1,4 @@
+﻿	Ur             	integer,             //  1: Nenulových 10	Unikátních 10
+	Urob           	integer,             //  2: Nenulových 10	Unikátních 10
+	Nazur          	varchar(30),         //  3: Nenulových 9	Unikátních 9
+	Nazevur        	varchar(30),         //  4: Nenulových 9	Unikátních 7

@@ -1,0 +1,8 @@
+﻿	Nazev          	varchar(17),         //  1: Nenulových 140	Unikátních 85
+	Delka          	integer,             //  2: Nenulových 139	Unikátních 16
+	Delmax         	integer,             //  3: Nenulových 139	Unikátních 17
+	Popis          	varchar(27),         //  4: Nenulových 140	Unikátních 75
+	Nazev2         	varchar(11),         //  5: Nenulových 61	Unikátních 34
+	Por            	integer,             //  6: Nenulových 140	Unikátních 1
+	Co             	integer,             //  7: Nenulových 140	Unikátních 10
+	Nazev3         	varchar(11),         //  8: Nenulových 140	Unikátních 71

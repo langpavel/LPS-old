@@ -1,0 +1,3 @@
+﻿	Kodocr         	integer,             //  1: Nenulových 48	Unikátních 48
+	Nazocr         	varchar(24),         //  2: Nenulových 48	Unikátních 48
+	Nazcs          	varchar(23),         //  3: Nenulových 48	Unikátních 48

@@ -1,0 +1,17 @@
+﻿	Nk             	varchar(2),          //  1: Nenulových 77	Unikátních 14
+	Kn             	integer,             //  2: Nenulových 77	Unikátních 14
+	Knok           	integer,             //  3: Nenulových 77	Unikátních 77
+	Kodnuts        	varchar(6),          //  4: Nenulových 77	Unikátních 77
+	Lau1           	varchar(6),          //  5: Nenulových 77	Unikátních 77
+	Knuts          	integer,             //  6: Nenulových 77	Unikátních 77
+	Kodok          	integer,             //  7: Nenulových 77	Unikátních 77
+	Nazkr          	varchar(18),         //  8: Nenulových 77	Unikátních 14
+	Nazok          	varchar(19),         //  9: Nenulových 77	Unikátních 77
+	Vymera         	numeric,             // 10: Nenulových 77	Unikátních 77
+	Vymeru         	numeric,             // 11: Nenulových 77	Unikátních 77
+	Ob91           	integer,             // 12: Nenulových 77	Unikátních 77
+	Ob01           	integer,             // 13: Nenulových 77	Unikátních 77
+	Obakt          	integer,             // 14: Nenulových 77	Unikátních 77
+	Nazcs          	varchar(18),         // 15: Nenulových 77	Unikátních 77
+	Zmenazaz       	integer,             // 16: Nenulových 53	Unikátních 3
+	Zmenapol       	varchar(12),         // 17: Nenulových 50	Unikátních 2

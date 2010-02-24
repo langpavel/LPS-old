@@ -1,0 +1,9 @@
+﻿	Polozka        	varchar(8),          //  1: Nenulových 473	Unikátních 141
+	Tp             	varchar(1),          //  2: Nenulových 473	Unikátních 2
+	Del            	integer,             //  3: Nenulových 473	Unikátních 19
+	Dec            	integer,             //  4: Nenulových 473	Unikátních 2
+	Soubor         	varchar(7),          //  5: Nenulových 473	Unikátních 23
+	Pors           	integer,             //  6: Nenulových 473	Unikátních 22
+	Porp           	integer,             //  7: Nenulových 473	Unikátních 67
+	Charp          	varchar(7),          //  8: Nenulových 473	Unikátních 6
+	Vyznam         	varchar(74),         //  9: Nenulových 473	Unikátních 141

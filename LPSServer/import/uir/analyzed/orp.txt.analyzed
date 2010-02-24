@@ -1,0 +1,17 @@
+﻿	Nk             	varchar(2),          //  1: Nenulových 206	Unikátních 14
+	Kodnuts        	varchar(6),          //  2: Nenulových 206	Unikátních 77
+	Lau1           	varchar(6),          //  3: Nenulových 206	Unikátních 77
+	Knuts          	integer,             //  4: Nenulových 206	Unikátních 77
+	Kodok          	integer,             //  5: Nenulových 206	Unikátních 77
+	Cisorp         	integer,             //  6: Nenulových 206	Unikátních 206
+	Kodorp         	integer,             //  7: Nenulových 206	Unikátních 206
+	Kodob          	integer,             //  8: Nenulových 206	Unikátních 206
+	Ko             	integer,             //  9: Nenulových 206	Unikátních 10
+	Icob           	integer,             // 10: Nenulových 206	Unikátních 206
+	Nazorp         	varchar(32),         // 11: Nenulových 206	Unikátních 206
+	Nazob          	varchar(32),         // 12: Nenulových 206	Unikátních 206
+	Ur             	integer,             // 13: Nenulových 206	Unikátních 3
+	Urob           	integer,             // 14: Nenulových 206	Unikátních 3
+	Porob          	integer,             // 15: Nenulových 206	Unikátních 78
+	Om             	integer,             // 16: Nenulových 206	Unikátních 5
+	Nazcs          	varchar(32),         // 17: Nenulových 206	Unikátních 206

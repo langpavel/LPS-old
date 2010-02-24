@@ -1,0 +1,4 @@
+﻿	Ur             	integer,             //  1: Nenulových 10	Unikátních 10
+	Urmc           	integer,             //  2: Nenulových 10	Unikátních 10
+	Nazur          	varchar(21),         //  3: Nenulových 5	Unikátních 5
+	Nazevur        	varchar(21),         //  4: Nenulových 5	Unikátních 5

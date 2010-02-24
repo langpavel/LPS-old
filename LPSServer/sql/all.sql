@@ -1,9 +1,4 @@
-SET statement_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = off;
-SET check_function_bodies = false;
-SET client_min_messages = warning;
-SET escape_string_warning = off;
+--- 000_system.sql
 
 CREATE TABLE sys_user (
     id bigserial not null primary key,
@@ -77,7 +72,13 @@ CREATE TABLE sys_gen_cyklus (
     year bool not null,
     month bool not null,
     week bool not null,
-    day bool not null
+    day bool not null,
+    
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
 );
 INSERT INTO sys_gen_cyklus VALUES (1, 'INF',   'Stálý', false, false, false, false, false);
 
@@ -135,6 +136,24 @@ CREATE TABLE sys_user_preferences (
     ts timestamp without time zone DEFAULT now()
 );
 CREATE UNIQUE INDEX sys_user_preferences_usr_path_name on sys_user_preferences (id_user, path, name);
+
+CREATE TABLE sys_app_config (
+    id bigserial not null primary key,
+    sys_rok integer not null,
+    sys_mesic integer not null,
+    sys_den integer not null,
+    sys_date timestamp not null,
+    firma character varying(100) NOT NULL,
+    id_adresa bigint, -- fk
+
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+INSERT INTO sys_app_config VALUES (1, 2010,1,1,'2010-01-01', '24 Promotions s.r.o.', 1, 0, now(), now());
+
+
+--- 100_ciselniky.sql
 
 CREATE TABLE c_druh_adresy (
     id bigserial not null primary key,
@@ -202,7 +221,6 @@ CREATE TABLE c_kategorie (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
-CREATE INDEX c_kategorie_ts on c_kategorie (ts);
 
 CREATE TABLE c_zaruka (
     id bigserial NOT NULL primary key,
@@ -247,7 +265,6 @@ CREATE TABLE c_stat (
 INSERT INTO c_stat VALUES (1, 'CZ', 'Česká republika', null, null, null, null, now());
 INSERT INTO c_stat VALUES (2, 'SK', 'Slovenská republika', null, null, null, null, now());
 
-
 CREATE TABLE c_mena (
     id bigserial NOT NULL primary key,
     kod character varying(10) not null UNIQUE,
@@ -268,96 +285,12 @@ CREATE TABLE c_mena (
 INSERT INTO c_mena VALUES (1, 'CZK', 'Kč', 'Česká koruna', '#,##0.00\' Kč\'', null, null, true, 0, now(), 0, now(), now());
 INSERT INTO c_mena VALUES (2, 'EUR', '€', 'Euro', '\'€\'#,##0.00', null, null, false, 0, now(), 0, now(), now());
 
-
-CREATE TABLE adresa (
-    id bigserial NOT NULL primary key,
-    id_druh_adresy bigint NOT NULL references c_druh_adresy(id),
-    id_stat bigint references c_stat(id),
-    id_group bigint,
-
-    nazev1 character varying(100),
-    nazev2 character varying(100),
-    ico character varying(20),
-    dic character varying(20),
-    prijmeni character varying(100),
-    jmeno character varying(100),
-    jmeno2 character varying(100),
-    ulice character varying(100),
-    mesto character varying(100),
-    psc character varying(20),
-    email character varying(100),
-    telefon1 character varying(100),
-    telefon2 character varying(100),
-    poznamka text,
-    aktivni bool not null default true,
-    fakturacni bool,
-    dodaci bool,
-    dodavatel bool,
-    odberatel bool,
-    import_php_str_hash character varying(40),
-    import_objed_cislo character varying(10),
-
-    id_user_create bigint references sys_user(id),
-    dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify bigint references sys_user(id),
-    dt_modify timestamp without time zone DEFAULT now(),
-    ts timestamp without time zone DEFAULT now()
-);
-INSERT INTO adresa VALUES (1, 3, 1, null, '24 Promotions s.r.o.');
-
-CREATE TABLE adr_obec (
-    id bigserial NOT NULL primary key,
-
-
-    id_user_create bigint references sys_user(id),
-    dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify bigint references sys_user(id),
-    dt_modify timestamp without time zone DEFAULT now(),
-    ts timestamp without time zone DEFAULT now()
-);
-
-CREATE TABLE sys_app_config (
-    id bigserial not null primary key,
-    sys_rok integer not null,
-    sys_mesic integer not null,
-    sys_den integer not null,
-    sys_date timestamp not null,
-    firma character varying(100) NOT NULL,
-    id_adresa bigint references adresa(id),
-
-    id_user_modify bigint references sys_user(id),
-    dt_modify timestamp without time zone DEFAULT now(),
-    ts timestamp without time zone DEFAULT now()
-);
-INSERT INTO sys_app_config VALUES (1, 2010,1,1,'2010-01-01', '24 Promotions s.r.o.', 1, 0, now(), now());
-
--- kurz: mnozstvi id_mena_cizi == hodnota_mnozstvi id_mena_kurz
--- kurz: 1 id_mena_cizi == hodnota id_mena_kurz
-CREATE TABLE kurz (
-    id bigserial NOT NULL primary key,
-    id_mena_cizi bigint not null references c_mena(id),
-    id_mena_kurz bigint not null references c_mena(id),
-
-    hodnota_mnozstvi decimal(28,14) not null,
-    mnozstvi int not null,
-    hodnota decimal(28,14) not null CHECK (hodnota = (hodnota_mnozstvi / mnozstvi)),
-    
-    plati_od timestamp,
-    plati_do timestamp,
-
-    id_user_create bigint references sys_user(id),
-    dt_create timestamp without time zone DEFAULT now(),
-    id_user_modify bigint references sys_user(id),
-    dt_modify timestamp without time zone DEFAULT now(),
-    ts timestamp without time zone DEFAULT now()
-);
-
 CREATE TABLE c_pobocka
 (
     id bigserial NOT NULL primary key,
     kod character varying(10) not null UNIQUE,
     popis character varying(100) not null default '',
-    id_adresa bigint not null references adresa(id),
+    id_adresa bigint not null, -- fk
 
     id_user_create bigint references sys_user(id),
     dt_create timestamp without time zone DEFAULT now(),
@@ -408,6 +341,82 @@ CREATE TABLE c_skl_pohyb_pol_druh (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
+
+
+--- 110_kurz.sql
+
+-- kurz: mnozstvi id_mena_cizi == hodnota_mnozstvi id_mena_kurz
+-- kurz: 1 id_mena_cizi == hodnota id_mena_kurz
+CREATE TABLE kurz (
+    id bigserial NOT NULL primary key,
+    id_mena_cizi bigint not null references c_mena(id),
+    id_mena_kurz bigint not null references c_mena(id),
+
+    hodnota_mnozstvi decimal(28,14) not null,
+    mnozstvi int not null,
+    hodnota decimal(28,14) not null CHECK (hodnota = (hodnota_mnozstvi / mnozstvi)),
+    
+    plati_od timestamp,
+    plati_do timestamp,
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+
+
+--- 200_adresa.sql
+
+CREATE TABLE adresa (
+    id bigserial NOT NULL primary key,
+    id_druh_adresy bigint NOT NULL references c_druh_adresy(id),
+    id_stat bigint references c_stat(id),
+    id_group bigint,
+
+    nazev1 character varying(100),
+    nazev2 character varying(100),
+    ico character varying(20),
+    dic character varying(20),
+    prijmeni character varying(100),
+    jmeno character varying(100),
+    jmeno2 character varying(100),
+    ulice character varying(100),
+    mesto character varying(100),
+    psc character varying(20),
+    email character varying(100),
+    telefon1 character varying(100),
+    telefon2 character varying(100),
+    poznamka text,
+    aktivni bool not null default true,
+    fakturacni bool,
+    dodaci bool,
+    dodavatel bool,
+    odberatel bool,
+    import_php_str_hash character varying(40),
+    import_objed_cislo character varying(10),
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+INSERT INTO adresa VALUES (1, 3, 1, null, '24 Promotions s.r.o.');
+
+CREATE TABLE adr_obec (
+    id bigserial NOT NULL primary key,
+
+
+    id_user_create bigint references sys_user(id),
+    dt_create timestamp without time zone DEFAULT now(),
+    id_user_modify bigint references sys_user(id),
+    dt_modify timestamp without time zone DEFAULT now(),
+    ts timestamp without time zone DEFAULT now()
+);
+
+--- 300_produkt.sql
 
 /* film, plakat, tricko */
 CREATE TABLE c_druh_produktu (
@@ -468,6 +477,10 @@ CREATE TABLE produkt_dodavatel (
     dt_modify timestamp without time zone DEFAULT now(),
     ts timestamp without time zone DEFAULT now()
 );
+
+
+--- 400_sklad.sql
+
 
 CREATE TABLE skl_karta (
     id bigserial NOT NULL primary key,
@@ -535,5 +548,42 @@ CREATE TABLE skl_pohyb_pol (
     ts timestamp without time zone DEFAULT now()
 );
 
+--- 900_indices.sql
 
+CREATE INDEX adr_obec_ts ON adr_obec (ts);
+CREATE INDEX adresa_ts ON adresa (ts);
+CREATE INDEX c_dph_ts ON c_dph (ts);
+CREATE INDEX c_druh_adresy_ts ON c_druh_adresy (ts);
+CREATE INDEX c_druh_produktu_ts ON c_druh_produktu (ts);
+CREATE INDEX c_kategorie_ts ON c_kategorie (ts);
+CREATE INDEX c_mena_ts ON c_mena (ts);
+CREATE INDEX c_mj_ts ON c_mj (ts);
+CREATE INDEX c_pobocka_ts ON c_pobocka (ts);
+CREATE INDEX c_pokladna_ts ON c_pokladna (ts);
+CREATE INDEX c_produkt_varianta_ts ON c_produkt_varianta (ts);
+CREATE INDEX c_skl_pohyb_druh_ts ON c_skl_pohyb_druh (ts);
+CREATE INDEX c_skl_pohyb_pol_druh_ts ON c_skl_pohyb_pol_druh (ts);
+CREATE INDEX c_sklad_ts ON c_sklad (ts);
+CREATE INDEX c_stat_ts ON c_stat (ts);
+CREATE INDEX c_zaruka_ts ON c_zaruka (ts);
+CREATE INDEX kurz_ts ON kurz (ts);
+CREATE INDEX produkt_ts ON produkt (ts);
+CREATE INDEX produkt_dodavatel_ts ON produkt_dodavatel (ts);
+CREATE INDEX skl_karta_ts ON skl_karta (ts);
+CREATE INDEX skl_pohyb_ts ON skl_pohyb (ts);
+CREATE INDEX skl_pohyb_pol_ts ON skl_pohyb_pol (ts);
+CREATE INDEX sys_app_config_ts ON sys_app_config (ts);
+CREATE INDEX sys_attachement_ts ON sys_attachement (ts);
+CREATE INDEX sys_deleted_ts ON sys_deleted (ts);
+CREATE INDEX sys_error_ts ON sys_error (ts);
+CREATE INDEX sys_gen_ts ON sys_gen (ts);
+CREATE INDEX sys_gen_cyklus_ts ON sys_gen_cyklus (ts);
+CREATE INDEX sys_gen_value_ts ON sys_gen_value (ts);
+CREATE INDEX sys_check_ts ON sys_check (ts);
+CREATE INDEX sys_user_ts ON sys_user (ts);
+CREATE INDEX sys_user_preferences_ts ON sys_user_preferences (ts);
+--- 910_foreign_keys.sql
 
+ALTER TABLE sys_app_config ADD FOREIGN KEY (id_adresa) REFERENCES adresa;
+
+ALTER TABLE c_pobocka ADD FOREIGN KEY (id_adresa) REFERENCES adresa;

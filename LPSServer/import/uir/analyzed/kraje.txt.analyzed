@@ -1,0 +1,11 @@
+﻿	Nk             	varchar(2),          //  1: Nenulových 14	Unikátních 14
+	Kn             	integer,             //  2: Nenulových 14	Unikátních 14
+	Kodnuts        	varchar(5),          //  3: Nenulových 14	Unikátních 14
+	Nazkr          	varchar(18),         //  4: Nenulových 14	Unikátních 14
+	Vymera         	numeric,             //  5: Nenulových 14	Unikátních 14
+	Ob91           	integer,             //  6: Nenulových 14	Unikátních 14
+	Ob01           	integer,             //  7: Nenulových 14	Unikátních 14
+	Obakt          	integer,             //  8: Nenulových 14	Unikátních 14
+	Nazcs          	varchar(18),         //  9: Nenulových 14	Unikátních 14
+	Zmenazaz       	integer,             // 10: Nenulových 14	Unikátních 5
+	Zmenapol       	varchar(16),         // 11: Nenulových 7	Unikátních 3

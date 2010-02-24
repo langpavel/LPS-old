@@ -1,0 +1,10 @@
+﻿	Sm             	integer,             //  1: Nenulových 24	Unikátních 24
+	Kn             	integer,             //  2: Nenulových 24	Unikátních 14
+	Knok           	integer,             //  3: Nenulových 24	Unikátních 23
+	Kodnuts        	varchar(6),          //  4: Nenulových 24	Unikátních 23
+	Lau1           	varchar(6),          //  5: Nenulových 24	Unikátních 23
+	Knuts          	integer,             //  6: Nenulových 24	Unikátních 23
+	Kodok          	integer,             //  7: Nenulových 24	Unikátních 23
+	Kodob          	integer,             //  8: Nenulových 24	Unikátních 24
+	Icob           	integer,             //  9: Nenulových 24	Unikátních 24
+	Nazob          	varchar(16),         // 10: Nenulových 24	Unikátních 24

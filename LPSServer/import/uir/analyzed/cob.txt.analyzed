@@ -1,0 +1,42 @@
+﻿	Kn             	integer,             //  1: Nenulových 15104	Unikátních 14
+	Knok           	integer,             //  2: Nenulových 15104	Unikátních 77
+	Kodnuts        	varchar(6),          //  3: Nenulových 15104	Unikátních 77
+	Lau1           	varchar(6),          //  4: Nenulových 15104	Unikátních 77
+	Knuts          	integer,             //  5: Nenulových 15104	Unikátních 77
+	Kodok          	integer,             //  6: Nenulových 15104	Unikátních 77
+	Kodob          	integer,             //  7: Nenulových 15104	Unikátních 6249
+	Ko             	integer,             //  8: Nenulových 15104	Unikátních 10
+	Icob           	integer,             //  9: Nenulových 15104	Unikátních 6249
+	Iczuj          	integer,             // 10: Nenulových 15104	Unikátních 6383
+	Mo             	integer,             // 11: Nenulových 15104	Unikátních 24
+	Mc             	integer,             // 12: Nenulových 15104	Unikátních 65
+	Kodcob         	integer,             // 13: Nenulových 15104	Unikátních 15104
+	Kc             	integer,             // 14: Nenulových 15104	Unikátních 10
+	Porcob         	integer,             // 15: Nenulových 15104	Unikátních 36
+	Nazcob         	varchar(39),         // 16: Nenulových 15104	Unikátních 10962
+	Kodcobe        	integer,             // 17: Nenulových 15104	Unikátních 15048
+	Kce            	integer,             // 18: Nenulových 15104	Unikátních 10
+	Nazcobe        	varchar(34),         // 19: Nenulových 15104	Unikátních 10887
+	Kdomcob        	integer,             // 20: Nenulových 99	Unikátních 43
+	Kdc            	integer,             // 21: Nenulových 99	Unikátních 9
+	Psc            	integer,             // 22: Nenulových 15104	Unikátních 2643
+	Psc 2          	integer,             // 23: Nenulových 1191	Unikátních 686
+	Psc 3          	integer,             // 24: Nenulových 135	Unikátních 122
+	Psc 4          	integer,             // 25: Nenulových 20	Unikátních 18
+	Psc 5          	integer,             // 26: Nenulových 9	Unikátních 9
+	Psc 6          	integer,             // 27: Nenulových 4	Unikátních 4
+	Psc 7          	integer,             // 28: Nenulových 1	Unikátních 1
+	Ob91           	integer,             // 31: Nenulových 15104	Unikátních 2236
+	Ob01           	integer,             // 32: Nenulových 15104	Unikátních 2270
+	Mapa           	varchar(8),          // 33: Nenulových 15104	Unikátních 4062
+	Sycob          	integer,             // 34: Nenulových 15104	Unikátních 14687
+	Sxcob          	integer,             // 35: Nenulových 15104	Unikátních 14468
+	Porob          	integer,             // 36: Nenulových 15104	Unikátních 187
+	Poroba         	integer,             // 37: Nenulových 15104	Unikátních 187
+	Pormc          	integer,             // 38: Nenulových 375	Unikátních 58
+	Kodmc          	integer,             // 39: Nenulových 375	Unikátních 142
+	Nazcs          	varchar(37),         // 40: Nenulových 15104	Unikátních 10883
+	Alkcob         	varchar(1),          // 41: Nenulových 165	Unikátních 163
+	Akc            	integer,             // 42: Nenulových 164	Unikátních 10
+	Zmenazaz       	integer,             // 43: Nenulových 4771	Unikátních 143
+	Zmenapol       	varchar(25),         // 44: Nenulových 4111	Unikátních 50

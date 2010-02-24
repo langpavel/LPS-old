@@ -1,0 +1,9 @@
+﻿	Kodnuts        	varchar(4),          //  1: Nenulových 8	Unikátních 8
+	Nazobl         	varchar(15),         //  2: Nenulových 8	Unikátních 8
+	Vymera         	numeric,             //  3: Nenulových 8	Unikátních 8
+	Ob91           	integer,             //  4: Nenulových 8	Unikátních 8
+	Ob01           	integer,             //  5: Nenulových 8	Unikátních 8
+	Obakt          	integer,             //  6: Nenulových 8	Unikátních 8
+	Nazcs          	varchar(15),         //  7: Nenulových 8	Unikátních 8
+	Zmenazaz       	integer,             //  8: Nenulových 8	Unikátních 2
+	Zmenapol       	varchar(6),          //  9: Nenulových 1	Unikátních 1

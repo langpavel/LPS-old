@@ -1,0 +1,3 @@
+﻿	Kodsra         	integer,             //  1: Nenulových 34	Unikátních 34
+	Nazsra         	varchar(23),         //  2: Nenulových 34	Unikátních 34
+	Nazcs          	varchar(23),         //  3: Nenulových 34	Unikátních 34

@@ -1,0 +1,9 @@
+﻿	Kn             	integer,             //  1: Nenulových 980	Unikátních 14
+	Knok           	integer,             //  2: Nenulových 980	Unikátních 77
+	Kodnuts        	varchar(6),          //  3: Nenulových 980	Unikátních 77
+	Lau1           	varchar(6),          //  4: Nenulových 980	Unikátních 77
+	Knuts          	integer,             //  5: Nenulových 980	Unikátních 77
+	Kodok          	integer,             //  6: Nenulových 980	Unikátních 77
+	Kodsomv        	integer,             //  7: Nenulových 980	Unikátních 980
+	Nazsomv        	varchar(39),         //  8: Nenulových 980	Unikátních 972
+	Nazcs          	varchar(39),         //  9: Nenulových 980	Unikátních 971

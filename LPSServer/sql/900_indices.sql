@@ -1,0 +1,34 @@
+--- 900_indices.sql
+
+CREATE INDEX adr_obec_ts ON adr_obec (ts);
+CREATE INDEX adresa_ts ON adresa (ts);
+CREATE INDEX c_dph_ts ON c_dph (ts);
+CREATE INDEX c_druh_adresy_ts ON c_druh_adresy (ts);
+CREATE INDEX c_druh_produktu_ts ON c_druh_produktu (ts);
+CREATE INDEX c_kategorie_ts ON c_kategorie (ts);
+CREATE INDEX c_mena_ts ON c_mena (ts);
+CREATE INDEX c_mj_ts ON c_mj (ts);
+CREATE INDEX c_pobocka_ts ON c_pobocka (ts);
+CREATE INDEX c_pokladna_ts ON c_pokladna (ts);
+CREATE INDEX c_produkt_varianta_ts ON c_produkt_varianta (ts);
+CREATE INDEX c_skl_pohyb_druh_ts ON c_skl_pohyb_druh (ts);
+CREATE INDEX c_skl_pohyb_pol_druh_ts ON c_skl_pohyb_pol_druh (ts);
+CREATE INDEX c_sklad_ts ON c_sklad (ts);
+CREATE INDEX c_stat_ts ON c_stat (ts);
+CREATE INDEX c_zaruka_ts ON c_zaruka (ts);
+CREATE INDEX kurz_ts ON kurz (ts);
+CREATE INDEX produkt_ts ON produkt (ts);
+CREATE INDEX produkt_dodavatel_ts ON produkt_dodavatel (ts);
+CREATE INDEX skl_karta_ts ON skl_karta (ts);
+CREATE INDEX skl_pohyb_ts ON skl_pohyb (ts);
+CREATE INDEX skl_pohyb_pol_ts ON skl_pohyb_pol (ts);
+CREATE INDEX sys_app_config_ts ON sys_app_config (ts);
+CREATE INDEX sys_attachement_ts ON sys_attachement (ts);
+CREATE INDEX sys_deleted_ts ON sys_deleted (ts);
+CREATE INDEX sys_error_ts ON sys_error (ts);
+CREATE INDEX sys_gen_ts ON sys_gen (ts);
+CREATE INDEX sys_gen_cyklus_ts ON sys_gen_cyklus (ts);
+CREATE INDEX sys_gen_value_ts ON sys_gen_value (ts);
+CREATE INDEX sys_check_ts ON sys_check (ts);
+CREATE INDEX sys_user_ts ON sys_user (ts);
+CREATE INDEX sys_user_preferences_ts ON sys_user_preferences (ts);
