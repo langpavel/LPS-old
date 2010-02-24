@@ -22,7 +22,13 @@ namespace LPS.ToolScript
 	[TestFixture(Description="Testy ToolScriptu")]
 	public class ToolScriptTests
 	{
-		ToolScriptParser parser = new ToolScriptParser();
+		ToolScriptParser parser;
+
+		public ToolScriptTests()
+		{
+			parser = new ToolScriptParser();
+			Log.Add(new TextLogger(Console.Out, Verbosity.Debug));
+		}
 
 		public object Run(string prog)
 		{
@@ -207,6 +213,15 @@ namespace LPS.ToolScript
 			Eq(new object[] {  1,  1 }, "var i = 0; return [++i, i];");
 			Eq(new object[] {  0, -1 }, "var i = 0; return [i--, i];");
 			Eq(new object[] { -1, -1 }, "var i = 0; return [--i, i];");
+		}
+
+		[Test]
+		public void TestUnaryIncrementors2()
+		{
+			Eq(new object[] {  0,  1,  2 }, "var i = 0; return [i++, i++, i++];");
+			Eq(new object[] {  1,  2,  3 }, "var i = 0; return [++i, ++i, ++i];");
+			Eq(new object[] {  0, -1, -2 }, "var i = 0; return [i--, i--, i--];");
+			Eq(new object[] { -1, -2, -3 }, "var i = 0; return [--i, --i, --i];");
 		}
 
 		[Test]
@@ -400,5 +415,61 @@ namespace LPS.ToolScript
 	        //else
 	          //  return false;
 	    }
+
+		public static DBNull NULL { get { return DBNull.Value; } }
+
+		[Test]
+		public void RangeOperatorTest()
+		{
+			Eq(true,  "return null in <null, null>;");
+			Eq(true,  "return null in <null, null);");
+			Eq(true,  "return null in (null, null>;");
+			Eq(true,  "return null in (null, null);");
+
+			Eq(true,  "return this.NULL in <this.NULL, this.NULL>;");
+			Eq(true,  "return this.NULL in <this.NULL, this.NULL);");
+			Eq(true,  "return this.NULL in (this.NULL, this.NULL>;");
+			Eq(true,  "return this.NULL in (this.NULL, this.NULL);");
+
+			Eq(true,  "return 5 in <null, 5>;");
+			Eq(false, "return 5 in <null, 5);");
+			Eq(true,  "return 5 in (null, 5>;");
+			Eq(false, "return 5 in (null, 5);");
+
+			Eq(true,  "return 5 in <5, null>;");
+			Eq(true,  "return 5 in <5, null);");
+			Eq(false, "return 5 in (5, null>;");
+			Eq(false, "return 5 in (5, null);");
+
+			Eq(true,  "return 5 in <5, 5>;");
+			Eq(false, "return 5 in <5, 5);");
+			Eq(false, "return 5 in (5, 5>;");
+			Eq(false, "return 5 in (5, 5);");
+
+			Eq(true,  "return 5 in <5, 10>;");
+			Eq(true,  "return 5 in <5, 10);");
+			Eq(false, "return 5 in (5, 10>;");
+			Eq(false, "return 5 in (5, 10);");
+
+			Eq(true,  "return 10 in <5, 10>;");
+			Eq(false, "return 10 in <5, 10);");
+			Eq(true,  "return 10 in (5, 10>;");
+			Eq(false, "return 10 in (5, 10);");
+
+			Eq(true,  "return 5.0 in <5.0, 5.0>;");
+			Eq(false, "return 5.0 in <5.0, 5.0);");
+			Eq(false, "return 5.0 in (5.0, 5.0>;");
+			Eq(false, "return 5.0 in (5.0, 5.0);");
+
+			Eq(true,  "return 5.0 in <5.0, 10.0>;");
+			Eq(true,  "return 5.0 in <5.0, 10.0);");
+			Eq(false, "return 5.0 in (5.0, 10.0>;");
+			Eq(false, "return 5.0 in (5.0, 10.0);");
+
+			Eq(true,  "return 10.0 in <5.0, 10.0>;");
+			Eq(false, "return 10.0 in <5.0, 10.0);");
+			Eq(true,  "return 10.0 in (5.0, 10.0>;");
+			Eq(false, "return 10.0 in (5.0, 10.0);");
+		}
 	}
 }

@@ -15,12 +15,14 @@ namespace LPS.ToolScript.Parser
 			this.Expr2 = Expr2;
 		}
 
-		protected MemberInfo[] FindMember(object obj, string membername, MemberTypes membertypes)
+		protected MemberInfo[] FindMembers(object obj, string membername, MemberTypes membertypes)
 		{
 			Type t = obj.GetType();
 			MemberInfo[] members = t.FindMembers(membertypes,
 				BindingFlags.Public | BindingFlags.Static| BindingFlags.Instance,
 				Type.FilterName, membername);
+			if(members.Length == 0)
+				throw new Exception("Člen objektu " + membername + " nebyl nalezen");
 			return members;
 		}
 
@@ -29,7 +31,8 @@ namespace LPS.ToolScript.Parser
 			object obj = Expr1.Eval(context);
 			if(Expr2 is Variable)
 			{
-				MemberInfo[] members = FindMember(obj, ((Variable)Expr2).Name, MemberTypes.Field | MemberTypes.Property | MemberTypes.Method);
+				string membername = ((Variable)Expr2).Name;
+				MemberInfo[] members = FindMembers(obj, membername, MemberTypes.Field | MemberTypes.Property | MemberTypes.Method);
 				if(members.Length == 1)
 				{
 					switch(members[0].MemberType)
@@ -65,7 +68,7 @@ namespace LPS.ToolScript.Parser
 			object obj = Expr1.Eval(context);
 			if(Expr2 is Variable)
 			{
-				MemberInfo[] members = FindMember(obj, ((Variable)Expr2).Name, MemberTypes.Field | MemberTypes.Property);
+				MemberInfo[] members = FindMembers(obj, ((Variable)Expr2).Name, MemberTypes.Field | MemberTypes.Property);
 				if(members.Length == 1)
 				{
 					switch(members[0].MemberType)

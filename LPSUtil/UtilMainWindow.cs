@@ -5,6 +5,7 @@ using System.Text;
 using LPS.ToolScript;
 using System.Reflection;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace LPS.Util
 {
@@ -43,6 +44,11 @@ namespace LPS.Util
 			tagerror.Foreground = "#880000";
 			outputView.Buffer.TagTable.Add(tagerror);
 
+			TextTag tagcode = new TextTag("code");
+			tagcode.Weight = Pango.Weight.Bold;
+			tagcode.Font = "Courier Bold";
+			outputView.Buffer.TagTable.Add(tagcode);
+
 			Instance = this;
 		}
 
@@ -50,7 +56,6 @@ namespace LPS.Util
 		{
 			AddCommand(new LoginCommand("login"));
 			AddCommand(new ChangeDirCommand("cd"));
-			AddCommand(new EchoCommand("echo"));
 			AddCommand(new HelpCommand("help"));
 			AddCommand(new LoadTxtTableCommand("loadtxt"));
 			AddCommand(new LsDirCommand("ls"));
@@ -90,7 +95,7 @@ namespace LPS.Util
 					catch(Exception err)
 					{
 						Log.Error(err);
-						WriteBufferWithTag("error", "Chyba při zpracování souboru {0}:\n{1}", filename, err);
+						WriteBufferWithTag("error", "Chyba při zpracování souboru {0}:\n{1}\n", filename, err);
 					}
 				}
 			}
@@ -118,45 +123,63 @@ namespace LPS.Util
 
 		public void ExecuteCommand(string cmd)
 		{
-			TextBuffer buffer = this.outputView.Buffer;
-			TextIter iter = buffer.EndIter;
-			
-			TextMark mark = buffer.CreateMark(null, iter, true);
-			
-			buffer.Insert(ref iter, String.Format("Executing {0}\n", cmd));
-			iter = buffer.GetIterAtMark(mark);
-			buffer.ApplyTag("command", iter, buffer.EndIter);
-			
-			StringBuilder buider = new StringBuilder();
-			using(StringWriter writer = new StringWriter(buider))
+			using(Log.Scope("Command: {0}", cmd))
 			{
-				ParserContext.InitVariable("__STD_OUT", writer);
-				ParserContext.InitVariable("__STD_INFO", writer);
-				ParserContext.InitVariable("__STD_ERR", writer);
-				try
+				TextBuffer buffer = this.outputView.Buffer;
+				TextIter iter = buffer.EndIter;
+				
+				TextMark mark = buffer.CreateMark(null, iter, true);
+				
+				buffer.Insert(ref iter, String.Format("Executing {0}\n", cmd));
+				iter = buffer.GetIterAtMark(mark);
+				buffer.ApplyTag("command", iter, buffer.EndIter);
+				
+				StringBuilder buider = new StringBuilder();
+				string str_result = "";
+				using(StringWriter writer = new StringWriter(buider))
 				{
-					ParserContext.Eval(cmd);
+					ParserContext.InitVariable("__STD_OUT", writer);
+					ParserContext.InitVariable("__STD_INFO", writer);
+					ParserContext.InitVariable("__STD_ERR", writer);
+					try
+					{
+						object result = ParserContext.Eval(cmd);
+						if(result != SpecialValue.Void)
+						{
+							StringBuilder sb = new StringBuilder();
+							GetStringRepr(result, sb, false);
+							sb.AppendLine();
+							str_result = sb.ToString();
+						}
+						Log.Debug("Result: {0}", result);
+					}
+					catch(Exception err)
+					{
+						Log.Error(err);
+						WriteBufferWithTag("error", "Chyba: {0}\n", err);
+					}
 				}
-				catch(Exception err)
-				{
-					WriteBufferWithTag("error", "Chyba: {0}\n", err);
-				}
-			}
-			string output = buider.ToString().Trim();
-			if(output != "")
-				output += "\n";
-			iter = buffer.EndIter;
-			buffer.Insert(ref iter, output);
-			
-			outputView.ScrollToMark(mark, 0.0, true, 0.0, 0.0);
-		}
+				string output = buider.ToString().Trim();
+				if(output != "")
+					output += "\n";
+				iter = buffer.EndIter;
+				buffer.Insert(ref iter, output);
 
+				if(!String.IsNullOrEmpty(str_result))
+				{
+					WriteBufferWithTag("code", str_result);
+				}
+
+				outputView.ScrollToMark(mark, 0.0, true, 0.0, 0.0);
+			}
+		}
+	
 		protected virtual void OnEntry1Activated(object sender, System.EventArgs e)
 		{
 			Entry edt = (Entry) sender;
 			if(edt.Text == "cls" || edt.Text == "clear")
 				this.outputView.Buffer.Clear();
-			else if(edt.Text == "exit" || edt.Text == "quit")
+			else if(edt.Text == "exit" || edt.Text == "quit" || edt.Text == "q")
 				AppQuit();
 			else
 			{
@@ -165,6 +188,49 @@ namespace LPS.Util
 			edt.Text = "";
 		}
 
+		public static void GetStringRepr(object obj, StringBuilder sb, bool inline)
+		{
+			if(obj == null)
+				sb.Append("(null)");
+			else if(obj is string)
+				sb.AppendFormat("'{0}'", (string)obj);
+			else if(obj is Hashtable)
+			{
+				foreach(DictionaryEntry de in ((Hashtable)obj))
+				{
+					sb.Append("[");
+					GetStringRepr(de.Key, sb, true);
+					sb.Append("]:\t");
+
+					GetStringRepr(de.Value, sb, true);
+					if(!inline)
+						sb.AppendLine();
+					else
+						sb.Append(";\t");
+				}
+			}
+			else if(obj is IEnumerable)
+			{
+				if(inline) sb.Append('[');
+				bool first = true;
+				foreach(object item in (IEnumerable)obj)
+				{
+					if(!first)
+					{
+						if(!inline)
+							sb.AppendLine();
+						else
+							sb.Append(",\t");
+					}
+					else
+						first = false;
+					GetStringRepr(item, sb, true);
+				}
+				if(inline) sb.Append(']');
+			}
+			else
+				sb.Append(obj);
+		}
 
 		#region generated code
 		private Gtk.VBox vbox2;

@@ -1,6 +1,7 @@
 using System;
 using System.Reflection;
 using System.Collections.Generic;
+using System.Text;
 
 namespace LPS.ToolScript.Parser
 {
@@ -23,19 +24,43 @@ namespace LPS.ToolScript.Parser
 				ParameterInfo[] aparams = method.GetParameters();
 				if(aparams.Length != arguments.Count)
 					continue;
-				object[] paramvals = new object[aparams.Length];
+				object[] vals = new object[aparams.Length];
 				for(int i = 0; i < aparams.Length; i++)
 				{
-					paramvals[i] = arguments.GetValue(aparams[i].Name, i);
-					if(paramvals[i] != null)
+					object val = arguments.GetValue(aparams[i].Name, i);
+					vals[i] = val;
+					Type m_type = aparams[i].ParameterType;
+					if(val != null)
 					{
-						if(!paramvals[i].GetType().IsSubclassOf(aparams[i].ParameterType))
-							continue;
+						Type p_type = val.GetType();
+						if(!(m_type == p_type || p_type.IsSubclassOf(m_type)))
+							goto NextMethod;
+					}
+					else
+					{
+						if(m_type.IsValueType)
+							goto NextMethod;
 					}
 				}
-				return method.Invoke(Instance, paramvals);
+				using(Log.Scope("Trying invoke {0}", method))
+				{
+					try
+					{
+						return method.Invoke(Instance, vals);
+					}
+					catch(Exception err)
+					{
+						Log.Error(err);
+						throw err;
+					}
+				}
+NextMethod:		;
 			}
-			throw new InvalidOperationException("Patřičná metoda nebyla nalezena");
+			StringBuilder sb = new StringBuilder("Patřičná metoda nebyla nalezena. Varianty ");
+			sb.AppendLine(Methods.Length.ToString());
+			foreach(MethodInfo method in Methods)
+				sb.AppendLine(method.ToString());
+			throw new InvalidOperationException(sb.ToString());
 		}
 	}
 }

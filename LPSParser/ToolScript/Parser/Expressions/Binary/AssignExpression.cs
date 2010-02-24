@@ -28,7 +28,8 @@ namespace LPS.ToolScript.Parser
 			if(!(expr1 is IAssignable))
 				throw new InvalidOperationException(String.Format("Nelze přiřadit hodnotu do výrazu typu {0}", expr1));
 			(expr1 as IAssignable).AssignValue(context, o);
-			return expr1.Eval(context);
+			return o;
+			//return expr1.Eval(context); // to dela neplechu treba kdyz je v indexeru vyraz, zavola se dvakrat!!
 		}
 	}
 }

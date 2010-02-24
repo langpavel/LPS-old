@@ -502,33 +502,33 @@ namespace LPS.ToolScript
 		// <Op In> ::= <Op In> in '<' <Op Add> ',' <Op Add> '>'
 		protected override object RuleOpinInLtCommaGt(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op In> ::= <Op In> in '<' <Op Add> ',' <Op Add> '>'");
-			//CheckRule(token, Symbols);
-			//return new
+			return new InRangeExpression(
+				Expr(token,0), Expr(token,3), Expr(token,5),
+				true, true);
 		}
 
 		// <Op In> ::= <Op In> in '<' <Op Add> ',' <Op Add> ')'
 		protected override object RuleOpinInLtCommaRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op In> ::= <Op In> in '<' <Op Add> ',' <Op Add> ')'");
-			//CheckRule(token, Symbols);
-			//return new
+			return new InRangeExpression(
+				Expr(token,0), Expr(token,3), Expr(token,5),
+				true, false);
 		}
 
 		// <Op In> ::= <Op In> in '(' <Op Add> ',' <Op Add> '>'
 		protected override object RuleOpinInLparanCommaGt(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op In> ::= <Op In> in '(' <Op Add> ',' <Op Add> '>'");
-			//CheckRule(token, Symbols);
-			//return new
+			return new InRangeExpression(
+				Expr(token,0), Expr(token,3), Expr(token,5),
+				false, true);
 		}
 
 		// <Op In> ::= <Op In> in '(' <Op Add> ',' <Op Add> ')'
 		protected override object RuleOpinInLparanCommaRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op In> ::= <Op In> in '(' <Op Add> ',' <Op Add> ')'");
-			//CheckRule(token, Symbols);
-			//return new
+			return new InRangeExpression(
+				Expr(token,0), Expr(token,3), Expr(token,5),
+				false, false);
 		}
 
 		// <Op In> ::= <Op Add>

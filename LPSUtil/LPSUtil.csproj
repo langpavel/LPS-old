@@ -43,7 +43,6 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
-    <Compile Include="Commands\EchoCommand.cs" />
     <Compile Include="Commands\HelpCommand.cs" />
     <Compile Include="Commands\PingCommand.cs" />
     <Compile Include="Commands\XtableCommand.cs" />

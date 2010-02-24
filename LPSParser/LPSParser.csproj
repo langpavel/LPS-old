@@ -85,7 +85,6 @@
     <Compile Include="ToolScript\Parser\Expressions\Unary\NotExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Unary\UnaryMinusExpression.cs" />
     <Compile Include="ToolScript\Parser\Statements\StatementList.cs" />
-    <Compile Include="ToolScript\Parser\Expressions\TernaryOperatorExpression.cs" />
     <Compile Include="ToolScript\Parser\Statements\UsingStatement.cs" />
     <Compile Include="ToolScript\Parser\Interfaces\IFunction.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Callable\FunctionCall.cs" />
@@ -103,6 +102,8 @@
     <Compile Include="ToolScript\Parser\Expressions\ArrayMember.cs" />
     <Compile Include="ToolScript\Parser\Statements\UsingDisposableStatement.cs" />
     <Compile Include="ToolScript\Parser\Expressions\CastExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Ternary\TernaryOperatorExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Ternary\InRangeExpression.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />
@@ -119,6 +120,7 @@
     <Folder Include="ToolScript\Parser\Expressions\Unary\" />
     <Folder Include="ToolScript\Parser\Expressions\Binary\" />
     <Folder Include="ToolScript\Parser\Expressions\Callable\" />
+    <Folder Include="ToolScript\Parser\Expressions\Ternary\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

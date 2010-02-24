@@ -207,7 +207,7 @@ Comment Line  = '//'
 
 <Op Pointer>	::=	<Op Pointer> '.' <Value>
 				| 	<Op Pointer> '->' <Value>	! if not null, lookup value else return null - safe referencing
-				| 	<Op Pointer> '[' <Expr> ']'	! array accesor
+				| 	<Op Pointer> '[' <Expr> ']'
 				| 	<Op Pointer> '(' <Args> ')' ! function call
 				| 	<Value>
 
