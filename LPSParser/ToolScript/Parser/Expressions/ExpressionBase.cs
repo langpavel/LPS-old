@@ -105,6 +105,8 @@ namespace LPS.ToolScript.Parser
 				return true;
 			else if(val1.Equals(val2) || val2.Equals(val1))
 				return true;
+			else if(val1 is string && val2 is string)
+				return (string)val1 == (string)val2;
 			else throw new Exception(String.Format("Nelze porovnat hodnoty '{0}' a '{1}' typu {2} a {3}",
 				val1, val2,
 				(val1 == null)?"null":val1.GetType().Name,

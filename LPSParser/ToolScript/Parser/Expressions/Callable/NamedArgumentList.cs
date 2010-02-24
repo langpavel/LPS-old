@@ -63,7 +63,20 @@ namespace LPS.ToolScript.Parser
 
 		public override string ToString ()
 		{
-			return string.Format("[NamedArgumentList: Mode={0}] Count={1}", Mode, this.Count);
+			List<string> paramnames = new List<string>();
+			foreach(NamedArgument arg in this)
+				paramnames.Add(arg.Name);
+			return String.Join(", ", paramnames.ToArray());
+		}
+
+		public object[] ValuesToArray()
+		{
+			object[] result = new object[this.Count];
+			for(int i=0; i < this.Count; i++)
+			{
+				result[i] = this[i].Value;
+			}
+			return result;
 		}
 	}
 }

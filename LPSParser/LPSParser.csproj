@@ -101,6 +101,8 @@
     <Compile Include="ToolScript\Parser\Expressions\Callable\MethodWraper.cs" />
     <Compile Include="ToolScript\Parser\Expressions\DictionaryExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\ArrayMember.cs" />
+    <Compile Include="ToolScript\Parser\Statements\UsingDisposableStatement.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\CastExpression.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />

@@ -31,6 +31,13 @@ namespace LPS.ToolScript.Parser
 					throw new Exception("Index pole musí být celočíselný");
 				return ((Array)obj).GetValue(Convert.ToInt64(index));
 			}
+			else if(obj is String)
+			{
+				object index = Expr2.Eval(context);
+				if(!IsInteger(index))
+					throw new Exception("Index pole musí být celočíselný");
+				return ((String)obj)[Convert.ToInt32(index)];
+			}
 
 			throw new System.NotImplementedException ();
 		}

@@ -127,6 +127,12 @@ namespace LPS.ToolScript
 			return new UsingStatement(StringLiteral.Parse(TText(token, 1)).Split('.'), TText(token,3));
 		}
 
+		// <Stm> ::= using '(' <Expr> ')' <Stm>
+		protected override object RuleStmUsingLparanRparan(NonterminalToken token)
+		{
+			return new UsingDisposableStatement(Expr(token,2), Statement(token,4));
+		}
+
 		// <Stm> ::= <Normal Stm>
 		protected override object RuleStm(NonterminalToken token)
 		{
@@ -636,9 +642,7 @@ namespace LPS.ToolScript
 		// <Op Unary> ::= cast <Op Unary> as <QualifiedName>
 		protected override object RuleOpunaryCastAs(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Unary> ::= cast <Op Unary> as <QualifiedName>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new CastExpression(Expr(token, 1), Get<QualifiedName>(token,3));
 		}
 
 		// <Op Unary> ::= <Op Pointer>
@@ -714,9 +718,7 @@ namespace LPS.ToolScript
 		// <Value> ::= new <QualifiedName> '(' <Args> ')'
 		protected override object RuleValueNewLparanRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Value> ::= new <QualifiedName> '(' <Args> ')'");
-			//CheckRule(token, Symbols);
-			//return new
+			return new NewExpression(Get<QualifiedName>(token,1),Get<NamedArgumentList>(token,3));
 		}
 
 		// <Value> ::= ID

@@ -1,4 +1,5 @@
 var ServerConnection;
+var result = null;
 
 function std_login()
 {
@@ -6,6 +7,12 @@ function std_login()
 };
 
 cd('../../../LPSServer/resources/tables');
+
+function cd_uir()
+{
+    cd('/home/plang/Projects/LPSoft/LPSServer/import/uir');
+};
+
 
 std_login();
 

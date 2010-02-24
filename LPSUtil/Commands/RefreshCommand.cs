@@ -18,8 +18,8 @@ namespace LPS.Util
 
 		public override object Execute(LPS.ToolScript.Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
-			((ServerConnection)context.LocalVariables["ServerConnection"]).Resources.FlushModulesInfo();
-			Info.WriteLine("FlushModulesInfo: OK");
+			UtilMainWindow.Instance.InitCmds();
+			Out.WriteLine("Inicializováno");
 			return true;
 		}
 	}

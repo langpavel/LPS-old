@@ -11,6 +11,8 @@ namespace LPS.Util
 	public class UtilMainWindow:Window
 	{
 
+		public static UtilMainWindow Instance { get; private set; }
+
 		public void AddCommand(ICommand cmd)
 		{
 			ParserContext.InitVariable(cmd.Name, cmd);
@@ -40,6 +42,8 @@ namespace LPS.Util
 			tagerror.Font = "Courier Bold";
 			tagerror.Foreground = "#880000";
 			outputView.Buffer.TagTable.Add(tagerror);
+
+			Instance = this;
 		}
 
 		public void InitCmds()
@@ -57,7 +61,9 @@ namespace LPS.Util
 			AddCommand(new XtableCommand("xtab"));
 			AddCommand(new WriteFileCommand("writefile"));
 			AddCommand(new ReadFileCommand("readfile"));
-			
+			AddCommand(new VarsCommand("vars"));
+			AddCommand(new SerializeCommand("serialize"));
+
 			ParserContext.InitVariable("__STD_OUT", TextWriter.Null);
 			ParserContext.InitVariable("__STD_INFO", TextWriter.Null);
 			ParserContext.InitVariable("__STD_ERR", TextWriter.Null);
@@ -67,6 +73,7 @@ namespace LPS.Util
 			path = System.IO.Path.Combine(path, "Scripts");
 			List<string> files = new List<string>(Directory.GetFiles(path, "*.ts"));
 			files.Sort();
+			Log.Debug("Init files in order: {0}", String.Join("; ", files.ToArray()));
 			foreach(string file in files)
 			{
 				string filename = System.IO.Path.Combine(path, file);
@@ -78,6 +85,7 @@ namespace LPS.Util
 						{
 							ParserContext.Eval(reader.ReadToEnd());
 						}
+						Log.Debug("file loaded: {0}", file);
 					}
 					catch(Exception err)
 					{

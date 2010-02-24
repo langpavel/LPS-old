@@ -59,6 +59,8 @@
       <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
     </Compile>
     <Compile Include="UtilMain.cs" />
+    <Compile Include="Commands\VarsCommand.cs" />
+    <Compile Include="Commands\SerializeCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPSShared\LPSShared.csproj">
@@ -85,6 +87,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\00_init.ts">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\01_txttab.ts">
       <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

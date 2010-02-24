@@ -53,5 +53,10 @@ namespace LPS.ToolScript.Parser
 				context.Dispose();
 			}
 		}
+
+		public override string ToString ()
+		{
+			return string.Format("function({0})", Parameters.ToString());
+		}
 	}
 }

@@ -1,9 +1,24 @@
 using System;
 using NUnit.Framework;
 using System.Reflection;
+using System.IO;
 
 namespace LPS.ToolScript
 {
+	public class TestDisposable : IDisposable
+	{
+		public bool disposed;
+		public TestDisposable()
+		{
+			disposed = false;
+		}
+
+		public void Dispose()
+		{
+			disposed = true;
+		}
+	}
+
 	[TestFixture(Description="Testy ToolScriptu")]
 	public class ToolScriptTests
 	{
@@ -207,6 +222,12 @@ namespace LPS.ToolScript
 		}
 
 		[Test]
+		public void TestArrayTable2()
+		{
+			Eq(new object[] {"ccc", "bbb"}, "var array = [['aaa', 3.0], ['bbb',['aaa', 'bbb']]]; array[1][1][0] = 'ccc'; return array[1][1];");
+		}
+
+		[Test]
 		public void TestEval()
 		{
 			Eq("ocekavane", "return eval(\"'ocekavane'\");");
@@ -291,6 +312,20 @@ namespace LPS.ToolScript
 			Eq("aaa", "return this.aa.aa.TestField = 'aaa';");
 			this.aa.aa.TestField = "cc";
 			Eq("cc", "return this.aa.aa.TestField;");
+		}
+
+		[Test]
+		public void TestNewKeyword()
+		{
+			Eq(typeof(long), "return (new System.Int64()).GetType();");
+		}
+
+		[Test]
+		public void TestUsingDisposable()
+		{
+			Eq(typeof(TestDisposable), "return (new LPS.ToolScript.TestDisposable()).GetType();");
+			Eq(false, "using(var obj = new LPS.ToolScript.TestDisposable()) return obj.disposed;");
+			Eq(true, "using(var obj = new LPS.ToolScript.TestDisposable()) ; return obj.disposed;");
 		}
 
 		public AA aa = new BB();

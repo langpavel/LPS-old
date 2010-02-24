@@ -18,7 +18,7 @@ namespace LPS.Util
 		public override object Execute(LPS.ToolScript.Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
 			string p = Get<string>(Params, 0);
-			if(p != "")
+			if(!String.IsNullOrEmpty(p))
 				System.IO.Directory.SetCurrentDirectory(p);
 
 			string curr_dir = System.IO.Directory.GetCurrentDirectory();

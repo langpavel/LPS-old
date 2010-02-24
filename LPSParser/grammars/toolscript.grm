@@ -49,10 +49,11 @@ Comment Line  = '//'
                	|	for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>
                	|	foreach '(' ID 'in' <Expr> ')' <Stm>
                	|	observed '(' <Expr> ')' <Stm>
-               	|	using <QualifiedName> ';'						! import .NET nodule
+               	|	using <QualifiedName> ';'			! import .NET nodule
                	|	using StringLiteral ';'				! open file
-               	|	using <QualifiedName> 'as' ID ';'				! import .NET nodule
+               	|	using <QualifiedName> 'as' ID ';'	! import .NET nodule
                	|	using StringLiteral 'as' ID ';'		! open file
+               	|	using '(' <Expr> ')' <Stm>			! for IDisposable
                	|	<Normal Stm>
 
 <Then Stm>   	::=	if '(' <Expr> ')' <Then Stm> else <Then Stm>
@@ -63,7 +64,7 @@ Comment Line  = '//'
 <Normal Stm> 	::=	do <Stm> while '(' <Expr> ')'
                	|	switch '(' <Expr> ')' '{' <Case Stms> '}'
                	|	<Block>
-               	|	<Expr> ';'               
+               	|	<Expr> ';'
                	|	break ';'
                	|	continue ';'
                	|	return <Expr> ';'
@@ -206,7 +207,7 @@ Comment Line  = '//'
 
 <Op Pointer>	::=	<Op Pointer> '.' <Value>
 				| 	<Op Pointer> '->' <Value>	! if not null, lookup value else return null - safe referencing
-				| 	<Op Pointer> '[' <Expr> ']'
+				| 	<Op Pointer> '[' <Expr> ']'	! array accesor
 				| 	<Op Pointer> '(' <Args> ')' ! function call
 				| 	<Value>
 
