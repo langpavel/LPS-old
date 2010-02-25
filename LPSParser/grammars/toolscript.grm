@@ -30,6 +30,12 @@ IntLiteral		= {Number}+
 
 DecimalLiteral	= {Digit}*'.'{Digit}+
 
+DateTimeLiteral	= [Dd]{Digit}{Digit}{Digit}{Digit} '-' {Digit}{Digit}? '-' {Digit}{Digit}? ([Tt] {Digit}{Digit}? ':' {Digit}{Digit}? (':' {Digit}{Digit}? ('.' {Digit}{Digit}{Digit} )? )? )?
+
+Separator		= '--' '-'+
+				| '==' '='+
+				| 'SEPARATOR'
+
 ! ------------------------------------------------- Rules
 
 Comment Start = '/*'
@@ -40,7 +46,7 @@ Comment Line  = '//'
 ! Statements
 ! ===================================================================
 
-<QualifiedName>	::= ID '.' <QualifiedName>
+<QualifiedName>	::= ID '.' <QualifiedName> ! cause shift-reduce conflict that is not fatal
 				|	ID
 
 <Stm>			::=	if '(' <Expr> ')' <Stm>
@@ -104,39 +110,41 @@ Comment Line  = '//'
 ! Window support
 ! ===================================================================
 
-<Window>		::=	'window' ID <WndParam List> <Layout Block>
-				|	'window' <WndParam List> <Layout Block>
+<Window>		::=	'WINDOW' ID <WndParam List> <Layout Block>
+				|	'WINDOW' <WndParam List> <Layout Block>
+				|	'WIDGET' ID <Layout Block>
 
-<WndParam List>	::=	<WndParam> <WndParam List>	! if switched shift-reduce
+<WndParam List>	::=	<WndParam> <WndParam List>	! if switched shift-reduce conflict
 				|
 
 <WndParam>		::= ID '=' <Expr> ';'
 
-<Layout Block>	::= 'hbox'  <WndParam List> <Layout Block> 'end'
-				|	'vbox'  <WndParam List> <Layout Block> 'end'
-				|	'table' <WndParam List> <TabRow Block> 'end'
-				|	'table' <WndParam List> <TabCol Block> 'end'
+<Layout Block>	::= 'HBOX'  <WndParam List> <Layout Block> 'END'
+				|	'VBOX'  <WndParam List> <Layout Block> 'END'
+				|	'TABLE' <WndParam List> <TabRow Block> 'END'
+				|	'TABLE' <WndParam List> <TabCol Block> 'END'
 				|	<Menu Block>
 				|	'ref' <QualifiedName> <WndParam List>
 				|	'ref' StringLiteral <WndParam List>
 				|	'[' <Expr> ']' <WndParam List>
 
-<TabRow Block>	::=	'row' <WndParam List> <Tab Cells> 'end'
-<TabCol Block>	::=	'column' <WndParam List> <Tab Cells> 'end'
+<TabRow Block>	::=	'ROW' <WndParam List> <Tab Cells> 'END'
+<TabCol Block>	::=	'COLUMN' <WndParam List> <Tab Cells> 'END'
 
 <Tab Cells>		::= <Tab Cells> <Tab Cell>
 				|
 
 <Tab Cell>		::= <Layout Block>
 
-<Menu Block>	::=	'menu' <WndParam List> <MenuItems List> 'end'
+<Menu Block>	::=	'MENU' <WndParam List> <MenuItems List> 'END'
 
 <MenuItems List> ::= <Menu Item> <MenuItems List>
 				|
 
 <Menu Item>		::= <Menu Block>
-				|	'item' <WndParam List>
-				|	'separator'
+				|	'ITEM' <WndParam List>
+				|	Separator
+
 
 ! ===================================================================
 ! Operator precedence
@@ -214,6 +222,7 @@ Comment Line  = '//'
 <Value>			::=	IntLiteral
 				| 	StringLiteral
 				|	DecimalLiteral
+				|	DateTimeLiteral
 				|	'type' <QualifiedName>
 				|	<Function>
 				|	<Window>

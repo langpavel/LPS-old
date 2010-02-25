@@ -104,6 +104,7 @@
     <Compile Include="ToolScript\Parser\Expressions\CastExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Ternary\TernaryOperatorExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Ternary\InRangeExpression.cs" />
+    <Compile Include="ToolScript\Parser\Literals\DatetimeLiteral.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />

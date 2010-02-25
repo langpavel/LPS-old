@@ -701,6 +701,12 @@ namespace LPS.ToolScript
 			return new DecimalLiteral(Decimal.Parse(TText(token, 0), CultureInfo.InvariantCulture));
 		}
 
+		// <Value> ::= DateTimeLiteral
+		protected override object RuleValueDatetimeliteral(NonterminalToken token)
+		{
+			return new DatetimeLiteral(DatetimeLiteral.Parse(TText(token, 0)));
+		}
+
 		// <Value> ::= <Function>
 		protected override object RuleValue(NonterminalToken token)
 		{
@@ -784,7 +790,7 @@ namespace LPS.ToolScript
 			return CreateObject(token.Tokens[0]);
 		}
 
-		// <Window> ::= window ID <WndParam List> <Layout Block>
+		// <Window> ::= WINDOW ID <WndParam List> <Layout Block>
 		protected override object RuleWindowWindowId(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Window> ::= window ID <WndParam List> <Layout Block>");
@@ -792,10 +798,18 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Window> ::= window <WndParam List> <Layout Block>
+		// <Window> ::= WINDOW <WndParam List> <Layout Block>
 		protected override object RuleWindowWindow(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Window> ::= window <WndParam List> <Layout Block>");
+			//CheckRule(token, Symbols);
+			//return new
+		}
+
+		// <Window> ::= WIDGET ID <Layout Block>
+		protected override object RuleWindowWidgetId(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Window> ::= WIDGET ID <Layout Block>");
 			//CheckRule(token, Symbols);
 			//return new
 		}

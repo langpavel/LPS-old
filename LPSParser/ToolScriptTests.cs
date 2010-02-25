@@ -471,5 +471,14 @@ namespace LPS.ToolScript
 			Eq(true,  "return 10.0 in (5.0, 10.0>;");
 			Eq(false, "return 10.0 in (5.0, 10.0);");
 		}
+
+		[Test]
+		public void TestDateTimeLiteral()
+		{
+			Eq(new DateTime(2000, 2, 1), "return d2000-02-01;");
+			Eq(new DateTime(2000, 2, 1,12,1,0), "return d2000-02-01t12:01;");
+			Eq(new DateTime(2000, 2, 1,12,1,1), "return d2000-02-01t12:01:01;");
+			Eq(new DateTime(2000, 2, 1,12,1,1,123), "return d2000-02-01t12:01:01.123;");
+		}
 	}
 }
