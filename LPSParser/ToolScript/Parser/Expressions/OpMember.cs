@@ -8,11 +8,13 @@ namespace LPS.ToolScript.Parser
 	{
 		public IExpression Expr1 { get; private set; }
 		public IExpression Expr2 { get; private set; }
+		public bool IsSafe { get; private set; }
 
-		public OpMember(IExpression Expr1, IExpression Expr2)
+		public OpMember(IExpression Expr1, IExpression Expr2, bool IsSafe)
 		{
 			this.Expr1 = Expr1;
 			this.Expr2 = Expr2;
+			this.IsSafe = IsSafe;
 		}
 
 		protected MemberInfo[] FindMembers(object obj, string membername, MemberTypes membertypes)
@@ -29,7 +31,13 @@ namespace LPS.ToolScript.Parser
 		public override object Eval (Context context)
 		{
 			object obj = Expr1.Eval(context);
-			if(Expr2 is Variable)
+			if(obj == null)
+			{
+				if(IsSafe)
+					return null;
+				throw new NullReferenceException("Nelze přistupovat k prvkům null objektu");
+			}
+			else if(Expr2 is Variable)
 			{
 				string membername = ((Variable)Expr2).Name;
 				MemberInfo[] members = FindMembers(obj, membername, MemberTypes.Field | MemberTypes.Property | MemberTypes.Method);

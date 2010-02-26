@@ -187,7 +187,6 @@ namespace LPS.ToolScript
 		protected override object Rule%ID%(NonterminalToken token)
 		{
 			throw new NotImplementedException("%Description%");
-			//CheckRule(token, Symbols);
 			//return new
 		}
 

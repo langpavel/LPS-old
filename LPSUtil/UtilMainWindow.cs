@@ -204,21 +204,25 @@ namespace LPS.Util
 
 					GetStringRepr(de.Value, sb, true);
 					if(!inline)
-						sb.AppendLine();
+						sb.Append("\n");
 					else
 						sb.Append(";\t");
 				}
 			}
 			else if(obj is IEnumerable)
 			{
-				if(inline) sb.Append('[');
+				sb.Append(obj.GetType().Name);
+				if(inline)
+					sb.Append(" [");
+				else
+					sb.Append(" [\n\t");
 				bool first = true;
 				foreach(object item in (IEnumerable)obj)
 				{
 					if(!first)
 					{
 						if(!inline)
-							sb.AppendLine();
+							sb.Append("\n\t");
 						else
 							sb.Append(",\t");
 					}
@@ -226,7 +230,10 @@ namespace LPS.Util
 						first = false;
 					GetStringRepr(item, sb, true);
 				}
-				if(inline) sb.Append(']');
+				if(inline)
+					sb.Append(']');
+				else
+					sb.Append("\n]\n");
 			}
 			else
 				sb.Append(obj);

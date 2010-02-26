@@ -34,6 +34,10 @@
     <Reference Include="nunit.framework, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
       <Package>mono-nunit</Package>
     </Reference>
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
@@ -105,6 +109,21 @@
     <Compile Include="ToolScript\Parser\Expressions\Ternary\TernaryOperatorExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Ternary\InRangeExpression.cs" />
     <Compile Include="ToolScript\Parser\Literals\DatetimeLiteral.cs" />
+    <Compile Include="ToolScript\Parser\Literals\TimeSpanLiteral.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\WindowExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\WidgetParamList.cs" />
+    <Compile Include="ToolScript\Parser\Interfaces\IWidgetBuilder.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\WidgetBase.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\PropertyExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\ObjectCreateExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\ContainerWidgetBase.cs" />
+    <Compile Include="ToolScriptGuiTest.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\WidgetFromExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\LayoutList.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\SingleWidgetContainerBase.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\HBoxContainer.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\BoxContainerBase.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\VBoxContainer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />
@@ -122,6 +141,7 @@
     <Folder Include="ToolScript\Parser\Expressions\Binary\" />
     <Folder Include="ToolScript\Parser\Expressions\Callable\" />
     <Folder Include="ToolScript\Parser\Expressions\Ternary\" />
+    <Folder Include="ToolScript\Parser\Expressions\Window\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

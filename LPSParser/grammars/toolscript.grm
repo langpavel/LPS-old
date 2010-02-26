@@ -31,6 +31,16 @@ IntLiteral		= {Number}+
 DecimalLiteral	= {Digit}*'.'{Digit}+
 
 DateTimeLiteral	= [Dd]{Digit}{Digit}{Digit}{Digit} '-' {Digit}{Digit}? '-' {Digit}{Digit}? ([Tt] {Digit}{Digit}? ':' {Digit}{Digit}? (':' {Digit}{Digit}? ('.' {Digit}{Digit}{Digit} )? )? )?
+				| [Tt] {Digit}{Digit}? ':' {Digit}{Digit}? (':' {Digit}{Digit}? ('.' {Digit}{Digit}{Digit} )? )?
+				| 'now'
+				| 'today'
+				| 'tomorrow'
+				| 'yesterday'
+
+TimeSpanLiteral	= {Digit}+ [Dd] ({Digit}+ [Hh])? ({Digit}+ [Mm])? ({Digit}+('.'{Digit}{Digit}{Digit})? [Ss])?
+				| {Digit}+ [Hh] ({Digit}+ [Mm])? ({Digit}+ ('.'{Digit}{Digit}{Digit})? [Ss])?
+				| {Digit}+ [Mm] ({Digit}+ ('.'{Digit}{Digit}{Digit})? [Ss])?
+				| {Digit}+ ('.'{Digit}{Digit}{Digit})? [Ss]
 
 Separator		= '--' '-'+
 				| '==' '='+
@@ -54,12 +64,12 @@ Comment Line  = '//'
                	|	while '(' <Expr> ')' <Stm> 
                	|	for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>
                	|	foreach '(' ID 'in' <Expr> ')' <Stm>
-               	|	observed '(' <Expr> ')' <Stm>
                	|	using <QualifiedName> ';'			! import .NET nodule
                	|	using StringLiteral ';'				! open file
                	|	using <QualifiedName> 'as' ID ';'	! import .NET nodule
                	|	using StringLiteral 'as' ID ';'		! open file
                	|	using '(' <Expr> ')' <Stm>			! for IDisposable
+               	|	observed '(' <Expr List> ')' <Stm>
                	|	<Normal Stm>
 
 <Then Stm>   	::=	if '(' <Expr> ')' <Then Stm> else <Then Stm>
@@ -74,7 +84,7 @@ Comment Line  = '//'
                	|	break ';'
                	|	continue ';'
                	|	return <Expr> ';'
-               	|	';'              !Null statement
+               	|	';'              !Noop statement
 
 <Func args>    	::=	<Func args> ',' <Func Arg>
 				|	<Func Arg>
@@ -97,7 +107,7 @@ Comment Line  = '//'
 <Block>     	::=	'{' <Stm List> '}'
 
 <Stm List>  	::=	<Stm> <Stm List>
-              	| 
+              	| 	<Stm>
 
 ! ===================================================================
 ! Function support
@@ -110,7 +120,7 @@ Comment Line  = '//'
 ! Window support
 ! ===================================================================
 
-<Window>		::=	'WINDOW' ID <WndParam List> <Layout Block>
+<Widget>		::=	'WINDOW' ID <WndParam List> <Layout Block>
 				|	'WINDOW' <WndParam List> <Layout Block>
 				|	'WIDGET' ID <Layout Block>
 
@@ -118,23 +128,18 @@ Comment Line  = '//'
 				|
 
 <WndParam>		::= ID '=' <Expr> ';'
+				|	ID ';'
 
-<Layout Block>	::= 'HBOX'  <WndParam List> <Layout Block> 'END'
-				|	'VBOX'  <WndParam List> <Layout Block> 'END'
-				|	'TABLE' <WndParam List> <TabRow Block> 'END'
-				|	'TABLE' <WndParam List> <TabCol Block> 'END'
+<Layout List>	::=	<Layout List> <Layout Block>
+				|
+
+<Layout Block>	::= 'HBOX'  <WndParam List> <Layout List> 'END'
+				|	'VBOX'  <WndParam List> <Layout List> 'END'
+				|	'TABLE' <WndParam List> <Layout List> 'END'
 				|	<Menu Block>
 				|	'ref' <QualifiedName> <WndParam List>
 				|	'ref' StringLiteral <WndParam List>
 				|	'[' <Expr> ']' <WndParam List>
-
-<TabRow Block>	::=	'ROW' <WndParam List> <Tab Cells> 'END'
-<TabCol Block>	::=	'COLUMN' <WndParam List> <Tab Cells> 'END'
-
-<Tab Cells>		::= <Tab Cells> <Tab Cell>
-				|
-
-<Tab Cell>		::= <Layout Block>
 
 <Menu Block>	::=	'MENU' <WndParam List> <MenuItems List> 'END'
 
@@ -153,8 +158,9 @@ Comment Line  = '//'
 <Expr List>		::=	<Expr List> ',' <Expr>
 				|	<Expr>
 
-<Dict List>		::=	<Dict List> ',' <Expr> ':' <Expr>
+<Dict List>		::=	<Expr> ':' <Expr> ',' <Dict List>
 				|	<Expr> ':' <Expr>
+				|
 
 <Expr>			::=	<Op If> '='   <Expr>
 				|	<Op If> '+='  <Expr>
@@ -223,9 +229,10 @@ Comment Line  = '//'
 				| 	StringLiteral
 				|	DecimalLiteral
 				|	DateTimeLiteral
+				|	TimeSpanLiteral
 				|	'type' <QualifiedName>
 				|	<Function>
-				|	<Window>
+				|	<Widget>
 				|	'new' <QualifiedName> '(' <Args> ')'
 				|	ID
 				|	'var' ID
@@ -233,6 +240,11 @@ Comment Line  = '//'
 				|	'(' <Expr> ')'
 				|	'[' <Expr List> ']'
 				|	'{' <Dict List> '}'
+				|	property <Expr> ';'
+				|	property <Expr> get <Expr> ';'
+				|	property <Expr> get <Expr> set <Expr> ';'
+				|	'dict'
+				|	'list'
 				|	'null'
 				|	'true'
 				|	'false'

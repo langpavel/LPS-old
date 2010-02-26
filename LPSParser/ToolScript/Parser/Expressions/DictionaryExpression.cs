@@ -30,8 +30,6 @@ namespace LPS.ToolScript.Parser
 
 		public override object Eval (Context context)
 		{
-			if(Items == null)
-				return null;
 			Hashtable result = new Hashtable(Items.Count * 2);
 			for(int i=0; i < Items.Count; i++)
 				result.Add(Items[i].Key.Eval(context), Items[i].Value.Eval(context));

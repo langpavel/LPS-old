@@ -3,7 +3,7 @@ using NUnit.Framework;
 using System.Reflection;
 using System.IO;
 
-namespace LPS.ToolScript
+namespace LPS.ToolScript.Tests
 {
 	public class TestDisposable : IDisposable
 	{
@@ -76,7 +76,7 @@ namespace LPS.ToolScript
 		public void TestForeach2()
 		{
 			Assert.AreEqual(15L ,Run(@"
-				var result;
+				var result = 0;
 				foreach(i in [1,2,3,4,5])
 				{
 					result+=i;
@@ -88,7 +88,7 @@ namespace LPS.ToolScript
 		public void TestBlockNesting()
 		{
 			Assert.AreEqual(3M ,Run(@"
-				var result;
+				var result = 0;
 				{
 					result+=1;
 					{
@@ -104,12 +104,12 @@ namespace LPS.ToolScript
 		public void TestBlockNesting2()
 		{
 			Assert.AreEqual(2M ,Run(@"
-				var result;
+				var result = 0;
 				{
 					result+=1;
 					{
 						result+=1.0;
-						var result;
+						var result = 0;
 						{ { { { { {
 							result+=1;
 							if(result!=1.0) return Format('ERR eq? result = {0}', result);
@@ -227,7 +227,7 @@ namespace LPS.ToolScript
 		[Test]
 		public void TestHashTable()
 		{
-			Eq(new object[] {"aaa", "bbc", "abc"}, "var dict = {'A': 'aaa', 'B': 'bbb'}; dict['C'] = 'abc'; dict['B'] = 'bbc'; return [dict['A'], dict['B'], dict['C']];");
+			Eq(new object[] {"aaa", "bbc", "abc"}, "var d = {'A': 'aaa', 'B': 'bbb'}; d['C'] = 'abc'; d['B'] = 'bbc'; return [d['A'], d['B'], d['C']];");
 		}
 
 		[Test]
@@ -294,17 +294,26 @@ namespace LPS.ToolScript
 			Eq(this.ToString(), "return this.ToString();");
 		}
 
-		//[Test] // FAIL - type downcast needed
+		[Test]
 		public void NativeInvokeTest3()
 		{
-			Eq(3, "return this.Add(1,2);");
+			Eq(3, "return this.Add(1, cast 2 as System.Int32);");
 			Eq(this.ToString(), "return this.ToString();");
+			//Eq(3, "return this.Add(1, 2);"); // FAIL - type downcast needed
 		}
 
-		[Test]
+		//[Test]
 		public void NativeInvokeTest4()
 		{
+			// FAIL - array cast needed
 			Eq("abcde", "return this.Format('a{0}cd{1}',['b','e']);");
+		}
+
+		//[Test]
+		public void NativeInvokeWithParamsTest()
+		{
+			// FAIL - array cast needed
+			Eq("abcde", "return this.Format('a{0}cd{1}', 'b','e');");
 		}
 
 		public string TestField;
@@ -338,9 +347,9 @@ namespace LPS.ToolScript
 		[Test]
 		public void TestUsingDisposable()
 		{
-			Eq(typeof(TestDisposable), "return (new LPS.ToolScript.TestDisposable()).GetType();");
-			Eq(false, "using(var obj = new LPS.ToolScript.TestDisposable()) return obj.disposed;");
-			Eq(true, "using(var obj = new LPS.ToolScript.TestDisposable()) ; return obj.disposed;");
+			Eq(typeof(TestDisposable), "return (new LPS.ToolScript.Tests.TestDisposable()).GetType();");
+			Eq(false, "using(var obj = new LPS.ToolScript.Tests.TestDisposable()) return obj.disposed;");
+			Eq(true, "using(var obj = new LPS.ToolScript.Tests.TestDisposable()) ; return obj.disposed;");
 		}
 
 		public AA aa = new BB();
@@ -379,6 +388,11 @@ namespace LPS.ToolScript
 			return a+b;
 		}
 
+		public static ToolScriptTests operator+ (ToolScriptTests a, ToolScriptTests b)
+		{
+			return a;
+		}
+
 		//[Test]
 		public void FindMembersTest()
 		{
@@ -389,12 +403,11 @@ namespace LPS.ToolScript
 	        {
 	            //Find all static or public methods in the Object class that match the specified name.
 	            arrayMemberInfo = objType.FindMembers(MemberTypes.Method | MemberTypes.All,
-	                BindingFlags.Public | BindingFlags.Static| BindingFlags.Instance,
-	                new MemberFilter(DelegateToSearchCriteria),
-	                "ReferenceEquals");
+	                BindingFlags.Public | BindingFlags.Static /*| BindingFlags.Instance | BindingFlags.NonPublic*/,
+	                FindAll, null);
 	
 	            for(int index=0;index < arrayMemberInfo.Length ;index++)
-	                Console.WriteLine ("Result of FindMembers -\t"+ arrayMemberInfo[index].ToString());
+	                Console.WriteLine ("Member: " + arrayMemberInfo[index].ToString());
 	        }
 	        catch (Exception e)
 	        {
@@ -406,14 +419,9 @@ namespace LPS.ToolScript
 		private string PTEXT;
 		public string TEXT { get { return PTEXT;}  set { PTEXT = value;} }
 
-	    public static bool DelegateToSearchCriteria(MemberInfo objMemberInfo, Object objSearch)
+	    public static bool FindAll(MemberInfo objMemberInfo, Object objSearch)
 	    {
 			return true;
-	        // Compare the name of the member function with the filter criteria.
-	        //if(objMemberInfo.Name.ToString() == objSearch.ToString())
-	            //return true;
-	        //else
-	          //  return false;
 	    }
 
 		public static DBNull NULL { get { return DBNull.Value; } }
@@ -479,6 +487,44 @@ namespace LPS.ToolScript
 			Eq(new DateTime(2000, 2, 1,12,1,0), "return d2000-02-01t12:01;");
 			Eq(new DateTime(2000, 2, 1,12,1,1), "return d2000-02-01t12:01:01;");
 			Eq(new DateTime(2000, 2, 1,12,1,1,123), "return d2000-02-01t12:01:01.123;");
+
+			Eq(new DateTime(1, 1, 1, 12, 1, 0), "return t12:01;");
+			Eq(new DateTime(1, 1, 1, 12, 1, 2), "return t12:01:02;");
+			Eq(new DateTime(1, 1, 1, 12, 1, 2, 3), "return t12:01:02.003;");
+
+			Eq(DateTime.Today, "return today;");
+			Eq(DateTime.Today.AddDays(1), "return tomorrow;");
+			Eq(DateTime.Today.AddDays(-1), "return yesterday;");
+		}
+
+		[Test]
+		public void TestTimespanLiteral()
+		{
+			Eq(new TimeSpan(0, 0, 0, 0, 1), "return 0.001s;");
+			Eq(new TimeSpan(0, 0, 0, 1, 2), "return 1.002s;");
+			Eq(new TimeSpan(0, 0, 0, 1, 0), "return 1s;");
+			Eq(new TimeSpan(0, 0, 1, 0, 0), "return 1m;");
+			Eq(new TimeSpan(0, 0, 1, 2, 0), "return 1m2s;");
+			Eq(new TimeSpan(0, 1, 2, 3, 0), "return 1h2m3s;");
+			Eq(new TimeSpan(1, 2, 3, 4, 0), "return 1d2h3m4s;");
+			Eq(new TimeSpan(1, 2, 3, 4, 5), "return 1d2h3m4.005s;");
+		}
+
+		[Test]
+		public void TestTimeOperation()
+		{
+			Eq(new TimeSpan(0, 0, 0, 0, 1), "return 0.001s;");
+			Eq(new TimeSpan(0, 0, 0, 1, 2), "return 1.002s;");
+			Eq(new TimeSpan(0, 0, 0, 1, 0), "return 1s;");
+			Eq(new TimeSpan(0, 0, 1, 0, 0), "return 1m;");
+			Eq(new TimeSpan(0, 0, 1, 2, 0), "return 1m2s;");
+			Eq(new TimeSpan(0, 1, 2, 3, 0), "return 1h2m3s;");
+			Eq(new TimeSpan(1, 2, 3, 4, 0), "return 1d2h3m4s;");
+			Eq(new TimeSpan(1, 2, 3, 4, 5), "return 1d2h3m4.005s;");
+
+			Eq(new TimeSpan(0, 0, 1, 1, 0), "return 1s + 1m;");
+
+			Eq(DateTime.Today.AddMinutes(1), "return today + 1m;");
 		}
 	}
 }

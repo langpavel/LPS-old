@@ -16,8 +16,10 @@ namespace LPS.ToolScript.Parser
 
 		public override void Run (Context context)
 		{
-			// do same works but not throw an error
-			IsUnset(context);
+			if(IsInitializer)
+			{
+				context.InitVariable(Name);
+			}
 		}
 
 		public override object Eval(Context context)
@@ -32,6 +34,15 @@ namespace LPS.ToolScript.Parser
 			return result;
 		}
 
+		public void AssignValue(Context context, object val)
+		{
+			if(IsInitializer)
+				context.InitVariable(Name, val);
+			else
+				context.SetVariable(Name, val);
+		}
+
+		/*
 		public bool IsUnset(Context context)
 		{
 			if(IsInitializer)
@@ -41,18 +52,11 @@ namespace LPS.ToolScript.Parser
 			return SpecialValue.VariableNotSet == context.GetVariable(Name);
 		}
 
-		public void AssignValue(Context context, object val)
-		{
-			if(IsInitializer)
-				context.InitVariable(Name, val);
-			else
-				context.SetVariable(Name, val);
-		}
-
 		public void UnsetValue(Context context)
 		{
 			context.UnsetVariable(Name);
 		}
+		*/
 
 		public override string ToString ()
 		{

@@ -7,6 +7,7 @@ using LPS.ToolScript.Parser;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
+using System.Collections;
 
 namespace LPS.ToolScript
 {
@@ -300,7 +301,7 @@ namespace LPS.ToolScript
 		// <Block> ::= '{' <Stm List> '}'
 		protected override object RuleBlockLbraceRbrace(NonterminalToken token)
 		{
-			return new BlockStatement(true, (StatementList)CreateObject(token.Tokens[1]));
+			return new BlockStatement(true, Get<StatementList>(token,1));
 		}
 
 		// <Stm List> ::= <Stm> <Stm List>    -- start symbol
@@ -311,10 +312,12 @@ namespace LPS.ToolScript
 			return list;
 		}
 
-		// <Stm List> ::=
+		// <Stm List> ::= <Stm>
 		protected override object RuleStmlist2(NonterminalToken token)
 		{
-			return new StatementList();
+			StatementList list = new StatementList();
+			list.Add(Statement(token, 0));
+			return list;
 		}
 
 		// <Function> ::= function ID '(' <Func Args> ')' <Stm>
@@ -349,6 +352,29 @@ namespace LPS.ToolScript
 			List<IExpression> list = new List<IExpression>();
 			list.Add(Expr(token, 0));
 			return list;
+		}
+
+		// <Dict List> ::= <Expr> ':' <Expr> ',' <Dict List>
+		protected override object RuleDictlistColonComma(NonterminalToken token)
+		{
+			DictionaryExpression dict = Get<DictionaryExpression>(token,4);
+			dict.Add(Expr(token,0), Expr(token,2));
+			return dict;
+		}
+
+		// <Dict List> ::= <Expr> ':' <Expr>
+		protected override object RuleDictlistColon(NonterminalToken token)
+		{
+			DictionaryExpression dict = new DictionaryExpression();
+			dict.Add(Expr(token,0), Expr(token,2));
+			return dict;
+		}
+
+		// <Dict List> ::=
+		protected override object RuleDictlist(NonterminalToken token)
+		{
+			DictionaryExpression dict = new DictionaryExpression();
+			return dict;
 		}
 
 		// <Expr> ::= <Op If> '=' <Expr>
@@ -654,15 +680,13 @@ namespace LPS.ToolScript
 		// <Op Pointer> ::= <Op Pointer> '.' <Value>
 		protected override object RuleOppointerDot(NonterminalToken token)
 		{
-			return new OpMember(Expr(token, 0), Expr(token, 2));
+			return new OpMember(Expr(token, 0), Expr(token, 2), false);
 		}
 
 		// <Op Pointer> ::= <Op Pointer> '->' <Value>
 		protected override object RuleOppointerMinusgt(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Op Pointer> ::= <Op Pointer> '->' <Value>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new OpMember(Expr(token, 0), Expr(token, 2), true);
 		}
 
 		// <Op Pointer> ::= <Op Pointer> '[' <Expr> ']'
@@ -704,7 +728,13 @@ namespace LPS.ToolScript
 		// <Value> ::= DateTimeLiteral
 		protected override object RuleValueDatetimeliteral(NonterminalToken token)
 		{
-			return new DatetimeLiteral(DatetimeLiteral.Parse(TText(token, 0)));
+			return DatetimeLiteral.Create(TText(token, 0));
+		}
+
+		// <Value> ::= TimeSpanLiteral
+		protected override object RuleValueTimespanliteral(NonterminalToken token)
+		{
+			return new TimeSpanLiteral(TimeSpanLiteral.Parse(TText(token, 0)));
 		}
 
 		// <Value> ::= <Function>
@@ -765,6 +795,39 @@ namespace LPS.ToolScript
 			return Get<DictionaryExpression>(token, 1);
 		}
 
+		// <Value> ::= property <Expr> ';'
+		protected override object RuleValuePropertySemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= property <Expr> ';'");
+			//return new
+		}
+
+		// <Value> ::= property <Expr> get <Expr> ';'
+		protected override object RuleValuePropertyGetSemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= property <Expr> get <Expr> ';'");
+			//return new
+		}
+
+		// <Value> ::= property <Expr> get <Expr> set <Expr> ';'
+		protected override object RuleValuePropertyGetSetSemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Value> ::= property <Expr> get <Expr> set <Expr> ';'");
+			//return new
+		}
+
+		// <Value> ::= dict
+		protected override object RuleValueDict(NonterminalToken token)
+		{
+			return new DictionaryExpression();
+		}
+
+		// <Value> ::= list
+		protected override object RuleValueList(NonterminalToken token)
+		{
+			return new ObjectCreateExpression(typeof(ArrayList));
+		}
+
 		// <Value> ::= null
 		protected override object RuleValueNull(NonterminalToken token)
 		{
@@ -783,90 +846,82 @@ namespace LPS.ToolScript
 			return new BooleanLiteral(false);
 		}
 
-		#region Window support
-		// <Value> ::= <Window>
+		#region Widgets
+
+		// <Value> ::= <Widget>
 		protected override object RuleValue2(NonterminalToken token)
 		{
 			return CreateObject(token.Tokens[0]);
 		}
 
-		// <Window> ::= WINDOW ID <WndParam List> <Layout Block>
-		protected override object RuleWindowWindowId(NonterminalToken token)
+		// <Widget> ::= WINDOW ID <WndParam List> <Layout Block>
+		protected override object RuleWidgetWindowId(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Window> ::= window ID <WndParam List> <Layout Block>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new WindowExpression(
+				TText(token, 1),
+				Get<WidgetParamList>(token, 2),
+				Get<IWidgetBuilder>(token, 3));
 		}
 
-		// <Window> ::= WINDOW <WndParam List> <Layout Block>
-		protected override object RuleWindowWindow(NonterminalToken token)
+		// <Widget> ::= WINDOW <WndParam List> <Layout Block>
+		protected override object RuleWidgetWindow(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Window> ::= window <WndParam List> <Layout Block>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new WindowExpression(
+				null,
+				Get<WidgetParamList>(token, 1),
+				Get<IWidgetBuilder>(token, 2));
 		}
 
-		// <Window> ::= WIDGET ID <Layout Block>
-		protected override object RuleWindowWidgetId(NonterminalToken token)
+		// <Widget> ::= WIDGET ID <Layout Block>
+		protected override object RuleWidgetWidgetId(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Window> ::= WIDGET ID <Layout Block>");
-			//CheckRule(token, Symbols);
+			throw new NotImplementedException("<Widget> ::= WIDGET ID <Layout Block>");
 			//return new
 		}
 
 		// <WndParam List> ::= <WndParam> <WndParam List>
 		protected override object RuleWndparamlist(NonterminalToken token)
 		{
-			throw new NotImplementedException("<WndParam List> ::= <WndParam> <WndParam List>");
-			//CheckRule(token, Symbols);
-			//return new
+			WidgetParamList list = Get<WidgetParamList>(token,1);
+			KeyValuePair<string, IExpression> param = Get<KeyValuePair<string, IExpression>>(token,0);
+			list.Add(param.Key, new EvaluatedExpression(param.Value));
+			return list;
 		}
 
 		// <WndParam List> ::= 
 		protected override object RuleWndparamlist2(NonterminalToken token)
 		{
-			throw new NotImplementedException("<WndParam List> ::= ");
-			//CheckRule(token, Symbols);
-			//return new
+			return new WidgetParamList();
 		}
 
 		// <WndParam> ::= ID '=' <Expr> ';'
 		protected override object RuleWndparamIdEqSemi(NonterminalToken token)
 		{
-			throw new NotImplementedException("<WndParam> ::= ID '=' <Expr> ';'");
-			//CheckRule(token, Symbols);
-			//return new
+			return new KeyValuePair<string, IExpression>(TText(token,0), Expr(token, 2));
 		}
 
-		// <Layout Block> ::= hbox <WndParam List> <Layout Block> end
+		// <WndParam> ::= ID ';'
+		protected override object RuleWndparamIdSemi (NonterminalToken token)
+		{
+			return new KeyValuePair<string, IExpression>(TText(token,0), new BooleanLiteral(true));
+		}
+
+		// <Layout Block> ::= HBOX <WndParam List> <Layout List> END
 		protected override object RuleLayoutblockHboxEnd(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Layout Block> ::= hbox <WndParam List> <Layout Block> end");
-			//CheckRule(token, Symbols);
-			//return new
+			return new HBoxContainer(null, Get<WidgetParamList>(token, 1), Get<LayoutList>(token,2));
 		}
 
-		// <Layout Block> ::= vbox <WndParam List> <Layout Block> end
+		// <Layout Block> ::= VBOX <WndParam List> <Layout List> END
 		protected override object RuleLayoutblockVboxEnd(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Layout Block> ::= vbox <WndParam List> <Layout Block> end");
-			//CheckRule(token, Symbols);
-			//return new
+			return new VBoxContainer(null, Get<WidgetParamList>(token, 1), Get<LayoutList>(token,2));
 		}
 
-		// <Layout Block> ::= table <WndParam List> <TabRow Block> end
+		// <Layout Block> ::= TABLE <WndParam List> <TabRow Block> END
 		protected override object RuleLayoutblockTableEnd(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Layout Block> ::= table <WndParam List> <TabRow Block> end");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Layout Block> ::= table <WndParam List> <TabCol Block> end
-		protected override object RuleLayoutblockTableEnd2(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Layout Block> ::= table <WndParam List> <TabCol Block> end");
-			//CheckRule(token, Symbols);
+			throw new NotImplementedException("<Layout Block> ::= TABLE <WndParam List> <TabRow Block> END");
 			//return new
 		}
 
@@ -874,7 +929,6 @@ namespace LPS.ToolScript
 		protected override object RuleLayoutblock(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Layout Block> ::= <Menu Block>");
-			//CheckRule(token, Symbols);
 			//return new
 		}
 
@@ -882,7 +936,6 @@ namespace LPS.ToolScript
 		protected override object RuleLayoutblockRef(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Layout Block> ::= ref <QualifiedName> <WndParam List>");
-			//CheckRule(token, Symbols);
 			//return new
 		}
 
@@ -890,63 +943,33 @@ namespace LPS.ToolScript
 		protected override object RuleLayoutblockRefStringliteral(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Layout Block> ::= ref StringLiteral <WndParam List>");
-			//CheckRule(token, Symbols);
 			//return new
 		}
 
 		// <Layout Block> ::= '[' <Expr> ']' <WndParam List>
 		protected override object RuleLayoutblockLbracketRbracket(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Layout Block> ::= '[' <Expr> ']' <WndParam List>");
-			//CheckRule(token, Symbols);
-			//return new
+			return new WidgetFromExpression(Expr(token, 1), Get<WidgetParamList>(token,3));
 		}
 
-		// <TabRow Block> ::= row <WndParam List> <Tab Cells> end
-		protected override object RuleTabrowblockRowEnd(NonterminalToken token)
+		// <Layout List> ::= <Layout List> <Layout Block>
+		protected override object RuleLayoutlist(NonterminalToken token)
 		{
-			throw new NotImplementedException("<TabRow Block> ::= row <WndParam List> <Tab Cells> end");
-			//CheckRule(token, Symbols);
-			//return new
+			LayoutList list = Get<LayoutList>(token,0);
+			list.Add(Get<IWidgetBuilder>(token,1));
+			return list;
 		}
 
-		// <TabCol Block> ::= column <WndParam List> <Tab Cells> end
-		protected override object RuleTabcolblockColumnEnd(NonterminalToken token)
+		// <Layout List> ::=
+		protected override object RuleLayoutlist2(NonterminalToken token)
 		{
-			throw new NotImplementedException("<TabCol Block> ::= column <WndParam List> <Tab Cells> end");
-			//CheckRule(token, Symbols);
-			//return new
+			return new LayoutList();
 		}
 
-		// <Tab Cells> ::= <Tab Cells> <Tab Cell>
-		protected override object RuleTabcells(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Tab Cells> ::= <Tab Cells> <Tab Cell>");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Tab Cells> ::= 
-		protected override object RuleTabcells2(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Tab Cells> ::= ");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Tab Cell> ::= <Layout Block>
-		protected override object RuleTabcell(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Tab Cell> ::= <Layout Block>");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Menu Block> ::= menu <WndParam List> <MenuItems List> end
+		// <Menu Block> ::= MENU <WndParam List> <MenuItems List> END
 		protected override object RuleMenublockMenuEnd(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Menu Block> ::= menu <WndParam List> <MenuItems List> end");
-			//CheckRule(token, Symbols);
+			throw new NotImplementedException("<Menu Block> ::= MENU <WndParam List> <MenuItems List> END");
 			//return new
 		}
 
@@ -954,7 +977,6 @@ namespace LPS.ToolScript
 		protected override object RuleMenuitemslist(NonterminalToken token)
 		{
 			throw new NotImplementedException("<MenuItems List> ::= <Menu Item> <MenuItems List>");
-			//CheckRule(token, Symbols);
 			//return new
 		}
 
@@ -962,7 +984,6 @@ namespace LPS.ToolScript
 		protected override object RuleMenuitemslist2(NonterminalToken token)
 		{
 			throw new NotImplementedException("<MenuItems List> ::= ");
-			//CheckRule(token, Symbols);
 			//return new
 		}
 
@@ -970,43 +991,24 @@ namespace LPS.ToolScript
 		protected override object RuleMenuitem(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Menu Item> ::= <Menu Block>");
-			//CheckRule(token, Symbols);
 			//return new
 		}
 
-		// <Menu Item> ::= item <WndParam List>
+		// <Menu Item> ::= ITEM <WndParam List>
 		protected override object RuleMenuitemItem(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Menu Item> ::= item <WndParam List>");
-			//CheckRule(token, Symbols);
+			throw new NotImplementedException("<Menu Item> ::= ITEM <WndParam List>");
 			//return new
 		}
 
-		// <Menu Item> ::= separator
+		// <Menu Item> ::= Separator
 		protected override object RuleMenuitemSeparator(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Menu Item> ::= separator");
-			//CheckRule(token, Symbols);
+			throw new NotImplementedException("<Menu Item> ::= Separator");
 			//return new
 		}
-
-		// <Dict List> ::= <Dict List> ',' <Expr> ':' <Expr>
-		protected override object RuleDictlistCommaColon(NonterminalToken token)
-		{
-			DictionaryExpression dict = Get<DictionaryExpression>(token,0);
-			dict.Add(Expr(token,2), Expr(token,4));
-			return dict;
-		}
-
-		// <Dict List> ::= <Expr> ':' <Expr>
-		protected override object RuleDictlistColon(NonterminalToken token)
-		{
-			DictionaryExpression dict = new DictionaryExpression();
-			dict.Add(Expr(token,0), Expr(token,2));
-			return dict;
-		}
-
 		#endregion
+
 		#endregion
     }
 }

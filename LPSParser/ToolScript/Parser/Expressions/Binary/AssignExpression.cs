@@ -14,7 +14,8 @@ namespace LPS.ToolScript.Parser
 
 		public override object Eval (Context context)
 		{
-			object o;
+			object o = expr2.Eval(context);
+			/*
 			if(expr1 is Variable && ((Variable)expr1).IsUnset(context)
 			   && ((expr2 is AddExpression) || (expr2 is SubstractExpression) || (expr2 is MultiplyExpression))
 			   && Object.ReferenceEquals(((BinaryExpression)expr2).Expr1, expr1))
@@ -25,6 +26,7 @@ namespace LPS.ToolScript.Parser
 			{
 				o = expr2.Eval(context);
 			}
+			*/
 			if(!(expr1 is IAssignable))
 				throw new InvalidOperationException(String.Format("Nelze přiřadit hodnotu do výrazu typu {0}", expr1));
 			(expr1 as IAssignable).AssignValue(context, o);

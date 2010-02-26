@@ -12,6 +12,7 @@ namespace LPS.ToolScript.Parser
 
 		public override object Eval (Context context, object val1, object val2)
 		{
+			object result;
 			if(IsNumeric(val1) && IsNumeric(val2))
 			{
 				if(IsDecimal(val1) || IsDecimal(val2))
@@ -24,6 +25,8 @@ namespace LPS.ToolScript.Parser
 				StringBuilder sb = new StringBuilder();
 				return sb.Append(val1).Append(val2).ToString();
 			}
+			else if(InvokeOperator("op_Addition", val1, val2, out result))
+				return result;
 			else throw new Exception(String.Format("Nelze sčítat hodnoty '{0}' a '{1}' typu {2} a {3}",
 				val1, val2,
 				(val1 == null)?"null":val1.GetType().Name,
