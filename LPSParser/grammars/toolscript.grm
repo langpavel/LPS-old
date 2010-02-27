@@ -110,6 +110,60 @@ Comment Line  = '//'
               	| 	<Stm>
 
 ! ===================================================================
+! Database support
+! ===================================================================
+
+<ID List>		::=	<ID List> ',' ID
+				|	ID
+				|
+
+<Database>		::=	'database' ID '{' <DB Tables> '}'
+				|	'extends' 'database' ID '{' <DB Tables> '}'
+
+<DB Tables>		::=	<DB Table> <DB Tables>
+				|
+
+<DB Table>		::=	'table' ID '{' <DB Columns> '}' <DB Table Attr>
+				|	'template' 'table' ID '{' <DB Columns> '}'
+				|	'table' ID 'template' ID '{' <DB Columns> '}' <DB Table Attr>
+				|	'template' 'table' ID 'template' ID '{' <DB Columns> '}'
+
+<DB Columns>	::=	<DB Columns> ',' <DB Column>
+				|	<DB Column>
+				|
+
+<DB Column>		::=	ID <DB Column Type> <DB Column Attr>
+
+<DB Column Type> ::= 'primary'
+				|	'foreign' ID
+				|	'foreign' ID '(' ID ')'
+				|	'many' ID 'through' ID '(' ID ',' ID ')'
+				|	'varchar'
+				|	'varchar' '(' IntLiteral ')'
+				|	'integer'
+				|	'decimal' '(' IntLiteral ',' IntLiteral ')'
+				|	'date'
+				|	'time'
+				|	'datetime'
+				|	'daterange'
+				|	'timerange'
+				|	'datetimerange'
+
+<DB Column Attr> ::= 'unique'
+				|	'not' 'null'
+				|	'index'
+				|	ID '=' <Expr>
+
+<DB Table Attr>	::=	'index' '(' <ID List> ')'
+				|	'before' 'insert' 'position' DecimalLiteral <Expr>
+				|	'after'  'insert' 'position' DecimalLiteral <Expr>
+				|	'before' 'update' 'position' DecimalLiteral <Expr>
+				|	'after'  'update' 'position' DecimalLiteral <Expr>
+				|	'before' 'delete' 'position' DecimalLiteral <Expr>
+				|	'after'  'delete' 'position' DecimalLiteral <Expr>
+				|	ID '=' <Expr>
+
+! ===================================================================
 ! Function support
 ! ===================================================================
 
@@ -232,6 +286,7 @@ Comment Line  = '//'
 				|	TimeSpanLiteral
 				|	'type' <QualifiedName>
 				|	<Function>
+				|	<Database>
 				|	<Widget>
 				|	'new' <QualifiedName> '(' <Args> ')'
 				|	ID

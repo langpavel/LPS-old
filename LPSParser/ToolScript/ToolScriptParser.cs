@@ -743,6 +743,12 @@ namespace LPS.ToolScript
 			return CreateObject(token.Tokens[0]);
 		}
 
+		// <Value> ::= <Database>
+		protected override object RuleValue3(NonterminalToken token)
+		{
+			return CreateObject(token.Tokens[0]);
+		}
+
 		// <Value> ::= type <QualifiedName>
 		protected override object RuleValueType(NonterminalToken token)
 		{
@@ -1004,6 +1010,295 @@ namespace LPS.ToolScript
 		protected override object RuleMenuitemSeparator(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Menu Item> ::= Separator");
+			//return new
+		}
+		#endregion
+
+		#region Database support
+		// <ID List> ::= <ID List> ',' ID
+		protected override object RuleIdlistCommaId(NonterminalToken token)
+		{
+			throw new NotImplementedException("<ID List> ::= <ID List> ',' ID");
+			//return new
+		}
+
+		// <ID List> ::= ID
+		protected override object RuleIdlistId(NonterminalToken token)
+		{
+			throw new NotImplementedException("<ID List> ::= ID");
+			//return new
+		}
+
+		// <ID List> ::= 
+		protected override object RuleIdlist(NonterminalToken token)
+		{
+			throw new NotImplementedException("<ID List> ::= ");
+			//return new
+		}
+
+		// <Database> ::= database ID '{' <DB Tables> '}'
+		protected override object RuleDatabaseDatabaseIdLbraceRbrace(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Database> ::= database ID '{' <DB Tables> '}'");
+			//return new
+		}
+
+		// <Database> ::= extends database ID '{' <DB Tables> '}'
+		protected override object RuleDatabaseExtendsDatabaseIdLbraceRbrace(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Database> ::= extends database ID '{' <DB Tables> '}'");
+			//return new
+		}
+
+		// <DB Tables> ::= <DB Table> <DB Tables>
+		protected override object RuleDbtables(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Tables> ::= <DB Table> <DB Tables>");
+			//return new
+		}
+
+		// <DB Tables> ::= 
+		protected override object RuleDbtables2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Tables> ::= ");
+			//return new
+		}
+
+		// <DB Table> ::= table ID '{' <DB Columns> '}' <DB Table Attr>
+		protected override object RuleDbtableTableIdLbraceRbrace(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Table> ::= table ID '{' <DB Columns> '}' <DB Table Attr>");
+			//return new
+		}
+
+		// <DB Table> ::= template table ID '{' <DB Columns> '}'
+		protected override object RuleDbtableTemplateTableIdLbraceRbrace(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Table> ::= template table ID '{' <DB Columns> '}'");
+			//return new
+		}
+
+		// <DB Table> ::= table ID template ID '{' <DB Columns> '}' <DB Table Attr>
+		protected override object RuleDbtableTableIdTemplateIdLbraceRbrace(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Table> ::= table ID template ID '{' <DB Columns> '}' <DB Table Attr>");
+			//return new
+		}
+
+		// <DB Table> ::= template table ID template ID '{' <DB Columns> '}'
+		protected override object RuleDbtableTemplateTableIdTemplateIdLbraceRbrace(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Table> ::= template table ID template ID '{' <DB Columns> '}'");
+			//return new
+		}
+
+		// <DB Columns> ::= <DB Columns> ',' <DB Column>
+		protected override object RuleDbcolumnsComma(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Columns> ::= <DB Columns> ',' <DB Column>");
+			//return new
+		}
+
+		// <DB Columns> ::= <DB Column>
+		protected override object RuleDbcolumns(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Columns> ::= <DB Column>");
+			//return new
+		}
+
+		// <DB Columns> ::= 
+		protected override object RuleDbcolumns2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Columns> ::= ");
+			//return new
+		}
+
+		// <DB Column> ::= ID <DB Column Type> <DB Column Attr>
+		protected override object RuleDbcolumnId(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column> ::= ID <DB Column Type> <DB Column Attr>");
+			//return new
+		}
+
+		// <DB Column Type> ::= primary
+		protected override object RuleDbcolumntypePrimary(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Type> ::= primary");
+			//return new
+		}
+
+		// <DB Column Type> ::= foreign ID
+		protected override object RuleDbcolumntypeForeignId(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Type> ::= foreign ID");
+			//return new
+		}
+
+		// <DB Column Type> ::= foreign ID '(' ID ')'
+		protected override object RuleDbcolumntypeForeignIdLparanIdRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Type> ::= foreign ID '(' ID ')'");
+			//return new
+		}
+
+		// <DB Column Type> ::= many ID through ID '(' ID ',' ID ')'
+		protected override object RuleDbcolumntypeManyIdThroughIdLparanIdCommaIdRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Type> ::= many ID through ID '(' ID ',' ID ')'");
+			//return new
+		}
+
+		// <DB Column Type> ::= varchar
+		protected override object RuleDbcolumntypeVarchar(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Type> ::= varchar");
+			//return new
+		}
+
+		// <DB Column Type> ::= varchar '(' IntLiteral ')'
+		protected override object RuleDbcolumntypeVarcharLparanIntliteralRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Type> ::= varchar '(' IntLiteral ')'");
+			//return new
+		}
+
+		// <DB Column Type> ::= integer
+		protected override object RuleDbcolumntypeInteger(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Type> ::= integer");
+			//return new
+		}
+
+		// <DB Column Type> ::= decimal '(' IntLiteral ',' IntLiteral ')'
+		protected override object RuleDbcolumntypeDecimalLparanIntliteralCommaIntliteralRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Type> ::= decimal '(' IntLiteral ',' IntLiteral ')'");
+			//return new
+		}
+
+		// <DB Column Type> ::= date
+		protected override object RuleDbcolumntypeDate(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Type> ::= date");
+			//return new
+		}
+
+		// <DB Column Type> ::= time
+		protected override object RuleDbcolumntypeTime(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Type> ::= time");
+			//return new
+		}
+
+		// <DB Column Type> ::= datetime
+		protected override object RuleDbcolumntypeDatetime(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Type> ::= datetime");
+			//return new
+		}
+
+		// <DB Column Type> ::= daterange
+		protected override object RuleDbcolumntypeDaterange(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Type> ::= daterange");
+			//return new
+		}
+
+		// <DB Column Type> ::= timerange
+		protected override object RuleDbcolumntypeTimerange(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Type> ::= timerange");
+			//return new
+		}
+
+		// <DB Column Type> ::= datetimerange
+		protected override object RuleDbcolumntypeDatetimerange(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Type> ::= datetimerange");
+			//return new
+		}
+
+		// <DB Column Attr> ::= unique
+		protected override object RuleDbcolumnattrUnique(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Attr> ::= unique");
+			//return new
+		}
+
+		// <DB Column Attr> ::= not null
+		protected override object RuleDbcolumnattrNotNull(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Attr> ::= not null");
+			//return new
+		}
+
+		// <DB Column Attr> ::= index
+		protected override object RuleDbcolumnattrIndex(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Attr> ::= index");
+			//return new
+		}
+
+		// <DB Column Attr> ::= ID '=' <Expr>
+		protected override object RuleDbcolumnattrIdEq(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Attr> ::= ID '=' <Expr>");
+			//return new
+		}
+
+		// <DB Table Attr> ::= index '(' <ID List> ')'
+		protected override object RuleDbtableattrIndexLparanRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Table Attr> ::= index '(' <ID List> ')'");
+			//return new
+		}
+
+		// <DB Table Attr> ::= before insert position DecimalLiteral <Expr>
+		protected override object RuleDbtableattrBeforeInsertPositionDecimalliteral(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Table Attr> ::= before insert position DecimalLiteral <Expr>");
+			//return new
+		}
+
+		// <DB Table Attr> ::= after insert position DecimalLiteral <Expr>
+		protected override object RuleDbtableattrAfterInsertPositionDecimalliteral(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Table Attr> ::= after insert position DecimalLiteral <Expr>");
+			//return new
+		}
+
+		// <DB Table Attr> ::= before update position DecimalLiteral <Expr>
+		protected override object RuleDbtableattrBeforeUpdatePositionDecimalliteral(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Table Attr> ::= before update position DecimalLiteral <Expr>");
+			//return new
+		}
+
+		// <DB Table Attr> ::= after update position DecimalLiteral <Expr>
+		protected override object RuleDbtableattrAfterUpdatePositionDecimalliteral(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Table Attr> ::= after update position DecimalLiteral <Expr>");
+			//return new
+		}
+
+		// <DB Table Attr> ::= before delete position DecimalLiteral <Expr>
+		protected override object RuleDbtableattrBeforeDeletePositionDecimalliteral(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Table Attr> ::= before delete position DecimalLiteral <Expr>");
+			//return new
+		}
+
+		// <DB Table Attr> ::= after delete position DecimalLiteral <Expr>
+		protected override object RuleDbtableattrAfterDeletePositionDecimalliteral(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Table Attr> ::= after delete position DecimalLiteral <Expr>");
+			//return new
+		}
+
+		// <DB Table Attr> ::= ID '=' <Expr>
+		protected override object RuleDbtableattrIdEq(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Table Attr> ::= ID '=' <Expr>");
 			//return new
 		}
 		#endregion
