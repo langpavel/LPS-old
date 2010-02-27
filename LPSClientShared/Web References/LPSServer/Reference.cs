@@ -23,6 +23,8 @@ namespace LPSClientShared.LPSServer {
         
         private System.Threading.SendOrPostCallback PingOperationCompleted;
         
+        private System.Threading.SendOrPostCallback ShowServiceConfigurationOperationCompleted;
+        
         private System.Threading.SendOrPostCallback LoginOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetLoggedUserOperationCompleted;
@@ -70,6 +72,8 @@ namespace LPSClientShared.LPSServer {
         }
         
         public event PingCompletedEventHandler PingCompleted;
+        
+        public event ShowServiceConfigurationCompletedEventHandler ShowServiceConfigurationCompleted;
         
         public event LoginCompletedEventHandler LoginCompleted;
         
@@ -139,6 +143,39 @@ namespace LPSClientShared.LPSServer {
             if ((this.PingCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.PingCompleted(this, new PingCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/ShowServiceConfiguration", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public string[] ShowServiceConfiguration() {
+            object[] results = this.Invoke("ShowServiceConfiguration", new object[0]);
+            return ((string[])(results[0]));
+        }
+        
+        public System.IAsyncResult BeginShowServiceConfiguration(System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("ShowServiceConfiguration", new object[0], callback, asyncState);
+        }
+        
+        public string[] EndShowServiceConfiguration(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((string[])(results[0]));
+        }
+        
+        public void ShowServiceConfigurationAsync() {
+            this.ShowServiceConfigurationAsync(null);
+        }
+        
+        public void ShowServiceConfigurationAsync(object userState) {
+            if ((this.ShowServiceConfigurationOperationCompleted == null)) {
+                this.ShowServiceConfigurationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnShowServiceConfigurationCompleted);
+            }
+            this.InvokeAsync("ShowServiceConfiguration", new object[0], this.ShowServiceConfigurationOperationCompleted, userState);
+        }
+        
+        private void OnShowServiceConfigurationCompleted(object arg) {
+            if ((this.ShowServiceConfigurationCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ShowServiceConfigurationCompleted(this, new ShowServiceConfigurationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -986,6 +1023,25 @@ namespace LPSClientShared.LPSServer {
     }
     
     public delegate void PingCompletedEventHandler(object sender, PingCompletedEventArgs args);
+    
+    public partial class ShowServiceConfigurationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ShowServiceConfigurationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void ShowServiceConfigurationCompletedEventHandler(object sender, ShowServiceConfigurationCompletedEventArgs args);
     
     public partial class LoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         

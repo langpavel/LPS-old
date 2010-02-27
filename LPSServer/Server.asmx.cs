@@ -1,15 +1,17 @@
 using System;
-using System.IO;
-using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Configuration;
+using System.Data;
+using System.IO;
+using System.Reflection;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Services;
 using System.Web.Services.Protocols;
-using System.Data;
 using System.Xml;
 using Npgsql;
-using System.Configuration;
 
 namespace LPS.Server
 {
@@ -48,6 +50,18 @@ namespace LPS.Server
 		public bool Ping()
 		{
 			return true;
+		}
+
+		[WebMethod(EnableSession=false)]
+		public string[] ShowServiceConfiguration()
+		{
+			List<string> settings = new List<string>();
+			NameValueCollection AppSettings = WebConfigurationManager.AppSettings;
+			if(AppSettings == null)
+				return new string[] {"AppSettings is null"};
+		    foreach(string key in AppSettings.AllKeys)
+				settings.Add(String.Format("{0}='{1}'", key, AppSettings.Get(key)));
+			return settings.ToArray();
 		}
 		#endregion
 		
@@ -267,22 +281,12 @@ namespace LPS.Server
 		{
 			return _GetTextResource(path);
 		}
-		
+
 		public static string _GetTextResource(string path)
 		{
 			path = path.Replace('\\', Path.DirectorySeparatorChar).Replace('/', Path.DirectorySeparatorChar);
-			string resPath = "/var/www/LPS/resources";
-			try
-			{
-				System.Configuration.Configuration rootWebConfig1 =
-    				System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(null);
-    			System.Configuration.KeyValueConfigurationElement resourceDirectory = 
-        			rootWebConfig1.AppSettings.Settings["ResourceDirectory"];
-				resPath = resourceDirectory.Value;
-			}
-			catch 
-			{
-			}
+
+			string resPath = WebConfigurationManager.AppSettings["ResourceDirectory"];
 
 			resPath = Path.Combine(resPath, path);
 			try

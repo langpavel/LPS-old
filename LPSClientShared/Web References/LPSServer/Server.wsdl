@@ -13,6 +13,21 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="ShowServiceConfiguration">
+        <xs:complexType />
+      </xs:element>
+      <xs:complexType name="ArrayOfString">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ShowServiceConfigurationResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="ShowServiceConfigurationResult" type="s0:ArrayOfString" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="Login">
         <xs:complexType>
           <xs:sequence>
@@ -346,6 +361,7 @@
         <xs:complexType />
       </xs:element>
       <xs:element name="boolean" type="xs:boolean" />
+      <xs:element name="ArrayOfString" nillable="true" type="s0:ArrayOfString" />
       <xs:element name="long" type="xs:long" />
       <xs:element name="string" nillable="true" type="xs:string" />
       <xs:element name="int" type="xs:int" />
@@ -387,6 +403,12 @@
   </message>
   <message name="PingSoapOut">
     <part name="parameters" element="s0:PingResponse" />
+  </message>
+  <message name="ShowServiceConfigurationSoapIn">
+    <part name="parameters" element="s0:ShowServiceConfiguration" />
+  </message>
+  <message name="ShowServiceConfigurationSoapOut">
+    <part name="parameters" element="s0:ShowServiceConfigurationResponse" />
   </message>
   <message name="LoginSoapIn">
     <part name="parameters" element="s0:Login" />
@@ -506,6 +528,10 @@
   <message name="PingHttpGetOut">
     <part name="Body" element="s0:boolean" />
   </message>
+  <message name="ShowServiceConfigurationHttpGetIn" />
+  <message name="ShowServiceConfigurationHttpGetOut">
+    <part name="Body" element="s0:ArrayOfString" />
+  </message>
   <message name="LoginHttpGetIn">
     <part name="login" type="s:string" />
     <part name="password" type="s:string" />
@@ -534,7 +560,7 @@
     <part name="sql" type="s:string" />
   </message>
   <message name="SimpleExecuteScalarHttpGetOut">
-    <part name="Body" element="s0:anyType" />
+    <part name="Body" element="anyType" />
   </message>
   <message name="NextSeqValueHttpGetIn">
     <part name="generator" type="s:string" />
@@ -588,6 +614,10 @@
   <message name="PingHttpPostOut">
     <part name="Body" element="s0:boolean" />
   </message>
+  <message name="ShowServiceConfigurationHttpPostIn" />
+  <message name="ShowServiceConfigurationHttpPostOut">
+    <part name="Body" element="s0:ArrayOfString" />
+  </message>
   <message name="LoginHttpPostIn">
     <part name="login" type="s:string" />
     <part name="password" type="s:string" />
@@ -616,7 +646,7 @@
     <part name="sql" type="s:string" />
   </message>
   <message name="SimpleExecuteScalarHttpPostOut">
-    <part name="Body" element="s0:anyType" />
+    <part name="Body" element="anyType" />
   </message>
   <message name="NextSeqValueHttpPostIn">
     <part name="generator" type="s:string" />
@@ -670,6 +700,10 @@
     <operation name="Ping">
       <input message="s0:PingSoapIn" />
       <output message="s0:PingSoapOut" />
+    </operation>
+    <operation name="ShowServiceConfiguration">
+      <input message="s0:ShowServiceConfigurationSoapIn" />
+      <output message="s0:ShowServiceConfigurationSoapOut" />
     </operation>
     <operation name="Login">
       <input message="s0:LoginSoapIn" />
@@ -753,6 +787,10 @@
       <input message="s0:PingSoapIn" />
       <output message="s0:PingSoapOut" />
     </operation>
+    <operation name="ShowServiceConfiguration">
+      <input message="s0:ShowServiceConfigurationSoapIn" />
+      <output message="s0:ShowServiceConfigurationSoapOut" />
+    </operation>
     <operation name="Login">
       <input message="s0:LoginSoapIn" />
       <output message="s0:LoginSoapOut" />
@@ -835,6 +873,10 @@
       <input message="s0:PingHttpGetIn" />
       <output message="s0:PingHttpGetOut" />
     </operation>
+    <operation name="ShowServiceConfiguration">
+      <input message="s0:ShowServiceConfigurationHttpGetIn" />
+      <output message="s0:ShowServiceConfigurationHttpGetOut" />
+    </operation>
     <operation name="Login">
       <input message="s0:LoginHttpGetIn" />
       <output message="s0:LoginHttpGetOut" />
@@ -893,6 +935,10 @@
       <input message="s0:PingHttpPostIn" />
       <output message="s0:PingHttpPostOut" />
     </operation>
+    <operation name="ShowServiceConfiguration">
+      <input message="s0:ShowServiceConfigurationHttpPostIn" />
+      <output message="s0:ShowServiceConfigurationHttpPostOut" />
+    </operation>
     <operation name="Login">
       <input message="s0:LoginHttpPostIn" />
       <output message="s0:LoginHttpPostOut" />
@@ -950,6 +996,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="Ping">
       <soap:operation soapAction="http://lpsoft.org/server/Ping" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ShowServiceConfiguration">
+      <soap:operation soapAction="http://lpsoft.org/server/ShowServiceConfiguration" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -1140,6 +1195,15 @@
         <soap12:body use="literal" />
       </output>
     </operation>
+    <operation name="ShowServiceConfiguration">
+      <soap12:operation soapAction="http://lpsoft.org/server/ShowServiceConfiguration" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
     <operation name="Login">
       <soap12:operation soapAction="http://lpsoft.org/server/Login" style="document" />
       <input>
@@ -1323,6 +1387,15 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
+    <operation name="ShowServiceConfiguration">
+      <http:operation location="/ShowServiceConfiguration" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
     <operation name="Login">
       <http:operation location="/Login" />
       <input>
@@ -1443,6 +1516,15 @@
     <http:binding verb="POST" />
     <operation name="Ping">
       <http:operation location="/Ping" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ShowServiceConfiguration">
+      <http:operation location="/ShowServiceConfiguration" />
       <input>
         <mime:content part="" type="application/x-www-form-urlencoded" />
       </input>
