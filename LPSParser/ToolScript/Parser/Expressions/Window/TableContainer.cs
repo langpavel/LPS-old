@@ -79,10 +79,16 @@ namespace LPS.ToolScript.Parser
 					wrow++;
 			}
 			Gtk.Table table = new Gtk.Table(rows, columns, GetAttribute<bool>("homogeneous", false));
+			List<Gtk.Widget> focuschain = new List<Gtk.Widget>(wlist.Count);
 			foreach(WidgetTableInfo w in wlist)
+			{
 				table.Attach(w.Widget,
 					w.Left, w.Right, w.Top, w.Bottom,
 					w.XOptions, w.YOptions, w.XPadding, w.YPadding);
+				if(w.Widget.CanFocus)
+					focuschain.Add(w.Widget);
+			}
+			table.FocusChain = focuschain.ToArray();
 			return table;
 		}
 
