@@ -103,7 +103,7 @@ Global
 		{F31B07F0-C6F6-4190-B12F-8EFD2C9EC5AE}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = LPSUtil\LPSUtil.csproj
+		StartupItem = LPSClientSklad\LPSClientSklad.csproj
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = None

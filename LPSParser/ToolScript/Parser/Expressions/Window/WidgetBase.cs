@@ -5,7 +5,7 @@ namespace LPS.ToolScript.Parser
 {
 	public abstract class WidgetBase : ExpressionBase, IWidgetBuilder
 	{
-		public string Name { get; private set; }
+		public string Name { get; set; }
 		public WidgetParamList Params { get; private set; }
 
 		public WidgetBase(string Name, WidgetParamList Params)

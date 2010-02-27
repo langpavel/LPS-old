@@ -44,7 +44,7 @@ TimeSpanLiteral	= {Digit}+ [Dd] ({Digit}+ [Hh])? ({Digit}+ [Mm])? ({Digit}+('.'{
 
 Separator		= '--' '-'+
 				| '==' '='+
-				| 'SEPARATOR'
+				| 'separator'
 
 ! ------------------------------------------------- Rules
 
@@ -174,9 +174,10 @@ Comment Line  = '//'
 ! Window support
 ! ===================================================================
 
-<Widget>		::=	'WINDOW' ID <WndParam List> <Layout Block>
-				|	'WINDOW' <WndParam List> <Layout Block>
-				|	'WIDGET' ID <Layout Block>
+<Widget>		::=	'window' ID <WndParam List> <Layout Block>
+				|	'window' <WndParam List> <Layout Block>
+				|	'widget' ID <Layout Block>
+				|	'widget' <Layout Block>
 
 <WndParam List>	::=	<WndParam> <WndParam List>	! if switched shift-reduce conflict
 				|
@@ -187,21 +188,30 @@ Comment Line  = '//'
 <Layout List>	::=	<Layout List> <Layout Block>
 				|
 
-<Layout Block>	::= 'HBOX'  <WndParam List> <Layout List> 'END'
-				|	'VBOX'  <WndParam List> <Layout List> 'END'
-				|	'TABLE' <WndParam List> <Layout List> 'END'
+<Layout Block>	::= 'hbox'  <WndParam List> <Layout List> 'end'
+				|	'vbox'  <WndParam List> <Layout List> 'end'
+				|	'hbuttonbox' <WndParam List> <Layout List> 'end'
+				|	'vbuttonbox' <WndParam List> <Layout List> 'end'
+				|	'table' <WndParam List> <Layout List> 'end'
+				|	'toolbar' <WndParam List> <Layout List> 'end'
+				|	'button' <WndParam List> <Layout Block>
+				|	'button' <WndParam List> 'end'
+				|	'toolbutton' <WndParam List> <Layout Block>
+				|	'toolbutton' <WndParam List> 'end'
+				|	'image' <WndParam List>
+				|	StringLiteral <WndParam List>
 				|	<Menu Block>
 				|	'ref' <QualifiedName> <WndParam List>
 				|	'ref' StringLiteral <WndParam List>
 				|	'[' <Expr> ']' <WndParam List>
 
-<Menu Block>	::=	'MENU' <WndParam List> <MenuItems List> 'END'
+<Menu Block>	::=	'menu' <WndParam List> <MenuItems List> 'end'
 
 <MenuItems List> ::= <Menu Item> <MenuItems List>
 				|
 
 <Menu Item>		::= <Menu Block>
-				|	'ITEM' <WndParam List>
+				|	'menuitem' <WndParam List>
 				|	Separator
 
 

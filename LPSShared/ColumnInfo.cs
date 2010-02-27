@@ -34,7 +34,7 @@ namespace LPS
 		public int Width { get; set; }
 
 		[XmlAttribute("max-length")]
-		public int? MaxLength { get; set; }
+		public int MaxLength { get; set; }
 		
 		[XmlAttribute("default")]
 		public string Default { get; set; }

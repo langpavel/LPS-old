@@ -76,7 +76,7 @@ namespace LPS.Util
 			string path = Assembly.GetExecutingAssembly().Location;
 			path = System.IO.Path.GetDirectoryName(path);
 			path = System.IO.Path.Combine(path, "Scripts");
-			List<string> files = new List<string>(Directory.GetFiles(path, "*.ts"));
+			List<string> files = new List<string>(Directory.GetFiles(path, "*.lps"));
 			files.Sort();
 			Log.Debug("Init files in order: {0}", String.Join("; ", files.ToArray()));
 			foreach(string file in files)

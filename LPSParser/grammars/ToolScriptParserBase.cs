@@ -278,676 +278,712 @@ namespace LPS.ToolScript
         Break = 43,
 
         /// <summary>
+        /// <para>Symbol: button</para>
+        /// <para><c>button</c></para>
+        /// </summary>
+        Button = 44,
+
+        /// <summary>
         /// <para>Symbol: case</para>
         /// <para><c>case</c></para>
         /// </summary>
-        Case = 44,
+        Case = 45,
 
         /// <summary>
         /// <para>Symbol: cast</para>
         /// <para><c>cast</c></para>
         /// </summary>
-        Cast = 45,
+        Cast = 46,
 
         /// <summary>
         /// <para>Symbol: continue</para>
         /// <para><c>continue</c></para>
         /// </summary>
-        Continue = 46,
+        Continue = 47,
 
         /// <summary>
         /// <para>Symbol: database</para>
         /// <para><c>database</c></para>
         /// </summary>
-        Database = 47,
+        Database = 48,
 
         /// <summary>
         /// <para>Symbol: date</para>
         /// <para><c>date</c></para>
         /// </summary>
-        Date = 48,
+        Date = 49,
 
         /// <summary>
         /// <para>Symbol: daterange</para>
         /// <para><c>daterange</c></para>
         /// </summary>
-        Daterange = 49,
+        Daterange = 50,
 
         /// <summary>
         /// <para>Symbol: datetime</para>
         /// <para><c>datetime</c></para>
         /// </summary>
-        Datetime = 50,
+        Datetime = 51,
 
         /// <summary>
         /// <para>Symbol: DateTimeLiteral</para>
         /// <para><c>DateTimeLiteral</c></para>
         /// </summary>
-        Datetimeliteral = 51,
+        Datetimeliteral = 52,
 
         /// <summary>
         /// <para>Symbol: datetimerange</para>
         /// <para><c>datetimerange</c></para>
         /// </summary>
-        Datetimerange = 52,
+        Datetimerange = 53,
 
         /// <summary>
         /// <para>Symbol: decimal</para>
         /// <para><c>decimal</c></para>
         /// </summary>
-        Decimal = 53,
+        Decimal = 54,
 
         /// <summary>
         /// <para>Symbol: DecimalLiteral</para>
         /// <para><c>DecimalLiteral</c></para>
         /// </summary>
-        Decimalliteral = 54,
+        Decimalliteral = 55,
 
         /// <summary>
         /// <para>Symbol: default</para>
         /// <para><c>default</c></para>
         /// </summary>
-        Default = 55,
+        Default = 56,
 
         /// <summary>
         /// <para>Symbol: delete</para>
         /// <para><c>delete</c></para>
         /// </summary>
-        Delete = 56,
+        Delete = 57,
 
         /// <summary>
         /// <para>Symbol: dict</para>
         /// <para><c>dict</c></para>
         /// </summary>
-        Dict = 57,
+        Dict = 58,
 
         /// <summary>
         /// <para>Symbol: do</para>
         /// <para><c>do</c></para>
         /// </summary>
-        Do = 58,
+        Do = 59,
 
         /// <summary>
         /// <para>Symbol: else</para>
         /// <para><c>else</c></para>
         /// </summary>
-        Else = 59,
+        Else = 60,
 
         /// <summary>
-        /// <para>Symbol: END</para>
-        /// <para><c>END</c></para>
+        /// <para>Symbol: end</para>
+        /// <para><c>end</c></para>
         /// </summary>
-        End = 60,
+        End = 61,
 
         /// <summary>
         /// <para>Symbol: extends</para>
         /// <para><c>extends</c></para>
         /// </summary>
-        Extends = 61,
+        Extends = 62,
 
         /// <summary>
         /// <para>Symbol: false</para>
         /// <para><c>false</c></para>
         /// </summary>
-        False = 62,
+        False = 63,
 
         /// <summary>
         /// <para>Symbol: for</para>
         /// <para><c>for</c></para>
         /// </summary>
-        For = 63,
+        For = 64,
 
         /// <summary>
         /// <para>Symbol: foreach</para>
         /// <para><c>foreach</c></para>
         /// </summary>
-        Foreach = 64,
+        Foreach = 65,
 
         /// <summary>
         /// <para>Symbol: foreign</para>
         /// <para><c>foreign</c></para>
         /// </summary>
-        Foreign = 65,
+        Foreign = 66,
 
         /// <summary>
         /// <para>Symbol: function</para>
         /// <para><c>function</c></para>
         /// </summary>
-        Function = 66,
+        Function = 67,
 
         /// <summary>
         /// <para>Symbol: get</para>
         /// <para><c>get</c></para>
         /// </summary>
-        Get = 67,
+        Get = 68,
 
         /// <summary>
-        /// <para>Symbol: HBOX</para>
-        /// <para><c>HBOX</c></para>
+        /// <para>Symbol: hbox</para>
+        /// <para><c>hbox</c></para>
         /// </summary>
-        Hbox = 68,
+        Hbox = 69,
+
+        /// <summary>
+        /// <para>Symbol: hbuttonbox</para>
+        /// <para><c>hbuttonbox</c></para>
+        /// </summary>
+        Hbuttonbox = 70,
 
         /// <summary>
         /// <para>Symbol: ID</para>
         /// <para><c>ID</c></para>
         /// </summary>
-        Id = 69,
+        Id = 71,
 
         /// <summary>
         /// <para>Symbol: if</para>
         /// <para><c>if</c></para>
         /// </summary>
-        If = 70,
+        If = 72,
+
+        /// <summary>
+        /// <para>Symbol: image</para>
+        /// <para><c>image</c></para>
+        /// </summary>
+        Image = 73,
 
         /// <summary>
         /// <para>Symbol: in</para>
         /// <para><c>in</c></para>
         /// </summary>
-        In = 71,
+        In = 74,
 
         /// <summary>
         /// <para>Symbol: index</para>
         /// <para><c>index</c></para>
         /// </summary>
-        Index = 72,
+        Index = 75,
 
         /// <summary>
         /// <para>Symbol: insert</para>
         /// <para><c>insert</c></para>
         /// </summary>
-        Insert = 73,
+        Insert = 76,
 
         /// <summary>
         /// <para>Symbol: integer</para>
         /// <para><c>integer</c></para>
         /// </summary>
-        Integer = 74,
+        Integer = 77,
 
         /// <summary>
         /// <para>Symbol: IntLiteral</para>
         /// <para><c>IntLiteral</c></para>
         /// </summary>
-        Intliteral = 75,
+        Intliteral = 78,
 
         /// <summary>
         /// <para>Symbol: is</para>
         /// <para><c>is</c></para>
         /// </summary>
-        Is = 76,
-
-        /// <summary>
-        /// <para>Symbol: ITEM</para>
-        /// <para><c>ITEM</c></para>
-        /// </summary>
-        Item = 77,
+        Is = 79,
 
         /// <summary>
         /// <para>Symbol: list</para>
         /// <para><c>list</c></para>
         /// </summary>
-        List = 78,
+        List = 80,
 
         /// <summary>
         /// <para>Symbol: many</para>
         /// <para><c>many</c></para>
         /// </summary>
-        Many = 79,
+        Many = 81,
 
         /// <summary>
-        /// <para>Symbol: MENU</para>
-        /// <para><c>MENU</c></para>
+        /// <para>Symbol: menu</para>
+        /// <para><c>menu</c></para>
         /// </summary>
-        Menu = 80,
+        Menu = 82,
+
+        /// <summary>
+        /// <para>Symbol: menuitem</para>
+        /// <para><c>menuitem</c></para>
+        /// </summary>
+        Menuitem = 83,
 
         /// <summary>
         /// <para>Symbol: new</para>
         /// <para><c>new</c></para>
         /// </summary>
-        New = 81,
+        New = 84,
 
         /// <summary>
         /// <para>Symbol: not</para>
         /// <para><c>not</c></para>
         /// </summary>
-        Not = 82,
+        Not = 85,
 
         /// <summary>
         /// <para>Symbol: null</para>
         /// <para><c>null</c></para>
         /// </summary>
-        Null = 83,
+        Null = 86,
 
         /// <summary>
         /// <para>Symbol: observed</para>
         /// <para><c>observed</c></para>
         /// </summary>
-        Observed = 84,
+        Observed = 87,
 
         /// <summary>
         /// <para>Symbol: or</para>
         /// <para><c>or</c></para>
         /// </summary>
-        Or = 85,
+        Or = 88,
 
         /// <summary>
         /// <para>Symbol: position</para>
         /// <para><c>position</c></para>
         /// </summary>
-        Position = 86,
+        Position = 89,
 
         /// <summary>
         /// <para>Symbol: primary</para>
         /// <para><c>primary</c></para>
         /// </summary>
-        Primary = 87,
+        Primary = 90,
 
         /// <summary>
         /// <para>Symbol: property</para>
         /// <para><c>property</c></para>
         /// </summary>
-        Property = 88,
+        Property = 91,
 
         /// <summary>
         /// <para>Symbol: ref</para>
         /// <para><c>ref</c></para>
         /// </summary>
-        Ref = 89,
+        Ref = 92,
 
         /// <summary>
         /// <para>Symbol: return</para>
         /// <para><c>return</c></para>
         /// </summary>
-        Return = 90,
+        Return = 93,
 
         /// <summary>
         /// <para>Symbol: Separator</para>
         /// <para><c>Separator</c></para>
         /// </summary>
-        Separator = 91,
+        Separator = 94,
 
         /// <summary>
         /// <para>Symbol: set</para>
         /// <para><c>set</c></para>
         /// </summary>
-        Set = 92,
+        Set = 95,
 
         /// <summary>
         /// <para>Symbol: static</para>
         /// <para><c>static</c></para>
         /// </summary>
-        Static = 93,
+        Static = 96,
 
         /// <summary>
         /// <para>Symbol: StringLiteral</para>
         /// <para><c>StringLiteral</c></para>
         /// </summary>
-        Stringliteral = 94,
+        Stringliteral = 97,
 
         /// <summary>
         /// <para>Symbol: switch</para>
         /// <para><c>switch</c></para>
         /// </summary>
-        Switch = 95,
+        Switch = 98,
 
         /// <summary>
         /// <para>Symbol: table</para>
         /// <para><c>table</c></para>
         /// </summary>
-        Table = 96,
+        Table = 99,
 
         /// <summary>
         /// <para>Symbol: template</para>
         /// <para><c>template</c></para>
         /// </summary>
-        Template = 97,
+        Template = 100,
 
         /// <summary>
         /// <para>Symbol: through</para>
         /// <para><c>through</c></para>
         /// </summary>
-        Through = 98,
+        Through = 101,
 
         /// <summary>
         /// <para>Symbol: time</para>
         /// <para><c>time</c></para>
         /// </summary>
-        Time = 99,
+        Time = 102,
 
         /// <summary>
         /// <para>Symbol: timerange</para>
         /// <para><c>timerange</c></para>
         /// </summary>
-        Timerange = 100,
+        Timerange = 103,
 
         /// <summary>
         /// <para>Symbol: TimeSpanLiteral</para>
         /// <para><c>TimeSpanLiteral</c></para>
         /// </summary>
-        Timespanliteral = 101,
+        Timespanliteral = 104,
+
+        /// <summary>
+        /// <para>Symbol: toolbar</para>
+        /// <para><c>toolbar</c></para>
+        /// </summary>
+        Toolbar = 105,
+
+        /// <summary>
+        /// <para>Symbol: toolbutton</para>
+        /// <para><c>toolbutton</c></para>
+        /// </summary>
+        Toolbutton = 106,
 
         /// <summary>
         /// <para>Symbol: true</para>
         /// <para><c>true</c></para>
         /// </summary>
-        True = 102,
+        True = 107,
 
         /// <summary>
         /// <para>Symbol: type</para>
         /// <para><c>type</c></para>
         /// </summary>
-        Type = 103,
+        Type = 108,
 
         /// <summary>
         /// <para>Symbol: unique</para>
         /// <para><c>unique</c></para>
         /// </summary>
-        Unique = 104,
+        Unique = 109,
 
         /// <summary>
         /// <para>Symbol: update</para>
         /// <para><c>update</c></para>
         /// </summary>
-        Update = 105,
+        Update = 110,
 
         /// <summary>
         /// <para>Symbol: using</para>
         /// <para><c>using</c></para>
         /// </summary>
-        Using = 106,
+        Using = 111,
 
         /// <summary>
         /// <para>Symbol: var</para>
         /// <para><c>var</c></para>
         /// </summary>
-        Var = 107,
+        Var = 112,
 
         /// <summary>
         /// <para>Symbol: varchar</para>
         /// <para><c>varchar</c></para>
         /// </summary>
-        Varchar = 108,
+        Varchar = 113,
 
         /// <summary>
-        /// <para>Symbol: VBOX</para>
-        /// <para><c>VBOX</c></para>
+        /// <para>Symbol: vbox</para>
+        /// <para><c>vbox</c></para>
         /// </summary>
-        Vbox = 109,
+        Vbox = 114,
+
+        /// <summary>
+        /// <para>Symbol: vbuttonbox</para>
+        /// <para><c>vbuttonbox</c></para>
+        /// </summary>
+        Vbuttonbox = 115,
 
         /// <summary>
         /// <para>Symbol: while</para>
         /// <para><c>while</c></para>
         /// </summary>
-        While = 110,
+        While = 116,
 
         /// <summary>
-        /// <para>Symbol: WIDGET</para>
-        /// <para><c>WIDGET</c></para>
+        /// <para>Symbol: widget</para>
+        /// <para><c>widget</c></para>
         /// </summary>
-        Widget = 111,
+        Widget = 117,
 
         /// <summary>
-        /// <para>Symbol: WINDOW</para>
-        /// <para><c>WINDOW</c></para>
+        /// <para>Symbol: window</para>
+        /// <para><c>window</c></para>
         /// </summary>
-        Window = 112,
+        Window = 118,
 
         /// <summary>
         /// <para>Symbol: Arg</para>
         /// <para><c>&lt;Arg&gt;</c></para>
         /// </summary>
-        Arg = 113,
+        Arg = 119,
 
         /// <summary>
         /// <para>Symbol: Args</para>
         /// <para><c>&lt;Args&gt;</c></para>
         /// </summary>
-        Args = 114,
+        Args = 120,
 
         /// <summary>
         /// <para>Symbol: Block</para>
         /// <para><c>&lt;Block&gt;</c></para>
         /// </summary>
-        Block = 115,
+        Block = 121,
 
         /// <summary>
         /// <para>Symbol: Case Stms</para>
         /// <para><c>&lt;Case Stms&gt;</c></para>
         /// </summary>
-        Casestms = 116,
+        Casestms = 122,
 
         /// <summary>
         /// <para>Symbol: Database</para>
         /// <para><c>&lt;Database&gt;</c></para>
         /// </summary>
-        Database2 = 117,
+        Database2 = 123,
 
         /// <summary>
         /// <para>Symbol: DB Column</para>
         /// <para><c>&lt;DB Column&gt;</c></para>
         /// </summary>
-        Dbcolumn = 118,
+        Dbcolumn = 124,
 
         /// <summary>
         /// <para>Symbol: DB Column Attr</para>
         /// <para><c>&lt;DB Column Attr&gt;</c></para>
         /// </summary>
-        Dbcolumnattr = 119,
+        Dbcolumnattr = 125,
 
         /// <summary>
         /// <para>Symbol: DB Column Type</para>
         /// <para><c>&lt;DB Column Type&gt;</c></para>
         /// </summary>
-        Dbcolumntype = 120,
+        Dbcolumntype = 126,
 
         /// <summary>
         /// <para>Symbol: DB Columns</para>
         /// <para><c>&lt;DB Columns&gt;</c></para>
         /// </summary>
-        Dbcolumns = 121,
+        Dbcolumns = 127,
 
         /// <summary>
         /// <para>Symbol: DB Table</para>
         /// <para><c>&lt;DB Table&gt;</c></para>
         /// </summary>
-        Dbtable = 122,
+        Dbtable = 128,
 
         /// <summary>
         /// <para>Symbol: DB Table Attr</para>
         /// <para><c>&lt;DB Table Attr&gt;</c></para>
         /// </summary>
-        Dbtableattr = 123,
+        Dbtableattr = 129,
 
         /// <summary>
         /// <para>Symbol: DB Tables</para>
         /// <para><c>&lt;DB Tables&gt;</c></para>
         /// </summary>
-        Dbtables = 124,
+        Dbtables = 130,
 
         /// <summary>
         /// <para>Symbol: Dict List</para>
         /// <para><c>&lt;Dict List&gt;</c></para>
         /// </summary>
-        Dictlist = 125,
+        Dictlist = 131,
 
         /// <summary>
         /// <para>Symbol: Expr</para>
         /// <para><c>&lt;Expr&gt;</c></para>
         /// </summary>
-        Expr = 126,
+        Expr = 132,
 
         /// <summary>
         /// <para>Symbol: Expr List</para>
         /// <para><c>&lt;Expr List&gt;</c></para>
         /// </summary>
-        Exprlist = 127,
+        Exprlist = 133,
 
         /// <summary>
         /// <para>Symbol: Func Arg</para>
         /// <para><c>&lt;Func Arg&gt;</c></para>
         /// </summary>
-        Funcarg = 128,
+        Funcarg = 134,
 
         /// <summary>
         /// <para>Symbol: Func args</para>
         /// <para><c>&lt;Func args&gt;</c></para>
         /// </summary>
-        Funcargs = 129,
+        Funcargs = 135,
 
         /// <summary>
         /// <para>Symbol: Function</para>
         /// <para><c>&lt;Function&gt;</c></para>
         /// </summary>
-        Function2 = 130,
+        Function2 = 136,
 
         /// <summary>
         /// <para>Symbol: ID List</para>
         /// <para><c>&lt;ID List&gt;</c></para>
         /// </summary>
-        Idlist = 131,
+        Idlist = 137,
 
         /// <summary>
         /// <para>Symbol: Layout Block</para>
         /// <para><c>&lt;Layout Block&gt;</c></para>
         /// </summary>
-        Layoutblock = 132,
+        Layoutblock = 138,
 
         /// <summary>
         /// <para>Symbol: Layout List</para>
         /// <para><c>&lt;Layout List&gt;</c></para>
         /// </summary>
-        Layoutlist = 133,
+        Layoutlist = 139,
 
         /// <summary>
         /// <para>Symbol: Menu Block</para>
         /// <para><c>&lt;Menu Block&gt;</c></para>
         /// </summary>
-        Menublock = 134,
+        Menublock = 140,
 
         /// <summary>
         /// <para>Symbol: Menu Item</para>
         /// <para><c>&lt;Menu Item&gt;</c></para>
         /// </summary>
-        Menuitem = 135,
+        Menuitem2 = 141,
 
         /// <summary>
         /// <para>Symbol: MenuItems List</para>
         /// <para><c>&lt;MenuItems List&gt;</c></para>
         /// </summary>
-        Menuitemslist = 136,
+        Menuitemslist = 142,
 
         /// <summary>
         /// <para>Symbol: Normal Stm</para>
         /// <para><c>&lt;Normal Stm&gt;</c></para>
         /// </summary>
-        Normalstm = 137,
+        Normalstm = 143,
 
         /// <summary>
         /// <para>Symbol: Op Add</para>
         /// <para><c>&lt;Op Add&gt;</c></para>
         /// </summary>
-        Opadd = 138,
+        Opadd = 144,
 
         /// <summary>
         /// <para>Symbol: Op And</para>
         /// <para><c>&lt;Op And&gt;</c></para>
         /// </summary>
-        Opand = 139,
+        Opand = 145,
 
         /// <summary>
         /// <para>Symbol: Op Compare</para>
         /// <para><c>&lt;Op Compare&gt;</c></para>
         /// </summary>
-        Opcompare = 140,
+        Opcompare = 146,
 
         /// <summary>
         /// <para>Symbol: Op Equate</para>
         /// <para><c>&lt;Op Equate&gt;</c></para>
         /// </summary>
-        Opequate = 141,
+        Opequate = 147,
 
         /// <summary>
         /// <para>Symbol: Op If</para>
         /// <para><c>&lt;Op If&gt;</c></para>
         /// </summary>
-        Opif = 142,
+        Opif = 148,
 
         /// <summary>
         /// <para>Symbol: Op In</para>
         /// <para><c>&lt;Op In&gt;</c></para>
         /// </summary>
-        Opin = 143,
+        Opin = 149,
 
         /// <summary>
         /// <para>Symbol: Op Mult</para>
         /// <para><c>&lt;Op Mult&gt;</c></para>
         /// </summary>
-        Opmult = 144,
+        Opmult = 150,
 
         /// <summary>
         /// <para>Symbol: Op Or</para>
         /// <para><c>&lt;Op Or&gt;</c></para>
         /// </summary>
-        Opor = 145,
+        Opor = 151,
 
         /// <summary>
         /// <para>Symbol: Op Pointer</para>
         /// <para><c>&lt;Op Pointer&gt;</c></para>
         /// </summary>
-        Oppointer = 146,
+        Oppointer = 152,
 
         /// <summary>
         /// <para>Symbol: Op Unary</para>
         /// <para><c>&lt;Op Unary&gt;</c></para>
         /// </summary>
-        Opunary = 147,
+        Opunary = 153,
 
         /// <summary>
         /// <para>Symbol: QualifiedName</para>
         /// <para><c>&lt;QualifiedName&gt;</c></para>
         /// </summary>
-        Qualifiedname = 148,
+        Qualifiedname = 154,
 
         /// <summary>
         /// <para>Symbol: Stm</para>
         /// <para><c>&lt;Stm&gt;</c></para>
         /// </summary>
-        Stm = 149,
+        Stm = 155,
 
         /// <summary>
         /// <para>Symbol: Stm List</para>
         /// <para><c>&lt;Stm List&gt;</c></para>
         /// </summary>
-        Stmlist = 150,
+        Stmlist = 156,
 
         /// <summary>
         /// <para>Symbol: Then Stm</para>
         /// <para><c>&lt;Then Stm&gt;</c></para>
         /// </summary>
-        Thenstm = 151,
+        Thenstm = 157,
 
         /// <summary>
         /// <para>Symbol: Value</para>
         /// <para><c>&lt;Value&gt;</c></para>
         /// </summary>
-        Value = 152,
+        Value = 158,
 
         /// <summary>
         /// <para>Symbol: Widget</para>
         /// <para><c>&lt;Widget&gt;</c></para>
         /// </summary>
-        Widget2 = 153,
+        Widget2 = 159,
 
         /// <summary>
         /// <para>Symbol: WndParam</para>
         /// <para><c>&lt;WndParam&gt;</c></para>
         /// </summary>
-        Wndparam = 154,
+        Wndparam = 160,
 
         /// <summary>
         /// <para>Symbol: WndParam List</para>
         /// <para><c>&lt;WndParam List&gt;</c></para>
         /// </summary>
-        Wndparamlist = 155,
+        Wndparamlist = 161,
 
 		#endregion
 
@@ -1464,621 +1500,681 @@ namespace LPS.ToolScript
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Widget&gt; ::= WINDOW ID &lt;WndParam List&gt; &lt;Layout Block&gt;</c></para>
+        /// <para><c>&lt;Widget&gt; ::= window ID &lt;WndParam List&gt; &lt;Layout Block&gt;</c></para>
         /// </summary>
         RuleWidgetWindowId = ToolScriptParserBase.RulesOffset + 85,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Widget&gt; ::= WINDOW &lt;WndParam List&gt; &lt;Layout Block&gt;</c></para>
+        /// <para><c>&lt;Widget&gt; ::= window &lt;WndParam List&gt; &lt;Layout Block&gt;</c></para>
         /// </summary>
         RuleWidgetWindow = ToolScriptParserBase.RulesOffset + 86,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Widget&gt; ::= WIDGET ID &lt;Layout Block&gt;</c></para>
+        /// <para><c>&lt;Widget&gt; ::= widget ID &lt;Layout Block&gt;</c></para>
         /// </summary>
         RuleWidgetWidgetId = ToolScriptParserBase.RulesOffset + 87,
 
         /// <summary>
         /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Widget&gt; ::= widget &lt;Layout Block&gt;</c></para>
+        /// </summary>
+        RuleWidgetWidget = ToolScriptParserBase.RulesOffset + 88,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
         /// <para><c>&lt;WndParam List&gt; ::= &lt;WndParam&gt; &lt;WndParam List&gt;</c></para>
         /// </summary>
-        RuleWndparamlist = ToolScriptParserBase.RulesOffset + 88,
+        RuleWndparamlist = ToolScriptParserBase.RulesOffset + 89,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;WndParam List&gt; ::= </c></para>
         /// </summary>
-        RuleWndparamlist2 = ToolScriptParserBase.RulesOffset + 89,
+        RuleWndparamlist2 = ToolScriptParserBase.RulesOffset + 90,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;WndParam&gt; ::= ID '=' &lt;Expr&gt; ';'</c></para>
         /// </summary>
-        RuleWndparamIdEqSemi = ToolScriptParserBase.RulesOffset + 90,
+        RuleWndparamIdEqSemi = ToolScriptParserBase.RulesOffset + 91,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;WndParam&gt; ::= ID ';'</c></para>
         /// </summary>
-        RuleWndparamIdSemi = ToolScriptParserBase.RulesOffset + 91,
+        RuleWndparamIdSemi = ToolScriptParserBase.RulesOffset + 92,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout List&gt; ::= &lt;Layout List&gt; &lt;Layout Block&gt;</c></para>
         /// </summary>
-        RuleLayoutlist = ToolScriptParserBase.RulesOffset + 92,
+        RuleLayoutlist = ToolScriptParserBase.RulesOffset + 93,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout List&gt; ::= </c></para>
         /// </summary>
-        RuleLayoutlist2 = ToolScriptParserBase.RulesOffset + 93,
+        RuleLayoutlist2 = ToolScriptParserBase.RulesOffset + 94,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Layout Block&gt; ::= HBOX &lt;WndParam List&gt; &lt;Layout List&gt; END</c></para>
+        /// <para><c>&lt;Layout Block&gt; ::= hbox &lt;WndParam List&gt; &lt;Layout List&gt; end</c></para>
         /// </summary>
-        RuleLayoutblockHboxEnd = ToolScriptParserBase.RulesOffset + 94,
+        RuleLayoutblockHboxEnd = ToolScriptParserBase.RulesOffset + 95,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Layout Block&gt; ::= VBOX &lt;WndParam List&gt; &lt;Layout List&gt; END</c></para>
+        /// <para><c>&lt;Layout Block&gt; ::= vbox &lt;WndParam List&gt; &lt;Layout List&gt; end</c></para>
         /// </summary>
-        RuleLayoutblockVboxEnd = ToolScriptParserBase.RulesOffset + 95,
+        RuleLayoutblockVboxEnd = ToolScriptParserBase.RulesOffset + 96,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Layout Block&gt; ::= table &lt;WndParam List&gt; &lt;Layout List&gt; END</c></para>
+        /// <para><c>&lt;Layout Block&gt; ::= hbuttonbox &lt;WndParam List&gt; &lt;Layout List&gt; end</c></para>
         /// </summary>
-        RuleLayoutblockTableEnd = ToolScriptParserBase.RulesOffset + 96,
+        RuleLayoutblockHbuttonboxEnd = ToolScriptParserBase.RulesOffset + 97,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Layout Block&gt; ::= vbuttonbox &lt;WndParam List&gt; &lt;Layout List&gt; end</c></para>
+        /// </summary>
+        RuleLayoutblockVbuttonboxEnd = ToolScriptParserBase.RulesOffset + 98,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Layout Block&gt; ::= table &lt;WndParam List&gt; &lt;Layout List&gt; end</c></para>
+        /// </summary>
+        RuleLayoutblockTableEnd = ToolScriptParserBase.RulesOffset + 99,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Layout Block&gt; ::= toolbar &lt;WndParam List&gt; &lt;Layout List&gt; end</c></para>
+        /// </summary>
+        RuleLayoutblockToolbarEnd = ToolScriptParserBase.RulesOffset + 100,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Layout Block&gt; ::= button &lt;WndParam List&gt; &lt;Layout Block&gt;</c></para>
+        /// </summary>
+        RuleLayoutblockButton = ToolScriptParserBase.RulesOffset + 101,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Layout Block&gt; ::= button &lt;WndParam List&gt; end</c></para>
+        /// </summary>
+        RuleLayoutblockButtonEnd = ToolScriptParserBase.RulesOffset + 102,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Layout Block&gt; ::= toolbutton &lt;WndParam List&gt; &lt;Layout Block&gt;</c></para>
+        /// </summary>
+        RuleLayoutblockToolbutton = ToolScriptParserBase.RulesOffset + 103,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Layout Block&gt; ::= toolbutton &lt;WndParam List&gt; end</c></para>
+        /// </summary>
+        RuleLayoutblockToolbuttonEnd = ToolScriptParserBase.RulesOffset + 104,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Layout Block&gt; ::= image &lt;WndParam List&gt;</c></para>
+        /// </summary>
+        RuleLayoutblockImage = ToolScriptParserBase.RulesOffset + 105,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Layout Block&gt; ::= StringLiteral &lt;WndParam List&gt;</c></para>
+        /// </summary>
+        RuleLayoutblockStringliteral = ToolScriptParserBase.RulesOffset + 106,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= &lt;Menu Block&gt;</c></para>
         /// </summary>
-        RuleLayoutblock = ToolScriptParserBase.RulesOffset + 97,
+        RuleLayoutblock = ToolScriptParserBase.RulesOffset + 107,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= ref &lt;QualifiedName&gt; &lt;WndParam List&gt;</c></para>
         /// </summary>
-        RuleLayoutblockRef = ToolScriptParserBase.RulesOffset + 98,
+        RuleLayoutblockRef = ToolScriptParserBase.RulesOffset + 108,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= ref StringLiteral &lt;WndParam List&gt;</c></para>
         /// </summary>
-        RuleLayoutblockRefStringliteral = ToolScriptParserBase.RulesOffset + 99,
+        RuleLayoutblockRefStringliteral = ToolScriptParserBase.RulesOffset + 109,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= '[' &lt;Expr&gt; ']' &lt;WndParam List&gt;</c></para>
         /// </summary>
-        RuleLayoutblockLbracketRbracket = ToolScriptParserBase.RulesOffset + 100,
+        RuleLayoutblockLbracketRbracket = ToolScriptParserBase.RulesOffset + 110,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Menu Block&gt; ::= MENU &lt;WndParam List&gt; &lt;MenuItems List&gt; END</c></para>
+        /// <para><c>&lt;Menu Block&gt; ::= menu &lt;WndParam List&gt; &lt;MenuItems List&gt; end</c></para>
         /// </summary>
-        RuleMenublockMenuEnd = ToolScriptParserBase.RulesOffset + 101,
+        RuleMenublockMenuEnd = ToolScriptParserBase.RulesOffset + 111,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;MenuItems List&gt; ::= &lt;Menu Item&gt; &lt;MenuItems List&gt;</c></para>
         /// </summary>
-        RuleMenuitemslist = ToolScriptParserBase.RulesOffset + 102,
+        RuleMenuitemslist = ToolScriptParserBase.RulesOffset + 112,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;MenuItems List&gt; ::= </c></para>
         /// </summary>
-        RuleMenuitemslist2 = ToolScriptParserBase.RulesOffset + 103,
+        RuleMenuitemslist2 = ToolScriptParserBase.RulesOffset + 113,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Menu Item&gt; ::= &lt;Menu Block&gt;</c></para>
         /// </summary>
-        RuleMenuitem = ToolScriptParserBase.RulesOffset + 104,
+        RuleMenuitem = ToolScriptParserBase.RulesOffset + 114,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Menu Item&gt; ::= ITEM &lt;WndParam List&gt;</c></para>
+        /// <para><c>&lt;Menu Item&gt; ::= menuitem &lt;WndParam List&gt;</c></para>
         /// </summary>
-        RuleMenuitemItem = ToolScriptParserBase.RulesOffset + 105,
+        RuleMenuitemMenuitem = ToolScriptParserBase.RulesOffset + 115,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Menu Item&gt; ::= Separator</c></para>
         /// </summary>
-        RuleMenuitemSeparator = ToolScriptParserBase.RulesOffset + 106,
+        RuleMenuitemSeparator = ToolScriptParserBase.RulesOffset + 116,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr List&gt; ::= &lt;Expr List&gt; ',' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprlistComma = ToolScriptParserBase.RulesOffset + 107,
+        RuleExprlistComma = ToolScriptParserBase.RulesOffset + 117,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr List&gt; ::= &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprlist = ToolScriptParserBase.RulesOffset + 108,
+        RuleExprlist = ToolScriptParserBase.RulesOffset + 118,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Dict List&gt; ::= &lt;Expr&gt; ':' &lt;Expr&gt; ',' &lt;Dict List&gt;</c></para>
         /// </summary>
-        RuleDictlistColonComma = ToolScriptParserBase.RulesOffset + 109,
+        RuleDictlistColonComma = ToolScriptParserBase.RulesOffset + 119,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Dict List&gt; ::= &lt;Expr&gt; ':' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleDictlistColon = ToolScriptParserBase.RulesOffset + 110,
+        RuleDictlistColon = ToolScriptParserBase.RulesOffset + 120,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Dict List&gt; ::= </c></para>
         /// </summary>
-        RuleDictlist = ToolScriptParserBase.RulesOffset + 111,
+        RuleDictlist = ToolScriptParserBase.RulesOffset + 121,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprEq = ToolScriptParserBase.RulesOffset + 112,
+        RuleExprEq = ToolScriptParserBase.RulesOffset + 122,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '+=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprPluseq = ToolScriptParserBase.RulesOffset + 113,
+        RuleExprPluseq = ToolScriptParserBase.RulesOffset + 123,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '-=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprMinuseq = ToolScriptParserBase.RulesOffset + 114,
+        RuleExprMinuseq = ToolScriptParserBase.RulesOffset + 124,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '*=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprTimeseq = ToolScriptParserBase.RulesOffset + 115,
+        RuleExprTimeseq = ToolScriptParserBase.RulesOffset + 125,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '/=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprDiveq = ToolScriptParserBase.RulesOffset + 116,
+        RuleExprDiveq = ToolScriptParserBase.RulesOffset + 126,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '&lt;==' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprLteqeq = ToolScriptParserBase.RulesOffset + 117,
+        RuleExprLteqeq = ToolScriptParserBase.RulesOffset + 127,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt; '&lt;==&gt;' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprLteqeqgt = ToolScriptParserBase.RulesOffset + 118,
+        RuleExprLteqeqgt = ToolScriptParserBase.RulesOffset + 128,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op If&gt;</c></para>
         /// </summary>
-        RuleExpr = ToolScriptParserBase.RulesOffset + 119,
+        RuleExpr = ToolScriptParserBase.RulesOffset + 129,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op If&gt; ::= &lt;Op Or&gt; '?' &lt;Op If&gt; ':' &lt;Op If&gt;</c></para>
         /// </summary>
-        RuleOpifQuestionColon = ToolScriptParserBase.RulesOffset + 120,
+        RuleOpifQuestionColon = ToolScriptParserBase.RulesOffset + 130,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op If&gt; ::= &lt;Op Or&gt;</c></para>
         /// </summary>
-        RuleOpif = ToolScriptParserBase.RulesOffset + 121,
+        RuleOpif = ToolScriptParserBase.RulesOffset + 131,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Or&gt; ::= &lt;Op Or&gt; or &lt;Op And&gt;</c></para>
         /// </summary>
-        RuleOporOr = ToolScriptParserBase.RulesOffset + 122,
+        RuleOporOr = ToolScriptParserBase.RulesOffset + 132,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Or&gt; ::= &lt;Op And&gt;</c></para>
         /// </summary>
-        RuleOpor = ToolScriptParserBase.RulesOffset + 123,
+        RuleOpor = ToolScriptParserBase.RulesOffset + 133,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op And&gt; ::= &lt;Op And&gt; and &lt;Op Equate&gt;</c></para>
         /// </summary>
-        RuleOpandAnd = ToolScriptParserBase.RulesOffset + 124,
+        RuleOpandAnd = ToolScriptParserBase.RulesOffset + 134,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op And&gt; ::= &lt;Op Equate&gt;</c></para>
         /// </summary>
-        RuleOpand = ToolScriptParserBase.RulesOffset + 125,
+        RuleOpand = ToolScriptParserBase.RulesOffset + 135,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Equate&gt; ::= &lt;Op Equate&gt; '==' &lt;Op Compare&gt;</c></para>
         /// </summary>
-        RuleOpequateEqeq = ToolScriptParserBase.RulesOffset + 126,
+        RuleOpequateEqeq = ToolScriptParserBase.RulesOffset + 136,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Equate&gt; ::= &lt;Op Equate&gt; '!=' &lt;Op Compare&gt;</c></para>
         /// </summary>
-        RuleOpequateExclameq = ToolScriptParserBase.RulesOffset + 127,
+        RuleOpequateExclameq = ToolScriptParserBase.RulesOffset + 137,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Equate&gt; ::= &lt;Op Compare&gt;</c></para>
         /// </summary>
-        RuleOpequate = ToolScriptParserBase.RulesOffset + 128,
+        RuleOpequate = ToolScriptParserBase.RulesOffset + 138,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&lt;' &lt;Op In&gt;</c></para>
         /// </summary>
-        RuleOpcompareLt = ToolScriptParserBase.RulesOffset + 129,
+        RuleOpcompareLt = ToolScriptParserBase.RulesOffset + 139,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&gt;' &lt;Op In&gt;</c></para>
         /// </summary>
-        RuleOpcompareGt = ToolScriptParserBase.RulesOffset + 130,
+        RuleOpcompareGt = ToolScriptParserBase.RulesOffset + 140,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&lt;=' &lt;Op In&gt;</c></para>
         /// </summary>
-        RuleOpcompareLteq = ToolScriptParserBase.RulesOffset + 131,
+        RuleOpcompareLteq = ToolScriptParserBase.RulesOffset + 141,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&gt;=' &lt;Op In&gt;</c></para>
         /// </summary>
-        RuleOpcompareGteq = ToolScriptParserBase.RulesOffset + 132,
+        RuleOpcompareGteq = ToolScriptParserBase.RulesOffset + 142,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Compare&gt; ::= &lt;Op In&gt;</c></para>
         /// </summary>
-        RuleOpcompare = ToolScriptParserBase.RulesOffset + 133,
+        RuleOpcompare = ToolScriptParserBase.RulesOffset + 143,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op In&gt; ::= &lt;Op In&gt; in &lt;Op Add&gt;</c></para>
         /// </summary>
-        RuleOpinIn = ToolScriptParserBase.RulesOffset + 134,
+        RuleOpinIn = ToolScriptParserBase.RulesOffset + 144,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op In&gt; ::= &lt;Op In&gt; in '&lt;' &lt;Op Add&gt; ',' &lt;Op Add&gt; '&gt;'</c></para>
         /// </summary>
-        RuleOpinInLtCommaGt = ToolScriptParserBase.RulesOffset + 135,
+        RuleOpinInLtCommaGt = ToolScriptParserBase.RulesOffset + 145,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op In&gt; ::= &lt;Op In&gt; in '&lt;' &lt;Op Add&gt; ',' &lt;Op Add&gt; ')'</c></para>
         /// </summary>
-        RuleOpinInLtCommaRparan = ToolScriptParserBase.RulesOffset + 136,
+        RuleOpinInLtCommaRparan = ToolScriptParserBase.RulesOffset + 146,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op In&gt; ::= &lt;Op In&gt; in '(' &lt;Op Add&gt; ',' &lt;Op Add&gt; '&gt;'</c></para>
         /// </summary>
-        RuleOpinInLparanCommaGt = ToolScriptParserBase.RulesOffset + 137,
+        RuleOpinInLparanCommaGt = ToolScriptParserBase.RulesOffset + 147,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op In&gt; ::= &lt;Op In&gt; in '(' &lt;Op Add&gt; ',' &lt;Op Add&gt; ')'</c></para>
         /// </summary>
-        RuleOpinInLparanCommaRparan = ToolScriptParserBase.RulesOffset + 138,
+        RuleOpinInLparanCommaRparan = ToolScriptParserBase.RulesOffset + 148,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op In&gt; ::= &lt;Op Add&gt;</c></para>
         /// </summary>
-        RuleOpin = ToolScriptParserBase.RulesOffset + 139,
+        RuleOpin = ToolScriptParserBase.RulesOffset + 149,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Add&gt; ::= &lt;Op Add&gt; '+' &lt;Op Mult&gt;</c></para>
         /// </summary>
-        RuleOpaddPlus = ToolScriptParserBase.RulesOffset + 140,
+        RuleOpaddPlus = ToolScriptParserBase.RulesOffset + 150,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Add&gt; ::= &lt;Op Add&gt; '-' &lt;Op Mult&gt;</c></para>
         /// </summary>
-        RuleOpaddMinus = ToolScriptParserBase.RulesOffset + 141,
+        RuleOpaddMinus = ToolScriptParserBase.RulesOffset + 151,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Add&gt; ::= &lt;Op Mult&gt;</c></para>
         /// </summary>
-        RuleOpadd = ToolScriptParserBase.RulesOffset + 142,
+        RuleOpadd = ToolScriptParserBase.RulesOffset + 152,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Mult&gt; '*' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpmultTimes = ToolScriptParserBase.RulesOffset + 143,
+        RuleOpmultTimes = ToolScriptParserBase.RulesOffset + 153,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Mult&gt; '/' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpmultDiv = ToolScriptParserBase.RulesOffset + 144,
+        RuleOpmultDiv = ToolScriptParserBase.RulesOffset + 154,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Mult&gt; '%' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpmultPercent = ToolScriptParserBase.RulesOffset + 145,
+        RuleOpmultPercent = ToolScriptParserBase.RulesOffset + 155,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpmult = ToolScriptParserBase.RulesOffset + 146,
+        RuleOpmult = ToolScriptParserBase.RulesOffset + 156,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= not &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryNot = ToolScriptParserBase.RulesOffset + 147,
+        RuleOpunaryNot = ToolScriptParserBase.RulesOffset + 157,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= '!' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryExclam = ToolScriptParserBase.RulesOffset + 148,
+        RuleOpunaryExclam = ToolScriptParserBase.RulesOffset + 158,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= '-' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryMinus = ToolScriptParserBase.RulesOffset + 149,
+        RuleOpunaryMinus = ToolScriptParserBase.RulesOffset + 159,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= cast &lt;Op Unary&gt; as &lt;QualifiedName&gt;</c></para>
         /// </summary>
-        RuleOpunaryCastAs = ToolScriptParserBase.RulesOffset + 150,
+        RuleOpunaryCastAs = ToolScriptParserBase.RulesOffset + 160,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= '++' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryPlusplus = ToolScriptParserBase.RulesOffset + 151,
+        RuleOpunaryPlusplus = ToolScriptParserBase.RulesOffset + 161,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= -- &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryMinusminus = ToolScriptParserBase.RulesOffset + 152,
+        RuleOpunaryMinusminus = ToolScriptParserBase.RulesOffset + 162,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; '++'</c></para>
         /// </summary>
-        RuleOpunaryPlusplus2 = ToolScriptParserBase.RulesOffset + 153,
+        RuleOpunaryPlusplus2 = ToolScriptParserBase.RulesOffset + 163,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; --</c></para>
         /// </summary>
-        RuleOpunaryMinusminus2 = ToolScriptParserBase.RulesOffset + 154,
+        RuleOpunaryMinusminus2 = ToolScriptParserBase.RulesOffset + 164,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; is null</c></para>
         /// </summary>
-        RuleOpunaryIsNull = ToolScriptParserBase.RulesOffset + 155,
+        RuleOpunaryIsNull = ToolScriptParserBase.RulesOffset + 165,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; not null</c></para>
         /// </summary>
-        RuleOpunaryNotNull = ToolScriptParserBase.RulesOffset + 156,
+        RuleOpunaryNotNull = ToolScriptParserBase.RulesOffset + 166,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; is not null</c></para>
         /// </summary>
-        RuleOpunaryIsNotNull = ToolScriptParserBase.RulesOffset + 157,
+        RuleOpunaryIsNotNull = ToolScriptParserBase.RulesOffset + 167,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt;</c></para>
         /// </summary>
-        RuleOpunary = ToolScriptParserBase.RulesOffset + 158,
+        RuleOpunary = ToolScriptParserBase.RulesOffset + 168,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '.' &lt;Value&gt;</c></para>
         /// </summary>
-        RuleOppointerDot = ToolScriptParserBase.RulesOffset + 159,
+        RuleOppointerDot = ToolScriptParserBase.RulesOffset + 169,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '-&gt;' &lt;Value&gt;</c></para>
         /// </summary>
-        RuleOppointerMinusgt = ToolScriptParserBase.RulesOffset + 160,
+        RuleOppointerMinusgt = ToolScriptParserBase.RulesOffset + 170,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '[' &lt;Expr&gt; ']'</c></para>
         /// </summary>
-        RuleOppointerLbracketRbracket = ToolScriptParserBase.RulesOffset + 161,
+        RuleOppointerLbracketRbracket = ToolScriptParserBase.RulesOffset + 171,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '(' &lt;Args&gt; ')'</c></para>
         /// </summary>
-        RuleOppointerLparanRparan = ToolScriptParserBase.RulesOffset + 162,
+        RuleOppointerLparanRparan = ToolScriptParserBase.RulesOffset + 172,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Value&gt;</c></para>
         /// </summary>
-        RuleOppointer = ToolScriptParserBase.RulesOffset + 163,
+        RuleOppointer = ToolScriptParserBase.RulesOffset + 173,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= IntLiteral</c></para>
         /// </summary>
-        RuleValueIntliteral = ToolScriptParserBase.RulesOffset + 164,
+        RuleValueIntliteral = ToolScriptParserBase.RulesOffset + 174,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= StringLiteral</c></para>
         /// </summary>
-        RuleValueStringliteral = ToolScriptParserBase.RulesOffset + 165,
+        RuleValueStringliteral = ToolScriptParserBase.RulesOffset + 175,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= DecimalLiteral</c></para>
         /// </summary>
-        RuleValueDecimalliteral = ToolScriptParserBase.RulesOffset + 166,
+        RuleValueDecimalliteral = ToolScriptParserBase.RulesOffset + 176,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= DateTimeLiteral</c></para>
         /// </summary>
-        RuleValueDatetimeliteral = ToolScriptParserBase.RulesOffset + 167,
+        RuleValueDatetimeliteral = ToolScriptParserBase.RulesOffset + 177,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= TimeSpanLiteral</c></para>
         /// </summary>
-        RuleValueTimespanliteral = ToolScriptParserBase.RulesOffset + 168,
+        RuleValueTimespanliteral = ToolScriptParserBase.RulesOffset + 178,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= type &lt;QualifiedName&gt;</c></para>
         /// </summary>
-        RuleValueType = ToolScriptParserBase.RulesOffset + 169,
+        RuleValueType = ToolScriptParserBase.RulesOffset + 179,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= &lt;Function&gt;</c></para>
         /// </summary>
-        RuleValue = ToolScriptParserBase.RulesOffset + 170,
+        RuleValue = ToolScriptParserBase.RulesOffset + 180,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= &lt;Database&gt;</c></para>
         /// </summary>
-        RuleValue2 = ToolScriptParserBase.RulesOffset + 171,
+        RuleValue2 = ToolScriptParserBase.RulesOffset + 181,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= &lt;Widget&gt;</c></para>
         /// </summary>
-        RuleValue3 = ToolScriptParserBase.RulesOffset + 172,
+        RuleValue3 = ToolScriptParserBase.RulesOffset + 182,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= new &lt;QualifiedName&gt; '(' &lt;Args&gt; ')'</c></para>
         /// </summary>
-        RuleValueNewLparanRparan = ToolScriptParserBase.RulesOffset + 173,
+        RuleValueNewLparanRparan = ToolScriptParserBase.RulesOffset + 183,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= ID</c></para>
         /// </summary>
-        RuleValueId = ToolScriptParserBase.RulesOffset + 174,
+        RuleValueId = ToolScriptParserBase.RulesOffset + 184,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= var ID</c></para>
         /// </summary>
-        RuleValueVarId = ToolScriptParserBase.RulesOffset + 175,
+        RuleValueVarId = ToolScriptParserBase.RulesOffset + 185,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= static ID</c></para>
         /// </summary>
-        RuleValueStaticId = ToolScriptParserBase.RulesOffset + 176,
+        RuleValueStaticId = ToolScriptParserBase.RulesOffset + 186,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= '(' &lt;Expr&gt; ')'</c></para>
         /// </summary>
-        RuleValueLparanRparan = ToolScriptParserBase.RulesOffset + 177,
+        RuleValueLparanRparan = ToolScriptParserBase.RulesOffset + 187,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= '[' &lt;Expr List&gt; ']'</c></para>
         /// </summary>
-        RuleValueLbracketRbracket = ToolScriptParserBase.RulesOffset + 178,
+        RuleValueLbracketRbracket = ToolScriptParserBase.RulesOffset + 188,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= '{' &lt;Dict List&gt; '}'</c></para>
         /// </summary>
-        RuleValueLbraceRbrace = ToolScriptParserBase.RulesOffset + 179,
+        RuleValueLbraceRbrace = ToolScriptParserBase.RulesOffset + 189,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= property &lt;Expr&gt; ';'</c></para>
         /// </summary>
-        RuleValuePropertySemi = ToolScriptParserBase.RulesOffset + 180,
+        RuleValuePropertySemi = ToolScriptParserBase.RulesOffset + 190,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= property &lt;Expr&gt; get &lt;Expr&gt; ';'</c></para>
         /// </summary>
-        RuleValuePropertyGetSemi = ToolScriptParserBase.RulesOffset + 181,
+        RuleValuePropertyGetSemi = ToolScriptParserBase.RulesOffset + 191,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= property &lt;Expr&gt; get &lt;Expr&gt; set &lt;Expr&gt; ';'</c></para>
         /// </summary>
-        RuleValuePropertyGetSetSemi = ToolScriptParserBase.RulesOffset + 182,
+        RuleValuePropertyGetSetSemi = ToolScriptParserBase.RulesOffset + 192,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= dict</c></para>
         /// </summary>
-        RuleValueDict = ToolScriptParserBase.RulesOffset + 183,
+        RuleValueDict = ToolScriptParserBase.RulesOffset + 193,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= list</c></para>
         /// </summary>
-        RuleValueList = ToolScriptParserBase.RulesOffset + 184,
+        RuleValueList = ToolScriptParserBase.RulesOffset + 194,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= null</c></para>
         /// </summary>
-        RuleValueNull = ToolScriptParserBase.RulesOffset + 185,
+        RuleValueNull = ToolScriptParserBase.RulesOffset + 195,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= true</c></para>
         /// </summary>
-        RuleValueTrue = ToolScriptParserBase.RulesOffset + 186,
+        RuleValueTrue = ToolScriptParserBase.RulesOffset + 196,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= false</c></para>
         /// </summary>
-        RuleValueFalse = ToolScriptParserBase.RulesOffset + 187 
+        RuleValueFalse = ToolScriptParserBase.RulesOffset + 197 
 
 	    #endregion
     };
@@ -2546,6 +2642,15 @@ namespace LPS.ToolScript
 		}
 
 		/// <summary>
+		/// <para>Symbol: button</para>
+		/// <para><c>button</c></para>
+		/// </summary>
+		protected virtual object TerminalButton(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol button");
+		}
+
+		/// <summary>
 		/// <para>Symbol: case</para>
 		/// <para><c>case</c></para>
 		/// </summary>
@@ -2690,12 +2795,12 @@ namespace LPS.ToolScript
 		}
 
 		/// <summary>
-		/// <para>Symbol: END</para>
-		/// <para><c>END</c></para>
+		/// <para>Symbol: end</para>
+		/// <para><c>end</c></para>
 		/// </summary>
 		protected virtual object TerminalEnd(TerminalToken token)
 		{
-			throw new NotImplementedException("Symbol END");
+			throw new NotImplementedException("Symbol end");
 		}
 
 		/// <summary>
@@ -2762,12 +2867,21 @@ namespace LPS.ToolScript
 		}
 
 		/// <summary>
-		/// <para>Symbol: HBOX</para>
-		/// <para><c>HBOX</c></para>
+		/// <para>Symbol: hbox</para>
+		/// <para><c>hbox</c></para>
 		/// </summary>
 		protected virtual object TerminalHbox(TerminalToken token)
 		{
-			throw new NotImplementedException("Symbol HBOX");
+			throw new NotImplementedException("Symbol hbox");
+		}
+
+		/// <summary>
+		/// <para>Symbol: hbuttonbox</para>
+		/// <para><c>hbuttonbox</c></para>
+		/// </summary>
+		protected virtual object TerminalHbuttonbox(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol hbuttonbox");
 		}
 
 		/// <summary>
@@ -2786,6 +2900,15 @@ namespace LPS.ToolScript
 		protected virtual object TerminalIf(TerminalToken token)
 		{
 			throw new NotImplementedException("Symbol if");
+		}
+
+		/// <summary>
+		/// <para>Symbol: image</para>
+		/// <para><c>image</c></para>
+		/// </summary>
+		protected virtual object TerminalImage(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol image");
 		}
 
 		/// <summary>
@@ -2843,15 +2966,6 @@ namespace LPS.ToolScript
 		}
 
 		/// <summary>
-		/// <para>Symbol: ITEM</para>
-		/// <para><c>ITEM</c></para>
-		/// </summary>
-		protected virtual object TerminalItem(TerminalToken token)
-		{
-			throw new NotImplementedException("Symbol ITEM");
-		}
-
-		/// <summary>
 		/// <para>Symbol: list</para>
 		/// <para><c>list</c></para>
 		/// </summary>
@@ -2870,12 +2984,21 @@ namespace LPS.ToolScript
 		}
 
 		/// <summary>
-		/// <para>Symbol: MENU</para>
-		/// <para><c>MENU</c></para>
+		/// <para>Symbol: menu</para>
+		/// <para><c>menu</c></para>
 		/// </summary>
 		protected virtual object TerminalMenu(TerminalToken token)
 		{
-			throw new NotImplementedException("Symbol MENU");
+			throw new NotImplementedException("Symbol menu");
+		}
+
+		/// <summary>
+		/// <para>Symbol: menuitem</para>
+		/// <para><c>menuitem</c></para>
+		/// </summary>
+		protected virtual object TerminalMenuitem(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol menuitem");
 		}
 
 		/// <summary>
@@ -3068,6 +3191,24 @@ namespace LPS.ToolScript
 		}
 
 		/// <summary>
+		/// <para>Symbol: toolbar</para>
+		/// <para><c>toolbar</c></para>
+		/// </summary>
+		protected virtual object TerminalToolbar(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol toolbar");
+		}
+
+		/// <summary>
+		/// <para>Symbol: toolbutton</para>
+		/// <para><c>toolbutton</c></para>
+		/// </summary>
+		protected virtual object TerminalToolbutton(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol toolbutton");
+		}
+
+		/// <summary>
 		/// <para>Symbol: true</para>
 		/// <para><c>true</c></para>
 		/// </summary>
@@ -3131,12 +3272,21 @@ namespace LPS.ToolScript
 		}
 
 		/// <summary>
-		/// <para>Symbol: VBOX</para>
-		/// <para><c>VBOX</c></para>
+		/// <para>Symbol: vbox</para>
+		/// <para><c>vbox</c></para>
 		/// </summary>
 		protected virtual object TerminalVbox(TerminalToken token)
 		{
-			throw new NotImplementedException("Symbol VBOX");
+			throw new NotImplementedException("Symbol vbox");
+		}
+
+		/// <summary>
+		/// <para>Symbol: vbuttonbox</para>
+		/// <para><c>vbuttonbox</c></para>
+		/// </summary>
+		protected virtual object TerminalVbuttonbox(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol vbuttonbox");
 		}
 
 		/// <summary>
@@ -3149,21 +3299,21 @@ namespace LPS.ToolScript
 		}
 
 		/// <summary>
-		/// <para>Symbol: WIDGET</para>
-		/// <para><c>WIDGET</c></para>
+		/// <para>Symbol: widget</para>
+		/// <para><c>widget</c></para>
 		/// </summary>
 		protected virtual object TerminalWidget(TerminalToken token)
 		{
-			throw new NotImplementedException("Symbol WIDGET");
+			throw new NotImplementedException("Symbol widget");
 		}
 
 		/// <summary>
-		/// <para>Symbol: WINDOW</para>
-		/// <para><c>WINDOW</c></para>
+		/// <para>Symbol: window</para>
+		/// <para><c>window</c></para>
 		/// </summary>
 		protected virtual object TerminalWindow(TerminalToken token)
 		{
-			throw new NotImplementedException("Symbol WINDOW");
+			throw new NotImplementedException("Symbol window");
 		}
 
 		/// <summary>
@@ -3368,7 +3518,7 @@ namespace LPS.ToolScript
 		/// <para>Symbol: Menu Item</para>
 		/// <para><c>&lt;Menu Item&gt;</c></para>
 		/// </summary>
-		protected virtual object TerminalMenuitem(TerminalToken token)
+		protected virtual object TerminalMenuitem2(TerminalToken token)
 		{
 			throw new NotImplementedException("Symbol Menu Item");
 		}
@@ -3691,6 +3841,9 @@ namespace LPS.ToolScript
                 case (int)Symbols.Break: //break
                 	return TerminalBreak(token);
 
+                case (int)Symbols.Button: //button
+                	return TerminalButton(token);
+
                 case (int)Symbols.Case: //case
                 	return TerminalCase(token);
 
@@ -3739,7 +3892,7 @@ namespace LPS.ToolScript
                 case (int)Symbols.Else: //else
                 	return TerminalElse(token);
 
-                case (int)Symbols.End: //END
+                case (int)Symbols.End: //end
                 	return TerminalEnd(token);
 
                 case (int)Symbols.Extends: //extends
@@ -3763,14 +3916,20 @@ namespace LPS.ToolScript
                 case (int)Symbols.Get: //get
                 	return TerminalGet(token);
 
-                case (int)Symbols.Hbox: //HBOX
+                case (int)Symbols.Hbox: //hbox
                 	return TerminalHbox(token);
+
+                case (int)Symbols.Hbuttonbox: //hbuttonbox
+                	return TerminalHbuttonbox(token);
 
                 case (int)Symbols.Id: //ID
                 	return TerminalId(token);
 
                 case (int)Symbols.If: //if
                 	return TerminalIf(token);
+
+                case (int)Symbols.Image: //image
+                	return TerminalImage(token);
 
                 case (int)Symbols.In: //in
                 	return TerminalIn(token);
@@ -3790,17 +3949,17 @@ namespace LPS.ToolScript
                 case (int)Symbols.Is: //is
                 	return TerminalIs(token);
 
-                case (int)Symbols.Item: //ITEM
-                	return TerminalItem(token);
-
                 case (int)Symbols.List: //list
                 	return TerminalList(token);
 
                 case (int)Symbols.Many: //many
                 	return TerminalMany(token);
 
-                case (int)Symbols.Menu: //MENU
+                case (int)Symbols.Menu: //menu
                 	return TerminalMenu(token);
+
+                case (int)Symbols.Menuitem: //menuitem
+                	return TerminalMenuitem(token);
 
                 case (int)Symbols.New: //new
                 	return TerminalNew(token);
@@ -3865,6 +4024,12 @@ namespace LPS.ToolScript
                 case (int)Symbols.Timespanliteral: //TimeSpanLiteral
                 	return TerminalTimespanliteral(token);
 
+                case (int)Symbols.Toolbar: //toolbar
+                	return TerminalToolbar(token);
+
+                case (int)Symbols.Toolbutton: //toolbutton
+                	return TerminalToolbutton(token);
+
                 case (int)Symbols.True: //true
                 	return TerminalTrue(token);
 
@@ -3886,16 +4051,19 @@ namespace LPS.ToolScript
                 case (int)Symbols.Varchar: //varchar
                 	return TerminalVarchar(token);
 
-                case (int)Symbols.Vbox: //VBOX
+                case (int)Symbols.Vbox: //vbox
                 	return TerminalVbox(token);
+
+                case (int)Symbols.Vbuttonbox: //vbuttonbox
+                	return TerminalVbuttonbox(token);
 
                 case (int)Symbols.While: //while
                 	return TerminalWhile(token);
 
-                case (int)Symbols.Widget: //WIDGET
+                case (int)Symbols.Widget: //widget
                 	return TerminalWidget(token);
 
-                case (int)Symbols.Window: //WINDOW
+                case (int)Symbols.Window: //window
                 	return TerminalWindow(token);
 
                 case (int)Symbols.Arg: //<Arg>
@@ -3964,8 +4132,8 @@ namespace LPS.ToolScript
                 case (int)Symbols.Menublock: //<Menu Block>
                 	return TerminalMenublock(token);
 
-                case (int)Symbols.Menuitem: //<Menu Item>
-                	return TerminalMenuitem(token);
+                case (int)Symbols.Menuitem2: //<Menu Item>
+                	return TerminalMenuitem2(token);
 
                 case (int)Symbols.Menuitemslist: //<MenuItems List>
                 	return TerminalMenuitemslist(token);
@@ -4125,27 +4293,37 @@ namespace LPS.ToolScript
         protected abstract object RuleDbtableattrIdEq(NonterminalToken token); // <DB Table Attr> ::= ID '=' <Expr>
         protected abstract object RuleFunctionFunctionIdLparanRparan(NonterminalToken token); // <Function> ::= function ID '(' <Func args> ')' <Stm>
         protected abstract object RuleFunctionFunctionLparanRparan(NonterminalToken token); // <Function> ::= function '(' <Func args> ')' <Stm>
-        protected abstract object RuleWidgetWindowId(NonterminalToken token); // <Widget> ::= WINDOW ID <WndParam List> <Layout Block>
-        protected abstract object RuleWidgetWindow(NonterminalToken token); // <Widget> ::= WINDOW <WndParam List> <Layout Block>
-        protected abstract object RuleWidgetWidgetId(NonterminalToken token); // <Widget> ::= WIDGET ID <Layout Block>
+        protected abstract object RuleWidgetWindowId(NonterminalToken token); // <Widget> ::= window ID <WndParam List> <Layout Block>
+        protected abstract object RuleWidgetWindow(NonterminalToken token); // <Widget> ::= window <WndParam List> <Layout Block>
+        protected abstract object RuleWidgetWidgetId(NonterminalToken token); // <Widget> ::= widget ID <Layout Block>
+        protected abstract object RuleWidgetWidget(NonterminalToken token); // <Widget> ::= widget <Layout Block>
         protected abstract object RuleWndparamlist(NonterminalToken token); // <WndParam List> ::= <WndParam> <WndParam List>
         protected abstract object RuleWndparamlist2(NonterminalToken token); // <WndParam List> ::= 
         protected abstract object RuleWndparamIdEqSemi(NonterminalToken token); // <WndParam> ::= ID '=' <Expr> ';'
         protected abstract object RuleWndparamIdSemi(NonterminalToken token); // <WndParam> ::= ID ';'
         protected abstract object RuleLayoutlist(NonterminalToken token); // <Layout List> ::= <Layout List> <Layout Block>
         protected abstract object RuleLayoutlist2(NonterminalToken token); // <Layout List> ::= 
-        protected abstract object RuleLayoutblockHboxEnd(NonterminalToken token); // <Layout Block> ::= HBOX <WndParam List> <Layout List> END
-        protected abstract object RuleLayoutblockVboxEnd(NonterminalToken token); // <Layout Block> ::= VBOX <WndParam List> <Layout List> END
-        protected abstract object RuleLayoutblockTableEnd(NonterminalToken token); // <Layout Block> ::= table <WndParam List> <Layout List> END
+        protected abstract object RuleLayoutblockHboxEnd(NonterminalToken token); // <Layout Block> ::= hbox <WndParam List> <Layout List> end
+        protected abstract object RuleLayoutblockVboxEnd(NonterminalToken token); // <Layout Block> ::= vbox <WndParam List> <Layout List> end
+        protected abstract object RuleLayoutblockHbuttonboxEnd(NonterminalToken token); // <Layout Block> ::= hbuttonbox <WndParam List> <Layout List> end
+        protected abstract object RuleLayoutblockVbuttonboxEnd(NonterminalToken token); // <Layout Block> ::= vbuttonbox <WndParam List> <Layout List> end
+        protected abstract object RuleLayoutblockTableEnd(NonterminalToken token); // <Layout Block> ::= table <WndParam List> <Layout List> end
+        protected abstract object RuleLayoutblockToolbarEnd(NonterminalToken token); // <Layout Block> ::= toolbar <WndParam List> <Layout List> end
+        protected abstract object RuleLayoutblockButton(NonterminalToken token); // <Layout Block> ::= button <WndParam List> <Layout Block>
+        protected abstract object RuleLayoutblockButtonEnd(NonterminalToken token); // <Layout Block> ::= button <WndParam List> end
+        protected abstract object RuleLayoutblockToolbutton(NonterminalToken token); // <Layout Block> ::= toolbutton <WndParam List> <Layout Block>
+        protected abstract object RuleLayoutblockToolbuttonEnd(NonterminalToken token); // <Layout Block> ::= toolbutton <WndParam List> end
+        protected abstract object RuleLayoutblockImage(NonterminalToken token); // <Layout Block> ::= image <WndParam List>
+        protected abstract object RuleLayoutblockStringliteral(NonterminalToken token); // <Layout Block> ::= StringLiteral <WndParam List>
         protected abstract object RuleLayoutblock(NonterminalToken token); // <Layout Block> ::= <Menu Block>
         protected abstract object RuleLayoutblockRef(NonterminalToken token); // <Layout Block> ::= ref <QualifiedName> <WndParam List>
         protected abstract object RuleLayoutblockRefStringliteral(NonterminalToken token); // <Layout Block> ::= ref StringLiteral <WndParam List>
         protected abstract object RuleLayoutblockLbracketRbracket(NonterminalToken token); // <Layout Block> ::= '[' <Expr> ']' <WndParam List>
-        protected abstract object RuleMenublockMenuEnd(NonterminalToken token); // <Menu Block> ::= MENU <WndParam List> <MenuItems List> END
+        protected abstract object RuleMenublockMenuEnd(NonterminalToken token); // <Menu Block> ::= menu <WndParam List> <MenuItems List> end
         protected abstract object RuleMenuitemslist(NonterminalToken token); // <MenuItems List> ::= <Menu Item> <MenuItems List>
         protected abstract object RuleMenuitemslist2(NonterminalToken token); // <MenuItems List> ::= 
         protected abstract object RuleMenuitem(NonterminalToken token); // <Menu Item> ::= <Menu Block>
-        protected abstract object RuleMenuitemItem(NonterminalToken token); // <Menu Item> ::= ITEM <WndParam List>
+        protected abstract object RuleMenuitemMenuitem(NonterminalToken token); // <Menu Item> ::= menuitem <WndParam List>
         protected abstract object RuleMenuitemSeparator(NonterminalToken token); // <Menu Item> ::= Separator
         protected abstract object RuleExprlistComma(NonterminalToken token); // <Expr List> ::= <Expr List> ',' <Expr>
         protected abstract object RuleExprlist(NonterminalToken token); // <Expr List> ::= <Expr>
@@ -4406,12 +4584,14 @@ namespace LPS.ToolScript
                 	return RuleFunctionFunctionIdLparanRparan(token);
                 case (int)Symbols.RuleFunctionFunctionLparanRparan: //<Function> ::= function '(' <Func args> ')' <Stm>
                 	return RuleFunctionFunctionLparanRparan(token);
-                case (int)Symbols.RuleWidgetWindowId: //<Widget> ::= WINDOW ID <WndParam List> <Layout Block>
+                case (int)Symbols.RuleWidgetWindowId: //<Widget> ::= window ID <WndParam List> <Layout Block>
                 	return RuleWidgetWindowId(token);
-                case (int)Symbols.RuleWidgetWindow: //<Widget> ::= WINDOW <WndParam List> <Layout Block>
+                case (int)Symbols.RuleWidgetWindow: //<Widget> ::= window <WndParam List> <Layout Block>
                 	return RuleWidgetWindow(token);
-                case (int)Symbols.RuleWidgetWidgetId: //<Widget> ::= WIDGET ID <Layout Block>
+                case (int)Symbols.RuleWidgetWidgetId: //<Widget> ::= widget ID <Layout Block>
                 	return RuleWidgetWidgetId(token);
+                case (int)Symbols.RuleWidgetWidget: //<Widget> ::= widget <Layout Block>
+                	return RuleWidgetWidget(token);
                 case (int)Symbols.RuleWndparamlist: //<WndParam List> ::= <WndParam> <WndParam List>
                 	return RuleWndparamlist(token);
                 case (int)Symbols.RuleWndparamlist2: //<WndParam List> ::= 
@@ -4424,12 +4604,30 @@ namespace LPS.ToolScript
                 	return RuleLayoutlist(token);
                 case (int)Symbols.RuleLayoutlist2: //<Layout List> ::= 
                 	return RuleLayoutlist2(token);
-                case (int)Symbols.RuleLayoutblockHboxEnd: //<Layout Block> ::= HBOX <WndParam List> <Layout List> END
+                case (int)Symbols.RuleLayoutblockHboxEnd: //<Layout Block> ::= hbox <WndParam List> <Layout List> end
                 	return RuleLayoutblockHboxEnd(token);
-                case (int)Symbols.RuleLayoutblockVboxEnd: //<Layout Block> ::= VBOX <WndParam List> <Layout List> END
+                case (int)Symbols.RuleLayoutblockVboxEnd: //<Layout Block> ::= vbox <WndParam List> <Layout List> end
                 	return RuleLayoutblockVboxEnd(token);
-                case (int)Symbols.RuleLayoutblockTableEnd: //<Layout Block> ::= table <WndParam List> <Layout List> END
+                case (int)Symbols.RuleLayoutblockHbuttonboxEnd: //<Layout Block> ::= hbuttonbox <WndParam List> <Layout List> end
+                	return RuleLayoutblockHbuttonboxEnd(token);
+                case (int)Symbols.RuleLayoutblockVbuttonboxEnd: //<Layout Block> ::= vbuttonbox <WndParam List> <Layout List> end
+                	return RuleLayoutblockVbuttonboxEnd(token);
+                case (int)Symbols.RuleLayoutblockTableEnd: //<Layout Block> ::= table <WndParam List> <Layout List> end
                 	return RuleLayoutblockTableEnd(token);
+                case (int)Symbols.RuleLayoutblockToolbarEnd: //<Layout Block> ::= toolbar <WndParam List> <Layout List> end
+                	return RuleLayoutblockToolbarEnd(token);
+                case (int)Symbols.RuleLayoutblockButton: //<Layout Block> ::= button <WndParam List> <Layout Block>
+                	return RuleLayoutblockButton(token);
+                case (int)Symbols.RuleLayoutblockButtonEnd: //<Layout Block> ::= button <WndParam List> end
+                	return RuleLayoutblockButtonEnd(token);
+                case (int)Symbols.RuleLayoutblockToolbutton: //<Layout Block> ::= toolbutton <WndParam List> <Layout Block>
+                	return RuleLayoutblockToolbutton(token);
+                case (int)Symbols.RuleLayoutblockToolbuttonEnd: //<Layout Block> ::= toolbutton <WndParam List> end
+                	return RuleLayoutblockToolbuttonEnd(token);
+                case (int)Symbols.RuleLayoutblockImage: //<Layout Block> ::= image <WndParam List>
+                	return RuleLayoutblockImage(token);
+                case (int)Symbols.RuleLayoutblockStringliteral: //<Layout Block> ::= StringLiteral <WndParam List>
+                	return RuleLayoutblockStringliteral(token);
                 case (int)Symbols.RuleLayoutblock: //<Layout Block> ::= <Menu Block>
                 	return RuleLayoutblock(token);
                 case (int)Symbols.RuleLayoutblockRef: //<Layout Block> ::= ref <QualifiedName> <WndParam List>
@@ -4438,7 +4636,7 @@ namespace LPS.ToolScript
                 	return RuleLayoutblockRefStringliteral(token);
                 case (int)Symbols.RuleLayoutblockLbracketRbracket: //<Layout Block> ::= '[' <Expr> ']' <WndParam List>
                 	return RuleLayoutblockLbracketRbracket(token);
-                case (int)Symbols.RuleMenublockMenuEnd: //<Menu Block> ::= MENU <WndParam List> <MenuItems List> END
+                case (int)Symbols.RuleMenublockMenuEnd: //<Menu Block> ::= menu <WndParam List> <MenuItems List> end
                 	return RuleMenublockMenuEnd(token);
                 case (int)Symbols.RuleMenuitemslist: //<MenuItems List> ::= <Menu Item> <MenuItems List>
                 	return RuleMenuitemslist(token);
@@ -4446,8 +4644,8 @@ namespace LPS.ToolScript
                 	return RuleMenuitemslist2(token);
                 case (int)Symbols.RuleMenuitem: //<Menu Item> ::= <Menu Block>
                 	return RuleMenuitem(token);
-                case (int)Symbols.RuleMenuitemItem: //<Menu Item> ::= ITEM <WndParam List>
-                	return RuleMenuitemItem(token);
+                case (int)Symbols.RuleMenuitemMenuitem: //<Menu Item> ::= menuitem <WndParam List>
+                	return RuleMenuitemMenuitem(token);
                 case (int)Symbols.RuleMenuitemSeparator: //<Menu Item> ::= Separator
                 	return RuleMenuitemSeparator(token);
                 case (int)Symbols.RuleExprlistComma: //<Expr List> ::= <Expr List> ',' <Expr>
@@ -5227,24 +5425,31 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Widget> ::= WINDOW ID <WndParam List> <Layout Block>
+		// <Widget> ::= window ID <WndParam List> <Layout Block>
 		protected override object RuleWidgetWindowId(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Widget> ::= WINDOW ID <WndParam List> <Layout Block>");
+			throw new NotImplementedException("<Widget> ::= window ID <WndParam List> <Layout Block>");
 			//return new
 		}
 
-		// <Widget> ::= WINDOW <WndParam List> <Layout Block>
+		// <Widget> ::= window <WndParam List> <Layout Block>
 		protected override object RuleWidgetWindow(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Widget> ::= WINDOW <WndParam List> <Layout Block>");
+			throw new NotImplementedException("<Widget> ::= window <WndParam List> <Layout Block>");
 			//return new
 		}
 
-		// <Widget> ::= WIDGET ID <Layout Block>
+		// <Widget> ::= widget ID <Layout Block>
 		protected override object RuleWidgetWidgetId(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Widget> ::= WIDGET ID <Layout Block>");
+			throw new NotImplementedException("<Widget> ::= widget ID <Layout Block>");
+			//return new
+		}
+
+		// <Widget> ::= widget <Layout Block>
+		protected override object RuleWidgetWidget(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Widget> ::= widget <Layout Block>");
 			//return new
 		}
 
@@ -5290,24 +5495,87 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Layout Block> ::= HBOX <WndParam List> <Layout List> END
+		// <Layout Block> ::= hbox <WndParam List> <Layout List> end
 		protected override object RuleLayoutblockHboxEnd(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Layout Block> ::= HBOX <WndParam List> <Layout List> END");
+			throw new NotImplementedException("<Layout Block> ::= hbox <WndParam List> <Layout List> end");
 			//return new
 		}
 
-		// <Layout Block> ::= VBOX <WndParam List> <Layout List> END
+		// <Layout Block> ::= vbox <WndParam List> <Layout List> end
 		protected override object RuleLayoutblockVboxEnd(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Layout Block> ::= VBOX <WndParam List> <Layout List> END");
+			throw new NotImplementedException("<Layout Block> ::= vbox <WndParam List> <Layout List> end");
 			//return new
 		}
 
-		// <Layout Block> ::= table <WndParam List> <Layout List> END
+		// <Layout Block> ::= hbuttonbox <WndParam List> <Layout List> end
+		protected override object RuleLayoutblockHbuttonboxEnd(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= hbuttonbox <WndParam List> <Layout List> end");
+			//return new
+		}
+
+		// <Layout Block> ::= vbuttonbox <WndParam List> <Layout List> end
+		protected override object RuleLayoutblockVbuttonboxEnd(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= vbuttonbox <WndParam List> <Layout List> end");
+			//return new
+		}
+
+		// <Layout Block> ::= table <WndParam List> <Layout List> end
 		protected override object RuleLayoutblockTableEnd(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Layout Block> ::= table <WndParam List> <Layout List> END");
+			throw new NotImplementedException("<Layout Block> ::= table <WndParam List> <Layout List> end");
+			//return new
+		}
+
+		// <Layout Block> ::= toolbar <WndParam List> <Layout List> end
+		protected override object RuleLayoutblockToolbarEnd(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= toolbar <WndParam List> <Layout List> end");
+			//return new
+		}
+
+		// <Layout Block> ::= button <WndParam List> <Layout Block>
+		protected override object RuleLayoutblockButton(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= button <WndParam List> <Layout Block>");
+			//return new
+		}
+
+		// <Layout Block> ::= button <WndParam List> end
+		protected override object RuleLayoutblockButtonEnd(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= button <WndParam List> end");
+			//return new
+		}
+
+		// <Layout Block> ::= toolbutton <WndParam List> <Layout Block>
+		protected override object RuleLayoutblockToolbutton(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= toolbutton <WndParam List> <Layout Block>");
+			//return new
+		}
+
+		// <Layout Block> ::= toolbutton <WndParam List> end
+		protected override object RuleLayoutblockToolbuttonEnd(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= toolbutton <WndParam List> end");
+			//return new
+		}
+
+		// <Layout Block> ::= image <WndParam List>
+		protected override object RuleLayoutblockImage(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= image <WndParam List>");
+			//return new
+		}
+
+		// <Layout Block> ::= StringLiteral <WndParam List>
+		protected override object RuleLayoutblockStringliteral(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Layout Block> ::= StringLiteral <WndParam List>");
 			//return new
 		}
 
@@ -5339,10 +5607,10 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Menu Block> ::= MENU <WndParam List> <MenuItems List> END
+		// <Menu Block> ::= menu <WndParam List> <MenuItems List> end
 		protected override object RuleMenublockMenuEnd(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Menu Block> ::= MENU <WndParam List> <MenuItems List> END");
+			throw new NotImplementedException("<Menu Block> ::= menu <WndParam List> <MenuItems List> end");
 			//return new
 		}
 
@@ -5367,10 +5635,10 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Menu Item> ::= ITEM <WndParam List>
-		protected override object RuleMenuitemItem(NonterminalToken token)
+		// <Menu Item> ::= menuitem <WndParam List>
+		protected override object RuleMenuitemMenuitem(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Menu Item> ::= ITEM <WndParam List>");
+			throw new NotImplementedException("<Menu Item> ::= menuitem <WndParam List>");
 			//return new
 		}
 
@@ -6038,27 +6306,37 @@ namespace LPS.ToolScript
 			Test(@"<DB Table Attr> ::= ID '=' <Expr>");
 			Test(@"<Function> ::= function ID '(' <Func args> ')' <Stm>");
 			Test(@"<Function> ::= function '(' <Func args> ')' <Stm>");
-			Test(@"<Widget> ::= WINDOW ID <WndParam List> <Layout Block>");
-			Test(@"<Widget> ::= WINDOW <WndParam List> <Layout Block>");
-			Test(@"<Widget> ::= WIDGET ID <Layout Block>");
+			Test(@"<Widget> ::= window ID <WndParam List> <Layout Block>");
+			Test(@"<Widget> ::= window <WndParam List> <Layout Block>");
+			Test(@"<Widget> ::= widget ID <Layout Block>");
+			Test(@"<Widget> ::= widget <Layout Block>");
 			Test(@"<WndParam List> ::= <WndParam> <WndParam List>");
 			Test(@"<WndParam List> ::= ");
 			Test(@"<WndParam> ::= ID '=' <Expr> ';'");
 			Test(@"<WndParam> ::= ID ';'");
 			Test(@"<Layout List> ::= <Layout List> <Layout Block>");
 			Test(@"<Layout List> ::= ");
-			Test(@"<Layout Block> ::= HBOX <WndParam List> <Layout List> END");
-			Test(@"<Layout Block> ::= VBOX <WndParam List> <Layout List> END");
-			Test(@"<Layout Block> ::= table <WndParam List> <Layout List> END");
+			Test(@"<Layout Block> ::= hbox <WndParam List> <Layout List> end");
+			Test(@"<Layout Block> ::= vbox <WndParam List> <Layout List> end");
+			Test(@"<Layout Block> ::= hbuttonbox <WndParam List> <Layout List> end");
+			Test(@"<Layout Block> ::= vbuttonbox <WndParam List> <Layout List> end");
+			Test(@"<Layout Block> ::= table <WndParam List> <Layout List> end");
+			Test(@"<Layout Block> ::= toolbar <WndParam List> <Layout List> end");
+			Test(@"<Layout Block> ::= button <WndParam List> <Layout Block>");
+			Test(@"<Layout Block> ::= button <WndParam List> end");
+			Test(@"<Layout Block> ::= toolbutton <WndParam List> <Layout Block>");
+			Test(@"<Layout Block> ::= toolbutton <WndParam List> end");
+			Test(@"<Layout Block> ::= image <WndParam List>");
+			Test(@"<Layout Block> ::= StringLiteral <WndParam List>");
 			Test(@"<Layout Block> ::= <Menu Block>");
 			Test(@"<Layout Block> ::= ref <QualifiedName> <WndParam List>");
 			Test(@"<Layout Block> ::= ref StringLiteral <WndParam List>");
 			Test(@"<Layout Block> ::= '[' <Expr> ']' <WndParam List>");
-			Test(@"<Menu Block> ::= MENU <WndParam List> <MenuItems List> END");
+			Test(@"<Menu Block> ::= menu <WndParam List> <MenuItems List> end");
 			Test(@"<MenuItems List> ::= <Menu Item> <MenuItems List>");
 			Test(@"<MenuItems List> ::= ");
 			Test(@"<Menu Item> ::= <Menu Block>");
-			Test(@"<Menu Item> ::= ITEM <WndParam List>");
+			Test(@"<Menu Item> ::= menuitem <WndParam List>");
 			Test(@"<Menu Item> ::= Separator");
 			Test(@"<Expr List> ::= <Expr List> ',' <Expr>");
 			Test(@"<Expr List> ::= <Expr>");

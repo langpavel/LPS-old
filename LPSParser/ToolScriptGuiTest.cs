@@ -31,12 +31,12 @@ namespace LPS.ToolScript.Tests
 			Assert.IsInstanceOfType(
 				typeof(WindowExpression),
 				Run(@"return
-					WINDOW
-						VBOX
+					window
+						vbox
 							['AAA']
-							HBOX spacing=5; padding=5; ['BBB'] ['CCC'] packend; ['DDD'] END
+							hbox spacing=5; padding=5; ['BBB'] ['CCC'] packend; ['DDD'] end
 							['EEE']
-						END;
+						end;
 				"));
 		}
 	}

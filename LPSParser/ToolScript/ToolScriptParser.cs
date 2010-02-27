@@ -878,11 +878,18 @@ namespace LPS.ToolScript
 				Get<IWidgetBuilder>(token, 2));
 		}
 
-		// <Widget> ::= WIDGET ID <Layout Block>
+		// <Widget> ::= widget ID <Layout Block>
 		protected override object RuleWidgetWidgetId(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Widget> ::= WIDGET ID <Layout Block>");
-			//return new
+			WidgetBase w = Get<WidgetBase>(token, 2);
+			w.Name = TText(token, 1);
+			return w;
+		}
+
+		// <Widget> ::= widget <Layout Block>
+		protected override object RuleWidgetWidget(NonterminalToken token)
+		{
+			return CreateObject(token.Tokens[1]);
 		}
 
 		// <WndParam List> ::= <WndParam> <WndParam List>
@@ -924,17 +931,70 @@ namespace LPS.ToolScript
 			return new VBoxContainer(null, Get<WidgetParamList>(token, 1), Get<LayoutList>(token,2));
 		}
 
+		// <Layout Block> ::= hbuttonbox <WndParam List> <Layout List> end
+		protected override object RuleLayoutblockHbuttonboxEnd(NonterminalToken token)
+		{
+			return new HButtonBoxContainer(null, Get<WidgetParamList>(token, 1), Get<LayoutList>(token,2));
+		}
+
+		// <Layout Block> ::= vbuttonbox <WndParam List> <Layout List> end
+		protected override object RuleLayoutblockVbuttonboxEnd(NonterminalToken token)
+		{
+			return new VButtonBoxContainer(null, Get<WidgetParamList>(token, 1), Get<LayoutList>(token,2));
+		}
+
 		// <Layout Block> ::= TABLE <WndParam List> <TabRow Block> END
 		protected override object RuleLayoutblockTableEnd(NonterminalToken token)
 		{
 			return new TableContainer(null, Get<WidgetParamList>(token, 1), Get<LayoutList>(token,2));
 		}
 
+		// <Layout Block> ::= toolbar <WndParam List> <Layout List> end
+		protected override object RuleLayoutblockToolbarEnd(NonterminalToken token)
+		{
+			return new ToolbarExpression(null, Get<WidgetParamList>(token, 1), Get<LayoutList>(token,2));
+		}
+
+		// <Layout Block> ::= button <WndParam List> <Layout Block>
+		protected override object RuleLayoutblockButton(NonterminalToken token)
+		{
+			return new GenericBinExpression(null, Get<WidgetParamList>(token, 1), Get<IWidgetBuilder>(token,2), typeof(Gtk.Button));
+		}
+
+		// <Layout Block> ::= button <WndParam List> end
+		protected override object RuleLayoutblockButtonEnd(NonterminalToken token)
+		{
+			return new GenericBinExpression(null, Get<WidgetParamList>(token, 1), null, typeof(Gtk.Button));
+		}
+
+		// <Layout Block> ::= toolbutton <WndParam List> <Layout Block>
+		protected override object RuleLayoutblockToolbutton(NonterminalToken token)
+		{
+			return new ToolButtonExpression(null, Get<WidgetParamList>(token, 1), Get<IWidgetBuilder>(token,2));
+		}
+
+		// <Layout Block> ::= toolbutton <WndParam List> end
+		protected override object RuleLayoutblockToolbuttonEnd(NonterminalToken token)
+		{
+			return new ToolButtonExpression(null, Get<WidgetParamList>(token, 1), null);
+		}
+
+		// <Layout Block> ::= image <WndParam List>
+		protected override object RuleLayoutblockImage(NonterminalToken token)
+		{
+			return new ImageExpression(null, Get<WidgetParamList>(token, 1));
+		}
+
+		// <Layout Block> ::= StringLiteral <WndParam List>
+		protected override object RuleLayoutblockStringliteral(NonterminalToken token)
+		{
+			return new LabelExpression(null, StringLiteral.Parse(TText(token,0)), Get<WidgetParamList>(token, 1));
+		}
+
 		// <Layout Block> ::= <Menu Block>
 		protected override object RuleLayoutblock(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Layout Block> ::= <Menu Block>");
-			//return new
+			return CreateObject(token.Tokens[0]);
 		}
 
 		// <Layout Block> ::= ref <QualifiedName> <WndParam List>
@@ -999,8 +1059,8 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Menu Item> ::= ITEM <WndParam List>
-		protected override object RuleMenuitemItem(NonterminalToken token)
+		// <Menu Item> ::= menuitem <WndParam List>
+		protected override object RuleMenuitemMenuitem(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Menu Item> ::= ITEM <WndParam List>");
 			//return new
@@ -1012,6 +1072,7 @@ namespace LPS.ToolScript
 			throw new NotImplementedException("<Menu Item> ::= Separator");
 			//return new
 		}
+
 		#endregion
 
 		#region Database support

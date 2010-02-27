@@ -93,7 +93,7 @@ namespace LPS.Client
 					writer.Formatting = Formatting.Indented;
 					writer.Indentation = 1;
 					writer.IndentChar = '\t';
-					writer.Settings.OmitXmlDeclaration = true;
+					//writer.Settings.OmitXmlDeclaration = true;
 					writer.WriteStartDocument();
 					sb.Remove(0, sb.Length);
 					XmlSerializer xser = new XmlSerializer(type);

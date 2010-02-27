@@ -125,6 +125,13 @@
     <Compile Include="ToolScript\Parser\Expressions\Window\BoxContainerBase.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\VBoxContainer.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\TableContainer.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\HButtonBoxContainer.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\VButtonBoxContainer.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\ToolbarExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\GenericBinExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\ToolButtonExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\ImageExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\LabelExpression.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />
