@@ -994,7 +994,9 @@ namespace LPS.ToolScript
 		// <Layout Block> ::= <Menu Block>
 		protected override object RuleLayoutblock(NonterminalToken token)
 		{
-			return CreateObject(token.Tokens[0]);
+			MenuExpression menu = Get<MenuExpression>(token,0);
+			menu.Kind = MenuExpressionKind.MenuBar;
+			return menu;
 		}
 
 		// <Layout Block> ::= ref <QualifiedName> <WndParam List>
@@ -1034,43 +1036,41 @@ namespace LPS.ToolScript
 		// <Menu Block> ::= MENU <WndParam List> <MenuItems List> END
 		protected override object RuleMenublockMenuEnd(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Menu Block> ::= MENU <WndParam List> <MenuItems List> END");
-			//return new
+			return new MenuExpression(null, Get<WidgetParamList>(token,1), MenuExpressionKind.Menu, Get<List<MenuExpression>>(token,2));
 		}
 
 		// <MenuItems List> ::= <Menu Item> <MenuItems List>
 		protected override object RuleMenuitemslist(NonterminalToken token)
 		{
-			throw new NotImplementedException("<MenuItems List> ::= <Menu Item> <MenuItems List>");
-			//return new
+			List<MenuExpression> list = Get<List<MenuExpression>>(token,1);
+			list.Insert(0,Get<MenuExpression>(token,0));
+			return list;
 		}
 
 		// <MenuItems List> ::= 
 		protected override object RuleMenuitemslist2(NonterminalToken token)
 		{
-			throw new NotImplementedException("<MenuItems List> ::= ");
-			//return new
+			return new List<MenuExpression>();
 		}
 
 		// <Menu Item> ::= <Menu Block>
 		protected override object RuleMenuitem(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Menu Item> ::= <Menu Block>");
-			//return new
+			MenuExpression menu = Get<MenuExpression>(token,0);
+			menu.Kind = MenuExpressionKind.Menu;
+			return menu;
 		}
 
 		// <Menu Item> ::= menuitem <WndParam List>
 		protected override object RuleMenuitemMenuitem(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Menu Item> ::= ITEM <WndParam List>");
-			//return new
+			return new MenuExpression(null, Get<WidgetParamList>(token,1), MenuExpressionKind.MenuItem, null);
 		}
 
 		// <Menu Item> ::= Separator
 		protected override object RuleMenuitemSeparator(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Menu Item> ::= Separator");
-			//return new
+			return new MenuExpression(null, null, MenuExpressionKind.ItemSeparator, null);
 		}
 
 		#endregion

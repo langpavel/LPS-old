@@ -132,6 +132,7 @@
     <Compile Include="ToolScript\Parser\Expressions\Window\ToolButtonExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\ImageExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\LabelExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\MenuExpression.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />
