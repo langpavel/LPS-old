@@ -30,7 +30,14 @@ namespace LPS.ToolScript.Tests
 		{
 			Assert.IsInstanceOfType(
 				typeof(WindowExpression),
-				Run("return WINDOW ['AAA'];"));
+				Run(@"return
+					WINDOW
+						VBOX
+							['AAA']
+							HBOX spacing=5; padding=5; ['BBB'] ['CCC'] packend; ['DDD'] END
+							['EEE']
+						END;
+				"));
 		}
 	}
 }

@@ -921,8 +921,7 @@ namespace LPS.ToolScript
 		// <Layout Block> ::= TABLE <WndParam List> <TabRow Block> END
 		protected override object RuleLayoutblockTableEnd(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Layout Block> ::= TABLE <WndParam List> <TabRow Block> END");
-			//return new
+			return new TableContainer(null, Get<WidgetParamList>(token, 1), Get<LayoutList>(token,2));
 		}
 
 		// <Layout Block> ::= <Menu Block>

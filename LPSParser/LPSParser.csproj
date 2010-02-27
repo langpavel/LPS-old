@@ -124,6 +124,7 @@
     <Compile Include="ToolScript\Parser\Expressions\Window\HBoxContainer.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\BoxContainerBase.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\VBoxContainer.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\TableContainer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />

@@ -258,6 +258,13 @@ namespace LPS.Util
 			this.vbox2 = new Gtk.VBox();
 			this.vbox2.Name = "vbox2";
 			this.vbox2.Spacing = 6;
+
+			TextView tw = new TextView();
+			ScrolledWindow sc = new ScrolledWindow();
+			sc.Add(tw);
+			vbox2.Add(sc);
+			tw.KeyPressEvent += HandleTwKeyPressEvent;
+
 			// Container child vbox2.Gtk.Box+BoxChild
 			this.entry1 = new Gtk.Entry();
 			this.entry1.CanFocus = true;
@@ -292,6 +299,16 @@ namespace LPS.Util
 			this.Show();
 			this.entry1.Activated += new System.EventHandler(this.OnEntry1Activated);
 		}
+
+		void HandleTwKeyPressEvent (object o, KeyPressEventArgs args)
+		{
+			if(args.Event.Key == Gdk.Key.F5)
+			{
+				TextView tw = (TextView)o;
+				ExecuteCommand(tw.Buffer.Text);
+			}
+		}
+
 		#endregion
 		
 	}

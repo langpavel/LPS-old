@@ -55,5 +55,38 @@ namespace LPS.ToolScript.Parser
 			}
 			return default_val;
 		}
+
+		public bool TryGet<T>(string name, out T value)
+		{
+			object result;
+			if(TryGet(typeof(T), name, out result))
+			{
+				value = (T)result;
+				return true;
+			}
+			value = default(T);
+			return false;
+		}
+
+		public bool TryGet(Type type, string name, out object value)
+		{
+			EvaluatedExpression result;
+			if(TryGetValue(name, out result))
+			{
+				if(result.Value != null)
+				{
+					Type t = result.Value.GetType();
+					if(t != type || t.IsSubclassOf(type))
+					{
+						value = Convert.ChangeType(result.Value, type);
+						return true;
+					}
+				}
+				value = result.Value;
+				return true;
+			}
+			value = null;
+			return false;
+		}
 	}
 }

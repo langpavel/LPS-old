@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 
 namespace LPS.ToolScript.Parser
 {
@@ -26,6 +27,16 @@ namespace LPS.ToolScript.Parser
 			return Params.Get<T>(name, default_value);
 		}
 
+		public virtual bool TryGetAttribute<T>(string name, out T value)
+		{
+			return Params.TryGet<T>(name, out value);
+		}
+
+		public virtual bool TryGetAttribute(Type type, string name, out object value)
+		{
+			return Params.TryGet(type, name, out value);
+		}
+
 		public Gtk.Widget Build()
 		{
 			Gtk.Widget widget = CreateWidget();
@@ -37,7 +48,40 @@ namespace LPS.ToolScript.Parser
 
 		public virtual void SetWidgetAttributes(Gtk.Widget widget)
 		{
+			Type t = widget.GetType();
+			t.FindMembers(
+				MemberTypes.Property,
+				BindingFlags.Public | BindingFlags.Instance,
+				SetGtkPropertyValue, widget);
+		}
 
+		private bool SetGtkPropertyValue(MemberInfo member, object widget)
+		{
+			PropertyInfo prop = (PropertyInfo)member;
+			if(!prop.CanWrite)
+				return false;
+			bool gtkprop = false;
+			object val;
+			foreach(GLib.PropertyAttribute propname in member.GetCustomAttributes(typeof(GLib.PropertyAttribute), true))
+			{
+				gtkprop = true;
+				if(TryGetAttribute(prop.PropertyType, propname.Name.Replace('-','_'), out val))
+				{
+					prop.SetValue(widget, val, null);
+					return true;
+				}
+				else if(!String.IsNullOrEmpty(propname.Nickname) && TryGetAttribute(prop.PropertyType, propname.Nickname.Replace('-','_'), out val))
+				{
+					prop.SetValue(widget, val, null);
+					return true;
+				}
+			}
+			if(TryGetAttribute(prop.PropertyType, prop.Name, out val))
+			{
+				prop.SetValue(widget, val, null);
+				return true; //??
+			}
+			return gtkprop;
 		}
 
 		public override bool EvalAsBool (Context context)
