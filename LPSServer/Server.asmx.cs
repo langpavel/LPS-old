@@ -130,14 +130,14 @@ namespace LPS.Server
 			return ci.GetGeneratorValue(generator, sys_date);
 		}
 
-		[WebMethod(EnableSession=true)]
+		[WebMethod(EnableSession=true, BufferResponse=false)]
 		public DataSet GetDataSetSimple(string sql)
 		{
 			ConnectionInfo ci = GetConnectionInfo();
 			return ci.GetDataSetSimple(sql);
 		}
 
-		[WebMethod(EnableSession=true)]
+		[WebMethod(EnableSession=true, BufferResponse=false)]
 		public DataSet GetDataSetByNameSimple(string name, string addsql)
 		{
 			ConnectionInfo ci = GetConnectionInfo();
@@ -190,7 +190,7 @@ namespace LPS.Server
 			}
 		}
 		
-		[WebMethod(EnableSession=true)]
+		[WebMethod(EnableSession=true, BufferResponse=false)]
 		public ServerCallResult GetDataSetBySql(int sink, int security, string sql, object[] parameters, out DataSet data)
 		{
 			data = null;
@@ -258,7 +258,7 @@ namespace LPS.Server
 			}
 		}
 
-		[WebMethod(EnableSession=true)]
+		[WebMethod(EnableSession=true, BufferResponse=false)]
 		public ServerCallResult GetDataSetByName(int sink, int security,
 			string table, string addsql, object[] parameters, out DataSet result)
 		{
@@ -276,6 +276,43 @@ namespace LPS.Server
 			}
 		}
 		
+		[WebMethod(EnableSession=false)]
+		public string[] ListResources(string path, string file_search_pattern, bool include_dirs)
+		{
+			path = path.Replace('\\', Path.DirectorySeparatorChar).Replace('/', Path.DirectorySeparatorChar);
+			string resPath = WebConfigurationManager.AppSettings["ResourceDirectory"];
+			resPath = Path.Combine(resPath, path);
+			if(String.IsNullOrEmpty(file_search_pattern))
+				file_search_pattern = "*";
+
+			List<string> dirs = new List<string>();
+
+			DirectoryInfo dirinfo = new DirectoryInfo(resPath);
+			if(include_dirs)
+			{
+				foreach(DirectoryInfo di in dirinfo.GetDirectories())
+				{
+					dirs.Add(di.Name + '/');
+				}
+				dirs.Sort();
+			}
+
+			List<string> files = new List<string>();
+			foreach(FileInfo fi in dirinfo.GetFiles(file_search_pattern))
+			{
+				files.Add(fi.Name);
+			}
+			files.Sort();
+
+			if(include_dirs)
+			{
+				dirs.AddRange(files);
+				return dirs.ToArray();
+			}
+			else
+				return files.ToArray();
+		}
+
 		[WebMethod(EnableSession=false, BufferResponse=false)]
 		public string GetTextResource(string path)
 		{
@@ -285,18 +322,32 @@ namespace LPS.Server
 		public static string _GetTextResource(string path)
 		{
 			path = path.Replace('\\', Path.DirectorySeparatorChar).Replace('/', Path.DirectorySeparatorChar);
-
 			string resPath = WebConfigurationManager.AppSettings["ResourceDirectory"];
-
 			resPath = Path.Combine(resPath, path);
 			try
-			{				
+			{
 				using(StreamReader reader = File.OpenText(resPath))
 					return reader.ReadToEnd();
 			}
 			catch
 			{
 				return null;
+			}
+		}
+
+		[WebMethod(EnableSession=false, BufferResponse=false)]
+		public byte[] GetBinaryResource(string path)
+		{
+			path = path.Replace('\\', Path.DirectorySeparatorChar).Replace('/', Path.DirectorySeparatorChar);
+			string resPath = WebConfigurationManager.AppSettings["ResourceDirectory"];
+			resPath = Path.Combine(resPath, path);
+			using(Stream stream = File.OpenRead(resPath))
+			{
+				int length = (int)stream.Length;
+				byte[] result = new byte[length];
+				if(length != stream.Read(result, 0, length))
+					throw new Exception("Nenačten celý soubor");
+				return result;
 			}
 		}
 

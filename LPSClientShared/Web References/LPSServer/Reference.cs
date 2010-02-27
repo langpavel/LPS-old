@@ -59,7 +59,11 @@ namespace LPSClientShared.LPSServer {
         
         private System.Threading.SendOrPostCallback GetDataSetByNameOperationCompleted;
         
+        private System.Threading.SendOrPostCallback ListResourcesOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetTextResourceOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetBinaryResourceOperationCompleted;
         
         private System.Threading.SendOrPostCallback LogoutOperationCompleted;
         
@@ -109,7 +113,11 @@ namespace LPSClientShared.LPSServer {
         
         public event GetDataSetByNameCompletedEventHandler GetDataSetByNameCompleted;
         
+        public event ListResourcesCompletedEventHandler ListResourcesCompleted;
+        
         public event GetTextResourceCompletedEventHandler GetTextResourceCompleted;
+        
+        public event GetBinaryResourceCompletedEventHandler GetBinaryResourceCompleted;
         
         public event LogoutCompletedEventHandler LogoutCompleted;
         
@@ -871,6 +879,48 @@ namespace LPSClientShared.LPSServer {
             }
         }
         
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/ListResources", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public string[] ListResources(string path, string file_search_pattern, bool include_dirs) {
+            object[] results = this.Invoke("ListResources", new object[] {
+                        path,
+                        file_search_pattern,
+                        include_dirs});
+            return ((string[])(results[0]));
+        }
+        
+        public System.IAsyncResult BeginListResources(string path, string file_search_pattern, bool include_dirs, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("ListResources", new object[] {
+                        path,
+                        file_search_pattern,
+                        include_dirs}, callback, asyncState);
+        }
+        
+        public string[] EndListResources(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((string[])(results[0]));
+        }
+        
+        public void ListResourcesAsync(string path, string file_search_pattern, bool include_dirs) {
+            this.ListResourcesAsync(path, file_search_pattern, include_dirs, null);
+        }
+        
+        public void ListResourcesAsync(string path, string file_search_pattern, bool include_dirs, object userState) {
+            if ((this.ListResourcesOperationCompleted == null)) {
+                this.ListResourcesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnListResourcesCompleted);
+            }
+            this.InvokeAsync("ListResources", new object[] {
+                        path,
+                        file_search_pattern,
+                        include_dirs}, this.ListResourcesOperationCompleted, userState);
+        }
+        
+        private void OnListResourcesCompleted(object arg) {
+            if ((this.ListResourcesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ListResourcesCompleted(this, new ListResourcesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetTextResource", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public string GetTextResource(string path) {
             object[] results = this.Invoke("GetTextResource", new object[] {
@@ -904,6 +954,42 @@ namespace LPSClientShared.LPSServer {
             if ((this.GetTextResourceCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.GetTextResourceCompleted(this, new GetTextResourceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetBinaryResource", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public byte[] GetBinaryResource(string path) {
+            object[] results = this.Invoke("GetBinaryResource", new object[] {
+                        path});
+            return ((byte[])(results[0]));
+        }
+        
+        public System.IAsyncResult BeginGetBinaryResource(string path, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetBinaryResource", new object[] {
+                        path}, callback, asyncState);
+        }
+        
+        public byte[] EndGetBinaryResource(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((byte[])(results[0]));
+        }
+        
+        public void GetBinaryResourceAsync(string path) {
+            this.GetBinaryResourceAsync(path, null);
+        }
+        
+        public void GetBinaryResourceAsync(string path, object userState) {
+            if ((this.GetBinaryResourceOperationCompleted == null)) {
+                this.GetBinaryResourceOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetBinaryResourceCompleted);
+            }
+            this.InvokeAsync("GetBinaryResource", new object[] {
+                        path}, this.GetBinaryResourceOperationCompleted, userState);
+        }
+        
+        private void OnGetBinaryResourceCompleted(object arg) {
+            if ((this.GetBinaryResourceCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetBinaryResourceCompleted(this, new GetBinaryResourceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1415,6 +1501,25 @@ namespace LPSClientShared.LPSServer {
     
     public delegate void GetDataSetByNameCompletedEventHandler(object sender, GetDataSetByNameCompletedEventArgs args);
     
+    public partial class ListResourcesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ListResourcesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void ListResourcesCompletedEventHandler(object sender, ListResourcesCompletedEventArgs args);
+    
     public partial class GetTextResourceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -1433,6 +1538,25 @@ namespace LPSClientShared.LPSServer {
     }
     
     public delegate void GetTextResourceCompletedEventHandler(object sender, GetTextResourceCompletedEventArgs args);
+    
+    public partial class GetBinaryResourceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetBinaryResourceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public byte[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((byte[])(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void GetBinaryResourceCompletedEventHandler(object sender, GetBinaryResourceCompletedEventArgs args);
     
     public delegate void LogoutCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs args);
 }

@@ -340,6 +340,22 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="ListResources">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="path" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="file_search_pattern" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="include_dirs" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListResourcesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="ListResourcesResult" type="s0:ArrayOfString" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="GetTextResource">
         <xs:complexType>
           <xs:sequence>
@@ -351,6 +367,20 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element minOccurs="0" maxOccurs="1" name="GetTextResourceResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBinaryResource">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="path" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBinaryResourceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetBinaryResourceResult" type="xs:base64Binary" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -373,6 +403,7 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
     </xs:schema>
     <xs:schema xmlns:tns="http://lpsoft.org/server/result/" elementFormDefault="qualified" targetNamespace="http://lpsoft.org/server/result/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:import namespace="http://lpsoft.org/server/" />
@@ -512,11 +543,23 @@
   <message name="GetDataSetByNameSoapOut">
     <part name="parameters" element="s0:GetDataSetByNameResponse" />
   </message>
+  <message name="ListResourcesSoapIn">
+    <part name="parameters" element="s0:ListResources" />
+  </message>
+  <message name="ListResourcesSoapOut">
+    <part name="parameters" element="s0:ListResourcesResponse" />
+  </message>
   <message name="GetTextResourceSoapIn">
     <part name="parameters" element="s0:GetTextResource" />
   </message>
   <message name="GetTextResourceSoapOut">
     <part name="parameters" element="s0:GetTextResourceResponse" />
+  </message>
+  <message name="GetBinaryResourceSoapIn">
+    <part name="parameters" element="s0:GetBinaryResource" />
+  </message>
+  <message name="GetBinaryResourceSoapOut">
+    <part name="parameters" element="s0:GetBinaryResourceResponse" />
   </message>
   <message name="LogoutSoapIn">
     <part name="parameters" element="s0:Logout" />
@@ -602,11 +645,25 @@
   <message name="UnregisterListenerHttpGetOut">
     <part xmlns:q2="http://lpsoft.org/server/result/" name="Body" element="q2:result" />
   </message>
+  <message name="ListResourcesHttpGetIn">
+    <part name="path" type="s:string" />
+    <part name="file_search_pattern" type="s:string" />
+    <part name="include_dirs" type="s:boolean" />
+  </message>
+  <message name="ListResourcesHttpGetOut">
+    <part name="Body" element="s0:ArrayOfString" />
+  </message>
   <message name="GetTextResourceHttpGetIn">
     <part name="path" type="s:string" />
   </message>
   <message name="GetTextResourceHttpGetOut">
     <part name="Body" element="s0:string" />
+  </message>
+  <message name="GetBinaryResourceHttpGetIn">
+    <part name="path" type="s:string" />
+  </message>
+  <message name="GetBinaryResourceHttpGetOut">
+    <part name="Body" element="s0:base64Binary" />
   </message>
   <message name="LogoutHttpGetIn" />
   <message name="LogoutHttpGetOut" />
@@ -688,11 +745,25 @@
   <message name="UnregisterListenerHttpPostOut">
     <part xmlns:q4="http://lpsoft.org/server/result/" name="Body" element="q4:result" />
   </message>
+  <message name="ListResourcesHttpPostIn">
+    <part name="path" type="s:string" />
+    <part name="file_search_pattern" type="s:string" />
+    <part name="include_dirs" type="s:boolean" />
+  </message>
+  <message name="ListResourcesHttpPostOut">
+    <part name="Body" element="s0:ArrayOfString" />
+  </message>
   <message name="GetTextResourceHttpPostIn">
     <part name="path" type="s:string" />
   </message>
   <message name="GetTextResourceHttpPostOut">
     <part name="Body" element="s0:string" />
+  </message>
+  <message name="GetBinaryResourceHttpPostIn">
+    <part name="path" type="s:string" />
+  </message>
+  <message name="GetBinaryResourceHttpPostOut">
+    <part name="Body" element="s0:base64Binary" />
   </message>
   <message name="LogoutHttpPostIn" />
   <message name="LogoutHttpPostOut" />
@@ -773,9 +844,17 @@
       <input message="s0:GetDataSetByNameSoapIn" />
       <output message="s0:GetDataSetByNameSoapOut" />
     </operation>
+    <operation name="ListResources">
+      <input message="s0:ListResourcesSoapIn" />
+      <output message="s0:ListResourcesSoapOut" />
+    </operation>
     <operation name="GetTextResource">
       <input message="s0:GetTextResourceSoapIn" />
       <output message="s0:GetTextResourceSoapOut" />
+    </operation>
+    <operation name="GetBinaryResource">
+      <input message="s0:GetBinaryResourceSoapIn" />
+      <output message="s0:GetBinaryResourceSoapOut" />
     </operation>
     <operation name="Logout">
       <input message="s0:LogoutSoapIn" />
@@ -859,9 +938,17 @@
       <input message="s0:GetDataSetByNameSoapIn" />
       <output message="s0:GetDataSetByNameSoapOut" />
     </operation>
+    <operation name="ListResources">
+      <input message="s0:ListResourcesSoapIn" />
+      <output message="s0:ListResourcesSoapOut" />
+    </operation>
     <operation name="GetTextResource">
       <input message="s0:GetTextResourceSoapIn" />
       <output message="s0:GetTextResourceSoapOut" />
+    </operation>
+    <operation name="GetBinaryResource">
+      <input message="s0:GetBinaryResourceSoapIn" />
+      <output message="s0:GetBinaryResourceSoapOut" />
     </operation>
     <operation name="Logout">
       <input message="s0:LogoutSoapIn" />
@@ -921,9 +1008,17 @@
       <input message="s0:UnregisterListenerHttpGetIn" />
       <output message="s0:UnregisterListenerHttpGetOut" />
     </operation>
+    <operation name="ListResources">
+      <input message="s0:ListResourcesHttpGetIn" />
+      <output message="s0:ListResourcesHttpGetOut" />
+    </operation>
     <operation name="GetTextResource">
       <input message="s0:GetTextResourceHttpGetIn" />
       <output message="s0:GetTextResourceHttpGetOut" />
+    </operation>
+    <operation name="GetBinaryResource">
+      <input message="s0:GetBinaryResourceHttpGetIn" />
+      <output message="s0:GetBinaryResourceHttpGetOut" />
     </operation>
     <operation name="Logout">
       <input message="s0:LogoutHttpGetIn" />
@@ -983,9 +1078,17 @@
       <input message="s0:UnregisterListenerHttpPostIn" />
       <output message="s0:UnregisterListenerHttpPostOut" />
     </operation>
+    <operation name="ListResources">
+      <input message="s0:ListResourcesHttpPostIn" />
+      <output message="s0:ListResourcesHttpPostOut" />
+    </operation>
     <operation name="GetTextResource">
       <input message="s0:GetTextResourceHttpPostIn" />
       <output message="s0:GetTextResourceHttpPostOut" />
+    </operation>
+    <operation name="GetBinaryResource">
+      <input message="s0:GetBinaryResourceHttpPostIn" />
+      <output message="s0:GetBinaryResourceHttpPostOut" />
     </operation>
     <operation name="Logout">
       <input message="s0:LogoutHttpPostIn" />
@@ -1165,8 +1268,26 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="ListResources">
+      <soap:operation soapAction="http://lpsoft.org/server/ListResources" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="GetTextResource">
       <soap:operation soapAction="http://lpsoft.org/server/GetTextResource" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetBinaryResource">
+      <soap:operation soapAction="http://lpsoft.org/server/GetBinaryResource" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -1357,8 +1478,26 @@
         <soap12:body use="literal" />
       </output>
     </operation>
+    <operation name="ListResources">
+      <soap12:operation soapAction="http://lpsoft.org/server/ListResources" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
     <operation name="GetTextResource">
       <soap12:operation soapAction="http://lpsoft.org/server/GetTextResource" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetBinaryResource">
+      <soap12:operation soapAction="http://lpsoft.org/server/GetBinaryResource" style="document" />
       <input>
         <soap12:body use="literal" />
       </input>
@@ -1495,8 +1634,26 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
+    <operation name="ListResources">
+      <http:operation location="/ListResources" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
     <operation name="GetTextResource">
       <http:operation location="/GetTextResource" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetBinaryResource">
+      <http:operation location="/GetBinaryResource" />
       <input>
         <http:urlEncoded />
       </input>
@@ -1631,8 +1788,26 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
+    <operation name="ListResources">
+      <http:operation location="/ListResources" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
     <operation name="GetTextResource">
       <http:operation location="/GetTextResource" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetBinaryResource">
+      <http:operation location="/GetBinaryResource" />
       <input>
         <mime:content part="" type="application/x-www-form-urlencoded" />
       </input>
