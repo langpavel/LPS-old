@@ -2,6 +2,7 @@
 <definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://lpsoft.org/server/" name="Server" targetNamespace="http://lpsoft.org/server/" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <xs:schema elementFormDefault="qualified" targetNamespace="http://lpsoft.org/server/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://lpsoft.org/server/result/" />
       <xs:element name="Ping">
         <xs:complexType />
       </xs:element>
@@ -73,13 +74,6 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:complexType name="ChangeInfo">
-        <xs:sequence>
-          <xs:element minOccurs="0" maxOccurs="1" name="TableName" type="xs:string" />
-          <xs:element minOccurs="1" maxOccurs="1" name="ModifyDateTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" maxOccurs="1" name="HasDeletedRows" type="xs:boolean" />
-        </xs:sequence>
-      </xs:complexType>
       <xs:complexType name="ExceptionInfo">
         <xs:sequence>
           <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
@@ -94,18 +88,6 @@
       <xs:complexType name="ArrayOfAnyType">
         <xs:sequence>
           <xs:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="ServerCallResult">
-        <xs:sequence>
-          <xs:element minOccurs="0" maxOccurs="1" name="Changes" type="s0:ArrayOfChangeInfo" />
-          <xs:element minOccurs="1" maxOccurs="1" name="DateTime" type="xs:dateTime" />
-          <xs:element minOccurs="0" maxOccurs="1" name="Exception" type="s0:ExceptionInfo" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="ArrayOfChangeInfo">
-        <xs:sequence>
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeInfo" nillable="true" type="s0:ChangeInfo" />
         </xs:sequence>
       </xs:complexType>
       <xs:element name="SimpleExecuteScalarResponse">
@@ -126,6 +108,21 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element minOccurs="1" maxOccurs="1" name="NextSeqValueResult" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetGeneratorValue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generator" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="sys_date" type="xs:dateTime" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetGeneratorValueResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetGeneratorValueResult" type="xs:string" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -183,7 +180,7 @@
       <xs:element name="GetChangesResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="GetChangesResult" type="s0:ServerCallResult" />
+            <xs:element xmlns:q1="http://lpsoft.org/server/result/" minOccurs="0" maxOccurs="1" name="GetChangesResult" type="q1:ServerCallResult" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -200,7 +197,7 @@
       <xs:element name="ExecuteNonqueryResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="ExecuteNonqueryResult" type="s0:ServerCallResult" />
+            <xs:element xmlns:q2="http://lpsoft.org/server/result/" minOccurs="0" maxOccurs="1" name="ExecuteNonqueryResult" type="q2:ServerCallResult" />
             <xs:element minOccurs="1" maxOccurs="1" name="affected" type="xs:int" />
           </xs:sequence>
         </xs:complexType>
@@ -218,7 +215,7 @@
       <xs:element name="ExecuteScalarResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="ExecuteScalarResult" type="s0:ServerCallResult" />
+            <xs:element xmlns:q3="http://lpsoft.org/server/result/" minOccurs="0" maxOccurs="1" name="ExecuteScalarResult" type="q3:ServerCallResult" />
             <xs:element minOccurs="0" maxOccurs="1" name="result" />
           </xs:sequence>
         </xs:complexType>
@@ -236,7 +233,7 @@
       <xs:element name="GetDataSetBySqlResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="GetDataSetBySqlResult" type="s0:ServerCallResult" />
+            <xs:element xmlns:q4="http://lpsoft.org/server/result/" minOccurs="0" maxOccurs="1" name="GetDataSetBySqlResult" type="q4:ServerCallResult" />
             <xs:element minOccurs="0" maxOccurs="1" name="data">
               <xs:complexType>
                 <xs:sequence>
@@ -270,7 +267,7 @@
       <xs:element name="SaveDataSetResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="SaveDataSetResult" type="s0:ServerCallResult" />
+            <xs:element xmlns:q5="http://lpsoft.org/server/result/" minOccurs="0" maxOccurs="1" name="SaveDataSetResult" type="q5:ServerCallResult" />
             <xs:element minOccurs="1" maxOccurs="1" name="affected" type="xs:int" />
           </xs:sequence>
         </xs:complexType>
@@ -281,7 +278,7 @@
       <xs:element name="RegisterListenerResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="RegisterListenerResult" type="s0:ServerCallResult" />
+            <xs:element xmlns:q6="http://lpsoft.org/server/result/" minOccurs="0" maxOccurs="1" name="RegisterListenerResult" type="q6:ServerCallResult" />
             <xs:element minOccurs="1" maxOccurs="1" name="sink" type="xs:int" />
             <xs:element minOccurs="1" maxOccurs="1" name="security" type="xs:int" />
           </xs:sequence>
@@ -298,7 +295,7 @@
       <xs:element name="UnregisterListenerResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="UnregisterListenerResult" type="s0:ServerCallResult" />
+            <xs:element xmlns:q7="http://lpsoft.org/server/result/" minOccurs="0" maxOccurs="1" name="UnregisterListenerResult" type="q7:ServerCallResult" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -316,7 +313,7 @@
       <xs:element name="GetDataSetByNameResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="GetDataSetByNameResult" type="s0:ServerCallResult" />
+            <xs:element xmlns:q8="http://lpsoft.org/server/result/" minOccurs="0" maxOccurs="1" name="GetDataSetByNameResult" type="q8:ServerCallResult" />
             <xs:element minOccurs="0" maxOccurs="1" name="result">
               <xs:complexType>
                 <xs:sequence>
@@ -360,7 +357,29 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="result" nillable="true" type="s0:ServerCallResult" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://lpsoft.org/server/result/" elementFormDefault="qualified" targetNamespace="http://lpsoft.org/server/result/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://lpsoft.org/server/" />
+      <xs:complexType name="ChangeInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="TableName" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ModifyDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasDeletedRows" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ServerCallResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Changes" type="tns:ArrayOfChangeInfo" />
+          <xs:element minOccurs="1" maxOccurs="1" name="DateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Exception" type="s0:ExceptionInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfChangeInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeInfo" nillable="true" type="tns:ChangeInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="result" nillable="true" type="tns:ServerCallResult" />
     </xs:schema>
   </types>
   <message name="PingSoapIn">
@@ -404,6 +423,12 @@
   </message>
   <message name="NextSeqValueSoapOut">
     <part name="parameters" element="s0:NextSeqValueResponse" />
+  </message>
+  <message name="GetGeneratorValueSoapIn">
+    <part name="parameters" element="s0:GetGeneratorValue" />
+  </message>
+  <message name="GetGeneratorValueSoapOut">
+    <part name="parameters" element="s0:GetGeneratorValueResponse" />
   </message>
   <message name="GetDataSetSimpleSoapIn">
     <part name="parameters" element="s0:GetDataSetSimple" />
@@ -517,6 +542,13 @@
   <message name="NextSeqValueHttpGetOut">
     <part name="Body" element="s0:long" />
   </message>
+  <message name="GetGeneratorValueHttpGetIn">
+    <part name="generator" type="s:string" />
+    <part name="sys_date" type="s:dateTime" />
+  </message>
+  <message name="GetGeneratorValueHttpGetOut">
+    <part name="Body" element="s0:string" />
+  </message>
   <message name="GetDataSetSimpleHttpGetIn">
     <part name="sql" type="s:string" />
   </message>
@@ -535,14 +567,14 @@
     <part name="security" type="s:int" />
   </message>
   <message name="GetChangesHttpGetOut">
-    <part name="Body" element="s0:result" />
+    <part xmlns:q1="http://lpsoft.org/server/result/" name="Body" element="q1:result" />
   </message>
   <message name="UnregisterListenerHttpGetIn">
     <part name="sink" type="s:int" />
     <part name="security" type="s:int" />
   </message>
   <message name="UnregisterListenerHttpGetOut">
-    <part name="Body" element="s0:result" />
+    <part xmlns:q2="http://lpsoft.org/server/result/" name="Body" element="q2:result" />
   </message>
   <message name="GetTextResourceHttpGetIn">
     <part name="path" type="s:string" />
@@ -592,6 +624,13 @@
   <message name="NextSeqValueHttpPostOut">
     <part name="Body" element="s0:long" />
   </message>
+  <message name="GetGeneratorValueHttpPostIn">
+    <part name="generator" type="s:string" />
+    <part name="sys_date" type="s:dateTime" />
+  </message>
+  <message name="GetGeneratorValueHttpPostOut">
+    <part name="Body" element="s0:string" />
+  </message>
   <message name="GetDataSetSimpleHttpPostIn">
     <part name="sql" type="s:string" />
   </message>
@@ -610,14 +649,14 @@
     <part name="security" type="s:int" />
   </message>
   <message name="GetChangesHttpPostOut">
-    <part name="Body" element="s0:result" />
+    <part xmlns:q3="http://lpsoft.org/server/result/" name="Body" element="q3:result" />
   </message>
   <message name="UnregisterListenerHttpPostIn">
     <part name="sink" type="s:int" />
     <part name="security" type="s:int" />
   </message>
   <message name="UnregisterListenerHttpPostOut">
-    <part name="Body" element="s0:result" />
+    <part xmlns:q4="http://lpsoft.org/server/result/" name="Body" element="q4:result" />
   </message>
   <message name="GetTextResourceHttpPostIn">
     <part name="path" type="s:string" />
@@ -655,6 +694,10 @@
     <operation name="NextSeqValue">
       <input message="s0:NextSeqValueSoapIn" />
       <output message="s0:NextSeqValueSoapOut" />
+    </operation>
+    <operation name="GetGeneratorValue">
+      <input message="s0:GetGeneratorValueSoapIn" />
+      <output message="s0:GetGeneratorValueSoapOut" />
     </operation>
     <operation name="GetDataSetSimple">
       <input message="s0:GetDataSetSimpleSoapIn" />
@@ -734,6 +777,10 @@
       <input message="s0:NextSeqValueSoapIn" />
       <output message="s0:NextSeqValueSoapOut" />
     </operation>
+    <operation name="GetGeneratorValue">
+      <input message="s0:GetGeneratorValueSoapIn" />
+      <output message="s0:GetGeneratorValueSoapOut" />
+    </operation>
     <operation name="GetDataSetSimple">
       <input message="s0:GetDataSetSimpleSoapIn" />
       <output message="s0:GetDataSetSimpleSoapOut" />
@@ -812,6 +859,10 @@
       <input message="s0:NextSeqValueHttpGetIn" />
       <output message="s0:NextSeqValueHttpGetOut" />
     </operation>
+    <operation name="GetGeneratorValue">
+      <input message="s0:GetGeneratorValueHttpGetIn" />
+      <output message="s0:GetGeneratorValueHttpGetOut" />
+    </operation>
     <operation name="GetDataSetSimple">
       <input message="s0:GetDataSetSimpleHttpGetIn" />
       <output message="s0:GetDataSetSimpleHttpGetOut" />
@@ -865,6 +916,10 @@
     <operation name="NextSeqValue">
       <input message="s0:NextSeqValueHttpPostIn" />
       <output message="s0:NextSeqValueHttpPostOut" />
+    </operation>
+    <operation name="GetGeneratorValue">
+      <input message="s0:GetGeneratorValueHttpPostIn" />
+      <output message="s0:GetGeneratorValueHttpPostOut" />
     </operation>
     <operation name="GetDataSetSimple">
       <input message="s0:GetDataSetSimpleHttpPostIn" />
@@ -949,6 +1004,15 @@
     </operation>
     <operation name="NextSeqValue">
       <soap:operation soapAction="http://lpsoft.org/server/NextSeqValue" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetGeneratorValue">
+      <soap:operation soapAction="http://lpsoft.org/server/GetGeneratorValue" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -1130,6 +1194,15 @@
         <soap12:body use="literal" />
       </output>
     </operation>
+    <operation name="GetGeneratorValue">
+      <soap12:operation soapAction="http://lpsoft.org/server/GetGeneratorValue" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
     <operation name="GetDataSetSimple">
       <soap12:operation soapAction="http://lpsoft.org/server/GetDataSetSimple" style="document" />
       <input>
@@ -1304,6 +1377,15 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
+    <operation name="GetGeneratorValue">
+      <http:operation location="/GetGeneratorValue" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
     <operation name="GetDataSetSimple">
       <http:operation location="/GetDataSetSimple" />
       <input>
@@ -1415,6 +1497,15 @@
     </operation>
     <operation name="NextSeqValue">
       <http:operation location="/NextSeqValue" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetGeneratorValue">
+      <http:operation location="/GetGeneratorValue" />
       <input>
         <mime:content part="" type="application/x-www-form-urlencoded" />
       </input>

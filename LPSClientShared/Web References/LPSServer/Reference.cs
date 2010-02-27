@@ -35,6 +35,8 @@ namespace LPSClientShared.LPSServer {
         
         private System.Threading.SendOrPostCallback NextSeqValueOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetGeneratorValueOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataSetSimpleOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataSetByNameSimpleOperationCompleted;
@@ -80,6 +82,8 @@ namespace LPSClientShared.LPSServer {
         public event SimpleExecuteScalarCompletedEventHandler SimpleExecuteScalarCompleted;
         
         public event NextSeqValueCompletedEventHandler NextSeqValueCompleted;
+        
+        public event GetGeneratorValueCompletedEventHandler GetGeneratorValueCompleted;
         
         public event GetDataSetSimpleCompletedEventHandler GetDataSetSimpleCompleted;
         
@@ -354,6 +358,45 @@ namespace LPSClientShared.LPSServer {
             if ((this.NextSeqValueCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.NextSeqValueCompleted(this, new NextSeqValueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://lpsoft.org/server/GetGeneratorValue", RequestNamespace="http://lpsoft.org/server/", ResponseNamespace="http://lpsoft.org/server/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public string GetGeneratorValue(string generator, System.DateTime sys_date) {
+            object[] results = this.Invoke("GetGeneratorValue", new object[] {
+                        generator,
+                        sys_date});
+            return ((string)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginGetGeneratorValue(string generator, System.DateTime sys_date, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetGeneratorValue", new object[] {
+                        generator,
+                        sys_date}, callback, asyncState);
+        }
+        
+        public string EndGetGeneratorValue(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((string)(results[0]));
+        }
+        
+        public void GetGeneratorValueAsync(string generator, System.DateTime sys_date) {
+            this.GetGeneratorValueAsync(generator, sys_date, null);
+        }
+        
+        public void GetGeneratorValueAsync(string generator, System.DateTime sys_date, object userState) {
+            if ((this.GetGeneratorValueOperationCompleted == null)) {
+                this.GetGeneratorValueOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetGeneratorValueCompleted);
+            }
+            this.InvokeAsync("GetGeneratorValue", new object[] {
+                        generator,
+                        sys_date}, this.GetGeneratorValueOperationCompleted, userState);
+        }
+        
+        private void OnGetGeneratorValueCompleted(object arg) {
+            if ((this.GetGeneratorValueCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetGeneratorValueCompleted(this, new GetGeneratorValueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -865,24 +908,6 @@ namespace LPSClientShared.LPSServer {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://lpsoft.org/server/")]
-    public partial class ChangeInfo {
-        
-        /// <remarks/>
-        public string TableName;
-        
-        /// <remarks/>
-        public System.DateTime ModifyDateTime;
-        
-        /// <remarks/>
-        public bool HasDeletedRows;
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.1433")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://lpsoft.org/server/")]
     public partial class ExceptionInfo {
         
         /// <remarks/>
@@ -912,7 +937,25 @@ namespace LPSClientShared.LPSServer {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://lpsoft.org/server/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://lpsoft.org/server/result/")]
+    public partial class ChangeInfo {
+        
+        /// <remarks/>
+        public string TableName;
+        
+        /// <remarks/>
+        public System.DateTime ModifyDateTime;
+        
+        /// <remarks/>
+        public bool HasDeletedRows;
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.1433")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://lpsoft.org/server/result/")]
     public partial class ServerCallResult {
         
         /// <remarks/>
@@ -1057,6 +1100,25 @@ namespace LPSClientShared.LPSServer {
     }
     
     public delegate void NextSeqValueCompletedEventHandler(object sender, NextSeqValueCompletedEventArgs args);
+    
+    public partial class GetGeneratorValueCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetGeneratorValueCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void GetGeneratorValueCompletedEventHandler(object sender, GetGeneratorValueCompletedEventArgs args);
     
     public partial class GetDataSetSimpleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
