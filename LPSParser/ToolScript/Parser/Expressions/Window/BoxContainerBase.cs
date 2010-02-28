@@ -4,7 +4,7 @@ namespace LPS.ToolScript.Parser
 {
 	public abstract class BoxContainerBase : ContainerWidgetBase
 	{
-		public BoxContainerBase(string Name, WidgetParamList Params, LayoutList Childs)
+		public BoxContainerBase(string Name, EvaluatedAttributeList Params, LayoutList Childs)
 			: base(Name, Params, Childs)
 		{
 		}

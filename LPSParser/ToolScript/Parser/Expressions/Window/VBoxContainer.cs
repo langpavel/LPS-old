@@ -4,7 +4,7 @@ namespace LPS.ToolScript.Parser
 {
 	public class VBoxContainer : BoxContainerBase
 	{
-		public VBoxContainer(string Name, WidgetParamList Params, LayoutList Childs)
+		public VBoxContainer(string Name, EvaluatedAttributeList Params, LayoutList Childs)
 			: base(Name, Params, Childs)
 		{
 		}

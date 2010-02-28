@@ -112,7 +112,6 @@
     <Compile Include="ToolScript\Parser\Literals\DatetimeLiteral.cs" />
     <Compile Include="ToolScript\Parser\Literals\TimeSpanLiteral.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\WindowExpression.cs" />
-    <Compile Include="ToolScript\Parser\Expressions\Window\WidgetParamList.cs" />
     <Compile Include="ToolScript\Parser\Interfaces\IWidgetBuilder.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\WidgetBase.cs" />
     <Compile Include="ToolScript\Parser\Expressions\PropertyExpression.cs" />
@@ -136,8 +135,8 @@
     <Compile Include="ToolScript\Parser\Expressions\Window\MenuExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Database\DBColumnBase.cs" />
     <Compile Include="ToolScript\Parser\Interfaces\IDBColumn.cs" />
-    <Compile Include="ToolScript\Parser\Expressions\Database\DBColumnAttributes.cs" />
-    <Compile Include="ToolScript\Parser\Expressions\Database\DBColumnAttribute.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\EvaluatedAttribute.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\EvaluatedAttributeList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />

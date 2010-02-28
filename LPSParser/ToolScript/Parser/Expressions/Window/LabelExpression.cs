@@ -5,7 +5,7 @@ namespace LPS.ToolScript.Parser
 	public class LabelExpression : WidgetBase
 	{
 		public string Markup { get; private set; }
-		public LabelExpression(string Name, string Markup, WidgetParamList Params)
+		public LabelExpression(string Name, string Markup, EvaluatedAttributeList Params)
 			: base(Name, Params)
 		{
 			this.Markup = Markup;

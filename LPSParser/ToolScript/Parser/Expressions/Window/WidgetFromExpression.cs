@@ -8,7 +8,7 @@ namespace LPS.ToolScript.Parser
 
 		private object Value;
 
-		public WidgetFromExpression(IExpression Expr, WidgetParamList Params)
+		public WidgetFromExpression(IExpression Expr, EvaluatedAttributeList Params)
 			: base(null, Params)
 		{
 			this.Expr = Expr;

@@ -4,7 +4,7 @@ namespace LPS.ToolScript.Parser
 {
 	public class ToolbarExpression : ContainerWidgetBase
 	{
-		public ToolbarExpression(string Name, WidgetParamList Params, LayoutList Childs)
+		public ToolbarExpression(string Name, EvaluatedAttributeList Params, LayoutList Childs)
 			: base(Name, Params, Childs)
 		{
 		}

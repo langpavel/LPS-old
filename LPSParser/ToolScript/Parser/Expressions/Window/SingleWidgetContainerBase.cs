@@ -6,7 +6,7 @@ namespace LPS.ToolScript.Parser
 	{
 		public IWidgetBuilder Child { get; private set; }
 
-		public SingleWidgetContainerBase(string Name, WidgetParamList Params, IWidgetBuilder Child)
+		public SingleWidgetContainerBase(string Name, EvaluatedAttributeList Params, IWidgetBuilder Child)
 			:base(Name, Params)
 		{
 			this.Child = Child;

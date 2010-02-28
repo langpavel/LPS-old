@@ -4,7 +4,7 @@ namespace LPS.ToolScript.Parser
 {
 	public class WindowExpression : SingleWidgetContainerBase
 	{
-		public WindowExpression(string Name, WidgetParamList Params, IWidgetBuilder Child)
+		public WindowExpression(string Name, EvaluatedAttributeList Params, IWidgetBuilder Child)
 			: base(Name, Params, Child)
 		{
 		}

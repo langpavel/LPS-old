@@ -4,7 +4,7 @@ namespace LPS.ToolScript.Parser
 {
 	public class ImageExpression : WidgetBase
 	{
-		public ImageExpression(string Name, WidgetParamList Params)
+		public ImageExpression(string Name, EvaluatedAttributeList Params)
 			:base(Name, Params)
 		{
 		}

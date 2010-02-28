@@ -134,6 +134,12 @@ namespace LPS.ToolScript
 			return new UsingDisposableStatement(Expr(token,2), Statement(token,4));
 		}
 
+		// <Stm> ::= <Database> ';'
+		protected override object RuleStmSemi(NonterminalToken token)
+		{
+			return CreateObject(token.Tokens[0]);
+		}
+
 		// <Stm> ::= <Normal Stm>
 		protected override object RuleStm(NonterminalToken token)
 		{
@@ -743,12 +749,6 @@ namespace LPS.ToolScript
 			return CreateObject(token.Tokens[0]);
 		}
 
-		// <Value> ::= <Database>
-		protected override object RuleValue3(NonterminalToken token)
-		{
-			return CreateObject(token.Tokens[0]);
-		}
-
 		// <Value> ::= type <QualifiedName>
 		protected override object RuleValueType(NonterminalToken token)
 		{
@@ -865,7 +865,7 @@ namespace LPS.ToolScript
 		{
 			return new WindowExpression(
 				TText(token, 1),
-				Get<WidgetParamList>(token, 2),
+				Get<EvaluatedAttributeList>(token, 2),
 				Get<IWidgetBuilder>(token, 3));
 		}
 
@@ -874,7 +874,7 @@ namespace LPS.ToolScript
 		{
 			return new WindowExpression(
 				null,
-				Get<WidgetParamList>(token, 1),
+				Get<EvaluatedAttributeList>(token, 1),
 				Get<IWidgetBuilder>(token, 2));
 		}
 
@@ -895,16 +895,16 @@ namespace LPS.ToolScript
 		// <WndParam List> ::= <WndParam> <WndParam List>
 		protected override object RuleWndparamlist(NonterminalToken token)
 		{
-			WidgetParamList list = Get<WidgetParamList>(token,1);
+			EvaluatedAttributeList list = Get<EvaluatedAttributeList>(token,1);
 			KeyValuePair<string, IExpression> param = Get<KeyValuePair<string, IExpression>>(token,0);
-			list.Add(param.Key, new EvaluatedExpression(param.Value));
+			list.Add(param.Key, new EvaluatedAttribute(param.Value));
 			return list;
 		}
 
 		// <WndParam List> ::= 
 		protected override object RuleWndparamlist2(NonterminalToken token)
 		{
-			return new WidgetParamList();
+			return new EvaluatedAttributeList();
 		}
 
 		// <WndParam> ::= ID '=' <Expr> ';'
@@ -922,73 +922,73 @@ namespace LPS.ToolScript
 		// <Layout Block> ::= HBOX <WndParam List> <Layout List> END
 		protected override object RuleLayoutblockHboxEnd(NonterminalToken token)
 		{
-			return new HBoxContainer(null, Get<WidgetParamList>(token, 1), Get<LayoutList>(token,2));
+			return new HBoxContainer(null, Get<EvaluatedAttributeList>(token, 1), Get<LayoutList>(token,2));
 		}
 
 		// <Layout Block> ::= VBOX <WndParam List> <Layout List> END
 		protected override object RuleLayoutblockVboxEnd(NonterminalToken token)
 		{
-			return new VBoxContainer(null, Get<WidgetParamList>(token, 1), Get<LayoutList>(token,2));
+			return new VBoxContainer(null, Get<EvaluatedAttributeList>(token, 1), Get<LayoutList>(token,2));
 		}
 
 		// <Layout Block> ::= hbuttonbox <WndParam List> <Layout List> end
 		protected override object RuleLayoutblockHbuttonboxEnd(NonterminalToken token)
 		{
-			return new HButtonBoxContainer(null, Get<WidgetParamList>(token, 1), Get<LayoutList>(token,2));
+			return new HButtonBoxContainer(null, Get<EvaluatedAttributeList>(token, 1), Get<LayoutList>(token,2));
 		}
 
 		// <Layout Block> ::= vbuttonbox <WndParam List> <Layout List> end
 		protected override object RuleLayoutblockVbuttonboxEnd(NonterminalToken token)
 		{
-			return new VButtonBoxContainer(null, Get<WidgetParamList>(token, 1), Get<LayoutList>(token,2));
+			return new VButtonBoxContainer(null, Get<EvaluatedAttributeList>(token, 1), Get<LayoutList>(token,2));
 		}
 
 		// <Layout Block> ::= TABLE <WndParam List> <TabRow Block> END
 		protected override object RuleLayoutblockTableEnd(NonterminalToken token)
 		{
-			return new TableContainer(null, Get<WidgetParamList>(token, 1), Get<LayoutList>(token,2));
+			return new TableContainer(null, Get<EvaluatedAttributeList>(token, 1), Get<LayoutList>(token,2));
 		}
 
 		// <Layout Block> ::= toolbar <WndParam List> <Layout List> end
 		protected override object RuleLayoutblockToolbarEnd(NonterminalToken token)
 		{
-			return new ToolbarExpression(null, Get<WidgetParamList>(token, 1), Get<LayoutList>(token,2));
+			return new ToolbarExpression(null, Get<EvaluatedAttributeList>(token, 1), Get<LayoutList>(token,2));
 		}
 
 		// <Layout Block> ::= button <WndParam List> <Layout Block>
 		protected override object RuleLayoutblockButton(NonterminalToken token)
 		{
-			return new GenericBinExpression(null, Get<WidgetParamList>(token, 1), Get<IWidgetBuilder>(token,2), typeof(Gtk.Button));
+			return new GenericBinExpression(null, Get<EvaluatedAttributeList>(token, 1), Get<IWidgetBuilder>(token,2), typeof(Gtk.Button));
 		}
 
 		// <Layout Block> ::= button <WndParam List> end
 		protected override object RuleLayoutblockButtonEnd(NonterminalToken token)
 		{
-			return new GenericBinExpression(null, Get<WidgetParamList>(token, 1), null, typeof(Gtk.Button));
+			return new GenericBinExpression(null, Get<EvaluatedAttributeList>(token, 1), null, typeof(Gtk.Button));
 		}
 
 		// <Layout Block> ::= toolbutton <WndParam List> <Layout Block>
 		protected override object RuleLayoutblockToolbutton(NonterminalToken token)
 		{
-			return new ToolButtonExpression(null, Get<WidgetParamList>(token, 1), Get<IWidgetBuilder>(token,2));
+			return new ToolButtonExpression(null, Get<EvaluatedAttributeList>(token, 1), Get<IWidgetBuilder>(token,2));
 		}
 
 		// <Layout Block> ::= toolbutton <WndParam List> end
 		protected override object RuleLayoutblockToolbuttonEnd(NonterminalToken token)
 		{
-			return new ToolButtonExpression(null, Get<WidgetParamList>(token, 1), null);
+			return new ToolButtonExpression(null, Get<EvaluatedAttributeList>(token, 1), null);
 		}
 
 		// <Layout Block> ::= image <WndParam List>
 		protected override object RuleLayoutblockImage(NonterminalToken token)
 		{
-			return new ImageExpression(null, Get<WidgetParamList>(token, 1));
+			return new ImageExpression(null, Get<EvaluatedAttributeList>(token, 1));
 		}
 
 		// <Layout Block> ::= StringLiteral <WndParam List>
 		protected override object RuleLayoutblockStringliteral(NonterminalToken token)
 		{
-			return new LabelExpression(null, StringLiteral.Parse(TText(token,0)), Get<WidgetParamList>(token, 1));
+			return new LabelExpression(null, StringLiteral.Parse(TText(token,0)), Get<EvaluatedAttributeList>(token, 1));
 		}
 
 		// <Layout Block> ::= <Menu Block>
@@ -1016,7 +1016,7 @@ namespace LPS.ToolScript
 		// <Layout Block> ::= '[' <Expr> ']' <WndParam List>
 		protected override object RuleLayoutblockLbracketRbracket(NonterminalToken token)
 		{
-			return new WidgetFromExpression(Expr(token, 1), Get<WidgetParamList>(token,3));
+			return new WidgetFromExpression(Expr(token, 1), Get<EvaluatedAttributeList>(token,3));
 		}
 
 		// <Layout List> ::= <Layout List> <Layout Block>
@@ -1036,7 +1036,7 @@ namespace LPS.ToolScript
 		// <Menu Block> ::= MENU <WndParam List> <MenuItems List> END
 		protected override object RuleMenublockMenuEnd(NonterminalToken token)
 		{
-			return new MenuExpression(null, Get<WidgetParamList>(token,1), MenuExpressionKind.Menu, Get<List<MenuExpression>>(token,2));
+			return new MenuExpression(null, Get<EvaluatedAttributeList>(token,1), MenuExpressionKind.Menu, Get<List<MenuExpression>>(token,2));
 		}
 
 		// <MenuItems List> ::= <Menu Item> <MenuItems List>
@@ -1064,7 +1064,7 @@ namespace LPS.ToolScript
 		// <Menu Item> ::= menuitem <WndParam List>
 		protected override object RuleMenuitemMenuitem(NonterminalToken token)
 		{
-			return new MenuExpression(null, Get<WidgetParamList>(token,1), MenuExpressionKind.MenuItem, null);
+			return new MenuExpression(null, Get<EvaluatedAttributeList>(token,1), MenuExpressionKind.MenuItem, null);
 		}
 
 		// <Menu Item> ::= Separator
@@ -1111,10 +1111,10 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <DB Tables> ::= <DB Table> <DB Tables>
+		// <DB Tables> ::= <DB Tables> <DB Table>
 		protected override object RuleDbtables(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Tables> ::= <DB Table> <DB Tables>");
+			throw new NotImplementedException("<DB Tables> ::= <DB Tables> <DB Table>");
 			//return new
 		}
 
@@ -1125,10 +1125,10 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <DB Table> ::= table ID '{' <DB Columns> '}' <DB Table Attr>
+		// <DB Table> ::= table ID '{' <DB Columns> '}' <DB Table Attr List>
 		protected override object RuleDbtableTableIdLbraceRbrace(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table> ::= table ID '{' <DB Columns> '}' <DB Table Attr>");
+			throw new NotImplementedException("<DB Table> ::= table ID '{' <DB Columns> '}' <DB Table Attr List>");
 			//return new
 		}
 
@@ -1153,10 +1153,10 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <DB Columns> ::= <DB Columns> ',' <DB Column>
+		// <DB Columns> ::= <DB Column> ',' <DB Columns>
 		protected override object RuleDbcolumnsComma(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Columns> ::= <DB Columns> ',' <DB Column>");
+			throw new NotImplementedException("<DB Columns> ::= <DB Column> ',' <DB Columns>");
 			//return new
 		}
 
@@ -1174,10 +1174,10 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <DB Column> ::= ID <DB Column Type> <DB Column Attr>
+		// <DB Column> ::= ID <DB Column Type> <DB Column Attr List>
 		protected override object RuleDbcolumnId(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column> ::= ID <DB Column Type> <DB Column Attr>");
+			throw new NotImplementedException("<DB Column> ::= ID <DB Column Type> <DB Column Attr List>");
 			//return new
 		}
 
@@ -1279,6 +1279,20 @@ namespace LPS.ToolScript
 			//return new
 		}
 
+		// <DB Column Attr List> ::= <DB Column Attr> <DB Column Attr List>
+		protected override object RuleDbcolumnattrlist(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Attr List> ::= <DB Column Attr> <DB Column Attr List>");
+			//return new
+		}
+
+		// <DB Column Attr List> ::= 
+		protected override object RuleDbcolumnattrlist2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Column Attr List> ::= ");
+			//return new
+		}
+
 		// <DB Column Attr> ::= unique
 		protected override object RuleDbcolumnattrUnique(NonterminalToken token)
 		{
@@ -1300,10 +1314,24 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <DB Column Attr> ::= ID '=' <Expr>
-		protected override object RuleDbcolumnattrIdEq(NonterminalToken token)
+		// <DB Column Attr> ::= ID '=' <Expr> ';'
+		protected override object RuleDbcolumnattrIdEqSemi(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Attr> ::= ID '=' <Expr>");
+			throw new NotImplementedException("<DB Column Attr> ::= ID '=' <Expr> ';'");
+			//return new
+		}
+
+		// <DB Table Attr List> ::= <DB Table Attr> <DB Table Attr List>
+		protected override object RuleDbtableattrlist(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Table Attr List> ::= <DB Table Attr> <DB Table Attr List>");
+			//return new
+		}
+
+		// <DB Table Attr List> ::= 
+		protected override object RuleDbtableattrlist2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Table Attr List> ::= ");
 			//return new
 		}
 
@@ -1314,52 +1342,52 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <DB Table Attr> ::= before insert position DecimalLiteral <Expr>
+		// <DB Table Attr> ::= before insert position DecimalLiteral <Stm>
 		protected override object RuleDbtableattrBeforeInsertPositionDecimalliteral(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table Attr> ::= before insert position DecimalLiteral <Expr>");
+			throw new NotImplementedException("<DB Table Attr> ::= before insert position DecimalLiteral <Stm>");
 			//return new
 		}
 
-		// <DB Table Attr> ::= after insert position DecimalLiteral <Expr>
+		// <DB Table Attr> ::= after insert position DecimalLiteral <Stm>
 		protected override object RuleDbtableattrAfterInsertPositionDecimalliteral(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table Attr> ::= after insert position DecimalLiteral <Expr>");
+			throw new NotImplementedException("<DB Table Attr> ::= after insert position DecimalLiteral <Stm>");
 			//return new
 		}
 
-		// <DB Table Attr> ::= before update position DecimalLiteral <Expr>
+		// <DB Table Attr> ::= before update position DecimalLiteral <Stm>
 		protected override object RuleDbtableattrBeforeUpdatePositionDecimalliteral(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table Attr> ::= before update position DecimalLiteral <Expr>");
+			throw new NotImplementedException("<DB Table Attr> ::= before update position DecimalLiteral <Stm>");
 			//return new
 		}
 
-		// <DB Table Attr> ::= after update position DecimalLiteral <Expr>
+		// <DB Table Attr> ::= after update position DecimalLiteral <Stm>
 		protected override object RuleDbtableattrAfterUpdatePositionDecimalliteral(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table Attr> ::= after update position DecimalLiteral <Expr>");
+			throw new NotImplementedException("<DB Table Attr> ::= after update position DecimalLiteral <Stm>");
 			//return new
 		}
 
-		// <DB Table Attr> ::= before delete position DecimalLiteral <Expr>
+		// <DB Table Attr> ::= before delete position DecimalLiteral <Stm>
 		protected override object RuleDbtableattrBeforeDeletePositionDecimalliteral(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table Attr> ::= before delete position DecimalLiteral <Expr>");
+			throw new NotImplementedException("<DB Table Attr> ::= before delete position DecimalLiteral <Stm>");
 			//return new
 		}
 
-		// <DB Table Attr> ::= after delete position DecimalLiteral <Expr>
+		// <DB Table Attr> ::= after delete position DecimalLiteral <Stm>
 		protected override object RuleDbtableattrAfterDeletePositionDecimalliteral(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table Attr> ::= after delete position DecimalLiteral <Expr>");
+			throw new NotImplementedException("<DB Table Attr> ::= after delete position DecimalLiteral <Stm>");
 			//return new
 		}
 
-		// <DB Table Attr> ::= ID '=' <Expr>
-		protected override object RuleDbtableattrIdEq(NonterminalToken token)
+		// <DB Table Attr> ::= ID '=' <Expr> ';'
+		protected override object RuleDbtableattrIdEqSemi(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table Attr> ::= ID '=' <Expr>");
+			throw new NotImplementedException("<DB Table Attr> ::= ID '=' <Expr> ';'");
 			//return new
 		}
 		#endregion

@@ -6,7 +6,7 @@ namespace LPS.ToolScript.Parser
 	{
 		public LayoutList Childs { get; private set; }
 
-		public ContainerWidgetBase(string Name, WidgetParamList Params, LayoutList Childs)
+		public ContainerWidgetBase(string Name, EvaluatedAttributeList Params, LayoutList Childs)
 			:base(Name, Params)
 		{
 			this.Childs = Childs;

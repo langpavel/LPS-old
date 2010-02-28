@@ -17,7 +17,7 @@ namespace LPS.ToolScript.Parser
 		public MenuExpressionKind Kind { get; set; }
 		public List<MenuExpression> MenuItems { get; private set; }
 
-		public MenuExpression(string Name, WidgetParamList Params, MenuExpressionKind Kind, List<MenuExpression> MenuItems)
+		public MenuExpression(string Name, EvaluatedAttributeList Params, MenuExpressionKind Kind, List<MenuExpression> MenuItems)
 			: base(Name, Params)
 		{
 			this.MenuItems = MenuItems;

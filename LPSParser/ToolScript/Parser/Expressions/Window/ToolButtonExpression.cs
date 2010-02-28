@@ -4,7 +4,7 @@ namespace LPS.ToolScript.Parser
 {
 	public class ToolButtonExpression : SingleWidgetContainerBase
 	{
-		public ToolButtonExpression(string Name, WidgetParamList Params, IWidgetBuilder Child)
+		public ToolButtonExpression(string Name, EvaluatedAttributeList Params, IWidgetBuilder Child)
 			:base(Name, Params, Child)
 		{
 		}

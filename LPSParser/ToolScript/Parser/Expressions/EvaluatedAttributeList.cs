@@ -3,21 +3,9 @@ using System.Collections.Generic;
 
 namespace LPS.ToolScript.Parser
 {
-	public class EvaluatedExpression
+	public class EvaluatedAttributeList : Dictionary<string, EvaluatedAttribute>, IExpression
 	{
-		public EvaluatedExpression(IExpression Expression)
-		{
-			this.Expression = Expression;
-			this.Value = null;
-		}
-
-		public IExpression Expression;
-		public object Value;
-	}
-
-	public class WidgetParamList : Dictionary<string, EvaluatedExpression>, IExpression
-	{
-		public WidgetParamList()
+		public EvaluatedAttributeList()
 		{
 		}
 
@@ -28,21 +16,19 @@ namespace LPS.ToolScript.Parser
 
 		public object Eval(Context context)
 		{
-			foreach(KeyValuePair<string, EvaluatedExpression> kv in this)
-			{
-				kv.Value.Value = kv.Value.Expression.Eval(context);
-			}
+			foreach(KeyValuePair<string, EvaluatedAttribute> kv in this)
+				kv.Value.Eval(context);
 			return this;
 		}
 
 		public bool EvalAsBool (Context context)
 		{
-			throw new InvalidOperationException ();
+			throw new InvalidOperationException();
 		}
 
 		public T Get<T>(string name, T default_val)
 		{
-			EvaluatedExpression result;
+			EvaluatedAttribute result;
 			if(TryGetValue(name, out result))
 			{
 				if(result.Value != null)
@@ -70,7 +56,7 @@ namespace LPS.ToolScript.Parser
 
 		public bool TryGet(Type type, string name, out object value)
 		{
-			EvaluatedExpression result;
+			EvaluatedAttribute result;
 			if(TryGetValue(name, out result))
 			{
 				if(result.Value != null)

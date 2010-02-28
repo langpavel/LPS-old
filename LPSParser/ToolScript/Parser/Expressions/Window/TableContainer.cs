@@ -5,7 +5,7 @@ namespace LPS.ToolScript.Parser
 {
 	public class TableContainer : ContainerWidgetBase
 	{
-		public TableContainer(string Name, WidgetParamList Params, LayoutList Childs)
+		public TableContainer(string Name, EvaluatedAttributeList Params, LayoutList Childs)
 			: base(Name, Params, Childs)
 		{
 		}

@@ -4,7 +4,7 @@ namespace LPS.ToolScript.Parser
 {
 	public class HButtonBoxContainer : BoxContainerBase
 	{
-		public HButtonBoxContainer(string Name, WidgetParamList Params, LayoutList Childs)
+		public HButtonBoxContainer(string Name, EvaluatedAttributeList Params, LayoutList Childs)
 			: base(Name, Params, Childs)
 		{
 		}

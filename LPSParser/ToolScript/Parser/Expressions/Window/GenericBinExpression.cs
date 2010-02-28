@@ -5,7 +5,7 @@ namespace LPS.ToolScript.Parser
 	public class GenericBinExpression : SingleWidgetContainerBase
 	{
 		public Type BinType { get; private set; }
-		public GenericBinExpression(string Name, WidgetParamList Params, IWidgetBuilder Child, Type BinType)
+		public GenericBinExpression(string Name, EvaluatedAttributeList Params, IWidgetBuilder Child, Type BinType)
 			: base(Name, Params, Child)
 		{
 			this.BinType = BinType;
