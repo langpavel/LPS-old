@@ -134,6 +134,10 @@
     <Compile Include="ToolScript\Parser\Expressions\Window\ImageExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\LabelExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\MenuExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Database\DBColumnBase.cs" />
+    <Compile Include="ToolScript\Parser\Interfaces\IDBColumn.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Database\DBColumnAttributes.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Database\DBColumnAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />
@@ -152,6 +156,7 @@
     <Folder Include="ToolScript\Parser\Expressions\Callable\" />
     <Folder Include="ToolScript\Parser\Expressions\Ternary\" />
     <Folder Include="ToolScript\Parser\Expressions\Window\" />
+    <Folder Include="ToolScript\Parser\Expressions\Database\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
