@@ -52,11 +52,11 @@ namespace LPS.ToolScript
 
 		#region Rules
 
-		// <QualifiedName> ::= ID '.' <QualifiedName>
-		protected override object RuleQualifiednameIdDot(NonterminalToken token)
+		// <QualifiedName> ::= <QualifiedName> '.' ID
+		protected override object RuleQualifiednameDotId(NonterminalToken token)
 		{
-			QualifiedName names = Get<QualifiedName>(token, 2);
-			names.Names.Insert(0, TText(token,0));
+			QualifiedName names = Get<QualifiedName>(token, 0);
+			names.Names.Add(TText(token,2));
 			return names;
 		}
 
@@ -487,84 +487,44 @@ namespace LPS.ToolScript
 			return new CompareExpression(ComparisonType.NonEqual, Expr(token, 0), Expr(token, 2));
 		}
 
+		// <Op Equate> ::= <Op Equate> 'in' <Op Compare>
+		protected override object RuleOpequateIn (NonterminalToken token)
+		{
+			return new InExpression(Expr(token, 0), Expr(token, 2));
+		}
+
 		// <Op Equate> ::= <Op Compare>
 		protected override object RuleOpequate(NonterminalToken token)
 		{
 			return Expr(token, 0);
 		}
 
-		// <Op Compare> ::= <Op Compare> '<' <Op In>
+		// <Op Compare> ::= <Op Compare> '<' <Op Add>
 		protected override object RuleOpcompareLt(NonterminalToken token)
 		{
 			return new CompareExpression(ComparisonType.Less, Expr(token, 0), Expr(token, 2));
 		}
 
-		// <Op Compare> ::= <Op Compare> '>' <Op In>
+		// <Op Compare> ::= <Op Compare> '>' <Op Add>
 		protected override object RuleOpcompareGt(NonterminalToken token)
 		{
 			return new CompareExpression(ComparisonType.Greater, Expr(token, 0), Expr(token, 2));
 		}
 
-		// <Op Compare> ::= <Op Compare> '<=' <Op In>
+		// <Op Compare> ::= <Op Compare> '<=' <Op Add>
 		protected override object RuleOpcompareLteq(NonterminalToken token)
 		{
 			return new CompareExpression(ComparisonType.LessOrEqual, Expr(token, 0), Expr(token, 2));
 		}
 
-		// <Op Compare> ::= <Op Compare> '>=' <Op In>
+		// <Op Compare> ::= <Op Compare> '>=' <Op Add>
 		protected override object RuleOpcompareGteq(NonterminalToken token)
 		{
 			return new CompareExpression(ComparisonType.GreaterOrEqual, Expr(token, 0), Expr(token, 2));
 		}
 
-		// <Op Compare> ::= <Op In>
+		// <Op Compare> ::= <Op Add>
 		protected override object RuleOpcompare(NonterminalToken token)
-		{
-			return Expr(token, 0);
-		}
-
-		// <Op In> ::= <Op In> in <Op Add>
-		protected override object RuleOpinIn(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Op In> ::= <Op In> in <Op Add>");
-			//CheckRule(token, Symbols);
-			//return new
-		}
-
-		// <Op In> ::= <Op In> in '<' <Op Add> ',' <Op Add> '>'
-		protected override object RuleOpinInLtCommaGt(NonterminalToken token)
-		{
-			return new InRangeExpression(
-				Expr(token,0), Expr(token,3), Expr(token,5),
-				true, true);
-		}
-
-		// <Op In> ::= <Op In> in '<' <Op Add> ',' <Op Add> ')'
-		protected override object RuleOpinInLtCommaRparan(NonterminalToken token)
-		{
-			return new InRangeExpression(
-				Expr(token,0), Expr(token,3), Expr(token,5),
-				true, false);
-		}
-
-		// <Op In> ::= <Op In> in '(' <Op Add> ',' <Op Add> '>'
-		protected override object RuleOpinInLparanCommaGt(NonterminalToken token)
-		{
-			return new InRangeExpression(
-				Expr(token,0), Expr(token,3), Expr(token,5),
-				false, true);
-		}
-
-		// <Op In> ::= <Op In> in '(' <Op Add> ',' <Op Add> ')'
-		protected override object RuleOpinInLparanCommaRparan(NonterminalToken token)
-		{
-			return new InRangeExpression(
-				Expr(token,0), Expr(token,3), Expr(token,5),
-				false, false);
-		}
-
-		// <Op In> ::= <Op Add>
-		protected override object RuleOpin(NonterminalToken token)
 		{
 			return Expr(token, 0);
 		}
@@ -671,10 +631,10 @@ namespace LPS.ToolScript
 			return new CompareExpression(ComparisonType.NonEqual, Expr(token, 0), new NullLiteral());
 		}
 
-		// <Op Unary> ::= cast <Op Unary> as <QualifiedName>
-		protected override object RuleOpunaryCastAs(NonterminalToken token)
+		// <Op Unary> ::= cast '(' <Op Unary> as <QualifiedName> ')'
+		protected override object RuleOpunaryCastLparanAsRparan (NonterminalToken token)
 		{
-			return new CastExpression(Expr(token, 1), Get<QualifiedName>(token,3));
+			return new CastExpression(Expr(token, 2), Get<QualifiedName>(token,4));
 		}
 
 		// <Op Unary> ::= <Op Pointer>
@@ -749,12 +709,10 @@ namespace LPS.ToolScript
 			return CreateObject(token.Tokens[0]);
 		}
 
-		// <Value> ::= type <QualifiedName>
-		protected override object RuleValueType(NonterminalToken token)
+		// <Value> ::= type '(' <QualifiedName> ')'
+		protected override object RuleValueTypeLparanRparan (NonterminalToken token)
 		{
-			throw new NotImplementedException("<Value> ::= type <QualifiedName>");
-			//CheckRule(token, Symbols);
-			//return new
+			throw new NotImplementedException("<Value> ::= type '(' <QualifiedName> ')'");
 		}
 
 		// <Value> ::= new <QualifiedName> '(' <Args> ')'
@@ -820,6 +778,30 @@ namespace LPS.ToolScript
 		{
 			throw new NotImplementedException("<Value> ::= property <Expr> get <Expr> set <Expr> ';'");
 			//return new
+		}
+
+		// <Value> ::= range '<' <Op Add> ';' <Op Add> '>'
+		protected override object RuleValueRangeLtSemiGt(NonterminalToken token)
+		{
+			return new RangeExpression(RangeType.Closed, Expr(token,2), Expr(token,4));
+		}
+
+		// <Value> ::= range '<' <Op Add> ';' <Op Add> ')'
+		protected override object RuleValueRangeLtSemiRparan(NonterminalToken token)
+		{
+			return new RangeExpression(RangeType.LeftClosed, Expr(token,2), Expr(token,4));
+		}
+
+		// <Value> ::= range '(' <Op Add> ';' <Op Add> '>'
+		protected override object RuleValueRangeLparanSemiGt(NonterminalToken token)
+		{
+			return new RangeExpression(RangeType.RightClosed, Expr(token,2), Expr(token,4));
+		}
+
+		// <Value> ::= range '(' <Op Add> ';' <Op Add> ')'
+		protected override object RuleValueRangeLparanSemiRparan(NonterminalToken token)
+		{
+			return new RangeExpression(RangeType.Open, Expr(token,2), Expr(token,4));
 		}
 
 		// <Value> ::= dict
@@ -997,20 +979,6 @@ namespace LPS.ToolScript
 			MenuExpression menu = Get<MenuExpression>(token,0);
 			menu.Kind = MenuExpressionKind.MenuBar;
 			return menu;
-		}
-
-		// <Layout Block> ::= ref <QualifiedName> <WndParam List>
-		protected override object RuleLayoutblockRef(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Layout Block> ::= ref <QualifiedName> <WndParam List>");
-			//return new
-		}
-
-		// <Layout Block> ::= ref StringLiteral <WndParam List>
-		protected override object RuleLayoutblockRefStringliteral(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Layout Block> ::= ref StringLiteral <WndParam List>");
-			//return new
 		}
 
 		// <Layout Block> ::= '[' <Expr> ']' <WndParam List>

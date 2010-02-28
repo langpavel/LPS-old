@@ -15,6 +15,7 @@ namespace LPS.ToolScript.Parser
 		object GetAttribute(Type type, string name);
 
 		object NormalizeValue(object value);
-		string DisplayValue(object value);
+		string DisplayValue(object value, string format);
+		string DisplayValue(object value, bool allow_tags);
 	}
 }

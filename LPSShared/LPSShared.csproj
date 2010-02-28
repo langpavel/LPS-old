@@ -55,6 +55,7 @@
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\LogScope.cs" />
     <Compile Include="Logging\TextLogger.cs" />
+    <Compile Include="Range.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -107,7 +107,6 @@
     <Compile Include="ToolScript\Parser\Statements\UsingDisposableStatement.cs" />
     <Compile Include="ToolScript\Parser\Expressions\CastExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Ternary\TernaryOperatorExpression.cs" />
-    <Compile Include="ToolScript\Parser\Expressions\Ternary\InRangeExpression.cs" />
     <Compile Include="ToolScript\Parser\Literals\DatetimeLiteral.cs" />
     <Compile Include="ToolScript\Parser\Literals\TimeSpanLiteral.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\WindowExpression.cs" />
@@ -156,6 +155,8 @@
     <Compile Include="ToolScript\Parser\Database\Columns\DBColumnDateTimeRange.cs" />
     <Compile Include="ToolScript\Parser\Database\Columns\DBColumnDateRange.cs" />
     <Compile Include="ToolScript\Parser\Database\Columns\DBColumnTimeRange.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\RangeExpression.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Binary\InExpression.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />

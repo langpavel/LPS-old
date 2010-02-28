@@ -13,6 +13,7 @@ namespace LPS.ToolScript.Parser
 		public bool IsUnique { get; protected set; }
 		public bool IsNotNull { get; protected set; }
 		public string DisplayFormat { get; protected set; }
+		public string DisplayFormatWithTags { get; protected set; }
 
 		/// <summary>
 		/// If column is in one-column index
@@ -39,13 +40,21 @@ namespace LPS.ToolScript.Parser
 				return Convert.ChangeType(value, this.DataType);
 		}
 
-		public string DisplayValue (object value)
+		public virtual string DisplayValue(object value, string format)
 		{
 			if(value == null || value is DBNull)
 				return String.Empty;
-			if(String.IsNullOrEmpty(this.DisplayFormat))
+			if(String.IsNullOrEmpty(format))
 				return value.ToString();
-			return String.Format("{0:" + this.DisplayFormat +"}", value);
+			return String.Format("{0:" + format +"}", value);
+		}
+
+		public string DisplayValue(object value, bool allow_tags)
+		{
+			if(allow_tags && !String.IsNullOrEmpty(this.DisplayFormatWithTags))
+				return DisplayValue(value, this.DisplayFormatWithTags);
+			else
+				return DisplayValue(value, this.DisplayFormat);
 		}
 
 		public override object Eval (Context context)

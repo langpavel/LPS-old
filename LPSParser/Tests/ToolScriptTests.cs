@@ -279,7 +279,7 @@ namespace LPS.ToolScript.Tests
 		[Test]
 		public void NativeInvokeTest3()
 		{
-			Eq(3, "return this.Add(1, cast 2 as System.Int32);");
+			Eq(3, "return this.Add(1, cast(2 as System.Int32));");
 			Eq(this.ToString(), "return this.ToString();");
 			//Eq(3, "return this.Add(1, 2);"); // FAIL - type downcast needed
 		}
@@ -411,55 +411,45 @@ namespace LPS.ToolScript.Tests
 		[Test]
 		public void RangeOperatorTest()
 		{
-			Eq(true,  "return null in <null, null>;");
-			Eq(true,  "return null in <null, null);");
-			Eq(true,  "return null in (null, null>;");
-			Eq(true,  "return null in (null, null);");
+			Eq(true,  "return 5 in range<null; 5>;");
+			Eq(false, "return 5 in range<null; 5);");
+			Eq(true,  "return 5 in range(null; 5>;");
+			Eq(false, "return 5 in range(null; 5);");
 
-			Eq(true,  "return this.NULL in <this.NULL, this.NULL>;");
-			Eq(true,  "return this.NULL in <this.NULL, this.NULL);");
-			Eq(true,  "return this.NULL in (this.NULL, this.NULL>;");
-			Eq(true,  "return this.NULL in (this.NULL, this.NULL);");
+			Eq(true,  "return 5 in range<5; null>;");
+			Eq(true,  "return 5 in range<5; null);");
+			Eq(false, "return 5 in range(5; null>;");
+			Eq(false, "return 5 in range(5; null);");
 
-			Eq(true,  "return 5 in <null, 5>;");
-			Eq(false, "return 5 in <null, 5);");
-			Eq(true,  "return 5 in (null, 5>;");
-			Eq(false, "return 5 in (null, 5);");
+			Eq(true,  "return 5 in range<5; 5>;");
+			Eq(false, "return 5 in range<5; 5);");
+			Eq(false, "return 5 in range(5; 5>;");
+			Eq(false, "return 5 in range(5; 5);");
 
-			Eq(true,  "return 5 in <5, null>;");
-			Eq(true,  "return 5 in <5, null);");
-			Eq(false, "return 5 in (5, null>;");
-			Eq(false, "return 5 in (5, null);");
+			Eq(true,  "return 5 in range<5; 10>;");
+			Eq(true,  "return 5 in range<5; 10);");
+			Eq(false, "return 5 in range(5; 10>;");
+			Eq(false, "return 5 in range(5; 10);");
 
-			Eq(true,  "return 5 in <5, 5>;");
-			Eq(false, "return 5 in <5, 5);");
-			Eq(false, "return 5 in (5, 5>;");
-			Eq(false, "return 5 in (5, 5);");
+			Eq(true,  "return 10 in range<5; 10>;");
+			Eq(false, "return 10 in range<5; 10);");
+			Eq(true,  "return 10 in range(5; 10>;");
+			Eq(false, "return 10 in range(5; 10);");
 
-			Eq(true,  "return 5 in <5, 10>;");
-			Eq(true,  "return 5 in <5, 10);");
-			Eq(false, "return 5 in (5, 10>;");
-			Eq(false, "return 5 in (5, 10);");
+			Eq(true,  "return 5.0 in range<5.0; 5.0>;");
+			Eq(false, "return 5.0 in range<5.0; 5.0);");
+			Eq(false, "return 5.0 in range(5.0; 5.0>;");
+			Eq(false, "return 5.0 in range(5.0; 5.0);");
 
-			Eq(true,  "return 10 in <5, 10>;");
-			Eq(false, "return 10 in <5, 10);");
-			Eq(true,  "return 10 in (5, 10>;");
-			Eq(false, "return 10 in (5, 10);");
+			Eq(true,  "return 5.0 in range<5.0; 10.0>;");
+			Eq(true,  "return 5.0 in range<5.0; 10.0);");
+			Eq(false, "return 5.0 in range(5.0; 10.0>;");
+			Eq(false, "return 5.0 in range(5.0; 10.0);");
 
-			Eq(true,  "return 5.0 in <5.0, 5.0>;");
-			Eq(false, "return 5.0 in <5.0, 5.0);");
-			Eq(false, "return 5.0 in (5.0, 5.0>;");
-			Eq(false, "return 5.0 in (5.0, 5.0);");
-
-			Eq(true,  "return 5.0 in <5.0, 10.0>;");
-			Eq(true,  "return 5.0 in <5.0, 10.0);");
-			Eq(false, "return 5.0 in (5.0, 10.0>;");
-			Eq(false, "return 5.0 in (5.0, 10.0);");
-
-			Eq(true,  "return 10.0 in <5.0, 10.0>;");
-			Eq(false, "return 10.0 in <5.0, 10.0);");
-			Eq(true,  "return 10.0 in (5.0, 10.0>;");
-			Eq(false, "return 10.0 in (5.0, 10.0);");
+			Eq(true,  "return 10.0 in range<5.0; 10.0>;");
+			Eq(false, "return 10.0 in range<5.0; 10.0);");
+			Eq(true,  "return 10.0 in range(5.0; 10.0>;");
+			Eq(false, "return 10.0 in range(5.0; 10.0);");
 		}
 
 		[Test]

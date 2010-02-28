@@ -56,7 +56,7 @@ Comment Line  = '//'
 ! Statements
 ! ===================================================================
 
-<QualifiedName>	::= ID '.' <QualifiedName> ! cause shift-reduce conflict that is not fatal
+<QualifiedName>	::= <QualifiedName> '.' ID
 				|	ID
 
 <Stm>			::=	if '(' <Expr> ')' <Stm>
@@ -208,8 +208,6 @@ Comment Line  = '//'
 				|	'image' <WndParam List>
 				|	StringLiteral <WndParam List>
 				|	<Menu Block>
-				|	'ref' <QualifiedName> <WndParam List>
-				|	'ref' StringLiteral <WndParam List>
 				|	'[' <Expr> ']' <WndParam List>
 
 <Menu Block>	::=	'menu' <WndParam List> <MenuItems List> 'end'
@@ -253,20 +251,14 @@ Comment Line  = '//'
 
 <Op Equate>		::=	<Op Equate> '==' <Op Compare>
 				| 	<Op Equate> '!=' <Op Compare>
+				|	<Op Equate> 'in' <Op Compare>
 				|	<Op Compare>
 
-<Op Compare>	::=	<Op Compare> '<'  <Op In>
-				|	<Op Compare> '>'  <Op In>
-               	| 	<Op Compare> '<=' <Op In>
-               	| 	<Op Compare> '>=' <Op In>
-				| 	<Op In>
-
-<Op In>			::=	<Op In> 'in' <Op Add>
-				|	<Op In> 'in' '<' <Op Add> ',' <Op Add> '>'
-				|	<Op In> 'in' '<' <Op Add> ',' <Op Add> ')'
-				|	<Op In> 'in' '(' <Op Add> ',' <Op Add> '>'
-				|	<Op In> 'in' '(' <Op Add> ',' <Op Add> ')'
-				|	<Op Add>
+<Op Compare>	::=	<Op Compare> '<'  <Op Add>
+				|	<Op Compare> '>'  <Op Add>
+               	| 	<Op Compare> '<=' <Op Add>
+               	| 	<Op Compare> '>=' <Op Add>
+				| 	<Op Add>
 
 <Op Add>     	::=	<Op Add> '+' <Op Mult>
                	| 	<Op Add> '-' <Op Mult>
@@ -280,7 +272,7 @@ Comment Line  = '//'
 <Op Unary>   	::=	'not'  <Op Unary>
 				|	'!'    <Op Unary>
                	| 	'-'    <Op Unary>
-              	|	'cast' <Op Unary> 'as' <QualifiedName>
+              	|	'cast' '(' <Op Unary> 'as' <QualifiedName> ')'
                	|	'++'   <Op Unary>
                	|	'--'   <Op Unary>
                	|	<Op Pointer> '++'
@@ -301,7 +293,7 @@ Comment Line  = '//'
 				|	DecimalLiteral
 				|	DateTimeLiteral
 				|	TimeSpanLiteral
-				|	'type' <QualifiedName>
+				|	'type' '(' <QualifiedName> ')'
 				|	<Function>
 				|	<Widget>
 				|	'new' <QualifiedName> '(' <Args> ')'
@@ -311,6 +303,10 @@ Comment Line  = '//'
 				|	'(' <Expr> ')'
 				|	'[' <Expr List> ']'
 				|	'{' <Dict List> '}'
+				|	'range' '<' <Op Add> ';' <Op Add> '>'
+				|	'range' '<' <Op Add> ';' <Op Add> ')'
+				|	'range' '(' <Op Add> ';' <Op Add> '>'
+				|	'range' '(' <Op Add> ';' <Op Add> ')'
 				|	property <Expr> ';'
 				|	property <Expr> get <Expr> ';'
 				|	property <Expr> get <Expr> set <Expr> ';'
