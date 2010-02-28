@@ -1,15 +1,12 @@
 using System;
-using LPS.ToolScript.Parser;
-using NUnit.Framework;
 
 namespace LPS.ToolScript.Tests
 {
-	[TestFixture]
-	public class ToolScriptGuiTest
+	public class ToolScriptTestBase
 	{
-		ToolScriptParser parser;
+		protected ToolScriptParser parser;
 
-		public ToolScriptGuiTest()
+		public ToolScriptTestBase()
 		{
 			parser = new ToolScriptParser();
 			Log.Add(new TextLogger(Console.Out, Verbosity.Debug));
@@ -25,19 +22,5 @@ namespace LPS.ToolScript.Tests
 			return result.RunAsMain(context);
 		}
 
-		[Test]
-		public void TestWindow()
-		{
-			Assert.IsInstanceOfType(
-				typeof(WindowExpression),
-				Run(@"return
-					window
-						vbox
-							['AAA']
-							hbox spacing=5; padding=5; ['BBB'] ['CCC'] packend; ['DDD'] end
-							['EEE']
-						end;
-				"));
-		}
 	}
 }

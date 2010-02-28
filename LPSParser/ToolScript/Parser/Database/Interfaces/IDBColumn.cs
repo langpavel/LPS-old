@@ -2,9 +2,10 @@ using System;
 
 namespace LPS.ToolScript.Parser
 {
-	public interface IDBColumn : IExpression, ICloneable
+	public interface IDBColumn : IDBSchemaItem
 	{
-		//IDBTable Table { get; }
+		IDBTable Table { get; }
+		Type DataType { get; }
 		bool IsPrimary { get; }
 		bool IsUnique { get; }
 		bool IsNotNull { get; }
@@ -12,5 +13,8 @@ namespace LPS.ToolScript.Parser
 		bool HasAttribute(string name);
 		T GetAttribute<T>(string name);
 		object GetAttribute(Type type, string name);
+
+		object NormalizeValue(object value);
+		string DisplayValue(object value);
 	}
 }

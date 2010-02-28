@@ -2,7 +2,7 @@ using System;
 
 namespace LPS.ToolScript.Parser
 {
-	public class EvaluatedAttribute : ExpressionBase
+	public class EvaluatedAttribute : ExpressionBase, ICloneable
 	{
 		public IExpression Expression { get; private set; }
 		public object Value  { get; private set; }
@@ -22,6 +22,16 @@ namespace LPS.ToolScript.Parser
 		public override bool EvalAsBool (Context context)
 		{
 			throw new InvalidOperationException();
+		}
+
+		public virtual EvaluatedAttribute Clone()
+		{
+			return (EvaluatedAttribute)this.MemberwiseClone();
+		}
+
+		object ICloneable.Clone()
+		{
+			return this.Clone();
 		}
 	}
 }

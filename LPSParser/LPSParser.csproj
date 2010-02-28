@@ -72,7 +72,6 @@
     <Compile Include="ToolScript\Parser\Statements\NoopStatement.cs" />
     <Compile Include="ToolScript\Parser\Statements\ForStatement.cs" />
     <Compile Include="ToolScript\Parser\Statements\ForeachStatement.cs" />
-    <Compile Include="ToolScriptTests.cs" />
     <Compile Include="ToolScript\Parser\Expressions\ArrayExpression.cs" />
     <Compile Include="ToolScript\Exceptions\VariableNotInitialized.cs" />
     <Compile Include="ToolScript\SpecialValue.cs" />
@@ -117,7 +116,6 @@
     <Compile Include="ToolScript\Parser\Expressions\PropertyExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\ObjectCreateExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\ContainerWidgetBase.cs" />
-    <Compile Include="ToolScriptGuiTest.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\WidgetFromExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\LayoutList.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\SingleWidgetContainerBase.cs" />
@@ -133,10 +131,31 @@
     <Compile Include="ToolScript\Parser\Expressions\Window\ImageExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\LabelExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\MenuExpression.cs" />
-    <Compile Include="ToolScript\Parser\Expressions\Database\DBColumnBase.cs" />
-    <Compile Include="ToolScript\Parser\Interfaces\IDBColumn.cs" />
     <Compile Include="ToolScript\Parser\Expressions\EvaluatedAttribute.cs" />
     <Compile Include="ToolScript\Parser\Expressions\EvaluatedAttributeList.cs" />
+    <Compile Include="Tests\ToolScriptGuiTest.cs" />
+    <Compile Include="Tests\ToolScriptTests.cs" />
+    <Compile Include="Tests\ToolScriptDBTest.cs" />
+    <Compile Include="Tests\ToolScriptTestBase.cs" />
+    <Compile Include="ToolScript\Parser\Database\Interfaces\IDBColumn.cs" />
+    <Compile Include="ToolScript\Parser\Database\Interfaces\IDBSchemaItem.cs" />
+    <Compile Include="ToolScript\Parser\Database\Interfaces\IDBTable.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnBase.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnPrimary.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnForeign.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnManyToMany.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnVarchar.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnInteger.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnDecimal.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnDateTimeBase.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnDateTime.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnDate.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnTime.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnDateTimeRangeBase.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnRangeBase.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnDateTimeRange.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnDateRange.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnTimeRange.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />
@@ -155,7 +174,9 @@
     <Folder Include="ToolScript\Parser\Expressions\Callable\" />
     <Folder Include="ToolScript\Parser\Expressions\Ternary\" />
     <Folder Include="ToolScript\Parser\Expressions\Window\" />
-    <Folder Include="ToolScript\Parser\Expressions\Database\" />
+    <Folder Include="Tests\" />
+    <Folder Include="ToolScript\Parser\Database\Interfaces\" />
+    <Folder Include="ToolScript\Parser\Database\Columns\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

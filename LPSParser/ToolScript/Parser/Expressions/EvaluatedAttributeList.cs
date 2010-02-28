@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace LPS.ToolScript.Parser
 {
-	public class EvaluatedAttributeList : Dictionary<string, EvaluatedAttribute>, IExpression
+	public class EvaluatedAttributeList : Dictionary<string, EvaluatedAttribute>, IExpression, ICloneable
 	{
 		public EvaluatedAttributeList()
 		{
@@ -73,6 +73,19 @@ namespace LPS.ToolScript.Parser
 			}
 			value = null;
 			return false;
+		}
+
+		public virtual EvaluatedAttributeList Clone()
+		{
+			EvaluatedAttributeList clone = new EvaluatedAttributeList();
+			foreach(KeyValuePair<string, EvaluatedAttribute> kv in this)
+				clone.Add(kv.Key, kv.Value.Clone());
+			return clone;
+		}
+
+		object ICloneable.Clone()
+		{
+			return this.Clone();
 		}
 	}
 }
