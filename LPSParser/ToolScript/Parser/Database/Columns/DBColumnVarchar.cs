@@ -5,15 +5,22 @@ namespace LPS.ToolScript.Parser
 	public class DBColumnVarchar : DBColumnBase
 	{
 		public int MaxLength { get; set; }
+		public bool UnlimitedLength
+		{
+			get { return this.MaxLength == int.MaxValue; }
+			set { if(value) this.MaxLength = int.MaxValue; }
+		}
+
+		public DBColumnVarchar(int MaxLength)
+			: base(typeof(String))
+		{
+			this.MaxLength = MaxLength;
+		}
 
 		public DBColumnVarchar()
 			: base(typeof(String))
 		{
-			this.MaxLength = int.MaxValue;
-			this.IsAsbtract = false;
-			this.IsPrimary = false;
-			this.IsUnique = false;
-			this.IsNotNull = false;
+			this.UnlimitedLength = true;
 		}
 
 	}

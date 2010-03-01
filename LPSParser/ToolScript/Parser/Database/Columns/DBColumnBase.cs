@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 namespace LPS.ToolScript.Parser
 {
@@ -7,24 +8,24 @@ namespace LPS.ToolScript.Parser
 		public string Name { get; set; }
 		public EvaluatedAttributeList Attribs { get; set; }
 		public IDBTable Table { get; set; }
-		public bool IsAsbtract { get; protected set; }
 		public Type DataType { get; private set; }
-		public bool IsPrimary { get; protected set; }
+		public virtual bool IsAsbtract { get { return false; } }
+		public virtual bool IsPrimary { get { return false; } }
 		public bool IsUnique { get; protected set; }
 		public bool IsNotNull { get; protected set; }
+		public string DisplayNull { get; protected set; }
+		public string DisplayNullWithTags { get; protected set; }
 		public string DisplayFormat { get; protected set; }
 		public string DisplayFormatWithTags { get; protected set; }
 
 		/// <summary>
 		/// If column is in one-column index
 		/// </summary>
-		public virtual bool IsIndex { get { return false; } }
+		public bool IsIndex { get; protected set; }
 
 		public DBColumnBase(Type DataType)
 		{
 			this.DataType = DataType;
-			this.IsAsbtract = false;
-			this.IsPrimary = false;
 			this.IsUnique = false;
 			this.IsNotNull = false;
 		}
@@ -40,25 +41,33 @@ namespace LPS.ToolScript.Parser
 				return Convert.ChangeType(value, this.DataType);
 		}
 
-		public virtual string DisplayValue(object value, string format)
+		public virtual string DisplayValue(object value, string format, string ifnull)
 		{
 			if(value == null || value is DBNull)
-				return String.Empty;
-			if(String.IsNullOrEmpty(format))
+				return ifnull;
+			if(String.IsNullOrEmpty(format) || !(value is IFormattable))
 				return value.ToString();
-			return String.Format("{0:" + format +"}", value);
+			return ((IFormattable)value).ToString(format, CultureInfo.CurrentCulture);
 		}
 
 		public string DisplayValue(object value, bool allow_tags)
 		{
 			if(allow_tags && !String.IsNullOrEmpty(this.DisplayFormatWithTags))
-				return DisplayValue(value, this.DisplayFormatWithTags);
+				return DisplayValue(value, this.DisplayFormatWithTags, this.DisplayNullWithTags);
 			else
-				return DisplayValue(value, this.DisplayFormat);
+				return DisplayValue(value, this.DisplayFormat, this.DisplayNull);
 		}
 
 		public override object Eval (Context context)
 		{
+			Attribs.Eval(context);
+			this.IsNotNull = Attribs.Get<bool>("NOT NULL", false);
+			this.IsUnique = Attribs.Get<bool>("UNIQUE", false);
+			this.IsIndex = Attribs.Get<bool>("INDEX", false);
+			this.DisplayFormat = Attribs.Get<string>("Display", "");
+			this.DisplayFormatWithTags = Attribs.Get<string>("DisplayTags", this.DisplayFormat);
+			this.DisplayNull = Attribs.Get<string>("DisplayNull", "");
+			this.DisplayNullWithTags = Attribs.Get<string>("DisplayNullTags", this.DisplayNull);
 			return this;
 		}
 
@@ -67,25 +76,8 @@ namespace LPS.ToolScript.Parser
 			throw new InvalidOperationException("Nelze vyhodnocovat odkaz na databázový sloupec jako boolean");
 		}
 
-		public bool HasAttribute (string name)
+		public virtual void Resolve (IDatabaseSchema database)
 		{
-			return Attribs.ContainsKey(name);
-		}
-
-		public object GetAttribute (Type type, string name)
-		{
-			object value;
-			if(!Attribs.TryGet(type, name, out value))
-				throw new InvalidOperationException("Sloupec nemá atribut "+ name);
-			return value;
-		}
-
-		public T GetAttribute<T>(string name)
-		{
-			T value;
-			if(!Attribs.TryGet<T>(name, out value))
-				throw new InvalidOperationException("Sloupec nemá atribut "+ name);
-			return value;
 		}
 
 		public virtual DBColumnBase Clone()

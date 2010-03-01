@@ -134,12 +134,6 @@ namespace LPS.ToolScript
 			return new UsingDisposableStatement(Expr(token,2), Statement(token,4));
 		}
 
-		// <Stm> ::= <Database> ';'
-		protected override object RuleStmSemi(NonterminalToken token)
-		{
-			return CreateObject(token.Tokens[0]);
-		}
-
 		// <Stm> ::= <Normal Stm>
 		protected override object RuleStm(NonterminalToken token)
 		{
@@ -383,58 +377,70 @@ namespace LPS.ToolScript
 			return dict;
 		}
 
-		// <Expr> ::= <Op If> '=' <Expr>
-		protected override object RuleExprEq(NonterminalToken token)
+		// <Expr> ::= <Database>
+		protected override object RuleExpr2(NonterminalToken token)
+		{
+			return Expr(token,0);
+		}
+
+		// <Expr> ::= <Op Assign>
+		protected override object RuleExpr3(NonterminalToken token)
+		{
+			return Expr(token,0);
+		}
+
+		// <Op Assign> ::= <Op If> '=' <Expr>
+		protected override object RuleOpassignEq (NonterminalToken token)
 		{
 			return new AssignExpression(Expr(token,0), Expr(token,2));
 		}
 
-		// <Expr> ::= <Op If> '+=' <Expr>
-		protected override object RuleExprPluseq(NonterminalToken token)
+		// <Op Assign> ::= <Op If> '+=' <Expr>
+		protected override object RuleOpassignPluseq(NonterminalToken token)
 		{
 			IExpression op1 = Expr(token, 0);
 			return new AssignExpression(op1, new AddExpression(op1, Expr(token, 2)));
 		}
 
-		// <Expr> ::= <Op If> '-=' <Expr>
-		protected override object RuleExprMinuseq(NonterminalToken token)
+		// <Op Assign> ::= <Op If> '-=' <Expr>
+		protected override object RuleOpassignMinuseq(NonterminalToken token)
 		{
 			IExpression op1 = Expr(token, 0);
 			return new AssignExpression(op1, new SubstractExpression(op1, Expr(token, 2)));
 		}
 
-		// <Expr> ::= <Op If> '*=' <Expr>
-		protected override object RuleExprTimeseq(NonterminalToken token)
+		// <Op Assign> ::= <Op If> '*=' <Expr>
+		protected override object RuleOpassignTimeseq(NonterminalToken token)
 		{
 			IExpression op1 = Expr(token, 0);
 			return new AssignExpression(op1, new MultiplyExpression(op1, Expr(token, 2)));
 		}
 
-		// <Expr> ::= <Op If> '/=' <Expr>
-		protected override object RuleExprDiveq(NonterminalToken token)
+		// <Op Assign> ::= <Op If> '/=' <Expr>
+		protected override object RuleOpassignDiveq(NonterminalToken token)
 		{
 			IExpression op1 = Expr(token, 0);
 			return new AssignExpression(op1, new DivideExpression(op1, Expr(token, 2)));
 		}
 
-		// <Expr> ::= <Op If> '<==' <Expr>
-		protected override object RuleExprLteqeq(NonterminalToken token)
+		// <Op Assign> ::= <Op If> '<==' <Expr>
+		protected override object RuleOpassignLteqeq(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Expr> ::= <Op If> '<==' <Expr>");
 			//CheckRule(token, Symbols);
 			//return new
 		}
 
-		// <Expr> ::= <Op If> '<==>' <Expr>
-		protected override object RuleExprLteqeqgt(NonterminalToken token)
+		// <Op Assign> ::= <Op If> '<==>' <Expr>
+		protected override object RuleOpassignLteqeqgt(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Expr> ::= <Op If> '<==>' <Expr>");
 			//CheckRule(token, Symbols);
 			//return new
 		}
 
-		// <Expr> ::= <Op If>
-		protected override object RuleExpr(NonterminalToken token)
+		// <Op Assign> ::= <Op If>
+		protected override object RuleOpassign(NonterminalToken token)
 		{
 			return Expr(token, 0);
 		}
@@ -703,12 +709,6 @@ namespace LPS.ToolScript
 			return new TimeSpanLiteral(TimeSpanLiteral.Parse(TText(token, 0)));
 		}
 
-		// <Value> ::= <Function>
-		protected override object RuleValue(NonterminalToken token)
-		{
-			return CreateObject(token.Tokens[0]);
-		}
-
 		// <Value> ::= type '(' <QualifiedName> ')'
 		protected override object RuleValueTypeLparanRparan (NonterminalToken token)
 		{
@@ -804,6 +804,12 @@ namespace LPS.ToolScript
 			return new RangeExpression(RangeType.Open, Expr(token,2), Expr(token,4));
 		}
 
+		// <Value> ::= <Function>
+		protected override object RuleValue(NonterminalToken token)
+		{
+			return Expr(token,0);
+		}
+
 		// <Value> ::= dict
 		protected override object RuleValueDict(NonterminalToken token)
 		{
@@ -837,7 +843,7 @@ namespace LPS.ToolScript
 		#region Widgets
 
 		// <Value> ::= <Widget>
-		protected override object RuleValue2(NonterminalToken token)
+		protected override object RuleExpr(NonterminalToken token)
 		{
 			return CreateObject(token.Tokens[0]);
 		}
@@ -1068,28 +1074,49 @@ namespace LPS.ToolScript
 		// <Database> ::= database ID '{' <DB Tables> '}'
 		protected override object RuleDatabaseDatabaseIdLbraceRbrace(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Database> ::= database ID '{' <DB Tables> '}'");
-			//return new
+			DatabaseExpression db = new DatabaseExpression(TText(token,1), false);
+			foreach(IDBTable table in Get<IEnumerable>(token,3))
+				db.Add(table.Name, table);
+			return db;
 		}
 
 		// <Database> ::= extends database ID '{' <DB Tables> '}'
 		protected override object RuleDatabaseExtendsDatabaseIdLbraceRbrace(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Database> ::= extends database ID '{' <DB Tables> '}'");
-			//return new
+			DatabaseExpression db = new DatabaseExpression(TText(token,1), true);
+			foreach(IDBTable table in Get<IEnumerable>(token,3))
+				db.Add(table.Name, table);
+			return db;
 		}
 
 		// <DB Tables> ::= <DB Tables> <DB Table>
 		protected override object RuleDbtables(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Tables> ::= <DB Tables> <DB Table>");
-			//return new
+			List<IDBTable> list = Get<List<IDBTable>>(token,0);
+			list.Add(Get<IDBTable>(token,1));
+			return list;
 		}
 
 		// <DB Tables> ::= 
 		protected override object RuleDbtables2(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Tables> ::= ");
+			return new List<IDBTable>();
+		}
+
+		// <DB Table> ::= template table ID '{' <DB Columns> '}' <DB Table Attr List>
+		protected override object RuleDbtableTemplateTableIdLbraceRbrace(NonterminalToken token)
+		{
+			DBTableExpression table = new DBTableExpression(
+				TText(token,1), false, Get<EvaluatedAttributeList>(token,5), null);
+			foreach(IDBColumn column in Get<IEnumerable>(token,3))
+				table.Add(column.Name, column);
+			return table;
+		}
+
+		// <DB Table> ::= template table ID extends ID '{' <DB Columns> '}' <DB Table Attr List>
+		protected override object RuleDbtableTemplateTableIdExtendsIdLbraceRbrace(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Table> ::= template table ID extends ID '{' <DB Columns> '}' <DB Table Attr List>");
 			//return new
 		}
 
@@ -1100,38 +1127,31 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <DB Table> ::= template table ID '{' <DB Columns> '}'
-		protected override object RuleDbtableTemplateTableIdLbraceRbrace(NonterminalToken token)
+		// <DB Table> ::= table ID extends ID '{' <DB Columns> '}' <DB Table Attr>
+		protected override object RuleDbtableTableIdExtendsIdLbraceRbrace(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table> ::= template table ID '{' <DB Columns> '}'");
+			throw new NotImplementedException("<DB Table> ::= table ID extends ID '{' <DB Columns> '}' <DB Table Attr>");
 			//return new
 		}
 
-		// <DB Table> ::= table ID template ID '{' <DB Columns> '}' <DB Table Attr>
-		protected override object RuleDbtableTableIdTemplateIdLbraceRbrace(NonterminalToken token)
+		// <DB Table> ::= extends table ID '{' <DB Columns> '}' <DB Table Attr List>
+		protected override object RuleDbtableExtendsTableIdLbraceRbrace(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table> ::= table ID template ID '{' <DB Columns> '}' <DB Table Attr>");
+			throw new NotImplementedException("<DB Table> ::= extends table ID '{' <DB Columns> '}' <DB Table Attr List>");
 			//return new
 		}
 
-		// <DB Table> ::= template table ID template ID '{' <DB Columns> '}'
-		protected override object RuleDbtableTemplateTableIdTemplateIdLbraceRbrace(NonterminalToken token)
+		// <DB Table> ::= extends table ID extends ID '{' <DB Columns> '}' <DB Table Attr List>
+		protected override object RuleDbtableExtendsTableIdExtendsIdLbraceRbrace(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table> ::= template table ID template ID '{' <DB Columns> '}'");
+			throw new NotImplementedException("<DB Table> ::= extends table ID extends ID '{' <DB Columns> '}' <DB Table Attr List>");
 			//return new
 		}
 
-		// <DB Columns> ::= <DB Column> ',' <DB Columns>
-		protected override object RuleDbcolumnsComma(NonterminalToken token)
-		{
-			throw new NotImplementedException("<DB Columns> ::= <DB Column> ',' <DB Columns>");
-			//return new
-		}
-
-		// <DB Columns> ::= <DB Column>
+		// <DB Columns> ::= <DB Columns> <DB Column>
 		protected override object RuleDbcolumns(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Columns> ::= <DB Column>");
+			throw new NotImplementedException("<DB Columns> ::= <DB Columns> <DB Column>");
 			//return new
 		}
 
@@ -1142,151 +1162,177 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <DB Column> ::= ID <DB Column Type> <DB Column Attr List>
-		protected override object RuleDbcolumnId(NonterminalToken token)
+		// <DB Column> ::= ID <DB Column Type> <DB Column Attr List> ';'
+		protected override object RuleDbcolumnIdSemi (NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column> ::= ID <DB Column Type> <DB Column Attr List>");
-			//return new
+			DBColumnBase col = Get<DBColumnBase>(token, 1);
+			col.Name = TText(token,0);
+			col.Attribs = Get<EvaluatedAttributeList>(token, 2);
+			return col;
 		}
 
 		// <DB Column Type> ::= primary
 		protected override object RuleDbcolumntypePrimary(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Type> ::= primary");
-			//return new
+			return new DBColumnPrimary();
 		}
 
 		// <DB Column Type> ::= foreign ID
 		protected override object RuleDbcolumntypeForeignId(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Type> ::= foreign ID");
-			//return new
+			return new DBColumnForeign(TText(token,1));
 		}
 
 		// <DB Column Type> ::= foreign ID '(' ID ')'
 		protected override object RuleDbcolumntypeForeignIdLparanIdRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Type> ::= foreign ID '(' ID ')'");
-			//return new
+			return new DBColumnForeign(TText(token,1), TText(token,3));
+		}
+
+		// <DB Column Type> ::= many ID
+		protected override object RuleDbcolumntypeManyId(NonterminalToken token)
+		{
+			return new DBColumnManyToMany(
+				TText(token,1),  // referenced table
+				null,  // through table
+				null,  // through table this foreign key name
+				null); // through table referenced foreign key name
+		}
+
+		// <DB Column Type> ::= many ID through ID
+		protected override object RuleDbcolumntypeManyIdThroughId(NonterminalToken token)
+		{
+			return new DBColumnManyToMany(
+				TText(token,1),  // referenced table
+				TText(token,3),  // through table
+				null,  // through table this foreign key name
+				null); // through table referenced foreign key name
 		}
 
 		// <DB Column Type> ::= many ID through ID '(' ID ',' ID ')'
 		protected override object RuleDbcolumntypeManyIdThroughIdLparanIdCommaIdRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Type> ::= many ID through ID '(' ID ',' ID ')'");
-			//return new
+			return new DBColumnManyToMany(
+				TText(token,1),  // referenced table
+				TText(token,3),  // through table
+				TText(token,5),  // through table this foreign key name
+				TText(token,7)); // through table referenced foreign key name
 		}
 
 		// <DB Column Type> ::= varchar
 		protected override object RuleDbcolumntypeVarchar(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Type> ::= varchar");
-			//return new
+			return new DBColumnVarchar();
 		}
 
 		// <DB Column Type> ::= varchar '(' IntLiteral ')'
 		protected override object RuleDbcolumntypeVarcharLparanIntliteralRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Type> ::= varchar '(' IntLiteral ')'");
-			//return new
+			return new DBColumnVarchar(Int32.Parse(TText(token, 2)));
 		}
 
 		// <DB Column Type> ::= integer
 		protected override object RuleDbcolumntypeInteger(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Type> ::= integer");
-			//return new
+			return new DBColumnInteger();
+		}
+
+		// <DB Column Type> ::= bool
+		protected override object RuleDbcolumntypeBool(NonterminalToken token)
+		{
+			return new DBColumnBoolean();
 		}
 
 		// <DB Column Type> ::= decimal '(' IntLiteral ',' IntLiteral ')'
 		protected override object RuleDbcolumntypeDecimalLparanIntliteralCommaIntliteralRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Type> ::= decimal '(' IntLiteral ',' IntLiteral ')'");
-			//return new
+			return new DBColumnDecimal(Int32.Parse(TText(token, 2)), Int32.Parse(TText(token, 4)));
 		}
 
 		// <DB Column Type> ::= date
 		protected override object RuleDbcolumntypeDate(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Type> ::= date");
-			//return new
+			return new DBColumnDate();
 		}
 
 		// <DB Column Type> ::= time
 		protected override object RuleDbcolumntypeTime(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Type> ::= time");
-			//return new
+			return new DBColumnTime();
 		}
 
 		// <DB Column Type> ::= datetime
 		protected override object RuleDbcolumntypeDatetime(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Type> ::= datetime");
-			//return new
+			return new DBColumnDateTime();
 		}
 
 		// <DB Column Type> ::= daterange
 		protected override object RuleDbcolumntypeDaterange(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Type> ::= daterange");
-			//return new
+			return new DBColumnDateRange();
 		}
 
 		// <DB Column Type> ::= timerange
 		protected override object RuleDbcolumntypeTimerange(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Type> ::= timerange");
-			//return new
+			return new DBColumnTimeRange();
 		}
 
 		// <DB Column Type> ::= datetimerange
 		protected override object RuleDbcolumntypeDatetimerange(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Type> ::= datetimerange");
-			//return new
+			return new DBColumnDateTimeRange();
 		}
 
 		// <DB Column Attr List> ::= <DB Column Attr> <DB Column Attr List>
 		protected override object RuleDbcolumnattrlist(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Attr List> ::= <DB Column Attr> <DB Column Attr List>");
-			//return new
+			EvaluatedAttributeList list = Get<EvaluatedAttributeList>(token,1);
+			KeyValuePair<string, EvaluatedAttribute> kv = Get<KeyValuePair<string, EvaluatedAttribute>>(token,0);
+			list.Add(kv.Key, kv.Value);
+			return list;
 		}
 
 		// <DB Column Attr List> ::= 
 		protected override object RuleDbcolumnattrlist2(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Attr List> ::= ");
-			//return new
+			return new EvaluatedAttributeList();
 		}
 
 		// <DB Column Attr> ::= unique
 		protected override object RuleDbcolumnattrUnique(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Attr> ::= unique");
-			//return new
+			return new KeyValuePair<string, EvaluatedAttribute>(
+				"UNIQUE", new EvaluatedAttribute(new BooleanLiteral(true)));
 		}
 
 		// <DB Column Attr> ::= not null
 		protected override object RuleDbcolumnattrNotNull(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Attr> ::= not null");
-			//return new
+			return new KeyValuePair<string, EvaluatedAttribute>(
+				"NOT NULL", new EvaluatedAttribute(new BooleanLiteral(true)));
 		}
 
 		// <DB Column Attr> ::= index
 		protected override object RuleDbcolumnattrIndex(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Attr> ::= index");
-			//return new
+			return new KeyValuePair<string, EvaluatedAttribute>(
+				"INDEX", new EvaluatedAttribute(new BooleanLiteral(true)));
 		}
 
-		// <DB Column Attr> ::= ID '=' <Expr> ';'
-		protected override object RuleDbcolumnattrIdEqSemi(NonterminalToken token)
+		// <DB Column Attr> ::= default <Value>
+		protected override object RuleDbcolumnattrDefault(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Column Attr> ::= ID '=' <Expr> ';'");
-			//return new
+			return new KeyValuePair<string, EvaluatedAttribute>(
+				"default", new EvaluatedAttribute(Expr(token,1)));
+		}
+
+		// <DB Column Attr> ::= ID '=' <Value>
+		protected override object RuleDbcolumnattrIdEq(NonterminalToken token)
+		{
+			return new KeyValuePair<string, EvaluatedAttribute>(
+				TText(token,0), new EvaluatedAttribute(Expr(token,2)));
 		}
 
 		// <DB Table Attr List> ::= <DB Table Attr> <DB Table Attr List>
@@ -1303,8 +1349,8 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <DB Table Attr> ::= index '(' <ID List> ')'
-		protected override object RuleDbtableattrIndexLparanRparan(NonterminalToken token)
+		// <DB Table Attr> ::= index '(' <ID List> ')' ';'
+		protected override object RuleDbtableattrIndexLparanRparanSemi(NonterminalToken token)
 		{
 			throw new NotImplementedException("<DB Table Attr> ::= index '(' <ID List> ')'");
 			//return new

@@ -2,9 +2,9 @@ using System;
 
 namespace LPS.ToolScript.Parser
 {
-	public class DBColumnInteger : DBColumnBase
+	public class DBColumnBoolean : DBColumnBase
 	{
-		public DBColumnInteger()
+		public DBColumnBoolean()
 			: base(typeof(Int64))
 		{
 		}

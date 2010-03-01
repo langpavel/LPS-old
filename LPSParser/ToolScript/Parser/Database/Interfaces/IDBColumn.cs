@@ -6,16 +6,14 @@ namespace LPS.ToolScript.Parser
 	{
 		IDBTable Table { get; }
 		Type DataType { get; }
+		EvaluatedAttributeList Attribs { get; }
 		bool IsPrimary { get; }
 		bool IsUnique { get; }
 		bool IsNotNull { get; }
 		bool IsIndex { get; }
-		bool HasAttribute(string name);
-		T GetAttribute<T>(string name);
-		object GetAttribute(Type type, string name);
 
 		object NormalizeValue(object value);
-		string DisplayValue(object value, string format);
+		string DisplayValue(object value, string format, string ifnull);
 		string DisplayValue(object value, bool allow_tags);
 	}
 }

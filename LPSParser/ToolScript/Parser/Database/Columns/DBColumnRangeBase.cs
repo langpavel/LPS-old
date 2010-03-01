@@ -4,6 +4,8 @@ namespace LPS.ToolScript.Parser
 {
 	public abstract class DBColumnRangeBase : DBColumnBase
 	{
+		public override bool IsAsbtract { get { return true; } }
+
 		public Type RangeDBColumnType { get; protected set; }
 		public DBColumnBase LowColumn { get; protected set; }
 		public DBColumnBase HighColumn { get; protected set; }
@@ -12,7 +14,6 @@ namespace LPS.ToolScript.Parser
 			: base(ValueType)
 		{
 			this.RangeDBColumnType = RangeDBColumnType;
-			this.IsAsbtract = true;
 		}
 	}
 }

@@ -4,11 +4,11 @@ namespace LPS.ToolScript.Parser
 {
 	public class DBColumnPrimary : DBColumnBase
 	{
+		public override bool IsPrimary { get { return true; } }
+
 		public DBColumnPrimary()
 			: base(typeof(Int64))
 		{
-			this.IsAsbtract = false;
-			this.IsPrimary = true;
 			this.IsUnique = true;
 			this.IsNotNull = true;
 		}

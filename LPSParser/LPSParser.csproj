@@ -157,6 +157,10 @@
     <Compile Include="ToolScript\Parser\Database\Columns\DBColumnTimeRange.cs" />
     <Compile Include="ToolScript\Parser\Expressions\RangeExpression.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Binary\InExpression.cs" />
+    <Compile Include="ToolScript\Parser\Database\DatabaseExpression.cs" />
+    <Compile Include="ToolScript\Parser\Database\Columns\DBColumnBoolean.cs" />
+    <Compile Include="ToolScript\Parser\Database\Interfaces\IDatabaseSchema.cs" />
+    <Compile Include="ToolScript\Parser\Database\DBTableExpression.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />
