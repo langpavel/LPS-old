@@ -14,7 +14,12 @@ namespace LPS.ToolScript.Parser
 
 		public DecimalLiteral(TerminalToken token)
 		{
-			val = Decimal.Parse(token.Text, CultureInfo.InvariantCulture);
+			val = Parse(token.Text);
+		}
+
+		public static Decimal Parse(string text)
+		{
+			return Decimal.Parse(text, CultureInfo.InvariantCulture);
 		}
 
 		public override void Run(Context context)

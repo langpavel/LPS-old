@@ -1060,22 +1060,23 @@ namespace LPS.ToolScript
 		// <ID List> ::= <ID List> ',' ID
 		protected override object RuleIdlistCommaId(NonterminalToken token)
 		{
-			throw new NotImplementedException("<ID List> ::= <ID List> ',' ID");
-			//return new
+			List<string> list = Get<List<string>>(token,0);
+			list.Add(TText(token,2));
+			return list;
 		}
 
 		// <ID List> ::= ID
 		protected override object RuleIdlistId(NonterminalToken token)
 		{
-			throw new NotImplementedException("<ID List> ::= ID");
-			//return new
+			List<string> list = new List<string>();
+			list.Add(TText(token,0));
+			return list;
 		}
 
 		// <ID List> ::= 
 		protected override object RuleIdlist(NonterminalToken token)
 		{
-			throw new NotImplementedException("<ID List> ::= ");
-			//return new
+			return new List<string>();
 		}
 
 		// <Database> ::= database ID '{' <DB Tables> '}'
@@ -1114,7 +1115,8 @@ namespace LPS.ToolScript
 		protected override object RuleDbtableTemplateTableIdLbraceRbrace(NonterminalToken token)
 		{
 			DBTableExpression table = new DBTableExpression(
-				TText(token,2), true, false, Get<EvaluatedAttributeList>(token,6), null);
+				TText(token,2), true, false, null);
+			table.AddAttribs(Get<IEnumerable>(token,6));
 			foreach(IDBColumn column in Get<IEnumerable>(token,4))
 				table.Add(column.Name, column);
 			return table;
@@ -1124,7 +1126,8 @@ namespace LPS.ToolScript
 		protected override object RuleDbtableTemplateTableIdTemplateIdLbraceRbrace(NonterminalToken token)
 		{
 			DBTableExpression table = new DBTableExpression(
-				TText(token,2), true, false, Get<EvaluatedAttributeList>(token,8), TText(token,4));
+				TText(token,2), true, false, TText(token,4));
+			table.AddAttribs(Get<IEnumerable>(token,8));
 			foreach(IDBColumn column in Get<IEnumerable>(token,6))
 				table.Add(column.Name, column);
 			return table;
@@ -1134,7 +1137,8 @@ namespace LPS.ToolScript
 		protected override object RuleDbtableTableIdLbraceRbrace(NonterminalToken token)
 		{
 			DBTableExpression table = new DBTableExpression(
-				TText(token,1), false, false, Get<EvaluatedAttributeList>(token,5), null);
+				TText(token,1), false, false, null);
+			table.AddAttribs(Get<IEnumerable>(token,5));
 			foreach(IDBColumn column in Get<IEnumerable>(token,3))
 				table.Add(column.Name, column);
 			return table;
@@ -1144,7 +1148,8 @@ namespace LPS.ToolScript
 		protected override object RuleDbtableTableIdTemplateIdLbraceRbrace(NonterminalToken token)
 		{
 			DBTableExpression table = new DBTableExpression(
-				TText(token,1), false, false, Get<EvaluatedAttributeList>(token,7), TText(token,3));
+				TText(token,1), false, false, TText(token,3));
+			table.AddAttribs(Get<IEnumerable>(token,7));
 			foreach(IDBColumn column in Get<IEnumerable>(token,5))
 				table.Add(column.Name, column);
 			return table;
@@ -1154,7 +1159,8 @@ namespace LPS.ToolScript
 		protected override object RuleDbtableExtendsTableIdLbraceRbrace(NonterminalToken token)
 		{
 			DBTableExpression table = new DBTableExpression(
-				TText(token,2), false, true, Get<EvaluatedAttributeList>(token,8), TText(token,4));
+				TText(token,2), false, true, TText(token,4));
+			table.AddAttribs(Get<IEnumerable>(token,8));
 			foreach(IDBColumn column in Get<IEnumerable>(token,6))
 				table.Add(column.Name, column);
 			return table;
@@ -1163,15 +1169,15 @@ namespace LPS.ToolScript
 		// <DB Columns> ::= <DB Columns> <DB Column>
 		protected override object RuleDbcolumns(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Columns> ::= <DB Columns> <DB Column>");
-			//return new
+			List<IDBColumn> list = Get<List<IDBColumn>>(token,0);
+			list.Add(Get<IDBColumn>(token,1));
+			return list;
 		}
 
 		// <DB Columns> ::= 
 		protected override object RuleDbcolumns2(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Columns> ::= ");
-			//return new
+			return new List<IDBColumn>();
 		}
 
 		// <DB Column> ::= ID <DB Column Type> <DB Column Attr List> ';'
@@ -1357,28 +1363,29 @@ namespace LPS.ToolScript
 		// <DB Table Attr List> ::= 
 		protected override object RuleDbtableattrlist2(NonterminalToken token)
 		{
-			return new EvaluatedAttributeList();
+			return new ArrayList();
 		}
 
 		// <DB Table Attr> ::= index '(' <ID List> ')' ';'
 		protected override object RuleDbtableattrIndexLparanRparanSemi(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table Attr> ::= index '(' <ID List> ')'");
-			//return new
+			return new DBTableIndex(false, Get<List<string>>(token,2).ToArray());
 		}
 
 		// <DB Table Attr> ::= <DB Trigger Runs> position DecimalLiteral <Stm>
 		protected override object RuleDbtableattrPositionDecimalliteral(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table Attr> ::= <DB Trigger Runs> position DecimalLiteral <Stm>");
-			//return new
+			return new DBTableTrigger(
+				Get<DBTriggerPosition>(token,0),
+				DecimalLiteral.Parse(TText(token,2)),
+				Statement(token,3));
 		}
 
 		// <DB Table Attr> ::= ID '=' <Expr> ';'
 		protected override object RuleDbtableattrIdEqSemi(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table Attr> ::= ID '=' <Expr> ';'");
-			//return new
+			return new KeyValuePair<string, EvaluatedAttribute>(
+				TText(token,0), new EvaluatedAttribute(Expr(token,2)));
 		}
 
 		// <DB Trigger Runs> ::= <DB Trigger Runs> ',' <DB Trigger Run>

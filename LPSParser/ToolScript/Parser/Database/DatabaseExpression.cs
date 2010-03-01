@@ -31,7 +31,7 @@ namespace LPS.ToolScript.Parser
 			Resolve(db);
 
 			if(this.Name != null && !IsExtension)
-				context.GlobalContext.SetVariable(this.Name, db);
+				context.GlobalContext.InitVariable(this.Name, db);
 			return db;
 		}
 

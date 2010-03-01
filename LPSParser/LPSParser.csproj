@@ -39,6 +39,7 @@
     <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
@@ -164,6 +165,8 @@
     <Compile Include="ToolScript\Parser\Database\Table\DBTableTrigger.cs" />
     <Compile Include="ToolScript\Parser\Database\Interfaces\IDBTableTrigger.cs" />
     <Compile Include="ToolScript\Parser\Database\Table\DBTriggerPosition.cs" />
+    <Compile Include="ToolScript\Parser\Database\Table\DBTableIndex.cs" />
+    <Compile Include="ToolScript\Parser\Database\Table\DBTableIndices.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />
