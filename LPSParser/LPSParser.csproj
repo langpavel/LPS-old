@@ -160,7 +160,10 @@
     <Compile Include="ToolScript\Parser\Database\DatabaseExpression.cs" />
     <Compile Include="ToolScript\Parser\Database\Columns\DBColumnBoolean.cs" />
     <Compile Include="ToolScript\Parser\Database\Interfaces\IDatabaseSchema.cs" />
-    <Compile Include="ToolScript\Parser\Database\DBTableExpression.cs" />
+    <Compile Include="ToolScript\Parser\Database\Table\DBTableExpression.cs" />
+    <Compile Include="ToolScript\Parser\Database\Table\DBTableTrigger.cs" />
+    <Compile Include="ToolScript\Parser\Database\Interfaces\IDBTableTrigger.cs" />
+    <Compile Include="ToolScript\Parser\Database\Table\DBTriggerPosition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />
@@ -182,6 +185,7 @@
     <Folder Include="Tests\" />
     <Folder Include="ToolScript\Parser\Database\Interfaces\" />
     <Folder Include="ToolScript\Parser\Database\Columns\" />
+    <Folder Include="ToolScript\Parser\Database\Table\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

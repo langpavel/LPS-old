@@ -124,11 +124,10 @@ Comment Line  = '//'
 				|
 
 <DB Table>		::=	'template' 'table' ID '{' <DB Columns> '}' <DB Table Attr List>
-				|	'template' 'table' ID 'extends' ID '{' <DB Columns> '}' <DB Table Attr List>
+				|	'template' 'table' ID 'template' ID '{' <DB Columns> '}' <DB Table Attr List>
 				|	'table' ID '{' <DB Columns> '}' <DB Table Attr List>
-				|	'table' ID 'extends' ID '{' <DB Columns> '}' <DB Table Attr List>
+				|	'table' ID 'template' ID '{' <DB Columns> '}' <DB Table Attr List>
 				|	'extends' 'table' ID '{' <DB Columns> '}' <DB Table Attr List>
-				|	'extends' 'table' ID 'extends' ID '{' <DB Columns> '}' <DB Table Attr List>
 
 <DB Columns>	::=	<DB Columns> <DB Column>
 				|
@@ -166,13 +165,22 @@ Comment Line  = '//'
 				|
 
 <DB Table Attr>	::=	'index' '(' <ID List> ')' ';'
-				|	'before' 'insert' 'position' DecimalLiteral <Stm>
-				|	'after'  'insert' 'position' DecimalLiteral <Stm>
-				|	'before' 'update' 'position' DecimalLiteral <Stm>
-				|	'after'  'update' 'position' DecimalLiteral <Stm>
-				|	'before' 'delete' 'position' DecimalLiteral <Stm>
-				|	'after'  'delete' 'position' DecimalLiteral <Stm>
+				|	<DB Trigger Runs> 'position' DecimalLiteral <Stm>
 				|	ID '=' <Value> ';'
+
+<DB Trigger Runs> ::= <DB Trigger Runs> ',' <DB Trigger Run>
+				|	<DB Trigger Run>
+
+<DB Trigger Run> ::= 'before' 'select'
+				|	'after'  'select'
+				|	'before' 'insert'
+				|	'after'  'insert'
+				|	'before' 'update'
+				|	'after'  'update'
+				|	'before' 'delete'
+				|	'after'  'delete'
+				|	'before' 'modified'
+				|	'after'  'modified'
 
 ! ===================================================================
 ! Function support

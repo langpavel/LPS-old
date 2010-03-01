@@ -20,6 +20,13 @@ namespace LPS.ToolScript
 			return list.Run(this);
 		}
 
+		public override object CreateObjectFromTerminal (TerminalToken token)
+		{
+			StackFrame stack = new StackFrame(3);
+			Console.WriteLine("Cannot create terminal {0} at {1}", token, stack.GetMethod().Name);
+			throw new InvalidOperationException();
+		}
+
 		private T Get<T>(NonterminalToken token, int index)
 		{
 			object obj = CreateObject(token.Tokens[index]);
@@ -1107,45 +1114,50 @@ namespace LPS.ToolScript
 		protected override object RuleDbtableTemplateTableIdLbraceRbrace(NonterminalToken token)
 		{
 			DBTableExpression table = new DBTableExpression(
-				TText(token,1), false, Get<EvaluatedAttributeList>(token,5), null);
-			foreach(IDBColumn column in Get<IEnumerable>(token,3))
+				TText(token,2), true, false, Get<EvaluatedAttributeList>(token,6), null);
+			foreach(IDBColumn column in Get<IEnumerable>(token,4))
 				table.Add(column.Name, column);
 			return table;
 		}
 
-		// <DB Table> ::= template table ID extends ID '{' <DB Columns> '}' <DB Table Attr List>
-		protected override object RuleDbtableTemplateTableIdExtendsIdLbraceRbrace(NonterminalToken token)
+		// <DB Table> ::= template table ID template ID '{' <DB Columns> '}' <DB Table Attr List>
+		protected override object RuleDbtableTemplateTableIdTemplateIdLbraceRbrace(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table> ::= template table ID extends ID '{' <DB Columns> '}' <DB Table Attr List>");
-			//return new
+			DBTableExpression table = new DBTableExpression(
+				TText(token,2), true, false, Get<EvaluatedAttributeList>(token,8), TText(token,4));
+			foreach(IDBColumn column in Get<IEnumerable>(token,6))
+				table.Add(column.Name, column);
+			return table;
 		}
 
 		// <DB Table> ::= table ID '{' <DB Columns> '}' <DB Table Attr List>
 		protected override object RuleDbtableTableIdLbraceRbrace(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table> ::= table ID '{' <DB Columns> '}' <DB Table Attr List>");
-			//return new
+			DBTableExpression table = new DBTableExpression(
+				TText(token,1), false, false, Get<EvaluatedAttributeList>(token,5), null);
+			foreach(IDBColumn column in Get<IEnumerable>(token,3))
+				table.Add(column.Name, column);
+			return table;
 		}
 
-		// <DB Table> ::= table ID extends ID '{' <DB Columns> '}' <DB Table Attr>
-		protected override object RuleDbtableTableIdExtendsIdLbraceRbrace(NonterminalToken token)
+		// <DB Table> ::= table ID template ID '{' <DB Columns> '}' <DB Table Attr>
+		protected override object RuleDbtableTableIdTemplateIdLbraceRbrace(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table> ::= table ID extends ID '{' <DB Columns> '}' <DB Table Attr>");
-			//return new
+			DBTableExpression table = new DBTableExpression(
+				TText(token,1), false, false, Get<EvaluatedAttributeList>(token,7), TText(token,3));
+			foreach(IDBColumn column in Get<IEnumerable>(token,5))
+				table.Add(column.Name, column);
+			return table;
 		}
 
 		// <DB Table> ::= extends table ID '{' <DB Columns> '}' <DB Table Attr List>
 		protected override object RuleDbtableExtendsTableIdLbraceRbrace(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table> ::= extends table ID '{' <DB Columns> '}' <DB Table Attr List>");
-			//return new
-		}
-
-		// <DB Table> ::= extends table ID extends ID '{' <DB Columns> '}' <DB Table Attr List>
-		protected override object RuleDbtableExtendsTableIdExtendsIdLbraceRbrace(NonterminalToken token)
-		{
-			throw new NotImplementedException("<DB Table> ::= extends table ID extends ID '{' <DB Columns> '}' <DB Table Attr List>");
-			//return new
+			DBTableExpression table = new DBTableExpression(
+				TText(token,2), false, true, Get<EvaluatedAttributeList>(token,8), TText(token,4));
+			foreach(IDBColumn column in Get<IEnumerable>(token,6))
+				table.Add(column.Name, column);
+			return table;
 		}
 
 		// <DB Columns> ::= <DB Columns> <DB Column>
@@ -1345,8 +1357,7 @@ namespace LPS.ToolScript
 		// <DB Table Attr List> ::= 
 		protected override object RuleDbtableattrlist2(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table Attr List> ::= ");
-			//return new
+			return new EvaluatedAttributeList();
 		}
 
 		// <DB Table Attr> ::= index '(' <ID List> ')' ';'
@@ -1356,45 +1367,10 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <DB Table Attr> ::= before insert position DecimalLiteral <Stm>
-		protected override object RuleDbtableattrBeforeInsertPositionDecimalliteral(NonterminalToken token)
+		// <DB Table Attr> ::= <DB Trigger Runs> position DecimalLiteral <Stm>
+		protected override object RuleDbtableattrPositionDecimalliteral(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table Attr> ::= before insert position DecimalLiteral <Stm>");
-			//return new
-		}
-
-		// <DB Table Attr> ::= after insert position DecimalLiteral <Stm>
-		protected override object RuleDbtableattrAfterInsertPositionDecimalliteral(NonterminalToken token)
-		{
-			throw new NotImplementedException("<DB Table Attr> ::= after insert position DecimalLiteral <Stm>");
-			//return new
-		}
-
-		// <DB Table Attr> ::= before update position DecimalLiteral <Stm>
-		protected override object RuleDbtableattrBeforeUpdatePositionDecimalliteral(NonterminalToken token)
-		{
-			throw new NotImplementedException("<DB Table Attr> ::= before update position DecimalLiteral <Stm>");
-			//return new
-		}
-
-		// <DB Table Attr> ::= after update position DecimalLiteral <Stm>
-		protected override object RuleDbtableattrAfterUpdatePositionDecimalliteral(NonterminalToken token)
-		{
-			throw new NotImplementedException("<DB Table Attr> ::= after update position DecimalLiteral <Stm>");
-			//return new
-		}
-
-		// <DB Table Attr> ::= before delete position DecimalLiteral <Stm>
-		protected override object RuleDbtableattrBeforeDeletePositionDecimalliteral(NonterminalToken token)
-		{
-			throw new NotImplementedException("<DB Table Attr> ::= before delete position DecimalLiteral <Stm>");
-			//return new
-		}
-
-		// <DB Table Attr> ::= after delete position DecimalLiteral <Stm>
-		protected override object RuleDbtableattrAfterDeletePositionDecimalliteral(NonterminalToken token)
-		{
-			throw new NotImplementedException("<DB Table Attr> ::= after delete position DecimalLiteral <Stm>");
+			throw new NotImplementedException("<DB Table Attr> ::= <DB Trigger Runs> position DecimalLiteral <Stm>");
 			//return new
 		}
 
@@ -1404,6 +1380,83 @@ namespace LPS.ToolScript
 			throw new NotImplementedException("<DB Table Attr> ::= ID '=' <Expr> ';'");
 			//return new
 		}
+
+		// <DB Trigger Runs> ::= <DB Trigger Runs> ',' <DB Trigger Run>
+		protected override object RuleDbtriggerrunsComma(NonterminalToken token)
+		{
+			DBTriggerPosition curpos = Get<DBTriggerPosition>(token,0);
+			DBTriggerPosition newpos = Get<DBTriggerPosition>(token,1);
+			if((int)(newpos & curpos) != 0 && curpos != DBTriggerPosition.None)
+				throw new Exception("Pozice triggeru byla nastavena duplicitně");
+			return curpos | newpos;
+		}
+
+		// <DB Trigger Runs> ::= <DB Trigger Run>
+		protected override object RuleDbtriggerruns(NonterminalToken token)
+		{
+			return Get<DBTriggerPosition>(token,0);
+		}
+
+		// <DB Trigger Run> ::= before select
+		protected override object RuleDbtriggerrunBeforeSelect(NonterminalToken token)
+		{
+			return DBTriggerPosition.BeforeSelect;
+		}
+
+		// <DB Trigger Run> ::= after select
+		protected override object RuleDbtriggerrunAfterSelect(NonterminalToken token)
+		{
+			return DBTriggerPosition.AfterSelect;
+		}
+
+		// <DB Trigger Run> ::= before insert
+		protected override object RuleDbtriggerrunBeforeInsert(NonterminalToken token)
+		{
+			return DBTriggerPosition.BeforeInsert;
+		}
+
+		// <DB Trigger Run> ::= after insert
+		protected override object RuleDbtriggerrunAfterInsert(NonterminalToken token)
+		{
+			return DBTriggerPosition.AfterInsert;
+		}
+
+		// <DB Trigger Run> ::= before update
+		protected override object RuleDbtriggerrunBeforeUpdate(NonterminalToken token)
+		{
+			return DBTriggerPosition.BeforeUpdate;
+		}
+
+		// <DB Trigger Run> ::= after update
+		protected override object RuleDbtriggerrunAfterUpdate(NonterminalToken token)
+		{
+			return DBTriggerPosition.AfterUpdate;
+		}
+
+		// <DB Trigger Run> ::= before delete
+		protected override object RuleDbtriggerrunBeforeDelete(NonterminalToken token)
+		{
+			return DBTriggerPosition.BeforeDelete;
+		}
+
+		// <DB Trigger Run> ::= after delete
+		protected override object RuleDbtriggerrunAfterDelete(NonterminalToken token)
+		{
+			return DBTriggerPosition.AfterDelete;
+		}
+
+		// <DB Trigger Run> ::= before modified
+		protected override object RuleDbtriggerrunBeforeModified(NonterminalToken token)
+		{
+			return DBTriggerPosition.BeforeModify;
+		}
+
+		// <DB Trigger Run> ::= after modified
+		protected override object RuleDbtriggerrunAfterModified(NonterminalToken token)
+		{
+			return DBTriggerPosition.AfterModify;
+		}
+
 		#endregion
 
 		#endregion
