@@ -112,6 +112,13 @@ namespace LPS.ToolScript
 			this.LocalVariables[name] = val;
 		}
 
+		public void InitVariable(string name, object val, bool canOverwrite)
+		{
+			if(!canOverwrite && this.LocalVariables.ContainsKey(name))
+				throw new VariableException("Proměnná "+name+" byla již inicializována");
+			this.LocalVariables[name] = val;
+		}
+
 		public object GetVariable(string name)
 		{
 			object result;

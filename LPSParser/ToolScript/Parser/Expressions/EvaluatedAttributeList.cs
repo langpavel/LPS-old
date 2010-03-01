@@ -26,6 +26,22 @@ namespace LPS.ToolScript.Parser
 			throw new InvalidOperationException();
 		}
 
+		public T Get<T>(string name)
+		{
+			EvaluatedAttribute result;
+			if(TryGetValue(name, out result))
+			{
+				if(result.Value != null)
+				{
+					Type t = result.Value.GetType();
+					if(t != typeof(T) || t.IsSubclassOf(typeof(T)))
+						return (T)Convert.ChangeType(result.Value, typeof(T));
+				}
+				return (T) result.Value;
+			}
+			throw new InvalidOperationException();
+		}
+
 		public T Get<T>(string name, T default_val)
 		{
 			EvaluatedAttribute result;

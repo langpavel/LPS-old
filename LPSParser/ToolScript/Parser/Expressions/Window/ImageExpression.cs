@@ -1,4 +1,6 @@
 using System;
+using Gtk;
+using Gdk;
 
 namespace LPS.ToolScript.Parser
 {
@@ -9,9 +11,32 @@ namespace LPS.ToolScript.Parser
 		{
 		}
 
+		private bool SetStock(Gtk.Image image, string atrname, IconSize size)
+		{
+			if(this.HasAttribute(atrname))
+			{
+				IconSet icons = IconFactory.LookupDefault(this.GetAttribute<string>(atrname));
+				image.Pixbuf = icons.RenderIcon(image.Style, TextDirection.Ltr, StateType.Normal, size, image, null);
+				return true;
+			}
+			return false;
+		}
+
 		protected override Gtk.Widget CreateWidget()
 		{
-			return new Gtk.Image();
+			if(this.HasAttribute("icon"))
+			{
+				return Gtk.Image.NewFromIconName(
+					this.GetAttribute<string>("icon"),
+					(IconSize)this.GetAttribute<int>("iconsize"));
+			}
+			Gtk.Image image = new Gtk.Image();
+			if(SetStock(image, "dialog_stock", IconSize.Dialog)) { }
+			else if(SetStock(image, "small_stock", IconSize.Menu)) { }
+			else if(SetStock(image, "button_stock", IconSize.Button)) { }
+			else if(SetStock(image, "smalltool_stock", IconSize.SmallToolbar)) { }
+			else if(SetStock(image, "bigtool_stock", IconSize.LargeToolbar)) { }
+			return image;
 		}
 	}
 }

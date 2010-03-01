@@ -167,6 +167,8 @@
     <Compile Include="ToolScript\Parser\Database\Table\DBTriggerPosition.cs" />
     <Compile Include="ToolScript\Parser\Database\Table\DBTableIndex.cs" />
     <Compile Include="ToolScript\Parser\Database\Table\DBTableIndices.cs" />
+    <Compile Include="ToolScript\Exceptions\VariableException.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\ButtonExpression.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />

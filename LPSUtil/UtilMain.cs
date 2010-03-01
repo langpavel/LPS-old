@@ -12,8 +12,8 @@ namespace LPS.Util
 			UtilMainWindow win = new UtilMainWindow();
 			win.Show();
 			win.InitCmds();
+			win.LoadLastBuffer();
 			Application.Run();
 		}
-
 	}
 }

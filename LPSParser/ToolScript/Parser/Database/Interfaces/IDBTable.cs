@@ -5,5 +5,6 @@ namespace LPS.ToolScript.Parser
 {
 	public interface IDBTable: IDBSchemaItem, IDictionary<string, IDBColumn>
 	{
+		void Resolve(IDatabaseSchema database);
 	}
 }

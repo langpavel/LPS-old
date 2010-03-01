@@ -31,7 +31,7 @@ namespace LPS.ToolScript.Parser
 			Resolve(db);
 
 			if(this.Name != null && !IsExtension)
-				context.GlobalContext.InitVariable(this.Name, db);
+				context.GlobalContext.InitVariable(this.Name, db, false);
 			return db;
 		}
 
@@ -40,10 +40,10 @@ namespace LPS.ToolScript.Parser
 			throw new InvalidOperationException();
 		}
 
-		public void Resolve (IDatabaseSchema database)
+		public void Resolve (IDatabaseSchema db)
 		{
 			foreach(IDBTable table in this.Values)
-				table.Resolve(database);
+				table.Resolve(db);
 		}
 
 		public virtual DatabaseExpression Clone()

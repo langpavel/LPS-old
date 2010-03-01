@@ -4,6 +4,8 @@ namespace LPS.ToolScript.Parser
 {
 	public interface IDBColumn : IDBSchemaItem
 	{
+		void Resolve(IDatabaseSchema database, IDBTable table);
+
 		IDBTable Table { get; }
 		Type DataType { get; }
 		EvaluatedAttributeList Attribs { get; }

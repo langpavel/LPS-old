@@ -239,6 +239,25 @@ namespace LPS.Util
 				sb.Append(obj);
 		}
 
+		public void LoadLastBuffer()
+		{
+			try
+			{
+				tw.Buffer.Text = File.ReadAllText("last.lps");
+			} catch { }
+		}
+
+		public bool SaveLastBuffer()
+		{
+			try
+			{
+				string s = tw.Buffer.Text.Trim();
+				if(!String.IsNullOrEmpty(s))
+					File.WriteAllText("last.lps",tw.Buffer.Text);
+				return true;
+			} catch { return false; }
+		}
+
 		#region generated code
 		private Gtk.VBox vbox2;
 
@@ -247,6 +266,8 @@ namespace LPS.Util
 		private Gtk.ScrolledWindow GtkScrolledWindow;
 
 		private Gtk.TextView outputView;
+
+		private TextView tw;
 
 		protected virtual void Build()
 		{
@@ -259,7 +280,11 @@ namespace LPS.Util
 			this.vbox2.Name = "vbox2";
 			this.vbox2.Spacing = 6;
 
-			TextView tw = new TextView();
+			tw = new TextView();
+			Pango.FontDescription font = new Pango.FontDescription();
+			font.Family = "Courier";
+			font.Weight = Pango.Weight.Bold;
+			tw.ModifyFont(font);
 			ScrolledWindow sc = new ScrolledWindow();
 			sc.Add(tw);
 			vbox2.Add(sc);
@@ -302,10 +327,21 @@ namespace LPS.Util
 
 		void HandleTwKeyPressEvent (object o, KeyPressEventArgs args)
 		{
-			if(args.Event.Key == Gdk.Key.F5)
+			switch(args.Event.Key)
 			{
-				TextView tw = (TextView)o;
+			case Gdk.Key.F5: // run
 				ExecuteCommand(tw.Buffer.Text);
+				return;
+			case Gdk.Key.F4: // open
+				LoadLastBuffer();
+				return;
+			case Gdk.Key.F10: // save
+				SaveLastBuffer();
+				return;
+			case Gdk.Key.F12: // save & quit
+				if(SaveLastBuffer())
+					Application.Quit();
+				return;
 			}
 		}
 

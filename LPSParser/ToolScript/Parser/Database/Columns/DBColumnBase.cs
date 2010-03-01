@@ -76,8 +76,9 @@ namespace LPS.ToolScript.Parser
 			throw new InvalidOperationException("Nelze vyhodnocovat odkaz na databázový sloupec jako boolean");
 		}
 
-		public virtual void Resolve (IDatabaseSchema database)
+		public virtual void Resolve(IDatabaseSchema database, IDBTable table)
 		{
+			this.Table = table;
 		}
 
 		public virtual DBColumnBase Clone()

@@ -76,8 +76,11 @@ namespace LPS.ToolScript.Parser
 
 		public void Resolve (IDatabaseSchema database)
 		{
+			IDBTable table = this;
+			if(IsExtension)
+				table = database[this.Name];
 			foreach(IDBColumn column in this.Values)
-				column.Resolve(database);
+				column.Resolve(database, table);
 		}
 
 		public virtual DBTableExpression Clone()

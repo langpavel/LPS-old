@@ -91,6 +91,6 @@ Global
 		{F31B07F0-C6F6-4190-B12F-8EFD2C9EC5AE}.StronglyNamedAssembly|Any CPU.Build.0 = Debug|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = LPSParser\LPSParser.csproj
+		StartupItem = LPSUtil\LPSUtil.csproj
 	EndGlobalSection
 EndGlobal

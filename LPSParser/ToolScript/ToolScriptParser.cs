@@ -953,13 +953,13 @@ namespace LPS.ToolScript
 		// <Layout Block> ::= button <WndParam List> <Layout Block>
 		protected override object RuleLayoutblockButton(NonterminalToken token)
 		{
-			return new GenericBinExpression(null, Get<EvaluatedAttributeList>(token, 1), Get<IWidgetBuilder>(token,2), typeof(Gtk.Button));
+			return new ButtonExpression(null, Get<EvaluatedAttributeList>(token, 1), Get<IWidgetBuilder>(token,2));
 		}
 
 		// <Layout Block> ::= button <WndParam List> end
 		protected override object RuleLayoutblockButtonEnd(NonterminalToken token)
 		{
-			return new GenericBinExpression(null, Get<EvaluatedAttributeList>(token, 1), null, typeof(Gtk.Button));
+			return new ButtonExpression(null, Get<EvaluatedAttributeList>(token, 1), null);
 		}
 
 		// <Layout Block> ::= toolbutton <WndParam List> <Layout Block>

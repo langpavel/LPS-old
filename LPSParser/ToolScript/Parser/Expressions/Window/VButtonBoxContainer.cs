@@ -11,7 +11,9 @@ namespace LPS.ToolScript.Parser
 
 		protected override Gtk.Box CreateBoxWidget ()
 		{
-			return new Gtk.VButtonBox();
+			Gtk.VButtonBox box = new Gtk.VButtonBox();
+			box.Layout = Gtk.ButtonBoxStyle.Start;
+			return box;
 		}
 
 	}

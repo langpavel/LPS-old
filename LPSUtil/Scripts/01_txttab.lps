@@ -15,7 +15,7 @@ function UrciTyp(prevtyp, sample)
     var typ = 0;
     foreach(ch in sample.ToString().Trim())
     {
-        if(ch in <cast "0" as System.Char, cast "9" as System.Char>)
+        if(ch in range<cast("0" as System.Char); cast("9" as System.Char)>)
         {
             if(typ < 1) typ = 1;
         }
@@ -52,7 +52,7 @@ function LoadTxtTable(filename)
                 col_id = 0;
                 continue;
             }
-            var bits = line.Split([cast ':' as System.Char]);
+            var bits = line.Split([cast(':' as System.Char)]);
             cols[++col_id] = [bits[0].Trim(), bits[1].Trim()];
         }
         if(cols != null and cols.Count != 0) rows.Add(cols);

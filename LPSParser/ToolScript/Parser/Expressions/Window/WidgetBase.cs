@@ -22,9 +22,19 @@ namespace LPS.ToolScript.Parser
 			return this;
 		}
 
+		public virtual bool HasAttribute(string name)
+		{
+			return Params.ContainsKey(name);
+		}
+
 		public virtual T GetAttribute<T>(string name, T default_value)
 		{
 			return Params.Get<T>(name, default_value);
+		}
+
+		public virtual T GetAttribute<T>(string name)
+		{
+			return Params.Get<T>(name);
 		}
 
 		public virtual bool TryGetAttribute<T>(string name, out T value)
