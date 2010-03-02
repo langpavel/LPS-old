@@ -43,7 +43,10 @@ namespace LPS.ToolScript.Parser
 				return SpecialValue.VariableNotSet;
 			else
 			{
-				return this[index].Value;
+				if(this[index].IsNamed)
+					return SpecialValue.VariableNotSet;
+				else
+					return this[index].Value;
 			}
 		}
 

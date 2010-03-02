@@ -22,8 +22,12 @@ namespace LPS.ToolScript.Parser
 			this.Body = body;
 		}
 
+		private Context Context;
+
 		public override object Eval (Context context)
 		{
+			this.Context = context.CreateChildContext();
+
 			Parameters.Run(context);
 
 			if(this.Name != null)
@@ -32,13 +36,12 @@ namespace LPS.ToolScript.Parser
 			return this;
 		}
 
-		public object Execute(Context context, NamedArgumentList arguments)
+		public object Execute(NamedArgumentList arguments)
 		{
-			context = context.CreateChildContext();
 			try
 			{
-				Parameters.InitVariables(context, arguments);
-				Body.Run(context);
+				Parameters.InitVariables(this.Context, arguments);
+				Body.Run(this.Context);
 				return SpecialValue.Void;
 			}
 			catch(IterationTermination info)
@@ -47,10 +50,6 @@ namespace LPS.ToolScript.Parser
 					return info.ReturnValue;
 				else
 					throw new InvalidOperationException("volání funkce bylo přerušeno jiným důvodem než return: " + info.Reason.ToString());
-			}
-			finally
-			{
-				context.Dispose();
 			}
 		}
 

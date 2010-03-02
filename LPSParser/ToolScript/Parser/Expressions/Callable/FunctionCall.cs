@@ -25,7 +25,7 @@ namespace LPS.ToolScript.Parser
 			}
 			if(func is IFunction)
 			{
-				return ((IFunction)func).Execute(context, Args);
+				return ((IFunction)func).Execute(Args);
 			}
 			else
 			{

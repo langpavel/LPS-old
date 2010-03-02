@@ -14,7 +14,6 @@ namespace LPS.ToolScript.Tests
 				{
 					template table all_base
 					{
-						id primary;
 						ts datetime;
 					}
 
@@ -24,6 +23,12 @@ namespace LPS.ToolScript.Tests
 						dt_create datetime;
 						id_user_modify foreign user(id);
 						dt_modify datetime;
+					}
+
+					table table1
+					{
+						id primary;
+						test varchar;
 					}
 				};
 			");

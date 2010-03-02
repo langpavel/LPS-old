@@ -115,7 +115,15 @@
     <None Include="resources\tables\sys_gen_cyklus.xml" />
     <None Include="resources\tables\sys_gen_value.xml" />
     <None Include="resources\tables\sys_check.xml" />
-    <None Include="sql\database.sql" />
     <None Include="sql\usefull.sql" />
+    <None Include="sql\000_system.sql" />
+    <None Include="sql\100_ciselniky.sql" />
+    <None Include="sql\110_kurz.sql" />
+    <None Include="sql\200_adresa.sql" />
+    <None Include="sql\300_produkt.sql" />
+    <None Include="sql\400_sklad.sql" />
+    <None Include="sql\900_indices.sql" />
+    <None Include="sql\910_foreign_keys.sql" />
+    <None Include="sql\all.sql" />
   </ItemGroup>
 </Project>

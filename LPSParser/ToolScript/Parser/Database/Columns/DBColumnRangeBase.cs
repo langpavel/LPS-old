@@ -32,6 +32,7 @@ namespace LPS.ToolScript.Parser
 		public override string[] CreateColumnsSQL (bool in_table)
 		{
 			return new string[] {
+				String.Format("-- '{0}' range column:", this.Name),
 				LowColumn.CreateSQL(in_table),
 				HighColumn.CreateSQL(in_table)
 			};

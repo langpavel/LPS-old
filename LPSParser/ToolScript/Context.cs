@@ -33,15 +33,15 @@ namespace LPS.ToolScript
 		public static Context CreateRootContext(ToolScriptParser parser)
 		{
 			Context root = new Context(null, null, parser);
-			root.LocalVariables["eval"] = new ToolScriptFunction(EvalInvoked);
+			root.LocalVariables["eval"] = new ToolScriptFunction(root.EvalInvoked);
 			return root;
 		}
 
-		private static void EvalInvoked (object sender, ToolScriptFunctionArgs e)
+		private void EvalInvoked (object sender, ToolScriptFunctionArgs e)
 		{
 			if(e.Args.Count != 1 || !(e.Args[0].Value is string))
 				throw new Exception("Funkce eval přijímá jeden parametr typu string");
-			e.ReturnValue = e.ParserContext.Eval((string)e.Args[0].Value);
+			e.ReturnValue = this.Eval((string)e.Args[0].Value);
 		}
 
 		public Context CreateChildContext()

@@ -37,8 +37,9 @@ namespace LPS.Util
 			return String.Format("function {0}(...);", Name);
 		}
 
-		public virtual object Execute (Context context, NamedArgumentList argumentValues)
+		public virtual object Execute (NamedArgumentList argumentValues)
 		{
+			Context context = UtilMainWindow.Instance.ParserContext;
 			TextWriter Out = (TextWriter)context.GetVariable("__STD_OUT");
 			TextWriter Info = (TextWriter)context.GetVariable("__STD_INFO");
 			TextWriter Err = (TextWriter)context.GetVariable("__STD_ERR");

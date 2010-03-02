@@ -101,9 +101,12 @@ namespace LPS.ToolScript.Parser
 			IDBTable ttable = database[TemplateName];
 			if(!ttable.IsTemplate)
 				throw new Exception("Tabulku nelze použít jako šablonu tabulky");
-			List<IDBColumn> list = ((DBTableExpression)ttable).GetTemplateColumns(database);
+
+			List<IDBColumn> list = new List<IDBColumn>();
+
 			foreach(IDBColumn col in ttable.Values)
 				list.Add(col);
+			list.AddRange(((DBTableExpression)ttable).GetTemplateColumns(database));
 			return list;
 		}
 

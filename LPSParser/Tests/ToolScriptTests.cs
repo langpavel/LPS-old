@@ -498,5 +498,38 @@ namespace LPS.ToolScript.Tests
 
 			Eq(DateTime.Today.AddMinutes(1), "return today + 1m;");
 		}
+
+		[Test]
+		public void TestNamedArgumentFunction()
+		{
+			Eq("AAA BBB", @"
+				function testargs(arg1='AAA', arg2='BBB')
+				{
+					return '{0} {1}' / [arg1, arg2];
+				};
+				return testargs();
+			");
+			Eq("CCC BBB", @"
+				function testargs(arg1='AAA', arg2='BBB')
+				{
+					return '{0} {1}' / [arg1, arg2];
+				};
+				return testargs(arg1='CCC');
+			");
+			Eq("AAA CCC", @"
+				function testargs(arg1='AAA', arg2='BBB')
+				{
+					return '{0} {1}' / [arg1, arg2];
+				};
+				return testargs(arg2='CCC');
+			");
+			Eq("CCC DDD", @"
+				function testargs(arg1='AAA', arg2='BBB')
+				{
+					return '{0} {1}' / [arg1, arg2];
+				};
+				return testargs(arg1='CCC', arg2='DDD');
+			");
+		}
 	}
 }

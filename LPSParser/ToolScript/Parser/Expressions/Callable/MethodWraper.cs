@@ -16,7 +16,7 @@ namespace LPS.ToolScript.Parser
 			this.Instance = instance;
 		}
 
-		public object Execute (Context context, NamedArgumentList arguments)
+		public object Execute (NamedArgumentList arguments)
 		{
 			//List<MethodInfo> try_again = new List<MethodInfo>(Methods.Length);
 			foreach(MethodInfo method in Methods)
