@@ -141,8 +141,14 @@ namespace LPS.ToolScript
 			return new UsingDisposableStatement(Expr(token,2), Statement(token,4));
 		}
 
-		// <Stm> ::= <Normal Stm>
+		// <Stm> ::= <TryFinally>
 		protected override object RuleStm(NonterminalToken token)
+		{
+			return CreateObject(token.Tokens[0]);
+		}
+
+		// <Stm> ::= <Normal Stm>
+		protected override object RuleStm2(NonterminalToken token)
 		{
 			return CreateObject(token.Tokens[0]);
 		}
@@ -213,10 +219,80 @@ namespace LPS.ToolScript
 			return new ReturnStatement(Expr(token, 1));
 		}
 
+		// <Normal Stm> ::= throw <Expr> ';'
+		protected override object RuleNormalstmThrowSemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Normal Stm> ::= throw <Expr> ';'");
+			//return new
+		}
+
+		// <Normal Stm> ::= throw <Expr> ',' <Expr> ';'
+		protected override object RuleNormalstmThrowCommaSemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Normal Stm> ::= throw <Expr> ',' <Expr> ';'");
+			//return new
+		}
+
 		// <Normal Stm> ::= ';'
 		protected override object RuleNormalstmSemi2(NonterminalToken token)
 		{
 			return new NoopStatement();
+		}
+
+		// <TryFinally> ::= try <Normal Stm> <Catchs> finally <Normal Stm>
+		protected override object RuleTryfinallyTryFinally(NonterminalToken token)
+		{
+			throw new NotImplementedException("<TryFinally> ::= try <Normal Stm> <Catchs> finally <Normal Stm>");
+			//return new
+		}
+
+		// <TryFinally> ::= try <Normal Stm> <Catchs>
+		protected override object RuleTryfinallyTry(NonterminalToken token)
+		{
+			throw new NotImplementedException("<TryFinally> ::= try <Normal Stm> <Catchs>");
+			//return new
+		}
+
+		// <Catchs> ::= <Catch> <Catchs>
+		protected override object RuleCatchs(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Catchs> ::= <Catch> <Catchs>");
+			//return new
+		}
+
+		// <Catchs> ::= 
+		protected override object RuleCatchs2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Catchs> ::= ");
+			//return new
+		}
+
+		// <Catch> ::= catch '(' <QualifiedName> ID ')' <Normal Stm>
+		protected override object RuleCatchCatchLparanIdRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Catch> ::= catch '(' <QualifiedName> ID ')' <Normal Stm>");
+			//return new
+		}
+
+		// <Catch> ::= catch '(' type <QualifiedName> ')' <Normal Stm>
+		protected override object RuleCatchCatchLparanTypeRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Catch> ::= catch '(' type <QualifiedName> ')' <Normal Stm>");
+			//return new
+		}
+
+		// <Catch> ::= catch '(' var ID ')' <Normal Stm>
+		protected override object RuleCatchCatchLparanVarIdRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Catch> ::= catch '(' var ID ')' <Normal Stm>");
+			//return new
+		}
+
+		// <Catch> ::= catch <Block>
+		protected override object RuleCatchCatch(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Catch> ::= catch <Block>");
+			//return new
 		}
 
 		// <Func args> ::= <Func args> ',' <Func Arg>
@@ -1372,12 +1448,18 @@ namespace LPS.ToolScript
 			return new DBTableIndex(false, Get<List<string>>(token,2).ToArray());
 		}
 
+		// <DB Table Attr> ::= unique '(' <ID List> ')' ';'
+		protected override object RuleDbtableattrUniqueLparanRparanSemi(NonterminalToken token)
+		{
+			return new DBTableIndex(true, Get<List<string>>(token,2).ToArray());
+		}
+
 		// <DB Table Attr> ::= <DB Trigger Runs> position DecimalLiteral <Stm>
-		protected override object RuleDbtableattrPositionDecimalliteral(NonterminalToken token)
+		protected override object RuleDbtableattrPosition(NonterminalToken token)
 		{
 			return new DBTableTrigger(
 				Get<DBTriggerPosition>(token,0),
-				DecimalLiteral.Parse(TText(token,2)),
+				Get<Decimal>(token,2),
 				Statement(token,3));
 		}
 
@@ -1462,6 +1544,18 @@ namespace LPS.ToolScript
 		protected override object RuleDbtriggerrunAfterModified(NonterminalToken token)
 		{
 			return DBTriggerPosition.AfterModify;
+		}
+
+		// <NumLiteral> ::= IntLiteral
+		protected override object RuleNumliteralIntliteral(NonterminalToken token)
+		{
+			return DecimalLiteral.Parse(TText(token,0));
+		}
+
+		// <NumLiteral> ::= DecimalLiteral
+		protected override object RuleNumliteralDecimalliteral(NonterminalToken token)
+		{
+			return DecimalLiteral.Parse(TText(token,0));
 		}
 
 		#endregion

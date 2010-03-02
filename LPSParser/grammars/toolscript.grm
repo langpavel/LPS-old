@@ -70,6 +70,7 @@ Comment Line  = '//'
                	|	using StringLiteral 'as' ID ';'		! open file
                	|	using '(' <Expr> ')' <Stm>			! for IDisposable
                	|	observed '(' <Expr List> ')' <Stm>
+               	|	<TryFinally>
                	|	<Normal Stm>
 
 <Then Stm>   	::=	if '(' <Expr> ')' <Then Stm> else <Then Stm>
@@ -84,7 +85,20 @@ Comment Line  = '//'
                	|	break ';'
                	|	continue ';'
                	|	return <Expr> ';'
+               	|	throw <Expr> ';'
+               	|	throw <Expr> ',' <Expr> ';'
                	|	';'              !Noop statement
+
+<TryFinally> 	::= try <Normal Stm> <Catchs> finally <Normal Stm>
+				|	try <Normal Stm> <Catchs>
+
+<Catchs>		::=	<Catch> <Catchs>
+				|
+
+<Catch>			::=	catch '(' <QualifiedName> ID ')' <Normal Stm>
+				|	catch '(' type <QualifiedName> ')' <Normal Stm>
+				|	catch '(' var ID ')' <Normal Stm>
+				|	catch <Block>
 
 <Func args>    	::=	<Func args> ',' <Func Arg>
 				|	<Func Arg>
@@ -165,7 +179,8 @@ Comment Line  = '//'
 				|
 
 <DB Table Attr>	::=	'index' '(' <ID List> ')' ';'
-				|	<DB Trigger Runs> 'position' DecimalLiteral <Stm>
+				|	'unique' '(' <ID List> ')' ';'
+				|	<DB Trigger Runs> 'position' <NumLiteral> <Stm>
 				|	ID '=' <Value> ';'
 
 <DB Trigger Runs> ::= <DB Trigger Runs> ',' <DB Trigger Run>
@@ -181,6 +196,10 @@ Comment Line  = '//'
 				|	'after'  'delete'
 				|	'before' 'modified'
 				|	'after'  'modified'
+
+<NumLiteral>	::= IntLiteral
+				|	DecimalLiteral
+
 
 ! ===================================================================
 ! Function support

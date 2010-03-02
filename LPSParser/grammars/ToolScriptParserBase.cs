@@ -302,730 +302,778 @@ namespace LPS.ToolScript
         Cast = 47,
 
         /// <summary>
+        /// <para>Symbol: catch</para>
+        /// <para><c>catch</c></para>
+        /// </summary>
+        Catch = 48,
+
+        /// <summary>
         /// <para>Symbol: continue</para>
         /// <para><c>continue</c></para>
         /// </summary>
-        Continue = 48,
+        Continue = 49,
 
         /// <summary>
         /// <para>Symbol: database</para>
         /// <para><c>database</c></para>
         /// </summary>
-        Database = 49,
+        Database = 50,
 
         /// <summary>
         /// <para>Symbol: date</para>
         /// <para><c>date</c></para>
         /// </summary>
-        Date = 50,
+        Date = 51,
 
         /// <summary>
         /// <para>Symbol: daterange</para>
         /// <para><c>daterange</c></para>
         /// </summary>
-        Daterange = 51,
+        Daterange = 52,
 
         /// <summary>
         /// <para>Symbol: datetime</para>
         /// <para><c>datetime</c></para>
         /// </summary>
-        Datetime = 52,
+        Datetime = 53,
 
         /// <summary>
         /// <para>Symbol: DateTimeLiteral</para>
         /// <para><c>DateTimeLiteral</c></para>
         /// </summary>
-        Datetimeliteral = 53,
+        Datetimeliteral = 54,
 
         /// <summary>
         /// <para>Symbol: datetimerange</para>
         /// <para><c>datetimerange</c></para>
         /// </summary>
-        Datetimerange = 54,
+        Datetimerange = 55,
 
         /// <summary>
         /// <para>Symbol: decimal</para>
         /// <para><c>decimal</c></para>
         /// </summary>
-        Decimal = 55,
+        Decimal = 56,
 
         /// <summary>
         /// <para>Symbol: DecimalLiteral</para>
         /// <para><c>DecimalLiteral</c></para>
         /// </summary>
-        Decimalliteral = 56,
+        Decimalliteral = 57,
 
         /// <summary>
         /// <para>Symbol: default</para>
         /// <para><c>default</c></para>
         /// </summary>
-        Default = 57,
+        Default = 58,
 
         /// <summary>
         /// <para>Symbol: delete</para>
         /// <para><c>delete</c></para>
         /// </summary>
-        Delete = 58,
+        Delete = 59,
 
         /// <summary>
         /// <para>Symbol: dict</para>
         /// <para><c>dict</c></para>
         /// </summary>
-        Dict = 59,
+        Dict = 60,
 
         /// <summary>
         /// <para>Symbol: do</para>
         /// <para><c>do</c></para>
         /// </summary>
-        Do = 60,
+        Do = 61,
 
         /// <summary>
         /// <para>Symbol: else</para>
         /// <para><c>else</c></para>
         /// </summary>
-        Else = 61,
+        Else = 62,
 
         /// <summary>
         /// <para>Symbol: end</para>
         /// <para><c>end</c></para>
         /// </summary>
-        End = 62,
+        End = 63,
 
         /// <summary>
         /// <para>Symbol: extends</para>
         /// <para><c>extends</c></para>
         /// </summary>
-        Extends = 63,
+        Extends = 64,
 
         /// <summary>
         /// <para>Symbol: false</para>
         /// <para><c>false</c></para>
         /// </summary>
-        False = 64,
+        False = 65,
+
+        /// <summary>
+        /// <para>Symbol: finally</para>
+        /// <para><c>finally</c></para>
+        /// </summary>
+        Finally = 66,
 
         /// <summary>
         /// <para>Symbol: for</para>
         /// <para><c>for</c></para>
         /// </summary>
-        For = 65,
+        For = 67,
 
         /// <summary>
         /// <para>Symbol: foreach</para>
         /// <para><c>foreach</c></para>
         /// </summary>
-        Foreach = 66,
+        Foreach = 68,
 
         /// <summary>
         /// <para>Symbol: foreign</para>
         /// <para><c>foreign</c></para>
         /// </summary>
-        Foreign = 67,
+        Foreign = 69,
 
         /// <summary>
         /// <para>Symbol: function</para>
         /// <para><c>function</c></para>
         /// </summary>
-        Function = 68,
+        Function = 70,
 
         /// <summary>
         /// <para>Symbol: get</para>
         /// <para><c>get</c></para>
         /// </summary>
-        Get = 69,
+        Get = 71,
 
         /// <summary>
         /// <para>Symbol: hbox</para>
         /// <para><c>hbox</c></para>
         /// </summary>
-        Hbox = 70,
+        Hbox = 72,
 
         /// <summary>
         /// <para>Symbol: hbuttonbox</para>
         /// <para><c>hbuttonbox</c></para>
         /// </summary>
-        Hbuttonbox = 71,
+        Hbuttonbox = 73,
 
         /// <summary>
         /// <para>Symbol: ID</para>
         /// <para><c>ID</c></para>
         /// </summary>
-        Id = 72,
+        Id = 74,
 
         /// <summary>
         /// <para>Symbol: if</para>
         /// <para><c>if</c></para>
         /// </summary>
-        If = 73,
+        If = 75,
 
         /// <summary>
         /// <para>Symbol: image</para>
         /// <para><c>image</c></para>
         /// </summary>
-        Image = 74,
+        Image = 76,
 
         /// <summary>
         /// <para>Symbol: in</para>
         /// <para><c>in</c></para>
         /// </summary>
-        In = 75,
+        In = 77,
 
         /// <summary>
         /// <para>Symbol: index</para>
         /// <para><c>index</c></para>
         /// </summary>
-        Index = 76,
+        Index = 78,
 
         /// <summary>
         /// <para>Symbol: insert</para>
         /// <para><c>insert</c></para>
         /// </summary>
-        Insert = 77,
+        Insert = 79,
 
         /// <summary>
         /// <para>Symbol: integer</para>
         /// <para><c>integer</c></para>
         /// </summary>
-        Integer = 78,
+        Integer = 80,
 
         /// <summary>
         /// <para>Symbol: IntLiteral</para>
         /// <para><c>IntLiteral</c></para>
         /// </summary>
-        Intliteral = 79,
+        Intliteral = 81,
 
         /// <summary>
         /// <para>Symbol: is</para>
         /// <para><c>is</c></para>
         /// </summary>
-        Is = 80,
+        Is = 82,
 
         /// <summary>
         /// <para>Symbol: list</para>
         /// <para><c>list</c></para>
         /// </summary>
-        List = 81,
+        List = 83,
 
         /// <summary>
         /// <para>Symbol: many</para>
         /// <para><c>many</c></para>
         /// </summary>
-        Many = 82,
+        Many = 84,
 
         /// <summary>
         /// <para>Symbol: menu</para>
         /// <para><c>menu</c></para>
         /// </summary>
-        Menu = 83,
+        Menu = 85,
 
         /// <summary>
         /// <para>Symbol: menuitem</para>
         /// <para><c>menuitem</c></para>
         /// </summary>
-        Menuitem = 84,
+        Menuitem = 86,
 
         /// <summary>
         /// <para>Symbol: modified</para>
         /// <para><c>modified</c></para>
         /// </summary>
-        Modified = 85,
+        Modified = 87,
 
         /// <summary>
         /// <para>Symbol: new</para>
         /// <para><c>new</c></para>
         /// </summary>
-        New = 86,
+        New = 88,
 
         /// <summary>
         /// <para>Symbol: not</para>
         /// <para><c>not</c></para>
         /// </summary>
-        Not = 87,
+        Not = 89,
 
         /// <summary>
         /// <para>Symbol: null</para>
         /// <para><c>null</c></para>
         /// </summary>
-        Null = 88,
+        Null = 90,
 
         /// <summary>
         /// <para>Symbol: observed</para>
         /// <para><c>observed</c></para>
         /// </summary>
-        Observed = 89,
+        Observed = 91,
 
         /// <summary>
         /// <para>Symbol: or</para>
         /// <para><c>or</c></para>
         /// </summary>
-        Or = 90,
+        Or = 92,
 
         /// <summary>
         /// <para>Symbol: position</para>
         /// <para><c>position</c></para>
         /// </summary>
-        Position = 91,
+        Position = 93,
 
         /// <summary>
         /// <para>Symbol: primary</para>
         /// <para><c>primary</c></para>
         /// </summary>
-        Primary = 92,
+        Primary = 94,
 
         /// <summary>
         /// <para>Symbol: property</para>
         /// <para><c>property</c></para>
         /// </summary>
-        Property = 93,
+        Property = 95,
 
         /// <summary>
         /// <para>Symbol: range</para>
         /// <para><c>range</c></para>
         /// </summary>
-        Range = 94,
+        Range = 96,
 
         /// <summary>
         /// <para>Symbol: return</para>
         /// <para><c>return</c></para>
         /// </summary>
-        Return = 95,
+        Return = 97,
 
         /// <summary>
         /// <para>Symbol: select</para>
         /// <para><c>select</c></para>
         /// </summary>
-        Select = 96,
+        Select = 98,
 
         /// <summary>
         /// <para>Symbol: Separator</para>
         /// <para><c>Separator</c></para>
         /// </summary>
-        Separator = 97,
+        Separator = 99,
 
         /// <summary>
         /// <para>Symbol: set</para>
         /// <para><c>set</c></para>
         /// </summary>
-        Set = 98,
+        Set = 100,
 
         /// <summary>
         /// <para>Symbol: static</para>
         /// <para><c>static</c></para>
         /// </summary>
-        Static = 99,
+        Static = 101,
 
         /// <summary>
         /// <para>Symbol: StringLiteral</para>
         /// <para><c>StringLiteral</c></para>
         /// </summary>
-        Stringliteral = 100,
+        Stringliteral = 102,
 
         /// <summary>
         /// <para>Symbol: switch</para>
         /// <para><c>switch</c></para>
         /// </summary>
-        Switch = 101,
+        Switch = 103,
 
         /// <summary>
         /// <para>Symbol: table</para>
         /// <para><c>table</c></para>
         /// </summary>
-        Table = 102,
+        Table = 104,
 
         /// <summary>
         /// <para>Symbol: template</para>
         /// <para><c>template</c></para>
         /// </summary>
-        Template = 103,
+        Template = 105,
 
         /// <summary>
         /// <para>Symbol: through</para>
         /// <para><c>through</c></para>
         /// </summary>
-        Through = 104,
+        Through = 106,
+
+        /// <summary>
+        /// <para>Symbol: throw</para>
+        /// <para><c>throw</c></para>
+        /// </summary>
+        Throw = 107,
 
         /// <summary>
         /// <para>Symbol: time</para>
         /// <para><c>time</c></para>
         /// </summary>
-        Time = 105,
+        Time = 108,
 
         /// <summary>
         /// <para>Symbol: timerange</para>
         /// <para><c>timerange</c></para>
         /// </summary>
-        Timerange = 106,
+        Timerange = 109,
 
         /// <summary>
         /// <para>Symbol: TimeSpanLiteral</para>
         /// <para><c>TimeSpanLiteral</c></para>
         /// </summary>
-        Timespanliteral = 107,
+        Timespanliteral = 110,
 
         /// <summary>
         /// <para>Symbol: toolbar</para>
         /// <para><c>toolbar</c></para>
         /// </summary>
-        Toolbar = 108,
+        Toolbar = 111,
 
         /// <summary>
         /// <para>Symbol: toolbutton</para>
         /// <para><c>toolbutton</c></para>
         /// </summary>
-        Toolbutton = 109,
+        Toolbutton = 112,
 
         /// <summary>
         /// <para>Symbol: true</para>
         /// <para><c>true</c></para>
         /// </summary>
-        True = 110,
+        True = 113,
+
+        /// <summary>
+        /// <para>Symbol: try</para>
+        /// <para><c>try</c></para>
+        /// </summary>
+        Try = 114,
 
         /// <summary>
         /// <para>Symbol: type</para>
         /// <para><c>type</c></para>
         /// </summary>
-        Type = 111,
+        Type = 115,
 
         /// <summary>
         /// <para>Symbol: unique</para>
         /// <para><c>unique</c></para>
         /// </summary>
-        Unique = 112,
+        Unique = 116,
 
         /// <summary>
         /// <para>Symbol: update</para>
         /// <para><c>update</c></para>
         /// </summary>
-        Update = 113,
+        Update = 117,
 
         /// <summary>
         /// <para>Symbol: using</para>
         /// <para><c>using</c></para>
         /// </summary>
-        Using = 114,
+        Using = 118,
 
         /// <summary>
         /// <para>Symbol: var</para>
         /// <para><c>var</c></para>
         /// </summary>
-        Var = 115,
+        Var = 119,
 
         /// <summary>
         /// <para>Symbol: varchar</para>
         /// <para><c>varchar</c></para>
         /// </summary>
-        Varchar = 116,
+        Varchar = 120,
 
         /// <summary>
         /// <para>Symbol: vbox</para>
         /// <para><c>vbox</c></para>
         /// </summary>
-        Vbox = 117,
+        Vbox = 121,
 
         /// <summary>
         /// <para>Symbol: vbuttonbox</para>
         /// <para><c>vbuttonbox</c></para>
         /// </summary>
-        Vbuttonbox = 118,
+        Vbuttonbox = 122,
 
         /// <summary>
         /// <para>Symbol: while</para>
         /// <para><c>while</c></para>
         /// </summary>
-        While = 119,
+        While = 123,
 
         /// <summary>
         /// <para>Symbol: widget</para>
         /// <para><c>widget</c></para>
         /// </summary>
-        Widget = 120,
+        Widget = 124,
 
         /// <summary>
         /// <para>Symbol: window</para>
         /// <para><c>window</c></para>
         /// </summary>
-        Window = 121,
+        Window = 125,
 
         /// <summary>
         /// <para>Symbol: Arg</para>
         /// <para><c>&lt;Arg&gt;</c></para>
         /// </summary>
-        Arg = 122,
+        Arg = 126,
 
         /// <summary>
         /// <para>Symbol: Args</para>
         /// <para><c>&lt;Args&gt;</c></para>
         /// </summary>
-        Args = 123,
+        Args = 127,
 
         /// <summary>
         /// <para>Symbol: Block</para>
         /// <para><c>&lt;Block&gt;</c></para>
         /// </summary>
-        Block = 124,
+        Block = 128,
 
         /// <summary>
         /// <para>Symbol: Case Stms</para>
         /// <para><c>&lt;Case Stms&gt;</c></para>
         /// </summary>
-        Casestms = 125,
+        Casestms = 129,
+
+        /// <summary>
+        /// <para>Symbol: Catch</para>
+        /// <para><c>&lt;Catch&gt;</c></para>
+        /// </summary>
+        Catch2 = 130,
+
+        /// <summary>
+        /// <para>Symbol: Catchs</para>
+        /// <para><c>&lt;Catchs&gt;</c></para>
+        /// </summary>
+        Catchs = 131,
 
         /// <summary>
         /// <para>Symbol: Database</para>
         /// <para><c>&lt;Database&gt;</c></para>
         /// </summary>
-        Database2 = 126,
+        Database2 = 132,
 
         /// <summary>
         /// <para>Symbol: DB Column</para>
         /// <para><c>&lt;DB Column&gt;</c></para>
         /// </summary>
-        Dbcolumn = 127,
+        Dbcolumn = 133,
 
         /// <summary>
         /// <para>Symbol: DB Column Attr</para>
         /// <para><c>&lt;DB Column Attr&gt;</c></para>
         /// </summary>
-        Dbcolumnattr = 128,
+        Dbcolumnattr = 134,
 
         /// <summary>
         /// <para>Symbol: DB Column Attr List</para>
         /// <para><c>&lt;DB Column Attr List&gt;</c></para>
         /// </summary>
-        Dbcolumnattrlist = 129,
+        Dbcolumnattrlist = 135,
 
         /// <summary>
         /// <para>Symbol: DB Column Type</para>
         /// <para><c>&lt;DB Column Type&gt;</c></para>
         /// </summary>
-        Dbcolumntype = 130,
+        Dbcolumntype = 136,
 
         /// <summary>
         /// <para>Symbol: DB Columns</para>
         /// <para><c>&lt;DB Columns&gt;</c></para>
         /// </summary>
-        Dbcolumns = 131,
+        Dbcolumns = 137,
 
         /// <summary>
         /// <para>Symbol: DB Table</para>
         /// <para><c>&lt;DB Table&gt;</c></para>
         /// </summary>
-        Dbtable = 132,
+        Dbtable = 138,
 
         /// <summary>
         /// <para>Symbol: DB Table Attr</para>
         /// <para><c>&lt;DB Table Attr&gt;</c></para>
         /// </summary>
-        Dbtableattr = 133,
+        Dbtableattr = 139,
 
         /// <summary>
         /// <para>Symbol: DB Table Attr List</para>
         /// <para><c>&lt;DB Table Attr List&gt;</c></para>
         /// </summary>
-        Dbtableattrlist = 134,
+        Dbtableattrlist = 140,
 
         /// <summary>
         /// <para>Symbol: DB Tables</para>
         /// <para><c>&lt;DB Tables&gt;</c></para>
         /// </summary>
-        Dbtables = 135,
+        Dbtables = 141,
 
         /// <summary>
         /// <para>Symbol: DB Trigger Run</para>
         /// <para><c>&lt;DB Trigger Run&gt;</c></para>
         /// </summary>
-        Dbtriggerrun = 136,
+        Dbtriggerrun = 142,
 
         /// <summary>
         /// <para>Symbol: DB Trigger Runs</para>
         /// <para><c>&lt;DB Trigger Runs&gt;</c></para>
         /// </summary>
-        Dbtriggerruns = 137,
+        Dbtriggerruns = 143,
 
         /// <summary>
         /// <para>Symbol: Dict List</para>
         /// <para><c>&lt;Dict List&gt;</c></para>
         /// </summary>
-        Dictlist = 138,
+        Dictlist = 144,
 
         /// <summary>
         /// <para>Symbol: Expr</para>
         /// <para><c>&lt;Expr&gt;</c></para>
         /// </summary>
-        Expr = 139,
+        Expr = 145,
 
         /// <summary>
         /// <para>Symbol: Expr List</para>
         /// <para><c>&lt;Expr List&gt;</c></para>
         /// </summary>
-        Exprlist = 140,
+        Exprlist = 146,
 
         /// <summary>
         /// <para>Symbol: Func Arg</para>
         /// <para><c>&lt;Func Arg&gt;</c></para>
         /// </summary>
-        Funcarg = 141,
+        Funcarg = 147,
 
         /// <summary>
         /// <para>Symbol: Func args</para>
         /// <para><c>&lt;Func args&gt;</c></para>
         /// </summary>
-        Funcargs = 142,
+        Funcargs = 148,
 
         /// <summary>
         /// <para>Symbol: Function</para>
         /// <para><c>&lt;Function&gt;</c></para>
         /// </summary>
-        Function2 = 143,
+        Function2 = 149,
 
         /// <summary>
         /// <para>Symbol: ID List</para>
         /// <para><c>&lt;ID List&gt;</c></para>
         /// </summary>
-        Idlist = 144,
+        Idlist = 150,
 
         /// <summary>
         /// <para>Symbol: Layout Block</para>
         /// <para><c>&lt;Layout Block&gt;</c></para>
         /// </summary>
-        Layoutblock = 145,
+        Layoutblock = 151,
 
         /// <summary>
         /// <para>Symbol: Layout List</para>
         /// <para><c>&lt;Layout List&gt;</c></para>
         /// </summary>
-        Layoutlist = 146,
+        Layoutlist = 152,
 
         /// <summary>
         /// <para>Symbol: Menu Block</para>
         /// <para><c>&lt;Menu Block&gt;</c></para>
         /// </summary>
-        Menublock = 147,
+        Menublock = 153,
 
         /// <summary>
         /// <para>Symbol: Menu Item</para>
         /// <para><c>&lt;Menu Item&gt;</c></para>
         /// </summary>
-        Menuitem2 = 148,
+        Menuitem2 = 154,
 
         /// <summary>
         /// <para>Symbol: MenuItems List</para>
         /// <para><c>&lt;MenuItems List&gt;</c></para>
         /// </summary>
-        Menuitemslist = 149,
+        Menuitemslist = 155,
 
         /// <summary>
         /// <para>Symbol: Normal Stm</para>
         /// <para><c>&lt;Normal Stm&gt;</c></para>
         /// </summary>
-        Normalstm = 150,
+        Normalstm = 156,
+
+        /// <summary>
+        /// <para>Symbol: NumLiteral</para>
+        /// <para><c>&lt;NumLiteral&gt;</c></para>
+        /// </summary>
+        Numliteral = 157,
 
         /// <summary>
         /// <para>Symbol: Op Add</para>
         /// <para><c>&lt;Op Add&gt;</c></para>
         /// </summary>
-        Opadd = 151,
+        Opadd = 158,
 
         /// <summary>
         /// <para>Symbol: Op And</para>
         /// <para><c>&lt;Op And&gt;</c></para>
         /// </summary>
-        Opand = 152,
+        Opand = 159,
 
         /// <summary>
         /// <para>Symbol: Op Assign</para>
         /// <para><c>&lt;Op Assign&gt;</c></para>
         /// </summary>
-        Opassign = 153,
+        Opassign = 160,
 
         /// <summary>
         /// <para>Symbol: Op Compare</para>
         /// <para><c>&lt;Op Compare&gt;</c></para>
         /// </summary>
-        Opcompare = 154,
+        Opcompare = 161,
 
         /// <summary>
         /// <para>Symbol: Op Equate</para>
         /// <para><c>&lt;Op Equate&gt;</c></para>
         /// </summary>
-        Opequate = 155,
+        Opequate = 162,
 
         /// <summary>
         /// <para>Symbol: Op If</para>
         /// <para><c>&lt;Op If&gt;</c></para>
         /// </summary>
-        Opif = 156,
+        Opif = 163,
 
         /// <summary>
         /// <para>Symbol: Op Mult</para>
         /// <para><c>&lt;Op Mult&gt;</c></para>
         /// </summary>
-        Opmult = 157,
+        Opmult = 164,
 
         /// <summary>
         /// <para>Symbol: Op Or</para>
         /// <para><c>&lt;Op Or&gt;</c></para>
         /// </summary>
-        Opor = 158,
+        Opor = 165,
 
         /// <summary>
         /// <para>Symbol: Op Pointer</para>
         /// <para><c>&lt;Op Pointer&gt;</c></para>
         /// </summary>
-        Oppointer = 159,
+        Oppointer = 166,
 
         /// <summary>
         /// <para>Symbol: Op Unary</para>
         /// <para><c>&lt;Op Unary&gt;</c></para>
         /// </summary>
-        Opunary = 160,
+        Opunary = 167,
 
         /// <summary>
         /// <para>Symbol: QualifiedName</para>
         /// <para><c>&lt;QualifiedName&gt;</c></para>
         /// </summary>
-        Qualifiedname = 161,
+        Qualifiedname = 168,
 
         /// <summary>
         /// <para>Symbol: Stm</para>
         /// <para><c>&lt;Stm&gt;</c></para>
         /// </summary>
-        Stm = 162,
+        Stm = 169,
 
         /// <summary>
         /// <para>Symbol: Stm List</para>
         /// <para><c>&lt;Stm List&gt;</c></para>
         /// </summary>
-        Stmlist = 163,
+        Stmlist = 170,
 
         /// <summary>
         /// <para>Symbol: Then Stm</para>
         /// <para><c>&lt;Then Stm&gt;</c></para>
         /// </summary>
-        Thenstm = 164,
+        Thenstm = 171,
+
+        /// <summary>
+        /// <para>Symbol: TryFinally</para>
+        /// <para><c>&lt;TryFinally&gt;</c></para>
+        /// </summary>
+        Tryfinally = 172,
 
         /// <summary>
         /// <para>Symbol: Value</para>
         /// <para><c>&lt;Value&gt;</c></para>
         /// </summary>
-        Value = 165,
+        Value = 173,
 
         /// <summary>
         /// <para>Symbol: Widget</para>
         /// <para><c>&lt;Widget&gt;</c></para>
         /// </summary>
-        Widget2 = 166,
+        Widget2 = 174,
 
         /// <summary>
         /// <para>Symbol: WndParam</para>
         /// <para><c>&lt;WndParam&gt;</c></para>
         /// </summary>
-        Wndparam = 167,
+        Wndparam = 175,
 
         /// <summary>
         /// <para>Symbol: WndParam List</para>
         /// <para><c>&lt;WndParam List&gt;</c></para>
         /// </summary>
-        Wndparamlist = 168,
+        Wndparamlist = 176,
 
 		#endregion
 
@@ -1110,1191 +1158,1275 @@ namespace LPS.ToolScript
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Stm&gt; ::= &lt;Normal Stm&gt;</c></para>
+        /// <para><c>&lt;Stm&gt; ::= &lt;TryFinally&gt;</c></para>
         /// </summary>
         RuleStm = ToolScriptParserBase.RulesOffset + 13,
 
         /// <summary>
         /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Stm&gt; ::= &lt;Normal Stm&gt;</c></para>
+        /// </summary>
+        RuleStm2 = ToolScriptParserBase.RulesOffset + 14,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
         /// <para><c>&lt;Then Stm&gt; ::= if '(' &lt;Expr&gt; ')' &lt;Then Stm&gt; else &lt;Then Stm&gt;</c></para>
         /// </summary>
-        RuleThenstmIfLparanRparanElse = ToolScriptParserBase.RulesOffset + 14,
+        RuleThenstmIfLparanRparanElse = ToolScriptParserBase.RulesOffset + 15,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Then Stm&gt; ::= while '(' &lt;Expr&gt; ')' &lt;Then Stm&gt;</c></para>
         /// </summary>
-        RuleThenstmWhileLparanRparan = ToolScriptParserBase.RulesOffset + 15,
+        RuleThenstmWhileLparanRparan = ToolScriptParserBase.RulesOffset + 16,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Then Stm&gt; ::= for '(' &lt;Expr&gt; ';' &lt;Expr&gt; ';' &lt;Expr&gt; ')' &lt;Then Stm&gt;</c></para>
         /// </summary>
-        RuleThenstmForLparanSemiSemiRparan = ToolScriptParserBase.RulesOffset + 16,
+        RuleThenstmForLparanSemiSemiRparan = ToolScriptParserBase.RulesOffset + 17,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Then Stm&gt; ::= &lt;Normal Stm&gt;</c></para>
         /// </summary>
-        RuleThenstm = ToolScriptParserBase.RulesOffset + 17,
+        RuleThenstm = ToolScriptParserBase.RulesOffset + 18,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= do &lt;Stm&gt; while '(' &lt;Expr&gt; ')'</c></para>
         /// </summary>
-        RuleNormalstmDoWhileLparanRparan = ToolScriptParserBase.RulesOffset + 18,
+        RuleNormalstmDoWhileLparanRparan = ToolScriptParserBase.RulesOffset + 19,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= switch '(' &lt;Expr&gt; ')' '{' &lt;Case Stms&gt; '}'</c></para>
         /// </summary>
-        RuleNormalstmSwitchLparanRparanLbraceRbrace = ToolScriptParserBase.RulesOffset + 19,
+        RuleNormalstmSwitchLparanRparanLbraceRbrace = ToolScriptParserBase.RulesOffset + 20,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= &lt;Block&gt;</c></para>
         /// </summary>
-        RuleNormalstm = ToolScriptParserBase.RulesOffset + 20,
+        RuleNormalstm = ToolScriptParserBase.RulesOffset + 21,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= &lt;Expr&gt; ';'</c></para>
         /// </summary>
-        RuleNormalstmSemi = ToolScriptParserBase.RulesOffset + 21,
+        RuleNormalstmSemi = ToolScriptParserBase.RulesOffset + 22,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= break ';'</c></para>
         /// </summary>
-        RuleNormalstmBreakSemi = ToolScriptParserBase.RulesOffset + 22,
+        RuleNormalstmBreakSemi = ToolScriptParserBase.RulesOffset + 23,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= continue ';'</c></para>
         /// </summary>
-        RuleNormalstmContinueSemi = ToolScriptParserBase.RulesOffset + 23,
+        RuleNormalstmContinueSemi = ToolScriptParserBase.RulesOffset + 24,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= return &lt;Expr&gt; ';'</c></para>
         /// </summary>
-        RuleNormalstmReturnSemi = ToolScriptParserBase.RulesOffset + 24,
+        RuleNormalstmReturnSemi = ToolScriptParserBase.RulesOffset + 25,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Normal Stm&gt; ::= throw &lt;Expr&gt; ';'</c></para>
+        /// </summary>
+        RuleNormalstmThrowSemi = ToolScriptParserBase.RulesOffset + 26,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Normal Stm&gt; ::= throw &lt;Expr&gt; ',' &lt;Expr&gt; ';'</c></para>
+        /// </summary>
+        RuleNormalstmThrowCommaSemi = ToolScriptParserBase.RulesOffset + 27,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Normal Stm&gt; ::= ';'</c></para>
         /// </summary>
-        RuleNormalstmSemi2 = ToolScriptParserBase.RulesOffset + 25,
+        RuleNormalstmSemi2 = ToolScriptParserBase.RulesOffset + 28,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;TryFinally&gt; ::= try &lt;Normal Stm&gt; &lt;Catchs&gt; finally &lt;Normal Stm&gt;</c></para>
+        /// </summary>
+        RuleTryfinallyTryFinally = ToolScriptParserBase.RulesOffset + 29,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;TryFinally&gt; ::= try &lt;Normal Stm&gt; &lt;Catchs&gt;</c></para>
+        /// </summary>
+        RuleTryfinallyTry = ToolScriptParserBase.RulesOffset + 30,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Catchs&gt; ::= &lt;Catch&gt; &lt;Catchs&gt;</c></para>
+        /// </summary>
+        RuleCatchs = ToolScriptParserBase.RulesOffset + 31,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Catchs&gt; ::= </c></para>
+        /// </summary>
+        RuleCatchs2 = ToolScriptParserBase.RulesOffset + 32,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Catch&gt; ::= catch '(' &lt;QualifiedName&gt; ID ')' &lt;Normal Stm&gt;</c></para>
+        /// </summary>
+        RuleCatchCatchLparanIdRparan = ToolScriptParserBase.RulesOffset + 33,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Catch&gt; ::= catch '(' type &lt;QualifiedName&gt; ')' &lt;Normal Stm&gt;</c></para>
+        /// </summary>
+        RuleCatchCatchLparanTypeRparan = ToolScriptParserBase.RulesOffset + 34,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Catch&gt; ::= catch '(' var ID ')' &lt;Normal Stm&gt;</c></para>
+        /// </summary>
+        RuleCatchCatchLparanVarIdRparan = ToolScriptParserBase.RulesOffset + 35,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;Catch&gt; ::= catch &lt;Block&gt;</c></para>
+        /// </summary>
+        RuleCatchCatch = ToolScriptParserBase.RulesOffset + 36,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Func args&gt; ::= &lt;Func args&gt; ',' &lt;Func Arg&gt;</c></para>
         /// </summary>
-        RuleFuncargsComma = ToolScriptParserBase.RulesOffset + 26,
+        RuleFuncargsComma = ToolScriptParserBase.RulesOffset + 37,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Func args&gt; ::= &lt;Func Arg&gt;</c></para>
         /// </summary>
-        RuleFuncargs = ToolScriptParserBase.RulesOffset + 27,
+        RuleFuncargs = ToolScriptParserBase.RulesOffset + 38,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Func args&gt; ::= </c></para>
         /// </summary>
-        RuleFuncargs2 = ToolScriptParserBase.RulesOffset + 28,
+        RuleFuncargs2 = ToolScriptParserBase.RulesOffset + 39,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Func Arg&gt; ::= ID</c></para>
         /// </summary>
-        RuleFuncargId = ToolScriptParserBase.RulesOffset + 29,
+        RuleFuncargId = ToolScriptParserBase.RulesOffset + 40,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Func Arg&gt; ::= ID '=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleFuncargIdEq = ToolScriptParserBase.RulesOffset + 30,
+        RuleFuncargIdEq = ToolScriptParserBase.RulesOffset + 41,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Args&gt; ::= &lt;Args&gt; ',' &lt;Arg&gt;</c></para>
         /// </summary>
-        RuleArgsComma = ToolScriptParserBase.RulesOffset + 31,
+        RuleArgsComma = ToolScriptParserBase.RulesOffset + 42,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Args&gt; ::= &lt;Arg&gt;</c></para>
         /// </summary>
-        RuleArgs = ToolScriptParserBase.RulesOffset + 32,
+        RuleArgs = ToolScriptParserBase.RulesOffset + 43,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Args&gt; ::= </c></para>
         /// </summary>
-        RuleArgs2 = ToolScriptParserBase.RulesOffset + 33,
+        RuleArgs2 = ToolScriptParserBase.RulesOffset + 44,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Arg&gt; ::= &lt;Op If&gt;</c></para>
         /// </summary>
-        RuleArg = ToolScriptParserBase.RulesOffset + 34,
+        RuleArg = ToolScriptParserBase.RulesOffset + 45,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Arg&gt; ::= ID '=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleArgIdEq = ToolScriptParserBase.RulesOffset + 35,
+        RuleArgIdEq = ToolScriptParserBase.RulesOffset + 46,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Case Stms&gt; ::= case &lt;Value&gt; ':' &lt;Stm List&gt; &lt;Case Stms&gt;</c></para>
         /// </summary>
-        RuleCasestmsCaseColon = ToolScriptParserBase.RulesOffset + 36,
+        RuleCasestmsCaseColon = ToolScriptParserBase.RulesOffset + 47,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Case Stms&gt; ::= default ':' &lt;Stm List&gt;</c></para>
         /// </summary>
-        RuleCasestmsDefaultColon = ToolScriptParserBase.RulesOffset + 37,
+        RuleCasestmsDefaultColon = ToolScriptParserBase.RulesOffset + 48,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Case Stms&gt; ::= </c></para>
         /// </summary>
-        RuleCasestms = ToolScriptParserBase.RulesOffset + 38,
+        RuleCasestms = ToolScriptParserBase.RulesOffset + 49,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Block&gt; ::= '{' &lt;Stm List&gt; '}'</c></para>
         /// </summary>
-        RuleBlockLbraceRbrace = ToolScriptParserBase.RulesOffset + 39,
+        RuleBlockLbraceRbrace = ToolScriptParserBase.RulesOffset + 50,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Stm List&gt; ::= &lt;Stm&gt; &lt;Stm List&gt;</c></para>
         /// </summary>
-        RuleStmlist = ToolScriptParserBase.RulesOffset + 40,
+        RuleStmlist = ToolScriptParserBase.RulesOffset + 51,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Stm List&gt; ::= &lt;Stm&gt;</c></para>
         /// </summary>
-        RuleStmlist2 = ToolScriptParserBase.RulesOffset + 41,
+        RuleStmlist2 = ToolScriptParserBase.RulesOffset + 52,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;ID List&gt; ::= &lt;ID List&gt; ',' ID</c></para>
         /// </summary>
-        RuleIdlistCommaId = ToolScriptParserBase.RulesOffset + 42,
+        RuleIdlistCommaId = ToolScriptParserBase.RulesOffset + 53,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;ID List&gt; ::= ID</c></para>
         /// </summary>
-        RuleIdlistId = ToolScriptParserBase.RulesOffset + 43,
+        RuleIdlistId = ToolScriptParserBase.RulesOffset + 54,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;ID List&gt; ::= </c></para>
         /// </summary>
-        RuleIdlist = ToolScriptParserBase.RulesOffset + 44,
+        RuleIdlist = ToolScriptParserBase.RulesOffset + 55,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Database&gt; ::= database ID '{' &lt;DB Tables&gt; '}'</c></para>
         /// </summary>
-        RuleDatabaseDatabaseIdLbraceRbrace = ToolScriptParserBase.RulesOffset + 45,
+        RuleDatabaseDatabaseIdLbraceRbrace = ToolScriptParserBase.RulesOffset + 56,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Database&gt; ::= extends database ID '{' &lt;DB Tables&gt; '}'</c></para>
         /// </summary>
-        RuleDatabaseExtendsDatabaseIdLbraceRbrace = ToolScriptParserBase.RulesOffset + 46,
+        RuleDatabaseExtendsDatabaseIdLbraceRbrace = ToolScriptParserBase.RulesOffset + 57,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Tables&gt; ::= &lt;DB Tables&gt; &lt;DB Table&gt;</c></para>
         /// </summary>
-        RuleDbtables = ToolScriptParserBase.RulesOffset + 47,
+        RuleDbtables = ToolScriptParserBase.RulesOffset + 58,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Tables&gt; ::= </c></para>
         /// </summary>
-        RuleDbtables2 = ToolScriptParserBase.RulesOffset + 48,
+        RuleDbtables2 = ToolScriptParserBase.RulesOffset + 59,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Table&gt; ::= template table ID '{' &lt;DB Columns&gt; '}' &lt;DB Table Attr List&gt;</c></para>
         /// </summary>
-        RuleDbtableTemplateTableIdLbraceRbrace = ToolScriptParserBase.RulesOffset + 49,
+        RuleDbtableTemplateTableIdLbraceRbrace = ToolScriptParserBase.RulesOffset + 60,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Table&gt; ::= template table ID template ID '{' &lt;DB Columns&gt; '}' &lt;DB Table Attr List&gt;</c></para>
         /// </summary>
-        RuleDbtableTemplateTableIdTemplateIdLbraceRbrace = ToolScriptParserBase.RulesOffset + 50,
+        RuleDbtableTemplateTableIdTemplateIdLbraceRbrace = ToolScriptParserBase.RulesOffset + 61,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Table&gt; ::= table ID '{' &lt;DB Columns&gt; '}' &lt;DB Table Attr List&gt;</c></para>
         /// </summary>
-        RuleDbtableTableIdLbraceRbrace = ToolScriptParserBase.RulesOffset + 51,
+        RuleDbtableTableIdLbraceRbrace = ToolScriptParserBase.RulesOffset + 62,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Table&gt; ::= table ID template ID '{' &lt;DB Columns&gt; '}' &lt;DB Table Attr List&gt;</c></para>
         /// </summary>
-        RuleDbtableTableIdTemplateIdLbraceRbrace = ToolScriptParserBase.RulesOffset + 52,
+        RuleDbtableTableIdTemplateIdLbraceRbrace = ToolScriptParserBase.RulesOffset + 63,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Table&gt; ::= extends table ID '{' &lt;DB Columns&gt; '}' &lt;DB Table Attr List&gt;</c></para>
         /// </summary>
-        RuleDbtableExtendsTableIdLbraceRbrace = ToolScriptParserBase.RulesOffset + 53,
+        RuleDbtableExtendsTableIdLbraceRbrace = ToolScriptParserBase.RulesOffset + 64,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Columns&gt; ::= &lt;DB Columns&gt; &lt;DB Column&gt;</c></para>
         /// </summary>
-        RuleDbcolumns = ToolScriptParserBase.RulesOffset + 54,
+        RuleDbcolumns = ToolScriptParserBase.RulesOffset + 65,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Columns&gt; ::= </c></para>
         /// </summary>
-        RuleDbcolumns2 = ToolScriptParserBase.RulesOffset + 55,
+        RuleDbcolumns2 = ToolScriptParserBase.RulesOffset + 66,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column&gt; ::= ID &lt;DB Column Type&gt; &lt;DB Column Attr List&gt; ';'</c></para>
         /// </summary>
-        RuleDbcolumnIdSemi = ToolScriptParserBase.RulesOffset + 56,
+        RuleDbcolumnIdSemi = ToolScriptParserBase.RulesOffset + 67,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= primary</c></para>
         /// </summary>
-        RuleDbcolumntypePrimary = ToolScriptParserBase.RulesOffset + 57,
+        RuleDbcolumntypePrimary = ToolScriptParserBase.RulesOffset + 68,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= foreign ID</c></para>
         /// </summary>
-        RuleDbcolumntypeForeignId = ToolScriptParserBase.RulesOffset + 58,
+        RuleDbcolumntypeForeignId = ToolScriptParserBase.RulesOffset + 69,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= foreign ID '(' ID ')'</c></para>
         /// </summary>
-        RuleDbcolumntypeForeignIdLparanIdRparan = ToolScriptParserBase.RulesOffset + 59,
+        RuleDbcolumntypeForeignIdLparanIdRparan = ToolScriptParserBase.RulesOffset + 70,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= many ID</c></para>
         /// </summary>
-        RuleDbcolumntypeManyId = ToolScriptParserBase.RulesOffset + 60,
+        RuleDbcolumntypeManyId = ToolScriptParserBase.RulesOffset + 71,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= many ID through ID</c></para>
         /// </summary>
-        RuleDbcolumntypeManyIdThroughId = ToolScriptParserBase.RulesOffset + 61,
+        RuleDbcolumntypeManyIdThroughId = ToolScriptParserBase.RulesOffset + 72,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= many ID through ID '(' ID ',' ID ')'</c></para>
         /// </summary>
-        RuleDbcolumntypeManyIdThroughIdLparanIdCommaIdRparan = ToolScriptParserBase.RulesOffset + 62,
+        RuleDbcolumntypeManyIdThroughIdLparanIdCommaIdRparan = ToolScriptParserBase.RulesOffset + 73,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= varchar</c></para>
         /// </summary>
-        RuleDbcolumntypeVarchar = ToolScriptParserBase.RulesOffset + 63,
+        RuleDbcolumntypeVarchar = ToolScriptParserBase.RulesOffset + 74,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= varchar '(' IntLiteral ')'</c></para>
         /// </summary>
-        RuleDbcolumntypeVarcharLparanIntliteralRparan = ToolScriptParserBase.RulesOffset + 64,
+        RuleDbcolumntypeVarcharLparanIntliteralRparan = ToolScriptParserBase.RulesOffset + 75,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= integer</c></para>
         /// </summary>
-        RuleDbcolumntypeInteger = ToolScriptParserBase.RulesOffset + 65,
+        RuleDbcolumntypeInteger = ToolScriptParserBase.RulesOffset + 76,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= bool</c></para>
         /// </summary>
-        RuleDbcolumntypeBool = ToolScriptParserBase.RulesOffset + 66,
+        RuleDbcolumntypeBool = ToolScriptParserBase.RulesOffset + 77,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= decimal '(' IntLiteral ',' IntLiteral ')'</c></para>
         /// </summary>
-        RuleDbcolumntypeDecimalLparanIntliteralCommaIntliteralRparan = ToolScriptParserBase.RulesOffset + 67,
+        RuleDbcolumntypeDecimalLparanIntliteralCommaIntliteralRparan = ToolScriptParserBase.RulesOffset + 78,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= date</c></para>
         /// </summary>
-        RuleDbcolumntypeDate = ToolScriptParserBase.RulesOffset + 68,
+        RuleDbcolumntypeDate = ToolScriptParserBase.RulesOffset + 79,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= time</c></para>
         /// </summary>
-        RuleDbcolumntypeTime = ToolScriptParserBase.RulesOffset + 69,
+        RuleDbcolumntypeTime = ToolScriptParserBase.RulesOffset + 80,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= datetime</c></para>
         /// </summary>
-        RuleDbcolumntypeDatetime = ToolScriptParserBase.RulesOffset + 70,
+        RuleDbcolumntypeDatetime = ToolScriptParserBase.RulesOffset + 81,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= daterange</c></para>
         /// </summary>
-        RuleDbcolumntypeDaterange = ToolScriptParserBase.RulesOffset + 71,
+        RuleDbcolumntypeDaterange = ToolScriptParserBase.RulesOffset + 82,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= timerange</c></para>
         /// </summary>
-        RuleDbcolumntypeTimerange = ToolScriptParserBase.RulesOffset + 72,
+        RuleDbcolumntypeTimerange = ToolScriptParserBase.RulesOffset + 83,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Type&gt; ::= datetimerange</c></para>
         /// </summary>
-        RuleDbcolumntypeDatetimerange = ToolScriptParserBase.RulesOffset + 73,
+        RuleDbcolumntypeDatetimerange = ToolScriptParserBase.RulesOffset + 84,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Attr List&gt; ::= &lt;DB Column Attr List&gt; &lt;DB Column Attr&gt;</c></para>
         /// </summary>
-        RuleDbcolumnattrlist = ToolScriptParserBase.RulesOffset + 74,
+        RuleDbcolumnattrlist = ToolScriptParserBase.RulesOffset + 85,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Attr List&gt; ::= </c></para>
         /// </summary>
-        RuleDbcolumnattrlist2 = ToolScriptParserBase.RulesOffset + 75,
+        RuleDbcolumnattrlist2 = ToolScriptParserBase.RulesOffset + 86,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Attr&gt; ::= unique</c></para>
         /// </summary>
-        RuleDbcolumnattrUnique = ToolScriptParserBase.RulesOffset + 76,
+        RuleDbcolumnattrUnique = ToolScriptParserBase.RulesOffset + 87,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Attr&gt; ::= not null</c></para>
         /// </summary>
-        RuleDbcolumnattrNotNull = ToolScriptParserBase.RulesOffset + 77,
+        RuleDbcolumnattrNotNull = ToolScriptParserBase.RulesOffset + 88,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Attr&gt; ::= index</c></para>
         /// </summary>
-        RuleDbcolumnattrIndex = ToolScriptParserBase.RulesOffset + 78,
+        RuleDbcolumnattrIndex = ToolScriptParserBase.RulesOffset + 89,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Attr&gt; ::= default &lt;Value&gt;</c></para>
         /// </summary>
-        RuleDbcolumnattrDefault = ToolScriptParserBase.RulesOffset + 79,
+        RuleDbcolumnattrDefault = ToolScriptParserBase.RulesOffset + 90,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Column Attr&gt; ::= ID '=' &lt;Value&gt;</c></para>
         /// </summary>
-        RuleDbcolumnattrIdEq = ToolScriptParserBase.RulesOffset + 80,
+        RuleDbcolumnattrIdEq = ToolScriptParserBase.RulesOffset + 91,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Table Attr List&gt; ::= &lt;DB Table Attr List&gt; &lt;DB Table Attr&gt;</c></para>
         /// </summary>
-        RuleDbtableattrlist = ToolScriptParserBase.RulesOffset + 81,
+        RuleDbtableattrlist = ToolScriptParserBase.RulesOffset + 92,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Table Attr List&gt; ::= </c></para>
         /// </summary>
-        RuleDbtableattrlist2 = ToolScriptParserBase.RulesOffset + 82,
+        RuleDbtableattrlist2 = ToolScriptParserBase.RulesOffset + 93,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Table Attr&gt; ::= index '(' &lt;ID List&gt; ')' ';'</c></para>
         /// </summary>
-        RuleDbtableattrIndexLparanRparanSemi = ToolScriptParserBase.RulesOffset + 83,
+        RuleDbtableattrIndexLparanRparanSemi = ToolScriptParserBase.RulesOffset + 94,
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;DB Table Attr&gt; ::= &lt;DB Trigger Runs&gt; position DecimalLiteral &lt;Stm&gt;</c></para>
+        /// <para><c>&lt;DB Table Attr&gt; ::= unique '(' &lt;ID List&gt; ')' ';'</c></para>
         /// </summary>
-        RuleDbtableattrPositionDecimalliteral = ToolScriptParserBase.RulesOffset + 84,
+        RuleDbtableattrUniqueLparanRparanSemi = ToolScriptParserBase.RulesOffset + 95,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;DB Table Attr&gt; ::= &lt;DB Trigger Runs&gt; position &lt;NumLiteral&gt; &lt;Stm&gt;</c></para>
+        /// </summary>
+        RuleDbtableattrPosition = ToolScriptParserBase.RulesOffset + 96,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Table Attr&gt; ::= ID '=' &lt;Value&gt; ';'</c></para>
         /// </summary>
-        RuleDbtableattrIdEqSemi = ToolScriptParserBase.RulesOffset + 85,
+        RuleDbtableattrIdEqSemi = ToolScriptParserBase.RulesOffset + 97,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Trigger Runs&gt; ::= &lt;DB Trigger Runs&gt; ',' &lt;DB Trigger Run&gt;</c></para>
         /// </summary>
-        RuleDbtriggerrunsComma = ToolScriptParserBase.RulesOffset + 86,
+        RuleDbtriggerrunsComma = ToolScriptParserBase.RulesOffset + 98,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Trigger Runs&gt; ::= &lt;DB Trigger Run&gt;</c></para>
         /// </summary>
-        RuleDbtriggerruns = ToolScriptParserBase.RulesOffset + 87,
+        RuleDbtriggerruns = ToolScriptParserBase.RulesOffset + 99,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Trigger Run&gt; ::= before select</c></para>
         /// </summary>
-        RuleDbtriggerrunBeforeSelect = ToolScriptParserBase.RulesOffset + 88,
+        RuleDbtriggerrunBeforeSelect = ToolScriptParserBase.RulesOffset + 100,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Trigger Run&gt; ::= after select</c></para>
         /// </summary>
-        RuleDbtriggerrunAfterSelect = ToolScriptParserBase.RulesOffset + 89,
+        RuleDbtriggerrunAfterSelect = ToolScriptParserBase.RulesOffset + 101,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Trigger Run&gt; ::= before insert</c></para>
         /// </summary>
-        RuleDbtriggerrunBeforeInsert = ToolScriptParserBase.RulesOffset + 90,
+        RuleDbtriggerrunBeforeInsert = ToolScriptParserBase.RulesOffset + 102,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Trigger Run&gt; ::= after insert</c></para>
         /// </summary>
-        RuleDbtriggerrunAfterInsert = ToolScriptParserBase.RulesOffset + 91,
+        RuleDbtriggerrunAfterInsert = ToolScriptParserBase.RulesOffset + 103,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Trigger Run&gt; ::= before update</c></para>
         /// </summary>
-        RuleDbtriggerrunBeforeUpdate = ToolScriptParserBase.RulesOffset + 92,
+        RuleDbtriggerrunBeforeUpdate = ToolScriptParserBase.RulesOffset + 104,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Trigger Run&gt; ::= after update</c></para>
         /// </summary>
-        RuleDbtriggerrunAfterUpdate = ToolScriptParserBase.RulesOffset + 93,
+        RuleDbtriggerrunAfterUpdate = ToolScriptParserBase.RulesOffset + 105,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Trigger Run&gt; ::= before delete</c></para>
         /// </summary>
-        RuleDbtriggerrunBeforeDelete = ToolScriptParserBase.RulesOffset + 94,
+        RuleDbtriggerrunBeforeDelete = ToolScriptParserBase.RulesOffset + 106,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Trigger Run&gt; ::= after delete</c></para>
         /// </summary>
-        RuleDbtriggerrunAfterDelete = ToolScriptParserBase.RulesOffset + 95,
+        RuleDbtriggerrunAfterDelete = ToolScriptParserBase.RulesOffset + 107,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Trigger Run&gt; ::= before modified</c></para>
         /// </summary>
-        RuleDbtriggerrunBeforeModified = ToolScriptParserBase.RulesOffset + 96,
+        RuleDbtriggerrunBeforeModified = ToolScriptParserBase.RulesOffset + 108,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;DB Trigger Run&gt; ::= after modified</c></para>
         /// </summary>
-        RuleDbtriggerrunAfterModified = ToolScriptParserBase.RulesOffset + 97,
+        RuleDbtriggerrunAfterModified = ToolScriptParserBase.RulesOffset + 109,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;NumLiteral&gt; ::= IntLiteral</c></para>
+        /// </summary>
+        RuleNumliteralIntliteral = ToolScriptParserBase.RulesOffset + 110,
+
+        /// <summary>
+        /// <para>Pravidlo: </para>
+        /// <para><c>&lt;NumLiteral&gt; ::= DecimalLiteral</c></para>
+        /// </summary>
+        RuleNumliteralDecimalliteral = ToolScriptParserBase.RulesOffset + 111,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Function&gt; ::= function ID '(' &lt;Func args&gt; ')' &lt;Stm&gt;</c></para>
         /// </summary>
-        RuleFunctionFunctionIdLparanRparan = ToolScriptParserBase.RulesOffset + 98,
+        RuleFunctionFunctionIdLparanRparan = ToolScriptParserBase.RulesOffset + 112,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Function&gt; ::= function '(' &lt;Func args&gt; ')' &lt;Stm&gt;</c></para>
         /// </summary>
-        RuleFunctionFunctionLparanRparan = ToolScriptParserBase.RulesOffset + 99,
+        RuleFunctionFunctionLparanRparan = ToolScriptParserBase.RulesOffset + 113,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Widget&gt; ::= window ID &lt;WndParam List&gt; &lt;Layout Block&gt;</c></para>
         /// </summary>
-        RuleWidgetWindowId = ToolScriptParserBase.RulesOffset + 100,
+        RuleWidgetWindowId = ToolScriptParserBase.RulesOffset + 114,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Widget&gt; ::= window &lt;WndParam List&gt; &lt;Layout Block&gt;</c></para>
         /// </summary>
-        RuleWidgetWindow = ToolScriptParserBase.RulesOffset + 101,
+        RuleWidgetWindow = ToolScriptParserBase.RulesOffset + 115,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Widget&gt; ::= widget ID &lt;Layout Block&gt;</c></para>
         /// </summary>
-        RuleWidgetWidgetId = ToolScriptParserBase.RulesOffset + 102,
+        RuleWidgetWidgetId = ToolScriptParserBase.RulesOffset + 116,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Widget&gt; ::= widget &lt;Layout Block&gt;</c></para>
         /// </summary>
-        RuleWidgetWidget = ToolScriptParserBase.RulesOffset + 103,
+        RuleWidgetWidget = ToolScriptParserBase.RulesOffset + 117,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;WndParam List&gt; ::= &lt;WndParam&gt; &lt;WndParam List&gt;</c></para>
         /// </summary>
-        RuleWndparamlist = ToolScriptParserBase.RulesOffset + 104,
+        RuleWndparamlist = ToolScriptParserBase.RulesOffset + 118,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;WndParam List&gt; ::= </c></para>
         /// </summary>
-        RuleWndparamlist2 = ToolScriptParserBase.RulesOffset + 105,
+        RuleWndparamlist2 = ToolScriptParserBase.RulesOffset + 119,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;WndParam&gt; ::= ID '=' &lt;Expr&gt; ';'</c></para>
         /// </summary>
-        RuleWndparamIdEqSemi = ToolScriptParserBase.RulesOffset + 106,
+        RuleWndparamIdEqSemi = ToolScriptParserBase.RulesOffset + 120,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;WndParam&gt; ::= ID ';'</c></para>
         /// </summary>
-        RuleWndparamIdSemi = ToolScriptParserBase.RulesOffset + 107,
+        RuleWndparamIdSemi = ToolScriptParserBase.RulesOffset + 121,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout List&gt; ::= &lt;Layout List&gt; &lt;Layout Block&gt;</c></para>
         /// </summary>
-        RuleLayoutlist = ToolScriptParserBase.RulesOffset + 108,
+        RuleLayoutlist = ToolScriptParserBase.RulesOffset + 122,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout List&gt; ::= </c></para>
         /// </summary>
-        RuleLayoutlist2 = ToolScriptParserBase.RulesOffset + 109,
+        RuleLayoutlist2 = ToolScriptParserBase.RulesOffset + 123,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= hbox &lt;WndParam List&gt; &lt;Layout List&gt; end</c></para>
         /// </summary>
-        RuleLayoutblockHboxEnd = ToolScriptParserBase.RulesOffset + 110,
+        RuleLayoutblockHboxEnd = ToolScriptParserBase.RulesOffset + 124,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= vbox &lt;WndParam List&gt; &lt;Layout List&gt; end</c></para>
         /// </summary>
-        RuleLayoutblockVboxEnd = ToolScriptParserBase.RulesOffset + 111,
+        RuleLayoutblockVboxEnd = ToolScriptParserBase.RulesOffset + 125,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= hbuttonbox &lt;WndParam List&gt; &lt;Layout List&gt; end</c></para>
         /// </summary>
-        RuleLayoutblockHbuttonboxEnd = ToolScriptParserBase.RulesOffset + 112,
+        RuleLayoutblockHbuttonboxEnd = ToolScriptParserBase.RulesOffset + 126,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= vbuttonbox &lt;WndParam List&gt; &lt;Layout List&gt; end</c></para>
         /// </summary>
-        RuleLayoutblockVbuttonboxEnd = ToolScriptParserBase.RulesOffset + 113,
+        RuleLayoutblockVbuttonboxEnd = ToolScriptParserBase.RulesOffset + 127,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= table &lt;WndParam List&gt; &lt;Layout List&gt; end</c></para>
         /// </summary>
-        RuleLayoutblockTableEnd = ToolScriptParserBase.RulesOffset + 114,
+        RuleLayoutblockTableEnd = ToolScriptParserBase.RulesOffset + 128,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= toolbar &lt;WndParam List&gt; &lt;Layout List&gt; end</c></para>
         /// </summary>
-        RuleLayoutblockToolbarEnd = ToolScriptParserBase.RulesOffset + 115,
+        RuleLayoutblockToolbarEnd = ToolScriptParserBase.RulesOffset + 129,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= button &lt;WndParam List&gt; &lt;Layout Block&gt;</c></para>
         /// </summary>
-        RuleLayoutblockButton = ToolScriptParserBase.RulesOffset + 116,
+        RuleLayoutblockButton = ToolScriptParserBase.RulesOffset + 130,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= button &lt;WndParam List&gt; end</c></para>
         /// </summary>
-        RuleLayoutblockButtonEnd = ToolScriptParserBase.RulesOffset + 117,
+        RuleLayoutblockButtonEnd = ToolScriptParserBase.RulesOffset + 131,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= toolbutton &lt;WndParam List&gt; &lt;Layout Block&gt;</c></para>
         /// </summary>
-        RuleLayoutblockToolbutton = ToolScriptParserBase.RulesOffset + 118,
+        RuleLayoutblockToolbutton = ToolScriptParserBase.RulesOffset + 132,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= toolbutton &lt;WndParam List&gt; end</c></para>
         /// </summary>
-        RuleLayoutblockToolbuttonEnd = ToolScriptParserBase.RulesOffset + 119,
+        RuleLayoutblockToolbuttonEnd = ToolScriptParserBase.RulesOffset + 133,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= image &lt;WndParam List&gt;</c></para>
         /// </summary>
-        RuleLayoutblockImage = ToolScriptParserBase.RulesOffset + 120,
+        RuleLayoutblockImage = ToolScriptParserBase.RulesOffset + 134,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= StringLiteral &lt;WndParam List&gt;</c></para>
         /// </summary>
-        RuleLayoutblockStringliteral = ToolScriptParserBase.RulesOffset + 121,
+        RuleLayoutblockStringliteral = ToolScriptParserBase.RulesOffset + 135,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= &lt;Menu Block&gt;</c></para>
         /// </summary>
-        RuleLayoutblock = ToolScriptParserBase.RulesOffset + 122,
+        RuleLayoutblock = ToolScriptParserBase.RulesOffset + 136,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Layout Block&gt; ::= '[' &lt;Expr&gt; ']' &lt;WndParam List&gt;</c></para>
         /// </summary>
-        RuleLayoutblockLbracketRbracket = ToolScriptParserBase.RulesOffset + 123,
+        RuleLayoutblockLbracketRbracket = ToolScriptParserBase.RulesOffset + 137,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Menu Block&gt; ::= menu &lt;WndParam List&gt; &lt;MenuItems List&gt; end</c></para>
         /// </summary>
-        RuleMenublockMenuEnd = ToolScriptParserBase.RulesOffset + 124,
+        RuleMenublockMenuEnd = ToolScriptParserBase.RulesOffset + 138,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;MenuItems List&gt; ::= &lt;Menu Item&gt; &lt;MenuItems List&gt;</c></para>
         /// </summary>
-        RuleMenuitemslist = ToolScriptParserBase.RulesOffset + 125,
+        RuleMenuitemslist = ToolScriptParserBase.RulesOffset + 139,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;MenuItems List&gt; ::= </c></para>
         /// </summary>
-        RuleMenuitemslist2 = ToolScriptParserBase.RulesOffset + 126,
+        RuleMenuitemslist2 = ToolScriptParserBase.RulesOffset + 140,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Menu Item&gt; ::= &lt;Menu Block&gt;</c></para>
         /// </summary>
-        RuleMenuitem = ToolScriptParserBase.RulesOffset + 127,
+        RuleMenuitem = ToolScriptParserBase.RulesOffset + 141,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Menu Item&gt; ::= menuitem &lt;WndParam List&gt;</c></para>
         /// </summary>
-        RuleMenuitemMenuitem = ToolScriptParserBase.RulesOffset + 128,
+        RuleMenuitemMenuitem = ToolScriptParserBase.RulesOffset + 142,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Menu Item&gt; ::= Separator</c></para>
         /// </summary>
-        RuleMenuitemSeparator = ToolScriptParserBase.RulesOffset + 129,
+        RuleMenuitemSeparator = ToolScriptParserBase.RulesOffset + 143,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr List&gt; ::= &lt;Expr List&gt; ',' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprlistComma = ToolScriptParserBase.RulesOffset + 130,
+        RuleExprlistComma = ToolScriptParserBase.RulesOffset + 144,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr List&gt; ::= &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleExprlist = ToolScriptParserBase.RulesOffset + 131,
+        RuleExprlist = ToolScriptParserBase.RulesOffset + 145,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Dict List&gt; ::= &lt;Expr&gt; ':' &lt;Expr&gt; ',' &lt;Dict List&gt;</c></para>
         /// </summary>
-        RuleDictlistColonComma = ToolScriptParserBase.RulesOffset + 132,
+        RuleDictlistColonComma = ToolScriptParserBase.RulesOffset + 146,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Dict List&gt; ::= &lt;Expr&gt; ':' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleDictlistColon = ToolScriptParserBase.RulesOffset + 133,
+        RuleDictlistColon = ToolScriptParserBase.RulesOffset + 147,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Dict List&gt; ::= </c></para>
         /// </summary>
-        RuleDictlist = ToolScriptParserBase.RulesOffset + 134,
+        RuleDictlist = ToolScriptParserBase.RulesOffset + 148,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Widget&gt;</c></para>
         /// </summary>
-        RuleExpr = ToolScriptParserBase.RulesOffset + 135,
+        RuleExpr = ToolScriptParserBase.RulesOffset + 149,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Database&gt;</c></para>
         /// </summary>
-        RuleExpr2 = ToolScriptParserBase.RulesOffset + 136,
+        RuleExpr2 = ToolScriptParserBase.RulesOffset + 150,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Expr&gt; ::= &lt;Op Assign&gt;</c></para>
         /// </summary>
-        RuleExpr3 = ToolScriptParserBase.RulesOffset + 137,
+        RuleExpr3 = ToolScriptParserBase.RulesOffset + 151,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Assign&gt; ::= &lt;Op If&gt; '=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleOpassignEq = ToolScriptParserBase.RulesOffset + 138,
+        RuleOpassignEq = ToolScriptParserBase.RulesOffset + 152,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Assign&gt; ::= &lt;Op If&gt; '+=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleOpassignPluseq = ToolScriptParserBase.RulesOffset + 139,
+        RuleOpassignPluseq = ToolScriptParserBase.RulesOffset + 153,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Assign&gt; ::= &lt;Op If&gt; '-=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleOpassignMinuseq = ToolScriptParserBase.RulesOffset + 140,
+        RuleOpassignMinuseq = ToolScriptParserBase.RulesOffset + 154,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Assign&gt; ::= &lt;Op If&gt; '*=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleOpassignTimeseq = ToolScriptParserBase.RulesOffset + 141,
+        RuleOpassignTimeseq = ToolScriptParserBase.RulesOffset + 155,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Assign&gt; ::= &lt;Op If&gt; '/=' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleOpassignDiveq = ToolScriptParserBase.RulesOffset + 142,
+        RuleOpassignDiveq = ToolScriptParserBase.RulesOffset + 156,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Assign&gt; ::= &lt;Op If&gt; '&lt;==' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleOpassignLteqeq = ToolScriptParserBase.RulesOffset + 143,
+        RuleOpassignLteqeq = ToolScriptParserBase.RulesOffset + 157,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Assign&gt; ::= &lt;Op If&gt; '&lt;==&gt;' &lt;Expr&gt;</c></para>
         /// </summary>
-        RuleOpassignLteqeqgt = ToolScriptParserBase.RulesOffset + 144,
+        RuleOpassignLteqeqgt = ToolScriptParserBase.RulesOffset + 158,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Assign&gt; ::= &lt;Op If&gt;</c></para>
         /// </summary>
-        RuleOpassign = ToolScriptParserBase.RulesOffset + 145,
+        RuleOpassign = ToolScriptParserBase.RulesOffset + 159,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op If&gt; ::= &lt;Op Or&gt; '?' &lt;Op If&gt; ':' &lt;Op If&gt;</c></para>
         /// </summary>
-        RuleOpifQuestionColon = ToolScriptParserBase.RulesOffset + 146,
+        RuleOpifQuestionColon = ToolScriptParserBase.RulesOffset + 160,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op If&gt; ::= &lt;Op Or&gt;</c></para>
         /// </summary>
-        RuleOpif = ToolScriptParserBase.RulesOffset + 147,
+        RuleOpif = ToolScriptParserBase.RulesOffset + 161,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Or&gt; ::= &lt;Op Or&gt; or &lt;Op And&gt;</c></para>
         /// </summary>
-        RuleOporOr = ToolScriptParserBase.RulesOffset + 148,
+        RuleOporOr = ToolScriptParserBase.RulesOffset + 162,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Or&gt; ::= &lt;Op And&gt;</c></para>
         /// </summary>
-        RuleOpor = ToolScriptParserBase.RulesOffset + 149,
+        RuleOpor = ToolScriptParserBase.RulesOffset + 163,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op And&gt; ::= &lt;Op And&gt; and &lt;Op Equate&gt;</c></para>
         /// </summary>
-        RuleOpandAnd = ToolScriptParserBase.RulesOffset + 150,
+        RuleOpandAnd = ToolScriptParserBase.RulesOffset + 164,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op And&gt; ::= &lt;Op Equate&gt;</c></para>
         /// </summary>
-        RuleOpand = ToolScriptParserBase.RulesOffset + 151,
+        RuleOpand = ToolScriptParserBase.RulesOffset + 165,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Equate&gt; ::= &lt;Op Equate&gt; '==' &lt;Op Compare&gt;</c></para>
         /// </summary>
-        RuleOpequateEqeq = ToolScriptParserBase.RulesOffset + 152,
+        RuleOpequateEqeq = ToolScriptParserBase.RulesOffset + 166,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Equate&gt; ::= &lt;Op Equate&gt; '!=' &lt;Op Compare&gt;</c></para>
         /// </summary>
-        RuleOpequateExclameq = ToolScriptParserBase.RulesOffset + 153,
+        RuleOpequateExclameq = ToolScriptParserBase.RulesOffset + 167,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Equate&gt; ::= &lt;Op Equate&gt; in &lt;Op Compare&gt;</c></para>
         /// </summary>
-        RuleOpequateIn = ToolScriptParserBase.RulesOffset + 154,
+        RuleOpequateIn = ToolScriptParserBase.RulesOffset + 168,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Equate&gt; ::= &lt;Op Compare&gt;</c></para>
         /// </summary>
-        RuleOpequate = ToolScriptParserBase.RulesOffset + 155,
+        RuleOpequate = ToolScriptParserBase.RulesOffset + 169,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&lt;' &lt;Op Add&gt;</c></para>
         /// </summary>
-        RuleOpcompareLt = ToolScriptParserBase.RulesOffset + 156,
+        RuleOpcompareLt = ToolScriptParserBase.RulesOffset + 170,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&gt;' &lt;Op Add&gt;</c></para>
         /// </summary>
-        RuleOpcompareGt = ToolScriptParserBase.RulesOffset + 157,
+        RuleOpcompareGt = ToolScriptParserBase.RulesOffset + 171,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&lt;=' &lt;Op Add&gt;</c></para>
         /// </summary>
-        RuleOpcompareLteq = ToolScriptParserBase.RulesOffset + 158,
+        RuleOpcompareLteq = ToolScriptParserBase.RulesOffset + 172,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Compare&gt; '&gt;=' &lt;Op Add&gt;</c></para>
         /// </summary>
-        RuleOpcompareGteq = ToolScriptParserBase.RulesOffset + 159,
+        RuleOpcompareGteq = ToolScriptParserBase.RulesOffset + 173,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Compare&gt; ::= &lt;Op Add&gt;</c></para>
         /// </summary>
-        RuleOpcompare = ToolScriptParserBase.RulesOffset + 160,
+        RuleOpcompare = ToolScriptParserBase.RulesOffset + 174,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Add&gt; ::= &lt;Op Add&gt; '+' &lt;Op Mult&gt;</c></para>
         /// </summary>
-        RuleOpaddPlus = ToolScriptParserBase.RulesOffset + 161,
+        RuleOpaddPlus = ToolScriptParserBase.RulesOffset + 175,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Add&gt; ::= &lt;Op Add&gt; '-' &lt;Op Mult&gt;</c></para>
         /// </summary>
-        RuleOpaddMinus = ToolScriptParserBase.RulesOffset + 162,
+        RuleOpaddMinus = ToolScriptParserBase.RulesOffset + 176,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Add&gt; ::= &lt;Op Mult&gt;</c></para>
         /// </summary>
-        RuleOpadd = ToolScriptParserBase.RulesOffset + 163,
+        RuleOpadd = ToolScriptParserBase.RulesOffset + 177,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Mult&gt; '*' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpmultTimes = ToolScriptParserBase.RulesOffset + 164,
+        RuleOpmultTimes = ToolScriptParserBase.RulesOffset + 178,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Mult&gt; '/' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpmultDiv = ToolScriptParserBase.RulesOffset + 165,
+        RuleOpmultDiv = ToolScriptParserBase.RulesOffset + 179,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Mult&gt; '%' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpmultPercent = ToolScriptParserBase.RulesOffset + 166,
+        RuleOpmultPercent = ToolScriptParserBase.RulesOffset + 180,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Mult&gt; ::= &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpmult = ToolScriptParserBase.RulesOffset + 167,
+        RuleOpmult = ToolScriptParserBase.RulesOffset + 181,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= not &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryNot = ToolScriptParserBase.RulesOffset + 168,
+        RuleOpunaryNot = ToolScriptParserBase.RulesOffset + 182,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= '!' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryExclam = ToolScriptParserBase.RulesOffset + 169,
+        RuleOpunaryExclam = ToolScriptParserBase.RulesOffset + 183,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= '-' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryMinus = ToolScriptParserBase.RulesOffset + 170,
+        RuleOpunaryMinus = ToolScriptParserBase.RulesOffset + 184,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= cast '(' &lt;Op Unary&gt; as &lt;QualifiedName&gt; ')'</c></para>
         /// </summary>
-        RuleOpunaryCastLparanAsRparan = ToolScriptParserBase.RulesOffset + 171,
+        RuleOpunaryCastLparanAsRparan = ToolScriptParserBase.RulesOffset + 185,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= '++' &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryPlusplus = ToolScriptParserBase.RulesOffset + 172,
+        RuleOpunaryPlusplus = ToolScriptParserBase.RulesOffset + 186,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= -- &lt;Op Unary&gt;</c></para>
         /// </summary>
-        RuleOpunaryMinusminus = ToolScriptParserBase.RulesOffset + 173,
+        RuleOpunaryMinusminus = ToolScriptParserBase.RulesOffset + 187,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; '++'</c></para>
         /// </summary>
-        RuleOpunaryPlusplus2 = ToolScriptParserBase.RulesOffset + 174,
+        RuleOpunaryPlusplus2 = ToolScriptParserBase.RulesOffset + 188,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; --</c></para>
         /// </summary>
-        RuleOpunaryMinusminus2 = ToolScriptParserBase.RulesOffset + 175,
+        RuleOpunaryMinusminus2 = ToolScriptParserBase.RulesOffset + 189,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; is null</c></para>
         /// </summary>
-        RuleOpunaryIsNull = ToolScriptParserBase.RulesOffset + 176,
+        RuleOpunaryIsNull = ToolScriptParserBase.RulesOffset + 190,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; not null</c></para>
         /// </summary>
-        RuleOpunaryNotNull = ToolScriptParserBase.RulesOffset + 177,
+        RuleOpunaryNotNull = ToolScriptParserBase.RulesOffset + 191,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt; is not null</c></para>
         /// </summary>
-        RuleOpunaryIsNotNull = ToolScriptParserBase.RulesOffset + 178,
+        RuleOpunaryIsNotNull = ToolScriptParserBase.RulesOffset + 192,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Unary&gt; ::= &lt;Op Pointer&gt;</c></para>
         /// </summary>
-        RuleOpunary = ToolScriptParserBase.RulesOffset + 179,
+        RuleOpunary = ToolScriptParserBase.RulesOffset + 193,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '.' &lt;Value&gt;</c></para>
         /// </summary>
-        RuleOppointerDot = ToolScriptParserBase.RulesOffset + 180,
+        RuleOppointerDot = ToolScriptParserBase.RulesOffset + 194,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '-&gt;' &lt;Value&gt;</c></para>
         /// </summary>
-        RuleOppointerMinusgt = ToolScriptParserBase.RulesOffset + 181,
+        RuleOppointerMinusgt = ToolScriptParserBase.RulesOffset + 195,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '[' &lt;Expr&gt; ']'</c></para>
         /// </summary>
-        RuleOppointerLbracketRbracket = ToolScriptParserBase.RulesOffset + 182,
+        RuleOppointerLbracketRbracket = ToolScriptParserBase.RulesOffset + 196,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Op Pointer&gt; '(' &lt;Args&gt; ')'</c></para>
         /// </summary>
-        RuleOppointerLparanRparan = ToolScriptParserBase.RulesOffset + 183,
+        RuleOppointerLparanRparan = ToolScriptParserBase.RulesOffset + 197,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Op Pointer&gt; ::= &lt;Value&gt;</c></para>
         /// </summary>
-        RuleOppointer = ToolScriptParserBase.RulesOffset + 184,
+        RuleOppointer = ToolScriptParserBase.RulesOffset + 198,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= IntLiteral</c></para>
         /// </summary>
-        RuleValueIntliteral = ToolScriptParserBase.RulesOffset + 185,
+        RuleValueIntliteral = ToolScriptParserBase.RulesOffset + 199,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= StringLiteral</c></para>
         /// </summary>
-        RuleValueStringliteral = ToolScriptParserBase.RulesOffset + 186,
+        RuleValueStringliteral = ToolScriptParserBase.RulesOffset + 200,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= DecimalLiteral</c></para>
         /// </summary>
-        RuleValueDecimalliteral = ToolScriptParserBase.RulesOffset + 187,
+        RuleValueDecimalliteral = ToolScriptParserBase.RulesOffset + 201,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= DateTimeLiteral</c></para>
         /// </summary>
-        RuleValueDatetimeliteral = ToolScriptParserBase.RulesOffset + 188,
+        RuleValueDatetimeliteral = ToolScriptParserBase.RulesOffset + 202,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= TimeSpanLiteral</c></para>
         /// </summary>
-        RuleValueTimespanliteral = ToolScriptParserBase.RulesOffset + 189,
+        RuleValueTimespanliteral = ToolScriptParserBase.RulesOffset + 203,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= type '(' &lt;QualifiedName&gt; ')'</c></para>
         /// </summary>
-        RuleValueTypeLparanRparan = ToolScriptParserBase.RulesOffset + 190,
+        RuleValueTypeLparanRparan = ToolScriptParserBase.RulesOffset + 204,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= new &lt;QualifiedName&gt; '(' &lt;Args&gt; ')'</c></para>
         /// </summary>
-        RuleValueNewLparanRparan = ToolScriptParserBase.RulesOffset + 191,
+        RuleValueNewLparanRparan = ToolScriptParserBase.RulesOffset + 205,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= ID</c></para>
         /// </summary>
-        RuleValueId = ToolScriptParserBase.RulesOffset + 192,
+        RuleValueId = ToolScriptParserBase.RulesOffset + 206,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= var ID</c></para>
         /// </summary>
-        RuleValueVarId = ToolScriptParserBase.RulesOffset + 193,
+        RuleValueVarId = ToolScriptParserBase.RulesOffset + 207,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= static ID</c></para>
         /// </summary>
-        RuleValueStaticId = ToolScriptParserBase.RulesOffset + 194,
+        RuleValueStaticId = ToolScriptParserBase.RulesOffset + 208,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= '(' &lt;Expr&gt; ')'</c></para>
         /// </summary>
-        RuleValueLparanRparan = ToolScriptParserBase.RulesOffset + 195,
+        RuleValueLparanRparan = ToolScriptParserBase.RulesOffset + 209,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= '[' &lt;Expr List&gt; ']'</c></para>
         /// </summary>
-        RuleValueLbracketRbracket = ToolScriptParserBase.RulesOffset + 196,
+        RuleValueLbracketRbracket = ToolScriptParserBase.RulesOffset + 210,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= '{' &lt;Dict List&gt; '}'</c></para>
         /// </summary>
-        RuleValueLbraceRbrace = ToolScriptParserBase.RulesOffset + 197,
+        RuleValueLbraceRbrace = ToolScriptParserBase.RulesOffset + 211,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= range '&lt;' &lt;Op Add&gt; ';' &lt;Op Add&gt; '&gt;'</c></para>
         /// </summary>
-        RuleValueRangeLtSemiGt = ToolScriptParserBase.RulesOffset + 198,
+        RuleValueRangeLtSemiGt = ToolScriptParserBase.RulesOffset + 212,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= range '&lt;' &lt;Op Add&gt; ';' &lt;Op Add&gt; ')'</c></para>
         /// </summary>
-        RuleValueRangeLtSemiRparan = ToolScriptParserBase.RulesOffset + 199,
+        RuleValueRangeLtSemiRparan = ToolScriptParserBase.RulesOffset + 213,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= range '(' &lt;Op Add&gt; ';' &lt;Op Add&gt; '&gt;'</c></para>
         /// </summary>
-        RuleValueRangeLparanSemiGt = ToolScriptParserBase.RulesOffset + 200,
+        RuleValueRangeLparanSemiGt = ToolScriptParserBase.RulesOffset + 214,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= range '(' &lt;Op Add&gt; ';' &lt;Op Add&gt; ')'</c></para>
         /// </summary>
-        RuleValueRangeLparanSemiRparan = ToolScriptParserBase.RulesOffset + 201,
+        RuleValueRangeLparanSemiRparan = ToolScriptParserBase.RulesOffset + 215,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= property &lt;Expr&gt; ';'</c></para>
         /// </summary>
-        RuleValuePropertySemi = ToolScriptParserBase.RulesOffset + 202,
+        RuleValuePropertySemi = ToolScriptParserBase.RulesOffset + 216,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= property &lt;Expr&gt; get &lt;Expr&gt; ';'</c></para>
         /// </summary>
-        RuleValuePropertyGetSemi = ToolScriptParserBase.RulesOffset + 203,
+        RuleValuePropertyGetSemi = ToolScriptParserBase.RulesOffset + 217,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= property &lt;Expr&gt; get &lt;Expr&gt; set &lt;Expr&gt; ';'</c></para>
         /// </summary>
-        RuleValuePropertyGetSetSemi = ToolScriptParserBase.RulesOffset + 204,
+        RuleValuePropertyGetSetSemi = ToolScriptParserBase.RulesOffset + 218,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= &lt;Function&gt;</c></para>
         /// </summary>
-        RuleValue = ToolScriptParserBase.RulesOffset + 205,
+        RuleValue = ToolScriptParserBase.RulesOffset + 219,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= dict</c></para>
         /// </summary>
-        RuleValueDict = ToolScriptParserBase.RulesOffset + 206,
+        RuleValueDict = ToolScriptParserBase.RulesOffset + 220,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= list</c></para>
         /// </summary>
-        RuleValueList = ToolScriptParserBase.RulesOffset + 207,
+        RuleValueList = ToolScriptParserBase.RulesOffset + 221,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= null</c></para>
         /// </summary>
-        RuleValueNull = ToolScriptParserBase.RulesOffset + 208,
+        RuleValueNull = ToolScriptParserBase.RulesOffset + 222,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= true</c></para>
         /// </summary>
-        RuleValueTrue = ToolScriptParserBase.RulesOffset + 209,
+        RuleValueTrue = ToolScriptParserBase.RulesOffset + 223,
 
         /// <summary>
         /// <para>Pravidlo: </para>
         /// <para><c>&lt;Value&gt; ::= false</c></para>
         /// </summary>
-        RuleValueFalse = ToolScriptParserBase.RulesOffset + 210 
+        RuleValueFalse = ToolScriptParserBase.RulesOffset + 224 
 
 	    #endregion
     };
@@ -2798,6 +2930,15 @@ namespace LPS.ToolScript
 		}
 
 		/// <summary>
+		/// <para>Symbol: catch</para>
+		/// <para><c>catch</c></para>
+		/// </summary>
+		protected virtual object TerminalCatch(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol catch");
+		}
+
+		/// <summary>
 		/// <para>Symbol: continue</para>
 		/// <para><c>continue</c></para>
 		/// </summary>
@@ -2948,6 +3089,15 @@ namespace LPS.ToolScript
 		protected virtual object TerminalFalse(TerminalToken token)
 		{
 			throw new NotImplementedException("Symbol false");
+		}
+
+		/// <summary>
+		/// <para>Symbol: finally</para>
+		/// <para><c>finally</c></para>
+		/// </summary>
+		protected virtual object TerminalFinally(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol finally");
 		}
 
 		/// <summary>
@@ -3311,6 +3461,15 @@ namespace LPS.ToolScript
 		}
 
 		/// <summary>
+		/// <para>Symbol: throw</para>
+		/// <para><c>throw</c></para>
+		/// </summary>
+		protected virtual object TerminalThrow(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol throw");
+		}
+
+		/// <summary>
 		/// <para>Symbol: time</para>
 		/// <para><c>time</c></para>
 		/// </summary>
@@ -3362,6 +3521,15 @@ namespace LPS.ToolScript
 		protected virtual object TerminalTrue(TerminalToken token)
 		{
 			throw new NotImplementedException("Symbol true");
+		}
+
+		/// <summary>
+		/// <para>Symbol: try</para>
+		/// <para><c>try</c></para>
+		/// </summary>
+		protected virtual object TerminalTry(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol try");
 		}
 
 		/// <summary>
@@ -3497,6 +3665,24 @@ namespace LPS.ToolScript
 		protected virtual object TerminalCasestms(TerminalToken token)
 		{
 			throw new NotImplementedException("Symbol Case Stms");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Catch</para>
+		/// <para><c>&lt;Catch&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalCatch2(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Catch");
+		}
+
+		/// <summary>
+		/// <para>Symbol: Catchs</para>
+		/// <para><c>&lt;Catchs&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalCatchs(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol Catchs");
 		}
 
 		/// <summary>
@@ -3725,6 +3911,15 @@ namespace LPS.ToolScript
 		}
 
 		/// <summary>
+		/// <para>Symbol: NumLiteral</para>
+		/// <para><c>&lt;NumLiteral&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalNumliteral(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol NumLiteral");
+		}
+
+		/// <summary>
 		/// <para>Symbol: Op Add</para>
 		/// <para><c>&lt;Op Add&gt;</c></para>
 		/// </summary>
@@ -3848,6 +4043,15 @@ namespace LPS.ToolScript
 		protected virtual object TerminalThenstm(TerminalToken token)
 		{
 			throw new NotImplementedException("Symbol Then Stm");
+		}
+
+		/// <summary>
+		/// <para>Symbol: TryFinally</para>
+		/// <para><c>&lt;TryFinally&gt;</c></para>
+		/// </summary>
+		protected virtual object TerminalTryfinally(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol TryFinally");
 		}
 
 		/// <summary>
@@ -4036,6 +4240,9 @@ namespace LPS.ToolScript
                 case (int)Symbols.Cast: //cast
                 	return TerminalCast(token);
 
+                case (int)Symbols.Catch: //catch
+                	return TerminalCatch(token);
+
                 case (int)Symbols.Continue: //continue
                 	return TerminalContinue(token);
 
@@ -4086,6 +4293,9 @@ namespace LPS.ToolScript
 
                 case (int)Symbols.False: //false
                 	return TerminalFalse(token);
+
+                case (int)Symbols.Finally: //finally
+                	return TerminalFinally(token);
 
                 case (int)Symbols.For: //for
                 	return TerminalFor(token);
@@ -4207,6 +4417,9 @@ namespace LPS.ToolScript
                 case (int)Symbols.Through: //through
                 	return TerminalThrough(token);
 
+                case (int)Symbols.Throw: //throw
+                	return TerminalThrow(token);
+
                 case (int)Symbols.Time: //time
                 	return TerminalTime(token);
 
@@ -4224,6 +4437,9 @@ namespace LPS.ToolScript
 
                 case (int)Symbols.True: //true
                 	return TerminalTrue(token);
+
+                case (int)Symbols.Try: //try
+                	return TerminalTry(token);
 
                 case (int)Symbols.Type: //type
                 	return TerminalType(token);
@@ -4269,6 +4485,12 @@ namespace LPS.ToolScript
 
                 case (int)Symbols.Casestms: //<Case Stms>
                 	return TerminalCasestms(token);
+
+                case (int)Symbols.Catch2: //<Catch>
+                	return TerminalCatch2(token);
+
+                case (int)Symbols.Catchs: //<Catchs>
+                	return TerminalCatchs(token);
 
                 case (int)Symbols.Database2: //<Database>
                 	return TerminalDatabase2(token);
@@ -4345,6 +4567,9 @@ namespace LPS.ToolScript
                 case (int)Symbols.Normalstm: //<Normal Stm>
                 	return TerminalNormalstm(token);
 
+                case (int)Symbols.Numliteral: //<NumLiteral>
+                	return TerminalNumliteral(token);
+
                 case (int)Symbols.Opadd: //<Op Add>
                 	return TerminalOpadd(token);
 
@@ -4387,6 +4612,9 @@ namespace LPS.ToolScript
                 case (int)Symbols.Thenstm: //<Then Stm>
                 	return TerminalThenstm(token);
 
+                case (int)Symbols.Tryfinally: //<TryFinally>
+                	return TerminalTryfinally(token);
+
                 case (int)Symbols.Value: //<Value>
                 	return TerminalValue(token);
 
@@ -4425,7 +4653,8 @@ namespace LPS.ToolScript
         protected abstract object RuleStmUsingStringliteralAsIdSemi(NonterminalToken token); // <Stm> ::= using StringLiteral as ID ';'
         protected abstract object RuleStmUsingLparanRparan(NonterminalToken token); // <Stm> ::= using '(' <Expr> ')' <Stm>
         protected abstract object RuleStmObservedLparanRparan(NonterminalToken token); // <Stm> ::= observed '(' <Expr List> ')' <Stm>
-        protected abstract object RuleStm(NonterminalToken token); // <Stm> ::= <Normal Stm>
+        protected abstract object RuleStm(NonterminalToken token); // <Stm> ::= <TryFinally>
+        protected abstract object RuleStm2(NonterminalToken token); // <Stm> ::= <Normal Stm>
         protected abstract object RuleThenstmIfLparanRparanElse(NonterminalToken token); // <Then Stm> ::= if '(' <Expr> ')' <Then Stm> else <Then Stm>
         protected abstract object RuleThenstmWhileLparanRparan(NonterminalToken token); // <Then Stm> ::= while '(' <Expr> ')' <Then Stm>
         protected abstract object RuleThenstmForLparanSemiSemiRparan(NonterminalToken token); // <Then Stm> ::= for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Then Stm>
@@ -4437,7 +4666,17 @@ namespace LPS.ToolScript
         protected abstract object RuleNormalstmBreakSemi(NonterminalToken token); // <Normal Stm> ::= break ';'
         protected abstract object RuleNormalstmContinueSemi(NonterminalToken token); // <Normal Stm> ::= continue ';'
         protected abstract object RuleNormalstmReturnSemi(NonterminalToken token); // <Normal Stm> ::= return <Expr> ';'
+        protected abstract object RuleNormalstmThrowSemi(NonterminalToken token); // <Normal Stm> ::= throw <Expr> ';'
+        protected abstract object RuleNormalstmThrowCommaSemi(NonterminalToken token); // <Normal Stm> ::= throw <Expr> ',' <Expr> ';'
         protected abstract object RuleNormalstmSemi2(NonterminalToken token); // <Normal Stm> ::= ';'
+        protected abstract object RuleTryfinallyTryFinally(NonterminalToken token); // <TryFinally> ::= try <Normal Stm> <Catchs> finally <Normal Stm>
+        protected abstract object RuleTryfinallyTry(NonterminalToken token); // <TryFinally> ::= try <Normal Stm> <Catchs>
+        protected abstract object RuleCatchs(NonterminalToken token); // <Catchs> ::= <Catch> <Catchs>
+        protected abstract object RuleCatchs2(NonterminalToken token); // <Catchs> ::= 
+        protected abstract object RuleCatchCatchLparanIdRparan(NonterminalToken token); // <Catch> ::= catch '(' <QualifiedName> ID ')' <Normal Stm>
+        protected abstract object RuleCatchCatchLparanTypeRparan(NonterminalToken token); // <Catch> ::= catch '(' type <QualifiedName> ')' <Normal Stm>
+        protected abstract object RuleCatchCatchLparanVarIdRparan(NonterminalToken token); // <Catch> ::= catch '(' var ID ')' <Normal Stm>
+        protected abstract object RuleCatchCatch(NonterminalToken token); // <Catch> ::= catch <Block>
         protected abstract object RuleFuncargsComma(NonterminalToken token); // <Func args> ::= <Func args> ',' <Func Arg>
         protected abstract object RuleFuncargs(NonterminalToken token); // <Func args> ::= <Func Arg>
         protected abstract object RuleFuncargs2(NonterminalToken token); // <Func args> ::= 
@@ -4496,7 +4735,8 @@ namespace LPS.ToolScript
         protected abstract object RuleDbtableattrlist(NonterminalToken token); // <DB Table Attr List> ::= <DB Table Attr List> <DB Table Attr>
         protected abstract object RuleDbtableattrlist2(NonterminalToken token); // <DB Table Attr List> ::= 
         protected abstract object RuleDbtableattrIndexLparanRparanSemi(NonterminalToken token); // <DB Table Attr> ::= index '(' <ID List> ')' ';'
-        protected abstract object RuleDbtableattrPositionDecimalliteral(NonterminalToken token); // <DB Table Attr> ::= <DB Trigger Runs> position DecimalLiteral <Stm>
+        protected abstract object RuleDbtableattrUniqueLparanRparanSemi(NonterminalToken token); // <DB Table Attr> ::= unique '(' <ID List> ')' ';'
+        protected abstract object RuleDbtableattrPosition(NonterminalToken token); // <DB Table Attr> ::= <DB Trigger Runs> position <NumLiteral> <Stm>
         protected abstract object RuleDbtableattrIdEqSemi(NonterminalToken token); // <DB Table Attr> ::= ID '=' <Value> ';'
         protected abstract object RuleDbtriggerrunsComma(NonterminalToken token); // <DB Trigger Runs> ::= <DB Trigger Runs> ',' <DB Trigger Run>
         protected abstract object RuleDbtriggerruns(NonterminalToken token); // <DB Trigger Runs> ::= <DB Trigger Run>
@@ -4510,6 +4750,8 @@ namespace LPS.ToolScript
         protected abstract object RuleDbtriggerrunAfterDelete(NonterminalToken token); // <DB Trigger Run> ::= after delete
         protected abstract object RuleDbtriggerrunBeforeModified(NonterminalToken token); // <DB Trigger Run> ::= before modified
         protected abstract object RuleDbtriggerrunAfterModified(NonterminalToken token); // <DB Trigger Run> ::= after modified
+        protected abstract object RuleNumliteralIntliteral(NonterminalToken token); // <NumLiteral> ::= IntLiteral
+        protected abstract object RuleNumliteralDecimalliteral(NonterminalToken token); // <NumLiteral> ::= DecimalLiteral
         protected abstract object RuleFunctionFunctionIdLparanRparan(NonterminalToken token); // <Function> ::= function ID '(' <Func args> ')' <Stm>
         protected abstract object RuleFunctionFunctionLparanRparan(NonterminalToken token); // <Function> ::= function '(' <Func args> ')' <Stm>
         protected abstract object RuleWidgetWindowId(NonterminalToken token); // <Widget> ::= window ID <WndParam List> <Layout Block>
@@ -4657,8 +4899,10 @@ namespace LPS.ToolScript
                 	return RuleStmUsingLparanRparan(token);
                 case (int)Symbols.RuleStmObservedLparanRparan: //<Stm> ::= observed '(' <Expr List> ')' <Stm>
                 	return RuleStmObservedLparanRparan(token);
-                case (int)Symbols.RuleStm: //<Stm> ::= <Normal Stm>
+                case (int)Symbols.RuleStm: //<Stm> ::= <TryFinally>
                 	return RuleStm(token);
+                case (int)Symbols.RuleStm2: //<Stm> ::= <Normal Stm>
+                	return RuleStm2(token);
                 case (int)Symbols.RuleThenstmIfLparanRparanElse: //<Then Stm> ::= if '(' <Expr> ')' <Then Stm> else <Then Stm>
                 	return RuleThenstmIfLparanRparanElse(token);
                 case (int)Symbols.RuleThenstmWhileLparanRparan: //<Then Stm> ::= while '(' <Expr> ')' <Then Stm>
@@ -4681,8 +4925,28 @@ namespace LPS.ToolScript
                 	return RuleNormalstmContinueSemi(token);
                 case (int)Symbols.RuleNormalstmReturnSemi: //<Normal Stm> ::= return <Expr> ';'
                 	return RuleNormalstmReturnSemi(token);
+                case (int)Symbols.RuleNormalstmThrowSemi: //<Normal Stm> ::= throw <Expr> ';'
+                	return RuleNormalstmThrowSemi(token);
+                case (int)Symbols.RuleNormalstmThrowCommaSemi: //<Normal Stm> ::= throw <Expr> ',' <Expr> ';'
+                	return RuleNormalstmThrowCommaSemi(token);
                 case (int)Symbols.RuleNormalstmSemi2: //<Normal Stm> ::= ';'
                 	return RuleNormalstmSemi2(token);
+                case (int)Symbols.RuleTryfinallyTryFinally: //<TryFinally> ::= try <Normal Stm> <Catchs> finally <Normal Stm>
+                	return RuleTryfinallyTryFinally(token);
+                case (int)Symbols.RuleTryfinallyTry: //<TryFinally> ::= try <Normal Stm> <Catchs>
+                	return RuleTryfinallyTry(token);
+                case (int)Symbols.RuleCatchs: //<Catchs> ::= <Catch> <Catchs>
+                	return RuleCatchs(token);
+                case (int)Symbols.RuleCatchs2: //<Catchs> ::= 
+                	return RuleCatchs2(token);
+                case (int)Symbols.RuleCatchCatchLparanIdRparan: //<Catch> ::= catch '(' <QualifiedName> ID ')' <Normal Stm>
+                	return RuleCatchCatchLparanIdRparan(token);
+                case (int)Symbols.RuleCatchCatchLparanTypeRparan: //<Catch> ::= catch '(' type <QualifiedName> ')' <Normal Stm>
+                	return RuleCatchCatchLparanTypeRparan(token);
+                case (int)Symbols.RuleCatchCatchLparanVarIdRparan: //<Catch> ::= catch '(' var ID ')' <Normal Stm>
+                	return RuleCatchCatchLparanVarIdRparan(token);
+                case (int)Symbols.RuleCatchCatch: //<Catch> ::= catch <Block>
+                	return RuleCatchCatch(token);
                 case (int)Symbols.RuleFuncargsComma: //<Func args> ::= <Func args> ',' <Func Arg>
                 	return RuleFuncargsComma(token);
                 case (int)Symbols.RuleFuncargs: //<Func args> ::= <Func Arg>
@@ -4799,8 +5063,10 @@ namespace LPS.ToolScript
                 	return RuleDbtableattrlist2(token);
                 case (int)Symbols.RuleDbtableattrIndexLparanRparanSemi: //<DB Table Attr> ::= index '(' <ID List> ')' ';'
                 	return RuleDbtableattrIndexLparanRparanSemi(token);
-                case (int)Symbols.RuleDbtableattrPositionDecimalliteral: //<DB Table Attr> ::= <DB Trigger Runs> position DecimalLiteral <Stm>
-                	return RuleDbtableattrPositionDecimalliteral(token);
+                case (int)Symbols.RuleDbtableattrUniqueLparanRparanSemi: //<DB Table Attr> ::= unique '(' <ID List> ')' ';'
+                	return RuleDbtableattrUniqueLparanRparanSemi(token);
+                case (int)Symbols.RuleDbtableattrPosition: //<DB Table Attr> ::= <DB Trigger Runs> position <NumLiteral> <Stm>
+                	return RuleDbtableattrPosition(token);
                 case (int)Symbols.RuleDbtableattrIdEqSemi: //<DB Table Attr> ::= ID '=' <Value> ';'
                 	return RuleDbtableattrIdEqSemi(token);
                 case (int)Symbols.RuleDbtriggerrunsComma: //<DB Trigger Runs> ::= <DB Trigger Runs> ',' <DB Trigger Run>
@@ -4827,6 +5093,10 @@ namespace LPS.ToolScript
                 	return RuleDbtriggerrunBeforeModified(token);
                 case (int)Symbols.RuleDbtriggerrunAfterModified: //<DB Trigger Run> ::= after modified
                 	return RuleDbtriggerrunAfterModified(token);
+                case (int)Symbols.RuleNumliteralIntliteral: //<NumLiteral> ::= IntLiteral
+                	return RuleNumliteralIntliteral(token);
+                case (int)Symbols.RuleNumliteralDecimalliteral: //<NumLiteral> ::= DecimalLiteral
+                	return RuleNumliteralDecimalliteral(token);
                 case (int)Symbols.RuleFunctionFunctionIdLparanRparan: //<Function> ::= function ID '(' <Func args> ')' <Stm>
                 	return RuleFunctionFunctionIdLparanRparan(token);
                 case (int)Symbols.RuleFunctionFunctionLparanRparan: //<Function> ::= function '(' <Func args> ')' <Stm>
@@ -5164,8 +5434,15 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Stm> ::= <Normal Stm>
+		// <Stm> ::= <TryFinally>
 		protected override object RuleStm(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Stm> ::= <TryFinally>");
+			//return new
+		}
+
+		// <Stm> ::= <Normal Stm>
+		protected override object RuleStm2(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Stm> ::= <Normal Stm>");
 			//return new
@@ -5248,10 +5525,80 @@ namespace LPS.ToolScript
 			//return new
 		}
 
+		// <Normal Stm> ::= throw <Expr> ';'
+		protected override object RuleNormalstmThrowSemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Normal Stm> ::= throw <Expr> ';'");
+			//return new
+		}
+
+		// <Normal Stm> ::= throw <Expr> ',' <Expr> ';'
+		protected override object RuleNormalstmThrowCommaSemi(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Normal Stm> ::= throw <Expr> ',' <Expr> ';'");
+			//return new
+		}
+
 		// <Normal Stm> ::= ';'
 		protected override object RuleNormalstmSemi2(NonterminalToken token)
 		{
 			throw new NotImplementedException("<Normal Stm> ::= ';'");
+			//return new
+		}
+
+		// <TryFinally> ::= try <Normal Stm> <Catchs> finally <Normal Stm>
+		protected override object RuleTryfinallyTryFinally(NonterminalToken token)
+		{
+			throw new NotImplementedException("<TryFinally> ::= try <Normal Stm> <Catchs> finally <Normal Stm>");
+			//return new
+		}
+
+		// <TryFinally> ::= try <Normal Stm> <Catchs>
+		protected override object RuleTryfinallyTry(NonterminalToken token)
+		{
+			throw new NotImplementedException("<TryFinally> ::= try <Normal Stm> <Catchs>");
+			//return new
+		}
+
+		// <Catchs> ::= <Catch> <Catchs>
+		protected override object RuleCatchs(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Catchs> ::= <Catch> <Catchs>");
+			//return new
+		}
+
+		// <Catchs> ::= 
+		protected override object RuleCatchs2(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Catchs> ::= ");
+			//return new
+		}
+
+		// <Catch> ::= catch '(' <QualifiedName> ID ')' <Normal Stm>
+		protected override object RuleCatchCatchLparanIdRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Catch> ::= catch '(' <QualifiedName> ID ')' <Normal Stm>");
+			//return new
+		}
+
+		// <Catch> ::= catch '(' type <QualifiedName> ')' <Normal Stm>
+		protected override object RuleCatchCatchLparanTypeRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Catch> ::= catch '(' type <QualifiedName> ')' <Normal Stm>");
+			//return new
+		}
+
+		// <Catch> ::= catch '(' var ID ')' <Normal Stm>
+		protected override object RuleCatchCatchLparanVarIdRparan(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Catch> ::= catch '(' var ID ')' <Normal Stm>");
+			//return new
+		}
+
+		// <Catch> ::= catch <Block>
+		protected override object RuleCatchCatch(NonterminalToken token)
+		{
+			throw new NotImplementedException("<Catch> ::= catch <Block>");
 			//return new
 		}
 
@@ -5661,10 +6008,17 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <DB Table Attr> ::= <DB Trigger Runs> position DecimalLiteral <Stm>
-		protected override object RuleDbtableattrPositionDecimalliteral(NonterminalToken token)
+		// <DB Table Attr> ::= unique '(' <ID List> ')' ';'
+		protected override object RuleDbtableattrUniqueLparanRparanSemi(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table Attr> ::= <DB Trigger Runs> position DecimalLiteral <Stm>");
+			throw new NotImplementedException("<DB Table Attr> ::= unique '(' <ID List> ')' ';'");
+			//return new
+		}
+
+		// <DB Table Attr> ::= <DB Trigger Runs> position <NumLiteral> <Stm>
+		protected override object RuleDbtableattrPosition(NonterminalToken token)
+		{
+			throw new NotImplementedException("<DB Table Attr> ::= <DB Trigger Runs> position <NumLiteral> <Stm>");
 			//return new
 		}
 
@@ -5756,6 +6110,20 @@ namespace LPS.ToolScript
 		protected override object RuleDbtriggerrunAfterModified(NonterminalToken token)
 		{
 			throw new NotImplementedException("<DB Trigger Run> ::= after modified");
+			//return new
+		}
+
+		// <NumLiteral> ::= IntLiteral
+		protected override object RuleNumliteralIntliteral(NonterminalToken token)
+		{
+			throw new NotImplementedException("<NumLiteral> ::= IntLiteral");
+			//return new
+		}
+
+		// <NumLiteral> ::= DecimalLiteral
+		protected override object RuleNumliteralDecimalliteral(NonterminalToken token)
+		{
+			throw new NotImplementedException("<NumLiteral> ::= DecimalLiteral");
 			//return new
 		}
 
@@ -6568,6 +6936,7 @@ namespace LPS.ToolScript
 			Test(@"<Stm> ::= using StringLiteral as ID ';'");
 			Test(@"<Stm> ::= using '(' <Expr> ')' <Stm>");
 			Test(@"<Stm> ::= observed '(' <Expr List> ')' <Stm>");
+			Test(@"<Stm> ::= <TryFinally>");
 			Test(@"<Stm> ::= <Normal Stm>");
 			Test(@"<Then Stm> ::= if '(' <Expr> ')' <Then Stm> else <Then Stm>");
 			Test(@"<Then Stm> ::= while '(' <Expr> ')' <Then Stm>");
@@ -6580,7 +6949,17 @@ namespace LPS.ToolScript
 			Test(@"<Normal Stm> ::= break ';'");
 			Test(@"<Normal Stm> ::= continue ';'");
 			Test(@"<Normal Stm> ::= return <Expr> ';'");
+			Test(@"<Normal Stm> ::= throw <Expr> ';'");
+			Test(@"<Normal Stm> ::= throw <Expr> ',' <Expr> ';'");
 			Test(@"<Normal Stm> ::= ';'");
+			Test(@"<TryFinally> ::= try <Normal Stm> <Catchs> finally <Normal Stm>");
+			Test(@"<TryFinally> ::= try <Normal Stm> <Catchs>");
+			Test(@"<Catchs> ::= <Catch> <Catchs>");
+			Test(@"<Catchs> ::= ");
+			Test(@"<Catch> ::= catch '(' <QualifiedName> ID ')' <Normal Stm>");
+			Test(@"<Catch> ::= catch '(' type <QualifiedName> ')' <Normal Stm>");
+			Test(@"<Catch> ::= catch '(' var ID ')' <Normal Stm>");
+			Test(@"<Catch> ::= catch <Block>");
 			Test(@"<Func args> ::= <Func args> ',' <Func Arg>");
 			Test(@"<Func args> ::= <Func Arg>");
 			Test(@"<Func args> ::= ");
@@ -6639,7 +7018,8 @@ namespace LPS.ToolScript
 			Test(@"<DB Table Attr List> ::= <DB Table Attr List> <DB Table Attr>");
 			Test(@"<DB Table Attr List> ::= ");
 			Test(@"<DB Table Attr> ::= index '(' <ID List> ')' ';'");
-			Test(@"<DB Table Attr> ::= <DB Trigger Runs> position DecimalLiteral <Stm>");
+			Test(@"<DB Table Attr> ::= unique '(' <ID List> ')' ';'");
+			Test(@"<DB Table Attr> ::= <DB Trigger Runs> position <NumLiteral> <Stm>");
 			Test(@"<DB Table Attr> ::= ID '=' <Value> ';'");
 			Test(@"<DB Trigger Runs> ::= <DB Trigger Runs> ',' <DB Trigger Run>");
 			Test(@"<DB Trigger Runs> ::= <DB Trigger Run>");
@@ -6653,6 +7033,8 @@ namespace LPS.ToolScript
 			Test(@"<DB Trigger Run> ::= after delete");
 			Test(@"<DB Trigger Run> ::= before modified");
 			Test(@"<DB Trigger Run> ::= after modified");
+			Test(@"<NumLiteral> ::= IntLiteral");
+			Test(@"<NumLiteral> ::= DecimalLiteral");
 			Test(@"<Function> ::= function ID '(' <Func args> ')' <Stm>");
 			Test(@"<Function> ::= function '(' <Func args> ')' <Stm>");
 			Test(@"<Widget> ::= window ID <WndParam List> <Layout Block>");
