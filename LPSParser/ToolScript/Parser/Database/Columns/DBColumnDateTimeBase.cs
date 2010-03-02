@@ -11,5 +11,16 @@ namespace LPS.ToolScript.Parser
 			:base(typeof(DateTime))
 		{
 		}
+
+		protected override string GetDBTypeName ()
+		{
+			if(HasDatePart && HasTimePart)
+				return "datetime";
+			else if(HasDatePart)
+				return "date";
+			else
+				return "time";
+		}
+
 	}
 }

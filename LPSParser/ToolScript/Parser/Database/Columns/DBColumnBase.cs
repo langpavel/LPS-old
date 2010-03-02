@@ -5,11 +5,12 @@ namespace LPS.ToolScript.Parser
 {
 	public abstract class DBColumnBase : ExpressionBase, IDBColumn
 	{
-		public string Name { get; set; }
+		public virtual string Name { get; set; }
+		public bool IsExtension { get {return false; } }
 		public EvaluatedAttributeList Attribs { get; set; }
 		public IDBTable Table { get; set; }
 		public Type DataType { get; private set; }
-		public virtual bool IsAsbtract { get { return false; } }
+		public virtual bool IsAbstract { get { return false; } }
 		public virtual bool IsPrimary { get { return false; } }
 		public bool IsUnique { get; protected set; }
 		public bool IsNotNull { get; protected set; }
@@ -92,5 +93,27 @@ namespace LPS.ToolScript.Parser
 		{
 			return this.Clone();
 		}
+
+		protected virtual string GetDBTypeName()
+		{
+			return null;
+		}
+
+		public virtual string CreateSQL (bool in_table)
+		{
+			string type = GetDBTypeName();
+			if(String.IsNullOrEmpty(type))
+				throw new Exception("Neznámý databázový typ");
+			if(in_table)
+				return String.Format("{0} {1}", this.Name, type);
+			else
+				return String.Format("ALTER TABLE {0} ADD {1} {2}", this.Table.Name, this.Name, type);
+		}
+
+		public virtual string[] CreateColumnsSQL (bool in_table)
+		{
+			return new string[] { CreateSQL(in_table) };
+		}
+
 	}
 }

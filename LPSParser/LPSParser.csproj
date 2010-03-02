@@ -169,6 +169,9 @@
     <Compile Include="ToolScript\Parser\Database\Table\DBTableIndices.cs" />
     <Compile Include="ToolScript\Exceptions\VariableException.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\ButtonExpression.cs" />
+    <Compile Include="ToolScript\Parser\Database\Interfaces\IDBColumnPrimary.cs" />
+    <Compile Include="ToolScript\Parser\Database\Interfaces\IDBColumnForeign.cs" />
+    <Compile Include="ToolScript\Parser\Database\Interfaces\IDBColumnManyToMany.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />

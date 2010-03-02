@@ -23,5 +23,13 @@ namespace LPS.ToolScript.Parser
 			this.UnlimitedLength = true;
 		}
 
+		protected override string GetDBTypeName ()
+		{
+			if(UnlimitedLength)
+				return "text";
+			else
+				return String.Format("varchar({0})", MaxLength);
+		}
+
 	}
 }

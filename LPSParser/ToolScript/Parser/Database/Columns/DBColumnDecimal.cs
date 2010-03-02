@@ -14,5 +14,10 @@ namespace LPS.ToolScript.Parser
 			this.Scale = Scale;
 		}
 
+		protected override string GetDBTypeName ()
+		{
+			return String.Format("decimal({0},{1})", Precision, Scale);
+		}
+
 	}
 }

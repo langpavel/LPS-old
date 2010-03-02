@@ -9,6 +9,7 @@ namespace LPS.ToolScript.Parser
 		IDBTable Table { get; }
 		Type DataType { get; }
 		EvaluatedAttributeList Attribs { get; }
+		bool IsAbstract { get; }
 		bool IsPrimary { get; }
 		bool IsUnique { get; }
 		bool IsNotNull { get; }
@@ -17,5 +18,6 @@ namespace LPS.ToolScript.Parser
 		object NormalizeValue(object value);
 		string DisplayValue(object value, string format, string ifnull);
 		string DisplayValue(object value, bool allow_tags);
+		string[] CreateColumnsSQL(bool in_table);
 	}
 }

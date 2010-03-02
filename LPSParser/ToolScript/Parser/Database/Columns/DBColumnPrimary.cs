@@ -2,7 +2,7 @@ using System;
 
 namespace LPS.ToolScript.Parser
 {
-	public class DBColumnPrimary : DBColumnBase
+	public class DBColumnPrimary : DBColumnBase, IDBColumnPrimary
 	{
 		public override bool IsPrimary { get { return true; } }
 
@@ -11,6 +11,11 @@ namespace LPS.ToolScript.Parser
 		{
 			this.IsUnique = true;
 			this.IsNotNull = true;
+		}
+
+		protected override string GetDBTypeName ()
+		{
+			return "bigserial";
 		}
 	}
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections;
+using System.Text;
 
 namespace LPS.ToolScript.Parser
 {
@@ -17,18 +18,19 @@ namespace LPS.ToolScript.Parser
 		/// If existing table with Name should be updated
 		/// </summary>
 		public bool IsExtension { get; private set; }
-		public string ExtensionName { get; private set; }
+		public string TemplateName { get; private set; }
 		public EvaluatedAttributeList Attribs { get; private set; }
 		public DBTableIndices Indices { get; private set; }
+		public IDBColumnPrimary PrimaryKey { get; private set; }
 
-		public DBTableExpression(string Name, bool IsTemplate, bool IsExtension, string ExtensionName)
+		public DBTableExpression(string Name, bool IsTemplate, bool IsExtension, string TemplateName)
 		{
 			this.Name = Name;
 			this.IsTemplate = IsTemplate;
 			this.IsExtension = IsExtension;
 			this.Attribs = new EvaluatedAttributeList();
 			this.Indices = new DBTableIndices();
-			this.ExtensionName = ExtensionName;
+			this.TemplateName = TemplateName;
 		}
 
 		public void AddAttrib(object attrib)
@@ -63,8 +65,26 @@ namespace LPS.ToolScript.Parser
 
 		public object Eval (Context context)
 		{
+			if(this.IsExtension)
+				throw new NotImplementedException();
+
 			foreach(IDBColumn column in this.Values)
-				column.Eval(context);
+			{
+				IDBColumn col = (IDBColumn)column.Eval(context);
+				if(col is IDBColumnPrimary)
+					this.PrimaryKey = (IDBColumnPrimary)col;
+			}
+
+			if(this.IsTemplate)
+			{
+				if(this.PrimaryKey != null)
+					throw new Exception("Šablona tabulky nesmí mít primární klíč");
+			}
+			else
+			{
+				if(this.PrimaryKey == null)
+					throw new Exception("Tabulka musí mít primární klíč");
+			}
 
 			return this;
 		}
@@ -74,18 +94,85 @@ namespace LPS.ToolScript.Parser
 			throw new InvalidOperationException();
 		}
 
+		private List<IDBColumn> GetTemplateColumns(IDatabaseSchema database)
+		{
+			if(String.IsNullOrEmpty(TemplateName))
+				return new List<IDBColumn>();
+			IDBTable ttable = database[TemplateName];
+			if(!ttable.IsTemplate)
+				throw new Exception("Tabulku nelze použít jako šablonu tabulky");
+			List<IDBColumn> list = ((DBTableExpression)ttable).GetTemplateColumns(database);
+			foreach(IDBColumn col in ttable.Values)
+				list.Add(col);
+			return list;
+		}
+
 		public void Resolve (IDatabaseSchema database)
 		{
-			IDBTable table = this;
-			if(IsExtension)
-				table = database[this.Name];
+			if(this.IsTemplate)
+				return;
+
+			foreach(IDBColumn col in GetTemplateColumns(database))
+				this.Add(col.Name, (IDBColumn)col.Clone());
+
 			foreach(IDBColumn column in this.Values)
-				column.Resolve(database, table);
+				column.Resolve(database, this);
+		}
+
+		public IDBColumnForeign[] FindTiesTo(IDBTable table)
+		{
+			List<IDBColumnForeign> fk = new List<IDBColumnForeign>();
+			foreach(IDBColumn col in this.Values)
+				if(col is IDBColumnForeign && ((IDBColumnForeign)col).ReferencesTable == table)
+					fk.Add((IDBColumnForeign)col);
+
+			return fk.ToArray();
+		}
+
+		public string CreateTableSQL()
+		{
+			StringBuilder sb = new StringBuilder();
+			sb.AppendLine();
+			sb.AppendFormat("-- Table {0}\n", this.Name);
+			sb.AppendFormat("CREATE TABLE {0} (\n", this.Name);
+
+			List<string> colsqls = new List<string>();
+
+			foreach(IDBColumn col in this.Values)
+				colsqls.AddRange(col.CreateColumnsSQL(true));
+
+			int lastrealcol=0;
+			for(int i=colsqls.Count-1; i >= 0; i--)
+			{
+				if(colsqls[i].Trim().StartsWith("--"))
+					continue;
+				lastrealcol = i;
+				break;
+			}
+
+			for(int i=0; i < colsqls.Count; i++)
+			{
+				string separator = (i < lastrealcol) ? "," : "";
+				string line = colsqls[i];
+				if(line.Trim().StartsWith("--"))
+					separator = "";
+				sb.AppendFormat("\t{0}{1}\n", line, separator);
+			}
+
+			sb.AppendLine(");");
+			return sb.ToString();
+		}
+
+		public string CreateForeignKeysSQL()
+		{
+			StringBuilder sb = new StringBuilder();
+
+			return sb.ToString();
 		}
 
 		public virtual DBTableExpression Clone()
 		{
-			DBTableExpression clone = new DBTableExpression(Name, IsTemplate, IsExtension, ExtensionName);
+			DBTableExpression clone = new DBTableExpression(Name, IsTemplate, IsExtension, TemplateName);
 			clone.Attribs = Attribs.Clone();
 			clone.Indices = this.Indices.Clone();
 			foreach(KeyValuePair<string, IDBColumn> kv in this)

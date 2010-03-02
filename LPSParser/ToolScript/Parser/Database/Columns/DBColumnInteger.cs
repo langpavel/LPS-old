@@ -9,5 +9,9 @@ namespace LPS.ToolScript.Parser
 		{
 		}
 
+		protected override string GetDBTypeName ()
+		{
+			return "bigint";
+		}
 	}
 }

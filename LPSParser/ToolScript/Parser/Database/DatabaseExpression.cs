@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace LPS.ToolScript.Parser
 {
@@ -23,15 +24,19 @@ namespace LPS.ToolScript.Parser
 		{
 			IDatabaseSchema db = this;
 			if(IsExtension)
-				db = (IDatabaseSchema)context.GlobalContext.GetVariable(Name);
+			{
+				throw new NotImplementedException();
+				//db = (IDatabaseSchema)context.GlobalContext.GetVariable(Name);
+			}
+
+			if(this.Name != null && !IsExtension)
+				context.GlobalContext.InitVariable(this.Name, db);
 
 			foreach(IDBTable table in this.Values)
 				table.Eval(context);
 
 			Resolve(db);
 
-			if(this.Name != null && !IsExtension)
-				context.GlobalContext.InitVariable(this.Name, db, false);
 			return db;
 		}
 
@@ -52,6 +57,34 @@ namespace LPS.ToolScript.Parser
 			foreach(KeyValuePair<string, IDBTable> kv in this)
 				clone.Add(kv.Key, (IDBTable)kv.Value.Clone());
 			return clone;
+		}
+
+		public string CreateSQL()
+		{
+			StringBuilder sb = new StringBuilder();
+
+			sb.AppendFormat("CREATE DATABASE {0};\n", this.Name);
+
+			sb.AppendLine();
+			sb.AppendLine("------------");
+			sb.AppendLine("-- Tables --");
+			sb.AppendLine("------------");
+
+			foreach(IDBTable table in this.Values)
+				if(!table.IsTemplate)
+					sb.Append(table.CreateTableSQL());
+
+			sb.AppendLine();
+			sb.AppendLine("------------------");
+			sb.AppendLine("-- Foreign keys --");
+			sb.AppendLine("------------------");
+			sb.AppendLine();
+
+			foreach(IDBTable table in this.Values)
+				if(!table.IsTemplate)
+					sb.Append(table.CreateForeignKeysSQL());
+
+			return sb.ToString();
 		}
 
 		object ICloneable.Clone()

@@ -127,9 +127,8 @@ namespace LPS.Util
 			{
 				TextBuffer buffer = this.outputView.Buffer;
 				TextIter iter = buffer.EndIter;
-				
+
 				TextMark mark = buffer.CreateMark(null, iter, true);
-				
 				buffer.Insert(ref iter, String.Format("Executing {0}\n", cmd));
 				iter = buffer.GetIterAtMark(mark);
 				buffer.ApplyTag("command", iter, buffer.EndIter);
@@ -167,6 +166,7 @@ namespace LPS.Util
 
 				if(!String.IsNullOrEmpty(str_result))
 				{
+					mark = buffer.CreateMark(null, iter, true);
 					WriteBufferWithTag("code", str_result);
 				}
 

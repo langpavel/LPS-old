@@ -63,6 +63,8 @@ public class GtkWidgetAttribs {
 			else if(typename == "UInt64") typename = "unsigned long";
 			else if(typename == "String") typename = "string";
 			else if(typename == "String[]") typename = "string[]";
+			else if(typename == "Single") typename = "float";
+			else if(typename == "Double") typename = "double";
 		}
 		return typename;
 	}

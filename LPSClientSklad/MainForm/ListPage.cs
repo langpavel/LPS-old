@@ -26,6 +26,7 @@ namespace LPS.Client.Sklad
 			headerbox.PackStart(headerlabel);
 			//Image img = new Image("gtk-close", IconSize.Menu);
 			close_img = ImageManager.GetImage("Images.close-button.png");
+			//close_img = new Image("gtk-close", IconSize.Menu);
 			btnCloseTab = new Button(close_img);
 			btnCloseTab.BorderWidth = 0;
 			btnCloseTab.Relief = ReliefStyle.None;
