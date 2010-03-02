@@ -1,6 +1,7 @@
 using System;
 using System.Reflection;
 using Gtk;
+using System.Text;
 
 public class GtkWidgetAttribs {
 	private static TreeStore store = null;
@@ -15,6 +16,7 @@ public class GtkWidgetAttribs {
 	{
 		Application.Init ();
 		PopulateStore ();
+		store.SetSortColumnId(2, SortType.Ascending);
 
 		Window win = new Window ("Gtk Widget Attributes");
 		win.DeleteEvent += new DeleteEventHandler (DeleteCB);
@@ -31,6 +33,8 @@ public class GtkWidgetAttribs {
 
 		foreach(TreeViewColumn col in tv.Columns)
 			col.Resizable = true;
+
+		tv.SearchColumn = 2;
 
 		sw.Add (tv);
 
@@ -63,6 +67,22 @@ public class GtkWidgetAttribs {
 		return typename;
 	}
 
+	private static string Inherits(Type t)
+	{
+		StringBuilder sb = new StringBuilder();
+		do
+		{
+			t = t.BaseType;
+			if(t != null && t != typeof(System.Object))
+				sb.AppendFormat(": {0}", NiceTypeName(t));
+		}
+		while(t.BaseType != null
+			&& t.BaseType != typeof(object)
+			&& t.BaseType != typeof(GLib.Object)
+			&& t.BaseType != typeof(Gtk.Object));
+		return sb.ToString();
+	}
+
 	private static void ProcessType (TreeIter parent, System.Type t)
 	{
 		bool iterset = false;
@@ -82,12 +102,12 @@ public class GtkWidgetAttribs {
 					if(!iterset)
 					{
 						iterset = true;
-						iter = store.AppendValues (parent, "<tt><b>"+NiceTypeName(t)+"</b></tt><small>: " + NiceTypeName(t.BaseType)+"</small>", t.ToString()+" : "+t.BaseType.ToString());
+						iter = store.AppendValues (parent, "<tt><b>"+NiceTypeName(t)+"</b></tt><small>" + Inherits(t)+"</small>", t.ToString()+" : "+t.BaseType.ToString(), t.Name);
 					}
 					string rw = ((prop.CanRead)?"r":"") + ((prop.CanWrite)?"w":"");
 					store.AppendValues (iter,
 						String.Format("({0})\t<tt><b>{1}</b></tt><small>: {2}</small>",
-							rw, attr.Name, NiceTypeName(prop.PropertyType)), prop.PropertyType.ToString());
+							rw, attr.Name, NiceTypeName(prop.PropertyType)), prop.PropertyType.ToString(), attr.Name);
 				}
 			}
 		}
@@ -111,13 +131,13 @@ public class GtkWidgetAttribs {
 					{
 						ptext[i] = "<small>" + NiceTypeName(p[i].ParameterType) + "</small> <b>" + p[i].Name + "</b>";
 					}
-					store.AppendValues (iter, "new\t<tt>(" + String.Join(", ", ptext) + ")</tt>", "konstruktor");
+					store.AppendValues (iter, "new\t<tt>(" + String.Join(", ", ptext) + ")</tt>", "konstruktor", "");
 				}
 			}
 			if(implicit_constructor)
-				store.SetValues(iter, "<tt><b><span foreground=\"#770000\">"+NiceTypeName(t)+"</span></b></tt><small>: " + NiceTypeName(t.BaseType)+ "</small>", t.ToString()+" : "+t.BaseType.ToString());
+				store.SetValues(iter, "<tt><b><span foreground=\"#770000\">"+NiceTypeName(t)+"</span></b></tt><small>" + Inherits(t)+"</small>", t.ToString()+" : "+t.BaseType.ToString(), t.Name);
 			else if(no_constructor)
-				store.SetValues(iter, "<tt><b><span foreground=\"#999999\">"+NiceTypeName(t)+"</span></b></tt><small>: " + NiceTypeName(t.BaseType)+ "</small>", t.ToString()+" : "+t.BaseType.ToString());
+				store.SetValues(iter, "<tt><b><span foreground=\"#999999\">"+NiceTypeName(t)+"</span></b></tt><small>" + Inherits(t)+"</small>", t.ToString()+" : "+t.BaseType.ToString(), t.Name);
 		}
 	}
 
@@ -137,16 +157,16 @@ public class GtkWidgetAttribs {
 		if (store != null)
 			return;
 
-		store = new TreeStore (typeof (string), typeof (string));
+		store = new TreeStore (typeof (string), typeof (string), typeof(string));
 
 		foreach (Assembly asm in AppDomain.CurrentDomain.GetAssemblies ())
 		{
 			string asmname = asm.GetName().Name;
-			if(asmname == "System" || asmname == "mscorlib" || asm == Assembly.GetExecutingAssembly())
+			if(asmname == "System" || asmname == "mscorlib" || asmname == "glib-sharp" || asm == Assembly.GetExecutingAssembly())
 				continue;
 			UpdateDialog ("Loading {0}", asm.GetName ().Name);
 
-			TreeIter iter = store.AppendValues (asm.GetName ().Name, "Assembly");
+			TreeIter iter = store.AppendValues (asm.GetName ().Name, "Assembly", "");
 			ProcessAssembly (iter, asm);
 		}
 	}
