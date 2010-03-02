@@ -1,0 +1,436 @@
+function check_strana(NEW, Allow_0=false, error="Strana záznamu není nastavena")
+{
+	if(NEW.strana is null and not Allow_0)
+		throw error;
+	if(strana is null)
+		NEW.strana = 0;
+	if(not(NEW.strana == -1 or NEW.strana == 1
+			or (Allow_0 and NEW.strana == 0)))
+		throw error;
+};
+
+var db = database filmarena_sklad
+{
+	/*************************************/
+	/* TEMPLATE TABLES                   */
+	/*************************************/
+	template table BASE_TS
+	{
+		ts datetime index default now;
+	}
+
+	template table BASE_CREATE template BASE_TS
+	{
+		id_user_create foreign user;
+		dt_create datetime;
+	}
+
+	template table BASE_MODIFY template BASE_TS
+	{
+		id_user_modify foreign user;
+		dt_modify datetime;
+	}
+
+	template table BASE template BASE_CREATE
+	{
+		id_user_modify foreign user;
+		dt_modify datetime;
+	}
+
+	template table PLATNOST template BASE
+	{
+		plati daterange;
+	}
+
+	template table CISELNIK template BASE
+	{
+		kod varchar(10);
+		popis varchar(100);
+	}
+
+	template table CISELNIK_PLATNOST template CISELNIK
+	{
+		plati daterange;
+	}
+
+	/*************************************/
+	/* SYSTEM TABLES                     */
+	/*************************************/
+	table sys_deleted template BASE_CREATE
+	{
+		id primary;
+		table_name varchar(40) not null;
+		row_id integer not null;
+		reason varchar;
+	}
+	index (ts, table_name);
+
+	table sys_error template BASE_TS
+	{
+		id primary;
+		table_name varchar(40) not null;
+		row_id integer not null;
+		id_check foreign sys_check;
+		err_code varchar(10) not null;
+		popis text not null;
+	}
+	index (table_name, table_id);
+
+	table sys_check template BASE_TS
+	{
+		id primary;
+		kod varchar(10) not null unique;
+		popis varchar;
+		sql_cmd varchar;
+		ts_last_run datetime default now;
+	}
+
+	table sys_user template BASE_TS
+	{
+		id primary;
+		username varchar(40) not null unique;
+		passwd varchar(40) not null;
+		first_name varchar(40) not null;
+		surname varchar(40) not null;
+	}
+	unique (first_name, surname);
+	// insert into sys_user values (0, 'system', '', '', 'system' }
+	// insert into sys_user values (1, 'langpa', '6evgzj7ykan/hcjbyphpgqliw4s=', 'pavel', 'lang' } // prazdne heslo pro langpa
+
+	table sys_gen_cyklus template CISELNIK
+	{
+		id primary;
+		sys_date bool not null;
+		year bool not null;
+		month bool not null;
+		week bool not null;
+		day bool not null;
+	}
+	// insert into sys_gen_cyklus values (1, 'inf',   'stálý', false, false, false, false, false }
+
+	// insert into sys_gen_cyklus values (2, 'year_sys',  'rok {systémový)',   true,  true,  false, false, false }
+	// insert into sys_gen_cyklus values (3, 'month_sys', 'měsíc {systémový)', true,  true,  true,  false, false }
+	// insert into sys_gen_cyklus values (4, 'week_sys',  'týden {systémový)', true,  true,  false, true,  false }
+	// insert into sys_gen_cyklus values (5, 'day_sys',   'den {systémový)',   true,  true,  true,  false, true }
+	
+	// insert into sys_gen_cyklus values (6, 'year_real',  'rok {aktuální)',   false, true,  false, false, false }
+	// insert into sys_gen_cyklus values (7, 'month_real', 'měsíc {aktuální)', false, true,  true,  false, false }
+	// insert into sys_gen_cyklus values (8, 'week_real',  'týden {aktuální)', false, true,  false, true,  false }
+	// insert into sys_gen_cyklus values (9, 'day_real',   'den {aktuální)',   false, true,  true,  false, true }
+
+	table sys_gen template BASE_MODIFY
+	{
+		id primary;
+		id_cyklus foreign sys_gen_cyklus not null;
+		
+		kod varchar(10) not null unique;
+		name varchar(40) not null;
+	
+		format varchar(100) not null;
+		value_first integer not null default 1;
+		value_step integer not null default 1;
+	
+		user_lock bool not null default false;
+	}
+	
+	table sys_gen_value template BASE_TS
+	{
+		id primary;
+		id_gen foreign sys_gen not null;
+
+		year integer not null default 0;
+		month integer not null default 0;
+		week integer not null default 0;
+		day integer not null default 0;
+	
+		value integer not null;
+		user_lock bool not null default false;
+	}
+	unique (id_gen, year, month, week, day);
+
+	table sys_user_preferences template BASE
+	{
+		id primary;
+		id_user foreign sys_user not null;
+		path varchar(100) not null;
+		name varchar(100) not null;
+		type varchar(100) not null;
+		value text not null;
+	}
+	create unique index sys_user_preferences_usr_path_name on sys_user_preferences {id_user, path, name }
+
+	table sys_app_config template BASE_MODIFY
+	{
+		id primary;
+		sys_rok integer not null;
+		sys_mesic integer not null;
+		sys_den integer not null;
+		sys_date timestamp not null;
+		firma varchar(100) not null;
+		id_adresa foreign adresa;
+	
+		id_user_modify foreign sys_user;
+		dt_modify timestamp without time zone default now;
+	}
+	// insert into sys_app_config values (1, 2010,1,1,'2010-01-01', '24 promotions s.r.o.', 1, 0, now{), now{) }
+	
+	table sys_attachement template BASE
+	{
+		id primary;
+		table_name varchar(40) not null;
+		table_id integer not null;
+		id_attachement foreign sys_attachement; // symlink
+		filename varchar(1024) not null;
+		mimetype varchar(40) not null default '';
+		popis text not null;
+
+		id_user_lock foreign sys_user;
+		dt_lock datetime;
+	}
+	index (table_name, table_id);
+
+	/*************************************/
+	/* CISELNIKY                         */
+	/*************************************/
+
+	table c_druh_adresy template CISELNIK
+	{
+		id primary;
+		aktivni bool default true;
+		fakturacni bool;
+		dodaci bool;
+	}
+	// insert into c_druh_adresy values (1, 'fa', 'fakturační', true, true, null, 0, now{), 0, now{), now{) }
+	// insert into c_druh_adresy values (2, 'dodaci', 'dodací', true, false, true, 0, now{), 0, now{), now{) }
+	// insert into c_druh_adresy values (3, 'jina', 'jiná', true, null, null, 0, now{), 0, now{), now{) }
+	// insert into c_druh_adresy values (4, 'naplatna', 'neplatná adresa', false, null, null, 0, now{), 0, now{), now{) }
+
+	table c_dph template CISELNIK_PLATNOST
+	{
+		id primary;
+		hodnota decimal(2,2) not null;
+		vychozi bool not null default false;
+	}
+	// insert into c_dph values (1, 'dph0', 'bez dph', 0.00, null, null, false, null, null, null, null }
+	// insert into c_dph values (2, 'dph9', 'dph 9%', 0.09, null, '1.1.2010', false, null, null, null, null }
+	// insert into c_dph values (3, 'dph19', 'dph 19%', 0.19, null, '1.1.2010', false, null, null, null, null }
+	// insert into c_dph values (4, 'dph10', 'dph 10%', 0.10, '1.1.2010', null, false, null, null, null, null }
+	// insert into c_dph values (5, 'dph20', 'dph 20%', 0.20, '1.1.2010', null, true, null, null, null, null }
+	
+	table c_mj template CISELNIK
+	{
+		id primary;
+		popis2 varchar(100) not null default '';
+	}
+	// insert into c_mj values (1, 'ks', 'kus', 'kusy', null, null, null, null }
+	
+	table c_kategorie template CISELNIK
+	{
+		id primary;
+		aktivni bool not null default true;
+	}
+	
+	table c_zaruka template CISELNIK_PLATNOST
+	{
+		id primary;
+		poznamka varchar;
+		vychozi bool not null default false;
+	}
+	
+	table c_sklad template CISELNIK
+	{
+		id primary;
+		poznamka varchar;
+	}
+
+	table c_stat template CISELNIK
+	{
+		id primary;
+	}
+
+	table c_mena template CISELNIK_PLATNOST
+	{
+		id primary;
+		zkratka varchar(10) not null;
+		format varchar(100) not null default '#,##0.00';
+		vychozi bool not null default false;
+	}
+	// insert into c_mena values (1, 'CZK', 'kč', 'česká koruna', '#,##0.00\' kč\'', null, null, true, 0, now{), 0, now{), now{) }
+	// insert into c_mena values (2, 'EUR', '€', 'euro', '\'€\'#,##0.00', null, null, false, 0, now{), 0, now{), now{) }
+	
+	table c_pobocka template CISELNIK
+	{
+		id primary;
+		id_adresa foreign adresa;
+	}
+	
+	table c_pokladna template CISELNIK
+	{
+		id primary;
+		id_pobocka foreign c_pobocka;
+		id_mena foreign c_mena;
+	}
+	
+	table c_skl_pohyb_druh template CISELNIK
+	{
+		id primary;
+		strana integer not null check {strana = 1 or strana = -1);
+		id_sys_gen foreign sys_gen not null;
+	}
+	
+	table c_skl_pohyb_pol_druh template CISELNIK
+	{
+		id primary;
+		strana integer not null check {strana = 1 or strana = -1);
+		id_c_skl_pohyb_druh foreign c_skl_pohyb_druh;
+	}
+	
+	
+	// 110_kurz.sql
+
+	// kurz: mnozstvi id_mena_cizi == hodnota_mnozstvi id_mena_kurz
+	// kurz: 1 id_mena_cizi == hodnota id_mena_kurz
+	table kurz template PLATNOST
+	{
+		id primary;
+		id_mena_cizi foreign c_mena not null;
+		id_mena_kurz foreign c_mena not null;
+	
+		hodnota_mnozstvi decimal(28,14) not null;
+		mnozstvi integer not null;
+		hodnota decimal(28,14) not null;
+	}
+	before insert, before update position 1
+	{
+		if(NEW.hodnota != NEW.hodnota_mnozstvi / NEW.mnozstvi)
+			throw "Hodnota neodpovídá podílu hodnota_mnozstvi / mnozstvi";
+	}
+
+	// 200_adresa.sql
+
+	table adresa template BASE
+	{
+		id primary;
+		id_druh_adresy foreign c_druh_adresy not null;
+		id_stat foreign c_stat;
+		id_group integer;
+	
+		nazev1 varchar(100);
+		nazev2 varchar(100);
+		ico varchar(20);
+		dic varchar(20);
+		prijmeni varchar(100);
+		jmeno varchar(100);
+		jmeno2 varchar(100);
+		ulice varchar(100);
+		mesto varchar(100);
+		psc varchar(20);
+		email varchar(100);
+		telefon1 varchar(100);
+		telefon2 varchar(100);
+		poznamka varchar;
+		aktivni bool not null default true;
+		fakturacni bool;
+		dodaci bool;
+		dodavatel bool;
+		odberatel bool;
+		import_php_str_hash varchar(40);
+		import_objed_cislo varchar;
+	}
+	// insert into adresa values (1, 3, 1, null, '24 promotions s.r.o.' }
+	
+	table adr_obec template CISELNIK
+	{
+		id primary;
+	}
+	
+	// 300_produkt.sql
+
+	/* film, plakat, tricko */
+	table c_druh_produktu template CISELNIK
+	{
+		id primary;
+	}
+	
+	table c_produkt_varianta template CISELNIK
+	{
+		id primary;
+		id_druh_produktu foreign c_druh_produktu not null;
+	}
+	
+	table produkt template BASE
+	{
+		id primary;
+		id_druh_produktu foreign c_druh_produktu not null;
+		id_zaruka foreign c_zaruka;
+		extern_id varchar(50);
+		id_dph foreign c_dph;
+
+		cislo varchar(20) not null unique;
+	
+		nazev varchar(100);
+		nazev2 varchar(100);
+		popis varchar;
+		keywords varchar;
+	}
+
+	table produkt_dodavatel template BASE
+	{
+		id primary;
+		id_produkt foreign produkt not null;
+		id_produkt_varianta foreign c_produkt_varianta not null;
+		id_adresa foreign adresa not null;
+	}
+
+	// 400_sklad.sql
+
+	table skl_karta template BASE
+	{
+		id primary;
+	
+		cislo varchar(20) not null unique;
+	
+		id_sklad foreign c_sklad not null;
+		id_kategorie foreign c_kategorie;
+		id_dph foreign c_dph not null;
+		id_mj foreign c_mj not null;
+		id_zaruka foreign c_zaruka;
+	
+		id_adresa_dodavatel foreign adresa;
+		id_produkt foreign produkt;
+		id_produkt_varianta foreign c_produkt_varianta;
+	
+		ean varchar(100);
+		nazev1 varchar(100);
+		nazev2 varchar(100);
+		popis varchar;
+		
+		skl_cena decimal(28,14);
+		skl_hodnota decimal(15,2);
+		skl_mnoz decimal(28,14);
+	}
+	
+	table skl_pohyb template BASE
+	{
+		id primary;
+		id_sklad foreign c_sklad not null;
+		id_skl_pohyb_druh foreign c_skl_pohyb_druh not null;
+		id_mena foreign c_mena not null;
+	
+		cislo varchar(20) not null unique;
+		popis varchar(100) not null default '';
+		datum_pohybu date not null;
+		datum_uc date not null;
+		strana integer not null check {strana = 1 or strana = -1);
+	}
+	
+	table skl_pohyb_pol template BASE
+	{
+		id primary;
+		id_skl_pohyb foreign skl_pohyb not null;
+		id_skl_karta foreign skl_karta not null;
+		id_skl_pohyb_pol_druh foreign c_skl_pohyb_pol_druh not null;
+		strana integer not null;
+	}
+	before insert, before update position 1 check_strana(NEW, error="Strana položky skladového dokladu není nastavena");
+};
