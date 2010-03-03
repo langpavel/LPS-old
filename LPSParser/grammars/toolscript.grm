@@ -233,12 +233,15 @@ Comment Line  = '//'
 				|	'vbox'  <WndParam List> <Layout List> 'end'
 				|	'hbuttonbox' <WndParam List> <Layout List> 'end'
 				|	'vbuttonbox' <WndParam List> <Layout List> 'end'
+				|	'hpaned'  <WndParam List> <Layout List> 'end'
+				|	'vpaned'  <WndParam List> <Layout List> 'end'
 				|	'table' <WndParam List> <Layout List> 'end'
 				|	'toolbar' <WndParam List> <Layout List> 'end'
 				|	'button' <WndParam List> <Layout Block>
 				|	'button' <WndParam List> 'end'
 				|	'toolbutton' <WndParam List> <Layout Block>
 				|	'toolbutton' <WndParam List> 'end'
+				|	'align' <WndParam List> <Layout Block>
 				|	'image' <WndParam List>
 				|	StringLiteral <WndParam List>
 				|	<Menu Block>
@@ -246,7 +249,7 @@ Comment Line  = '//'
 
 <Menu Block>	::=	'menu' <WndParam List> <MenuItems List> 'end'
 
-<MenuItems List> ::= <Menu Item> <MenuItems List>
+<MenuItems List> ::= <MenuItems List> <Menu Item>
 				|
 
 <Menu Item>		::= <Menu Block>

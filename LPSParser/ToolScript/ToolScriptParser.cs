@@ -1012,6 +1012,18 @@ namespace LPS.ToolScript
 			return new VButtonBoxContainer(null, Get<EvaluatedAttributeList>(token, 1), Get<LayoutList>(token,2));
 		}
 
+		// <Layout Block> ::= hpaned <WndParam List> <Layout List> end
+		protected override object RuleLayoutblockHpanedEnd(NonterminalToken token)
+		{
+			return new HPanedContainer(null, Get<EvaluatedAttributeList>(token, 1), Get<LayoutList>(token,2));
+		}
+
+		// <Layout Block> ::= vpaned <WndParam List> <Layout List> end
+		protected override object RuleLayoutblockVpanedEnd(NonterminalToken token)
+		{
+			return new VPanedContainer(null, Get<EvaluatedAttributeList>(token, 1), Get<LayoutList>(token,2));
+		}
+
 		// <Layout Block> ::= TABLE <WndParam List> <TabRow Block> END
 		protected override object RuleLayoutblockTableEnd(NonterminalToken token)
 		{
@@ -1046,6 +1058,12 @@ namespace LPS.ToolScript
 		protected override object RuleLayoutblockToolbuttonEnd(NonterminalToken token)
 		{
 			return new ToolButtonExpression(null, Get<EvaluatedAttributeList>(token, 1), null);
+		}
+
+		// <Layout Block> ::= align <WndParam List> <Layout Block>
+		protected override object RuleLayoutblockAlign(NonterminalToken token)
+		{
+			return new AlignExpression(null, Get<EvaluatedAttributeList>(token, 1), Get<IWidgetBuilder>(token,2));
 		}
 
 		// <Layout Block> ::= image <WndParam List>
@@ -1094,11 +1112,11 @@ namespace LPS.ToolScript
 			return new MenuExpression(null, Get<EvaluatedAttributeList>(token,1), MenuExpressionKind.Menu, Get<List<MenuExpression>>(token,2));
 		}
 
-		// <MenuItems List> ::= <Menu Item> <MenuItems List>
+		// <MenuItems List> ::= <MenuItems List> <Menu Item>
 		protected override object RuleMenuitemslist(NonterminalToken token)
 		{
-			List<MenuExpression> list = Get<List<MenuExpression>>(token,1);
-			list.Insert(0,Get<MenuExpression>(token,0));
+			List<MenuExpression> list = Get<List<MenuExpression>>(token,0);
+			list.Add(Get<MenuExpression>(token,1));
 			return list;
 		}
 

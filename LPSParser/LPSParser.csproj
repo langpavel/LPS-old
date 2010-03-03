@@ -175,6 +175,10 @@
     <Compile Include="ToolScript\Parser\Database\Table\DBTableTriggers.cs" />
     <Compile Include="ToolScript\Parser\Statements\ThrowStatement.cs" />
     <Compile Include="ToolScript\Exceptions\ScriptCustomException.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\PanedBase.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\HPanedContainer.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\VPanedContainer.cs" />
+    <Compile Include="ToolScript\Parser\Expressions\Window\AlignExpression.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />

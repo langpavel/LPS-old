@@ -280,6 +280,10 @@ namespace LPS.Util
 			this.vbox2.Name = "vbox2";
 			this.vbox2.Spacing = 6;
 
+			VPaned vpaned = new VPaned();
+			vpaned.Position = 300;
+			vbox2.PackStart(vpaned);
+
 			tw = new TextView();
 			Pango.FontDescription font = new Pango.FontDescription();
 			font.Family = "Courier";
@@ -287,7 +291,7 @@ namespace LPS.Util
 			tw.ModifyFont(font);
 			ScrolledWindow sc = new ScrolledWindow();
 			sc.Add(tw);
-			vbox2.Add(sc);
+			vpaned.Add2(sc);
 			tw.KeyPressEvent += HandleTwKeyPressEvent;
 
 			// Container child vbox2.Gtk.Box+BoxChild
@@ -296,7 +300,7 @@ namespace LPS.Util
 			this.entry1.Name = "entry1";
 			this.entry1.IsEditable = true;
 			this.entry1.InvisibleChar = '●';
-			this.vbox2.Add(this.entry1);
+			this.vbox2.PackEnd(this.entry1);
 			Gtk.Box.BoxChild w1 = ((Gtk.Box.BoxChild) (this.vbox2[this.entry1]));
 			w1.Position = 0;
 			w1.Expand = false;
@@ -311,7 +315,7 @@ namespace LPS.Util
 			this.outputView.Name = "outputView";
 			this.outputView.Editable = false;
 			this.GtkScrolledWindow.Add(this.outputView);
-			this.vbox2.Add(this.GtkScrolledWindow);
+			vpaned.Add1(this.GtkScrolledWindow);
 			Gtk.Box.BoxChild w3 = ((Gtk.Box.BoxChild) (this.vbox2[this.GtkScrolledWindow]));
 			w3.Position = 1;
 			this.Add(this.vbox2);
