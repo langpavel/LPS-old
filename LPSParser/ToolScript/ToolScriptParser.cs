@@ -1109,7 +1109,7 @@ namespace LPS.ToolScript
 		// <Menu Block> ::= MENU <WndParam List> <MenuItems List> END
 		protected override object RuleMenublockMenuEnd(NonterminalToken token)
 		{
-			return new MenuExpression(null, Get<EvaluatedAttributeList>(token,1), MenuExpressionKind.Menu, Get<List<MenuExpression>>(token,2));
+			return new MenuExpression(null, MenuExpressionKind.Menu, Get<EvaluatedAttributeList>(token,1), Get<List<MenuExpression>>(token,2));
 		}
 
 		// <MenuItems List> ::= <MenuItems List> <Menu Item>
@@ -1137,13 +1137,13 @@ namespace LPS.ToolScript
 		// <Menu Item> ::= menuitem <WndParam List>
 		protected override object RuleMenuitemMenuitem(NonterminalToken token)
 		{
-			return new MenuExpression(null, Get<EvaluatedAttributeList>(token,1), MenuExpressionKind.MenuItem, null);
+			return new MenuExpression(null, MenuExpressionKind.MenuItem, Get<EvaluatedAttributeList>(token,1), null);
 		}
 
 		// <Menu Item> ::= Separator
 		protected override object RuleMenuitemSeparator(NonterminalToken token)
 		{
-			return new MenuExpression(null, null, MenuExpressionKind.ItemSeparator, null);
+			return new MenuExpression(null, MenuExpressionKind.ItemSeparator, new EvaluatedAttributeList(), null);
 		}
 
 		#endregion

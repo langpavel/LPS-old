@@ -85,6 +85,24 @@ public class GtkWidgetAttribs {
 		return sb.ToString();
 	}
 
+	private static void WriteEventArgs(TreeIter iter, Type args)
+	{
+		foreach(MemberInfo item in args.GetMembers(BindingFlags.Public | BindingFlags.Instance))
+		{
+			if(item is PropertyInfo)
+			{
+				PropertyInfo prop = (PropertyInfo)item;
+				string rw = ((prop.CanRead)?"r":"") + ((prop.CanWrite)?"w":"");
+				store.AppendValues(iter, "<small>("+rw+")</small>\t<b><tt>"+prop.Name+"</tt></b><small>: "+NiceTypeName(prop.PropertyType)+"</small>", NiceTypeName(args), "");
+			}
+			if(item is FieldInfo)
+			{
+				FieldInfo field = (FieldInfo)item;
+				store.AppendValues(iter, field.Name, NiceTypeName(args), "");
+			}
+		}
+	}
+
 	private static void ProcessType (TreeIter parent, System.Type t)
 	{
 		bool iterset = false;
@@ -93,6 +111,7 @@ public class GtkWidgetAttribs {
 		//	return;
 		foreach (MemberInfo mi in t.GetMembers ())
 		{
+			// properties
 			object[] attrs = mi.GetCustomAttributes(typeof(GLib.PropertyAttribute), false);
 			if(attrs != null && attrs.Length > 0)
 			{
@@ -108,8 +127,37 @@ public class GtkWidgetAttribs {
 					}
 					string rw = ((prop.CanRead)?"r":"") + ((prop.CanWrite)?"w":"");
 					store.AppendValues (iter,
-						String.Format("({0})\t<tt><b>{1}</b></tt><small>: {2}</small>",
+						String.Format("<small>({0})</small>\t<tt><b>{1}</b></tt><small>: {2}</small>",
 							rw, attr.Name, NiceTypeName(prop.PropertyType)), prop.PropertyType.ToString(), attr.Name);
+				}
+			}
+			// signals
+			object[] signals = mi.GetCustomAttributes(typeof(GLib.SignalAttribute), false);
+			if(signals != null && signals.Length > 0)
+			{
+				EventInfo ev = (EventInfo)mi;
+				if(ev.DeclaringType != t)
+					continue;
+				foreach(GLib.SignalAttribute signal in signals)
+				{
+					if(!iterset)
+					{
+						iterset = true;
+						iter = store.AppendValues (parent, "<tt><b>"+NiceTypeName(t)+"</b></tt><small>" + Inherits(t)+"</small>", t.ToString()+" : "+t.BaseType.ToString(), t.Name);
+					}
+					ParameterInfo[] delegateparams = ev.EventHandlerType.GetMethod("Invoke").GetParameters();
+					string[] evargs = new string[delegateparams.Length];
+					for(int i=0; i < delegateparams.Length; i++)
+					{
+						evargs[i] = NiceTypeName(delegateparams[i].ParameterType)+" "+
+							delegateparams[i].Name;
+					}
+					TreeIter eventiter = store.AppendValues (iter,
+						String.Format("<small>(sig)</small>\t<tt><b><span foreground=\"#000099\">{0}</span></b></tt><small>{1}</small>",
+								signal.CName,
+								/*NiceTypeName(ev.EventHandlerType) +*/ "("+ String.Join(", ", evargs)+")"),
+							"signal", signal.CName);
+					WriteEventArgs(eventiter, delegateparams[1].ParameterType);
 				}
 			}
 		}
@@ -133,7 +181,7 @@ public class GtkWidgetAttribs {
 					{
 						ptext[i] = "<small>" + NiceTypeName(p[i].ParameterType) + "</small> <b>" + p[i].Name + "</b>";
 					}
-					store.AppendValues (iter, "new\t<tt>(" + String.Join(", ", ptext) + ")</tt>", "konstruktor", "");
+					store.AppendValues (iter, "<small>new</small>\t<tt>(" + String.Join(", ", ptext) + ")</tt>", "konstruktor", "");
 				}
 			}
 			if(implicit_constructor)

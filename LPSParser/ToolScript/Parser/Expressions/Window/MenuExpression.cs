@@ -17,17 +17,39 @@ namespace LPS.ToolScript.Parser
 		public MenuExpressionKind Kind { get; set; }
 		public List<MenuExpression> MenuItems { get; private set; }
 
-		public MenuExpression(string Name, EvaluatedAttributeList Params, MenuExpressionKind Kind, List<MenuExpression> MenuItems)
+		public MenuExpression(string Name, MenuExpressionKind Kind, EvaluatedAttributeList Params, List<MenuExpression> MenuItems)
 			: base(Name, Params)
 		{
+			this.Kind = Kind;
 			this.MenuItems = MenuItems;
+		}
+
+		public override object Eval (Context context)
+		{
+			object result = base.Eval(context);
+			if(this.MenuItems != null)
+				foreach(MenuExpression child in MenuItems)
+					child.Eval(context);
+			return result;
 		}
 
 		protected void AppendItems(MenuShell shell)
 		{
 			if(this.MenuItems != null)
-				foreach(MenuExpression expr in MenuItems)
+				foreach(MenuExpression expr in this.MenuItems)
 					shell.Append(expr.Build());
+		}
+
+		private MenuItem CreateMenuItem()
+		{
+			if(HasAttribute("stock"))
+			{
+				ImageMenuItem imi = new ImageMenuItem(this.GetAttribute<string>("stock"), null);
+				//IconSet icons = IconFactory.LookupDefault();
+				//imi.Image = new Image(icons.RenderIcon(imi.Style, TextDirection.Ltr, StateType.Normal, IconSize.Menu, imi, null));
+				return imi;
+			}
+			return new MenuItem(GetAttribute<string>("title",""));
 		}
 
 		protected override Widget CreateWidget()
@@ -35,24 +57,17 @@ namespace LPS.ToolScript.Parser
 			switch(this.Kind)
 			{
 			case MenuExpressionKind.MenuBar:
-				Log.Debug("MenuBar");
 				MenuBar bar = new MenuBar();
 				AppendItems(bar);
 				return bar;
 			case MenuExpressionKind.Menu:
-				Log.Debug("Menu");
+				MenuItem item = CreateMenuItem();
 				Menu menu = new Menu();
-				AppendItems(menu);
-				MenuItem item = new MenuItem(GetAttribute<string>("title",""));
 				item.Submenu = menu;
+				AppendItems(menu);
 				return item;
 			case MenuExpressionKind.MenuItem:
-				Log.Debug("MenuItem");
-				MenuItem mi = new MenuItem(GetAttribute<string>("title",""));
-				mi.Activated += delegate {
-					Log.Debug("Item activated");
-				};
-				return mi;
+				return CreateMenuItem();
 			case MenuExpressionKind.ItemSeparator:
 				return new SeparatorMenuItem();
 			default:
