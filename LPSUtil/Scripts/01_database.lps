@@ -16,41 +16,41 @@ var DB = database filmarena_sklad
 	/*************************************/
 	template table BASE_TS
 	{
-		ts datetime index default now;
+		ts datetime index default now title="Časová značka";
 	}
 
 	template table BASE_CREATE template BASE_TS
 	{
-		id_user_create foreign sys_user;
-		dt_create datetime;
+		id_user_create foreign sys_user title="Vytvořil";
+		dt_create datetime title="Vytvořeno";
 	}
 
 	template table BASE_MODIFY template BASE_TS
 	{
-		id_user_modify foreign sys_user;
-		dt_modify datetime;
+		id_user_modify foreign sys_user title="Změnil";
+		dt_modify datetime title="Změněno";
 	}
 
 	template table BASE template BASE_CREATE
 	{
-		id_user_modify foreign sys_user;
-		dt_modify datetime;
+		id_user_modify foreign sys_user title="Změnil";
+		dt_modify datetime title="Změněno";
 	}
 
 	template table PLATNOST template BASE
 	{
-		plati daterange;
+		plati daterange title="Platí od do";
 	}
 
 	template table CISELNIK template BASE
 	{
-		kod varchar(10);
-		popis varchar(100);
+		kod varchar(10) title="Kód";
+		popis varchar(100) title="Popis";
 	}
 
 	template table CISELNIK_PLATNOST template CISELNIK
 	{
-		plati daterange;
+		plati daterange title="Platí od do";
 	}
 
 	/*************************************/

@@ -34,5 +34,10 @@ namespace LPS.ToolScript.Parser
 					String.Format("Nelze volat metodu na hodnotě typu {0}", t));
 			}
 		}
+
+		public override string ToString ()
+		{
+			return string.Format("call {0}(...)", Function);
+		}
 	}
 }

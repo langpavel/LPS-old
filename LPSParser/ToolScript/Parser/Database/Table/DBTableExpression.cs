@@ -185,6 +185,11 @@ namespace LPS.ToolScript.Parser
 					String.Join(", ", index.ColumnNames));
 			}
 
+			foreach(IDBTableTrigger trigger in this.Triggers.GetAllTriggers())
+			{
+				sb.AppendFormat("-- {0}\n", trigger.ToString().Replace("\n","\n-- "));
+			}
+
 			return sb.ToString();
 		}
 

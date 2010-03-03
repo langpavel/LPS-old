@@ -5,6 +5,8 @@ namespace LPS.ToolScript.Parser
 {
 	public class DBTableTriggers : ICloneable
 	{
+		private List<IDBTableTrigger> AllTriggers;
+
 		private SortedList<decimal, IDBTableTrigger> BeforeSelect;
 		private SortedList<decimal, IDBTableTrigger> AfterSelect;
 		private SortedList<decimal, IDBTableTrigger> BeforeInsert;
@@ -16,6 +18,7 @@ namespace LPS.ToolScript.Parser
 
 		public DBTableTriggers()
 		{
+			AllTriggers = new List<IDBTableTrigger>();
 			BeforeSelect = null;
 			AfterSelect = null;
 			BeforeInsert = null;
@@ -40,6 +43,8 @@ namespace LPS.ToolScript.Parser
 
 		public void Add(IDBTableTrigger trigger)
 		{
+			AllTriggers.Add(trigger);
+
 			if(HasPosition(DBTriggerPosition.BeforeSelect, trigger))
 				AddPosition(ref BeforeSelect, trigger);
 			if(HasPosition(DBTriggerPosition.AfterSelect, trigger))
@@ -56,6 +61,11 @@ namespace LPS.ToolScript.Parser
 				AddPosition(ref BeforeDelete, trigger);
 			if(HasPosition(DBTriggerPosition.AfterDelete, trigger))
 				AddPosition(ref AfterDelete, trigger);
+		}
+
+		public IDBTableTrigger[] GetAllTriggers()
+		{
+			return AllTriggers.ToArray();
 		}
 
 		public DBTableTriggers Clone()

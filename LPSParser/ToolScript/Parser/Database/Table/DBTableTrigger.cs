@@ -21,5 +21,10 @@ namespace LPS.ToolScript.Parser
 			throw new NotImplementedException();
 		}
 
+		public override string ToString ()
+		{
+			return string.Format("Trigger {0} position={1}: {2}", Actions, Position, Statement);
+		}
+
 	}
 }
