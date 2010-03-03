@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace LPS.ToolScript.Parser
 {
@@ -27,7 +28,14 @@ namespace LPS.ToolScript.Parser
 		public override void Resolve (IDatabaseSchema database, IDBTable table)
 		{
 			base.Resolve (database, table);
-			ReferencesTable = database[ReferencesTableName];
+			try
+			{
+				ReferencesTable = database[ReferencesTableName];
+			}
+			catch(KeyNotFoundException ex)
+			{
+				throw new Exception("Tabulka "+ReferencesTableName+" nebyla nalezena", ex);
+			}
 			if(ReferencesColumnName != null)
 				ReferencesColumn = ReferencesTable[ReferencesColumnName];
 			else

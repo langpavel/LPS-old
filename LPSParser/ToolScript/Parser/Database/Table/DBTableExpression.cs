@@ -19,9 +19,11 @@ namespace LPS.ToolScript.Parser
 		/// </summary>
 		public bool IsExtension { get; private set; }
 		public string TemplateName { get; private set; }
-		public EvaluatedAttributeList Attribs { get; private set; }
 		public DBTableIndices Indices { get; private set; }
 		public IDBColumnPrimary PrimaryKey { get; private set; }
+
+		public EvaluatedAttributeList Attribs { get; private set; }
+		public DBTableTriggers Triggers { get; private set; }
 
 		public DBTableExpression(string Name, bool IsTemplate, bool IsExtension, string TemplateName)
 		{
@@ -31,6 +33,7 @@ namespace LPS.ToolScript.Parser
 			this.Attribs = new EvaluatedAttributeList();
 			this.Indices = new DBTableIndices();
 			this.TemplateName = TemplateName;
+			this.Triggers = new DBTableTriggers();
 		}
 
 		public void AddAttrib(object attrib)
@@ -42,7 +45,7 @@ namespace LPS.ToolScript.Parser
             }
 			else if (attrib is IDBTableTrigger)
 			{
-				throw new NotImplementedException();
+				this.Triggers.Add((IDBTableTrigger)attrib);
 			}
 			else if (attrib is DBTableIndex)
 			{

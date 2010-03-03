@@ -166,16 +166,16 @@ namespace LPS.ToolScript
             throw new RuleException("Unknown rule");
         }
 
-        private void TokenErrorEvent(LALRParser parser, TokenErrorEventArgs args)
+        protected virtual void TokenErrorEvent(LALRParser parser, TokenErrorEventArgs args)
         {
-            string message = "Token error with input: '"+args.Token.ToString()+"'";
-            Log.Error(message);
+			string message = String.Format("Token error with input: '{0}' at location {1}", args.Token, args.Token.Location);
+			throw new ParserException(message);
         }
 
-        private void ParseErrorEvent(LALRParser parser, ParseErrorEventArgs args)
+        protected virtual void ParseErrorEvent(LALRParser parser, ParseErrorEventArgs args)
         {
-            string message = "Parse error caused by token: '"+args.UnexpectedToken.ToString()+"'";
-            Log.Error(message);
+			string message = String.Format("Parse error caused by token: '{0}' at location {1}", args.UnexpectedToken, args.UnexpectedToken.Location);
+			throw new ParserException(message);
         }
 
 		#endregion

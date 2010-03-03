@@ -104,10 +104,18 @@ namespace LPS.ToolScript.Parser
 			string type = GetDBTypeName();
 			if(String.IsNullOrEmpty(type))
 				throw new Exception("Neznámý databázový typ");
-			if(in_table)
-				return String.Format("{0} {1}", this.Name, type);
+			string attribs = "";
+			if(this.IsPrimary)
+				attribs += " NOT NULL PRIMARY KEY";
 			else
-				return String.Format("ALTER TABLE {0} ADD {1} {2}", this.Table.Name, this.Name, type);
+			{
+				if(this.IsNotNull) attribs += " NOT NULL";
+				if(this.IsUnique) attribs += " UNIQUE";
+			}
+			if(in_table)
+				return String.Format("{0} {1}{2}", this.Name, type, attribs);
+			else
+				return String.Format("ALTER TABLE {0} ADD {1} {2}{3}", this.Table.Name, this.Name, type, attribs);
 		}
 
 		public virtual string[] CreateColumnsSQL (bool in_table)

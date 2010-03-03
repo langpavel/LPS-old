@@ -9,7 +9,7 @@ function check_strana(NEW, Allow_0=false, error="Strana záznamu není nastavena
 		throw error;
 };
 
-var db = database filmarena_sklad
+var DB = database filmarena_sklad
 {
 	/*************************************/
 	/* TEMPLATE TABLES                   */
@@ -21,19 +21,19 @@ var db = database filmarena_sklad
 
 	template table BASE_CREATE template BASE_TS
 	{
-		id_user_create foreign user;
+		id_user_create foreign sys_user;
 		dt_create datetime;
 	}
 
 	template table BASE_MODIFY template BASE_TS
 	{
-		id_user_modify foreign user;
+		id_user_modify foreign sys_user;
 		dt_modify datetime;
 	}
 
 	template table BASE template BASE_CREATE
 	{
-		id_user_modify foreign user;
+		id_user_modify foreign sys_user;
 		dt_modify datetime;
 	}
 
@@ -72,7 +72,7 @@ var db = database filmarena_sklad
 		row_id integer not null;
 		id_check foreign sys_check;
 		err_code varchar(10) not null;
-		popis text not null;
+		popis varchar not null;
 	}
 	index (table_name, table_id);
 
@@ -154,10 +154,10 @@ var db = database filmarena_sklad
 		id_user foreign sys_user not null;
 		path varchar(100) not null;
 		name varchar(100) not null;
-		type varchar(100) not null;
-		value text not null;
+		'type' varchar(100) not null;
+		value varchar not null;
 	}
-	create unique index sys_user_preferences_usr_path_name on sys_user_preferences {id_user, path, name }
+	unique (id_user, path, name);
 
 	table sys_app_config template BASE_MODIFY
 	{
@@ -165,12 +165,9 @@ var db = database filmarena_sklad
 		sys_rok integer not null;
 		sys_mesic integer not null;
 		sys_den integer not null;
-		sys_date timestamp not null;
+		sys_date datetime not null;
 		firma varchar(100) not null;
 		id_adresa foreign adresa;
-	
-		id_user_modify foreign sys_user;
-		dt_modify timestamp without time zone default now;
 	}
 	// insert into sys_app_config values (1, 2010,1,1,'2010-01-01', '24 promotions s.r.o.', 1, 0, now{), now{) }
 	
@@ -182,7 +179,7 @@ var db = database filmarena_sklad
 		id_attachement foreign sys_attachement; // symlink
 		filename varchar(1024) not null;
 		mimetype varchar(40) not null default '';
-		popis text not null;
+		popis varchar not null;
 
 		id_user_lock foreign sys_user;
 		dt_lock datetime;
@@ -274,18 +271,19 @@ var db = database filmarena_sklad
 	table c_skl_pohyb_druh template CISELNIK
 	{
 		id primary;
-		strana integer not null check {strana = 1 or strana = -1);
+		strana integer not null;
 		id_sys_gen foreign sys_gen not null;
 	}
-	
+	before insert, before update position 1 check_strana(NEW, error="Strana dokladu není nastavena");
+
 	table c_skl_pohyb_pol_druh template CISELNIK
 	{
 		id primary;
-		strana integer not null check {strana = 1 or strana = -1);
+		strana integer not null;
 		id_c_skl_pohyb_druh foreign c_skl_pohyb_druh;
 	}
-	
-	
+	before insert, before update position 1 check_strana(NEW, error="Strana dokladu není nastavena");
+
 	// 110_kurz.sql
 
 	// kurz: mnozstvi id_mena_cizi == hodnota_mnozstvi id_mena_kurz
@@ -421,9 +419,10 @@ var db = database filmarena_sklad
 		popis varchar(100) not null default '';
 		datum_pohybu date not null;
 		datum_uc date not null;
-		strana integer not null check {strana = 1 or strana = -1);
+		strana integer not null;
 	}
-	
+	before insert, before update position 1 check_strana(NEW, error="Strana skladového dokladu není nastavena");
+
 	table skl_pohyb_pol template BASE
 	{
 		id primary;
@@ -434,3 +433,4 @@ var db = database filmarena_sklad
 	}
 	before insert, before update position 1 check_strana(NEW, error="Strana položky skladového dokladu není nastavena");
 };
+

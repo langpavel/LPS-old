@@ -222,15 +222,13 @@ namespace LPS.ToolScript
 		// <Normal Stm> ::= throw <Expr> ';'
 		protected override object RuleNormalstmThrowSemi(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Normal Stm> ::= throw <Expr> ';'");
-			//return new
+			return new ThrowStatement(Expr(token,1),null);
 		}
 
 		// <Normal Stm> ::= throw <Expr> ',' <Expr> ';'
 		protected override object RuleNormalstmThrowCommaSemi(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Normal Stm> ::= throw <Expr> ',' <Expr> ';'");
-			//return new
+			return new ThrowStatement(Expr(token,1),Expr(token,3));
 		}
 
 		// <Normal Stm> ::= ';'
@@ -1133,24 +1131,36 @@ namespace LPS.ToolScript
 		#endregion
 
 		#region Database support
-		// <ID List> ::= <ID List> ',' ID
-		protected override object RuleIdlistCommaId(NonterminalToken token)
+		// <Column Name> ::= ID
+		protected override object RuleColumnnameId(NonterminalToken token)
+		{
+			return TText(token,0);
+		}
+
+		// <Column Name> ::= StringLiteral
+		protected override object RuleColumnnameStringliteral(NonterminalToken token)
+		{
+			return StringLiteral.Parse(TText(token,0));
+		}
+
+		// <Column List> ::= <Column List> ',' <Column Name>
+		protected override object RuleColumnlistComma(NonterminalToken token)
 		{
 			List<string> list = Get<List<string>>(token,0);
-			list.Add(TText(token,2));
+			list.Add(Get<string>(token,2));
 			return list;
 		}
 
-		// <ID List> ::= ID
-		protected override object RuleIdlistId(NonterminalToken token)
+		// <Column List> ::= <Column Name>
+		protected override object RuleColumnlist(NonterminalToken token)
 		{
 			List<string> list = new List<string>();
-			list.Add(TText(token,0));
+			list.Add(Get<string>(token,0));
 			return list;
 		}
 
-		// <ID List> ::= 
-		protected override object RuleIdlist(NonterminalToken token)
+		// <Column List> ::=
+		protected override object RuleColumnlist2(NonterminalToken token)
 		{
 			return new List<string>();
 		}
@@ -1256,11 +1266,11 @@ namespace LPS.ToolScript
 			return new List<IDBColumn>();
 		}
 
-		// <DB Column> ::= ID <DB Column Type> <DB Column Attr List> ';'
-		protected override object RuleDbcolumnIdSemi (NonterminalToken token)
+		// <DB Column> ::= <Column Name> <DB Column Type> <DB Column Attr List> ';'
+		protected override object RuleDbcolumnSemi(NonterminalToken token)
 		{
 			DBColumnBase col = Get<DBColumnBase>(token, 1);
-			col.Name = TText(token,0);
+			col.Name = Get<string>(token, 0);
 			col.Attribs = Get<EvaluatedAttributeList>(token, 2);
 			return col;
 		}
@@ -1379,11 +1389,11 @@ namespace LPS.ToolScript
 			return new DBColumnDateTimeRange();
 		}
 
-		// <DB Column Attr List> ::= <DB Column Attr> <DB Column Attr List>
+		// <DB Column Attr List> ::= <DB Column Attr List> <DB Column Attr>
 		protected override object RuleDbcolumnattrlist(NonterminalToken token)
 		{
-			EvaluatedAttributeList list = Get<EvaluatedAttributeList>(token,1);
-			KeyValuePair<string, EvaluatedAttribute> kv = Get<KeyValuePair<string, EvaluatedAttribute>>(token,0);
+			EvaluatedAttributeList list = Get<EvaluatedAttributeList>(token,0);
+			KeyValuePair<string, EvaluatedAttribute> kv = Get<KeyValuePair<string, EvaluatedAttribute>>(token,1);
 			list.Add(kv.Key, kv.Value);
 			return list;
 		}
@@ -1429,11 +1439,12 @@ namespace LPS.ToolScript
 				TText(token,0), new EvaluatedAttribute(Expr(token,2)));
 		}
 
-		// <DB Table Attr List> ::= <DB Table Attr> <DB Table Attr List>
+		// <DB Table Attr List> ::= <DB Table Attr List> <DB Table Attr>
 		protected override object RuleDbtableattrlist(NonterminalToken token)
 		{
-			throw new NotImplementedException("<DB Table Attr List> ::= <DB Table Attr> <DB Table Attr List>");
-			//return new
+			ArrayList list = Get<ArrayList>(token,0);
+			list.Add(CreateObject(token.Tokens[1]));
+			return list;
 		}
 
 		// <DB Table Attr List> ::= 
@@ -1474,7 +1485,7 @@ namespace LPS.ToolScript
 		protected override object RuleDbtriggerrunsComma(NonterminalToken token)
 		{
 			DBTriggerPosition curpos = Get<DBTriggerPosition>(token,0);
-			DBTriggerPosition newpos = Get<DBTriggerPosition>(token,1);
+			DBTriggerPosition newpos = Get<DBTriggerPosition>(token,2);
 			if((int)(newpos & curpos) != 0 && curpos != DBTriggerPosition.None)
 				throw new Exception("Pozice triggeru byla nastavena duplicitně");
 			return curpos | newpos;

@@ -127,8 +127,11 @@ Comment Line  = '//'
 ! Database support
 ! ===================================================================
 
-<ID List>		::=	<ID List> ',' ID
-				|	ID
+<Column Name>	::=	ID
+				|	StringLiteral
+
+<Column List>	::=	<Column List> ',' <Column Name>
+				|	<Column Name>
 				|
 
 <Database>		::=	'database' ID '{' <DB Tables> '}'
@@ -146,7 +149,7 @@ Comment Line  = '//'
 <DB Columns>	::=	<DB Columns> <DB Column>
 				|
 
-<DB Column>		::=	ID <DB Column Type> <DB Column Attr List> ';'
+<DB Column>		::=	<Column Name> <DB Column Type> <DB Column Attr List> ';'
 
 <DB Column Type> ::= 'primary'
 				|	'foreign' ID
@@ -178,8 +181,8 @@ Comment Line  = '//'
 <DB Table Attr List> ::= <DB Table Attr List> <DB Table Attr>
 				|
 
-<DB Table Attr>	::=	'index' '(' <ID List> ')' ';'
-				|	'unique' '(' <ID List> ')' ';'
+<DB Table Attr>	::=	'index' '(' <Column List> ')' ';'
+				|	'unique' '(' <Column List> ')' ';'
 				|	<DB Trigger Runs> 'position' <NumLiteral> <Stm>
 				|	ID '=' <Value> ';'
 

@@ -15,7 +15,7 @@ namespace LPS.ToolScript.Parser
 		protected override string GetDBTypeName ()
 		{
 			if(HasDatePart && HasTimePart)
-				return "datetime";
+				return "timestamp";
 			else if(HasDatePart)
 				return "date";
 			else
