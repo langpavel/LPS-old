@@ -74,7 +74,7 @@ var DB = database filmarena_sklad
 		err_code varchar(10) not null;
 		popis varchar not null;
 	}
-	index (table_name, table_id);
+	index (table_name, row_id);
 
 	table sys_check template BASE_TS
 	{

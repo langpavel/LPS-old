@@ -166,12 +166,42 @@ namespace LPS.ToolScript.Parser
 			}
 
 			sb.AppendLine(");");
+
+			foreach(IDBColumn col in this.Values)
+			{
+				if(col.IsUnique && !col.IsAbstract)
+					sb.AppendFormat("CREATE UNIQUE INDEX {0}_{1} ON {0}({1});\n",
+						this.Name, col.Name);
+				else if(col.IsIndex && !col.IsAbstract)
+					sb.AppendFormat("CREATE INDEX {0}_{1} ON {0}({1});\n",
+						this.Name, col.Name);
+			}
+			foreach(DBTableIndex index in this.Indices)
+			{
+				sb.AppendFormat("CREATE{0} INDEX {1}_{2} ON {1}({3});\n",
+					index.IsUnique ? " UNIQUE" : "",
+					this.Name,
+					String.Join("_", index.ColumnNames),
+					String.Join(", ", index.ColumnNames));
+			}
+
 			return sb.ToString();
 		}
 
 		public string CreateForeignKeysSQL()
 		{
 			StringBuilder sb = new StringBuilder();
+
+			foreach(IDBColumn col in this.Values)
+				if(col is IDBColumnForeign)
+				{
+					IDBColumnForeign fk = (IDBColumnForeign)col;
+					sb.AppendFormat("ALTER TABLE {0} ADD FOREIGN KEY ({1}) REFERENCES {2}({3});\n",
+						this.Name,
+						fk.Name,
+						fk.ReferencesTable.Name,
+						fk.ReferencesColumn.Name);
+				}
 
 			return sb.ToString();
 		}
