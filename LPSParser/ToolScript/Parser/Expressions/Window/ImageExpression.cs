@@ -22,6 +22,19 @@ namespace LPS.ToolScript.Parser
 			return false;
 		}
 
+		public static Pixbuf CreatePixbuf(string stockname, Widget widget, IconSize size)
+		{
+			IconSet icons = IconFactory.LookupDefault(stockname);
+			return icons.RenderIcon(widget.Style, TextDirection.Ltr, StateType.Normal, size, widget, null);
+		}
+
+		public static Gtk.Image CreateImage(string stockname, IconSize size)
+		{
+			Gtk.Image image = new Gtk.Image();
+			image.Pixbuf = CreatePixbuf(stockname, image, size);
+			return image;
+		}
+
 		protected override Gtk.Widget CreateWidget()
 		{
 			if(this.HasAttribute("icon"))

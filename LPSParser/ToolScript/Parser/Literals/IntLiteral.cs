@@ -1,5 +1,6 @@
 using System;
 using com.calitha.goldparser;
+using System.Globalization;
 
 namespace LPS.ToolScript.Parser
 {
@@ -8,7 +9,7 @@ namespace LPS.ToolScript.Parser
 		private long val;
 		public IntLiteral(TerminalToken token)
 		{
-			val = Int64.Parse(token.Text);
+			val = Parse(token.Text);
 		}
 
 		public IntLiteral(long value)
@@ -34,6 +35,11 @@ namespace LPS.ToolScript.Parser
 		public override bool EvalAsBool(Context context)
 		{
 			throw new Exception("Nelze vyhodnotit int jako boolean");
+		}
+
+		public static long Parse(string text)
+		{
+			return Int64.Parse(text, CultureInfo.InvariantCulture);
 		}
 	}
 }

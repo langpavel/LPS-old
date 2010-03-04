@@ -48,10 +48,13 @@ namespace LPS.ToolScript.Parser
 					{
 						return method.Invoke(Instance, vals);
 					}
-					catch(Exception err)
+					catch(TargetInvocationException err)
 					{
-						Log.Error(err);
-						throw err;
+						// unwrap exception
+						if(err.InnerException != null)
+							throw err.InnerException;
+						else
+							throw err;
 					}
 				}
 NextMethod:		;

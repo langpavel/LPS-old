@@ -63,6 +63,7 @@ namespace LPS.ToolScript.Parser
 				MemberTypes.Property,
 				BindingFlags.Public | BindingFlags.Instance,
 				SetGtkPropertyValue, widget);
+			widget.Visible = GetAttribute<bool>("visible", !HasAttribute("hidden"));
 		}
 
 		private bool SetGtkPropertyValue(MemberInfo member, object widget)

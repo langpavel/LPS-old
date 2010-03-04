@@ -28,39 +28,46 @@ namespace LPS.ToolScript.Parser
 					dialog.VBox.Add(Child.Build());
 				foreach(string s in GetAttribute<Array>("dialog"))
 				{
-					switch(s.ToLower())
+					string[] bits = s.Split(':');
+					string text = bits[0];
+					int response = 0;
+					if(bits.Length > 4)
+						throw new Exception("Neplatný počet parametrů tlačítka v poli tlačítek dialogu");
+					if(bits.Length > 1)
+						response = (int)IntLiteral.Parse(bits[1]);
+					Label l = new Label();
+					l.Markup = text;
+					Button btn;
+					if(bits.Length > 2 && !String.IsNullOrEmpty(bits[2]))
 					{
-					case "reject":
-						dialog.AddButton(s, ResponseType.Reject);
-						break;
-					case "accept":
-						dialog.AddButton(s, ResponseType.Accept);
-						break;
-					case "ok":
-						dialog.AddButton(s, ResponseType.Ok);
-						break;
-					case "cancel":
-						dialog.AddButton(s, ResponseType.Cancel);
-						break;
-					case "close":
-						dialog.AddButton(s, ResponseType.Close);
-						break;
-					case "yes":
-						dialog.AddButton(s, ResponseType.Yes);
-						break;
-					case "no":
-						dialog.AddButton(s, ResponseType.No);
-						break;
-					case "apply":
-						dialog.AddButton(s, ResponseType.Apply);
-						break;
-					case "help":
-						dialog.AddButton(s, ResponseType.Help);
-						break;
-					default:
-						dialog.AddButton(s, ResponseType.None);
-						break;
+						HBox hbox = new HBox(false, 0);
+						hbox.PackStart(ImageExpression.CreateImage(bits[2], IconSize.Button));
+						hbox.PackStart(l);
+						btn = new Button(hbox);
 					}
+					else
+						btn = new Button(l);
+					btn.ShowAll();
+					dialog.AddActionWidget(btn, response);
+					if(bits.Length > 3)
+					{
+						switch(bits[3].ToLower())
+						{
+						case "default":
+							btn.CanDefault = true;
+							dialog.Default = btn;
+							break;
+						case "cancel":
+							// set as cancel action - how?
+							break;
+						case "":
+						case "none":
+							break;
+						default:
+							throw new Exception("Neznámý příznak tlačítka dialogu");
+						}
+					}
+
 				}
 				return dialog;
 			}
