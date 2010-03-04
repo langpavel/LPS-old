@@ -34,7 +34,7 @@ namespace LPS.ToolScript.Parser
 				if(result.Value != null)
 				{
 					Type t = result.Value.GetType();
-					if(t != typeof(T) || t.IsSubclassOf(typeof(T)))
+					if(t != typeof(T) && !t.IsSubclassOf(typeof(T)))
 						return (T)Convert.ChangeType(result.Value, typeof(T));
 				}
 				return (T) result.Value;
