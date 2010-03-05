@@ -51,6 +51,8 @@ namespace LPS.ToolScript.Parser
 		{
 			Gtk.Widget widget = CreateWidget(context);
 			SetWidgetAttributes(widget);
+			if(HasAttribute("name"))
+				context.InitVariable(GetAttribute<string>("name"), widget, false);
 			return widget;
 		}
 

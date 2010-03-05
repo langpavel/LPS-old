@@ -43,6 +43,7 @@ namespace LPS.ToolScript.Parser
 			if(HasAttribute("dialog"))
 			{
 				Dialog dialog = new Dialog();
+				dialog.AddAccelGroup(context.AccelGroup);
 				SetWindowAttribs(dialog);
 				if(Child != null)
 					dialog.VBox.Add(Child.Build(context));
@@ -94,6 +95,7 @@ namespace LPS.ToolScript.Parser
 			else
 			{
 				win = new Window(Gtk.WindowType.Toplevel);
+				win.AddAccelGroup(context.AccelGroup);
 				if(Child != null)
 					win.Add(Child.Build(context));
 			}

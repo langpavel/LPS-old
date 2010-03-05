@@ -153,6 +153,12 @@ namespace LPS.ToolScript
 			return clone;
 		}
 
+		public object this[string name]
+		{
+			get { return GetVariable(name); }
+			set { SetVariable(name, value); }
+		}
+
 		object ICloneable.Clone()
 		{
 			return this.Clone();
