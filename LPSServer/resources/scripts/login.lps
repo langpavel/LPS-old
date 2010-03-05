@@ -3,12 +3,15 @@ function Esc(text)
 	return text.ToString().Replace("&","&amp;").Replace("<","&lt;").Replace(">","&gt;");
 };
 
-function ShowTestMessage(server, message, err=false)
+function ShowTestMessage(server, message, err=null)
 {
-	using(var w = (window title="Test spojení"; dialog=["Ok"]; iconset=err?"gtk-dialog-error":"gtk-dialog-info";
+	using(var w = (window title="Test spojení"; dialog=["Ok"]; iconset=(err!=null)?"gtk-dialog-error":"gtk-dialog-info";
 		hbox
-			image dialog_stock=err?"gtk-dialog-error":"gtk-dialog-info";
-			["<b>Server:</b> {0}\n{1}" / [server, message]] name="message";
+			image dialog_stock=(err!=null)?"gtk-dialog-error":"gtk-dialog-info"; rowspan=2; expand=false;
+			vbox
+				["<b>Server:</b> {0}\n{1}" / [server, message]] xalign=0; expand=false;
+				scrolled visible=(err!=null); col=1; newrow; width_request=350; ["<small><tt>{0}</tt></small>" / err] xalign=0; yalign=0;
+			end
 		end).Create())
 	{
 		w.ShowDialog();
@@ -26,16 +29,16 @@ function TestClicked()
 		if(result)
 			ShowTestMessage(server, "Spojení navázáno");
 		else
-			ShowTestMessage(server, "Spojení <b>nebylo</b> navázáno.\nZkontrolujte URL adresu.", true);
+			ShowTestMessage(server, "Spojení <b>nebylo</b> navázáno.\nZkontrolujte URL adresu.", "Pravděpodobně neplatná URL");
 	}
 	catch(var err)
 	{
-		ShowTestMessage(server, "Spojení <b>nebylo</b> navázáno:\n<small><tt>{0}</tt></small>" / Esc(err), true);
+		ShowTestMessage(server, "Spojení <b>nebylo</b> navázáno", Esc(err));
 	}
 };
 
 var wi = (
-window LOGIN 
+window LOGIN
 	title="LPS Přihlášení"; iconset="gtk-dialog-authentication";
 	dialog=["<b>Ok</b>:1:gtk-yes:default","Zrušit:2:gtk-cancel:cancel"];
 table

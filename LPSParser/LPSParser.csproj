@@ -184,6 +184,7 @@
     <Compile Include="ToolScript\Parser\Window\WindowExpression.cs" />
     <Compile Include="ToolScript\Parser\Statements\TryBlockStatement.cs" />
     <Compile Include="ToolScript\Parser\Statements\CatchStatement.cs" />
+    <Compile Include="ToolScript\Parser\Window\ScrolledExpression.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />

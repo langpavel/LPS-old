@@ -1077,6 +1077,12 @@ namespace LPS.ToolScript
 			return new AlignExpression(null, Get<EvaluatedAttributeList>(token, 1), Get<IWidgetBuilder>(token,2));
 		}
 
+		// <Layout Block> ::= scrolled <WndParam List> <Layout Block>
+		protected override object RuleLayoutblockScrolled (NonterminalToken token)
+		{
+			return new ScrolledExpression(null, Get<EvaluatedAttributeList>(token, 1), Get<IWidgetBuilder>(token,2));
+		}
+
 		// <Layout Block> ::= image <WndParam List>
 		protected override object RuleLayoutblockImage(NonterminalToken token)
 		{

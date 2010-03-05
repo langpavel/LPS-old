@@ -241,6 +241,7 @@ Comment Line  = '//'
 				|	'button' <WndParam List> 'end'
 				|	'toolbutton' <WndParam List> <Layout Block>
 				|	'toolbutton' <WndParam List> 'end'
+				|	'scrolled' <WndParam List> <Layout Block>
 				|	'align' <WndParam List> <Layout Block>
 				|	'image' <WndParam List>
 				|	StringLiteral <WndParam List>

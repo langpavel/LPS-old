@@ -6,6 +6,7 @@ using LPS;
 using Microsoft.Win32;
 using LPS.Client;
 using System.Text;
+using LPS.ToolScript;
 
 namespace LPS.Client.Sklad
 {
@@ -22,6 +23,7 @@ namespace LPS.Client.Sklad
 		public static ServerConnection Connection { get; set; }
 		public static string ServerUrl { get; set; }
 		public static string UserLogin { get; set; }
+		public static ExecutionContext RootContext { get; set; }
 		
 		public static MainForm MainForm { get; set; }
 		
@@ -51,6 +53,8 @@ namespace LPS.Client.Sklad
 			//FormFactory.Register(new FormXmlResourceInfo<HTMLMessageDialog>("html-message", "ui-shared.glade", "dialogHTMLMessage"));
 			FormFactory.Register(new FormXmlResourceInfo<MainForm>("main", "ui-sklad.glade", "windowMain"));
 			FormFactory.Register(new FormXmlResourceInfo<AdresaForm>("adresa", "adresa.glade", "windowAdresa"));
+
+			RootContext = ExecutionContext.CreateRootContext(new ToolScriptParser());
 
 			GLib.ExceptionManager.UnhandledException += HandleUnhandledException;
 
