@@ -65,5 +65,17 @@ NextMethod:		;
 				sb.AppendLine(method.ToString());
 			throw new InvalidOperationException(sb.ToString());
 		}
+
+		public EventHandler GetEventHandler (IExecutionContext CustomContext)
+		{
+			if(Methods.Length != 1 || Methods[0].GetParameters().Length != 2)
+				throw new Exception("Metoda nelze použít jako event handler");
+			return new EventHandler(AsEventHandler);
+		}
+
+		private void AsEventHandler(object sender, EventArgs args)
+		{
+			Methods[0].Invoke(Instance, new object[] {sender, args});
+		}
 	}
 }

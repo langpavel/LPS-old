@@ -36,5 +36,11 @@ namespace LPS.ToolScript
 				Invoked(this, args);
 			return args.ReturnValue;
 		}
+
+		public EventHandler GetEventHandler (IExecutionContext CustomContext)
+		{
+			throw new NotImplementedException();
+		}
+
 	}
 }

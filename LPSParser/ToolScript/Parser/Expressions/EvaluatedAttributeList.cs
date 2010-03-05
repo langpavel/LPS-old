@@ -78,7 +78,7 @@ namespace LPS.ToolScript.Parser
 				if(result.Value != null)
 				{
 					Type t = result.Value.GetType();
-					if(t != type || t.IsSubclassOf(type))
+					if(t != type && !t.IsSubclassOf(type))
 					{
 						value = Convert.ChangeType(result.Value, type);
 						return true;

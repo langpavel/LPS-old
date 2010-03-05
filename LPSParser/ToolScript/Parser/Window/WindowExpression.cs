@@ -24,7 +24,7 @@ namespace LPS.ToolScript.Parser
 
 		public WindowContext Create()
 		{
-			WindowContext result = wincontext.CloneWindowContext();
+			WindowContext result = (WindowContext)wincontext.Clone();
 			result.Window = (Gtk.Window)Build(result);
 			return result;
 		}

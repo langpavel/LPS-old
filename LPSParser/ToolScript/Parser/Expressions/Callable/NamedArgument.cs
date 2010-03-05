@@ -16,11 +16,16 @@ namespace LPS.ToolScript.Parser
 			this.Value = SpecialValue.VariableNotSet;
 		}
 
+		public NamedArgument(string Name, IExpression DefaultValue, object Value)
+		{
+			this.Name = Name;
+			this.DefaultValue = DefaultValue;
+			this.Value = Value;
+		}
+
 		public void Run(IExecutionContext context)
 		{
-			if(this.DefaultValue == null)
-				this.Value = SpecialValue.VariableNotSet;
-			else
+			if(this.DefaultValue != null)
 				this.Value = this.DefaultValue.Eval(context);
 		}
 	}

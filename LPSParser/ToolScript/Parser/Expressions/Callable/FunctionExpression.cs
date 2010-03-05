@@ -53,6 +53,47 @@ namespace LPS.ToolScript.Parser
 			}
 		}
 
+		private class EventHandlerHelper
+		{
+			private FunctionExpression Func;
+			private IExecutionContext CustomContext;
+
+			public EventHandlerHelper(FunctionExpression Func, IExecutionContext CustomContext)
+			{
+				this.Func = Func;
+				this.CustomContext = CustomContext;
+			}
+
+			public void Invoke(object sender, EventArgs args)
+			{
+				IExecutionContext context;
+				if(CustomContext != null)
+					context = CustomContext.CreateChildContext();
+				else
+					context = Func.Context.CreateChildContext();
+				try
+				{
+					context.InitVariable("sender", sender);
+					context.InitVariable("args", args);
+					Func.Body.Run(context);
+				}
+				catch(IterationTermination info)
+				{
+					if(info.Reason != TerminationReason.Return)
+						throw new InvalidOperationException("volání funkce bylo přerušeno jiným důvodem než return: " + info.Reason.ToString());
+				}
+				finally
+				{
+					context.Dispose();
+				}
+			}
+		}
+
+		public EventHandler GetEventHandler(IExecutionContext CustomContext)
+		{
+			return new EventHandler((new EventHandlerHelper(this, CustomContext)).Invoke);
+		}
+
 		public override string ToString ()
 		{
 			return string.Format("function({0})", Parameters.ToString());

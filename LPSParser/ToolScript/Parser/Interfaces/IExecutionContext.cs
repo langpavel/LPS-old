@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace LPS.ToolScript
 {
-	public interface IExecutionContext : IDisposable
+	public interface IExecutionContext : IDisposable, ICloneable
 	{
 		IExecutionContext GlobalContext { get; }
 		IExecutionContext ParentContext { get; }

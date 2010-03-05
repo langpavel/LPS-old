@@ -5,5 +5,6 @@ namespace LPS.ToolScript.Parser
 	public interface IFunction
 	{
 		object Execute(NamedArgumentList arguments);
+		EventHandler GetEventHandler(IExecutionContext CustomContext);
 	}
 }

@@ -19,15 +19,10 @@ namespace LPS.ToolScript
 			return new WindowContext(parent, parent.GlobalContext, parent.Parser);
 		}
 
-		public WindowContext CloneWindowContext()
-		{
-			WindowContext clone = (WindowContext)base.Clone();
-			clone.AccelGroup = new Gtk.AccelGroup();
-			return clone;
-		}
-
 		public WindowContext Show()
 		{
+			if(this.Window is Gtk.Dialog)
+				throw new InvalidOperationException("Okno je dialog, použij ShowDialog()");
 			this.Window.ShowAll();
 			return this;
 		}
@@ -43,6 +38,24 @@ namespace LPS.ToolScript
 			finally
 			{
 				this.Window.Hide();
+			}
+		}
+
+		public override object Clone ()
+		{
+			WindowContext clone = (WindowContext)base.Clone();
+			clone.Window = null;
+			clone.AccelGroup = new Gtk.AccelGroup();
+			return clone;
+		}
+
+		public override void Dispose ()
+		{
+			base.Dispose();
+			if(this.Window != null)
+			{
+				this.Window.Destroy();
+				this.Window = null;
 			}
 		}
 

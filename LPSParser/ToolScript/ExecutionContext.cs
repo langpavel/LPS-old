@@ -5,7 +5,7 @@ using LPS.ToolScript.Parser;
 
 namespace LPS.ToolScript
 {
-	public class ExecutionContext : IExecutionContext, ICloneable
+	public class ExecutionContext : IExecutionContext
 	{
 		public IExecutionContext GlobalContext { get; private set; }
 		public IExecutionContext ParentContext { get; private set; }
@@ -97,7 +97,7 @@ namespace LPS.ToolScript
 			return SpecialValue.Void;
 		}
 
-		public void Dispose()
+		public virtual void Dispose()
 		{
 			this.LocalVariables.Clear();
 		}
@@ -139,7 +139,13 @@ namespace LPS.ToolScript
 			this.LocalVariables.Remove(name);
 		}
 
-		public virtual ExecutionContext Clone()
+		public object this[string name]
+		{
+			get { return GetVariable(name); }
+			set { SetVariable(name, value); }
+		}
+
+		public virtual object Clone()
 		{
 			ExecutionContext clone = (ExecutionContext)this.MemberwiseClone();
 			clone.LocalVariables = new Dictionary<string, object>();
@@ -151,17 +157,6 @@ namespace LPS.ToolScript
 					clone.LocalVariables.Add(kv.Key, kv.Value);
 			}
 			return clone;
-		}
-
-		public object this[string name]
-		{
-			get { return GetVariable(name); }
-			set { SetVariable(name, value); }
-		}
-
-		object ICloneable.Clone()
-		{
-			return this.Clone();
 		}
 	}
 }
