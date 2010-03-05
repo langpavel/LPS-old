@@ -13,7 +13,6 @@ namespace LPS.ToolScript
 {
     public class ToolScriptParser : ToolScriptParserBase
     {
-
 		public object ParseAndRun(string source)
 		{
 			StatementList list = this.Parse(source);
@@ -240,57 +239,69 @@ namespace LPS.ToolScript
 		// <TryFinally> ::= try <Normal Stm> <Catchs> finally <Normal Stm>
 		protected override object RuleTryfinallyTryFinally(NonterminalToken token)
 		{
-			throw new NotImplementedException("<TryFinally> ::= try <Normal Stm> <Catchs> finally <Normal Stm>");
-			//return new
+			return new TryBlockStatement(
+				Statement(token,1),
+				Get<List<CatchStatement>>(token,2),
+				Statement(token,4));
 		}
 
 		// <TryFinally> ::= try <Normal Stm> <Catchs>
 		protected override object RuleTryfinallyTry(NonterminalToken token)
 		{
-			throw new NotImplementedException("<TryFinally> ::= try <Normal Stm> <Catchs>");
-			//return new
+			return new TryBlockStatement(
+				Statement(token,1),
+				Get<List<CatchStatement>>(token,2),
+				null);
 		}
 
 		// <Catchs> ::= <Catch> <Catchs>
 		protected override object RuleCatchs(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Catchs> ::= <Catch> <Catchs>");
-			//return new
+			List<CatchStatement> list = Get<List<CatchStatement>>(token,1);
+			list.Insert(0, Get<CatchStatement>(token,0));
+			return list;
 		}
 
 		// <Catchs> ::= 
 		protected override object RuleCatchs2(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Catchs> ::= ");
-			//return new
+			return new List<CatchStatement>();
 		}
 
 		// <Catch> ::= catch '(' <QualifiedName> ID ')' <Normal Stm>
 		protected override object RuleCatchCatchLparanIdRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Catch> ::= catch '(' <QualifiedName> ID ')' <Normal Stm>");
-			//return new
+			return new CatchStatement(
+				Get<QualifiedName>(token,2),
+				TText(token,3),
+				Statement(token,5));
 		}
 
 		// <Catch> ::= catch '(' type <QualifiedName> ')' <Normal Stm>
 		protected override object RuleCatchCatchLparanTypeRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Catch> ::= catch '(' type <QualifiedName> ')' <Normal Stm>");
-			//return new
+			return new CatchStatement(
+				Get<QualifiedName>(token,3),
+				null,
+				Statement(token,5));
 		}
 
 		// <Catch> ::= catch '(' var ID ')' <Normal Stm>
 		protected override object RuleCatchCatchLparanVarIdRparan(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Catch> ::= catch '(' var ID ')' <Normal Stm>");
-			//return new
+			return new CatchStatement(
+				null,
+				TText(token,3),
+				Statement(token,5));
 		}
 
 		// <Catch> ::= catch <Block>
 		protected override object RuleCatchCatch(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Catch> ::= catch <Block>");
-			//return new
+			return new CatchStatement(
+				null,
+				null,
+				Statement(token,1));
 		}
 
 		// <Func args> ::= <Func args> ',' <Func Arg>

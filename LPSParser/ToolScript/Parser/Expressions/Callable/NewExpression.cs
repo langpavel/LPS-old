@@ -1,6 +1,7 @@
 using System;
 using LPS.ToolScript.Parser;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace LPS.ToolScript.Parser
 {
@@ -20,9 +21,15 @@ namespace LPS.ToolScript.Parser
 
 			string typename = TypeName.ToString();
 
-			Type t = Type.GetType(typename);
+			Type t = null;
+			foreach(Assembly a in AppDomain.CurrentDomain.GetAssemblies())
+			{
+				t = a.GetType(typename, false);
+				if(t != null)
+					break;
+			}
 			if(t == null)
-				throw new Exception("Typ " + TypeName.ToString() + " nebyl nalezen");
+				throw new Exception("Typ '" + typename + "' nebyl nalezen");
 
 			return Activator.CreateInstance(t, Arguments.ValuesToArray());
 		}

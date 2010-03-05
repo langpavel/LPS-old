@@ -1,0 +1,51 @@
+function Esc(text)
+{
+	return text.ToString().Replace("&","&amp;").Replace("<","&lt;").Replace(">","&gt;");
+};
+
+function ShowTestMessage(server, message, err=false)
+{
+	using(var w = (window title="Test spojení"; dialog=["Ok"]; iconset=err?"gtk-dialog-error":"gtk-dialog-info";
+		hbox
+			image dialog_stock=err?"gtk-dialog-error":"gtk-dialog-info";
+			["<b>Server:</b> {0}\n{1}" / [server, message]] name="message";
+		end).Create())
+	{
+		w.ShowDialog();
+	};
+};
+
+function TestClicked()
+{
+	var server = server.Text;
+	var result = false;
+	try
+	{
+		var conn = new LPS.Client.ServerConnection(server);
+		result = conn.Ping();
+		if(result)
+			ShowTestMessage(server, "Spojení navázáno");
+		else
+			ShowTestMessage(server, "Spojení <b>nebylo</b> navázáno.\nZkontrolujte URL adresu.", true);
+	}
+	catch(var err)
+	{
+		ShowTestMessage(server, "Spojení <b>nebylo</b> navázáno:\n<small><tt>{0}</tt></small>" / Esc(err), true);
+	}
+};
+
+var wi = (
+window LOGIN 
+	title="LPS Přihlášení"; iconset="gtk-dialog-authentication";
+	dialog=["<b>Ok</b>:1:gtk-yes:default","Zrušit:2:gtk-cancel:cancel"];
+table
+	image dialog_stock="gtk-dialog-authentication"; expand=false; fill=false;
+	"<big><b>Přihlášení na server</b></big>"
+	"Server"   xalign=0; xpadding=5; newrow; [edit] name="server"; activates_default; width_request=300; tooltip_markup="<b>Server</b>: URL adresa webové služby pro přístup k datům";
+		button can_focus=false; tooltip_markup="<b>Test spojení</b>: Otestuje zda je URL adresa serveru správná a zda je server připraven pro připojení"; clicked=TestClicked;
+			hbox image small_stock="gtk-connect"; "Ověřit" end
+	"Login"    xalign=0; xpadding=5; newrow; [edit] name="login"; colspan=2; activates_default; tooltip_markup="<b>Login</b>: Přihlašovací jméno uživatele";
+	"Heslo" xalign=0; xpadding=5; newrow; [edit] name="password"; colspan=2; activates_default; visibility=false; tooltip_markup="<b>Heslo</b>: Přihlašovací heslo uživatele";
+end).Create();
+var result = [wi.ShowDialog(), wi["server"].Text, wi["login"].Text, wi["password"].Text];
+return result;

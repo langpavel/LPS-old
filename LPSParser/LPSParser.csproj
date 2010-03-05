@@ -182,6 +182,8 @@
     <Compile Include="ToolScript\Parser\Window\WidgetBase.cs" />
     <Compile Include="ToolScript\Parser\Window\WidgetFromExpression.cs" />
     <Compile Include="ToolScript\Parser\Window\WindowExpression.cs" />
+    <Compile Include="ToolScript\Parser\Statements\TryBlockStatement.cs" />
+    <Compile Include="ToolScript\Parser\Statements\CatchStatement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />

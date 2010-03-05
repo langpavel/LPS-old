@@ -82,6 +82,7 @@
     <Folder Include="resources\forms\" />
     <Folder Include="resources\forms\composits\" />
     <Folder Include="sql\" />
+    <Folder Include="resources\scripts\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\tree.xml" />
@@ -125,5 +126,6 @@
     <None Include="sql\900_indices.sql" />
     <None Include="sql\910_foreign_keys.sql" />
     <None Include="sql\all.sql" />
+    <None Include="resources\scripts\login.lps" />
   </ItemGroup>
 </Project>

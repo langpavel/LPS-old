@@ -90,6 +90,10 @@
       <Project>{32418C8F-DD0F-40F8-AA83-ABC13A93FA51}</Project>
       <Name>LPSClientSharedGUI</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LPSParser\LPSParser.csproj">
+      <Project>{EA93C136-1964-4122-B619-0EBB3462938F}</Project>
+      <Name>LPSParser</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />

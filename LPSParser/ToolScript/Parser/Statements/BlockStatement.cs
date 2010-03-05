@@ -5,7 +5,7 @@ using com.calitha.goldparser;
 
 namespace LPS.ToolScript.Parser
 {
-	public class BlockStatement: IStatement
+	public class BlockStatement: StatementBase
 	{
 		public bool CreateChildContext { get; set; }
 		public StatementList Statements { get; private set; }
@@ -15,7 +15,7 @@ namespace LPS.ToolScript.Parser
 			this.Statements = Statements ?? new StatementList();
 		}
 
-		public void Run (IExecutionContext context)
+		public override void Run (IExecutionContext context)
 		{
 			IExecutionContext child_context =
 				CreateChildContext ? context.CreateChildContext() : context;
