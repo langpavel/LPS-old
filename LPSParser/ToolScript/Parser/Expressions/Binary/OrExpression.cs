@@ -9,12 +9,12 @@ namespace LPS.ToolScript.Parser
 		{
 		}
 
-		public override object Eval (Context context, object val1, object val2)
+		public override object Eval (IExecutionContext context, object val1, object val2)
 		{
 			return ((val1 is bool && (bool)val1 == true) || (val1 != null)) ? val1 : val2;
 		}
 
-		public override bool EvalAsBool (Context context, object val1, object val2)
+		public override bool EvalAsBool (IExecutionContext context, object val1, object val2)
 		{
 			return (bool)val1 || (bool)val2;
 		}

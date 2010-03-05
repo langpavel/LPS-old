@@ -17,7 +17,7 @@ namespace LPS.Util
 			get { return "Přihlášení na server"; }
 		}
 
-		public override object Execute(Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		public override object Execute(IExecutionContext context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
 			string url = Get<string>(Params, 0);
 			ServerConnection conn = new ServerConnection(url);

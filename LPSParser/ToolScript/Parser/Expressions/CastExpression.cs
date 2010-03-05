@@ -12,7 +12,7 @@ namespace LPS.ToolScript.Parser
 			this.TypeName = TypeName;
 		}
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			Type t = Type.GetType(TypeName.ToString());
 			return Convert.ChangeType(Expr.Eval(context), t);

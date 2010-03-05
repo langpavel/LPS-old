@@ -14,7 +14,7 @@ namespace LPS.ToolScript.Parser
 			this.Params = Params;
 		}
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			Params.Eval(context);
 			if(this.Name != null)
@@ -95,7 +95,7 @@ namespace LPS.ToolScript.Parser
 			return gtkprop;
 		}
 
-		public override bool EvalAsBool (Context context)
+		public override bool EvalAsBool (IExecutionContext context)
 		{
 			throw new InvalidOperationException("Widget nelze přetypovat na boolean");
 		}

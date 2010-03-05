@@ -30,7 +30,7 @@ namespace LPS.Util
 			return (T)Convert.ChangeType(val, typeof(T));
 		}
 
-		public abstract object Execute(Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params);
+		public abstract object Execute(IExecutionContext context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params);
 
 		public override string ToString ()
 		{
@@ -39,7 +39,7 @@ namespace LPS.Util
 
 		public virtual object Execute (NamedArgumentList argumentValues)
 		{
-			Context context = UtilMainWindow.Instance.ParserContext;
+			IExecutionContext context = UtilMainWindow.Instance.ParserContext;
 			TextWriter Out = (TextWriter)context.GetVariable("__STD_OUT");
 			TextWriter Info = (TextWriter)context.GetVariable("__STD_INFO");
 			TextWriter Err = (TextWriter)context.GetVariable("__STD_ERR");

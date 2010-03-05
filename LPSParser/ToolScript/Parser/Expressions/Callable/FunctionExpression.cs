@@ -22,9 +22,9 @@ namespace LPS.ToolScript.Parser
 			this.Body = body;
 		}
 
-		private Context Context;
+		private IExecutionContext Context;
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			this.Context = context.CreateChildContext();
 

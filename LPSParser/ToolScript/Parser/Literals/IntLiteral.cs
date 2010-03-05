@@ -17,7 +17,7 @@ namespace LPS.ToolScript.Parser
 			val = value;
 		}
 
-		public override object Eval(Context context)
+		public override object Eval(IExecutionContext context)
 		{
 			return val;
 		}
@@ -32,7 +32,7 @@ namespace LPS.ToolScript.Parser
 			return string.Format("{0}", val);
 		}
 
-		public override bool EvalAsBool(Context context)
+		public override bool EvalAsBool(IExecutionContext context)
 		{
 			throw new Exception("Nelze vyhodnotit int jako boolean");
 		}

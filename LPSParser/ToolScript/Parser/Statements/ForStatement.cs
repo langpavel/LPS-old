@@ -17,7 +17,7 @@ namespace LPS.ToolScript.Parser
 			this.step = step;
 		}
 
-		public override void Run (Context context)
+		public override void Run (IExecutionContext context)
 		{
 			initialization.Run(context);
 			while(condition.EvalAsBool(context))

@@ -12,7 +12,7 @@ namespace LPS.ToolScript.Parser
 			this.expr2 = expr2;
 		}
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			object o = expr2.Eval(context);
 			/*

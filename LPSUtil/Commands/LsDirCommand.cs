@@ -16,7 +16,7 @@ namespace LPS.Util
 			get { return "vypíše obsah adresáře"; }
 		}
 
-		public override object Execute(LPS.ToolScript.Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		public override object Execute(LPS.ToolScript.IExecutionContext context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
 			string p = Get<string>(Params, 0);
 			if(String.IsNullOrEmpty(p))

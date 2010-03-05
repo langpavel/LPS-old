@@ -10,7 +10,7 @@ namespace LPS.ToolScript.Parser
 		{
 		}
 
-		public override object Eval (Context context, object val1, object val2)
+		public override object Eval (IExecutionContext context, object val1, object val2)
 		{
 			if(IsNumeric(val1) && IsNumeric(val2))
 			{
@@ -25,7 +25,7 @@ namespace LPS.ToolScript.Parser
 			    (val2 == null)?"null":val2.GetType().Name));
 		}
 
-		public override bool EvalAsBool (Context context, object val1, object val2)
+		public override bool EvalAsBool (IExecutionContext context, object val1, object val2)
 		{
 			throw new InvalidOperationException("Nelze převést výsledek odčítání na hodnotu boolean");
 		}

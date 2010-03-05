@@ -17,7 +17,7 @@ namespace LPS.Util
 			get { return "vypíše tento seznam na výstup"; }
 		}
 
-		public override object Execute(LPS.ToolScript.Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		public override object Execute(LPS.ToolScript.IExecutionContext context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
 			foreach(object o in context.LocalVariables.Values)
 			{

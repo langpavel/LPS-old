@@ -9,7 +9,7 @@ namespace LPS.ToolScript.Parser
 		{
 		}
 
-		public override object Eval (Context context, object val)
+		public override object Eval (IExecutionContext context, object val)
 		{
 			if(val == null)
 				return null;
@@ -40,7 +40,7 @@ namespace LPS.ToolScript.Parser
 					"Nelze provádět unární minus na objektu typu {0}", val.GetType().Name));
 		}
 
-		public override bool EvalAsBool (Context context, object val)
+		public override bool EvalAsBool (IExecutionContext context, object val)
 		{
 			throw new InvalidOperationException("nelze převádět číslo na boolean");
 		}

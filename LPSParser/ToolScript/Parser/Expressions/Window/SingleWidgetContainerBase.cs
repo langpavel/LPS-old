@@ -12,7 +12,7 @@ namespace LPS.ToolScript.Parser
 			this.Child = Child;
 		}
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			object result = base.Eval(context);
 			if(this.Child != null)

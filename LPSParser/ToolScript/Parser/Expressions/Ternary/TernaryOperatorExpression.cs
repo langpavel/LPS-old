@@ -14,7 +14,7 @@ namespace LPS.ToolScript.Parser
 			this.iffalse = iffalse;
 		}
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			if(ifexpr.EvalAsBool(context))
 				return iftrue.Eval(context);
@@ -22,7 +22,7 @@ namespace LPS.ToolScript.Parser
 				return iffalse.Eval(context);
 		}
 
-		public override bool EvalAsBool (Context context)
+		public override bool EvalAsBool (IExecutionContext context)
 		{
 			return base.EvalAsBool (context);
 		}

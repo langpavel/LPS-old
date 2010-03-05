@@ -11,7 +11,7 @@ namespace LPS.ToolScript.Parser
 			this.Expression = expr;
 		}
 
-		public override void Run(Context context)
+		public override void Run(IExecutionContext context)
 		{
 			IterationTermination.Return(context, Expression.Eval(context));
 		}

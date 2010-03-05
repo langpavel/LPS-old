@@ -8,7 +8,7 @@ namespace LPS.ToolScript.Parser
 		{
 		}
 
-		public override void Run (Context context)
+		public override void Run (IExecutionContext context)
 		{
 		}
 	}

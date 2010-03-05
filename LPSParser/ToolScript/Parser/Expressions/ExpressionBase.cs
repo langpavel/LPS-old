@@ -10,14 +10,14 @@ namespace LPS.ToolScript.Parser
 		{
 		}
 
-		public override void Run (Context context)
+		public override void Run (IExecutionContext context)
 		{
 			Eval(context);
 		}
 
-		public abstract object Eval (Context context);
+		public abstract object Eval (IExecutionContext context);
 
-		public virtual bool EvalAsBool (Context context)
+		public virtual bool EvalAsBool (IExecutionContext context)
 		{
 			return AsBoolean(Eval(context));
 		}

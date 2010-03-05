@@ -16,7 +16,7 @@ namespace LPS.ToolScript.Parser
 			this.Value = SpecialValue.VariableNotSet;
 		}
 
-		public void Run(Context context)
+		public void Run(IExecutionContext context)
 		{
 			if(this.DefaultValue == null)
 				this.Value = SpecialValue.VariableNotSet;

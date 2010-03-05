@@ -14,7 +14,7 @@ namespace LPS.ToolScript.Parser
 			this.IsInitializer = is_initializer;
 		}
 
-		public override void Run (Context context)
+		public override void Run (IExecutionContext context)
 		{
 			if(IsInitializer)
 			{
@@ -22,7 +22,7 @@ namespace LPS.ToolScript.Parser
 			}
 		}
 
-		public override object Eval(Context context)
+		public override object Eval(IExecutionContext context)
 		{
 			if(IsInitializer)
 			{
@@ -34,7 +34,7 @@ namespace LPS.ToolScript.Parser
 			return result;
 		}
 
-		public void AssignValue(Context context, object val)
+		public void AssignValue(IExecutionContext context, object val)
 		{
 			if(IsInitializer)
 				context.InitVariable(Name, val);

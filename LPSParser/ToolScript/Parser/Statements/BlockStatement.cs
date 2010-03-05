@@ -15,9 +15,9 @@ namespace LPS.ToolScript.Parser
 			this.Statements = Statements ?? new StatementList();
 		}
 
-		public void Run (Context context)
+		public void Run (IExecutionContext context)
 		{
-			Context child_context =
+			IExecutionContext child_context =
 				CreateChildContext ? context.CreateChildContext() : context;
 			try
 			{

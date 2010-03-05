@@ -12,11 +12,11 @@ namespace LPS.ToolScript.Parser
 			val = value;
 		}
 
-		public override void Run(Context context)
+		public override void Run(IExecutionContext context)
 		{
 		}
 
-		public override object Eval(Context context)
+		public override object Eval(IExecutionContext context)
 		{
 			return val;
 		}
@@ -31,7 +31,7 @@ namespace LPS.ToolScript.Parser
 			return val.ToString();
 		}
 
-		public override bool EvalAsBool(Context context)
+		public override bool EvalAsBool(IExecutionContext context)
 		{
 			throw new Exception("Nelze vyhodnotit datum jako boolean");
 		}

@@ -14,7 +14,7 @@ namespace LPS.ToolScript.Parser
 			this.Arguments = Arguments;
 		}
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			Arguments.Run(context);
 

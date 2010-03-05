@@ -17,7 +17,7 @@ namespace LPS.ToolScript.Parser
 			this.Mode = Mode;
 		}
 
-		public void Run (Context context)
+		public void Run (IExecutionContext context)
 		{
 			bool named = false;
 			foreach(NamedArgument arg in this)
@@ -53,7 +53,7 @@ namespace LPS.ToolScript.Parser
 		/// <summary>
 		/// run this on defaults instance with actual parameters in 'values' list
 		/// </summary>
-		public void InitVariables(Context context, NamedArgumentList values)
+		public void InitVariables(IExecutionContext context, NamedArgumentList values)
 		{
 			for(int i = 0; i < this.Count; i++)
 			{

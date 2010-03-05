@@ -17,7 +17,7 @@ namespace LPS.Util
 			get { return "vypíše proměnné na výstup"; }
 		}
 
-		public override object Execute(Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		public override object Execute(IExecutionContext context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
 			foreach(KeyValuePair<string, object> p in context.LocalVariables)
 				if(!p.Key.StartsWith("__"))

@@ -7,7 +7,7 @@ namespace LPS.ToolScript.Parser
 		{
 		}
 
-		public override object Eval(Context context)
+		public override object Eval(IExecutionContext context)
 		{
 			return null;
 		}
@@ -17,7 +17,7 @@ namespace LPS.ToolScript.Parser
 			return "null";
 		}
 
-		public override bool EvalAsBool(Context context)
+		public override bool EvalAsBool(IExecutionContext context)
 		{
 			return false;
 		}

@@ -5,10 +5,10 @@ using LPS.ToolScript.Parser;
 
 namespace LPS.ToolScript
 {
-	public sealed class Context : IDisposable
+	public sealed class ExecutionContext : IExecutionContext
 	{
-		public Context GlobalContext { get; private set; }
-		public Context ParentContext { get; private set; }
+		public IExecutionContext GlobalContext { get; private set; }
+		public IExecutionContext ParentContext { get; private set; }
 
 		/// <summary>
 		/// Parser is user for evaluating eval function
@@ -16,8 +16,9 @@ namespace LPS.ToolScript
 		public ToolScriptParser Parser { get; set; }
 
 		public Dictionary<string, object> LocalVariables { get; private set; }
+		IDictionary<string, object> IExecutionContext.LocalVariables { get { return LocalVariables; } }
 
-		private Context(Context ParentContext, Context GlobalContext, ToolScriptParser Parser)
+		private ExecutionContext(IExecutionContext ParentContext, IExecutionContext GlobalContext, ToolScriptParser Parser)
 		{
 			this.GlobalContext = GlobalContext ?? this;
 			this.ParentContext = ParentContext;
@@ -25,14 +26,14 @@ namespace LPS.ToolScript
 			LocalVariables = new Dictionary<string, object>();
 		}
 
-		public static Context CreateRootContext()
+		public static IExecutionContext CreateRootContext()
 		{
 			return CreateRootContext(null);
 		}
 
-		public static Context CreateRootContext(ToolScriptParser parser)
+		public static IExecutionContext CreateRootContext(ToolScriptParser parser)
 		{
-			Context root = new Context(null, null, parser);
+			ExecutionContext root = new ExecutionContext(null, null, parser);
 			root.LocalVariables["eval"] = new ToolScriptFunction(root.EvalInvoked);
 			return root;
 		}
@@ -44,12 +45,12 @@ namespace LPS.ToolScript
 			e.ReturnValue = this.Eval((string)e.Args[0].Value);
 		}
 
-		public Context CreateChildContext()
+		public IExecutionContext CreateChildContext()
 		{
-			return new Context(this, this.GlobalContext ?? this, Parser);
+			return new ExecutionContext(this, this.GlobalContext ?? this, Parser);
 		}
 
-		private bool TryGetVariable(string name, out object val)
+		public bool TryGetVariable(string name, out object val)
 		{
 			if(LocalVariables.TryGetValue(name, out val))
 				return true;
@@ -59,7 +60,7 @@ namespace LPS.ToolScript
 			return false;
 		}
 
-		private bool TrySetVariable(string name, object val)
+		public bool TrySetVariable(string name, object val)
 		{
 			if(LocalVariables.ContainsKey(name))
 			{

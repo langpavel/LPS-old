@@ -14,11 +14,11 @@ namespace LPS.ToolScript.Parser
 			this.enumerable = enumerable;
 		}
 
-		public override void Run (Context context)
+		public override void Run (IExecutionContext context)
 		{
 			foreach(object val in (IEnumerable)enumerable.Eval(context))
 			{
-				using(Context child_context = context.CreateChildContext())
+				using(IExecutionContext child_context = context.CreateChildContext())
 				{
 					variable.Run(context);
 					variable.AssignValue(context, val);

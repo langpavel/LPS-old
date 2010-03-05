@@ -13,7 +13,7 @@ namespace LPS.ToolScript.Parser
 			this.Expression2 = Expression2;
 		}
 
-		public override void Run (Context context)
+		public override void Run (IExecutionContext context)
 		{
 			object e2 = (Expression2 == null) ? null : Expression2.Eval(context);
 			object e1 = (Expression1 == null) ? null : Expression1.Eval(context);

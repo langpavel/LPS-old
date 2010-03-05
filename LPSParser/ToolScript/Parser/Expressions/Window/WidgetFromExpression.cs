@@ -14,7 +14,7 @@ namespace LPS.ToolScript.Parser
 			this.Expr = Expr;
 		}
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			object result = base.Eval(context);
 			if(this.Expr is Variable)

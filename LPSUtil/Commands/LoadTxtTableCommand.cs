@@ -15,7 +15,7 @@ namespace LPS.Util
 			get { return "načte tabulku z textového souboru"; }
 		}
 
-		public override object Execute(LPS.ToolScript.Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		public override object Execute(LPS.ToolScript.IExecutionContext context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
 			return null;
 		}

@@ -18,12 +18,12 @@ namespace LPS.ToolScript.Parser
 			this.Name = name;
 		}
 
-		public override object Eval(Context context)
+		public override object Eval(IExecutionContext context)
 		{
 			return this.Type;
 		}
 
-		public override bool EvalAsBool(Context context)
+		public override bool EvalAsBool(IExecutionContext context)
 		{
 			throw new Exception("Nelze vyhodnotit hodnotu typu typ jako boolean");
 		}

@@ -61,12 +61,12 @@ namespace LPS.ToolScript.Parser
 				AddAttrib(o);
 		}
 
-		public void Run (Context context)
+		public void Run (IExecutionContext context)
 		{
 			Eval(context);
 		}
 
-		public object Eval (Context context)
+		public object Eval (IExecutionContext context)
 		{
 			if(this.IsExtension)
 				throw new NotImplementedException();
@@ -92,7 +92,7 @@ namespace LPS.ToolScript.Parser
 			return this;
 		}
 
-		public bool EvalAsBool (Context context)
+		public bool EvalAsBool (IExecutionContext context)
 		{
 			throw new InvalidOperationException();
 		}

@@ -13,27 +13,27 @@ namespace LPS.ToolScript.Parser
 	public class IterationTermination : Exception
 	{
 		public TerminationReason Reason { get; private set; }
-		public Context Context { get; private set; }
+		public IExecutionContext Context { get; private set; }
 		public object ReturnValue { get; private set; }
 
-		private IterationTermination(TerminationReason reason, Context context, object returnValue)
+		private IterationTermination(TerminationReason reason, IExecutionContext context, object returnValue)
 		{
 			this.Reason = reason;
 			this.Context = context;
 			this.ReturnValue = returnValue;
 		}
 
-		public static void Break(Context context)
+		public static void Break(IExecutionContext context)
 		{
 			throw new IterationTermination(TerminationReason.Break, context, null);
 		}
 
-		public static void Continue(Context context)
+		public static void Continue(IExecutionContext context)
 		{
 			throw new IterationTermination(TerminationReason.Continue, context, null);
 		}
 
-		public static void Return(Context context, object value)
+		public static void Return(IExecutionContext context, object value)
 		{
 			throw new IterationTermination(TerminationReason.Return, context, value);
 		}
@@ -47,9 +47,9 @@ namespace LPS.ToolScript.Parser
 			this.IterationBody = IterationBody;
 		}
 
-		public TerminationReason ExecuteSingleIteration(Context context, bool create_child_context)
+		public TerminationReason ExecuteSingleIteration(IExecutionContext context, bool create_child_context)
 		{
-			Context child_context = create_child_context ? context.CreateChildContext() : context;
+			IExecutionContext child_context = create_child_context ? context.CreateChildContext() : context;
 			try
 			{
 				IterationBody.Run(child_context);

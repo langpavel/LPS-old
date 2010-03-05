@@ -16,7 +16,7 @@ namespace LPS.Util
 			get { return "otevře soubor pro zápis"; }
 		}
 
-		public override object Execute(LPS.ToolScript.Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		public override object Execute(LPS.ToolScript.IExecutionContext context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
 			return new StreamWriter(Get<string>(Params, 0), false, Encoding.UTF8);
 		}

@@ -19,7 +19,7 @@ namespace LPS.Util
 			ParserContext.InitVariable(cmd.Name, cmd);
 		}
 
-		public Context ParserContext { get;	private set; }
+		public IExecutionContext ParserContext { get;	private set; }
 
 		public UtilMainWindow() : base(Gtk.WindowType.Toplevel)
 		{
@@ -30,7 +30,7 @@ namespace LPS.Util
 			this.HeightRequest = 500;
 			this.DeleteEvent += WindowClosed;
 			
-			ParserContext = Context.CreateRootContext(new ToolScriptParser());
+			ParserContext = ExecutionContext.CreateRootContext(new ToolScriptParser());
 			
 			TextTag tag = new TextTag("command");
 			tag.Weight = Pango.Weight.Bold;

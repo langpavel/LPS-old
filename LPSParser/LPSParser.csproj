@@ -180,6 +180,7 @@
     <Compile Include="ToolScript\Parser\Expressions\Window\VPanedContainer.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\AlignExpression.cs" />
     <Compile Include="ToolScript\DatabaseConnection.cs" />
+    <Compile Include="ToolScript\Parser\Interfaces\IContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />

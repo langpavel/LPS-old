@@ -14,18 +14,18 @@ namespace LPS.ToolScript.Parser
 			this.Expr2 = Expr2;
 		}
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			return Eval(context, Expr1.Eval(context), Expr2.Eval(context));
 		}
 
-		public override bool EvalAsBool(Context context)
+		public override bool EvalAsBool(IExecutionContext context)
 		{
 			return EvalAsBool(context, Expr1.Eval(context), Expr2.Eval(context));
 		}
 
-		public abstract object Eval(Context context, object val1, object val2);
-		public abstract bool EvalAsBool(Context context, object val1, object val2);
+		public abstract object Eval(IExecutionContext context, object val1, object val2);
+		public abstract bool EvalAsBool(IExecutionContext context, object val1, object val2);
 
 		public static bool InvokeOperator(string name, object val1, object val2, out object result)
 		{

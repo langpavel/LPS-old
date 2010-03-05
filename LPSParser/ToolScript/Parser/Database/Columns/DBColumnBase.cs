@@ -59,7 +59,7 @@ namespace LPS.ToolScript.Parser
 				return DisplayValue(value, this.DisplayFormat, this.DisplayNull);
 		}
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			Attribs.Eval(context);
 			this.IsNotNull = Attribs.Get<bool>("NOT NULL", false);
@@ -72,7 +72,7 @@ namespace LPS.ToolScript.Parser
 			return this;
 		}
 
-		public override bool EvalAsBool (Context context)
+		public override bool EvalAsBool (IExecutionContext context)
 		{
 			throw new InvalidOperationException("Nelze vyhodnocovat odkaz na databázový sloupec jako boolean");
 		}

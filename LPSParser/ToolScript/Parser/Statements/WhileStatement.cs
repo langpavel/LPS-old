@@ -11,7 +11,7 @@ namespace LPS.ToolScript.Parser
 			this.expr = expr;
 		}
 
-		public override void Run (Context context)
+		public override void Run (IExecutionContext context)
 		{
 			while(expr.EvalAsBool(context))
 			{

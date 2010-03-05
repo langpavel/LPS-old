@@ -10,7 +10,7 @@ namespace LPS.ToolScript.Parser
 			this.ObjectType = ObjectType;
 		}
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			return Activator.CreateInstance(this.ObjectType);
 		}

@@ -9,19 +9,19 @@ namespace LPS.ToolScript.Parser
 		{
 		}
 
-		public void Run (Context context)
+		public void Run (IExecutionContext context)
 		{
 			Eval(context);
 		}
 
-		public object Eval(Context context)
+		public object Eval(IExecutionContext context)
 		{
 			foreach(KeyValuePair<string, EvaluatedAttribute> kv in this)
 				kv.Value.Eval(context);
 			return this;
 		}
 
-		public bool EvalAsBool (Context context)
+		public bool EvalAsBool (IExecutionContext context)
 		{
 			throw new InvalidOperationException();
 		}

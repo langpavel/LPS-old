@@ -22,7 +22,7 @@ namespace LPS.ToolScript.Parser
 			this.Alias = alias;
 		}
 
-		public override void Run (Context context)
+		public override void Run (IExecutionContext context)
 		{
 			throw new System.NotImplementedException ("Using");
 		}

@@ -15,7 +15,7 @@ namespace LPS.ToolScript.Parser
 			this.Statement = Statement;
 		}
 
-		public void Run (Context context)
+		public void Run (IExecutionContext context)
 		{
 			IDisposable disposable = Expression.Eval(context) as IDisposable;
 			try

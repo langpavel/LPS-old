@@ -10,7 +10,7 @@ namespace LPS.ToolScript
 		{
 		}
 
-		public void Run (Context context)
+		public void Run (IExecutionContext context)
 		{
 			foreach(IStatement s in this)
 			{
@@ -18,7 +18,7 @@ namespace LPS.ToolScript
 			}
 		}
 
-		public object RunAsMain(Context context)
+		public object RunAsMain(IExecutionContext context)
 		{
 			try
 			{
@@ -40,7 +40,7 @@ namespace LPS.ToolScript
 
 		public object Run(ToolScriptParser parser)
 		{
-			Context context = Context.CreateRootContext(parser);
+			IExecutionContext context = ExecutionContext.CreateRootContext(parser);
 			return RunAsMain(context);
 		}
 	}

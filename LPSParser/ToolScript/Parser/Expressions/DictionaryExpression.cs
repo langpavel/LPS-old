@@ -28,7 +28,7 @@ namespace LPS.ToolScript.Parser
 			Items.Add(new DistionaryItem(Key, Value));
 		}
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			Hashtable result = new Hashtable(Items.Count * 2);
 			for(int i=0; i < Items.Count; i++)
@@ -36,7 +36,7 @@ namespace LPS.ToolScript.Parser
 			return result;
 		}
 
-		public override bool EvalAsBool (Context context)
+		public override bool EvalAsBool (IExecutionContext context)
 		{
 			throw new InvalidOperationException("Nelze přetypovat slovník na boolean");
 		}

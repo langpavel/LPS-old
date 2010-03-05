@@ -31,7 +31,7 @@ namespace LPS.Util
 			return tables.ToArray();
 		}
 
-		public override object Execute(LPS.ToolScript.Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		public override object Execute(LPS.ToolScript.IExecutionContext context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
 			ServerConnection conn = (ServerConnection)context.LocalVariables["ServerConnection"];
 			List<string> tablenames = new List<string>(GetSqlTableNames(conn));

@@ -16,7 +16,7 @@ namespace LPS.Util
 			get { return "otestuje spojení na server"; }
 		}
 
-		public override object Execute (LPS.ToolScript.Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		public override object Execute (LPS.ToolScript.IExecutionContext context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
 			ServerConnection conn = (ServerConnection)context.LocalVariables["ServerConnection"];
 			if(conn.Ping())

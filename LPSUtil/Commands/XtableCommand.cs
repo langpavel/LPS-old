@@ -62,7 +62,7 @@ namespace LPS.Util
 			return s[0].ToString().ToUpper() + s.Substring(1);
 		}
 
-		public override object Execute (LPS.ToolScript.Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		public override object Execute (LPS.ToolScript.IExecutionContext context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
 			string tabname = Get<string>(Params, 0);
 			string UserFriendTitle = Capitalize(tabname, true, "sys_", "c_");

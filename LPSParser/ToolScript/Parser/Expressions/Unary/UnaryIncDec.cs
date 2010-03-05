@@ -13,7 +13,7 @@ namespace LPS.ToolScript.Parser
 			this.post = post;
 		}
 
-		public override object Eval (Context context, object val)
+		public override object Eval (IExecutionContext context, object val)
 		{
 			IAssignable v = (IAssignable)Expr;
 			object result;
@@ -82,7 +82,7 @@ namespace LPS.ToolScript.Parser
 			return result;
 		}
 
-		public override bool EvalAsBool (Context context, object val)
+		public override bool EvalAsBool (IExecutionContext context, object val)
 		{
 			throw new InvalidOperationException("Nelze převést výsledek operace inkrementace nebo dekrementace na boolean");
 		}

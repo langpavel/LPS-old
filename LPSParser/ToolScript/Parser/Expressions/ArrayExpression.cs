@@ -12,7 +12,7 @@ namespace LPS.ToolScript.Parser
 			this.Items = Items;
 		}
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			if(Items == null)
 				return null;
@@ -39,7 +39,7 @@ namespace LPS.ToolScript.Parser
 			return list.ToArray(t ?? typeof(object));
 		}
 
-		public override bool EvalAsBool (Context context)
+		public override bool EvalAsBool (IExecutionContext context)
 		{
 			throw new InvalidOperationException("Nelze přetypovat pole na boolean");
 		}

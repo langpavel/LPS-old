@@ -16,7 +16,7 @@ namespace LPS.Util
 			get { return "FlushModulesInfo v connection"; }
 		}
 
-		public override object Execute(LPS.ToolScript.Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
+		public override object Execute(LPS.ToolScript.IExecutionContext context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params)
 		{
 			UtilMainWindow.Instance.InitCmds();
 			Out.WriteLine("Inicializováno");

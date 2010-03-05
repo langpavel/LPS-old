@@ -9,6 +9,6 @@ namespace LPS.Util
 		string Name { get; }
 		string Help { get; }
 
-		object Execute(Context context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params);
+		object Execute(IExecutionContext context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params);
 	}
 }

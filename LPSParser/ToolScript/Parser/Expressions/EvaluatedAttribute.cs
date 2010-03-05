@@ -13,13 +13,13 @@ namespace LPS.ToolScript.Parser
 			this.Value = null;
 		}
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			this.Value = this.Expression.Eval(context);
 			return this;
 		}
 
-		public override bool EvalAsBool (Context context)
+		public override bool EvalAsBool (IExecutionContext context)
 		{
 			throw new InvalidOperationException();
 		}

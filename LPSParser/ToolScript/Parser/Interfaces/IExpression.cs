@@ -4,7 +4,7 @@ namespace LPS.ToolScript.Parser
 {
 	public interface IExpression: IStatement
 	{
-		object Eval(Context context);
-		bool EvalAsBool(Context context);
+		object Eval(IExecutionContext context);
+		bool EvalAsBool(IExecutionContext context);
 	}
 }

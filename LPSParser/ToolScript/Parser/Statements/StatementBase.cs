@@ -8,6 +8,6 @@ namespace LPS.ToolScript.Parser
 		{
 		}
 
-		public abstract void Run(Context context);
+		public abstract void Run(IExecutionContext context);
 	}
 }

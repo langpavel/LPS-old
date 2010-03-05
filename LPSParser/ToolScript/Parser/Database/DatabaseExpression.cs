@@ -15,12 +15,12 @@ namespace LPS.ToolScript.Parser
 			this.IsExtension = IsExtension;
 		}
 
-		public void Run (Context context)
+		public void Run (IExecutionContext context)
 		{
 			Eval(context);
 		}
 
-		public object Eval (Context context)
+		public object Eval (IExecutionContext context)
 		{
 			IDatabaseSchema db = this;
 			if(IsExtension)
@@ -40,7 +40,7 @@ namespace LPS.ToolScript.Parser
 			return db;
 		}
 
-		public bool EvalAsBool (Context context)
+		public bool EvalAsBool (IExecutionContext context)
 		{
 			throw new InvalidOperationException();
 		}

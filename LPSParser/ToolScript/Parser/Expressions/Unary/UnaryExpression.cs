@@ -11,18 +11,18 @@ namespace LPS.ToolScript.Parser
 			this.Expr = Expr;
 		}
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			return Eval(context, Expr.Eval(context));
 		}
 
-		public override bool EvalAsBool (Context context)
+		public override bool EvalAsBool (IExecutionContext context)
 		{
 			return EvalAsBool(context, Expr.EvalAsBool(context));
 		}
 
-		public abstract object Eval (Context context, object val);
+		public abstract object Eval (IExecutionContext context, object val);
 
-		public abstract bool EvalAsBool (Context context, object val);
+		public abstract bool EvalAsBool (IExecutionContext context, object val);
 	}
 }

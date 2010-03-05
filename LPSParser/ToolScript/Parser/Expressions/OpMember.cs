@@ -28,7 +28,7 @@ namespace LPS.ToolScript.Parser
 			return members;
 		}
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			object obj = Expr1.Eval(context);
 			if(obj == null)
@@ -71,7 +71,7 @@ namespace LPS.ToolScript.Parser
 			throw new System.NotImplementedException ();
 		}
 
-		public void AssignValue (Context context, object val)
+		public void AssignValue (IExecutionContext context, object val)
 		{
 			object obj = Expr1.Eval(context);
 			if(Expr2 is Variable)

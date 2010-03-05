@@ -15,7 +15,7 @@ namespace LPS.ToolScript.Parser
 			this.ExprHigh = ExprHigh;
 		}
 
-		public override object Eval (Context context)
+		public override object Eval (IExecutionContext context)
 		{
 			object vl = ExprLow.Eval(context);
 			object vh = ExprHigh.Eval(context);
