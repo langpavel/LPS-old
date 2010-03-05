@@ -18,7 +18,7 @@ namespace LPS.ToolScript.Parser
 			return val;
 		}
 
-		protected override Gtk.Widget CreateWidget()
+		protected override Gtk.Widget CreateWidget(WindowContext context)
 		{
 			if(Child == null)
 				throw new Exception("Align musí obsahovat widget");
@@ -27,7 +27,7 @@ namespace LPS.ToolScript.Parser
 				GetAtr("y", 0.5f),
 				GetAtr("xs", 1.0f),
 				GetAtr("ys", 1.0f));
-			a.Child = Child.Build();
+			a.Child = Child.Build(context);
 			return a;
 		}
 	}

@@ -6,9 +6,27 @@ namespace LPS.ToolScript.Parser
 {
 	public class WindowExpression : SingleWidgetContainerBase
 	{
+		private WindowContext wincontext;
+
 		public WindowExpression(string Name, EvaluatedAttributeList Params, IWidgetBuilder Child)
 			: base(Name, Params, Child)
 		{
+		}
+
+		public override object Eval(IExecutionContext context)
+		{
+			if(context is WindowContext)
+				wincontext = (WindowContext)context;
+			else
+				wincontext = WindowContext.CreateAsChild(context);
+			return base.Eval(wincontext);
+		}
+
+		public WindowContext Create()
+		{
+			WindowContext result = wincontext.CloneWindowContext();
+			result.Window = (Gtk.Window)Build(result);
+			return result;
 		}
 
 		private void SetWindowAttribs(Window win)
@@ -19,7 +37,7 @@ namespace LPS.ToolScript.Parser
 				win.WindowPosition = Gtk.WindowPosition.CenterOnParent;
 		}
 
-		protected override Gtk.Widget CreateWidget()
+		protected override Gtk.Widget CreateWidget(WindowContext context)
 		{
 			Window win;
 			if(HasAttribute("dialog"))
@@ -27,7 +45,7 @@ namespace LPS.ToolScript.Parser
 				Dialog dialog = new Dialog();
 				SetWindowAttribs(dialog);
 				if(Child != null)
-					dialog.VBox.Add(Child.Build());
+					dialog.VBox.Add(Child.Build(context));
 				foreach(string s in GetAttribute<Array>("dialog"))
 				{
 					string[] bits = s.Split(':');
@@ -77,7 +95,7 @@ namespace LPS.ToolScript.Parser
 			{
 				win = new Window(Gtk.WindowType.Toplevel);
 				if(Child != null)
-					win.Add(Child.Build());
+					win.Add(Child.Build(context));
 			}
 
 			if(HasAttribute("iconset"))

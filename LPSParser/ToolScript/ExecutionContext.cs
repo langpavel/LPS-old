@@ -5,7 +5,7 @@ using LPS.ToolScript.Parser;
 
 namespace LPS.ToolScript
 {
-	public sealed class ExecutionContext : IExecutionContext
+	public class ExecutionContext : IExecutionContext, ICloneable
 	{
 		public IExecutionContext GlobalContext { get; private set; }
 		public IExecutionContext ParentContext { get; private set; }
@@ -18,7 +18,7 @@ namespace LPS.ToolScript
 		public Dictionary<string, object> LocalVariables { get; private set; }
 		IDictionary<string, object> IExecutionContext.LocalVariables { get { return LocalVariables; } }
 
-		private ExecutionContext(IExecutionContext ParentContext, IExecutionContext GlobalContext, ToolScriptParser Parser)
+		protected ExecutionContext(IExecutionContext ParentContext, IExecutionContext GlobalContext, ToolScriptParser Parser)
 		{
 			this.GlobalContext = GlobalContext ?? this;
 			this.ParentContext = ParentContext;
@@ -26,12 +26,12 @@ namespace LPS.ToolScript
 			LocalVariables = new Dictionary<string, object>();
 		}
 
-		public static IExecutionContext CreateRootContext()
+		public static ExecutionContext CreateRootContext()
 		{
 			return CreateRootContext(null);
 		}
 
-		public static IExecutionContext CreateRootContext(ToolScriptParser parser)
+		public static ExecutionContext CreateRootContext(ToolScriptParser parser)
 		{
 			ExecutionContext root = new ExecutionContext(null, null, parser);
 			root.LocalVariables["eval"] = new ToolScriptFunction(root.EvalInvoked);
@@ -137,6 +137,25 @@ namespace LPS.ToolScript
 		public void UnsetVariable(string name)
 		{
 			this.LocalVariables.Remove(name);
+		}
+
+		public virtual ExecutionContext Clone()
+		{
+			ExecutionContext clone = (ExecutionContext)this.MemberwiseClone();
+			clone.LocalVariables = new Dictionary<string, object>();
+			foreach(KeyValuePair<string, object> kv in this.LocalVariables)
+			{
+				if(kv.Value is ICloneable)
+					clone.LocalVariables.Add(kv.Key, ((ICloneable)kv.Value).Clone());
+				else
+					clone.LocalVariables.Add(kv.Key, kv.Value);
+			}
+			return clone;
+		}
+
+		object ICloneable.Clone()
+		{
+			return this.Clone();
 		}
 	}
 }

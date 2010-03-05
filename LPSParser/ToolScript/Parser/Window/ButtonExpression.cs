@@ -10,12 +10,12 @@ namespace LPS.ToolScript.Parser
 		{
 		}
 
-		protected override Gtk.Widget CreateWidget()
+		protected override Gtk.Widget CreateWidget(WindowContext context)
 		{
 			Gtk.Button btn;
 			if(Child != null)
 			{
-				btn = new Gtk.Button(Child.Build());
+				btn = new Gtk.Button(Child.Build(context));
 				btn.ImagePosition = Gtk.PositionType.Left;
 			}
 			else

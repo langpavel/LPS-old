@@ -113,12 +113,12 @@ namespace LPS.ToolScript.Parser
 			return result;
 		}
 
-		protected override Gtk.Widget CreateWidget ()
+		protected override Gtk.Widget CreateWidget (WindowContext context)
 		{
 			if(Value == null)
 				return new Gtk.Label("");
 			if(Value is IWidgetBuilder)
-				return ((IWidgetBuilder)Value).Build();
+				return ((IWidgetBuilder)Value).Build(context);
 			if(Value is Gtk.Widget)
 				return (Gtk.Widget)Value;
 			if(Value is Type && ((Type)Value).IsSubclassOf(typeof(Gtk.Widget)))

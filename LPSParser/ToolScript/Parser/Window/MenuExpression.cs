@@ -33,18 +33,18 @@ namespace LPS.ToolScript.Parser
 			return result;
 		}
 
-		protected void AppendItems(MenuShell shell)
+		protected void AppendItems(MenuShell shell, WindowContext context)
 		{
 			if(this.MenuItems != null)
 				foreach(MenuExpression expr in this.MenuItems)
-					shell.Append(expr.Build());
+					shell.Append(expr.Build(context));
 		}
 
-		private MenuItem CreateMenuItem()
+		private MenuItem CreateMenuItem(WindowContext context)
 		{
 			if(HasAttribute("stock"))
 			{
-				ImageMenuItem imi = new ImageMenuItem(this.GetAttribute<string>("stock"), null);
+				ImageMenuItem imi = new ImageMenuItem(this.GetAttribute<string>("stock"), context.AccelGroup);
 				//IconSet icons = IconFactory.LookupDefault();
 				//imi.Image = new Image(icons.RenderIcon(imi.Style, TextDirection.Ltr, StateType.Normal, IconSize.Menu, imi, null));
 				return imi;
@@ -52,22 +52,22 @@ namespace LPS.ToolScript.Parser
 			return new MenuItem(GetAttribute<string>("title",""));
 		}
 
-		protected override Widget CreateWidget()
+		protected override Widget CreateWidget(WindowContext context)
 		{
 			switch(this.Kind)
 			{
 			case MenuExpressionKind.MenuBar:
 				MenuBar bar = new MenuBar();
-				AppendItems(bar);
+				AppendItems(bar, context);
 				return bar;
 			case MenuExpressionKind.Menu:
-				MenuItem item = CreateMenuItem();
+				MenuItem item = CreateMenuItem(context);
 				Menu menu = new Menu();
 				item.Submenu = menu;
-				AppendItems(menu);
+				AppendItems(menu, context);
 				return item;
 			case MenuExpressionKind.MenuItem:
-				return CreateMenuItem();
+				return CreateMenuItem(context);
 			case MenuExpressionKind.ItemSeparator:
 				return new SeparatorMenuItem();
 			default:

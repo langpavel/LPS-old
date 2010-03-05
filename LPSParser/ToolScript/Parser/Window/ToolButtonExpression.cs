@@ -9,11 +9,11 @@ namespace LPS.ToolScript.Parser
 		{
 		}
 
-		protected override Gtk.Widget CreateWidget()
+		protected override Gtk.Widget CreateWidget(WindowContext context)
 		{
 			if(this.Child != null)
 			{
-				Gtk.Widget child = this.Child.Build();
+				Gtk.Widget child = this.Child.Build(context);
 				return new Gtk.ToolButton(child, GetAttribute<string>("stock", ""));
 			}
 			return new Gtk.ToolButton(GetAttribute<string>("stock", ""));

@@ -27,7 +27,7 @@ namespace LPS.ToolScript.Parser
 			public uint YPadding;
 		}
 
-		protected override Gtk.Widget CreateWidget()
+		protected override Gtk.Widget CreateWidget(WindowContext context)
 		{
 			uint rows = 0;
 			uint columns = 0;
@@ -41,7 +41,7 @@ namespace LPS.ToolScript.Parser
 			foreach(IWidgetBuilder b in Childs)
 			{
 				WidgetTableInfo w = new WidgetTableInfo();
-				w.Widget = b.Build();
+				w.Widget = b.Build(context);
 
 				startcolumn = b.GetAttribute<uint>("col", startcolumn);
 				startrow = b.GetAttribute<uint>("row", startrow);

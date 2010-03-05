@@ -9,7 +9,7 @@ namespace LPS.ToolScript.Parser
 		{
 		}
 
-		protected override Gtk.Paned CreatePanedWidget()
+		protected override Gtk.Paned CreatePanedWidget(WindowContext context)
 		{
 			return new Gtk.VPaned();
 		}

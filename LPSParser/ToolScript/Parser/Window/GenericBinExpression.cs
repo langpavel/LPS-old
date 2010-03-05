@@ -11,17 +11,17 @@ namespace LPS.ToolScript.Parser
 			this.BinType = BinType;
 		}
 
-		public virtual Gtk.Bin CreateBinWidget()
+		public virtual Gtk.Bin CreateBinWidget(WindowContext context)
 		{
 			return (Gtk.Bin)Activator.CreateInstance(this.BinType);
 		}
 
-		protected override Gtk.Widget CreateWidget()
+		protected override Gtk.Widget CreateWidget(WindowContext context)
 		{
-			Gtk.Bin bin = CreateBinWidget();
+			Gtk.Bin bin = CreateBinWidget(context);
 			if(Child != null)
 			{
-				bin.Child = Child.Build();
+				bin.Child = Child.Build(context);
 			}
 			return bin;
 		}

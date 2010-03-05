@@ -47,14 +47,14 @@ namespace LPS.ToolScript.Parser
 			return Params.TryGet(type, name, out value);
 		}
 
-		public Gtk.Widget Build()
+		public virtual Gtk.Widget Build(WindowContext context)
 		{
-			Gtk.Widget widget = CreateWidget();
+			Gtk.Widget widget = CreateWidget(context);
 			SetWidgetAttributes(widget);
 			return widget;
 		}
 
-		protected abstract Gtk.Widget CreateWidget();
+		protected abstract Gtk.Widget CreateWidget(WindowContext context);
 
 		public virtual void SetWidgetAttributes(Gtk.Widget widget)
 		{

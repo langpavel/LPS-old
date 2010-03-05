@@ -35,7 +35,7 @@ namespace LPS.ToolScript.Parser
 			return image;
 		}
 
-		protected override Gtk.Widget CreateWidget()
+		protected override Gtk.Widget CreateWidget(WindowContext context)
 		{
 			if(this.HasAttribute("icon"))
 			{

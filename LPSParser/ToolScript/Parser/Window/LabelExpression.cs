@@ -11,7 +11,7 @@ namespace LPS.ToolScript.Parser
 			this.Markup = Markup;
 		}
 
-		protected override Gtk.Widget CreateWidget ()
+		protected override Gtk.Widget CreateWidget (WindowContext context)
 		{
 			Gtk.Label l = new Gtk.Label();
 			l.Markup = this.Markup;

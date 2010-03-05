@@ -9,12 +9,12 @@ namespace LPS.ToolScript.Parser
 		{
 		}
 
-		protected override Gtk.Widget CreateWidget()
+		protected override Gtk.Widget CreateWidget(WindowContext context)
 		{
 			Gtk.Toolbar toolbar = new Gtk.Toolbar();
 			foreach(IWidgetBuilder builder in Childs)
 			{
-				toolbar.Add(builder.Build());
+				toolbar.Add(builder.Build(context));
 			}
 			return toolbar;
 		}

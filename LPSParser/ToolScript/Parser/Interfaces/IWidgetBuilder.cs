@@ -9,6 +9,6 @@ namespace LPS.ToolScript.Parser
 		T GetAttribute<T>(string name, T default_value);
 		bool TryGetAttribute<T>(string name, out T value);
 		bool TryGetAttribute(Type type, string name, out object value);
-		Gtk.Widget Build();
+		Gtk.Widget Build(WindowContext context);
 	}
 }
