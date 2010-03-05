@@ -39,7 +39,7 @@ namespace LPS.ToolScript.Parser
 				}
 				return (T) result.Value;
 			}
-			throw new InvalidOperationException();
+			throw new KeyNotFoundException();
 		}
 
 		public T Get<T>(string name, T default_val)

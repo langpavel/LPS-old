@@ -91,5 +91,10 @@ namespace LPS.ToolScript.Parser
 		{
 			return this.Clone();
 		}
+
+		public DatabaseConnection Connect(string url)
+		{
+			return new DatabaseConnection(this, url);
+		}
 	}
 }

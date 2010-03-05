@@ -275,7 +275,14 @@ namespace LPS.Server
 				return new ServerCallResult(err); 
 			}
 		}
-		
+
+		[WebMethod(EnableSession=true, BufferResponse=false)]
+		public DataSet GetRealSchemaInfo()
+		{
+			ConnectionInfo ci = GetConnectionInfo();
+			return ci.GetRealSchemaInfo();
+		}
+
 		[WebMethod(EnableSession=false)]
 		public string[] ListResources(string path, string file_search_pattern, bool include_dirs)
 		{

@@ -668,5 +668,36 @@ namespace LPS.Server
 				}
 			}
 		}
+
+		public DataSet GetRealSchemaInfo()
+		{
+			return GetDataSetSimple(
+				@"SELECT cols.table_name, cols.ordinal_position,
+					cols.column_name, cols.udt_name, cols.is_nullable,
+					cols.character_maximum_length, cols.numeric_precision, cols.numeric_precision_radix, cols.numeric_scale,
+					tc.constraint_type, tc.constraint_name, tc.table_name, kcu.column_name,
+					ccu.table_name AS references_table,
+					ccu.column_name AS references_field
+				FROM information_schema.columns cols
+				LEFT JOIN information_schema.key_column_usage kcu
+					ON cols.column_name = kcu.column_name
+					AND cols.table_schema = kcu.table_schema
+					AND cols.table_name = kcu.table_name
+				LEFT JOIN information_schema.table_constraints tc
+					ON tc.constraint_catalog = kcu.constraint_catalog
+					AND tc.constraint_schema = kcu.constraint_schema
+					AND tc.constraint_name = kcu.constraint_name
+				LEFT JOIN information_schema.referential_constraints rc
+					ON tc.constraint_catalog = rc.constraint_catalog
+					AND tc.constraint_schema = rc.constraint_schema
+					AND tc.constraint_name = rc.constraint_name
+				LEFT JOIN information_schema.constraint_column_usage ccu
+					ON rc.unique_constraint_catalog = ccu.constraint_catalog
+					AND rc.unique_constraint_schema = ccu.constraint_schema
+					AND rc.unique_constraint_name = ccu.constraint_name
+				WHERE cols.table_schema = 'public'
+				ORDER BY cols.table_name, ordinal_position");
+
+		}
 	}
 }

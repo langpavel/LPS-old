@@ -1,5 +1,6 @@
 using System;
 using Gtk;
+using System.Collections.Generic;
 
 namespace LPS.ToolScript.Parser
 {
@@ -20,6 +21,7 @@ namespace LPS.ToolScript.Parser
 
 		protected override Gtk.Widget CreateWidget()
 		{
+			Window win;
 			if(HasAttribute("dialog"))
 			{
 				Dialog dialog = new Dialog();
@@ -69,15 +71,27 @@ namespace LPS.ToolScript.Parser
 					}
 
 				}
-				return dialog;
+				win = dialog;
 			}
 			else
 			{
-				Window win = new Window(Gtk.WindowType.Toplevel);
+				win = new Window(Gtk.WindowType.Toplevel);
 				if(Child != null)
 					win.Add(Child.Build());
-				return win;
 			}
+
+			if(HasAttribute("iconset"))
+			{
+				IconSet icons = IconFactory.LookupDefault(GetAttribute<string>("iconset"));
+				List<Gdk.Pixbuf> list = new List<Gdk.Pixbuf>();
+				foreach(IconSize size in icons.Sizes)
+				{
+					list.Add(icons.RenderIcon(win.Style, TextDirection.Ltr, StateType.Normal, size, win, ""));
+				}
+				win.IconList = list.ToArray();
+			}
+
+			return win;
 		}
 	}
 }

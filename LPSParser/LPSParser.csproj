@@ -179,6 +179,7 @@
     <Compile Include="ToolScript\Parser\Expressions\Window\HPanedContainer.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\VPanedContainer.cs" />
     <Compile Include="ToolScript\Parser\Expressions\Window\AlignExpression.cs" />
+    <Compile Include="ToolScript\DatabaseConnection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />
@@ -220,6 +221,10 @@
     <ProjectReference Include="..\contrib\CalithaGoldParser\GoldParserEngine\GoldParserEngine.csproj">
       <Project>{837DC4CB-4BEA-4171-8366-A1AA6207F576}</Project>
       <Name>GoldParserEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LPSClientShared\LPSClientShared.csproj">
+      <Project>{D2317E65-70CE-4367-B1A7-211FD6044720}</Project>
+      <Name>LPSClientShared</Name>
     </ProjectReference>
   </ItemGroup>
   <ProjectExtensions>

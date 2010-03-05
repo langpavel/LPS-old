@@ -20,7 +20,11 @@ namespace LPS.ToolScript.Parser
 		{
 			object obj = Expr1.Eval(context);
 
-			if(obj is Hashtable)
+			if(obj == null)
+			{
+				throw new InvalidOperationException();
+			}
+			else if(obj is Hashtable)
 			{
 				return ((Hashtable)obj)[Expr2.Eval(context)];
 			}
@@ -38,8 +42,17 @@ namespace LPS.ToolScript.Parser
 					throw new Exception("Index pole musí být celočíselný");
 				return ((String)obj)[Convert.ToInt32(index)];
 			}
-
-			throw new System.NotImplementedException ();
+			else
+			{
+				object index = Expr2.Eval(context);
+				Type t = obj.GetType();
+				// find indexer //
+				PropertyInfo prop = t.GetProperty("Item");
+				//Console.WriteLine(prop);
+				//Console.WriteLine(prop.GetGetMethod());
+				return prop.GetGetMethod().Invoke(obj, new object[] {index});
+			}
+			//throw new System.NotImplementedException ();
 		}
 
 		public void AssignValue (Context context, object val)
@@ -59,8 +72,15 @@ namespace LPS.ToolScript.Parser
 				((Array)obj).SetValue(val, Convert.ToInt64(index));
 				return;
 			}
-
-			throw new System.NotImplementedException ();
+			else
+			{
+				object index = Expr2.Eval(context);
+				Type t = obj.GetType();
+				// find indexer //
+				PropertyInfo prop = t.GetProperty("Item");
+				prop.GetSetMethod().Invoke(obj, new object[] {index, val});
+			}
+			//throw new System.NotImplementedException ();
 		}
 
 		public override string ToString ()
