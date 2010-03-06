@@ -20,7 +20,7 @@ namespace LPS.Client
 
 		public IManagedWindow GetWindow(string window_name, long id, IListInfo module)
 		{
-			TableInfo tableinfo = null;
+			ITableInfo tableinfo = null;
 			if(module != null)
 				tableinfo = ServerConnection.Instance.Resources.GetTableInfo(module.TableName);
 			if(id != 0)

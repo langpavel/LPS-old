@@ -12,7 +12,7 @@ namespace LPS.Client
 		{
 		}
 
-		public DecimalColumn(ListStoreMapping Mapping, ColumnInfo ColumnInfo, DataColumn DataColumn)
+		public DecimalColumn(ListStoreMapping Mapping, IColumnInfo ColumnInfo, DataColumn DataColumn)
 			: base(Mapping, ColumnInfo, DataColumn)
 		{
 		}

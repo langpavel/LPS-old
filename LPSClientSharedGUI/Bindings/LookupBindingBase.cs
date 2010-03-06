@@ -33,7 +33,7 @@ namespace LPS.Client
 
 		protected DataSet LookupData { get; set; }
 		protected DataTable LookupTable { get { return LookupData.Tables[0]; } }
-		protected TableInfo LookupTableInfo { get; set; }
+		protected ITableInfo LookupTableInfo { get; set; }
 		protected ListStore Store { get; set; }
 
 		protected virtual void InitLookupData()

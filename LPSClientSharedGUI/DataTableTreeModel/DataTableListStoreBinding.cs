@@ -37,7 +37,7 @@ namespace LPS.Client
 		public void Bind()
 		{
 			List<DataColumn> added = new List<DataColumn>();
-			foreach(ColumnInfo colinfo in ListInfo.Columns)
+			foreach(IColumnInfo colinfo in ListInfo.Columns)
 			{
 				DataColumn datacol = null;
 				if(DataTable.Columns.Contains(colinfo.Name))

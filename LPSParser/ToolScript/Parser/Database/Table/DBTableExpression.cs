@@ -5,7 +5,7 @@ using System.Text;
 
 namespace LPS.ToolScript.Parser
 {
-	public class DBTableExpression : Dictionary<string, IDBColumn>, IDBTable
+	public class DBTableExpression : Dictionary<string, IDBColumn>, IDBTable//, ITableInfo
 	{
 		public string Name { get; private set; }
 

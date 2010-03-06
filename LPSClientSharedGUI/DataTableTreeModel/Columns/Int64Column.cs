@@ -12,7 +12,7 @@ namespace LPS.Client
 		{
 		}
 
-		public Int64Column(ListStoreMapping Mapping, ColumnInfo ColumnInfo, DataColumn DataColumn)
+		public Int64Column(ListStoreMapping Mapping, IColumnInfo ColumnInfo, DataColumn DataColumn)
 			: base(Mapping, ColumnInfo, DataColumn)
 		{
 		}

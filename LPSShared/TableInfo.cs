@@ -8,7 +8,8 @@ namespace LPS
 {
 	[Serializable]
 	[XmlRoot("table")]
-	public class TableInfo : IListInfo, ICloneable, ILookupInfo
+	[Obsolete("Use IDBTable")]
+	public class TableInfo : ITableInfo
 	{
 		public TableInfo ()
 		{
@@ -25,7 +26,7 @@ namespace LPS
 		public string TableName { get; set; }
 
 		[XmlAttribute("text")]
-		public string Text { get; set; }
+		public string Category { get; set; }
 
 		[XmlElement("detail-caption")]
 		public string DetailCaption { get; set; }
@@ -58,10 +59,12 @@ namespace LPS
 		[XmlArray("columns")]
 		[XmlArrayItem("column")]
 		public List<ColumnInfo> Columns { get; set; }
-		
-		public ColumnInfo GetColumnInfo(string name)
+
+		IColumnInfo[] IListInfo.Columns { get { return Columns.ToArray(); } }
+
+		public IColumnInfo GetColumnInfo(string name)
 		{
-			foreach(ColumnInfo col in this.Columns)
+			foreach(IColumnInfo col in this.Columns)
 			{
 				if(col.Name == name)
 					return col;
@@ -69,20 +72,13 @@ namespace LPS
 			return null;
 		}
 
-		public virtual TableInfo Clone()
+		public virtual object Clone()
 		{
 			TableInfo result = (TableInfo)this.MemberwiseClone();
 			result.Columns = new List<ColumnInfo>();
-			foreach(ColumnInfo column in this.Columns)
-			{
-				result.Columns.Add(column.Clone());
-			}
+			foreach(IColumnInfo column in this.Columns)
+				result.Columns.Add((ColumnInfo)column.Clone());
 			return result;
-		}
-
-		object ICloneable.Clone ()
-		{
-			return this.Clone();
 		}
 
 		#region ILookupInfo implementation

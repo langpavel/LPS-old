@@ -8,7 +8,8 @@ namespace LPS
 		Table,
 		Module
 	}
-	
+
+	[Obsolete("Use IDBTable / IDBColumn")]
 	public interface IListInfo
 	{
 		ListInfoKind Kind { get; }
@@ -16,7 +17,7 @@ namespace LPS
 		string TableName { get; }
 		string ListSql { get; }
 		string DetailName { get; }
-		List<ColumnInfo> Columns { get; }
-		ColumnInfo GetColumnInfo(string name);
+		IColumnInfo[] Columns { get; }
+		IColumnInfo GetColumnInfo(string name);
 	}
 }

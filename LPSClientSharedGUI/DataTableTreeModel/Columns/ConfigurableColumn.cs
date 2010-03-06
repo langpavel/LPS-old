@@ -12,14 +12,14 @@ namespace LPS.Client
 
 		public ListStoreMapping Mapping { get; private set; }
 		public DataColumn DataColumn { get; private set; }
-		public ColumnInfo ColumnInfo { get; private set; }
+		public IColumnInfo ColumnInfo { get; private set; }
 
 		public ConfigurableColumn(IntPtr raw)
 			: base(raw)
 		{
 		}
 
-		public ConfigurableColumn(ListStoreMapping mapping, ColumnInfo info, DataColumn column)
+		public ConfigurableColumn(ListStoreMapping mapping, IColumnInfo info, DataColumn column)
 		{
 			this.Mapping = mapping;
 			this.ColumnInfo = info;

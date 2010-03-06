@@ -185,6 +185,10 @@
     <Compile Include="ToolScript\Parser\Statements\TryBlockStatement.cs" />
     <Compile Include="ToolScript\Parser\Statements\CatchStatement.cs" />
     <Compile Include="ToolScript\Parser\Window\ScrolledExpression.cs" />
+    <Compile Include="ToolScript\Parser\Window\StoreAndTreeView\TreeViewColumnStatement.cs" />
+    <Compile Include="ToolScript\Parser\Window\StoreAndTreeView\StoreItemStatement.cs" />
+    <Compile Include="ToolScript\Parser\Window\StoreAndTreeView\StoreExpressionBase.cs" />
+    <Compile Include="ToolScript\Parser\Window\StoreAndTreeView\ListStoreExpression.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />
@@ -206,6 +210,7 @@
     <Folder Include="ToolScript\Parser\Database\Interfaces\" />
     <Folder Include="ToolScript\Parser\Database\Columns\" />
     <Folder Include="ToolScript\Parser\Database\Table\" />
+    <Folder Include="ToolScript\Parser\Window\StoreAndTreeView\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

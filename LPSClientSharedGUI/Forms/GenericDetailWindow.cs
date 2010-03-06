@@ -17,7 +17,7 @@ namespace LPS.Client
 			base.OnCreate ();
 		}
 
-		private Widget CreateWidget(DataColumn db_col, ColumnInfo colinfo, uint top)
+		private Widget CreateWidget(DataColumn db_col, IColumnInfo colinfo, uint top)
 		{
 			string caption = colinfo.Caption;
 			Widget result;
@@ -73,7 +73,7 @@ namespace LPS.Client
 				uint top = 0;
 				foreach(DataColumn col in this.Data.Tables[0].Columns)
 				{
-					ColumnInfo colinfo = this.TableInfo.GetColumnInfo(col.ColumnName);
+					IColumnInfo colinfo = this.TableInfo.GetColumnInfo(col.ColumnName);
 					if(colinfo != null && colinfo.Editable)
 					{
 						CreateWidget(col, colinfo, top);

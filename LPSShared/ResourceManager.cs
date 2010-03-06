@@ -58,7 +58,7 @@ namespace LPS
 			instance = this;
 		}
 		
-		public TableInfo GetTableInfo(string name)
+		public ITableInfo GetTableInfo(string name)
 		{
 			return GetCachedObject<TableInfo>("tables", name, TableInfos);
 		}

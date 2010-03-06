@@ -1,3 +1,4 @@
+/*
 using System;
 using System.Data;
 using System.IO;
@@ -69,7 +70,7 @@ namespace LPS.Util
 			ServerConnection conn = (ServerConnection)context.LocalVariables["ServerConnection"];
 			using(DataSet ds = GetTableInfoDataSet(conn, tabname))
 			{
-				TableInfo info;
+				ITableInfo info;
 				try
 				{
 					info = conn.Resources.GetTableInfo(tabname);
@@ -81,7 +82,7 @@ namespace LPS.Util
 				catch(Exception err)
 				{
 					Log.Error(err);
-					info = new TableInfo();
+					info = new ITableInfo();
 					Log.Info("Creating new TableInfo name {0}", tabname);
 					info.TableName = tabname;
 					info.ListSql = "select * from " + tabname + " {where}";
@@ -95,7 +96,7 @@ namespace LPS.Util
 				bool has_kod = false;
 				bool has_popis = false;
 	
-				List<ColumnInfo> cols = new List<ColumnInfo>();
+				List<IColumnInfo> cols = new List<IColumnInfo>();
 				foreach(DataRow r in ds.Tables[0].Rows)
 				{
 					string column_name = (string)r["column_name"];
@@ -189,7 +190,7 @@ namespace LPS.Util
 				if(String.IsNullOrEmpty(info.DetailName))
 					info.DetailName = "generic";
 	
-				XmlSerializer xser = new XmlSerializer(typeof(TableInfo));
+				XmlSerializer xser = new XmlSerializer(typeof(ITableInfo));
 				using(XmlTextWriter writer = new XmlTextWriter(Out))
 				{
 					writer.Formatting = Formatting.Indented;
@@ -207,3 +208,4 @@ namespace LPS.Util
 		}
 	}
 }
+*/

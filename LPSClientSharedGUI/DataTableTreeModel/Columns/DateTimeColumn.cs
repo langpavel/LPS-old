@@ -12,7 +12,7 @@ namespace LPS.Client
 		{
 		}
 
-		public DateTimeColumn(ListStoreMapping Mapping, ColumnInfo ColumnInfo, DataColumn DataColumn)
+		public DateTimeColumn(ListStoreMapping Mapping, IColumnInfo ColumnInfo, DataColumn DataColumn)
 			: base(Mapping, ColumnInfo, DataColumn)
 		{
 			this.FixedWidth = 130;

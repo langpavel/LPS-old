@@ -15,7 +15,7 @@ namespace LPS.Client
 		{
 		}
 
-		public LookupColumn(ListStoreMapping Mapping, ColumnInfo ColumnInfo, DataColumn DataColumn)
+		public LookupColumn(ListStoreMapping Mapping, IColumnInfo ColumnInfo, DataColumn DataColumn)
 			: base(Mapping, ColumnInfo, DataColumn)
 		{
 			ILookupInfo linfo = (ILookupInfo)this.ColumnInfo;

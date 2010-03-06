@@ -26,7 +26,7 @@ namespace LPS.Client
 			}
 		}
 
-		protected virtual void Autobind(DataRow row, TableInfo info)
+		protected virtual void Autobind(DataRow row, ITableInfo info)
 		{
 			using(Log.Scope("AutobindWindow.Autobind"))
 			{
@@ -59,7 +59,7 @@ namespace LPS.Client
 			}
 		}
 
-		public void BindWidget(DataColumn col, Widget w, ColumnInfo colinfo)
+		public void BindWidget(DataColumn col, Widget w, IColumnInfo colinfo)
 		{
 			if(w is Entry)
 				BindEntry(col, (Entry) w, colinfo);
@@ -71,22 +71,22 @@ namespace LPS.Client
 				BindTextView(col, (TextView) w, colinfo);
 		}
 		
-		public void BindEntry(DataColumn col, Entry entry, ColumnInfo colinfo)
+		public void BindEntry(DataColumn col, Entry entry, IColumnInfo colinfo)
 		{
 			DataSource.GetGroupForColumn(col).Add(new EntryBinding(entry));
 		}
 		
-		public void BindCheckButton(DataColumn col, CheckButton chkbutton, ColumnInfo colinfo)
+		public void BindCheckButton(DataColumn col, CheckButton chkbutton, IColumnInfo colinfo)
 		{
 			DataSource.GetGroupForColumn(col).Add(new CheckButtonBinding(chkbutton, !colinfo.Required));
 		}
 		
-		public void BindComboBox(DataColumn col, ComboBox combo, ColumnInfo colinfo)
+		public void BindComboBox(DataColumn col, ComboBox combo, IColumnInfo colinfo)
 		{
 			DataSource.GetGroupForColumn(col).Add(new ComboBoxBinding(colinfo, combo));
 		}
 
-		public void BindTextView(DataColumn col, TextView textview, ColumnInfo colinfo)
+		public void BindTextView(DataColumn col, TextView textview, IColumnInfo colinfo)
 		{
 			DataSource.GetGroupForColumn(col).Add(new TextViewBinding(textview));
 		}
@@ -375,9 +375,8 @@ namespace LPS.Client
 
 		public string Category
 		{
-			get { return this.TableInfo.Text ?? this.TableInfo.TableName; }
+			get { return this.TableInfo.Category ?? this.TableInfo.TableName; }
 		}
-
 
 		public string Title
 		{

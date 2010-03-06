@@ -1,7 +1,7 @@
-"Name"			= 'ToolScript'
-"Author"		= 'Pavel Lang'
-"Version"		= 'v0.1'
-"About"			= 'Tool scripting language'
+"Name"				= 'ToolScript'
+"Author"			= 'Pavel Lang'
+"Version"			= 'v0.1'
+"About"				= 'Tool scripting language'
 
 "Case Sensitive"	= True
 
@@ -9,352 +9,365 @@
 
 ! ------------------------------------------------- Sets
 
-{ID Head}	= {Letter} + [_]
-{ID Tail}	= {Alphanumeric} + [_]
-{All Chars}	= {&1 .. &D7FF} + {&DC00 .. &FFEF}
-{String Chars1}	= {All Chars} - ['']
-{String Chars2}	= {All Chars} - ["\]
-{HexNum}	= {Number} + [abcdef] + [ABCDEF]
+{ID Head}			= {Letter} + [_]
+{ID Tail}			= {Alphanumeric} + [_]
+{All Chars}			= {&1 .. &D7FF} + {&DC00 .. &FFEF}
+{String Chars1}		= {All Chars} - ['']
+{String Chars2}		= {All Chars} - ["\]
+{HexNum}			= {Number} + [abcdef] + [ABCDEF]
 
 ! ------------------------------------------------- Terminals
 
-ID				= {ID Head}{ID Tail}*
-!QualifiedName	= ('global::')?{ID Head}{ID Tail}*('.'{ID Head}{ID Tail}*)+
-!				| 'global::'{ID Head}{ID Tail}*
+ID					= {ID Head}{ID Tail}*
+!QualifiedName		= ('global::')?{ID Head}{ID Tail}*('.'{ID Head}{ID Tail}*)+
+!					| 'global::'{ID Head}{ID Tail}*
 
 
-StringLiteral	= '' ( {String Chars1} | '''' )* ''
-				| '"' ( {String Chars2} | '\' {Printable} )* '"'
+StringLiteral		= '' ( {String Chars1} | '''' )* ''
+					| '"' ( {String Chars2} | '\' {Printable} )* '"'
 
-IntLiteral		= {Number}+
+IntLiteral			= {Number}+
 
-DecimalLiteral	= {Digit}*'.'{Digit}+
+DecimalLiteral		= {Digit}*'.'{Digit}+
 
-DateTimeLiteral	= [Dd]{Digit}{Digit}{Digit}{Digit} '-' {Digit}{Digit}? '-' {Digit}{Digit}? ([Tt] {Digit}{Digit}? ':' {Digit}{Digit}? (':' {Digit}{Digit}? ('.' {Digit}{Digit}{Digit} )? )? )?
-				| [Tt] {Digit}{Digit}? ':' {Digit}{Digit}? (':' {Digit}{Digit}? ('.' {Digit}{Digit}{Digit} )? )?
-				| 'now'
-				| 'today'
-				| 'tomorrow'
-				| 'yesterday'
+DateTimeLiteral		= [Dd]{Digit}{Digit}{Digit}{Digit} '-' {Digit}{Digit}? '-' {Digit}{Digit}? ([Tt] {Digit}{Digit}? ':' {Digit}{Digit}? (':' {Digit}{Digit}? ('.' {Digit}{Digit}{Digit} )? )? )?
+					| [Tt] {Digit}{Digit}? ':' {Digit}{Digit}? (':' {Digit}{Digit}? ('.' {Digit}{Digit}{Digit} )? )?
+					| 'now'
+					| 'today'
+					| 'tomorrow'
+					| 'yesterday'
 
-TimeSpanLiteral	= {Digit}+ [Dd] ({Digit}+ [Hh])? ({Digit}+ [Mm])? ({Digit}+('.'{Digit}{Digit}{Digit})? [Ss])?
-				| {Digit}+ [Hh] ({Digit}+ [Mm])? ({Digit}+ ('.'{Digit}{Digit}{Digit})? [Ss])?
-				| {Digit}+ [Mm] ({Digit}+ ('.'{Digit}{Digit}{Digit})? [Ss])?
-				| {Digit}+ ('.'{Digit}{Digit}{Digit})? [Ss]
+TimeSpanLiteral		= {Digit}+ [Dd] ({Digit}+ [Hh])? ({Digit}+ [Mm])? ({Digit}+('.'{Digit}{Digit}{Digit})? [Ss])?
+					| {Digit}+ [Hh] ({Digit}+ [Mm])? ({Digit}+ ('.'{Digit}{Digit}{Digit})? [Ss])?
+					| {Digit}+ [Mm] ({Digit}+ ('.'{Digit}{Digit}{Digit})? [Ss])?
+					| {Digit}+ ('.'{Digit}{Digit}{Digit})? [Ss]
 
-Separator		= '--' '-'+
-				| '==' '='+
-				| 'separator'
+Separator			= '--' '-'+
+					| '==' '='+
+					| 'separator'
 
 ! ------------------------------------------------- Rules
 
-Comment Start = '/*'
-Comment End   = '*/'
-Comment Line  = '//'
+Comment Start 		= '/*'
+Comment End   		= '*/'
+Comment Line  		= '//'
 
 ! ===================================================================
 ! Statements
 ! ===================================================================
 
-<QualifiedName>	::= <QualifiedName> '.' ID
-				|	ID
+<QualifiedName>		::= <QualifiedName> '.' ID
+					|	ID
 
-<Stm>			::=	if '(' <Expr> ')' <Stm>
-               	|	if '(' <Expr> ')' <Then Stm> else <Stm>         
-               	|	while '(' <Expr> ')' <Stm> 
-               	|	for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>
-               	|	foreach '(' ID 'in' <Expr> ')' <Stm>
-               	|	using <QualifiedName> ';'			! import .NET nodule
-               	|	using StringLiteral ';'				! open file
-               	|	using <QualifiedName> 'as' ID ';'	! import .NET nodule
-               	|	using StringLiteral 'as' ID ';'		! open file
-               	|	using '(' <Expr> ')' <Stm>			! for IDisposable
-               	|	observed '(' <Expr List> ')' <Stm>
-               	|	<TryFinally>
-               	|	<Normal Stm>
+<Stm>				::=	if '(' <Expr> ')' <Stm>
+               		|	if '(' <Expr> ')' <Then Stm> else <Stm>
+               		|	while '(' <Expr> ')' <Stm>
+               		|	for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Stm>
+               		|	foreach '(' ID 'in' <Expr> ')' <Stm>
+               		|	using <QualifiedName> ';'			! import .NET nodule
+               		|	using StringLiteral ';'				! open file
+               		|	using <QualifiedName> 'as' ID ';'	! import .NET nodule
+               		|	using StringLiteral 'as' ID ';'		! open file
+               		|	using '(' <Expr> ')' <Stm>			! for IDisposable
+               		|	observed '(' <Expr List> ')' <Stm>
+               		|	<TryFinally>
+               		|	<Normal Stm>
 
-<Then Stm>   	::=	if '(' <Expr> ')' <Then Stm> else <Then Stm>
-               	|	while '(' <Expr> ')' <Then Stm> 
-               	|	for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Then Stm>
-               	|	<Normal Stm>
+<Then Stm>   		::=	if '(' <Expr> ')' <Then Stm> else <Then Stm>
+               		|	while '(' <Expr> ')' <Then Stm>
+               		|	for '(' <Expr> ';' <Expr> ';' <Expr> ')' <Then Stm>
+               		|	<Normal Stm>
 
-<Normal Stm> 	::=	do <Stm> while '(' <Expr> ')'
-               	|	switch '(' <Expr> ')' '{' <Case Stms> '}'
-               	|	<Block>
-               	|	<Expr> ';'
-               	|	break ';'
-               	|	continue ';'
-               	|	return <Expr> ';'
-               	|	throw <Expr> ';'
-               	|	throw <Expr> ',' <Expr> ';'
-               	|	';'              !Noop statement
+<Normal Stm> 		::=	do <Stm> while '(' <Expr> ')'
+               		|	switch '(' <Expr> ')' '{' <Case Stms> '}'
+               		|	<Block>
+               		|	<Expr> ';'
+               		|	break ';'
+               		|	continue ';'
+               		|	return <Expr> ';'
+               		|	throw <Expr> ';'
+               		|	throw <Expr> ',' <Expr> ';'
+               		|	';'              !Noop statement
 
-<TryFinally> 	::= try <Normal Stm> <Catchs> finally <Normal Stm>
-				|	try <Normal Stm> <Catchs>
+<TryFinally> 		::= try <Normal Stm> <Catchs> finally <Normal Stm>
+					|	try <Normal Stm> <Catchs>
 
-<Catchs>		::=	<Catch> <Catchs>
-				|
+<Catchs>			::=	<Catch> <Catchs>
+					|
 
-<Catch>			::=	catch '(' <QualifiedName> ID ')' <Normal Stm>
-				|	catch '(' type <QualifiedName> ')' <Normal Stm>
-				|	catch '(' var ID ')' <Normal Stm>
-				|	catch <Block>
+<Catch>				::=	catch '(' <QualifiedName> ID ')' <Normal Stm>
+					|	catch '(' type <QualifiedName> ')' <Normal Stm>
+					|	catch '(' var ID ')' <Normal Stm>
+					|	catch <Block>
 
-<Func args>    	::=	<Func args> ',' <Func Arg>
-				|	<Func Arg>
-				|
+<Func args>    		::=	<Func args> ',' <Func Arg>
+					|	<Func Arg>
+					|
 
-<Func Arg>		::=	ID
-				|	ID '=' <Expr>
+<Func Arg>			::=	ID
+					|	ID '=' <Expr>
 
-<Args>       	::=	<Args> ',' <Arg>
-				|	<Arg>
-				|
+<Args>       		::=	<Args> ',' <Arg>
+					|	<Arg>
+					|
 
-<Arg>			::=	<Op If>
-				|	ID '=' <Expr>
+<Arg>				::=	<Op If>
+					|	ID '=' <Expr>
 
-<Case Stms> 	::=	case <Value> ':' <Stm List> <Case Stms>
-              	|	default ':' <Stm List>                  
-              	|	
+<Case Stms> 		::=	case <Value> ':' <Stm List> <Case Stms>
+              		|	default ':' <Stm List>
+              		|
 
-<Block>     	::=	'{' <Stm List> '}'
+<Block>     		::=	'{' <Stm List> '}'
 
-<Stm List>  	::=	<Stm> <Stm List>
-              	| 	<Stm>
+<Stm List>  		::=	<Stm> <Stm List>
+              		| 	<Stm>
 
 ! ===================================================================
 ! Database support
 ! ===================================================================
 
-<Column Name>	::=	ID
-				|	StringLiteral
+<Column Name>		::=	ID
+					|	StringLiteral
 
-<Column List>	::=	<Column List> ',' <Column Name>
-				|	<Column Name>
-				|
+<Column List>		::=	<Column List> ',' <Column Name>
+					|	<Column Name>
+					|
 
-<Database>		::=	'database' ID '{' <DB Tables> '}'
-				|	'extends' 'database' ID '{' <DB Tables> '}'
+<Database>			::=	'database' ID '{' <DB Tables> '}'
+					|	'extends' 'database' ID '{' <DB Tables> '}'
 
-<DB Tables>		::=	<DB Tables> <DB Table>
-				|
+<DB Tables>			::=	<DB Tables> <DB Table>
+					|
 
-<DB Table>		::=	'template' 'table' ID '{' <DB Columns> '}' <DB Table Attr List>
-				|	'template' 'table' ID 'template' ID '{' <DB Columns> '}' <DB Table Attr List>
-				|	'table' ID '{' <DB Columns> '}' <DB Table Attr List>
-				|	'table' ID 'template' ID '{' <DB Columns> '}' <DB Table Attr List>
-				|	'extends' 'table' ID '{' <DB Columns> '}' <DB Table Attr List>
+<DB Table>			::=	'template' 'table' ID '{' <DB Columns> '}' <DB Table Attr List>
+					|	'template' 'table' ID 'template' ID '{' <DB Columns> '}' <DB Table Attr List>
+					|	'table' ID '{' <DB Columns> '}' <DB Table Attr List>
+					|	'table' ID 'template' ID '{' <DB Columns> '}' <DB Table Attr List>
+					|	'extends' 'table' ID '{' <DB Columns> '}' <DB Table Attr List>
 
-<DB Columns>	::=	<DB Columns> <DB Column>
-				|
+<DB Columns>		::=	<DB Columns> <DB Column>
+					|
 
-<DB Column>		::=	<Column Name> <DB Column Type> <DB Column Attr List> ';'
+<DB Column>			::=	<Column Name> <DB Column Type> <DB Column Attr List> ';'
 
-<DB Column Type> ::= 'primary'
-				|	'foreign' ID
-				|	'foreign' ID '(' ID ')'
-				|	'many' ID
-				|	'many' ID 'through' ID
-				|	'many' ID 'through' ID '(' ID ',' ID ')'
-				|	'varchar'
-				|	'varchar' '(' IntLiteral ')'
-				|	'integer'
-				|	'bool'
-				|	'decimal' '(' IntLiteral ',' IntLiteral ')'
-				|	'date'
-				|	'time'
-				|	'datetime'
-				|	'daterange'
-				|	'timerange'
-				|	'datetimerange'
+<DB Column Type> 	::= 'primary'
+					|	'foreign' ID
+					|	'foreign' ID '(' ID ')'
+					|	'many' ID
+					|	'many' ID 'through' ID
+					|	'many' ID 'through' ID '(' ID ',' ID ')'
+					|	'varchar'
+					|	'varchar' '(' IntLiteral ')'
+					|	'integer'
+					|	'bool'
+					|	'decimal' '(' IntLiteral ',' IntLiteral ')'
+					|	'date'
+					|	'time'
+					|	'datetime'
+					|	'daterange'
+					|	'timerange'
+					|	'datetimerange'
 
 <DB Column Attr List> ::= <DB Column Attr List> <DB Column Attr>
-				|
+					|
 
-<DB Column Attr> ::= 'unique'
-				|	'not' 'null'
-				|	'index'
-				|	'default' <Value>
-				|	ID '=' <Value>
+<DB Column Attr>	::= 'unique'
+					|	'not' 'null'
+					|	'index'
+					|	'default' <Value>
+					|	ID '=' <Value>
 
 <DB Table Attr List> ::= <DB Table Attr List> <DB Table Attr>
-				|
+					|
 
-<DB Table Attr>	::=	'index' '(' <Column List> ')' ';'
-				|	'unique' '(' <Column List> ')' ';'
-				|	<DB Trigger Runs> 'position' <NumLiteral> <Stm>
-				|	ID '=' <Value> ';'
+<DB Table Attr>		::=	'index' '(' <Column List> ')' ';'
+					|	'unique' '(' <Column List> ')' ';'
+					|	<DB Trigger Runs> 'position' <NumLiteral> <Stm>
+					|	ID '=' <Value> ';'
 
-<DB Trigger Runs> ::= <DB Trigger Runs> ',' <DB Trigger Run>
-				|	<DB Trigger Run>
+<DB Trigger Runs> 	::= <DB Trigger Runs> ',' <DB Trigger Run>
+					|	<DB Trigger Run>
 
-<DB Trigger Run> ::= 'before' 'select'
-				|	'after'  'select'
-				|	'before' 'insert'
-				|	'after'  'insert'
-				|	'before' 'update'
-				|	'after'  'update'
-				|	'before' 'delete'
-				|	'after'  'delete'
-				|	'before' 'modified'
-				|	'after'  'modified'
+<DB Trigger Run> 	::= 'before' 'select'
+					|	'after'  'select'
+					|	'before' 'insert'
+					|	'after'  'insert'
+					|	'before' 'update'
+					|	'after'  'update'
+					|	'before' 'delete'
+					|	'after'  'delete'
+					|	'before' 'modified'
+					|	'after'  'modified'
 
-<NumLiteral>	::= IntLiteral
-				|	DecimalLiteral
+<NumLiteral>		::= IntLiteral
+					|	DecimalLiteral
 
 
 ! ===================================================================
 ! Function support
 ! ===================================================================
 
-<Function>		::=	'function' ID '(' <Func args> ')' <Stm>
-				|	'function' '(' <Func args> ')' <Stm>
+<Function>			::=	'function' ID '(' <Func args> ')' <Stm>
+					|	'function' '(' <Func args> ')' <Stm>
 
 ! ===================================================================
 ! Window support
 ! ===================================================================
 
-<Widget>		::=	'window' ID <WndParam List> <Layout Block>
-				|	'window' <WndParam List> <Layout Block>
-				|	'widget' ID <Layout Block>
-				|	'widget' <Layout Block>
+<Widget>			::=	'window' ID <WndParam List> <Layout Block>
+					|	'window' <WndParam List> <Layout Block>
+					|	'widget' ID <Layout Block>
+					|	'widget' <Layout Block>
 
-<WndParam List>	::=	<WndParam> <WndParam List>	! if switched shift-reduce conflict
-				|
+<WndParam List>		::=	<WndParam> <WndParam List>	! if switched shift-reduce conflict
+					|
 
-<WndParam>		::= ID '=' <Expr> ';'
-				|	ID ';'
+<WndParam>			::= ID '=' <Expr> ';'
+					|	ID ';'
 
-<Layout List>	::=	<Layout List> <Layout Block>
-				|
+<Layout List>		::=	<Layout List> <Layout Block>
+					|
 
-<Layout Block>	::= 'hbox'  <WndParam List> <Layout List> 'end'
-				|	'vbox'  <WndParam List> <Layout List> 'end'
-				|	'hbuttonbox' <WndParam List> <Layout List> 'end'
-				|	'vbuttonbox' <WndParam List> <Layout List> 'end'
-				|	'hpaned'  <WndParam List> <Layout List> 'end'
-				|	'vpaned'  <WndParam List> <Layout List> 'end'
-				|	'table' <WndParam List> <Layout List> 'end'
-				|	'toolbar' <WndParam List> <Layout List> 'end'
-				|	'button' <WndParam List> <Layout Block>
-				|	'button' <WndParam List> 'end'
-				|	'toolbutton' <WndParam List> <Layout Block>
-				|	'toolbutton' <WndParam List> 'end'
-				|	'scrolled' <WndParam List> <Layout Block>
-				|	'align' <WndParam List> <Layout Block>
-				|	'image' <WndParam List>
-				|	StringLiteral <WndParam List>
-				|	<Menu Block>
-				|	'[' <Expr> ']' <WndParam List>
+<Layout Block>		::= 'hbox'  <WndParam List> <Layout List> 'end'
+					|	'vbox'  <WndParam List> <Layout List> 'end'
+					|	'hbuttonbox' <WndParam List> <Layout List> 'end'
+					|	'vbuttonbox' <WndParam List> <Layout List> 'end'
+					|	'hpaned'  <WndParam List> <Layout List> 'end'
+					|	'vpaned'  <WndParam List> <Layout List> 'end'
+					|	'table' <WndParam List> <Layout List> 'end'
+					|	'toolbar' <WndParam List> <Layout List> 'end'
+					|	'button' <WndParam List> <Layout Block>
+					|	'button' <WndParam List> 'end'
+					|	'toolbutton' <WndParam List> <Layout Block>
+					|	'toolbutton' <WndParam List> 'end'
+					|	'scrolled' <WndParam List> <Layout Block>
+					|	'align' <WndParam List> <Layout Block>
+					|	'image' <WndParam List>
+					|	'treeview' <WndParam List> <TreeView Columns> 'end'
+					|	StringLiteral <WndParam List>
+					|	<Menu Block>
+					|	'[' <Expr> ']' <WndParam List>
 
-<Menu Block>	::=	'menu' <WndParam List> <MenuItems List> 'end'
+<Menu Block>		::=	'menu' <WndParam List> <MenuItems List> 'end'
 
-<MenuItems List> ::= <MenuItems List> <Menu Item>
-				|
+<MenuItems List> 	::= <MenuItems List> <Menu Item>
+					|
 
-<Menu Item>		::= <Menu Block>
-				|	'menuitem' <WndParam List>
-				|	Separator
+<Menu Item>			::= <Menu Block>
+					|	'menuitem' <WndParam List>
+					|	Separator
+
+<TreeView Columns> 	::= <TreeView Columns> <TreeView Column>
+					|
+
+<TreeView Column> 	::= 'column' <WndParam List>
+
+<Store Items>		::= <Store Items> <Store Item>
+					|
+
+<Store Item>		::=	'item' '[' <Expr List> ']' <Store Items> 'end'
 
 
 ! ===================================================================
 ! Operator precedence
 ! ===================================================================
 
-<Expr List>		::=	<Expr List> ',' <Expr>
-				|	<Expr>
+<Expr List>			::=	<Expr List> ',' <Expr>
+					|	<Expr>
 
-<Dict List>		::=	<Expr> ':' <Expr> ',' <Dict List>
-				|	<Expr> ':' <Expr>
-				|
+<Dict List>			::=	<Expr> ':' <Expr> ',' <Dict List>
+					|	<Expr> ':' <Expr>
+					|
 
-<Expr>			::=	<Widget>
-				|	<Database>
-				|	<Op Assign>
+<Expr>				::=	<Widget>
+					|	<Database>
+					|	'liststore' <WndParam List> <Store Items> 'end'
+					|	'treestore' <WndParam List> <Store Items> 'end'
+					|	<Op Assign>
 
-<Op Assign>		::=	<Op If> '='   <Expr>
-				|	<Op If> '+='  <Expr>
-				|	<Op If> '-='  <Expr>
-				|	<Op If> '*='  <Expr>
-				|	<Op If> '/='  <Expr>
-				|	<Op If> '<==' <Expr>
-				|	<Op If> '<==>' <Expr>
-				|	<Op If>
+<Op Assign>			::=	<Op If> '='   <Expr>
+					|	<Op If> '+='  <Expr>
+					|	<Op If> '-='  <Expr>
+					|	<Op If> '*='  <Expr>
+					|	<Op If> '/='  <Expr>
+					|	<Op If> '<==' <Expr>
+					|	<Op If> '<==>' <Expr>
+					|	<Op If>
 
-<Op If>			::=	<Op Or> '?' <Op If> ':' <Op If>
-				|	<Op Or>
+<Op If>				::=	<Op Or> '?' <Op If> ':' <Op If>
+					|	<Op Or>
 
-<Op Or>			::=	<Op Or> 'or' <Op And>
-				| 	<Op And>
+<Op Or>				::=	<Op Or> 'or' <Op And>
+					| 	<Op And>
 
-<Op And>		::=	<Op And> 'and' <Op Equate>
-				| 	<Op Equate>
+<Op And>			::=	<Op And> 'and' <Op Equate>
+					| 	<Op Equate>
 
-<Op Equate>		::=	<Op Equate> '==' <Op Compare>
-				| 	<Op Equate> '!=' <Op Compare>
-				|	<Op Equate> 'in' <Op Compare>
-				|	<Op Compare>
+<Op Equate>			::=	<Op Equate> '==' <Op Compare>
+					| 	<Op Equate> '!=' <Op Compare>
+					|	<Op Equate> 'in' <Op Compare>
+					|	<Op Compare>
 
-<Op Compare>	::=	<Op Compare> '<'  <Op Add>
-				|	<Op Compare> '>'  <Op Add>
-               	| 	<Op Compare> '<=' <Op Add>
-               	| 	<Op Compare> '>=' <Op Add>
-				| 	<Op Add>
+<Op Compare>		::=	<Op Compare> '<'  <Op Add>
+					|	<Op Compare> '>'  <Op Add>
+               		| 	<Op Compare> '<=' <Op Add>
+               		| 	<Op Compare> '>=' <Op Add>
+					| 	<Op Add>
 
-<Op Add>     	::=	<Op Add> '+' <Op Mult>
-               	| 	<Op Add> '-' <Op Mult>
-               	| 	<Op Mult>
+<Op Add>     		::=	<Op Add> '+' <Op Mult>
+               		| 	<Op Add> '-' <Op Mult>
+               		| 	<Op Mult>
 
-<Op Mult>    	::=	<Op Mult> '*' <Op Unary>
-               	|	<Op Mult> '/' <Op Unary>
-               	|	<Op Mult> '%' <Op Unary>
-               	|	<Op Unary>
+<Op Mult>    		::=	<Op Mult> '*' <Op Unary>
+               		|	<Op Mult> '/' <Op Unary>
+               		|	<Op Mult> '%' <Op Unary>
+               		|	<Op Unary>
 
-<Op Unary>   	::=	'not'  <Op Unary>
-				|	'!'    <Op Unary>
-               	| 	'-'    <Op Unary>
-              	|	'cast' '(' <Op Unary> 'as' <QualifiedName> ')'
-               	|	'++'   <Op Unary>
-               	|	'--'   <Op Unary>
-               	|	<Op Pointer> '++'
-               	|	<Op Pointer> '--'
-               	|	<Op Pointer> 'is' 'null'
-               	|	<Op Pointer> 'not' 'null'
-               	|	<Op Pointer> 'is' 'not' 'null'
-               	| 	<Op Pointer>
+<Op Unary>   		::=	'not'  <Op Unary>
+					|	'!'    <Op Unary>
+               		| 	'-'    <Op Unary>
+              		|	'cast' '(' <Op Unary> 'as' <QualifiedName> ')'
+               		|	'++'   <Op Unary>
+               		|	'--'   <Op Unary>
+               		|	<Op Pointer> '++'
+               		|	<Op Pointer> '--'
+               		|	<Op Pointer> 'is' 'null'
+               		|	<Op Pointer> 'not' 'null'
+               		|	<Op Pointer> 'is' 'not' 'null'
+               		| 	<Op Pointer>
 
-<Op Pointer>	::=	<Op Pointer> '.' <Value>
-				| 	<Op Pointer> '->' <Value>	! if not null, lookup value else return null - safe referencing
-				| 	<Op Pointer> '[' <Expr> ']'
-				| 	<Op Pointer> '(' <Args> ')' ! function call
-				| 	<Value>
+<Op Pointer>		::=	<Op Pointer> '.' <Value>
+					| 	<Op Pointer> '->' <Value>	! if not null, lookup value else return null - safe referencing
+					| 	<Op Pointer> '[' <Expr> ']'
+					| 	<Op Pointer> '(' <Args> ')' ! function call
+					| 	<Value>
 
-<Value>			::=	IntLiteral
-				| 	StringLiteral
-				|	DecimalLiteral
-				|	DateTimeLiteral
-				|	TimeSpanLiteral
-				|	'type' '(' <QualifiedName> ')'
-				|	'new' <QualifiedName> '(' <Args> ')'
-				|	ID
-				|	'var' ID
-				|	'static' ID
-				|	'(' <Expr> ')'
-				|	'[' <Expr List> ']'
-				|	'{' <Dict List> '}'
-				|	'range' '<' <Op Add> ';' <Op Add> '>'
-				|	'range' '<' <Op Add> ';' <Op Add> ')'
-				|	'range' '(' <Op Add> ';' <Op Add> '>'
-				|	'range' '(' <Op Add> ';' <Op Add> ')'
-				|	property <Expr> ';'
-				|	property <Expr> get <Expr> ';'
-				|	property <Expr> get <Expr> set <Expr> ';'
-				|	<Function>
-				|	'dict'
-				|	'list'
-				|	'null'
-				|	'true'
-				|	'false'
+<Value>				::=	IntLiteral
+					| 	StringLiteral
+					|	DecimalLiteral
+					|	DateTimeLiteral
+					|	TimeSpanLiteral
+					|	'type' '(' <QualifiedName> ')'
+					|	'new' <QualifiedName> '(' <Args> ')'
+					|	ID
+					|	'var' ID
+					|	'static' ID
+					|	'(' <Expr> ')'
+					|	'[' <Expr List> ']'
+					|	'{' <Dict List> '}'
+					|	'range' '<' <Op Add> ';' <Op Add> '>'
+					|	'range' '<' <Op Add> ';' <Op Add> ')'
+					|	'range' '(' <Op Add> ';' <Op Add> '>'
+					|	'range' '(' <Op Add> ';' <Op Add> ')'
+					|	property <Expr> ';'
+					|	property <Expr> get <Expr> ';'
+					|	property <Expr> get <Expr> set <Expr> ';'
+					|	<Function>
+					|	'dict'
+					|	'list'
+					|	'null'
+					|	'true'
+					|	'false'
 
 

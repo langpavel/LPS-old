@@ -498,7 +498,7 @@ namespace LPS.Server
 
 						foreach(DataColumn col in dt.Columns)
 						{
-							ColumnInfo ci = info.GetColumnInfo(col.ColumnName);
+							IColumnInfo ci = info.GetColumnInfo(col.ColumnName);
 							if(ci == null)
 								continue;
 							col.Caption = ci.Caption;

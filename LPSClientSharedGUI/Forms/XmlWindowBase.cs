@@ -10,7 +10,7 @@ namespace LPS.Client
 		private bool is_disposed;
 		public Glade.XML GladeXML { get; set; }
 		public Window Window { get; set; }
-		public virtual TableInfo TableInfo { get; set; }
+		public virtual ITableInfo TableInfo { get; set; }
 		//public bool DestroyOnDelete { get; set; }
 		private List<IDisposable> _OwnedComponents;
 		public List<IDisposable> OwnedComponents

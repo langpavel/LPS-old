@@ -10,7 +10,8 @@ namespace LPS
 {
 	[Serializable]
 	[XmlRoot("column")]
-	public class ColumnInfo : ICloneable, ILookupInfo
+	[Obsolete("Use IDBColumn")]
+	public class ColumnInfo : IColumnInfo
 	{
 		[XmlAttribute("name")]
 		public string Name { get; set; }
@@ -63,9 +64,9 @@ namespace LPS
 			return this.Clone();
 		}
 		
-		public virtual ColumnInfo Clone()
+		public virtual IColumnInfo Clone()
 		{
-			ColumnInfo clone = (ColumnInfo)this.MemberwiseClone();
+			IColumnInfo clone = (IColumnInfo)this.MemberwiseClone();
 			return clone;
 		}
 		#endregion
@@ -88,7 +89,7 @@ namespace LPS
 				}
 				if(!String.IsNullOrEmpty(this.FkReferenceTable))
 				{
-					TableInfo tableInfo = ResourceManager.Instance.GetTableInfo(this.FkReferenceTable);
+					ITableInfo tableInfo = ResourceManager.Instance.GetTableInfo(this.FkReferenceTable);
 					ILookupInfo look = (ILookupInfo)tableInfo;
 					return look.LookupColumns;
 				}
@@ -105,7 +106,7 @@ namespace LPS
 					return this.FkListReplaceFormat;
 				if(!String.IsNullOrEmpty(this.FkReferenceTable))
 				{
-					TableInfo tableInfo = ResourceManager.Instance.GetTableInfo(this.FkReferenceTable);
+					ITableInfo tableInfo = ResourceManager.Instance.GetTableInfo(this.FkReferenceTable);
 					ILookupInfo look = (ILookupInfo)tableInfo;
 					string fmt = look.FkListReplaceFormat;
 					if(!String.IsNullOrEmpty(fmt))
@@ -124,7 +125,7 @@ namespace LPS
 					return this.LookupMethod;
 				if(!String.IsNullOrEmpty(this.FkReferenceTable))
 				{
-					TableInfo tableInfo = ResourceManager.Instance.GetTableInfo(this.FkReferenceTable);
+					ITableInfo tableInfo = ResourceManager.Instance.GetTableInfo(this.FkReferenceTable);
 					return tableInfo.LookupMethod;
 				}
 				return null;

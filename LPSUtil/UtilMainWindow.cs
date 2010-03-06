@@ -63,7 +63,7 @@ namespace LPS.Util
 			AddCommand(new PingCommand("ping"));
 			AddCommand(new RefreshCommand("refresh"));
 			AddCommand(new SqlTablesCommand("sqltab"));
-			AddCommand(new XtableCommand("xtab"));
+			//AddCommand(new XtableCommand("xtab"));
 			AddCommand(new WriteFileCommand("writefile"));
 			AddCommand(new ReadFileCommand("readfile"));
 			AddCommand(new VarsCommand("vars"));

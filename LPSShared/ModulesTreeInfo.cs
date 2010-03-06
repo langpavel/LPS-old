@@ -11,6 +11,7 @@ namespace LPS
 
 	[Serializable]
 	[XmlRoot("modules-tree")]
+	//[Obsolete] // Create replacement
 	public class ModulesTreeInfo : IListInfo
 	{
 		public ModulesTreeInfo ()
@@ -68,16 +69,16 @@ namespace LPS
 		[XmlArrayItem("column")]
 		public List<ColumnInfo> Columns { get; set; }
 
-		List<ColumnInfo> IListInfo.Columns
+		IColumnInfo[] IListInfo.Columns
 		{
 			get
 			{
-				List<ColumnInfo> result = new List<ColumnInfo>();
-				foreach(ColumnInfo col in this.Table.Columns)
+				List<IColumnInfo> result = new List<IColumnInfo>();
+				foreach(IColumnInfo col in this.Table.Columns)
 				{
 					result.Add(this.GetColumnInfo(col.Name));
 				}
-				return result;
+				return result.ToArray();
 			}
 		}
 
@@ -122,9 +123,9 @@ namespace LPS
 			return string.Format("[ModulesTreeInfo: Id={0}, Text={1}, Description={2}, DetailName={3}", Id, Text, Description, DetailName);
 		}
 		
-		public ColumnInfo GetColumnInfo(string name)
+		public IColumnInfo GetColumnInfo(string name)
 		{
-			foreach(ColumnInfo col in this.Columns)
+			foreach(IColumnInfo col in this.Columns)
 			{
 				if(col.Name == name)
 					return col;
@@ -132,9 +133,9 @@ namespace LPS
 			return Table.GetColumnInfo(name);
 		}
 		
-		private TableInfo tableinfo;
+		private ITableInfo tableinfo;
 		[XmlIgnore]
-		public TableInfo Table
+		public ITableInfo Table
 		{ 
 			get 
 			{ 

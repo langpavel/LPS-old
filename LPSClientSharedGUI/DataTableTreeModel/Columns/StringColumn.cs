@@ -12,7 +12,7 @@ namespace LPS.Client
 		{
 		}
 
-		public StringColumn(ListStoreMapping Mapping, ColumnInfo ColumnInfo, DataColumn DataColumn)
+		public StringColumn(ListStoreMapping Mapping, IColumnInfo ColumnInfo, DataColumn DataColumn)
 			: base(Mapping, ColumnInfo, DataColumn)
 		{
 		}

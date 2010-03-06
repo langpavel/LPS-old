@@ -8,7 +8,7 @@ namespace LPS.Client
 	{
 		Glade.XML GladeXML { get; set; }
 		Window Window { get; set; }
-		TableInfo TableInfo { get; set; }
+		ITableInfo TableInfo { get; set; }
 		void OnCreate();
 	}
 }

@@ -6,7 +6,7 @@ namespace LPS.Client
 	{
 		string WindowName { get; }
 		long Id { get; }
-		TableInfo TableInfo { get; set; }
+		ITableInfo TableInfo { get; set; }
 		// For menu item group category
 		string Category { get; }
 		// For menu item caption

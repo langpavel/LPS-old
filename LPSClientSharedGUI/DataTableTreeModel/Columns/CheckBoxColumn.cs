@@ -12,7 +12,7 @@ namespace LPS.Client
 		{
 		}
 
-		public CheckBoxColumn(ListStoreMapping Mapping, ColumnInfo ColumnInfo, DataColumn DataColumn)
+		public CheckBoxColumn(ListStoreMapping Mapping, IColumnInfo ColumnInfo, DataColumn DataColumn)
 			: base(Mapping, ColumnInfo, DataColumn)
 		{
 			this.FixedWidth = 40;

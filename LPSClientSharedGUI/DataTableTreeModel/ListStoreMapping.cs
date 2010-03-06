@@ -44,7 +44,7 @@ namespace LPS.Client
 			return vals;
 		}
 
-		public ConfigurableColumn CreateColumn(ColumnInfo info, DataColumn column)
+		public ConfigurableColumn CreateColumn(IColumnInfo info, DataColumn column)
 		{
 			if(info != null)
 			{
