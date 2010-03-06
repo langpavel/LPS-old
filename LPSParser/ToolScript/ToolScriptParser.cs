@@ -478,15 +478,17 @@ namespace LPS.ToolScript
 		// <Expr> ::= liststore <WndParam List> <Store Items> end
 		protected override object RuleExprListstoreEnd(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Expr> ::= liststore <WndParam List> <Store Items> end");
-			//return new
+			return new ListStoreExpression(
+				Get<EvaluatedAttributeList>(token,1),
+				Get<List<StoreItemStatement>>(token,2));
 		}
 
 		// <Expr> ::= treestore <WndParam List> <Store Items> end
 		protected override object RuleExprTreestoreEnd(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Expr> ::= treestore <WndParam List> <Store Items> end");
-			//return new
+			return new TreeStoreExpression(
+				Get<EvaluatedAttributeList>(token,1),
+				Get<List<StoreItemStatement>>(token,2));
 		}
 
 		// <Expr> ::= <Op Assign>

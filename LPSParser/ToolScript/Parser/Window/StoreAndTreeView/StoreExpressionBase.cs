@@ -15,9 +15,15 @@ namespace LPS.ToolScript.Parser
 			this.Items = Items;
 		}
 
-		protected Type[] GetColumnTypes()
+		public Type[] GetColumnTypes()
 		{
-			throw new NotImplementedException();
+			List<Type> types = new List<Type>();
+			foreach(StoreItemStatement item in Items)
+				item.UpdateTypes(types);
+			for(int i = 0; i < types.Count; i++)
+				if(types[i] == null)
+					types[i] = typeof(object);
+			return types.ToArray();
 		}
 
 		protected abstract TreeModel CreateStore();

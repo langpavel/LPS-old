@@ -189,6 +189,7 @@
     <Compile Include="ToolScript\Parser\Window\StoreAndTreeView\StoreItemStatement.cs" />
     <Compile Include="ToolScript\Parser\Window\StoreAndTreeView\StoreExpressionBase.cs" />
     <Compile Include="ToolScript\Parser\Window\StoreAndTreeView\ListStoreExpression.cs" />
+    <Compile Include="ToolScript\Parser\Window\StoreAndTreeView\TreeStoreExpression.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />

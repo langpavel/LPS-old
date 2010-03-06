@@ -155,6 +155,7 @@ namespace LPS.Util
 					catch(Exception err)
 					{
 						Log.Error(err);
+						mark = buffer.CreateMark(null, buffer.EndIter, true);
 						WriteBufferWithTag("error", "Chyba: {0}\n", err);
 					}
 				}

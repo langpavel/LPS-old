@@ -18,6 +18,8 @@ namespace LPS.ToolScript.Parser
 
 		protected override TreeIter AppendData (TreeModel store, StoreItemStatement item)
 		{
+			if(item.Childs != null && item.Childs.Count != 0)
+				throw new InvalidOperationException("ListStore nemůže obsahovat vnořené položky");
 			return ((ListStore)store).AppendValues(item.Evaluated);
 		}
 
