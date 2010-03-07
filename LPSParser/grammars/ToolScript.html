@@ -1224,7 +1224,7 @@ H2
 <tr>
   <td>&nbsp;&nbsp;&nbsp;</td>
   <td align=center>::=</td>
-  <td nowrap><span class="ssTerminal">column</span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> </td>
+  <td nowrap><span class="ssTerminal">column</span> <span class="ssTerminal">ID</span> <span class="ssTerminal">IntLiteral</span> <span class="ssNonTerminal"><a href="#wndparam_list">&lt;WndParam List&gt;</a></span> </td>
 </tr>
 </table><br>
 <a name=store_items></a>
@@ -1251,7 +1251,7 @@ H2
 <tr>
   <td>&nbsp;&nbsp;&nbsp;</td>
   <td align=center>::=</td>
-  <td nowrap><span class="ssTerminal">item</span> <span class="ssTerminal">'['</span> <span class="ssNonTerminal"><a href="#expr_list">&lt;Expr List&gt;</a></span> <span class="ssTerminal">']'</span> <span class="ssNonTerminal"><a href="#store_items">&lt;Store Items&gt;</a></span> <span class="ssTerminal">end</span> </td>
+  <td nowrap><span class="ssTerminal">item</span> <span class="ssNonTerminal"><a href="#expr_list">&lt;Expr List&gt;</a></span> <span class="ssNonTerminal"><a href="#store_items">&lt;Store Items&gt;</a></span> <span class="ssTerminal">end</span> </td>
 </tr>
 </table><br>
 <a name=expr_list></a>
@@ -3518,7 +3518,7 @@ H2
   <td class="ssCell" valign="top">153</td>
   <td class="ssCell">&lt;TreeView Column&gt;</td>
   <td class="ssCell">::=</td>
-  <td class="ssCell">column &lt;WndParam List&gt;</td>
+  <td class="ssCell">column ID IntLiteral &lt;WndParam List&gt;</td>
 </tr>
 <tr>
   <td class="ssCell" valign="top">154</td>
@@ -3536,7 +3536,7 @@ H2
   <td class="ssCell" valign="top">156</td>
   <td class="ssCell">&lt;Store Item&gt;</td>
   <td class="ssCell">::=</td>
-  <td class="ssCell">item '[' &lt;Expr List&gt; ']' &lt;Store Items&gt; end</td>
+  <td class="ssCell">item &lt;Expr List&gt; &lt;Store Items&gt; end</td>
 </tr>
 <tr>
   <td class="ssCell" valign="top">157</td>

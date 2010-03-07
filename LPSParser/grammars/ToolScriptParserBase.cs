@@ -2082,9 +2082,9 @@ namespace LPS.ToolScript
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;TreeView Column&gt; ::= column &lt;WndParam List&gt;</c></para>
+        /// <para><c>&lt;TreeView Column&gt; ::= column ID IntLiteral &lt;WndParam List&gt;</c></para>
         /// </summary>
-        RuleTreeviewcolumnColumn = ToolScriptParserBase.RulesOffset + 153,
+        RuleTreeviewcolumnColumnIdIntliteral = ToolScriptParserBase.RulesOffset + 153,
 
         /// <summary>
         /// <para>Pravidlo: </para>
@@ -2100,9 +2100,9 @@ namespace LPS.ToolScript
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Store Item&gt; ::= item '[' &lt;Expr List&gt; ']' &lt;Store Items&gt; end</c></para>
+        /// <para><c>&lt;Store Item&gt; ::= item &lt;Expr List&gt; &lt;Store Items&gt; end</c></para>
         /// </summary>
-        RuleStoreitemItemLbracketRbracketEnd = ToolScriptParserBase.RulesOffset + 156,
+        RuleStoreitemItemEnd = ToolScriptParserBase.RulesOffset + 156,
 
         /// <summary>
         /// <para>Pravidlo: </para>
@@ -5135,10 +5135,10 @@ namespace LPS.ToolScript
         protected abstract object RuleMenuitemSeparator(NonterminalToken token); // <Menu Item> ::= Separator
         protected abstract object RuleTreeviewcolumns(NonterminalToken token); // <TreeView Columns> ::= <TreeView Columns> <TreeView Column>
         protected abstract object RuleTreeviewcolumns2(NonterminalToken token); // <TreeView Columns> ::= 
-        protected abstract object RuleTreeviewcolumnColumn(NonterminalToken token); // <TreeView Column> ::= column <WndParam List>
+        protected abstract object RuleTreeviewcolumnColumnIdIntliteral(NonterminalToken token); // <TreeView Column> ::= column ID IntLiteral <WndParam List>
         protected abstract object RuleStoreitems(NonterminalToken token); // <Store Items> ::= <Store Items> <Store Item>
         protected abstract object RuleStoreitems2(NonterminalToken token); // <Store Items> ::= 
-        protected abstract object RuleStoreitemItemLbracketRbracketEnd(NonterminalToken token); // <Store Item> ::= item '[' <Expr List> ']' <Store Items> end
+        protected abstract object RuleStoreitemItemEnd(NonterminalToken token); // <Store Item> ::= item <Expr List> <Store Items> end
         protected abstract object RuleExprlistComma(NonterminalToken token); // <Expr List> ::= <Expr List> ',' <Expr>
         protected abstract object RuleExprlist(NonterminalToken token); // <Expr List> ::= <Expr>
         protected abstract object RuleDictlistColonComma(NonterminalToken token); // <Dict List> ::= <Expr> ':' <Expr> ',' <Dict List>
@@ -5536,14 +5536,14 @@ namespace LPS.ToolScript
                 	return RuleTreeviewcolumns(token);
                 case (int)Symbols.RuleTreeviewcolumns2: //<TreeView Columns> ::= 
                 	return RuleTreeviewcolumns2(token);
-                case (int)Symbols.RuleTreeviewcolumnColumn: //<TreeView Column> ::= column <WndParam List>
-                	return RuleTreeviewcolumnColumn(token);
+                case (int)Symbols.RuleTreeviewcolumnColumnIdIntliteral: //<TreeView Column> ::= column ID IntLiteral <WndParam List>
+                	return RuleTreeviewcolumnColumnIdIntliteral(token);
                 case (int)Symbols.RuleStoreitems: //<Store Items> ::= <Store Items> <Store Item>
                 	return RuleStoreitems(token);
                 case (int)Symbols.RuleStoreitems2: //<Store Items> ::= 
                 	return RuleStoreitems2(token);
-                case (int)Symbols.RuleStoreitemItemLbracketRbracketEnd: //<Store Item> ::= item '[' <Expr List> ']' <Store Items> end
-                	return RuleStoreitemItemLbracketRbracketEnd(token);
+                case (int)Symbols.RuleStoreitemItemEnd: //<Store Item> ::= item <Expr List> <Store Items> end
+                	return RuleStoreitemItemEnd(token);
                 case (int)Symbols.RuleExprlistComma: //<Expr List> ::= <Expr List> ',' <Expr>
                 	return RuleExprlistComma(token);
                 case (int)Symbols.RuleExprlist: //<Expr List> ::= <Expr>
@@ -6801,10 +6801,10 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <TreeView Column> ::= column <WndParam List>
-		protected override object RuleTreeviewcolumnColumn(NonterminalToken token)
+		// <TreeView Column> ::= column ID IntLiteral <WndParam List>
+		protected override object RuleTreeviewcolumnColumnIdIntliteral(NonterminalToken token)
 		{
-			throw new NotImplementedException("<TreeView Column> ::= column <WndParam List>");
+			throw new NotImplementedException("<TreeView Column> ::= column ID IntLiteral <WndParam List>");
 			//return new
 		}
 
@@ -6822,10 +6822,10 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Store Item> ::= item '[' <Expr List> ']' <Store Items> end
-		protected override object RuleStoreitemItemLbracketRbracketEnd(NonterminalToken token)
+		// <Store Item> ::= item <Expr List> <Store Items> end
+		protected override object RuleStoreitemItemEnd(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Store Item> ::= item '[' <Expr List> ']' <Store Items> end");
+			throw new NotImplementedException("<Store Item> ::= item <Expr List> <Store Items> end");
 			//return new
 		}
 
@@ -7568,10 +7568,10 @@ namespace LPS.ToolScript
 			Test(@"<Menu Item> ::= Separator");
 			Test(@"<TreeView Columns> ::= <TreeView Columns> <TreeView Column>");
 			Test(@"<TreeView Columns> ::= ");
-			Test(@"<TreeView Column> ::= column <WndParam List>");
+			Test(@"<TreeView Column> ::= column ID IntLiteral <WndParam List>");
 			Test(@"<Store Items> ::= <Store Items> <Store Item>");
 			Test(@"<Store Items> ::= ");
-			Test(@"<Store Item> ::= item '[' <Expr List> ']' <Store Items> end");
+			Test(@"<Store Item> ::= item <Expr List> <Store Items> end");
 			Test(@"<Expr List> ::= <Expr List> ',' <Expr>");
 			Test(@"<Expr List> ::= <Expr>");
 			Test(@"<Dict List> ::= <Expr> ':' <Expr> ',' <Dict List>");

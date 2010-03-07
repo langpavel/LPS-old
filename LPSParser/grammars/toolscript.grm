@@ -261,12 +261,12 @@ Comment Line  		= '//'
 <TreeView Columns> 	::= <TreeView Columns> <TreeView Column>
 					|
 
-<TreeView Column> 	::= 'column' <WndParam List>
+<TreeView Column> 	::= 'column' ID IntLiteral <WndParam List>
 
 <Store Items>		::= <Store Items> <Store Item>
 					|
 
-<Store Item>		::=	'item' '[' <Expr List> ']' <Store Items> 'end'
+<Store Item>		::=	'item' <Expr List> <Store Items> 'end'
 
 
 ! ===================================================================
