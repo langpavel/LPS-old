@@ -37,7 +37,7 @@ namespace LPS.ToolScript
 			return args.ReturnValue;
 		}
 
-		public EventHandler GetEventHandler (IExecutionContext CustomContext)
+		public Delegate GetEventHandler (Type EventHandlerType, IExecutionContext CustomContext)
 		{
 			throw new NotImplementedException();
 		}

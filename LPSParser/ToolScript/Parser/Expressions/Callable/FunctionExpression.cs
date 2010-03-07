@@ -89,9 +89,10 @@ namespace LPS.ToolScript.Parser
 			}
 		}
 
-		public EventHandler GetEventHandler(IExecutionContext CustomContext)
+		public Delegate GetEventHandler(Type EventHandlerType, IExecutionContext CustomContext)
 		{
-			return new EventHandler((new EventHandlerHelper(this, CustomContext)).Invoke);
+			EventHandlerHelper helper = new EventHandlerHelper(this, CustomContext);
+			return Delegate.CreateDelegate(EventHandlerType, helper, typeof(EventHandlerHelper).GetMethod("Invoke"));
 		}
 
 		public override string ToString ()

@@ -66,14 +66,14 @@ NextMethod:		;
 			throw new InvalidOperationException(sb.ToString());
 		}
 
-		public EventHandler GetEventHandler (IExecutionContext CustomContext)
+		public Delegate GetEventHandler (Type EventHandlerType, IExecutionContext CustomContext)
 		{
 			if(Methods.Length != 1 || Methods[0].GetParameters().Length != 2)
 				throw new Exception("Metoda nelze použít jako event handler");
-			return new EventHandler(AsEventHandler);
+			return Delegate.CreateDelegate(EventHandlerType, this, typeof(MethodWraper).GetMethod("AsEventHandler"));
 		}
 
-		private void AsEventHandler(object sender, EventArgs args)
+		public void AsEventHandler(object sender, EventArgs args)
 		{
 			Methods[0].Invoke(Instance, new object[] {sender, args});
 		}

@@ -24,7 +24,9 @@ namespace LPS.Util
 		public UtilMainWindow() : base(Gtk.WindowType.Toplevel)
 		{
 			this.Build();
-			
+
+			GLib.ExceptionManager.UnhandledException += UnhandledException;
+
 			this.WindowPosition = WindowPosition.Center;
 			this.WidthRequest = 800;
 			this.HeightRequest = 500;
@@ -50,6 +52,18 @@ namespace LPS.Util
 			outputView.Buffer.TagTable.Add(tagcode);
 
 			Instance = this;
+		}
+
+		void UnhandledException(GLib.UnhandledExceptionArgs args)
+		{
+			if(args.IsTerminating)
+				return;
+			TextBuffer buffer = this.outputView.Buffer;
+			TextMark mark = buffer.CreateMark(null, buffer.EndIter, true);
+			WriteBufferWithTag("error", "Vyjímka v obsluze signálu:\n{0}\n",args.ExceptionObject);
+			outputView.ScrollToMark(mark, 0.0, true, 0.0, 0.0);
+
+			args.ExitApplication = false;
 		}
 
 		public void InitCmds()

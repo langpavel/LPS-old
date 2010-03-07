@@ -185,12 +185,14 @@
     <Compile Include="ToolScript\Parser\Statements\TryBlockStatement.cs" />
     <Compile Include="ToolScript\Parser\Statements\CatchStatement.cs" />
     <Compile Include="ToolScript\Parser\Window\ScrolledExpression.cs" />
-    <Compile Include="ToolScript\Parser\Window\StoreAndTreeView\TreeViewColumnStatement.cs" />
+    <Compile Include="ToolScript\Parser\Window\StoreAndTreeView\TreeViewColumnExpression.cs" />
     <Compile Include="ToolScript\Parser\Window\StoreAndTreeView\StoreItemStatement.cs" />
     <Compile Include="ToolScript\Parser\Window\StoreAndTreeView\StoreExpressionBase.cs" />
     <Compile Include="ToolScript\Parser\Window\StoreAndTreeView\ListStoreExpression.cs" />
     <Compile Include="ToolScript\Parser\Window\StoreAndTreeView\TreeStoreExpression.cs" />
     <Compile Include="ToolScript\Parser\Window\StoreAndTreeView\TreeViewExpression.cs" />
+    <Compile Include="ToolScript\TreeStore.cs" />
+    <Compile Include="ToolScript\ListStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />

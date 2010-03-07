@@ -13,7 +13,7 @@ namespace LPS.ToolScript.Parser
 
 		protected override TreeModel CreateStore ()
 		{
-			return new ListStore(GetColumnTypes());
+			return new LPS.ToolScript.ListStore(GetColumnTypes());
 		}
 
 		protected override TreeIter AppendData (TreeModel store, StoreItemStatement item)

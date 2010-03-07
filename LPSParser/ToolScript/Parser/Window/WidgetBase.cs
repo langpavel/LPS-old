@@ -109,12 +109,14 @@ namespace LPS.ToolScript.Parser
 				foreach(GLib.SignalAttribute signal in ev.GetCustomAttributes(typeof(GLib.SignalAttribute), true))
 				{
 					object handler;
-					if(TryGetAttribute(typeof(object), signal.CName, out handler))
+					if(TryGetAttribute(typeof(object), signal.CName.Replace('-','_'), out handler))
 					{
 						if(handler is Delegate)
 							ev.AddEventHandler(widget, (Delegate)handler);
 						else if(handler is IFunction)
-							ev.AddEventHandler(widget, ((IFunction)handler).GetEventHandler(context));
+						{
+							ev.AddEventHandler(widget, ((IFunction)handler).GetEventHandler(ev.EventHandlerType, context));
+						}
 						else
 							throw new NotSupportedException();
 						return true;

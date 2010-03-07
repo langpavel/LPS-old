@@ -32,9 +32,9 @@ namespace LPS.Util
 
 		public abstract object Execute(IExecutionContext context, TextWriter Out, TextWriter Info, TextWriter Err, object[] Params);
 
-		public EventHandler GetEventHandler (IExecutionContext CustomContext)
+		public Delegate GetEventHandler(Type EventHandlerType, IExecutionContext CustomContext)
 		{
-			throw new System.NotImplementedException ();
+			throw new NotImplementedException();
 		}
 
 		public override string ToString ()
