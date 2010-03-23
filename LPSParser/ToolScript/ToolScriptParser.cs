@@ -936,16 +936,9 @@ namespace LPS.ToolScript
 			return new NullLiteral();
 		}
 
-		// <Value> ::= true
-		protected override object RuleValueTrue(NonterminalToken token)
+		protected override object RuleValueBooleanliteral (NonterminalToken token)
 		{
-			return new BooleanLiteral(true);
-		}
-
-		// <Value> ::= false
-		protected override object RuleValueFalse(NonterminalToken token)
-		{
-			return new BooleanLiteral(false);
+			return new BooleanLiteral(TText(token,0) == "true");
 		}
 
 		#region Widgets

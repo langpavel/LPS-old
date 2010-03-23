@@ -97,7 +97,7 @@ Global
 		{EA93C136-1964-4122-B619-0EBB3462938F}.StronglyNamedAssembly|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = LPSUtil\LPSUtil.csproj
+		StartupItem = LPSClientSklad\LPSClientSklad.csproj
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = None

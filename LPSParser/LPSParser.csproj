@@ -155,7 +155,6 @@
     <Compile Include="ToolScript\Parser\Database\Table\DBTableTriggers.cs" />
     <Compile Include="ToolScript\Parser\Statements\ThrowStatement.cs" />
     <Compile Include="ToolScript\Exceptions\ScriptCustomException.cs" />
-    <Compile Include="ToolScript\DatabaseConnection.cs" />
     <Compile Include="ToolScript\ExecutionContext.cs" />
     <Compile Include="ToolScript\Parser\Interfaces\IExecutionContext.cs" />
     <Compile Include="ToolScript\WindowContext.cs" />
@@ -193,6 +192,7 @@
     <Compile Include="ToolScript\Parser\Window\StoreAndTreeView\TreeViewExpression.cs" />
     <Compile Include="ToolScript\TreeStore.cs" />
     <Compile Include="ToolScript\ListStore.cs" />
+    <Compile Include="Database\DatabaseConnection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="grammars\c-ansi.grm" />
@@ -215,6 +215,7 @@
     <Folder Include="ToolScript\Parser\Database\Columns\" />
     <Folder Include="ToolScript\Parser\Database\Table\" />
     <Folder Include="ToolScript\Parser\Window\StoreAndTreeView\" />
+    <Folder Include="Database\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

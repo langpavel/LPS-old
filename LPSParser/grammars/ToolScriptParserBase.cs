@@ -284,142 +284,142 @@ namespace LPS.ToolScript
         Bool = 44,
 
         /// <summary>
+        /// <para>Symbol: BooleanLiteral</para>
+        /// <para><c>BooleanLiteral</c></para>
+        /// </summary>
+        Booleanliteral = 45,
+
+        /// <summary>
         /// <para>Symbol: break</para>
         /// <para><c>break</c></para>
         /// </summary>
-        Break = 45,
+        Break = 46,
 
         /// <summary>
         /// <para>Symbol: button</para>
         /// <para><c>button</c></para>
         /// </summary>
-        Button = 46,
+        Button = 47,
 
         /// <summary>
         /// <para>Symbol: case</para>
         /// <para><c>case</c></para>
         /// </summary>
-        Case = 47,
+        Case = 48,
 
         /// <summary>
         /// <para>Symbol: cast</para>
         /// <para><c>cast</c></para>
         /// </summary>
-        Cast = 48,
+        Cast = 49,
 
         /// <summary>
         /// <para>Symbol: catch</para>
         /// <para><c>catch</c></para>
         /// </summary>
-        Catch = 49,
+        Catch = 50,
 
         /// <summary>
         /// <para>Symbol: column</para>
         /// <para><c>column</c></para>
         /// </summary>
-        Column = 50,
+        Column = 51,
 
         /// <summary>
         /// <para>Symbol: continue</para>
         /// <para><c>continue</c></para>
         /// </summary>
-        Continue = 51,
+        Continue = 52,
 
         /// <summary>
         /// <para>Symbol: database</para>
         /// <para><c>database</c></para>
         /// </summary>
-        Database = 52,
+        Database = 53,
 
         /// <summary>
         /// <para>Symbol: date</para>
         /// <para><c>date</c></para>
         /// </summary>
-        Date = 53,
+        Date = 54,
 
         /// <summary>
         /// <para>Symbol: daterange</para>
         /// <para><c>daterange</c></para>
         /// </summary>
-        Daterange = 54,
+        Daterange = 55,
 
         /// <summary>
         /// <para>Symbol: datetime</para>
         /// <para><c>datetime</c></para>
         /// </summary>
-        Datetime = 55,
+        Datetime = 56,
 
         /// <summary>
         /// <para>Symbol: DateTimeLiteral</para>
         /// <para><c>DateTimeLiteral</c></para>
         /// </summary>
-        Datetimeliteral = 56,
+        Datetimeliteral = 57,
 
         /// <summary>
         /// <para>Symbol: datetimerange</para>
         /// <para><c>datetimerange</c></para>
         /// </summary>
-        Datetimerange = 57,
+        Datetimerange = 58,
 
         /// <summary>
         /// <para>Symbol: decimal</para>
         /// <para><c>decimal</c></para>
         /// </summary>
-        Decimal = 58,
+        Decimal = 59,
 
         /// <summary>
         /// <para>Symbol: DecimalLiteral</para>
         /// <para><c>DecimalLiteral</c></para>
         /// </summary>
-        Decimalliteral = 59,
+        Decimalliteral = 60,
 
         /// <summary>
         /// <para>Symbol: default</para>
         /// <para><c>default</c></para>
         /// </summary>
-        Default = 60,
+        Default = 61,
 
         /// <summary>
         /// <para>Symbol: delete</para>
         /// <para><c>delete</c></para>
         /// </summary>
-        Delete = 61,
+        Delete = 62,
 
         /// <summary>
         /// <para>Symbol: dict</para>
         /// <para><c>dict</c></para>
         /// </summary>
-        Dict = 62,
+        Dict = 63,
 
         /// <summary>
         /// <para>Symbol: do</para>
         /// <para><c>do</c></para>
         /// </summary>
-        Do = 63,
+        Do = 64,
 
         /// <summary>
         /// <para>Symbol: else</para>
         /// <para><c>else</c></para>
         /// </summary>
-        Else = 64,
+        Else = 65,
 
         /// <summary>
         /// <para>Symbol: end</para>
         /// <para><c>end</c></para>
         /// </summary>
-        End = 65,
+        End = 66,
 
         /// <summary>
         /// <para>Symbol: extends</para>
         /// <para><c>extends</c></para>
         /// </summary>
-        Extends = 66,
-
-        /// <summary>
-        /// <para>Symbol: false</para>
-        /// <para><c>false</c></para>
-        /// </summary>
-        False = 67,
+        Extends = 67,
 
         /// <summary>
         /// <para>Symbol: finally</para>
@@ -740,424 +740,418 @@ namespace LPS.ToolScript
         Treeview = 120,
 
         /// <summary>
-        /// <para>Symbol: true</para>
-        /// <para><c>true</c></para>
-        /// </summary>
-        True = 121,
-
-        /// <summary>
         /// <para>Symbol: try</para>
         /// <para><c>try</c></para>
         /// </summary>
-        Try = 122,
+        Try = 121,
 
         /// <summary>
         /// <para>Symbol: type</para>
         /// <para><c>type</c></para>
         /// </summary>
-        Type = 123,
+        Type = 122,
 
         /// <summary>
         /// <para>Symbol: unique</para>
         /// <para><c>unique</c></para>
         /// </summary>
-        Unique = 124,
+        Unique = 123,
 
         /// <summary>
         /// <para>Symbol: update</para>
         /// <para><c>update</c></para>
         /// </summary>
-        Update = 125,
+        Update = 124,
 
         /// <summary>
         /// <para>Symbol: using</para>
         /// <para><c>using</c></para>
         /// </summary>
-        Using = 126,
+        Using = 125,
 
         /// <summary>
         /// <para>Symbol: var</para>
         /// <para><c>var</c></para>
         /// </summary>
-        Var = 127,
+        Var = 126,
 
         /// <summary>
         /// <para>Symbol: varchar</para>
         /// <para><c>varchar</c></para>
         /// </summary>
-        Varchar = 128,
+        Varchar = 127,
 
         /// <summary>
         /// <para>Symbol: vbox</para>
         /// <para><c>vbox</c></para>
         /// </summary>
-        Vbox = 129,
+        Vbox = 128,
 
         /// <summary>
         /// <para>Symbol: vbuttonbox</para>
         /// <para><c>vbuttonbox</c></para>
         /// </summary>
-        Vbuttonbox = 130,
+        Vbuttonbox = 129,
 
         /// <summary>
         /// <para>Symbol: vpaned</para>
         /// <para><c>vpaned</c></para>
         /// </summary>
-        Vpaned = 131,
+        Vpaned = 130,
 
         /// <summary>
         /// <para>Symbol: while</para>
         /// <para><c>while</c></para>
         /// </summary>
-        While = 132,
+        While = 131,
 
         /// <summary>
         /// <para>Symbol: widget</para>
         /// <para><c>widget</c></para>
         /// </summary>
-        Widget = 133,
+        Widget = 132,
 
         /// <summary>
         /// <para>Symbol: window</para>
         /// <para><c>window</c></para>
         /// </summary>
-        Window = 134,
+        Window = 133,
 
         /// <summary>
         /// <para>Symbol: Arg</para>
         /// <para><c>&lt;Arg&gt;</c></para>
         /// </summary>
-        Arg = 135,
+        Arg = 134,
 
         /// <summary>
         /// <para>Symbol: Args</para>
         /// <para><c>&lt;Args&gt;</c></para>
         /// </summary>
-        Args = 136,
+        Args = 135,
 
         /// <summary>
         /// <para>Symbol: Block</para>
         /// <para><c>&lt;Block&gt;</c></para>
         /// </summary>
-        Block = 137,
+        Block = 136,
 
         /// <summary>
         /// <para>Symbol: Case Stms</para>
         /// <para><c>&lt;Case Stms&gt;</c></para>
         /// </summary>
-        Casestms = 138,
+        Casestms = 137,
 
         /// <summary>
         /// <para>Symbol: Catch</para>
         /// <para><c>&lt;Catch&gt;</c></para>
         /// </summary>
-        Catch2 = 139,
+        Catch2 = 138,
 
         /// <summary>
         /// <para>Symbol: Catchs</para>
         /// <para><c>&lt;Catchs&gt;</c></para>
         /// </summary>
-        Catchs = 140,
+        Catchs = 139,
 
         /// <summary>
         /// <para>Symbol: Column List</para>
         /// <para><c>&lt;Column List&gt;</c></para>
         /// </summary>
-        Columnlist = 141,
+        Columnlist = 140,
 
         /// <summary>
         /// <para>Symbol: Column Name</para>
         /// <para><c>&lt;Column Name&gt;</c></para>
         /// </summary>
-        Columnname = 142,
+        Columnname = 141,
 
         /// <summary>
         /// <para>Symbol: Database</para>
         /// <para><c>&lt;Database&gt;</c></para>
         /// </summary>
-        Database2 = 143,
+        Database2 = 142,
 
         /// <summary>
         /// <para>Symbol: DB Column</para>
         /// <para><c>&lt;DB Column&gt;</c></para>
         /// </summary>
-        Dbcolumn = 144,
+        Dbcolumn = 143,
 
         /// <summary>
         /// <para>Symbol: DB Column Attr</para>
         /// <para><c>&lt;DB Column Attr&gt;</c></para>
         /// </summary>
-        Dbcolumnattr = 145,
+        Dbcolumnattr = 144,
 
         /// <summary>
         /// <para>Symbol: DB Column Attr List</para>
         /// <para><c>&lt;DB Column Attr List&gt;</c></para>
         /// </summary>
-        Dbcolumnattrlist = 146,
+        Dbcolumnattrlist = 145,
 
         /// <summary>
         /// <para>Symbol: DB Column Type</para>
         /// <para><c>&lt;DB Column Type&gt;</c></para>
         /// </summary>
-        Dbcolumntype = 147,
+        Dbcolumntype = 146,
 
         /// <summary>
         /// <para>Symbol: DB Columns</para>
         /// <para><c>&lt;DB Columns&gt;</c></para>
         /// </summary>
-        Dbcolumns = 148,
+        Dbcolumns = 147,
 
         /// <summary>
         /// <para>Symbol: DB Table</para>
         /// <para><c>&lt;DB Table&gt;</c></para>
         /// </summary>
-        Dbtable = 149,
+        Dbtable = 148,
 
         /// <summary>
         /// <para>Symbol: DB Table Attr</para>
         /// <para><c>&lt;DB Table Attr&gt;</c></para>
         /// </summary>
-        Dbtableattr = 150,
+        Dbtableattr = 149,
 
         /// <summary>
         /// <para>Symbol: DB Table Attr List</para>
         /// <para><c>&lt;DB Table Attr List&gt;</c></para>
         /// </summary>
-        Dbtableattrlist = 151,
+        Dbtableattrlist = 150,
 
         /// <summary>
         /// <para>Symbol: DB Tables</para>
         /// <para><c>&lt;DB Tables&gt;</c></para>
         /// </summary>
-        Dbtables = 152,
+        Dbtables = 151,
 
         /// <summary>
         /// <para>Symbol: DB Trigger Run</para>
         /// <para><c>&lt;DB Trigger Run&gt;</c></para>
         /// </summary>
-        Dbtriggerrun = 153,
+        Dbtriggerrun = 152,
 
         /// <summary>
         /// <para>Symbol: DB Trigger Runs</para>
         /// <para><c>&lt;DB Trigger Runs&gt;</c></para>
         /// </summary>
-        Dbtriggerruns = 154,
+        Dbtriggerruns = 153,
 
         /// <summary>
         /// <para>Symbol: Dict List</para>
         /// <para><c>&lt;Dict List&gt;</c></para>
         /// </summary>
-        Dictlist = 155,
+        Dictlist = 154,
 
         /// <summary>
         /// <para>Symbol: Expr</para>
         /// <para><c>&lt;Expr&gt;</c></para>
         /// </summary>
-        Expr = 156,
+        Expr = 155,
 
         /// <summary>
         /// <para>Symbol: Expr List</para>
         /// <para><c>&lt;Expr List&gt;</c></para>
         /// </summary>
-        Exprlist = 157,
+        Exprlist = 156,
 
         /// <summary>
         /// <para>Symbol: Func Arg</para>
         /// <para><c>&lt;Func Arg&gt;</c></para>
         /// </summary>
-        Funcarg = 158,
+        Funcarg = 157,
 
         /// <summary>
         /// <para>Symbol: Func args</para>
         /// <para><c>&lt;Func args&gt;</c></para>
         /// </summary>
-        Funcargs = 159,
+        Funcargs = 158,
 
         /// <summary>
         /// <para>Symbol: Function</para>
         /// <para><c>&lt;Function&gt;</c></para>
         /// </summary>
-        Function2 = 160,
+        Function2 = 159,
 
         /// <summary>
         /// <para>Symbol: Layout Block</para>
         /// <para><c>&lt;Layout Block&gt;</c></para>
         /// </summary>
-        Layoutblock = 161,
+        Layoutblock = 160,
 
         /// <summary>
         /// <para>Symbol: Layout List</para>
         /// <para><c>&lt;Layout List&gt;</c></para>
         /// </summary>
-        Layoutlist = 162,
+        Layoutlist = 161,
 
         /// <summary>
         /// <para>Symbol: Menu Block</para>
         /// <para><c>&lt;Menu Block&gt;</c></para>
         /// </summary>
-        Menublock = 163,
+        Menublock = 162,
 
         /// <summary>
         /// <para>Symbol: Menu Item</para>
         /// <para><c>&lt;Menu Item&gt;</c></para>
         /// </summary>
-        Menuitem2 = 164,
+        Menuitem2 = 163,
 
         /// <summary>
         /// <para>Symbol: MenuItems List</para>
         /// <para><c>&lt;MenuItems List&gt;</c></para>
         /// </summary>
-        Menuitemslist = 165,
+        Menuitemslist = 164,
 
         /// <summary>
         /// <para>Symbol: Normal Stm</para>
         /// <para><c>&lt;Normal Stm&gt;</c></para>
         /// </summary>
-        Normalstm = 166,
+        Normalstm = 165,
 
         /// <summary>
         /// <para>Symbol: NumLiteral</para>
         /// <para><c>&lt;NumLiteral&gt;</c></para>
         /// </summary>
-        Numliteral = 167,
+        Numliteral = 166,
 
         /// <summary>
         /// <para>Symbol: Op Add</para>
         /// <para><c>&lt;Op Add&gt;</c></para>
         /// </summary>
-        Opadd = 168,
+        Opadd = 167,
 
         /// <summary>
         /// <para>Symbol: Op And</para>
         /// <para><c>&lt;Op And&gt;</c></para>
         /// </summary>
-        Opand = 169,
+        Opand = 168,
 
         /// <summary>
         /// <para>Symbol: Op Assign</para>
         /// <para><c>&lt;Op Assign&gt;</c></para>
         /// </summary>
-        Opassign = 170,
+        Opassign = 169,
 
         /// <summary>
         /// <para>Symbol: Op Compare</para>
         /// <para><c>&lt;Op Compare&gt;</c></para>
         /// </summary>
-        Opcompare = 171,
+        Opcompare = 170,
 
         /// <summary>
         /// <para>Symbol: Op Equate</para>
         /// <para><c>&lt;Op Equate&gt;</c></para>
         /// </summary>
-        Opequate = 172,
+        Opequate = 171,
 
         /// <summary>
         /// <para>Symbol: Op If</para>
         /// <para><c>&lt;Op If&gt;</c></para>
         /// </summary>
-        Opif = 173,
+        Opif = 172,
 
         /// <summary>
         /// <para>Symbol: Op Mult</para>
         /// <para><c>&lt;Op Mult&gt;</c></para>
         /// </summary>
-        Opmult = 174,
+        Opmult = 173,
 
         /// <summary>
         /// <para>Symbol: Op Or</para>
         /// <para><c>&lt;Op Or&gt;</c></para>
         /// </summary>
-        Opor = 175,
+        Opor = 174,
 
         /// <summary>
         /// <para>Symbol: Op Pointer</para>
         /// <para><c>&lt;Op Pointer&gt;</c></para>
         /// </summary>
-        Oppointer = 176,
+        Oppointer = 175,
 
         /// <summary>
         /// <para>Symbol: Op Unary</para>
         /// <para><c>&lt;Op Unary&gt;</c></para>
         /// </summary>
-        Opunary = 177,
+        Opunary = 176,
 
         /// <summary>
         /// <para>Symbol: QualifiedName</para>
         /// <para><c>&lt;QualifiedName&gt;</c></para>
         /// </summary>
-        Qualifiedname = 178,
+        Qualifiedname = 177,
 
         /// <summary>
         /// <para>Symbol: Stm</para>
         /// <para><c>&lt;Stm&gt;</c></para>
         /// </summary>
-        Stm = 179,
+        Stm = 178,
 
         /// <summary>
         /// <para>Symbol: Stm List</para>
         /// <para><c>&lt;Stm List&gt;</c></para>
         /// </summary>
-        Stmlist = 180,
+        Stmlist = 179,
 
         /// <summary>
         /// <para>Symbol: Store Item</para>
         /// <para><c>&lt;Store Item&gt;</c></para>
         /// </summary>
-        Storeitem = 181,
+        Storeitem = 180,
 
         /// <summary>
         /// <para>Symbol: Store Items</para>
         /// <para><c>&lt;Store Items&gt;</c></para>
         /// </summary>
-        Storeitems = 182,
+        Storeitems = 181,
 
         /// <summary>
         /// <para>Symbol: Then Stm</para>
         /// <para><c>&lt;Then Stm&gt;</c></para>
         /// </summary>
-        Thenstm = 183,
+        Thenstm = 182,
 
         /// <summary>
         /// <para>Symbol: TreeView Column</para>
         /// <para><c>&lt;TreeView Column&gt;</c></para>
         /// </summary>
-        Treeviewcolumn = 184,
+        Treeviewcolumn = 183,
 
         /// <summary>
         /// <para>Symbol: TreeView Columns</para>
         /// <para><c>&lt;TreeView Columns&gt;</c></para>
         /// </summary>
-        Treeviewcolumns = 185,
+        Treeviewcolumns = 184,
 
         /// <summary>
         /// <para>Symbol: TryFinally</para>
         /// <para><c>&lt;TryFinally&gt;</c></para>
         /// </summary>
-        Tryfinally = 186,
+        Tryfinally = 185,
 
         /// <summary>
         /// <para>Symbol: Value</para>
         /// <para><c>&lt;Value&gt;</c></para>
         /// </summary>
-        Value = 187,
+        Value = 186,
 
         /// <summary>
         /// <para>Symbol: Widget</para>
         /// <para><c>&lt;Widget&gt;</c></para>
         /// </summary>
-        Widget2 = 188,
+        Widget2 = 187,
 
         /// <summary>
         /// <para>Symbol: WndParam</para>
         /// <para><c>&lt;WndParam&gt;</c></para>
         /// </summary>
-        Wndparam = 189,
+        Wndparam = 188,
 
         /// <summary>
         /// <para>Symbol: WndParam List</para>
         /// <para><c>&lt;WndParam List&gt;</c></para>
         /// </summary>
-        Wndparamlist = 190,
+        Wndparamlist = 189,
 
 		#endregion
 
@@ -2592,15 +2586,9 @@ namespace LPS.ToolScript
 
         /// <summary>
         /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= true</c></para>
+        /// <para><c>&lt;Value&gt; ::= BooleanLiteral</c></para>
         /// </summary>
-        RuleValueTrue = ToolScriptParserBase.RulesOffset + 238,
-
-        /// <summary>
-        /// <para>Pravidlo: </para>
-        /// <para><c>&lt;Value&gt; ::= false</c></para>
-        /// </summary>
-        RuleValueFalse = ToolScriptParserBase.RulesOffset + 239 
+        RuleValueBooleanliteral = ToolScriptParserBase.RulesOffset + 238 
 
 	    #endregion
     };
@@ -3077,6 +3065,15 @@ namespace LPS.ToolScript
 		}
 
 		/// <summary>
+		/// <para>Symbol: BooleanLiteral</para>
+		/// <para><c>BooleanLiteral</c></para>
+		/// </summary>
+		protected virtual object TerminalBooleanliteral(TerminalToken token)
+		{
+			throw new NotImplementedException("Symbol BooleanLiteral");
+		}
+
+		/// <summary>
 		/// <para>Symbol: break</para>
 		/// <para><c>break</c></para>
 		/// </summary>
@@ -3272,15 +3269,6 @@ namespace LPS.ToolScript
 		protected virtual object TerminalExtends(TerminalToken token)
 		{
 			throw new NotImplementedException("Symbol extends");
-		}
-
-		/// <summary>
-		/// <para>Symbol: false</para>
-		/// <para><c>false</c></para>
-		/// </summary>
-		protected virtual object TerminalFalse(TerminalToken token)
-		{
-			throw new NotImplementedException("Symbol false");
 		}
 
 		/// <summary>
@@ -3758,15 +3746,6 @@ namespace LPS.ToolScript
 		protected virtual object TerminalTreeview(TerminalToken token)
 		{
 			throw new NotImplementedException("Symbol treeview");
-		}
-
-		/// <summary>
-		/// <para>Symbol: true</para>
-		/// <para><c>true</c></para>
-		/// </summary>
-		protected virtual object TerminalTrue(TerminalToken token)
-		{
-			throw new NotImplementedException("Symbol true");
 		}
 
 		/// <summary>
@@ -4531,6 +4510,9 @@ namespace LPS.ToolScript
                 case (int)Symbols.Bool: //bool
                 	return TerminalBool(token);
 
+                case (int)Symbols.Booleanliteral: //BooleanLiteral
+                	return TerminalBooleanliteral(token);
+
                 case (int)Symbols.Break: //break
                 	return TerminalBreak(token);
 
@@ -4596,9 +4578,6 @@ namespace LPS.ToolScript
 
                 case (int)Symbols.Extends: //extends
                 	return TerminalExtends(token);
-
-                case (int)Symbols.False: //false
-                	return TerminalFalse(token);
 
                 case (int)Symbols.Finally: //finally
                 	return TerminalFinally(token);
@@ -4758,9 +4737,6 @@ namespace LPS.ToolScript
 
                 case (int)Symbols.Treeview: //treeview
                 	return TerminalTreeview(token);
-
-                case (int)Symbols.True: //true
-                	return TerminalTrue(token);
 
                 case (int)Symbols.Try: //try
                 	return TerminalTry(token);
@@ -5220,8 +5196,7 @@ namespace LPS.ToolScript
         protected abstract object RuleValueDict(NonterminalToken token); // <Value> ::= dict
         protected abstract object RuleValueList(NonterminalToken token); // <Value> ::= list
         protected abstract object RuleValueNull(NonterminalToken token); // <Value> ::= null
-        protected abstract object RuleValueTrue(NonterminalToken token); // <Value> ::= true
-        protected abstract object RuleValueFalse(NonterminalToken token); // <Value> ::= false
+        protected abstract object RuleValueBooleanliteral(NonterminalToken token); // <Value> ::= BooleanLiteral
 
 
 		#endregion
@@ -5706,10 +5681,8 @@ namespace LPS.ToolScript
                 	return RuleValueList(token);
                 case (int)Symbols.RuleValueNull: //<Value> ::= null
                 	return RuleValueNull(token);
-                case (int)Symbols.RuleValueTrue: //<Value> ::= true
-                	return RuleValueTrue(token);
-                case (int)Symbols.RuleValueFalse: //<Value> ::= false
-                	return RuleValueFalse(token);
+                case (int)Symbols.RuleValueBooleanliteral: //<Value> ::= BooleanLiteral
+                	return RuleValueBooleanliteral(token);
             }
             throw new RuleException("Unknown rule");
         }
@@ -7396,17 +7369,10 @@ namespace LPS.ToolScript
 			//return new
 		}
 
-		// <Value> ::= true
-		protected override object RuleValueTrue(NonterminalToken token)
+		// <Value> ::= BooleanLiteral
+		protected override object RuleValueBooleanliteral(NonterminalToken token)
 		{
-			throw new NotImplementedException("<Value> ::= true");
-			//return new
-		}
-
-		// <Value> ::= false
-		protected override object RuleValueFalse(NonterminalToken token)
-		{
-			throw new NotImplementedException("<Value> ::= false");
+			throw new NotImplementedException("<Value> ::= BooleanLiteral");
 			//return new
 		}
 
@@ -7653,8 +7619,7 @@ namespace LPS.ToolScript
 			Test(@"<Value> ::= dict");
 			Test(@"<Value> ::= list");
 			Test(@"<Value> ::= null");
-			Test(@"<Value> ::= true");
-			Test(@"<Value> ::= false");
+			Test(@"<Value> ::= BooleanLiteral");
 		*/
 		#endregion
 

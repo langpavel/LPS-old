@@ -100,6 +100,9 @@ namespace LPS.ToolScript.Parser
 			case "markup":
 				column = new TreeViewColumn(title, new CellRendererText(), "markup", this.StoreIndex);
 				break;
+			case "pixbuf":
+				column = new TreeViewColumn(title, new CellRendererPixbuf(), "stock-id", this.StoreIndex);
+				break;
 			default:
 				throw new NotSupportedException("Sloupec typu '"+this.ColumnType+"' není podporován");
 			}

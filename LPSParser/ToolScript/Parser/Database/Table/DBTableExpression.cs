@@ -225,5 +225,12 @@ namespace LPS.ToolScript.Parser
 		{
 			return this.Clone();
 		}
+
+		public override string ToString ()
+		{
+			return string.Format("{0}table {1}{2}...",
+				(IsTemplate?"template ":""), Name, (String.IsNullOrEmpty(TemplateName)?"":" template "+TemplateName));
+		}
+
 	}
 }
