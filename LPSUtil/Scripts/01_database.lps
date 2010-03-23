@@ -9,7 +9,7 @@ function check_strana(NEW, Allow_0=false, error="Strana záznamu není nastavena
 		throw error;
 };
 
-var DB = database filmarena_sklad
+var DB = database test
 {
 	/*************************************/
 	/* TEMPLATE TABLES                   */
